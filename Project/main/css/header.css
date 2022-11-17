@@ -347,7 +347,7 @@ button {
     padding-top: 10px;
 }
 
-.css-16jd7zp {
+.category-bar {
     position: relative;
     z-index: 21;
     border: 1px solid rgb(221, 221, 221);
@@ -355,7 +355,7 @@ button {
     animation: 0.2s linear 0s 1 normal none running animation-tb0mmg;
 }
 
-.css-13ct7qm {
+.category-ul-bar {
     overflow-y: auto;
     width: 247px;
     height: 100%;
@@ -363,22 +363,22 @@ button {
     cursor: pointer;
 }
 
-.css-you2kh {
+.category-li-bar {
     padding: 7px 0px 9px 14px;
 }
 
-.css-11n7bn4 {
+.category-image {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
 }
-.css-ar6ptu {
+.category-background-image {
     flex: 0 1 0%;
     width: 24px;
     height: 24px;
 }
 
-.css-mhaka4 {
+.category-sub-name {
     flex: 1 1 0%;
     padding: 1px 20px 0px 10px;
     color: rgb(51, 51, 51);

@@ -183,3 +183,12 @@ section.container{
     color: rgb(153, 153, 153);
     margin-top: 2px;
 }
+
+/* 상승아이콘 */
+#topButton {
+    position: fixed; 
+    right: 2%; 
+    bottom: 50px; 
+    display: none; 
+    z-index: 999;
+}

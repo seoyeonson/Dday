@@ -26,10 +26,6 @@ category.addEventListener('mouseout',function(){
     category.style.display='none';
 });
 
-subcategory.addEventListener('mouseout',function(){
-    category.style.display='none';
-});
-
 gray.addEventListener('mouseover',function(){
     gray.style.color='black';
 });
