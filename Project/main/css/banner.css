@@ -1,4 +1,4 @@
-section.container {
+/* section.container {
     width: 90vw;
     margin: 0 auto;
     overflow: hidden;
@@ -8,16 +8,35 @@ section.container {
 div.banner {
     width: 720vw;
     /* transform: translate(-90vw); */
-}
+/* }
 
 div.banner div {
     width: 90vw;
+    float: left;
+} */ 
+
+section.container {
+    width: 1900px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+div.banner {
+    width: 13300px;
+    /* transform: translate(-90vw); */
+}
+
+div.banner div {
+    width: 1900px;
     float: left;
 }
 
 div img {
     width: 100%;
 }
+
+div .banner
 
 div.arrow {
     position: absolute;
@@ -52,4 +71,11 @@ div.btns .btn {
     border: 2px solid black;
     width: 15px;
     height: 15px;
+}
+
+div img .main-banner-image{
+        width: 100%;
+        min-width: 1050px;
+        height: 370px;
+        object-fit: cover;
 }

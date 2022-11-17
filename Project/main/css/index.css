@@ -1,0 +1,194 @@
+*{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body{
+    margin: 0px;
+}
+button {
+    overflow: visible;
+    background-color: transparent;
+    border: none;
+}
+.MAIN_BANNERS{
+    height: 100%;
+}
+section.container{
+        position: relative;
+        height: fit-content;
+        max-width: 1900px;
+        margin: 0px auto 40px;
+}
+
+.swiper {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+}
+
+.swiper-pointer-events {
+    touch-action: pan-y;
+}
+.arrow{
+    display: none;
+}
+
+.btn{
+    display: none;
+}
+
+.INNER_DIV {
+    width: 1050px;
+    margin: 0px auto;
+    padding: 40px 0px;
+}
+.SectionTitle{
+        margin-bottom: 27px;
+        display: flex;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        align-items: center;
+}
+
+.SectionInnerTitle{
+        position: relative;
+        display: flex;
+        padding: 8px 0px 8px 8px;
+}
+
+.SectionTitleSpan{
+        color: rgb(51, 51, 51);
+        font-size: 28px;
+        line-height: 1.15;
+        letter-spacing: -0.26px;
+        font-weight: 500;
+}
+
+.SectionList{
+    position: relative;
+    width: 1050px;
+    margin: 0px auto;
+}
+
+.css-f095o0{
+        overflow: hidden;
+        width: 1050px;
+}
+
+.swiper {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+}
+
+.swiper-pointer-events {
+    touch-action: pan-y;
+}
+
+/*카테고리의 크기를 벗어나면 가려주고 크기를 1050px로 고정 54*/
+
+.swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    box-sizing: content-box;
+}
+.swiper-slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+}
+.css-1fpvjcy .product-function {
+    right: 16px;
+    bottom: 16px;
+    z-index: 10;
+
+}
+.css-1fpvjcy .image-container {
+    height: 320px;
+}
+
+.css-f6bj0l {
+    overflow: hidden;
+    position: relative;
+    background-color: rgb(245, 245, 245);
+}
+
+.css-1fpvjcy .product-function img {
+    width: 45px;
+    height: 45px;
+}
+.css-a4hmbt {
+    position: absolute;
+}
+
+.css-19lkxd2 {
+    color: rgb(250, 98, 47);
+}
+
+.css-1fpvjcy .product-info .product-price .discount-rate, .css-1fpvjcy .product-info .product-price .sales-price {
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.5;
+    white-space: nowrap;
+}
+
+.css-1fpvjcy .product-info .product-price .discount-rate {
+    margin-right: 7px;
+}
+
+.css-1fpvjcy .product-info .product-price .dimmed-price {
+    color: rgb(181, 181, 181);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: line-through;
+    margin-top: 2px;
+}
+
+/* line banner */
+.css-59n5un {
+    width: 1050px;
+    margin: 0px auto;
+    padding: 40px 0px;
+}
+
+.css-1lougm2 {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    height: 140px;
+}
+.css-149yh9z {
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.45;
+    letter-spacing: -0.2px;
+    text-align: center;
+    color: rgb(153, 153, 153);
+    margin-top: 2px;
+}
+
+/* 상승아이콘 */
+#topButton {
+    position: fixed; 
+    right: 2%; 
+    bottom: 50px; 
+    display: none; 
+    z-index: 999;
+}
