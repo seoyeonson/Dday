@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신고 회원 관리</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="table.css">
+    <link rel="stylesheet" href="button.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- 사이드 바 -->
+  <!-- <div class="wrapper"> -->
+    <div class="sidebar" id="menu">
+        <!-- 로고(image) -->
+        <div class="logo">
+            <!-- 로고 들어오면 넣어주세요 -->
+            <img src="">로고
+             <!-- 사이트 이름 정해지면 넣어주세요 -->
+             <h1 style="color:#5f0080">&nbsp;&nbsp;&nbsp; 사이트 이름</h1>
+        </div>
+        <ul>
+            <li>
+                <!-- 메인페이지 링크 나오면 추가해주세요 -->
+                <a href="" class="menu"><img src="images/globe.png">사이트 바로가기</a>
+            </li>
+            <li>
+                <a><img src="images/user.png">회원 관리<img src="images/menu-burger.png" style="float: right; height:20px;"></a>
+                <ul>
+                    <li><a href="memberAll.html">전체회원관리</a></li>
+                    <li><a href="memberReport.html">신고회원관리</a></li>
+                </ul>
+            </li>
+            <li>
+                    <a><img src="images/settings.png">환경 설정<img src="images/menu-burger.png" style="float: right; height:20px;"></a>
+               <!--  <ul>
+                    <li><a href="settingBanner.html">배너 관리</a></li>
+                </ul> -->
+            </li>
+        </ul>
+    </div>
+    <!-- 사이드 바 end -->
+
+<!-- </div> -->
+    <div class="contents">
+        <h3>신고 회원 관리</h3>
+
+          <input type="button" value="선택회원 탈퇴" class="confirm_btn" onclick="confirmMember()">
+
+          <table class="confirm">
+            <thead>
+            <tr>
+                <th>
+                    <input type="checkbox" name="selectall" id="all-check" onclick='selectAll(this)'>
+                </th>
+                <th>신고 분류</th><th>회원번호</th><th>회원명</th><th>신고 접수일</th><th>신고 글 제목</th><th>회원 상세보기</th><th>처리여부</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <input type="checkbox" name="check_btn" id="check1" onclick='checkSelectAll()'>
+                </td>
+                <td>욕설</td>
+                <td>0</td>
+                <td>000</td>
+                <td>0000-00-00</td>
+                <td>
+                    <!-- 백엔드시 링크 첨부해주세요 -->
+                    xxx야
+                </td>
+                <td><button class="seeDetail" onclick="location.href='memberView.html'">상세보기</button></td>
+                <td>미처리</td>
+              </tr>
+
+              <tr>
+                <td>
+                    <input type="checkbox" name="check_btn" id="check2" onclick='checkSelectAll()'>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+
+              <tr>
+                <td>
+                    <input type="checkbox" name="check_btn" id="check3" onclick='checkSelectAll()'>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              
+              <tr>
+                <td>
+                    <input type="checkbox" name="check_btn" id="check4" onclick='checkSelectAll()'>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+
+              <tr>
+                <td>
+                    <input type="checkbox" name="check_btn" id="check5" onclick='checkSelectAll()'>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</body>
+<script src="manager.js"></script>
+</html>

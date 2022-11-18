@@ -1,0 +1,74 @@
+.contents {
+    position: relative;
+}
+.contents .confirm_btn{
+    position: relative;
+    background-color: #5f0080;
+    color: white;
+    border: none;
+    padding: 13px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    left: 1360px;
+    top: 50px;
+    cursor: pointer;
+}
+
+
+.contents .activityDetail {
+    left: 70%;
+}
+
+.contents .removeList, .contents .seeDetail, .contents .returnDetail, .contents .seeBanner {
+    background-color: lightgray;
+    border: none;
+    padding: 7px;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.contents #findBtn{
+    position: relative;
+    color: #5f0080;
+    font-size: 20px;
+    top: 45px;
+    left: 670px;
+    background-color: #fff;
+    border-color: #5f0080;
+    border: 1px solid;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+.contents .duplicationBtn{
+    position: relative;
+    top: -50px;
+    left: 25px;
+    padding: 5px;
+    background-color: #FFF;
+    color: #5f0080;
+    border: 1px solid;
+    border-color: #5f0080;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.contents .memberAddressText .addressBtn{
+    position: relative;
+    top: 2px;
+    left: 13px;
+    padding: 5px;
+    background-color: #FFF;
+    color: #5f0080;
+    border: 1px solid;
+    border-color: #5f0080;
+    font-weight: bold;
+    cursor: pointer;
+}

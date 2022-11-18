@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전체 회원 관리</title>
+    
+    <link rel="stylesheet" href="button.css">
+    <link rel="stylesheet" href="table.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+    <!-- <div class="wrapper"> -->
+        <!-- 사이드 바 -->
+        <div class="sidebar">
+            <!-- 로고(image) -->
+            <div class="logo">
+                <!-- 로고 들어오면 넣어주세요 -->
+                <img src="">로고
+                <!-- 사이트 이름 정해지면 넣어주세요 -->
+                <h1 style="color:#5f0080">&nbsp;&nbsp;&nbsp; 사이트 이름</h1>
+            </div>
+            <!-- 메인페이지 링크 나오면 추가해주세요 -->
+            <ul>
+                <li>
+                    <a href="" class="menu"><img src="images/globe.png">사이트 바로가기</a>
+                </li>
+                <!-- 회원 관리 -->
+                <li>
+                    <a><img src="images/user.png">회원 관리 <img src="images/menu-burger.png" style="float: right; height:20px;"></a>
+                    <ul>
+                        <li><a href="memberAll.html">전체회원관리</a></li>
+                        <li><a href="memberReport.html">신고회원관리</a></li>
+                    </ul>
+                </li>
+                
+                <li>
+                        <a><img src="images/settings.png">환경 설정<img src="images/menu-burger.png" style="float: right; height:20px;"></a>
+                   <!--  <ul>
+                        <li><a href="settingBanner.html">배너 관리</a></li>
+                    </ul> -->
+                </li>
+            </ul>
+        </div>
+        <!-- 사이드 바 end -->
+        
+        <!-- </div> -->
+        <!-- 회원 검색 -->
+    <div class="contents">
+        <h3 class="list">회원 리스트</h3>
+        <div class="memberList">
+        <span><strong class="find">회원 검색</strong></span>
+        <hr class="findHr">
+        <span class="search">
+        <span class="searchbox">검색어</span> 
+        <select name="howtofind" id="howtofind">
+            <option value="box01">아이디</option>
+            <option value="box02">비밀번호</option>
+            <option value="box03">회원명</option>
+            <option value="box04">회원번호</option>
+        </select>
+        <span><input type="text" class="howtofindtext"></span>
+        </span>
+        <hr id="hr1">
+        <span class="grade">
+        <span class="gradebox">회원등급</span>
+        <select name="grade" id="gradebox">
+            <option value="gradebox00">등급</option>
+            <option value="gradebox01">개인회원</option>
+            <option value="gradebox02">사업자회원</option>
+        </select>
+        <span class="dividebox">
+        <span>회원구분</span>
+        </span>
+        <span class="divideRadio">
+        <input type="radio">전체<input type="radio">개인회원<input type="radio">사업자회원
+         </span>
+        </span>
+        <hr id="hr2">
+        <span class="approve">
+        <span>가입승인</span> 
+        </span>
+        <span class="approveRadio">
+        <input type="radio">전체<input type="radio">승인<input type="radio">미승인
+        </span>
+        <span class="registerDate">회원가입일</span> 
+        <span>
+            <input type="date" class="cal1">
+            <span class="div">~</span>
+            <input type="date" class="cal2">
+        </span> <!-- 달력 구현 -->
+        <hr id="hr3">
+         <button id="findBtn">검색</button>
+        </div>
+        
+        <!-- 회원 검색 End -->
+        <!-- 검색된 회원 목록 테이블  -->
+        <span class="count">
+        검색 <strong style="color: red;">0</strong>명 / 전체<strong style="color: red;">5712</strong>명
+        <span><select name="selectbydate" id="selectbydate">
+            <option value="selectbydate01">회원가입일순</option>
+            <option value="selectbydate02">회원번호순</option>
+            <option value="selectbydate03">마일리지순</option>
+            <option value="selectbydate04">주문금액순</option>
+            <option value="selectbydate05">등급별</option>
+            <option value="selectbydate06">승인여부</option>
+        </select></span>
+        <span><select name="show" id="show">
+            <option value="show10">10개 보기</option>
+            <option value="show20">20개 보기</option>
+            <option value="show30">30개 보기</option>
+            <option value="show40">40개 보기</option>
+            <option value="show50">50개 보기</option>
+        </select></span>
+    </span>
+       <!--  <h3>회원 목록 관리</h3> -->
+          <table class="memberAll">
+            <thead>
+            <tr>
+                <th>회원번호</th><th>회원명</th><th>아이디</th><th>가입 일자</th><th>마일리지</th><th>주문상품건수</th><th>주문금액</th>
+                <th>등급</th><th>가입승인</th><th>회원 상세보기</th>
+            </tr>
+            </thead>
+            <tbody>
+                <td class="memberId">0</td>
+                <td>000</td>
+                <td>000</td>
+                <td>0000-00-00</td>
+                <td>1058점</td>
+                <td>4회</td>
+                <td>158,000원</td>
+                <td>사업자회원</td>
+                <td>승인</td>
+                <td><button class="seeDetail" onclick="location.href='memberView.html'">상세보기</button></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><!-- <button class="seeDetail" onclick="memberDetail()">상세보기</button> --></td>
+                <td><!-- <button class="removeList" onclick="remove_tr(this)">회원 삭제</button> --></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><!-- <button class="seeDetail" onclick="memberDetail()">상세보기</button> --></td>
+                <td><!-- <button class="removeList" onclick="remove_tr(this)">회원 삭제</button> --></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><!-- <button class="seeDetail" onclick="memberDetail()">상세보기</button> --></td>
+                <td><!-- <button class="removeList" onclick="remove_tr(this)">회원 삭제</button> --></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><!-- <button class="seeDetail" onclick="memberDetail()">상세보기</button> --></td>
+                <td><!-- <button class="removeList" onclick="remove_tr(this)">회원 삭제</button> --></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          
+    </div>
+    
+</body>
+<script src="manager.js"></script>
+</html>
