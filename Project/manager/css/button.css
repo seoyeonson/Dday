@@ -72,3 +72,16 @@
     font-weight: bold;
     cursor: pointer;
 }
+
+.contents #submitBtn{
+    position: relative;
+    top: 50px;
+    left: 700px;
+    padding: 20px;
+    background-color: #FFF;
+    color: #5f0080;
+    border: 1px solid;
+    border-color: #5f0080;
+    font-weight: bold;
+    cursor: pointer;
+}

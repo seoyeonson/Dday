@@ -612,17 +612,15 @@ body {
 
 .contents .Text{
     position: relative;
-    top: -148px;
+    display: flex;
+    top: -40px;
     left: 0px;
     border: 1px solid;
     border-color: #5f0080;
     background-color: #5f0080;
+    padding: 13px;
     color: #fff;
-    padding-top: 115px;
-    padding-bottom: 115px;
-    padding-right: 35px;
-    padding-left: 35px;
-    text-align: center;
+    
 }
 
 .contents #textarea{
