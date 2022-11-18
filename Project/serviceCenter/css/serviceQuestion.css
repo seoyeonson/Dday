@@ -1,0 +1,86 @@
+body {
+    font-family:"Noto Sans", "malgun gothic", AppleGothic, dotum, sans-serif;
+    font-size: 14px;
+    color: #333;
+    position: relative;
+    min-width: 1050px;
+    line-height: 1.15;
+}
+
+.tableContainer {
+    width: 100%;
+}
+
+.questionTable {
+    width: 820px;
+    border-bottom: 1px solid rgb(244, 244, 244);
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.questionHead {
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 0.5px solid rgb(51, 51, 51);
+    border-top: 2px solid rgb(51, 51, 51);
+}
+
+.questionTitle {
+    width: 620px;
+    padding: 20px 0px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: rgb(51, 51, 51);
+}
+
+.questionDate, .questionStatus {
+    width: 100px;
+    padding: 20px 0px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: rgb(51, 51, 51);
+}
+
+.noMessage {
+    padding: 117px 0px;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(51, 51, 51);
+    text-align: center;
+}
+
+.questionButtonContainer {
+    position: relative;
+    min-height: 44px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.questionButton {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    display: block;
+    padding: 0px 10px;
+    text-align: center;
+    overflow: hidden;
+    width: 120px;
+    height: 44px;
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(95, 0, 128);
+    border: 0px none;
+}
+
+.questionText {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 500;
+}
