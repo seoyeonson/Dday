@@ -1,0 +1,634 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    margin:0px;
+    overflow: hidden;
+}
+.sidebar ul {
+    list-style: none;
+    padding-left: 0px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    margin-top: 10px;
+    display: block;
+    padding: 10px 20px;
+    color: #5f0080;
+    font-size: 20px;
+    position: relative;
+    font-weight: bold;
+}
+
+.sidebar ul li a img {
+    display: inline-block;
+    padding: 0px 10px 0px 0px;
+    height: 25px;
+}
+
+.sidebar ul li:hover,
+.sidebar ul li.active{
+    background-color:rgb(220, 220, 220);
+}
+
+.contents {
+    position: relative;
+    color: black;
+    float: right;
+    width: 82vw;
+    height: 100vw;
+    background-color: lightgray;
+}
+.sidebar {
+    background-color: rgb(245, 245, 245);
+    position: absolute;
+    width: 18vw;
+    height: 100vw;
+    float: left;
+}
+
+.contents h1{
+    background-color:#5f0080;
+    padding: 13px;
+    color: white;
+    margin-top:0;
+}
+.contents .find{
+    position: relative;
+    top: 10px;
+    padding: 13px;
+    margin-top:0;
+}
+.contents .information{
+    position: relative;
+    top: 10px;
+    padding: 13px;
+    margin-top:0;
+}
+.sidebar ul li {
+    position: relative;
+}
+.contents .findHr{
+    position: relative;
+    border-style: solid;
+    height: 0px;
+    color: #d3d3d3;
+    top: 10px;
+}
+.contents .informationHr{
+    position: relative;
+    border-style: solid;
+    height: 0px;
+    color: #d3d3d3;
+    top: 10px;
+}
+.contents .informationHr{
+    position: relative;
+    border-style: solid;
+    height: 0px;
+    color: #d3d3d3;
+    top: 10px;
+}
+.contents .memberList{
+    position: relative;
+    height: 300px;
+    top: 0px;
+    left: 1%;
+    border-top:1px solid lightgray;
+     border-collapse: collapse;
+    width: 80vw;
+    background: white;
+}
+
+.contents .memberInfo{
+    position: relative;
+    height: 700px;
+    top: 0px;
+    left: 1%;
+    border-top:1px solid lightgray;
+     border-collapse: collapse;
+    width: 80vw;
+    background: white;
+}
+
+
+.contents .count{
+    position: relative;
+    left: 20px;
+    top: 50px;
+}
+.contents .search{
+    position: relative;
+    top: 10px;
+    left: 5px;
+}
+.contents .memberGrade{
+    position: relative;
+    top: 10px;
+    left: 5px;
+}
+.contents .memberApprove{
+    position: relative;
+}
+.contents .memberApprove .memberApproveRadio{
+    position: relative;
+    left: 405px;
+    top: 10px;
+}
+.contents .memberApprove .memberApprovePick{
+    position: relative;
+    top: 12px;
+    border: 1px solid;
+    border-color: #5f0080;
+    background-color: #5f0080;
+    color: #fff;
+    padding: 10px;
+    padding-right: 100px;
+    margin: 0 auto;
+    left: 400px;
+}
+.contents .memberGrade .memberGradePick{
+    position: relative;
+    top: 3px;
+    left: -5px;
+    border: 1px solid;
+    border-color: #5f0080;
+    background-color: #5f0080;
+    color: #fff;
+    padding: 10px;
+    padding-right: 79px;
+    margin: 0 auto;
+}
+.contents .search .searchbox{
+    position: relative;
+    top: 3px;
+    left: -5px;
+    border: 1px solid;
+    border-color: #5f0080;
+    background-color: #5f0080;
+    color: #fff;
+    padding: 10px;
+    padding-right: 100px;
+    margin: 0 auto;
+}
+
+.contents .approve{
+    position: relative;
+    top: 12px;
+    left: 0px;
+    border: 1px solid;
+    border-color: #5f0080;
+    background-color: #5f0080;
+    color: #fff;
+    padding: 10px;
+    padding-right: 82px;
+    margin: 0 auto;
+}
+.contents .pwd{
+    position: relative;
+    top: 7px;
+    left: 0px;
+    border: 1px solid;
+    border-color: #5f0080;
+    background-color: #5f0080;
+    color: #fff;
+    padding: 10px;
+    padding-right: 68px;
+    margin: 0 auto;
+}
+.contents .writePwd .pwdText{
+    position: relative;
+    top: 5px;
+    left: 15px;
+    padding: 5px;
+}
+.contents .confirmPwd .pwdText{
+    position: relative;
+    top: 5px;
+    left: 20px;
+    padding: 5px;
+}
+.contents .grade{
+    position: relative;
+    top: 15px;
+}
+.contents .memberId{
+    position: relative;
+    top: 0px;
+}
+.contents .member_Id{
+    position: relative;
+    top: 15px;
+}
+
+.contents .warning{
+    position: relative;
+    top: -46px;
+    left: 550px;
+}
+
+.contents .grade .gradebox{
+    position: relative;
+    top: -2px;
+    left: 0px;
+    border: 1px solid;
+    border-color: #5f0080;
+    background-color: #5f0080;
+    color: #fff;
+    padding: 10px;
+    padding-right: 85.5px;
+}
+.contents .member_Id .id{
+    position: relative;
+    top: 3px;
+    left: 0px;
+    border: 1px solid;
+    border-color: #5f0080;
+    background-color: #5f0080;
+    color: #fff;
+    padding: 10px;
+    padding-right: 85.5px;
+}
+.contents .member_Id .idText{
+    position: relative;
+    top: 2px;
+    left: 13px;
+    padding: 5px;
+}
+.contents .nameText{
+    position: relative;
+    top: 2px;
+    left: 410px;
+    padding: 5px;
+}
+
+.contents .search #howtofind{
+    position: relative;
+    top: 1px;
+    left: 10px;
+    padding: 5px;
+}
+
+.contents .search .howtofindtext{
+    position: relative;
+    top: 1px;
+    left: 13px;
+    padding: 5px;
+}
+
+.contents .grade #gradebox{
+    position: relative;
+    top: -4px;
+    left: 15px;
+    padding: 5px;
+}
+
+.contents .dividebox{
+    position: relative;
+    top: -2px;
+    left: 400px;
+    border: 1px solid;
+    border-color: #5f0080;
+    background-color: #5f0080;
+    color: #fff;
+    padding: 10px;
+    padding-right: 85.5px;
+}
+.contents .memberName{
+    position: relative;
+    top: 3.5px;
+    left: 392px;
+    border: 1px solid;
+    border-color: #5f0080;
+    background-color: #5f0080;
+    color: #fff;
+    padding: 10px;
+    padding-right: 90px;
+}
+.contents .divideRadio{
+    position: relative;
+    top: -2px;
+    left: 410px;
+}
+.contents .approveRadio{
+    position: relative;
+    left: 13px;
+    top: 12px;
+}
+
+
+.contents #hr3{
+    position: relative;
+    border-style: solid;
+    height: 0px;
+    color: #d3d3d3;
+    top: 13px;
+}
+.contents #Viewhr3{
+    position: relative;
+    border-style: solid;
+    height: 0px;
+    color: #d3d3d3;
+    top: -65px;
+}
+.contents #Viewhr4{
+    position: relative;
+    border-style: solid;
+    height: 0px;
+    color: #d3d3d3;
+    top: -55px;
+}
+.contents #Viewhr5{
+    position: relative;
+    border-style: solid;
+    height: 0px;
+    color: #d3d3d3;
+    top: -50px;
+}
+.contents #Viewhr6{
+    position: relative;
+    border-style: solid;
+    height: 0px;
+    color: #d3d3d3;
+    top: -47px;
+}
+.contents #Viewhr7{
+    position: relative;
+    border-style: solid;
+    height: 0px;
+    color: #d3d3d3;
+    top: -31px;
+}
+.contents #hr2{
+    position: relative;
+    border-style: solid;
+    height: 0px;
+    color: #d3d3d3;
+    top: 10px;
+}
+.contents #Viewhr2{
+    position: relative;
+    border-style: solid;
+    height: 0px;
+    color: #d3d3d3;
+    top: 3px;
+}
+.contents #hr1{
+    position: relative;
+    border-style: solid;
+    height: 0px;
+    color: #d3d3d3;
+    top: 10px;
+}
+.contents #Viewhr1{
+    position: relative;
+    border-style: solid;
+    height: 0px;
+    color: #d3d3d3;
+    top: 15px;
+}
+
+.contents .registerDate{
+    position: relative;
+    top: 13px;
+    left: 339px;
+    border: 1px solid;
+    border-color: #5f0080;
+    background-color: #5f0080;
+    color: #fff;
+    padding: 10px;
+    padding-right: 74px;
+}
+
+.contents #selectbydate{
+    position: relative;
+    top: -10px;
+    padding: 10px;
+    left: 1105px;
+}
+.contents #show{
+    position: relative;
+    top: -10px;
+    padding: 10px;
+    left: 1110px;
+}
+
+.contents .cal1{
+    position: relative;
+    left: 350px;
+    top: 10px;
+}
+.contents .cal2{
+    position: relative;
+    left: 370px;
+    top: 10px;
+}
+.contents .div{
+    position: relative;
+    left: 360px;
+    top: 13px;
+    font-size: 18px;
+}
+.sidebar ul li ul {
+    display:none;
+    position: absolute;
+    background-color: white;
+    z-index: 1;
+    width: 18vw;
+}
+
+.sidebar ul li:hover > ul {
+    display: block;
+}
+
+.sidebar ul li ul:hover,
+.sidebar ul li ul.active{
+    display: block;
+}
+
+.contents h3{
+    background-color:#5f0080;
+    padding: 13px;
+    color: white;
+    margin-top:0;
+    top: 700px;
+}
+
+.contents #redStar{
+    color: red;
+}
+
+.contents .orderSum{
+    position: relative;
+    top: -60px;
+    left: 0px;
+    border: 1px solid;
+    border-color: #5f0080;
+    background-color: #5f0080;
+    color: #fff;
+    padding: 10px;
+    padding-right: 79px;
+}
+
+.contents .sum{
+    position: relative;
+    top: -60px;
+    left: 10px;
+}
+.contents .mileageSum{
+    position: relative;
+    top: -60px;
+    left: 510px;
+}
+
+.contents .mileage{
+    position: relative;
+    top: -60px;
+    left: 500px;
+    border: 1px solid;
+    border-color: #5f0080;
+    background-color: #5f0080;
+    color: #fff;
+    padding: 10px;
+    padding-right: 73px;
+}
+.contents .email{
+    position: relative;
+    top: -50px;
+    left: 0px;
+    border: 1px solid;
+    border-color: #5f0080;
+    background-color: #5f0080;
+    color: #fff;
+    padding: 10px;
+    padding-right: 86px;
+}
+
+.contents .emailText{
+    position: relative;
+    top: -58px;
+    left: 0px;
+}
+.contents .emailText .emailWrite{
+    position: relative;
+    top: 5px;
+    left: 13px;
+    padding: 5px;
+}
+.contents .emailText .aa{
+    position: relative;
+    left: 13px;
+    top: 4px;
+}
+
+.contents #emailPick{
+    position: relative;
+    top: -52px;
+    left: 20px;
+    padding: 4px;
+    cursor: pointer;
+}
+
+
+
+.contents .memberPhone{
+    position: relative;
+    top: -46px;
+    left: 0px;
+    border: 1px solid;
+    border-color: #5f0080;
+    background-color: #5f0080;
+    color: #fff;
+    padding: 10px;
+    padding-right: 57px;
+}
+
+.contents .memberPhoneText{
+    position: relative;
+    top: -50px;
+    left: 10px;
+}
+.contents .memberPhoneText .phoneWrite{
+    position: relative;
+    top: 3px;
+    left: 0px;
+    padding: 5px;
+    width: 40px;
+}
+
+.contents .memberPhoneText .minus{
+    position: relative;
+    top: 5px;
+    font-weight: bold;
+}
+
+.contents .memberGender{
+    position: relative;
+    top: -45px;
+    left: 390px;
+    border: 1px solid;
+    border-color: #5f0080;
+    background-color: #5f0080;
+    color: #fff;
+    padding: 10px;
+    padding-right: 99px;
+}
+
+.contents .genderPick{
+    position: relative;
+    top: -45px;
+    left: 393px;
+}
+.contents .memberAddress{
+    position: relative;
+    top: -21px;
+    left: 0px;
+    border: 1px solid;
+    border-color: #5f0080;
+    background-color: #5f0080;
+    color: #fff;
+    padding: 30px;
+    padding-left: 15px;
+    padding-right: 97px;
+}
+
+.contents .memberAddressText{
+    position: relative;
+    top: -40px;
+}
+.contents .memberAddressText .add{
+    position: relative;
+    top: 0px;
+    left: 10px;
+    padding: 5px;
+    width: 70px;
+}
+.contents .memberAddressText .backAddress .add{
+    position: relative;
+    top: 10px;
+    left: 163px;
+    padding: 5px;
+    width: 500px;
+}
+
+.contents .Text{
+    position: relative;
+    top: -148px;
+    left: 0px;
+    border: 1px solid;
+    border-color: #5f0080;
+    background-color: #5f0080;
+    color: #fff;
+    padding-top: 115px;
+    padding-bottom: 115px;
+    padding-right: 35px;
+    padding-left: 35px;
+    text-align: center;
+}
+
+.contents #textarea{
+    position: relative;
+    top: -30px;
+    resize: none;
+    border-color: #FFF;
+}
+

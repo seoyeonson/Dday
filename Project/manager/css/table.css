@@ -1,0 +1,44 @@
+.contents {
+  position: relative;
+}
+
+table {
+  position: absolute;
+  top: 10%;
+  left: 1%;
+  border-top:1px solid lightgray;
+  border-collapse: collapse;
+  width: 80vw;
+  background: white;
+}
+
+.contents .memberAll, .contents .question, .contents .banner{
+  top:25%;
+}
+
+.contents caption {
+  background-color: rgb(245, 245, 245);
+  font-size: 20px;
+  padding: 10px;
+}
+  th {
+    border-bottom: 1px solid lightgray;
+    padding: 10px;
+    text-align: center;
+  }
+
+  td {
+    border-bottom: 1px solid lightgray;
+    padding: 20px;
+    text-align: center;
+    margin: 0px;
+    font-size: 15px;
+    
+  }
+  th:first-child, td:first-child {
+    border-left: none;
+  }
+
+  .contents table tr:hover td{
+    background-color: #e1bee7;
+  }
