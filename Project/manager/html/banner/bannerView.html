@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회원 상세보기</title>
+    <title>배너 수정하기</title>
 
     <link rel="stylesheet" href="/Project/manager/css/button.css">
     <link rel="stylesheet" href="/Project/manager/css/table.css">
@@ -24,7 +24,7 @@
             <!-- 로고 들어오면 넣어주세요 -->
             <img src="">로고
             <!-- 사이트 이름 정해지면 넣어주세요 -->
-            <h1 style="color:#5f0080">&nbsp;&nbsp;&nbsp; 사이트 이름</h1>
+            <h1 style="color:#ff3d00">&nbsp;&nbsp;&nbsp; 사이트 이름</h1>
         </div>
         <!-- 메인페이지 링크 나오면 추가해주세요 -->
         <ul>
@@ -36,17 +36,23 @@
                 <a><img src="/Project/manager/image/user.png">회원 관리 <img src="/Project/manager/image/menu-burger.png"
                         style="float: right; height:20px;"></a>
                 <ul>
-                    <li><a href="memberAll.html">전체회원관리</a></li>
+                    <li><a href="/Project/manager/html/member/memberAll.html">전체회원관리</a></li>
                   <!--   <li><a href="memberReport.html">신고회원관리</a></li> -->
                 </ul>
             </li>
-
+            <li>
+                <a><img src="/Project/manager/image/apps.png">콘텐츠 관리<img src="/Project/manager/image/menu-burger.png" style="float: right; height:20px;"></a>
+                    <ul>
+                        <li><a href="/Project/manager/html/manager/managerNotice.html">공지사항관리</a></li>
+                        <li><a href="/Project/manager/html/manager/managerFAQ.html">문의하기관리</a></li>
+                    </ul>
+        </li>
             <li>
                 <a><img src="/Project/manager/image/settings.png">환경 설정<img src="/Project/manager/image/menu-burger.png"
                         style="float: right; height:20px;"></a>
-                <!--  <ul>
-                        <li><a href="settingBanner.html">배너 관리</a></li>
-                    </ul> -->
+                 <ul>
+                        <li><a href="/Project/manager/html/banner/managerBanner.html">배너 관리</a></li>
+                    </ul>
             </li>
         </ul>
     </div>
@@ -103,10 +109,10 @@
                     <span class="password"><span id="redStar">*</span>비밀번호</span> 
                 </span>
                 <span class="writePwd">
-                    <input type="text" placeholder="비밀번호입력" class="pwdText">
+                    <input type="password" placeholder="비밀번호입력" class="pwdText" id="password" required>
                 </span>
                 <span class="confirmPwd">
-                    <input type="text" placeholder="비밀번호확인" class="pwdText">
+                    <input type="password" placeholder="비밀번호확인" class="pwdText" id="confirm_password" required>
                 </span>
                 <h6 class="warning" style="color: red;">*영문대문자/영문소문자/숫자/특수문자 중 2개 이상 포함, 10 ~ 16자리 이하로<br>설정할 수 있습니다.
                 </h6>
@@ -117,7 +123,7 @@
                     <span class="sum">158,000원</span>
                 </span>
                 <span>
-                    <span class="mileage">마일리지</span>
+                    <span class="mileage">적립금</span>
                     <span class="mileageSum">1058점</span>
                 </span>
                 <hr id="Viewhr4">
@@ -176,7 +182,7 @@
         <!-- 회원 정보 End -->
         <!-- 저장하기 버튼 -->
         <span>
-            <button id="submitBtn" onclick="location.href='memberAll.html'">저장하기</button>
+            <button id="submitBtn" type="submit" onclick="test()">저장하기</button>
         </span>
     </div>
 

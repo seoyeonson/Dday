@@ -13,7 +13,7 @@ body {
     margin-top: 10px;
     display: block;
     padding: 10px 20px;
-    color: #5f0080;
+    color: #ff3d00;
     font-size: 20px;
     position: relative;
     font-weight: bold;
@@ -47,7 +47,7 @@ body {
 }
 
 .contents h1{
-    background-color:#5f0080;
+    background-color:#ff3d00;
     padding: 13px;
     color: white;
     margin-top:0;
@@ -110,10 +110,13 @@ body {
     background: white;
 }
 
-
+.contents .allMember{
+    position: relative;
+    left: -40px;
+}
 .contents .count{
     position: relative;
-    left: 20px;
+    left: 60px;
     top: 50px;
 }
 .contents .search{
@@ -138,8 +141,8 @@ body {
     position: relative;
     top: 12px;
     border: 1px solid;
-    border-color: #5f0080;
-    background-color: #5f0080;
+    border-color: #ff3d00;
+    background-color: #ff3d00;
     color: #fff;
     padding: 10px;
     padding-right: 100px;
@@ -151,8 +154,8 @@ body {
     top: 3px;
     left: -5px;
     border: 1px solid;
-    border-color: #5f0080;
-    background-color: #5f0080;
+    border-color: #ff3d00;
+    background-color: #ff3d00;
     color: #fff;
     padding: 10px;
     padding-right: 79px;
@@ -163,8 +166,8 @@ body {
     top: 3px;
     left: -5px;
     border: 1px solid;
-    border-color: #5f0080;
-    background-color: #5f0080;
+    border-color: #ff3d00;
+    background-color: #ff3d00;
     color: #fff;
     padding: 10px;
     padding-right: 100px;
@@ -176,8 +179,8 @@ body {
     top: 12px;
     left: 0px;
     border: 1px solid;
-    border-color: #5f0080;
-    background-color: #5f0080;
+    border-color: #ff3d00;
+    background-color: #ff3d00;
     color: #fff;
     padding: 10px;
     padding-right: 82px;
@@ -188,8 +191,8 @@ body {
     top: 7px;
     left: 0px;
     border: 1px solid;
-    border-color: #5f0080;
-    background-color: #5f0080;
+    border-color: #ff3d00;
+    background-color: #ff3d00;
     color: #fff;
     padding: 10px;
     padding-right: 68px;
@@ -231,19 +234,19 @@ body {
     top: -2px;
     left: 0px;
     border: 1px solid;
-    border-color: #5f0080;
-    background-color: #5f0080;
+    border-color: #ff3d00;
+    background-color: #ff3d00;
     color: #fff;
     padding: 10px;
-    padding-right: 85.5px;
+    padding-right: 56px;
 }
 .contents .member_Id .id{
     position: relative;
     top: 3px;
     left: 0px;
     border: 1px solid;
-    border-color: #5f0080;
-    background-color: #5f0080;
+    border-color: #ff3d00;
+    background-color: #ff3d00;
     color: #fff;
     padding: 10px;
     padding-right: 85.5px;
@@ -285,10 +288,10 @@ body {
 .contents .dividebox{
     position: relative;
     top: -2px;
-    left: 400px;
+    left: 412px;
     border: 1px solid;
-    border-color: #5f0080;
-    background-color: #5f0080;
+    border-color: #ff3d00;
+    background-color: #ff3d00;
     color: #fff;
     padding: 10px;
     padding-right: 85.5px;
@@ -298,8 +301,8 @@ body {
     top: 3.5px;
     left: 392px;
     border: 1px solid;
-    border-color: #5f0080;
-    background-color: #5f0080;
+    border-color: #ff3d00;
+    background-color: #ff3d00;
     color: #fff;
     padding: 10px;
     padding-right: 90px;
@@ -392,8 +395,8 @@ body {
     top: 13px;
     left: 339px;
     border: 1px solid;
-    border-color: #5f0080;
-    background-color: #5f0080;
+    border-color: #ff3d00;
+    background-color: #ff3d00;
     color: #fff;
     padding: 10px;
     padding-right: 74px;
@@ -446,7 +449,7 @@ body {
 }
 
 .contents h3{
-    background-color:#5f0080;
+    background-color:#ff3d00;
     padding: 13px;
     color: white;
     margin-top:0;
@@ -462,8 +465,8 @@ body {
     top: -60px;
     left: 0px;
     border: 1px solid;
-    border-color: #5f0080;
-    background-color: #5f0080;
+    border-color: #ff3d00;
+    background-color: #ff3d00;
     color: #fff;
     padding: 10px;
     padding-right: 79px;
@@ -485,19 +488,19 @@ body {
     top: -60px;
     left: 500px;
     border: 1px solid;
-    border-color: #5f0080;
-    background-color: #5f0080;
+    border-color: #ff3d00;
+    background-color: #ff3d00;
     color: #fff;
     padding: 10px;
-    padding-right: 73px;
+    padding-right:88px;
 }
 .contents .email{
     position: relative;
     top: -50px;
     left: 0px;
     border: 1px solid;
-    border-color: #5f0080;
-    background-color: #5f0080;
+    border-color: #ff3d00;
+    background-color: #ff3d00;
     color: #fff;
     padding: 10px;
     padding-right: 86px;
@@ -535,8 +538,8 @@ body {
     top: -46px;
     left: 0px;
     border: 1px solid;
-    border-color: #5f0080;
-    background-color: #5f0080;
+    border-color: #ff3d00;
+    background-color: #ff3d00;
     color: #fff;
     padding: 10px;
     padding-right: 57px;
@@ -566,8 +569,8 @@ body {
     top: -45px;
     left: 390px;
     border: 1px solid;
-    border-color: #5f0080;
-    background-color: #5f0080;
+    border-color: #ff3d00;
+    background-color: #ff3d00;
     color: #fff;
     padding: 10px;
     padding-right: 99px;
@@ -583,8 +586,8 @@ body {
     top: -21px;
     left: 0px;
     border: 1px solid;
-    border-color: #5f0080;
-    background-color: #5f0080;
+    border-color: #ff3d00;
+    background-color: #ff3d00;
     color: #fff;
     padding: 30px;
     padding-left: 15px;
@@ -616,8 +619,8 @@ body {
     top: -40px;
     left: 0px;
     border: 1px solid;
-    border-color: #5f0080;
-    background-color: #5f0080;
+    border-color: #ff3d00;
+    background-color: #ff3d00;
     padding: 13px;
     color: #fff;
     

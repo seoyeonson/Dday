@@ -16,37 +16,45 @@
 
     <!-- <div class="wrapper"> -->
         <!-- 사이드 바 -->
-        <div class="sidebar">
-            <!-- 로고(image) -->
-            <div class="logo">
-                <!-- 로고 들어오면 넣어주세요 -->
-                <img src="">로고
-                <!-- 사이트 이름 정해지면 넣어주세요 -->
-                <h1 style="color:#5f0080">&nbsp;&nbsp;&nbsp; 사이트 이름</h1>
-            </div>
-            <!-- 메인페이지 링크 나오면 추가해주세요 -->
+   <div class="sidebar">
+    <!-- 로고(image) -->
+    <div class="logo">
+        <!-- 로고 들어오면 넣어주세요 -->
+        <img src="">로고
+        <!-- 사이트 이름 정해지면 넣어주세요 -->
+        <h1 style="color:#ff3d00">&nbsp;&nbsp;&nbsp; 사이트 이름</h1>
+    </div>
+    <!-- 메인페이지 링크 나오면 추가해주세요 -->
+    <ul>
+        <li>
+            <a href="" class="menu"><img src="/Project/manager/image/globe.png">사이트 바로가기</a>
+        </li>
+        <!-- 회원 관리 -->
+        <li>
+            <a><img src="/Project/manager/image/user.png">회원 관리 <img src="/Project/manager/image/menu-burger.png"
+                    style="float: right; height:20px;"></a>
             <ul>
-                <li>
-                    <a href="" class="menu"><img src="/Project/manager/image/globe.png">사이트 바로가기</a>
-                </li>
-                <!-- 회원 관리 -->
-                <li>
-                    <a><img src="/Project/manager/image/user.png">회원 관리 <img src="/Project/manager/image/menu-burger.png" style="float: right; height:20px;"></a>
-                    <ul>
-                        <li><a href="memberAll.html">전체회원관리</a></li>
-                      <!--   <li><a href="memberReport.html">신고회원관리</a></li> -->
-                    </ul>
-                </li>
-                
-                <li>
-                        <a><img src="/Project/manager/image/settings.png">환경 설정<img src="/Project/manager/image/menu-burger.png" style="float: right; height:20px;"></a>
-                   <!--  <ul>
-                        <li><a href="settingBanner.html">배너 관리</a></li>
-                    </ul> -->
-                </li>
+                <li><a href="/Project/manager/html/member/memberAll.html">전체회원관리</a></li>
+              <!--   <li><a href="memberReport.html">신고회원관리</a></li> -->
             </ul>
-        </div>
-        <!-- 사이드 바 end -->
+        </li>
+        <li>
+            <a><img src="/Project/manager/image/apps.png">콘텐츠 관리<img src="/Project/manager/image/menu-burger.png" style="float: right; height:20px;"></a>
+                <ul>
+                    <li><a href="/Project/manager/html/manager/managerNotice.html">공지사항관리</a></li>
+                    <li><a href="/Project/manager/html/manager/managerFAQ.html">문의하기관리</a></li>
+                </ul>
+    </li>
+        <li>
+            <a><img src="/Project/manager/image/settings.png">환경 설정<img src="/Project/manager/image/menu-burger.png"
+                    style="float: right; height:20px;"></a>
+             <ul>
+                    <li><a href="/Project/manager/html/banner/managerBanner.html">배너 관리</a></li>
+                </ul>
+        </li>
+    </ul>
+</div>
+<!-- 사이드 바 end -->
         
         <!-- </div> -->
         <!-- 회원 검색 -->
@@ -67,11 +75,14 @@
         </span>
         <hr id="hr1">
         <span class="grade">
-        <span class="gradebox">회원등급</span>
+        <span class="gradebox">주문상품건수</span>
         <select name="grade" id="gradebox">
-            <option value="gradebox00">등급</option>
-            <option value="gradebox01">개인회원</option>
-            <option value="gradebox02">사업자회원</option>
+            <option value="gradebox00">0회</option>
+            <option value="gradebox01">10회미만</option>
+            <option value="gradebox02">10회이상</option>
+            <option value="gradebox02">20회이상</option>
+            <option value="gradebox02">30회이상</option>
+            <option value="gradebox02">40회이상</option>
         </select>
         <span class="dividebox">
         <span>회원구분</span>
@@ -100,11 +111,13 @@
         <!-- 회원 검색 End -->
         <!-- 검색된 회원 목록 테이블  -->
         <span class="count">
-        검색 <strong style="color: red;">0</strong>명 / 전체<strong style="color: red;">5712</strong>명
+            <span class="allMember">
+                검색 <strong style="color: red;">0</strong>명 / 전체<strong style="color: red;">5712</strong>명
+            </span>
         <span><select name="selectbydate" id="selectbydate">
             <option value="selectbydate01">회원가입일순</option>
             <option value="selectbydate02">회원번호순</option>
-            <option value="selectbydate03">마일리지순</option>
+            <option value="selectbydate03">적립금순</option>
             <option value="selectbydate04">주문금액순</option>
             <option value="selectbydate05">등급별</option>
             <option value="selectbydate06">승인여부</option>
@@ -121,7 +134,7 @@
           <table class="memberAll">
             <thead>
             <tr>
-                <th>회원번호</th><th>회원명</th><th>아이디</th><th>가입 일자</th><th>마일리지</th><th>주문상품건수</th><th>주문금액</th>
+                <th>회원번호</th><th>회원명</th><th>아이디</th><th>가입 일자</th><th>적립금</th><th>주문상품건수</th><th>주문금액</th>
                 <th>등급</th><th>가입승인</th><th>회원 상세보기</th>
             </tr>
             </thead>
@@ -135,7 +148,7 @@
                 <td>158,000원</td>
                 <td>사업자회원</td>
                 <td>승인</td>
-                <td><button class="seeDetail" onclick="location.href='memberView.html'">상세보기</button></td>
+                <td><button class="seeDetail" onclick="location.href='/Project/manager/html/member/memberView.html'">상세보기</button></td>
               </tr>
               <tr>
                 <td></td>

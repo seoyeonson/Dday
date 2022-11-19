@@ -12,7 +12,7 @@ table {
   background: white;
 }
 
-.contents .memberAll, .contents .question, .contents .banner{
+.contents .memberAll, .contents .question{
   top:25%;
 }
 
@@ -40,5 +40,5 @@ table {
   }
 
   .contents table tr:hover td{
-    background-color: #e1bee7;
+    background-color: #ffcc80;
   }
