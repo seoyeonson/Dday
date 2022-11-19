@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>파트너 페이지</title>
-    <link rel="stylesheet" href="/partner/css/partner.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/partner/css/change.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Project/partner/css/change.css">
+    <link rel="stylesheet" href="/Project/partner/css/partner.css">
 </head>
 <body>
     <div id="container-wrap" class="container-wrap">
@@ -18,7 +18,22 @@
             <div id="header" class="col-xs-12">
                 <nav class="navbar">
                     <div class="container">
-                        <div class="navbar-inner">
+                        <div class="navbar-inner" style="margin-right: 0px;">
+                            <div class="collapse navbar-collapse">
+                                <ul class="nav navbar-nav reform">
+                                    <li class="">
+                                        <a href="/policy/base_info.php" id="menu_policy" style="width:97.083333333333px;">정보수정</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="/goods/goods_list.php" id="menu_goods" style="width:97.083333333333px;">제품등록</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="/order/order_list_all.php" id="menu_order" style="width:97.083333333333px;">판매관리</a>
+                                    </li>
+                                    <li class="">
+                                        <a href="/member/member_list.php" id="menu_member" style="width:97.083333333333px;">배송관리</a>
+                                    </li>
+                            </ul></div>
                             <div class="navbar-header">
                                 <a class="navbar-brand" href="#"></a>
                             </div>
@@ -30,7 +45,7 @@
                                             <a href="#" class="dropdown-toggle gnb-idinfo" id="headerSubMenuManager" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
                                                 <span>판매자</span>님 (
                                                 <span>wanted</span> )
-                                                    <img src="/partner/image/nav_menu_bar.gif">
+                                                    <img src="/project/partner/image/nav_menu_bar.gif">
                                                 <span>로그아웃</span>
                                             </a>
                                             <ul class="dropdown-menu gnb-dropdown-menu" aria-labelledby="headerSubMenuManager">
@@ -184,7 +199,8 @@
                                                     <td colspan="3" class="form-inline">
                                                         <input type="text" name="email[]" value="" class="form-control width-lg"> @
                                                         <input type="text" id="email" name="email[]" value="" class="form-control width-md js-email-domain">
-                                                        <select class=" email_domain" id="email_domain" name=""><option value="self">직접입력</option>
+                                                        <select class="email_domain" id="email_domain" name="">
+                                                            <option value="self">직접입력</option>
                                                             <option value="naver.com">naver.com</option>
                                                             <option value="hanmail.net">hanmail.net</option>
                                                             <option value="daum.net">daum.net</option>
@@ -236,6 +252,6 @@
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script src="/partner/js/change.js"></script>
+    <script src="/Project/partner/js/change.js"></script>
 </body>
 </html>
