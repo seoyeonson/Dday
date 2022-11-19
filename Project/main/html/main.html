@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/project/main//css/banner.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="/project/main//css/main_banners.css">
     <link rel="stylesheet" href="/project/main//css/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/project/main/css/header.css">
     <link rel="stylesheet" href="/project/main/css/footer.css">
     <link rel="stylesheet" href="/project/main/css/instargram.css">
     <link rel="stylesheet" href="/Project/main/css/swiper.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="/Project//main/css/line-banner.css">
+    
     <title>컬리-마켓컬리/뷰티컬리</title>
 </head>
 <!--헤더-->
@@ -36,14 +38,15 @@
                 <!-- 로그인바 종료-->
                 <div class="subsearchbar">
                     <div class="logo">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODIiIGhlaWdodD0iNDIiIHZpZXdCb3g9IjAgMCA4MiA0MiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0ibm9uZSI+CiAgICAgICAgPHBhdGggZD0iTTAgMGg4MnY0MkgweiIvPgogICAgICAgIDxwYXRoIGQ9Ik02Mi41Ljk2NWMxLjAyNi0uNTU3IDIuNDY2LS43MTggMy4zNTYuMTA3Ljg5LjgyNS42NzYgMi4wNDggMCAzLjk3MyAwIDAtMS41MDUgNC4wNjYtMy4wNTUgOC4yNjJsLS4zOTggMS4wOGMtMS40MTQgMy44My0yLjc2MiA3LjQ4Ny0yLjkyNyA3Ljk2My0xLjQ5OCA0LjI0NSAxLjk2NyA0LjEyMiA0LjAyNC0uMTUyIDEuMTU5LTIuMzk0IDIuNjQ0LTYuMzU3IDIuNjQ0LTYuMzU3LjUyNC0xLjU2My42ODItMi41MDQuMzU5LTIuODI4LS4xMDctLjExMy4wNDUtLjI1Mi4xOC0uMzIzIDIuMjY5LTEuMTQ5IDQuNjMtLjA3MiAzLjMzNiAzLjMxbC0uMDU0LjEzOGMtLjM4Ny45NzgtMi42OCA2LjczMy0yLjY4IDYuNzMzLS42NzYgMS42Ni0uNTk1IDMuMjM2LjQxOCAzLjIzNi42ODYtLjAwNCAxLjQ2LS4zODUgMi4zMDQtMS4wODggMS44MTgtMS41MDQgMy4yMjItNC4zMTIgMy43MjctNS40NTQuMjMtLjUwOCAxLjA4Ny0yLjQyIDEuNzY2LTQuMzYxLjIzNi0uNjY1LjM2OS0xLjM2LjM5NS0yLjA2NWEuNDQzLjQ0MyAwIDAgMSAuMTk0LS40NTkgMy41NzggMy41NzggMCAwIDEgMS42Ny0uNDIgMS44MDUgMS44MDUgMCAwIDEgMS40NjUuNzA1Yy40NDMuNTk4LjU2NiAxLjU3OS4xMDMgMi44MDgtLjEyLjMyLTMuNzc1IDkuOTU4LTMuNzc1IDkuOTU4di4wMjZjMi4wNDEtMS4yMjMgMy44Ny0xLjMxMyA0Ljk1My0uODU0bC0uMDAzLS4wMTNjMS40OTUuNjQ3IDEuOTkgMi40NC45MzggMy41NTktLjEwMy4xMS0uMzYyLjA4NC0uMzYyLS4wOS0uMDk0LTEuMjUzLTIuNTE3LTMuNDk1LTYuMTA5LTEuMDc1bC0uMTQ1LjM4NS0xLjA2OCAyLjgwOGMtMi42MiA3LjAxOC01LjQwMyAxMi4xMzYtOS40MTUgMTEtMi42ODgtLjc2LTIuMzc3LTQuNjA3LjUxNS03Ljc5YTU0LjkgNTQuOSAwIDAgMSA2LjQ5LTUuODk4Yy4wNjgtLjE4OC4xMy0uMzUuMTg4LS41MTEuMjc4LS43OC40OTEtMS40MzQuNzkyLTIuMjY1bC4xNTktLjUxOGMtLjE3OC4yLS40OTguNTczLS43MTIuODEyLS43MTIuOC0yLjQ5NCAyLjc1Ny01LjMyOSAyLjIwN2wtLjIzNC0uMDUyYy0yLjA1LS41MDgtMi42MDgtMS45ODYtMi42NTUtMy4yNzctMi4xNDIgMi42NTYtNC4zNTEgMy40MjYtNS44MDcgMy4zOS0xLjk0OC0uMDQ4LTMuMzc4LTEuNTE0LTIuNDI3LTQuMjkgMS4wNTgtMy4xMDYgNS41LTE1LjMzMiA2Ljc5NS0xOSAuNDg1LTEuNTguNjY2LTIuNTguMTg0LTIuOTc0LS4xMjMtLjEwMy4wNTItLjI2NS4yLS4zNDZ6bTguMzY0IDI4Ljc3OGMtMS4xMDMuODgtNS41MjYgNC41My02Ljc1MiA3LjQ0MS0uNTA1IDEuMTk3LS4zNzYgMi4xNDkuNDg4IDIuMjMzIDEuOTYuMTk0IDQuMDEyLTMuODE4IDYuMjI4LTkuNTEyek0xNi4wMjggNS4zNTJjLS4wODcuMzMyLTEuMzE5IDMuODYtMi43MDEgNy43NDlsLS4yMDkuNTg2LS4yMS41ODktLjIxNS42MDRjNC42OTEtMS4xMjMgMTMuMDY0LTYuNTcgMTQuMDM1LTEwLjA4NS4xMi0uMTYxLjI5LS4yMi41NjYtLjAzNS40OTUuMzMuNjg2IDEuMTU1LjQ5NSAxLjkxOC0uNzY0IDMuMDM4LTYuNDE2IDcuMzQxLTExLjM3OSA5LjU1NC42MTIgMS42MzcgMi42ODIgNi4yNjcgNC4yMDYgOS4xMTEgMS42NjMgMy4xMTkgMy40MiA0LjU3NSA2LjE0NyA0LjczNyAxLjQ2LjA4NSAzLjAxNC0uNDQ3IDMuODkzLTEuMjJsLjE0OC0uMTQtLjAxMy4wM2MuMTk0LS4yMDQuNTExLjA3Ny4zNjYuMzIzYTYuNSA2LjUgMCAwIDEtNC45OTIgMi44NjdjLTYuMzQ1LjQyNy04Ljc3NC0zLjg3LTEzLjMwNC0xNC40OTQtLjM2Ni4xMjYtLjgwOS4yODgtMS4yNTUuNDUtLjA3NS4xODctMi4wNyA1LjY0Mi0yLjEzIDUuODIzLS45NDQgMi44Ny0xLjAwNSA0LjQ0Mi0uMzU4IDQuODk1LjE0NS4wOS4wNzQuMzMzLS4xNzguNDE0LTIuNTI3Ljc5Ni00Ljg1My0uNjk2LTMuNTU5LTQuNDQyIDEuMTYxLTMuMzE2IDUuNjktMTYuMTggNi45MTQtMTkuNjI2LjQyNy0xLjI5NC4xOTctMi4xMjUtLjQ5Mi0yLjMwNkM4LjUwNiAxLjc4Ljg3NyA4Ljc0OSAxLjk3MSAxNS4xODRjLjE5IDEuMTIuOTggMS43NDcgMS4zNzggMS42NjNhLjEzMy4xMzMgMCAwIDEgLjE1Ni4xNTkgMS41MDggMS41MDggMCAwIDEtMS44NDUgMS4wMzJDLjQ5IDE3Ljc4Mi4xMDcgMTYuNTI3LjA0MyAxNS44OC0uNjAxIDkuMjIgNi4xNDggMS4yMyAxMi4zODkuNThjMi4zNzgtLjI1IDQuNjEuOTYgMy42NCA0Ljc3MnptMjQuMDQgOS45MTMtLjA2LjIwNy0yLjgzIDguMTZjLS4zMDQuODUtLjEgMS43MzcuNTAxIDEuOTAyIDEuNzU3LjQ4MiA0LjAyOC0yLjE0NSA1LjEzMS00LjczM2E2Ny43OTQgNjcuNzk0IDAgMCAwIDEuNDc2LTMuODE1Yy41ODItMS42NDMgMS4xMDYtMy4xODMuNzgzLTMuOTA4LS4wNzUtLjE2OC4wNDUtLjI1Ni4yMjMtLjM1LjUwNS0uMjU1IDIuMjI2LS44MjUgMy4xNDEuMDY4LjY5NS42NzQuNjA5IDEuNzcxLS4wMyAzLjQzN2wtLjA5Ni4yNDIuMjItLjI3M2MyLjcwMy0zLjMgNC43OTItNC4yOTIgNi41NjMtMy41OTdsLjE0Ny4wNjJjMi4zODEgMS4wNzQgMS4xNDYgNS4yMTUtMi4xMTYgNS40OC0uMi4wMTctLjM1Ni0uMTI2LS4xNTgtLjQwNy4zOTUtLjYwNS4zNTYtMS45MDktLjc5Ni0yLjAyMi0xLjE1Mi0uMTEzLTIuODMgMS4yMDctNC4wMzggMi44NDQtMS4wODQgMS40NS0yLjIgMy45MTEtMy4zMjIgNy4yNzMtLjI3Mi44MTgtLjE0MyAxLjAxMi0uMTEgMS4wNjdhLjEuMSAwIDAgMSAwIC4wOTRjLS4xNDMuMjcyLS45NjUuNTk2LTEuNzYuNTk2LTEuNjI1LS4wMDctMi4yOTEtLjk0NS0xLjk2Ny0yLjQzNy0xLjg0OCAxLjc2NC0zLjcxMSAyLjYxNC01LjM1NSAyLjQ2NmEyLjUyNCAyLjUyNCAwIDAgMS0yLjIzNi0zLjEwM2MtMS40MjYgMS44MDktMy41NDIgMy4yNjgtNS42OTcgMy4wNjctMi4xNTUtLjItMy41LTEuNjY2LTIuODAyLTQuNzg4LjU5LTIuNTk4IDEuNTkyLTUuMjkgMi4yMDctNy4wMjcuNTE0LTEuNDU2LjYxOC0yLjQwNy4yOTQtMi43NS0uMTAzLS4xMTQuMDU1LS4yNS4xOTQtLjMyNCAxLjY5LS44ODYgNC4zOTQtLjMxNCAzLjYzIDIuMDktLjgwMiAyLjUyNy0yLjI1NSA2LjQ5LTIuNTUgNy40LS43MzcgMi4yODctLjI5IDMuNTIzLjc1NSAzLjU4IDEuMDQ1LjA2IDIuNDMtLjk2IDMuNDItMi41MDMgMS43Ni0yLjUyNCAyLjU4MS01LjY4NSAzLjM3Ny03Ljg4Mi4yMDQtLjU2LjUyNy0xLjg2Ni4xODUtMi4zNTItLjA5MS0uMTIzLjA2Ny0uMjU4LjI3NS0uMzcyIDEuNTM3LS44NDkgNC4yODUtLjY0IDMuNDAyIDIuNjA4eiIgZmlsbD0iIzVGMDA4MCIvPgogICAgPC9nPgo8L3N2Zz4K" alt="마켓컬리 로고" class="main-logo e1s3pt0j0">
-                        <button class="active purple text1010">마켓컬리</button>
-                        <button class="gray">뷰티컬리</button>
+                        <img src="/Project/main/image/banner/logo-대체.webp" alt="마켓컬리 로고" class="main-logo e1s3pt0j0">
+                        <button class="active purple text1010">D-Day</button>
                     </div>
                     <div class="hiddenlogo">
                         <div class="mainsearchbar">
                             <input id="gnb_search" placeholder="검색어를 입력해주세요" required="" class="searchbar-title" value="">
-                            <button id="submit" aria-label="submit" class="searchbar-search"></button>
+                            <button id="submit" aria-label="submit" class="searchbar-search">
+                                <img src="/Project/main/image/main/search.png" class="search-image">
+                            </button>
                         </div>
                     </div>
                     <div class="hiddenlogo">
@@ -180,16 +183,16 @@
                 </div>
                 <ul class="main-title">
                     <li class="main-subtitle">
+                        <span class="main-subsubtitle">당일 판매상품</span>
+                    </li>
+                    <li class="main-subtitle">
                         <span class="main-subsubtitle">신상품</span>
                     </li>
                     <li class="main-subtitle">
                         <span class="main-subsubtitle">베스트</span>
                     </li>
                     <li class="main-subtitle">
-                        <span class="main-subsubtitle">알뜰쇼핑</span>
-                    </li>
-                    <li class="main-subtitle">
-                        <span class="main-subsubtitle">특가/혜택</span>
+                        <span class="main-subsubtitle">대박 할인 상품</span>
                     </li>
                 </ul>
                 <div class="delivery-text-box">
@@ -206,177 +209,972 @@
         <div class="centorbody">
             <div class="bannerStart">
                 <!--메인 배너 시작-->
-                <!-- Slider main container -->
-                <div type="MAIN_BANNERS" class="css-w8rns e17fdfn90"><div class="css-1kf59r7 e1dkubq61"><div class="swiper swiper-initialized swiper-horizontal swiper-pointer-events"><div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-7191px, 0px, 0px);"><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="13" style="cursor: pointer; width: 799px;"><a href="https://www.kurly.com/shop/event/kurlyEvent.php?htmid=event/card_benefit/card_benefit"><img class="main-banner-image" src="https://product-image.kurly.com/cdn-cgi/image/format=auto/banner/main/pc/img/f69e8e21-2119-429f-8721-72ecf4003120.jpg" alt="main-banner-703"></a></div><div class="swiper-slide" data-swiper-slide-index="0" style="cursor: pointer; width: 799px;"><a href="https://www.kurly.com/categories/399"><img class="main-banner-image" src="https://product-image.kurly.com/cdn-cgi/image/format=auto/banner/main/pc/img/0c4fedbd-ff20-4c65-8dad-7048e906e1aa.jpg" alt="main-banner-910"></a></div><div class="swiper-slide" data-swiper-slide-index="1" style="cursor: pointer; width: 799px;"><a href="https://www.kurly.com/categories/794"><img class="main-banner-image" src="https://product-image.kurly.com/cdn-cgi/image/format=auto/banner/main/pc/img/ee9293f9-1144-4436-8903-baee402faa0f.jpg" alt="main-banner-897"></a></div><div class="swiper-slide" data-swiper-slide-index="2" style="cursor: pointer; width: 799px;"><a href="https://www.kurly.com/shop/event/kurlyEvent.php?htmid=event/2022/1117/kurlystmas/kurlystmas"><img class="main-banner-image" src="https://product-image.kurly.com/cdn-cgi/image/format=auto/banner/main/pc/img/3c2e8166-0859-43ce-a114-8aae6b885f1b.jpg" alt="main-banner-889"></a></div><div class="swiper-slide" data-swiper-slide-index="3" style="cursor: pointer; width: 799px;"><a href="https://www.kurly.com/shop/event/kurlyEvent.php?htmid=event/2022/1117/season_food"><img class="main-banner-image" src="https://product-image.kurly.com/cdn-cgi/image/format=auto/banner/main/pc/img/4cf2b3be-d018-4c7e-a9b0-0d7cf5bed76f.jpg" alt="main-banner-892"></a></div><div class="swiper-slide" data-swiper-slide-index="4" style="cursor: pointer; width: 799px;"><a href="https://www.kurly.com/categories/606"><img class="main-banner-image" src="https://product-image.kurly.com/cdn-cgi/image/format=auto/banner/main/pc/img/cdaec32c-a586-4916-ad57-4752334ead65.jpg" alt="main-banner-894"></a></div><div class="swiper-slide" data-swiper-slide-index="5" style="cursor: pointer; width: 799px;"><a href="https://www.kurly.com/categories/699"><img class="main-banner-image" src="https://product-image.kurly.com/cdn-cgi/image/format=auto/banner/main/pc/img/8d33b043-d9d7-4453-a7f5-d4a65021a440.jpg" alt="main-banner-896"></a></div><div class="swiper-slide" data-swiper-slide-index="6" style="cursor: pointer; width: 799px;"><a href="https://www.kurly.com/categories/779"><img class="main-banner-image" src="https://product-image.kurly.com/cdn-cgi/image/format=auto/banner/main/pc/img/be5196a5-1705-411e-8a3b-b1922dd0e439.jpg" alt="main-banner-900"></a></div><div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="7" style="cursor: pointer; width: 799px;"><a href="https://www.kurly.com/categories/619"><img class="main-banner-image" src="https://product-image.kurly.com/cdn-cgi/image/format=auto/banner/main/pc/img/c5af26c1-2e36-478f-bbe3-d9385512be95.jpg" alt="main-banner-893"></a></div><div class="swiper-slide swiper-slide-active" data-swiper-slide-index="8" style="cursor: pointer; width: 799px;"><a href="https://www.kurly.com/categories/586"><img class="main-banner-image" src="https://product-image.kurly.com/cdn-cgi/image/format=auto/banner/main/pc/img/9ded88b1-6ca5-4649-8f37-3ee44cce93fa.jpg" alt="main-banner-895"></a></div><div class="swiper-slide swiper-slide-next" data-swiper-slide-index="9" style="cursor: pointer; width: 799px;"><a href="https://www.kurly.com/shop/event/kurlyEvent.php?htmid=event/value_item/221110"><img class="main-banner-image" src="https://product-image.kurly.com/cdn-cgi/image/format=auto/banner/main/pc/img/583d7090-fb92-4756-b0c9-6cd9b5c7cdde.jpg" alt="main-banner-388"></a></div><div class="swiper-slide" data-swiper-slide-index="10" style="cursor: pointer; width: 799px;"><a href="https://www.kurly.com/shop/goods/event.php?&amp;"><img class="main-banner-image" src="https://img-cf.kurly.com/cdn-cgi/image/format=auto/banner/main/pc/img/39c28de9-2a7f-43bc-9e41-648befae3c95" alt="main-banner-358"></a></div><div class="swiper-slide" data-swiper-slide-index="11" style="cursor: pointer; width: 799px;"><a href="https://www.kurly.com/shop/main/html.php?htmid=event/kurly.htm&amp;name=friend"><img class="main-banner-image" src="https://product-image.kurly.com/cdn-cgi/image/format=auto/banner/main/pc/img/cb7bd55a-61b3-4f55-bd4e-87ef4160da7b.jpg" alt="main-banner-651"></a></div><div class="swiper-slide" data-swiper-slide-index="12" style="cursor: pointer; width: 799px;"><a href="https://www.kurly.com/shop/main/html.php?htmid=event/kurly.htm&amp;name=basket"><img class="main-banner-image" src="https://img-cf.kurly.com/cdn-cgi/image/format=auto/banner/main/pc/img/f3dc61b3-068e-433e-a02d-c508a21cd578" alt="main-banner-150"></a></div><div class="swiper-slide" data-swiper-slide-index="13" style="cursor: pointer; width: 799px;"><a href="https://www.kurly.com/shop/event/kurlyEvent.php?htmid=event/card_benefit/card_benefit"><img class="main-banner-image" src="https://product-image.kurly.com/cdn-cgi/image/format=auto/banner/main/pc/img/f69e8e21-2119-429f-8721-72ecf4003120.jpg" alt="main-banner-703"></a></div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" style="cursor: pointer; width: 799px;"><a href="https://www.kurly.com/categories/399"><img class="main-banner-image" src="https://product-image.kurly.com/cdn-cgi/image/format=auto/banner/main/pc/img/0c4fedbd-ff20-4c65-8dad-7048e906e1aa.jpg" alt="main-banner-910"></a></div></div></div><button type="button" direction="left" class="css-1lsz3kj e9otvnb0"></button><button type="button" direction="right" class="css-kfz8up e9otvnb0"></button><div class="e1dkubq60 css-1so81fs efnzk70">9 / 14</div></div></div>
-                <!--라인 배너-->                
-                <div class="LINE_BANNERS">
-                    <div class="css-59n5un e1ne12di0">
-                        <a href="https://www.kurly.com/main/beauty" class="css-1lougm2 ezbfqia4">
-                            <img src="https://product-image.kurly.com/banner/random-band/pc/img/ecf8736a-84d7-489e-8124-c5249d9288d9.jpg" alt="">
-                        </a>
+                <div class="main-banner">
+                    <div class="swiper-container-mySwiper">
+                        <div class="swiper-container-mySwiper">
+                            <div class="swiper-wrapper" id="swiper-wrapper" aria-live="polite" style="transition-duration: 0ms; transform: translate3d(-1660px, 0px, 0px);">
+                                <div class="swiper-slide" role="group" aria-label="1 / 5" style="width: 1050px;">
+                                    <img class="main-banner-image" src="/Project//main/image/banner/banner1.avif">
+                                </div>
+                                <div class="swiper-slide" role="group" aria-label="2 / 5" style="width: 1050px;">
+                                    <img class="main-banner-image" src="/Project//main/image/banner/banner2.avif">
+                                </div>
+                                <div class="swiper-slide" role="group" aria-label="3 / 5" style="width: 1050px;">
+                                    <img class="main-banner-image" src="/Project//main/image/banner/banner3.avif">
+                                </div>
+                                <div class="swiper-slide" role="group" aria-label="4 / 5" style="width: 1050px;">
+                                    <img class="main-banner-image" src="/Project//main/image/banner/banner4.avif">
+                                </div>
+                                <div class="swiper-slide" role="group" aria-label="5 / 5" style="width: 1050px;">
+                                    <img class="main-banner-image" src="/Project//main/image/banner/banner5.avif">
+                                </div>
+                            </div>
+                            <div class="swiper-button-next" style="color: #5f0080;" tabindex="0" role="button" aria-label="다음 슬라이드" aria-controls="swiper-wrapper-1010cb2109cf5e0ef89" aria-disabled="false"></div>
+                            <div class="swiper-button-prev" style="color: #5f0080;" tabindex="0" role="button" aria-label="이전 슬라이드" aria-controls="swiper-wrapper-1010cb2109cf5e0ef89" aria-disabled="false"></div>
+                            <div class="swiper-pagination swiper-pagination-fraction swiper-pagination-horizontal mainbanner-text" style="left:auto">
+                                <span class="swiper-pagination-current">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">1
+                                        </font>
+                                    </font>
+                                </span>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;"> / </font>
+                                </font>
+                                <span class="swiper-pagination-total">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">5
+                                        </font>
+                                    </font>
+                                </span>
+                            </div>
+                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true">
+
+                            </span>
+                        </div>
                     </div>
                 </div>
-                <!--만원의 행복-->
-                <div class="TEN_THOUSAND_HAPPNIES"></div>
-                <!--특가 할인-->
-                <div class="SPECIAL_DEALS"></div>
-                <!--못난이 농/수산물 제품-->      
-                <div class="UGLY_PRODUCTION"></div>
-                <!--랜덤 홍보 상품들-->
-                <div class="RANDOM_COLLECTION_ARTICLE"></div>          
-                <!-- 인스타그램 리뷰 -->
-                <div type="INSTAGRAM_REVIEW" class="instagram-start">
-                    <div class="instagram-container">
-                        <div class="instagram-header">
-                            <div class="instagram-header-title">
-                                <span class="instagram-header-title-text">인스타그램 고객 후기</span>
-                            </div>
-                            <p class="insta-more-link">더 많은 고객 후기가 궁금하다면?</p>
-                        </div>
-                        <div class="instagram-pictures">
-                            <div class="swiper swiper-initialized swiper-horizontal swiper-pointer-events instagram-pictures-action">
-                                <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px);">
-                                    <div class="swiper-slide swiper-slide-active" style="width: 160px; margin-right: 18px;">
-                                        <a href="https://www.instagram.com/p/Ck7QVbXJqTA/" class="instargram-picture-link">
-                                            <img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/315373790_806876860605472_8957692286872105574_n.jpg?_nc_cat=101&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=uLd05kMXe90AX9k2L3E&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfC-3JAzJG_0vmyCSvWuFKMBVFd4QOP5mwQXnwGssU9JHg&amp;oe=637880D2" alt="인스타그램 리뷰 사진" class="instagram-review-picture">
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide swiper-slide-next" style="width: 160px; margin-right: 18px;">
-                                        <a href="https://www.instagram.com/p/CkzhY39pO-B/" class="instargram-picture-link">
-                                            <img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/314987783_226737453013128_853120366017659792_n.jpg?_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=lGxaI7SiTt4AX-PQDy0&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBa7zeQNwob7QuOa7Nu0YgixslgtJQSAXeGGjh0EbMCdw&amp;oe=6379CF3B" alt="인스타그램 리뷰 사진" class="instagram-review-picture">
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide" style="width: 160px; margin-right: 18px;">
-                                        <a href="https://www.instagram.com/p/CkpuVKPuxXw/" class="instargram-picture-link">
-                                            <img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/314997544_1212769972786321_7249674406779949199_n.jpg?_nc_cat=105&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=tkBA0L6qSH0AX95nTAm&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBb76XTAHWdz4I4SRxGIdqD8cF2YmlK2uxpmOORPJZU3Q&amp;oe=6378743E" alt="인스타그램 리뷰 사진" class="instagram-review-picture">
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide" style="width: 160px; margin-right: 18px;">
-                                        <a href="https://www.instagram.com/p/Ckc1_rSuEmS/" class="instargram-picture-link">
-                                            <img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/313790076_432398388865957_6046685752831462965_n.jpg?_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=ZkhqrszNm_wAX8s804Q&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBdnULSRewaekAle3VI0TiLbeAuKLlSZHaMOaG3p7Hjlg&amp;oe=6378E2D6" alt="인스타그램 리뷰 사진" class="instagram-review-picture">
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide" style="width: 160px; margin-right: 18px;">
-                                        <a href="https://www.instagram.com/p/CkXp5KXuaGO/" class="instargram-picture-link">
-                                            <img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/313085266_137402835734062_6122978044960999051_n.jpg?_nc_cat=106&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=PwKmtesmNhAAX9AVWsn&amp;_nc_oc=AQlKPpdKiQSzL0CT0ANIKLo9I_KhRLKEX7Br-D8BV5OHRZicDvN7oA_o5Z8LDjRw6J4&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfDKU93fUe4DHrvGKWYt27Avj5JSkezf3zhU6x06eqweuw&amp;oe=637884D1" alt="인스타그램 리뷰 사진" class="instagram-review-picture">
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide" style="width: 160px; margin-right: 18px;">
-                                        <a href="https://www.instagram.com/p/CkKL9B-J1ui/" class="instargram-picture-link">
-                                            <img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/312741110_662153698628851_2699410317448417732_n.jpg?_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=6XMwHCaJJJoAX_vHCBh&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBfkOs5uDUSs_GRW2w61HoajVotpme2SiI5W9k-7QT7jA&amp;oe=6378ED38" alt="인스타그램 리뷰 사진" class="instagram-review-picture">
-                                        </a>
-                                    </div>
-                                    <!--스와이프 사용
-                                    <div class="swiper-slide" style="width: 160px; margin-right: 18px;">
-                                        <a href="https://www.instagram.com/p/CkFKcMgpHNT/" class="instargram-picture-link">
-                                            <img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/312839699_1159484471620182_1597476899436521181_n.jpg?_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=RBrm5Qie5QcAX-qwOyw&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfAlQXXIhEvFCMKzeqy9VEDnvTmIf1e6zPlamktT7crlxg&amp;oe=63786553" alt="인스타그램 리뷰 사진" class="instagram-review-picture">
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide" style="width: 160px; margin-right: 18px;">
-                                        <a href="https://www.instagram.com/p/Cj9M1l6PkzS/" class="instargram-picture-link">
-                                            <img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/312137551_778717409858472_5225029397322551227_n.jpg?_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=yaYqXyNdm-kAX_R7_c2&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBR4fWr8t9nY28bnK-6vPfwp87VZyPgr4O7aqdemuFJlQ&amp;oe=6379DCCD" alt="인스타그램 리뷰 사진" class="instagram-review-picture">
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide" style="width: 160px; margin-right: 18px;">
-                                        <a href="https://www.instagram.com/p/CjzEClFpwwC/" class="instargram-picture-link">
-                                            <img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/311791620_1093491501269350_3386006715609376467_n.jpg?_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=8IzOBQ993wAAX8lh58f&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfC33awBHoOLj1VyEMRvXKCKWELrtaS-CFu4v7xdPv8Evw&amp;oe=637A39D9" alt="인스타그램 리뷰 사진" class="instagram-review-picture">
-                                        </a>
-                                        </div>
-                                        <div class="swiper-slide" style="width: 160px; margin-right: 18px;">
-                                            <a href="https://www.instagram.com/p/CjrNwwnpRny/" class="instargram-picture-link">
-                                                <img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/311720851_822311202449568_7762828478912241483_n.jpg?_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=0oJYGmJH2oAAX8XYgRh&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfDxr1IuiDeNtadSbRyDXMlsWERF50-Sb4Om_nc7vBLRwg&amp;oe=637978C2" alt="인스타그램 리뷰 사진" class="instagram-review-picture">
-                                            </a>
-                                        </div>
-                                        <div class="swiper-slide" style="width: 160px; margin-right: 18px;">
-                                            <a href="https://www.instagram.com/p/CjmQFmSpoYM/" class="instargram-picture-link">
-                                                <img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/311204622_687308355728135_7804914774459396276_n.jpg?_nc_cat=106&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=G-oRf-y2KFMAX9nfQTP&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfB5uCWXr3Flj_pArxzFbxvhEjpwJKUnO7-5byBw938X4w&amp;oe=6378CAC4" alt="인스타그램 리뷰 사진" class="instagram-review-picture">
-                                            </a>
-                                        </div>
-                                        <div class="swiper-slide" style="width: 160px; margin-right: 18px;">
-                                            <a href="https://www.instagram.com/p/CjZyywlOCud/" class="instargram-picture-link">
-                                                <img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/310628916_403824521773760_7911102505631603367_n.jpg?_nc_cat=106&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=sK7OS5xA8MQAX9lzgIW&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfDw-SxG6FvKxmFeMMnwamtMpmFJKzcFxTAu_7Xmwyv1Bw&amp;oe=6378A428" alt="인스타그램 리뷰 사진" class="instagram-review-picture">
-                                            </a>
-                                        </div>
-                                        <div class="swiper-slide" style="width: 160px; margin-right: 18px;">
-                                            <a href="https://www.instagram.com/p/CjUQ_x1pHwM/" class="instargram-picture-link">
-                                                <img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/310391078_504796974797396_8657874332779327545_n.jpg?_nc_cat=101&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=fjgs5XxWFDYAX85D6IN&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfCsNJJ2tAom90hzi0kpkE40wmiyzbOjPtJ-p9ujlebS6Q&amp;oe=6379E078" alt="인스타그램 리뷰 사진" class="instagram-review-picture">
-                                            </a>
-                                        </div>
-                                        <div class="swiper-slide" style="width: 160px; margin-right: 18px;">
-                                            <a href="https://www.instagram.com/p/CjCNYHTJ52W/" class="instargram-picture-link">
-                                                <img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/309229825_1107710973184762_8516820818036852765_n.jpg?_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=AU3IQ6wLKIcAX_1XcJ8&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfDKSQ_KSRUPpuQaHwyNKD_3AQHgaH5nLNP-p74oC6jvwA&amp;oe=6379CCCA" alt="인스타그램 리뷰 사진" class="instagram-review-picture">
-                                            </a>
-                                        </div>
-                                        <div class="swiper-slide" style="width: 160px; margin-right: 18px;">
-                                            <a href="https://www.instagram.com/p/Ci87CYXJbgt/" class="instargram-picture-link">
-                                                <img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/308659141_3421879941377381_1255681493343267961_n.jpg?_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=D9X2-eaa7s8AX8_qKo6&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfA_4Pi6w403e19yGgGTbK-NO_7xXKBCel4haNWs_3-uFQ&amp;oe=637A355D" alt="인스타그램 리뷰 사진" class="instagram-review-picture">
-                                            </a>
-                                        </div>
-                                        <div class="swiper-slide" style="width: 160px; margin-right: 18px;">
-                                            <a href="https://www.instagram.com/p/CiwIdnmpzMk/" class="instargram-picture-link">
-                                                <img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/308012437_164943016114341_5747017272076400720_n.jpg?_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=BpgC3gJAb9AAX8yiwux&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfDuI-KotTZzZJwVaHX1Vogh2AZ1TmOrjEBSL4VifHEPyg&amp;oe=637A32AE" alt="인스타그램 리뷰 사진" class="instagram-review-picture">
-                                            </a>
-                                        </div>
-                                        <div class="swiper-slide" style="width: 160px; margin-right: 18px;">
-                                            <a href="https://www.instagram.com/p/CirAP72pGE4/" class="instargram-picture-link">
-                                                <img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/307738662_696168621866931_574881113612347869_n.jpg?_nc_cat=110&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=IivmhABEkscAX-d78R8&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfAtG-sXC2ro3tCOtLBFsJSR8CRKoLd__kvnyxNOYtActw&amp;oe=6379B215" alt="인스타그램 리뷰 사진" class="instagram-review-picture">
-                                            </a>
-                                        </div>
-                                        <div class="swiper-slide" style="width: 160px; margin-right: 18px;">
-                                            <a href="https://www.instagram.com/p/Cijp--nplZ-/" class="instargram-picture-link">
-                                                <img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/306571115_2876436302650329_7006766452757595392_n.jpg?_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=_ZeG_bwWg0sAX8nnna6&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBkfO9eBCbsk8_w2zuwbOosNd2IiR0ykvJTCU3JCsmUHQ&amp;oe=6379C2C0" alt="인스타그램 리뷰 사진" class="instagram-review-picture">
-                                            </a>
-                                        </div>
-                                        <div class="swiper-slide" style="width: 160px; margin-right: 18px;">
-                                            <a href="https://www.instagram.com/p/CieDsl3JUdg/" class="instargram-picture-link">
-                                                <img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/306390856_106601005534645_9099098834244282637_n.jpg?_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=A4ExD_j3atUAX8Wnpp0&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBORj1luSov6hOwbVNbAvx44X9E97yI80dSpVhRqyku0g&amp;oe=637938F0" alt="인스타그램 리뷰 사진" class="instagram-review-picture">
-                                            </a>
-                                        </div>
-                                        <div class="swiper-slide" style="width: 160px; margin-right: 18px;">
-                                            <a href="https://www.instagram.com/p/CiL9jr9pTZm/" class="instargram-picture-link">
-                                                <img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/305495410_619924406209599_3169619263448721187_n.jpg?_nc_cat=104&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=v0ixtAC9WUYAX9ppAFp&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBZZdZ-M0EzQRm28tJrvPeoiShZytx8hvqt-X8J9yMF-A&amp;oe=637940E4" alt="인스타그램 리뷰 사진" class="instagram-review-picture">
-                                            </a>
-                                        </div>
-                                        <div class="swiper-slide" style="width: 160px; margin-right: 18px;">
-                                            <a href="https://www.instagram.com/p/CiHeJnoOlfe/" class="instargram-picture-link">
-                                                <img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/305035875_377015901294705_8322262636923134941_n.jpg?_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=acMqz3J5O5AAX-9r-7C&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfCMifwZj92cQGzseF5gfiBzepwf-Cwh4b_8YeS1t1bt7Q&amp;oe=63792EF4" alt="인스타그램 리뷰 사진" class="instagram-review-picture">
-                                            </a>
-                                        </div>
-                                        <div class="swiper-slide" style="width: 160px; margin-right: 18px;">
-                                            <a href="https://www.instagram.com/p/Ch60sOEOAHT/" class="instargram-picture-link">
-                                                <img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/302030646_366955835647247_2854997555108586212_n.jpg?_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=QfyVAcJVDloAX87hYMr&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfD8YoUJ87xktIh1MkQvH9Fw6MJsuoWyDF_JCt3DvWQwRw&amp;oe=637A1FC9" alt="인스타그램 리뷰 사진" class="instagram-review-picture">
-                                            </a>
-                                        </div>
-                                        <div class="swiper-slide" style="width: 160px; margin-right: 18px;">
-                                            <a href="https://www.instagram.com/p/Ch1kHxlOVE4/" class="instargram-picture-link">
-                                                <img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/301908902_1218017255656597_4167490715359927917_n.jpg?_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=TO2vbX_mYAMAX_JwIqL&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfCc6FNI1kfbgotxwRf_YrKMvJC6FOqWGsbSHK_-5JF1zw&amp;oe=6379601E" alt="인스타그램 리뷰 사진" class="instagram-review-picture">
-                                            </a>
-                                        </div>
-                                        <div class="swiper-slide" style="width: 160px; margin-right: 18px;">
-                                            <a href="https://www.instagram.com/p/Chof7m8uV5i/" class="instargram-picture-link">
-                                                <img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/300605973_630452548401973_5580184519127553757_n.jpg?_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=jTuY5cKB9psAX--XOSr&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfDB9EJun604RgHbhnGXC2rmQUU7QOxT1SoIx1tA_RrcVg&amp;oe=637A3A28" alt="인스타그램 리뷰 사진" class="instagram-review-picture">
-                                            </a>
-                                        </div>
-                                        <div class="swiper-slide" style="width: 160px; margin-right: 18px;">
-                                            <a href="https://www.instagram.com/p/Chi3WA-pb-1/" class="instargram-picture-link">
-                                                <img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.29350-15/300450460_1102743283697788_3876809850992550429_n.jpg?_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=MYyP6gx66WkAX9TfIs0&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBpXFBIJYKXejVNoLzFjS2-iYXAl_ndw6TGD4WM6Ig3kQ&amp;oe=6379A5B8" alt="인스타그램 리뷰 사진" class="instagram-review-picture">
-                                            </a>
-                                        </div>
-                                    스와이프 사용-->                           
-                                    </div>
-                                </div>
-                                <button type="button" class="eisyv960 css-2sbv34"></button>
-                            </div>
-                            <div class="insta-more-link2"><p>더 많은 고객 후기가 궁금하다면?</p>
-                                <a href="https://www.instagram.com/marketkurly_regram" target="_blank" rel="noopener noreferrer">@marketkurly_regram</a>
-                            </div>
-                        </div>
-                </div>
-                <!--인스타그램 끝 -->  
             </div>
         </div>
+        <!-- 스와이퍼 배너-->
+        <div class="today-recommend-products banner-title">
+            <div class="today-product-title">
+                <div class="today-product-big-title">
+                    <span class="today-product-span">당일 유통기한 임박상품</span>
+                </div>
+            </div>
+            <!--                  -->
+            <div class="today-product-image-link">
+                <div class="swiper-container-todayProduct" style="overflow: hidden;">
+                    <div class="swiper-wrapper">
+                        <a href="#" class="swiper-slide" style="display: flex;">
+                            <div onclick="location.href=('header.html')" style="width: 249px; margin-right: 18px;">
+                                <div class="today-product">
+                                    <div class="today-product-image product-hidden">
+                                        <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1594181922977l0.jpg" alt="상품 이미지" loading="lazy">
+                                        <div>
+                                            <button type="button" class="today-product-button button-absolute">
+                                                <img src="/Project/main/image/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info product-info-header">
+                                        <h3 class="product-name">[브로드카세] 부드러운 비엔나 쿠키 4종</h3>
+                                        <div class="content-row">
+                                            <div class="product-price">
+                                                <span class="sales-price css-18tpqqq">5,500
+                                                    <span class="won"> 원</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div onclick="location.href=('')" style="width: 249px; margin-right: 18px;">
+                                <div class="today-product">
+                                    <div class="today-product-image product-hidden">
+                                        <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1657614949985l0.jpg" alt="상품 이미지" loading="lazy">
+                                        <div>
+                                            <button type="button" class="today-product-button button-absolute">
+                                                <img src="/Project/main/image/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info product-info-header">
+                                        <h3 class="product-name">[종가집] 담백한 나박김치 1.2kg</h3>
+                                        <div class="content-row">
+                                            <div class="product-price">
+                                                <span class="sales-price css-18tpqqq">10,900
+                                                    <span class="won"> 원</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div onclick="location.href=('')" style="width: 249px; margin-right: 18px;">
+                                <div class="today-product">
+                                    <div class="today-product-image product-hidden">
+                                        <img src="https://product-image.kurly.com/cdn-cgi/image/width=400,format=auto/product/image/b7bf4efa-a0a6-46c0-9799-317dfd2731ab.jpg" alt="상품 이미지" loading="lazy">
+                                        <div>
+                                            <button type="button" class="today-product-button button-absolute">
+                                                <img src="/Project/main/image/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info product-info-header">
+                                        <h3 class="product-name">[던킨도너츠] 달콤한 미니 필링 도넛 4종</h3>
+                                        <div class="content-row">
+                                            <div class="product-price">
+                                                <span class="sales-price css-18tpqqq">7,470
+                                                    <span class="won"> 원</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div onclick="location.href=('')" style="width: 249px; margin-right: 18px;">
+                                <div class="today-product">
+                                    <div class="today-product-image product-hidden">
+                                        <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1515479447673l0.jpg" alt="상품 이미지" loading="lazy">
+                                        <div>
+                                            <button type="button" class="today-product-button button-absolute">
+                                                <img src="/Project/main/image/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info product-info-header">
+                                        <h3 class="product-name">[섬죽] 삼계녹두죽</h3>
+                                        <div class="content-row">
+                                            <div class="product-price">
+                                                <span class="sales-price css-18tpqqq">7,300
+                                                    <span class="won"> 원</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="swiper-slide" style="display: flex;">
+                            <div onclick="location.href=('')" style="width: 249px; margin-right: 18px;">
+                                <div class="today-product">
+                                    <div class="today-product-image product-hidden">
+                                        <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1651455844958l0.jpg" alt="상품 이미지" loading="lazy">
+                                        <div>
+                                            <button type="button" class="today-product-button button-absolute">
+                                                <img src="/Project/main/image/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info product-info-header">
+                                        <h3 class="product-name">검정콩가루 500g</h3>
+                                        <div class="content-row">
+                                            <div class="product-price">
+                                                <span class="sales-price css-18tpqqq">13,900
+                                                    <span class="won"> 원</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div onclick="location.href=('')" style="width: 249px; margin-right: 18px;">
+                                <div class="today-product">
+                                    <div class="today-product-image product-hidden">
+                                        <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1651455844958l0.jpg" alt="상품 이미지" loading="lazy">
+                                        <div>
+                                            <button type="button" class="today-product-button button-absolute">
+                                                <img src="/Project/main/image/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info product-info-header">
+                                        <h3 class="product-name">검정콩가루 500g</h3>
+                                        <div class="content-row">
+                                            <div class="product-price">
+                                                <span class="sales-price css-18tpqqq">13,900
+                                                    <span class="won"> 원</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div onclick="location.href=('')" style="width: 249px; margin-right: 18px;">
+                                <div class="today-product">
+                                    <div class="today-product-image product-hidden">
+                                        <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1651455844958l0.jpg" alt="상품 이미지" loading="lazy">
+                                        <div>
+                                            <button type="button" class="today-product-button button-absolute">
+                                                <img src="/Project/main/image/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info product-info-header">
+                                        <h3 class="product-name">검정콩가루 500g</h3>
+                                        <div class="content-row">
+                                            <div class="product-price">
+                                                <span class="sales-price css-18tpqqq">13,900
+                                                    <span class="won"> 원</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div onclick="location.href=('')" style="width: 249px; margin-right: 18px;">
+                                <div class="today-product">
+                                    <div class="today-product-image product-hidden">
+                                        <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1651455844958l0.jpg" alt="상품 이미지" loading="lazy">
+                                        <div>
+                                            <button type="button" class="today-product-button button-absolute">
+                                                <img src="/Project/main/image/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info product-info-header">
+                                        <h3 class="product-name">검정콩가루 500g</h3>
+                                        <div class="content-row">
+                                            <div class="product-price">
+                                                <span class="sales-price css-18tpqqq">13,900
+                                                    <span class="won"> 원</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Add Pagination -->
+                    <!-- Add Arrows -->
+                    <button type="button" class="swiper-button-next today-product-button"></button>
+                    <button type="button" class="swiper-button-prev today-product-button"></button>
+                </div>   
+            </div>
+        </div>
+        <!-- 스와이퍼 배너-->
+        <!-- 타임딜 -->
+        <div class="special-sale">
+            <div class="special-product">
+                <div class="product-title">
+                    <h2 class="product-title-main">시간 한정</h2>
+                    <h3 class="product-title-sub">마감 전 시간 한정 특별 할인 오픈!</h3>
+                    <div class="product-time">
+                        <div class="lottie-timer">
+                            <p>
+                                <div class="timer">
+                                    <div class="mask"></div>
+                                </div>
+                                <label for="Timer1">남은 시간:</label>
+                                <input id="Timer1" type="text" value="" disabled style="background-color: #fff;"/>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-image">
+                    <div class="product-imagee">
+                        <div class="product-image-header">
+                            <img src="https://product-image.kurly.com/product/image/61d82fce-a8e3-4937-af8c-3bc8badc6915.jpg" alt="상품 이미지" loading="lazy">
+                            <div>
+                                <button type="button" class="product-function product-absolute">
+                                    <img src="/Project/main/image/main/run.png" width="45px" height="45px" alt="바로가기 아이콘">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-image-footer product-info">
+                            <div class="product-description">부담 없이 즐기는 바삭 촉촉 옛날 통닭</div>
+                            <h3 class="product-name">두 마리 99치킨 (에어프라이어용)</h3>
+                            <div class="content-row now-price">
+                                <div class="product-price">
+                                    <span class="sales-price css-18tpqqq">9,900
+                                        <span class="won">
+                                             원
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 타임딜 -->
+        <!-- 타임딜 -->
+        <div class="special-sale">
+            <div class="special-product">
+                <div class="product-title">
+                    <h2 class="product-title-main">시간 한정</h2>
+                    <h3 class="product-title-sub">마감 전 시간 한정 특별 할인 오픈!</h3>
+                    <div class="product-time">
+                        <div class="lottie-timer">
+                            <p>
+                                <div class="timer">
+                                    <div class="mask"></div>
+                                </div>
+                                <label for="Timer2">남은 시간:</label>
+                                <input id="Timer2" type="text" value="" disabled style="background-color: #fff;"/>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-image">
+                    <div class="product-imagee">
+                        <div class="product-image-header">
+                            <img src="https://img-cf.kurly.com/shop/data/goods/1636017928381z0.jpg" alt="상품 이미지" loading="lazy">
+                            <div>
+                                <button type="button" class="product-function product-absolute">
+                                    <img src="/Project/main/image/main/run.png" width="45px" height="45px" alt="바로가기 아이콘">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-image-footer product-info">
+                            <div class="product-description">두루 사용하기 좋은 간편 새우</div>
+                            <h3 class="product-name">우주 프리미엄 손질 생새우살 200g (냉동)(26/30사이즈)</h3>
+                            <div class="content-row now-price">
+                                <div class="product-price css-product-discount">
+                                    <span class="discount-rate discount-orange">32%</span>
+                                    <span class="sales-price">9,900
+                                        <span class="won">
+                                             원
+                                        </span>
+                                    </span>
+                                </div>
+                                <span class="dimmed-price">8,400<span class="won"> 원</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 타임딜 -->
+        <!-- 스와이퍼 배너-->
+        <div class="today-recommend-products banner-title">
+            <div class="today-product-title">
+                <div class="today-product-big-title">
+                    <span class="today-product-span">💸만원의 행복</span>
+                </div>
+            </div>
+            <!--                  -->
+            <div class="today-product-image-link">
+                <div class="swiper-container-todayProduct" style="overflow: hidden;">
+                    <div class="swiper-wrapper">
+                        <a href="#" class="swiper-slide" style="display: flex;">
+                            <div onclick="location.href=('')" style="width: 249px; margin-right: 18px;">
+                                <div class="today-product">
+                                    <div class="today-product-image product-hidden">
+                                        <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1653037997440l0.jpeg" alt="상품 이미지" loading="lazy">
+                                        <div>
+                                            <button type="button" class="today-product-button button-absolute">
+                                                <img src="/Project/main/image/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info product-info-header">
+                                        <h3 class="product-name">[델리치오] 호주산 목초육 안심 스테이크 250g (냉장)</h3>
+                                        <div class="content-row now-price">
+                                            <div class="product-price">
+                                                <span class="discount-rate discount-orange">25%</span>
+                                                <span class="sales-price css-18tpqqq">13,900
+                                            </div>
+                                            <span class="dimmed-price css-18tpqqq ei5rudb1">22,900<span class="won"> 원</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div onclick="location.href=('')" style="width: 249px; margin-right: 18px;">
+                                <div class="today-product">
+                                    <div class="today-product-image product-hidden">
+                                        <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1637924123548l0.jpeg" alt="상품 이미지" loading="lazy">
+                                        <div>
+                                            <button type="button" class="today-product-button button-absolute">
+                                                <img src="/Project/main/image/main/cart.png" width="45px" height="45px" alt="장바구니 아이콘">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info product-info-header">
+                                        <h3 class="product-name">미국산 애플청포도 500g (오톰크리스피)</h3>
+                                        <div class="content-row now-price">
+                                            <div class="product-price">
+                                                <span class="discount-rate discount-orange">30%</span>
+                                                <span class="sales-price css-18tpqqq">6,930
+                                            </div>
+                                            <span class="dimmed-price css-18tpqqq ei5rudb1">9,900<span class="won"> 원</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div onclick="location.href=('')" style="width: 249px; margin-right: 18px;">
+                                <div class="today-product">
+                                    <div class="today-product-image product-hidden">
+                                        <img src="https://product-image.kurly.com/cdn-cgi/image/width=400,format=auto/product/image/42e6bccc-59d0-4218-ba06-278aa629589a.jpg" alt="상품 이미지" loading="lazy">
+                                        <div>
+                                            <button type="button" class="today-product-button button-absolute">
+                                                <img src="/Project/main/image/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info product-info-header">
+                                        <h3 class="product-name">[종로 평원숯불갈비] 돼지 물갈비 515g]</h3>
+                                        <div class="content-row now-price">
+                                            <div class="product-price">
+                                                <span class="discount-rate discount-orange">15%</span>
+                                                <span class="sales-price css-18tpqqq">10,370
+                                            </div>
+                                            <span class="dimmed-price css-18tpqqq ei5rudb1">12,000<span class="won"> 원</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div onclick="location.href=('')" style="width: 249px; margin-right: 18px;">
+                                <div class="today-product">
+                                    <div class="today-product-image product-hidden">
+                                        <img src="https://product-image.kurly.com/cdn-cgi/image/width=400,format=auto/product/image/fe2e03b7-0b38-4e91-b1e4-b7829d218a84.jpg" alt="상품 이미지" loading="lazy">
+                                        <div>
+                                            <button type="button" class="today-product-button button-absolute">
+                                                <img src="/Project/main/image/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info product-info-header">
+                                        <h3 class="product-name">제주담은 청귤에이드 20개입</h3>
+                                        <div class="content-row now-price">
+                                            <div class="product-price">
+                                                <span class="discount-rate discount-orange">27%</span>
+                                                <span class="sales-price css-18tpqqq">15,900
+                                            </div>
+                                            <span class="dimmed-price css-18tpqqq ei5rudb1">22,000<span class="won"> 원</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="swiper-slide" style="display: flex;">
+                            <div onclick="location.href=('')" style="width: 249px; margin-right: 18px;">
+                                <div class="today-product">
+                                    <div class="today-product-image product-hidden">
+                                        <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1653037997440l0.jpeg" alt="상품 이미지" loading="lazy">
+                                        <div>
+                                            <button type="button" class="today-product-button button-absolute">
+                                                <img src="/Project/main/image/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info product-info-header">
+                                        <h3 class="product-name">[델리치오] 호주산 목초육 안심 스테이크 250g (냉장)</h3>
+                                        <div class="content-row now-price">
+                                            <div class="product-price">
+                                                <span class="discount-rate discount-orange">25%</span>
+                                                <span class="sales-price css-18tpqqq">13,900
+                                            </div>
+                                            <span class="dimmed-price css-18tpqqq ei5rudb1">22,900<span class="won"> 원</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div onclick="location.href=('')" style="width: 249px; margin-right: 18px;">
+                                <div class="today-product">
+                                    <div class="today-product-image product-hidden">
+                                        <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1651455844958l0.jpg" alt="상품 이미지" loading="lazy">
+                                        <div>
+                                            <button type="button" class="today-product-button button-absolute">
+                                                <img src="/Project/main/image/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info product-info-header">
+                                        <h3 class="product-name">[델리치오] 호주산 목초육 안심 스테이크 250g (냉장)</h3>
+                                        <div class="content-row now-price">
+                                            <div class="product-price">
+                                                <span class="discount-rate discount-orange">25%</span>
+                                                <span class="sales-price css-18tpqqq">13,900
+                                            </div>
+                                            <span class="dimmed-price css-18tpqqq ei5rudb1">22,900<span class="won"> 원</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div onclick="location.href=('')" style="width: 249px; margin-right: 18px;">
+                                <div class="today-product">
+                                    <div class="today-product-image product-hidden">
+                                        <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1651455844958l0.jpg" alt="상품 이미지" loading="lazy">
+                                        <div>
+                                            <button type="button" class="today-product-button button-absolute">
+                                                <img src="/Project/main/image/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info product-info-header">
+                                        <h3 class="product-name">[델리치오] 호주산 목초육 안심 스테이크 250g (냉장)</h3>
+                                        <div class="content-row now-price">
+                                            <div class="product-price">
+                                                <span class="discount-rate discount-orange">25%</span>
+                                                <span class="sales-price css-18tpqqq">13,900
+                                            </div>
+                                            <span class="dimmed-price css-18tpqqq ei5rudb1">22,900<span class="won"> 원</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div onclick="location.href=('')" style="width: 249px; margin-right: 18px;">
+                                <div class="today-product">
+                                    <div class="today-product-image product-hidden">
+                                        <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1651455844958l0.jpg" alt="상품 이미지" loading="lazy">
+                                        <div>
+                                            <button type="button" class="today-product-button button-absolute">
+                                                <img src="/Project/main/image/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info product-info-header">
+                                        <h3 class="product-name">[델리치오] 호주산 목초육 안심 스테이크 250g (냉장)</h3>
+                                        <div class="content-row now-price">
+                                            <div class="product-price">
+                                                <span class="discount-rate discount-orange">25%</span>
+                                                <span class="sales-price css-18tpqqq">13,900
+                                            </div>
+                                            <span class="dimmed-price css-18tpqqq ei5rudb1">22,900<span class="won"> 원</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Add Pagination -->
+                    <!-- Add Arrows -->
+                    <button type="button" class="swiper-button-next today-product-button"></button>
+                    <button type="button" class="swiper-button-prev today-product-button"></button>
+                </div>   
+            </div>
+               <!--                  -->
+        </div>
+        <!-- 스와이퍼 배너-->
+        <!-- 라인 배너-->
+        <div type="LINE_BANNERS" class="line-banners">
+            <div class="line-banners-padding">
+                <a href="https://www.kurly.com/shop/event/kurlyEvent.php?htmid=event/2022/1117/kurlystmas/kurlystmas" class="line-banners-link">
+                    <img src="https://product-image.kurly.com/banner/random-band/pc/img/80804175-9c7b-4a4d-a821-15682e74c7ba.jpg" alt="">
+                </a>
+            </div>
+        </div>
+        <!-- 라인 배너-->
+        <!-- 스와이퍼 배너-->
+        <div class="today-recommend-products banner-title">
+            <div class="today-product-title">
+                <div class="today-product-big-title">
+                    <span class="today-product-span">알뜰 쇼핑</span>
+                </div>
+            </div>
+            <div class="today-product-image-link">
+                <div class="swiper-container-todayProduct" style="overflow: hidden;">
+                    <div class="swiper-wrapper">
+                        <a href="#" class="swiper-slide" style="display: flex;">
+                            <div onclick="location.href=('')" style="width: 249px; margin-right: 18px;">
+                                <div class="today-product">
+                                    <div class="today-product-image product-hidden">
+                                        <img src="https://product-image.kurly.com/cdn-cgi/image/width=400,format=auto/product/image/21704a23-582c-4710-8349-2f8ad9ebb32f.jpg" alt="상품 이미지" loading="lazy">
+                                        <div>
+                                            <button type="button" class="today-product-button button-absolute">
+                                                <img src="/Project/main/image/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info product-info-header">
+                                        <h3 class="product-name">스마일 만쥬</h3>
+                                        <div class="content-row">
+                                            <div class="product-price">
+                                                <span class="sales-price css-18tpqqq">5,900
+                                                    <span class="won"> 원</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div onclick="location.href=('')" style="width: 249px; margin-right: 18px;">
+                                <div class="today-product">
+                                    <div class="today-product-image product-hidden">
+                                        <img src="https://product-image.kurly.com/cdn-cgi/image/width=400,format=auto/product/image/cf207454-e42f-41b3-b525-0cf1b8db4952.jpg" alt="상품 이미지" loading="lazy">
+                                        <div>
+                                            <button type="button" class="today-product-button button-absolute">
+                                                <img src="/Project/main/image/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info product-info-header">
+                                        <h3 class="product-name">[공유관] 국민 어포 빠사삭 80g X 2봉</h3>
+                                        <div class="content-row">
+                                            <div class="product-price">
+                                                <span class="sales-price css-18tpqqq">5,980
+                                                    <span class="won"> 원</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div onclick="location.href=('')" style="width: 249px; margin-right: 18px;">
+                                <div class="today-product">
+                                    <div class="today-product-image product-hidden">
+                                        <img src="https://product-image.kurly.com/cdn-cgi/image/width=400,format=auto/product/image/11e5ecab-41b4-4fe2-be1f-2872f94ae337.jpg" alt="상품 이미지" loading="lazy">
+                                        <div>
+                                            <button type="button" class="today-product-button button-absolute">
+                                                <img src="/Project/main/image/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info product-info-header">
+                                        <h3 class="product-name">[델리치오] 호주산 목초육 안심 스테이크 250g (냉장)</h3>
+                                        <div class="content-row now-price">
+                                            <div class="product-price">
+                                                <span class="discount-rate discount-orange">7%</span>
+                                                <span class="sales-price css-18tpqqq">3,534 원
+                                            </div>
+                                            <span class="dimmed-price css-18tpqqq ei5rudb1">3,800<span class="won"> 원</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div onclick="location.href=('')" style="width: 249px; margin-right: 18px;">
+                                <div class="today-product">
+                                    <div class="today-product-image product-hidden">
+                                        <img src="https://product-image.kurly.com/cdn-cgi/image/width=400,format=auto/product/image/b5bcaf56-72bb-432f-9769-089aa6b43287.jpg" alt="상품 이미지" loading="lazy">
+                                        <div>
+                                            <button type="button" class="today-product-button button-absolute">
+                                                <img src="/Project/main/image/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info product-info-header">
+                                        <h3 class="product-name">[현대데코] 크리스마스 트리전구세트 3종</h3>
+                                        <div class="content-row now-price">
+                                            <div class="product-price">
+                                                <span class="discount-rate discount-orange">23%</span>
+                                                <span class="sales-price css-18tpqqq">29,900 원~
+                                            </div>
+                                            <span class="dimmed-price css-18tpqqq ei5rudb1">39,000<span class="won"> 원~</span></span>
+                                        </div>  
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="swiper-slide" style="display: flex;">
+                            <div onclick="location.href=('')" style="width: 249px; margin-right: 18px;">
+                                <div class="today-product">
+                                    <div class="today-product-image product-hidden">
+                                        <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1651455844958l0.jpg" alt="상품 이미지" loading="lazy">
+                                        <div>
+                                            <button type="button" class="today-product-button button-absolute">
+                                                <img src="/Project/main/image/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info product-info-header">
+                                        <h3 class="product-name">검정콩가루 500g</h3>
+                                        <div class="content-row">
+                                            <div class="product-price">
+                                                <span class="sales-price css-18tpqqq">13,900
+                                                    <span class="won"> 원</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div onclick="location.href=('')" style="width: 249px; margin-right: 18px;">
+                                <div class="today-product">
+                                    <div class="today-product-image product-hidden">
+                                        <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1651455844958l0.jpg" alt="상품 이미지" loading="lazy">
+                                        <div>
+                                            <button type="button" class="today-product-button button-absolute">
+                                                <img src="/Project/main/image/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info product-info-header">
+                                        <h3 class="product-name">검정콩가루 500g</h3>
+                                        <div class="content-row">
+                                            <div class="product-price">
+                                                <span class="sales-price css-18tpqqq">13,900
+                                                    <span class="won"> 원</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div onclick="location.href=('')" style="width: 249px; margin-right: 18px;">
+                                <div class="today-product">
+                                    <div class="today-product-image product-hidden">
+                                        <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1651455844958l0.jpg" alt="상품 이미지" loading="lazy">
+                                        <div>
+                                            <button type="button" class="today-product-button button-absolute">
+                                                <img src="/Project/main/image/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info product-info-header">
+                                        <h3 class="product-name">검정콩가루 500g</h3>
+                                        <div class="content-row">
+                                            <div class="product-price">
+                                                <span class="sales-price css-18tpqqq">13,900
+                                                    <span class="won"> 원</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div onclick="location.href=('')" style="width: 249px; margin-right: 18px;">
+                                <div class="today-product">
+                                    <div class="today-product-image product-hidden">
+                                        <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1651455844958l0.jpg" alt="상품 이미지" loading="lazy">
+                                        <div>
+                                            <button type="button" class="today-product-button button-absolute">
+                                                <img src="/Project/main/image/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info product-info-header">
+                                        <h3 class="product-name">검정콩가루 500g</h3>
+                                        <div class="content-row">
+                                            <div class="product-price">
+                                                <span class="sales-price css-18tpqqq">13,900
+                                                    <span class="won"> 원</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        
+                    </div>
+                    <!-- Add Pagination -->
+                    <!-- Add Arrows -->
+                    <button type="button" class="swiper-button-next today-product-button"></button>
+                    <button type="button" class="swiper-button-prev today-product-button"></button>
+                </div>   
+            </div>
+               <!--                  -->
+        </div>
+        <!-- 스와이퍼 배너-->
+       
+        <!-- 스와이퍼 배너-->
+        <div class="today-recommend-products banner-title">
+            <div class="today-product-title">
+                <div class="today-product-big-title">
+                    <span class="today-product-span">못난이 농/수산물</span>
+                </div>
+            </div>
+            <!--                  -->
+            <div class="today-product-image-link">
+                <div class="swiper-container-todayProduct" style="overflow: hidden;">
+                    <div class="swiper-wrapper">
+                        <a href="#" class="swiper-slide" style="display: flex;">
+                            <div onclick="location.href=('')" style="width: 249px; margin-right: 18px;">
+                                <div class="today-product">
+                                    <div class="today-product-image product-hidden">
+                                        <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1578618355611l0.jpg" alt="상품 이미지" loading="lazy">
+                                        <div>
+                                            <button type="button" class="today-product-button button-absolute">
+                                                <img src="/Project/main/image/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info product-info-header">
+                                        <h3 class="product-name">검정콩가루 500g</h3>
+                                        <div class="content-row">
+                                            <div class="product-price">
+                                                <span class="sales-price css-18tpqqq">13,900
+                                                    <span class="won"> 원</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div onclick="location.href=('')" style="width: 249px; margin-right: 18px;">
+                                <div class="today-product">
+                                    <div class="today-product-image product-hidden">
+                                        <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1653038544220l0.jpeg" alt="상품 이미지" loading="lazy">
+                                        <div>
+                                            <button type="button" class="today-product-button button-absolute">
+                                                <img src="/Project/main/image/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info product-info-header">
+                                        <h3 class="product-name">검정콩가루 500g</h3>
+                                        <div class="content-row">
+                                            <div class="product-price">
+                                                <span class="sales-price css-18tpqqq">13,900
+                                                    <span class="won"> 원</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div onclick="location.href=('')" style="width: 249px; margin-right: 18px;">
+                                <div class="today-product">
+                                    <div class="today-product-image product-hidden">
+                                        <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1636608568753l0.jpg" alt="상품 이미지" loading="lazy">
+                                        <div>
+                                            <button type="button" class="today-product-button button-absolute">
+                                                <img src="/Project/main/image/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info product-info-header">
+                                        <h3 class="product-name">검정콩가루 500g</h3>
+                                        <div class="content-row">
+                                            <div class="product-price">
+                                                <span class="sales-price css-18tpqqq">13,900
+                                                    <span class="won"> 원</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div onclick="location.href=('')" style="width: 249px; margin-right: 18px;">
+                                <div class="today-product">
+                                    <div class="today-product-image product-hidden">
+                                        <img src="https://product-image.kurly.com/cdn-cgi/image/width=400,format=auto/product/image/e3b794fd-11af-447d-9c21-a28345d2aa33.jpg" alt="상품 이미지" loading="lazy">
+                                        <div>
+                                            <button type="button" class="today-product-button button-absolute">
+                                                <img src="/Project/main/image/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info product-info-header">
+                                        <h3 class="product-name">검정콩가루 500g</h3>
+                                        <div class="content-row">
+                                            <div class="product-price">
+                                                <span class="sales-price css-18tpqqq">13,900
+                                                    <span class="won"> 원</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="swiper-slide" style="display: flex;">
+                            <div onclick="location.href=('')" style="width: 249px; margin-right: 18px;">
+                                <div class="today-product">
+                                    <div class="today-product-image product-hidden">
+                                        <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1651455844958l0.jpg" alt="상품 이미지" loading="lazy">
+                                        <div>
+                                            <button type="button" class="today-product-button button-absolute">
+                                                <img src="/Project/main/image/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info product-info-header">
+                                        <h3 class="product-name">검정콩가루 500g</h3>
+                                        <div class="content-row">
+                                            <div class="product-price">
+                                                <span class="sales-price css-18tpqqq">13,900
+                                                    <span class="won"> 원</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div onclick="location.href=('')" style="width: 249px; margin-right: 18px;">
+                                <div class="today-product">
+                                    <div class="today-product-image product-hidden">
+                                        <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1651455844958l0.jpg" alt="상품 이미지" loading="lazy">
+                                        <div>
+                                            <button type="button" class="today-product-button button-absolute">
+                                                <img src="/Project/main/image/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info product-info-header">
+                                        <h3 class="product-name">검정콩가루 500g</h3>
+                                        <div class="content-row">
+                                            <div class="product-price">
+                                                <span class="sales-price css-18tpqqq">13,900
+                                                    <span class="won"> 원</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div onclick="location.href=('')" style="width: 249px; margin-right: 18px;">
+                                <div class="today-product">
+                                    <div class="today-product-image product-hidden">
+                                        <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1651455844958l0.jpg" alt="상품 이미지" loading="lazy">
+                                        <div>
+                                            <button type="button" class="today-product-button button-absolute">
+                                                <img src="/Project/main/image/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info product-info-header">
+                                        <h3 class="product-name">검정콩가루 500g</h3>
+                                        <div class="content-row">
+                                            <div class="product-price">
+                                                <span class="sales-price css-18tpqqq">13,900
+                                                    <span class="won"> 원</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div onclick="location.href=('')" style="width: 249px; margin-right: 18px;">
+                                <div class="today-product">
+                                    <div class="today-product-image product-hidden">
+                                        <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1651455844958l0.jpg" alt="상품 이미지" loading="lazy">
+                                        <div>
+                                            <button type="button" class="today-product-button button-absolute">
+                                                <img src="/Project/main/image/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info product-info-header">
+                                        <h3 class="product-name">검정콩가루 500g</h3>
+                                        <div class="content-row">
+                                            <div class="product-price">
+                                                <span class="sales-price css-18tpqqq">13,900
+                                                    <span class="won"> 원</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Add Pagination -->
+                    <!-- Add Arrows -->
+                    <button type="button" class="swiper-button-next today-product-button"></button>
+                    <button type="button" class="swiper-button-prev today-product-button"></button>
+                </div>   
+            </div>
+               <!--                  -->
+        </div>
+        <!-- 스와이퍼 배너-->
+        <!-- 라인 배너-->
+        <div type="LINE_BANNERS" class="line-banners">
+            <div class="line-banners-padding">
+                <a href="https://www.kurly.com/shop/event/kurlyEvent.php?htmid=event/2022/1117/kurlystmas/kurlystmas" class="line-banners-link">
+                    <img src="https://product-image.kurly.com/banner/random-band/pc/img/f617d40a-f366-499c-a2de-9c1db92ebc7f.jpg" alt="">
+                </a>
+            </div>
+        </div>
+        <!-- 라인 배너-->
+        <!--바디 종료-->       
     </div>
-        <!-- 상승 아이콘-->
+        <!-- 상승 아이콘 포함시키지 마시오-->
         <div id="topButton" style="cursor: pointer; width: 46px; height: 46px;">
             <img src="/Project/main/image/main/up.PNG" id="topButtonImg">
         </div>
@@ -495,35 +1293,146 @@
                 </div>
             </div>
     </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script src="/Project/main/js/index.js"></script>
-    <script src="/project/main//js/banner.js"></script>
-    <script src="/project/main//js/header.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="/Project/main/js/swiper.js"></script>
-    <script>
-        const swiper = new Swiper('.swiper', {
-        // Optional parameters
-        direction: 'vertical',
-        loop: true,
-      
-        // If we need pagination
-        pagination: {
-          el: '.swiper-pagination',
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="/Project/main/js/index.js"></script>
+<script src="/project/main//js/banner.js"></script>
+<script src="/project/main//js/header.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script>      
+const mySwiper = new Swiper('.swiper-container-mySwiper', {
+    spaceBetween: 30,
+    centeredSlides: true,
+    pagination: {
+    el: ".swiper-pagination",
+    type: "fraction",
+    clickable: true
+    },
+    navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+    },
+    autoplay: {
+    delay: 2000,
+    disableOnInteraction: false // 쓸어 넘기거나 버튼 클릭 시 자동 슬라이드 정지.
+    },
+    loop: true
+})
+
+const todayProduct = new Swiper('.swiper-container-todayProduct', {
+    spaceBetween: 30,
+    centeredSlides: true,
+    pagination: {
+    el: ".swiper-pagination",
+    type: "fraction",
+    clickable: true
+    },
+    navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+    },
+    loop: true
+})
+    
+/*
+<script>
+      var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,    // 슬라이드 사이 여백
+
+        slidesPerView : 'auto', // 한 슬라이드에 보여줄 갯수
+        centeredSlides: true,    //센터모드
+        autoplay: {     //자동슬라이드 (false-비활성화)
+          delay: 2500, // 시간 설정
+          disableOnInteraction: false, // false-스와이프 후 자동 재생
         },
-      
-        // Navigation arrows
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+
+        loop : false,   // 슬라이드 반복 여부
+
+        loopAdditionalSlides : 1,
+
+ // 슬라이드 반복 시 마지막 슬라이드에서 다음 슬라이드가 보여지지 않는 현상 수정
+        pagination: { // 호출(pager) 여부
+          el: ".swiper-pagination", //버튼을 담을 태그 설정
+          clickable: true, // 버튼 클릭 여부
         },
-      
-        // And if we need scrollbar
-        scrollbar: {
-          el: '.swiper-scrollbar',
+        navigation: {   // 버튼
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         },
       });
-    </script>
+*/
+
+</script>
+<script>
+    const Timer1=document.getElementById('Timer1'); //스코어 기록창-분
+    let time1= 1800000;
+    let min1=30;
+    let sec1=60;
+
+
+    Timer1.value=min1+":"+'00'; 
+
+    function TIMER1(){
+    PlAYTIME1=setInterval(function(){
+        time1=time1-1000; //1초씩 줄어듦
+        min1=time1/(60*1000); //초를 분으로 나눠준다.
+
+       if(sec1>0){ //sec=60 에서 1씩 빼서 출력해준다.
+            sec1=sec1-1;
+            Timer1.value=Math.floor(min1)+':'+sec1; //실수로 계산되기 때문에 소숫점 아래를 버리고 출력해준다.
+           
+        }
+        if(sec1===0){
+         	// 0에서 -1을 하면 -59가 출력된다.
+            // 그래서 0이 되면 바로 sec을 60으로 돌려주고 value에는 0을 출력하도록 해준다.
+            sec1=60;
+            Timer1.value=Math.floor(min1)+':'+'00'
+        }     
+   
+    },1000); //1초마다 
+}
+
+
+TIMER1();
+setTimeout1(function(){
+    clearInterval(PlAYTIME1);
+},1800000);//30분이 되면 타이머를 삭제한다.
+</script>
+
+<script>
+   const Timer2=document.getElementById('Timer2'); //스코어 기록창-분
+    let time2= 2700000;
+    let min2=45;
+    let sec2=60;
+
+
+    Timer2.value=min2+":"+'00'; 
+
+    function TIMER2(){
+    PlAYTIME2=setInterval(function(){
+        time2=time2-1000; //1초씩 줄어듦
+        min2=time2/(60*1000); //초를 분으로 나눠준다.
+
+       if(sec2>0){ //sec=60 에서 1씩 빼서 출력해준다.
+            sec2=sec2-1;
+            Timer2.value=Math.floor(min2)+':'+sec2; //실수로 계산되기 때문에 소숫점 아래를 버리고 출력해준다.
+           
+        }
+        if(sec2===0){
+         	// 0에서 -1을 하면 -59가 출력된다.
+            // 그래서 0이 되면 바로 sec을 60으로 돌려주고 value에는 0을 출력하도록 해준다.
+            sec2=60;
+            Timer2.value=Math.floor(min2)+':'+'00'
+        }     
+   
+    },1000); //1초마다 
+}
+
+
+TIMER2();
+setTimeout2(function(){
+    clearInterval(PlAYTIME2);
+},18000000);//30분이 되면 타이머를 삭제한다.
+</script>
 </body>
 </html>
