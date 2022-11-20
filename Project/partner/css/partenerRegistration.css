@@ -2,6 +2,17 @@ form {
     position: relative;
 }
 
+h3 {
+    font-size: 22px;
+    color: #222222;
+}
+
+.registTitle {
+    border-bottom: 2px solid #888888;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
 .registrationBox {
     width: 1000px;
     height: 1300px;
@@ -11,47 +22,52 @@ form {
 }
 
 .colName {
-    font-size: 20px;
-}
-
-.col01 {
-    margin-right: 180px;
-}
-
-.col02, .col06, .col07, .col06_1, .closingTime, .address{
-    margin-right: 162px;
-}
-
-
-select {
-    height: 40px;
-    width: 150px;
     font-size: 16px;
 }
 
-.col03, .stock {
-    margin-right: 198px;
+select {
+    height: 30px;
+    width: 140px;
+    font-size: 16px;
+}
+.registName, select {
+    position: absolute;
+    left: 24%;
 }
 
-.col04, .col05 {
-    margin-right: 162px;
+.categorySelectBox, .registPrice, .simpleContent, .registStock, .fileButton {
+    position:absolute;
+    left: 24%;
 }
+
+.detailContents {
+    position: absolute;
+    left: 24%;
+    top: 96%;
+    width: 450px;
+    height: 300px;
+}
+
 
 input[type=date] {
-    height: 40px;
-    width: 150px;
+    position:absolute;
+    left : 24%;
+    height: 30px;
+    width: 130px;
 }
 
 input[type=time]{
-    height: 40px;
-    width: 150px;
+    position:absolute;
+    left : 24%;
+    height: 30px;
+    width: 130px;
 }
 
 .registFormLi {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
-.detailList {
+/* .detailList {
     height:460px;
     position: relative;
 }
@@ -60,40 +76,50 @@ input[type=time]{
     position:absolute;
     top:5px;
 
-}
+} */
 
-textarea {
+/* textarea {
     position: absolute;
     left:25%;
     top:5px;
     width: 500px;
     height: 450px;
-}
+} */
 
 .registFormLi > input[type=text] {
-    width: 500px;
-    height: 40px;
+    width: 450px;
+    height: 30px;
     font-size: 16px;
 }
 
 
-.registPrice, .registStock {
+/* .registPrice, .registStock {
     width:520px;
-}
+} */
 
-.fileButton {
-    padding: 8px 30px;
-    margin-right: 5px;;
+.fileButton, .fileButton2 {
+    padding: 6px 26px;
+    margin-right: 2px;
     background-color:  rgb(57, 59, 63);
     border-radius: 4px;
     color: white;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 13px;
+    position: absolute;
+    top: 170%;
 }
 
 .inputFileContent {
-    padding: 8px 40px;
+    position: absolute;
+    left : 34%;
+    padding: 6px 33px;
 }
+
+.col07 {
+    position: absolute;
+    top: 170%;
+}
+
 
 input[type=checkbox] {  
     display: none;  
@@ -104,8 +130,9 @@ input[type=checkbox] + label{
     cursor: pointer;  
     position: relative;  
     padding-left: 80px;  
-    margin-right: 15px;  
-    font-size: 18px;
+    margin-right: 10px;  
+    font-size: 16px;
+    left: 700px;
 }
 
 input[type=checkbox]+ label:before {     
@@ -113,13 +140,13 @@ input[type=checkbox]+ label:before {
     content: "";  
     display: inline-block;  
   
-    width: 25px;  
-    height: 25px;  
+    width: 20px;  
+    height: 20px;  
   
     margin-left: 40px;
-    margin-right: 10px;  
+    margin-right: 5px;  
     position: absolute;  
-    left: 0;  
+    left: 10px;  
     bottom: 1px;  
     background-color: #ccc;  
     border-radius: 2px; 
@@ -137,31 +164,23 @@ input[type=checkbox]:checked + label:before {
 
 } 
 
-.submitButton {
+.submitButton, .removeButton {
     position: absolute;
-    right: 5%;
-    padding: 10px 50px;
+    right: 2%;
+    top: 0;
+    padding: 6px 10px;
     border-style: none;
     /* background-color:  rgb(57, 59, 63); */
     background-color: #fa2828;
     border-radius: 4px;
     color: white;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 14px;
 
 }
 
 .removeButton {
-    position: absolute;
-    right: 23%;
-    padding: 10px 50px;
-    border-style: none;
-    /* background-color:  rgb(57, 59, 63); */
-    background-color: #fa2828;
-    border-radius: 4px;
-    color: white;
-    cursor: pointer;
-    font-size: 15px;
+    right: 8%;
 }
 
 .addressList{
@@ -174,9 +193,52 @@ input[type=checkbox]:checked + label:before {
 
 .addressFind {
     width:350px;
+    left: 24%;
+    position: absolute;
 }
 .addressFind > input[type=text]{
     width: 300px;
-    height: 40px;
+    height: 30px;
     margin-bottom: 3px;
+}
+
+.simpleContentList {
+    position: absolute;
+    top: 132%;
+}
+
+.simpleContent2 {
+    position:absolute;
+    left: 385%;
+}
+
+.col06_2, .detailContents2{
+    position: absolute;
+    top:147%;
+}
+
+.detailContents2{
+    left:24%;
+    width: 450px;
+    height: 300px;
+}
+
+
+.col07_2{
+    position: absolute;
+    top:260%;
+}
+
+.fileButton2{
+    left: 24%;
+}
+
+.inputFileContent2{
+    left:34%;
+    padding: 6px 33px;
+}
+
+.fileButton2, .inputFileContent2 {
+    top:260%;
+    position: absolute;
 }
