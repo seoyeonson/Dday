@@ -5,11 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>파트너 페이지</title>
-    <link rel="stylesheet" href="/partner/css/partner.css">
+    <link rel="stylesheet" href="/Project/partner/css/partner.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/Project/partner/css/partnerShipping.css">
+
 </head>
 <body>
     <div id="container-wrap" class="container-wrap">
@@ -55,7 +57,7 @@
                                 <div class="wrap">
                                     <div class="layout-left">
                                         <h1>
-                                            <a href="#">네이버</a> 
+                                            <a href="/Project/partner/html/partner_main.html">네이버</a> 
                                             <a href="#">
                                                 <small>naver.com</small>
                                             </a>
@@ -79,22 +81,22 @@
                                         <div class="nav-tabs-top">
                                             <ul class="nav nav-tabs tab-fluid-5" id="presentationMainTab" role="tablist" data-period ="30">
                                                 <li role="presentation" class="" data-name="sales">
-                                                    <a href="#tab-type1-id1" role="tab" data-toggle="tab"><h2>정보 수정</h2>
+                                                    <a href="/Project/partner/html/partner_change_info.html" role="tab" data-toggle="tab"><h2>정보 수정</h2>
                                                         <img class="js-period-icon" src="">
                                                     </a>
                                                 </li>
                                                 <li role="presentation" class="" data-name="order">
-                                                    <a href="#tab-type1-id2" role="tab" data-toggle="tab" aria-expanded="false"><h2>제품 등록</h2>
+                                                    <a href="/Project/partner/html/partner_registration.html" role="tab" data-toggle="tab" aria-expanded="false"><h2>제품 등록</h2>
                                                         <img class="js-period-icon" src="">
                                                     </a>
                                                 </li>
                                                 <li role="presentation" class="" data-name="visit">
-                                                    <a href="#tab-type1-id3" role="tab" data-toggle="tab" aria-expanded="false"><h2>판매 관리</h2>
+                                                    <a href="/Project/partner/html/partner_management.html" role="tab" data-toggle="tab" aria-expanded="false"><h2>판매 관리</h2>
                                                         <img class="js-period-icon" src="">
                                                     </a>
                                                 </li>
                                                 <li role="presentation" class="active" data-name="member">
-                                                    <a href="#tab-type1-id4" role="tab" data-toggle="tab" aria-expanded="false"><h2>배송 관리</h2>
+                                                    <a href="/Project/partner/html/partner_shipping.html" role="tab" data-toggle="tab" aria-expanded="false"><h2>배송 관리</h2>
                                                         <img class="js-period-icon" src="">
                                                      </a>
                                                 </li>
@@ -106,8 +108,60 @@
                         </div>
                     </body>
                 </div>
+                <div class="orderedBox">
+                    <div class="orderedList">
+                        <p>결제 완료된 상품 리스트</p>
+                        <table border="1" class="orderedTable">
+                            <th>번호</th>
+                            <th>상품주문번호</th>
+                            <th>이미지</th>
+                            <th>주문상품</th>
+                            <th>수량</th>
+                            <th>판매가</th>
+                            <th>총 할인금액</th>
+                            <th>배송비</th>
+                            <th>총 주문금액</th>
+                            <th>송장번호</th>
+                            <th>처리상태</th>
+                            <tr>
+                                <td>2</td>
+                                <td rowspan="2">299550</td>
+                                <td><img src="" alt=""></td>
+                                <td class="orderProductName">[유통기한2022.12.29]루스타 영양강화 강력밀가루 20kg</td>
+                                <td>
+                                    <p>1</p>
+                                    <p class="orderStock">재고:10</p>
+                                </td>
+                                <td>8,000원</td>
+                                <td rowspan="2">0원</td>
+                                <td rowspan="2">3000원(선불)</td>
+                                <td rowspan="2">64,000원</td>
+                                <td rowspan="2">
+                                    <input type="number" class="deliveryNumber" placeholder="송장번호 입력">
+                                    <input type="button" class="numberSubmit" onclick="getDelieveryNumber();" value="등록">
+                                </td>
+                                <td rowspan="2">
+                                    <!-- <a href="https://tracker.delivery/#/kr.epost/1111111111111" target="_blank"> -->
+                                    <input type="button" class="deliveryButton" value="보기" onclick="delieveryDetail();">
+                                </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td><img src="" alt=""></td>
+                                <td class="orderProductName">피스타치오분태 (미국) 200g</td>
+                                <td>
+                                    <p>1</p>
+                                    <p class="orderStock">재고:15</p>
+                                </td>
+                                <td>9,000원</td>
+                            </tr>
+                        </table>
+                    </div>
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="/Project/partner/js/partner.js"></script>
 </body>
 </html>

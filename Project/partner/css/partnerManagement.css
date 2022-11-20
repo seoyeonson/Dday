@@ -1,0 +1,43 @@
+.managementBox {
+    width: 1000px;
+    height: 1000px;
+    margin: auto;
+    padding: 0px 25px 10px;
+}
+
+.availableList {
+    height: 400px;
+}
+
+table {
+    width: 100%;
+    border: 1px solid rgb(163, 163, 163);
+    border-collapse: collapse;
+    margin-top: 5px;
+}
+
+.availableList > p{
+    font-size: 16px;
+}
+th {
+    background-color: lightgray;
+}
+
+th, tr {
+    padding: 3px;
+}
+
+tr {
+    text-align: center;
+    height: 35px;
+}
+
+.availableTable td:nth-child(3){
+    text-align: left;
+}
+
+.productChangeButton{
+    height:20px;
+    width: 30px;
+    font-size: 10px;
+}
