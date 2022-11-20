@@ -7,10 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공지사항 상세페이지</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/serviceCenter/css/noticeBoardListDetail.css">
+    <link rel="stylesheet" href="/Project/serviceCenter/css/noticeBoardListDetail.css">
+    <link rel="stylesheet" href="/Project/main/css/header.css">
+    <link rel="stylesheet" href="/Project/main/css/footer.css">
 </head>
 
 <body>
+    <div id="header"></div>
     <div class="wrapper">
         <div class="titleContainer">
             <div class="detailTitle">공지사항</div>
@@ -86,7 +89,14 @@
             </div>
         </div>
     </div>
+    <div id="footer"></div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script src="/serviceCenter/js/serviceCenter.js"></script>
+<script src="/Project/serviceCenter/js/serviceCenter.js"></script>
+<script>
+$(document).ready( function() {
+    $("#header").load("/Project/main/html/header.html");  // 원하는 파일 경로를 삽입하면 된다
+    $("#footer").load("/Project/main/html/footer.html");  // 추가 인클루드를 원할 경우 이런식으로 추가하면 된다
+});
+</script>
 </html>

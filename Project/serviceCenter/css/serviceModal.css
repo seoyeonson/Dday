@@ -30,7 +30,7 @@
     border-top: 1px solid rgb(221, 221, 221);
     position: relative;
     top: 100%;
-    color: rgb(95, 0, 128);
+    color: #ff3d00;
     line-height: 48px;
     cursor:pointer;
 }
