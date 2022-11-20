@@ -1,0 +1,14 @@
+.copyright {
+    text-align: center;
+    font-size: 10px;
+    color: #666;
+    padding: 18px;
+}
+
+.copyright a {
+    color: #666;
+}
+
+.copyright span {
+    color: #e60012;
+}
