@@ -223,7 +223,6 @@ a.btn-link, .table-cols a.btn-link {
 .main-section .calendar-box .memo > ul {
     overflow: auto;
     height: 170px;
-    padding-top: 15px;
 }
 
 .col-xs-4 {
@@ -359,12 +358,12 @@ b, strong {
     padding-left: 20px;
     background: url(/Project/partner/image/icon_calendar.png) no-repeat left 20%;
     border-bottom: 1px solid #E6E6E6;
+    margin-bottom: 20px;
 }
 
 .memo > ul {
     overflow: auto;
     height: 170px;
-    padding-top: 15px;
 }
 
 .memo > ul > li {
