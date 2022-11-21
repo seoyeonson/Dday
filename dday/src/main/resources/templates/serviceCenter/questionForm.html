@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -7,15 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1:1 문의글 작성</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/Project/serviceCenter/css/serviceNotice.css">
-    <link rel="stylesheet" href="/Project/serviceCenter/css/questionForm.css">
-    <link rel="stylesheet" href="/Project/serviceCenter/css/serviceModal.css">
-    <link rel="stylesheet" href="/Project/main/css/header.css">
-    <link rel="stylesheet" href="/Project/main/css/footer.css">
+    <link rel="stylesheet" href="/serviceCenter/css/serviceNotice.css">
+    <link rel="stylesheet" href="/serviceCenter/css/questionForm.css">
+    <link rel="stylesheet" href="/serviceCenter/css/serviceModal.css">
+    <link rel="stylesheet" href="/main/css/header.css">
+    <link rel="stylesheet" href="/main/css/footer.css">
 </head>
-
 <body>
-    <div id="header"></div>
+<header th:replace="main/header.html" :: h></header>
     <div class="wrapperBig">
         <div class="wrapper">
             <div class="sidebar">
@@ -184,7 +183,7 @@
                                         <label class="agreeLabel" for="InputAllowsNotificationCheck">
                                             <input name="allowsNotification" id="InputAllowsNotificationCheck"
                                                 type="checkbox" class="css-agvwxo e1dcessg2" checked="">
-                                            <img src="/Project/serviceCenter/img/correct.png"
+                                            <img src="/serviceCenter/img/correct.png"
                                                 alt="" class="agreeImage">
                                             <span class="css-0 e1dcessg1" style="font-size:13px">문자/알림톡 받기</span>
                                         </label>
@@ -212,15 +211,16 @@
             <div id="okModal" class="okModal">확인</div>
         </div>
     </div>
-<div id="footer"></div>
+<footer th:replace="main/footer.html" :: f></footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script src="/Project/serviceCenter/js/serviceModal.js"></script>
-<script src="/Project/serviceCenter/js/serviceCenter.js"></script>
+<script src="/serviceCenter/js/serviceModal.js"></script>
+<script src="/serviceCenter/js/serviceCenter.js"></script>
+<script src="/main/js/header.js"></script>
 <script>
 $(document).ready( function() {
-    $("#header").load("/Project/main/html/header.html");  // 원하는 파일 경로를 삽입하면 된다
-    $("#footer").load("/Project/main/html/footer.html");  // 추가 인클루드를 원할 경우 이런식으로 추가하면 된다
+    $("#header").load("/main/html/header.html");  // 원하는 파일 경로를 삽입하면 된다
+    $("#footer").load("/main/html/footer.html");  // 추가 인클루드를 원할 경우 이런식으로 추가하면 된다
 });
 </script>
 </html>

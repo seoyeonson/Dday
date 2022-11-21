@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="special-sale" th:fragment="ss1">
+    <div class="special-product">
+        <div class="product-title">
+            <h2 class="product-title-main">시간 한정</h2>
+            <h3 class="product-title-sub">마감 전 시간 한정 특별 할인 오픈!</h3>
+            <div class="product-time">
+                <div class="lottie-timer">
+                    <p>
+                    <label for="Timer1">남은 시간:</label>
+                    <input id="Timer1" type="text" value="" disabled style="background-color: #fff;"/>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="product-image">
+            <div class="product-imagee">
+                <div class="product-image-header">
+                    <img src="https://product-image.kurly.com/product/image/61d82fce-a8e3-4937-af8c-3bc8badc6915.jpg" alt="상품 이미지" loading="lazy">
+                    <div>
+                        <button type="button" class="product-function product-absolute">
+                            <img src="/main/image/main/run.png" width="45px" height="45px" alt="바로가기 아이콘">
+                        </button>
+                    </div>
+                </div>
+                <div class="product-image-footer product-info">
+                    <div class="product-description">부담 없이 즐기는 바삭 촉촉 옛날 통닭</div>
+                    <h3 class="product-name">두 마리 99치킨 (에어프라이어용)</h3>
+                    <div class="content-row now-price">
+                        <div class="product-price">
+                            <span class="sales-price css-18tpqqq">9,900
+                                <span class="won">원</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

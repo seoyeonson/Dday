@@ -22,7 +22,7 @@ public class MemberController {
     @GetMapping("/signup")
     public void signup(){}
 
-    @PostMapping("/signupOK")
+    @GetMapping("/signupOK")
     public void signupOK(){}
 
     @GetMapping("/userDivide")

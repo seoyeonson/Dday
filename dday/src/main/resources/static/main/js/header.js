@@ -12,12 +12,6 @@ var subcategory = $subcategory[0];
 var categorygate = $categorygate[0];
 var gray = $('.gray')[0];
 
-console.log($subcategory[0]);
-console.log(category);
-console.log(categorygate);
-console.log(gray);
-console.log(menubar);
-
 categorygate.addEventListener('mouseover',function(){
     category.style.display='block';
 });

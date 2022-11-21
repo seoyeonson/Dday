@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>문의사항 관리</title>
 
-    <link rel="stylesheet" href="/Project/manager/css/style.css">
-    <link rel="stylesheet" href="/Project/manager/css/table.css">
-    <link rel="stylesheet" href="/Project/manager/css/button.css">
+    <link rel="stylesheet" href="/manager/css/style.css">
+    <link rel="stylesheet" href="/manager/css/table.css">
+    <link rel="stylesheet" href="/manager/css/button.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -25,29 +25,29 @@
     <!-- 메인페이지 링크 나오면 추가해주세요 -->
     <ul>
         <li>
-            <a href="" class="menu"><img src="/Project/manager/image/globe.png">사이트 바로가기</a>
+            <a href="" class="menu"><img src="/manager/image/globe.png">사이트 바로가기</a>
         </li>
         <!-- 회원 관리 -->
         <li>
-            <a><img src="/Project/manager/image/user.png">회원 관리 <img src="/Project/manager/image/menu-burger.png"
+            <a><img src="/manager/image/user.png">회원 관리 <img src="/manager/image/menu-burger.png"
                     style="float: right; height:20px;"></a>
             <ul>
-                <li><a href="/Project/manager/html/member/memberAll.html">전체회원관리</a></li>
+                <li><a href="/manager/html/member/memberAll.html">전체회원관리</a></li>
               <!--   <li><a href="memberReport.html">신고회원관리</a></li> -->
             </ul>
         </li>
         <li>
-            <a><img src="/Project/manager/image/apps.png">콘텐츠 관리<img src="/Project/manager/image/menu-burger.png" style="float: right; height:20px;"></a>
+            <a><img src="/manager/image/apps.png">콘텐츠 관리<img src="/manager/image/menu-burger.png" style="float: right; height:20px;"></a>
                 <ul>
-                    <li><a href="/Project/manager/html/manager/managerNotice.html">공지사항관리</a></li>
-                    <li><a href="/Project/manager/html/manager/managerFAQ.html">문의하기관리</a></li>
+                    <li><a href="/manager/html/manager/managerNotice.html">공지사항관리</a></li>
+                    <li><a href="/manager/html/manager/managerFAQ.html">문의하기관리</a></li>
                 </ul>
     </li>
         <li>
-            <a><img src="/Project/manager/image/settings.png">환경 설정<img src="/Project/manager/image/menu-burger.png"
+            <a><img src="/manager/image/settings.png">환경 설정<img src="/manager/image/menu-burger.png"
                     style="float: right; height:20px;"></a>
              <ul>
-                    <li><a href="/Project/manager/html/banner/managerBanner.html">배너 관리</a></li>
+                    <li><a href="/manager/html/banner/managerBanner.html">배너 관리</a></li>
                 </ul>
         </li>
     </ul>
@@ -150,5 +150,5 @@
           </table>
     </div>
 </body>
-<script src="/Project/manager/js/manager.js"></script>
+<script src="/manager/js/manager.js"></script>
 </html>

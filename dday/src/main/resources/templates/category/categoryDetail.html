@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,11 +10,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <!-- css -->
-    <link rel="stylesheet" href="/Project/serviceCenter/css/serviceNotice.css">
-    <link rel="stylesheet" href="/Project/category/css/categoryDetail.css">
-    
+    <link rel="stylesheet" href="/serviceCenter/css/serviceNotice.css">
+    <link rel="stylesheet" href="/category/css/categoryDetail.css">
+    <link rel="stylesheet" href="/main/css/header.css">
+    <link rel="stylesheet" href="/main/css/footer.css">
 </head>
 <body>
+<header th:replace="main/header.html" :: h></header>
     <div id="detail">
         <main>
             <div class="detail_img"></div>
@@ -349,5 +351,8 @@
             </div>
         </div>
     </div>
+<footer th:replace="main/footer.html" :: f></footer>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/main/js/header.js"></script>
 </html>

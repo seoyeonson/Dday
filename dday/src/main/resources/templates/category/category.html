@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/main/css/header.css">
+  <link rel="stylesheet" href="/main/css/footer.css">
   <title>Search</title>
 </head>
-<link rel="stylesheet" href="\Project\search\css\searchDemo.css">
-<link rel="stylesheet" href="\Project\search\css\search.css">
+<link rel="stylesheet" href="/search/css/searchDemo.css">
+<link rel="stylesheet" href="/search/css/search.css">
 <style data-emotion="css-global" data-s=""></style>
-
 <body>
+<header th:replace="main/header.html" :: h></header>
   <div class="css-1qq5c2w e1j5v3ii1">
     <div class="css-1wh226x e1j5v3ii0">
       <div id="container" class="css-1i60c0e e2b3c3l0">
@@ -403,5 +404,8 @@
       </div>
     </div>
   </div>
+<footer th:replace="main/footer.html" :: f></footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/main/js/header.js"></script>
 </body>
 </html>
