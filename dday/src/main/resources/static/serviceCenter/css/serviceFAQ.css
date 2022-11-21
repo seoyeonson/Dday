@@ -1,0 +1,73 @@
+.faqBoardNum {
+    flex-basis: 70px;
+    text-align: center;
+    line-height: 20px;
+    font-weight: 400;
+    color: rgb(51, 51, 51);
+}
+
+.faqCategory {
+    flex-basis: 135px;
+    text-align: center;
+    line-height: 20px;
+    font-weight: 400;
+    color: rgb(51, 51, 51);
+}
+
+.faqTitle {
+    flex-grow: 1;
+    text-align: center;
+    line-height: 20px;
+    font-weight: 400;
+    color: rgb(51, 51, 51);
+}
+
+.faqBoardLists {
+    display: flex;
+    flex-direction: column;
+}
+
+.faqBoardList {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid rgb(244, 244, 244);
+}
+
+.faqListNum {
+    text-align: center;
+    padding: 20px 0px;
+    color: rgb(76, 76, 76);
+    flex-basis: 70px;
+}
+
+.faqListCategory {
+    text-align: center;
+    padding: 20px 0px;
+    color: rgb(76, 76, 76);
+    flex-basis: 135px;
+}
+
+.faqListTitle {
+    padding: 20px 0px 20px 20px;
+    color: rgb(76, 76, 76);
+    flex: 1 1 0%;
+    text-align: left;
+}
+
+.faqAnswer {
+    position: relative;
+    padding: 30px 30px 30px 70px;
+    text-align: left;
+    color: rgb(76, 76, 76);
+    white-space: pre-line;
+}
+
+.faqAnswer::after {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 24px;
+    height: 12px;
+    background: url(https://res.kurly.com/images/common/icon_faq.gif) 0px 0px no-repeat;
+}

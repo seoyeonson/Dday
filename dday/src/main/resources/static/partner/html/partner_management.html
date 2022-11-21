@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>파트너 페이지</title>
+    <link rel="stylesheet" href="/Project/partner/css/partner.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/Project/partner/css/partnerManagement.css">
+
+</head>
+<body>
+    <div id="container-wrap" class="container-wrap">
+        <div id="container" class="row">
+            <div id="header" class="col-xs-12">
+                <nav class="navbar">
+                    <div class="container">
+                        <div class="navbar-inner">
+                            <div class="navbar-header">
+                                <a class="navbar-brand" href="#"></a>
+                            </div>
+                            <div class="gnb">
+                                <ul class="list-inline">
+                                    <li class="no-bar">
+                                        <div class="dropdown">
+                                            <!-- header -->
+                                            <a href="#" class="dropdown-toggle gnb-idinfo" id="headerSubMenuManager" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+                                                <span>판매자</span>님 (
+                                                <span>wanted</span> )
+                                                    <img src="/Project/partner/image/nav_menu_bar.gif">
+                                                <span>로그아웃</span>
+                                            </a>
+                                            <ul class="dropdown-menu gnb-dropdown-menu" aria-labelledby="headerSubMenuManager">
+                                                <li class="dropdown-item"><a href="#">판매자 정보</a></li>
+                                                <!--운영자 마이페이지-->
+                                                <li class="dropdown-item"><a href="#">로그아웃</a></li>
+                                                <!-- 로그 아웃-->
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div id="content-wrap">
+                <div class="container-fluid pd0">
+                    <div id="content" class="row">
+                        <div class="col-xs-12">
+                            <!-- 서비스 정보 내용 시작 -->
+                            <div class="row main-layout main-header reform mgt-33">
+                                <div class="wrap">
+                                    <div class="layout-left">
+                                        <h1>
+                                            <a href="/Project/partner/html/partner_main.html">네이버</a> 
+                                            <a href="#">
+                                                <small>naver.com</small>
+                                            </a>
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--주요 현황-->
+                <div class="main-layout main-content reform">
+                    <body class="base main-statistics layout-no-iframe menu-no-border">
+                        <div class="main-statistics main-content reform mg0 pd0">
+                            <div class="content-main">
+                                <div class="main-section" id="presentationSection">
+                                    <div class="table-title">
+                                        <span class="">판매 관리</span>
+                                    </div>
+                                    <div class="statics-box reform">
+                                        <div class="nav-tabs-top">
+                                            <ul class="nav nav-tabs tab-fluid-5" id="presentationMainTab" role="tablist" data-period ="30">
+                                                <li role="presentation" class="" data-name="sales">
+                                                    <a href="/Project/partner/html/partner_change_info.html" role="tab" data-toggle="tab"><h2>정보 수정</h2>
+                                                        <img class="js-period-icon" src="">
+                                                    </a>
+                                                </li>
+                                                <li role="presentation" class="" data-name="order">
+                                                    <a href="/Project/partner/html/partner_registration.html" role="tab" data-toggle="tab" aria-expanded="false"><h2>제품 등록</h2>
+                                                        <img class="js-period-icon" src="">
+                                                     </a>
+                                                </li>
+                                                <li role="presentation" class="active" data-name="visit">
+                                                    <a href="/Project/partner/html/partner_management.html" role="tab" data-toggle="tab" aria-expanded="false"><h2>판매 관리</h2>
+                                                        <img class="js-period-icon" src="">
+                                                    </a>
+                                                </li>
+                                                <li role="presentation" class="" data-name="member">
+                                                    <a href="/Project/partner/html/partner_shipping.html" role="tab" data-toggle="tab" aria-expanded="false"><h2>배송 관리</h2>
+                                                        <img class="js-period-icon" src="">
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </body>
+                </div>
+                
+                <div class="managementBox">
+                    <div class="availableList">
+                        <p>판매중인 상품리스트</p>
+                        <table border="1" class="availableTable">
+                            <th>번호</th>
+                            <th>이미지</th>
+                            <th>상품명</th>
+                            <th>판매가</th>
+                            <th>재고</th>
+                            <th>등록일/수정일</th>
+                            <th>수정</th>
+                            <tr>
+                                <td>1</td>
+                                <td></td>
+                                <td class="productName">[유통기한2022.12.29]루스타 영양강화 강력밀가루 20kg</td>
+                                <td>24,600원</td>
+                                <td>12</td>
+                                <td>
+                                    <p>2022-11-16</p>
+                                    <p>2022-11-16</p>
+                                </td>
+                                <td>
+                                    <input type="button" class="productChangeButton"  value="수정">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td> <input type="button" class="productChangeButton"  value="수정"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- <div class="returnList">
+                        <p>반품리스트</p>
+                        <table border="1" class="returnTable">
+                            <th>번호</th>
+                            <th>주문일시</th>
+                            <th>반품신청일</th>
+                            <th>주문자</th>
+                            <th>주문번호</th>
+                            <th>주문상품</th>
+                            <th>수량</th>
+                            <th>상품금액</th>
+                            <th>사유</th>
+                            <tr>
+                                <td>2</td>
+                                <td>
+                                    <p class="date buyDate">2022-11-04</p>
+                                    <p class="time buyTime">01:32</p>
+                                </td>
+                                <td>
+                                    <p class="date returnDate">2022-11-07</p>
+                                    <p class="time returnTime">17:09</p>
+                                </td>
+                                <td>
+                                    <p class="memberName">정주연</p>
+                                    <p class="memberId">(jjy3730/일반회원)</p>
+                                </td>
+                                <td>2211040132183082</td>
+                                <td>70 원형팬 초미니(100*70)</td>
+                                <td>1</td>
+                                <td>3000원</td>
+                                <td>상품불량</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="cancelList">
+                        <p>취소리스트</p>
+                        <table border="1" class="cancelTable">
+                            <th>번호</th>
+                            <th>이미지</th>
+                            <th>상품명</th>
+                            <th>판매가</th>
+                            <th>삭제일</th>
+                            <th>재등록</th>
+                            <tr>
+                                <td>1</td>
+                                <td></td>
+                                <td class="productName">[유통기한2022.12.29]루스타 영양강화 강력밀가루 20kg</td>
+                                <td>24,600원</td>
+                                <td>
+                                    2022-11-16
+                                </td>
+                                <td>
+                                    <button class="reRegistButton">재등록</button>
+                                </td>
+                            </tr>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="/Project/partner/js/partner.js"></script>
+<script>
+    $('input.productChangeButton').on("click",function(){
+        console.log('들어왔어요');
+        $(location).attr('href', '/Project/partner/html/partnerProductChange.html');
+    });
+</script>
+</body>
+</html>

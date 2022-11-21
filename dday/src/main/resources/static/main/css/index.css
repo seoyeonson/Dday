@@ -1,0 +1,39 @@
+*{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body{
+    margin: 0px;
+}
+button {
+    overflow: visible;
+    background-color: transparent;
+    border: none;
+}
+
+/* 상승아이콘 */
+#topButton {
+    position: fixed; 
+    right: 2%; 
+    bottom: 50px; 
+    display: none; 
+    z-index: 999;
+}
+
+.centor{
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.centorbody{
+    position: relative;
+}
+
+.hiddenbody{
+    position: relative;
+    width: 1050px;
+    margin: 0px auto;
+    z-index: 9999;
+}
+
+
