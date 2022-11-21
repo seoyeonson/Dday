@@ -43,7 +43,7 @@
 .box button{
     width: 80%;
     padding: 15px 18px;
-    background-color: rgb(95, 0, 128);
+    background-color: #ff4500;
     color: white;
     margin-top: 20px;
     /* color: rgb(95, 0, 128);
@@ -53,7 +53,7 @@
 }
 
 .box i {
-    color: rgb(95, 0, 128);
+    color: #ff4500;
     /* color: rgb(221, 221, 221); */
     font-size: 30px;
 }
