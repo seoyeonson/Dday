@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>파트너 페이지-제품 수정</title>
+    <title>파트너 페이지</title>
     <link rel="stylesheet" href="/Project/partner/css/partner.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,7 +72,7 @@
                                 <div class="wrap">
                                     <div class="layout-left">
                                         <h1>
-                                            <a href="/Project/partner/html/partner_main.html">네이버</a>  
+                                            <a href="/Project/partner/html/partner_main.html">네이버</a> 
                                             <a href="#">
                                                 <small>naver.com</small>
                                             </a>
@@ -125,6 +125,9 @@
                 </div>
                 <div class="registrationBox">
                     <form class="registrationForm registForm">
+                        <div class="registTitle">
+                            <h3>제품 수정</h3>
+                        </div>
                         <ul>
                             <li class="registFormLi">
                                 <span class="colName col01">상품명</span>
@@ -134,7 +137,7 @@
                             </li>
                             <li class="registFormLi">
                                 <span class="colName col02">카테고리</span>
-                                <select name="" id="">
+                                <select name="" id="" class="categorySelectBox">
                                     <option>상품 분류 선택</option>
                                     <option value="01">채소</option>
                                     <option value="02">과일.견과.쌀</option>
@@ -170,7 +173,7 @@
                             </li>
                             <li class="registFormLi detailList">
                                 <span class="colName col06">상세설명</span>
-                                <textarea rows="10" cols="10"></textarea>
+                                <textarea rows="10" cols="10" class="detailContents"></textarea>
                             </li>
                             <li class="registFormLi">
                                 <span class="colName col07">제품사진</span>
@@ -184,10 +187,13 @@
                                   <input type="file" id="inputFileContent" style="display:none;"> 
                             </li>
                         </ul>
-                        <input type="button" class="submitButton" value="등록하기" onclick="alert('제품이 등록되었습니다.')">
-                        <input type="button" class="removeButton" value="삭제하기" onclick="alert('제품이 삭제되었습니다.')">
+                        <input type="button" class="submitButton" value="수정" onclick="alert('제품이 수정되었습니다.')">
+                        <input type="button" class="removeButton" value="삭제" onclick="alert('제품이 삭제되었습니다.')">
                     </form>
                     <form class="registrationForm todayResgistForm">
+                        <div class="registTitle">
+                            <h3>제품 등록</h3>
+                        </div>
                         <ul>
                             <li class="registFormLi">
                                 <span class="colName col01">상품명</span>
@@ -235,28 +241,28 @@
                                 <span class="colName col05">유통기한</span>
                                 <input type="date" name="" id="">
                             </li> -->
-                            <li class="registFormLi">
+                            <li class="registFormLi simpleContentList">
                                 <span class="colName col06_1">한줄설명</span>
-                                <input type="text" class="simpleContent" placeholder="미리보기에 표시될 상품의 한줄 설명을 작성해주세요">
+                                <input type="text" class="simpleContent2" placeholder="미리보기에 표시될 상품의 한줄 설명을 작성해주세요">
                             </li>
                             <li class="registFormLi detailList">
-                                <span class="colName col06">상세설명</span>
-                                <textarea rows="10" cols="10"></textarea>
+                                <span class="colName col06_2">상세설명</span>
+                                <textarea rows="10" cols="10" class="detailContents2"></textarea>
                             </li>
-                            <li class="registFormLi">
-                                <span class="colName col07">제품사진</span>
-                                <label class="fileButton" for="inputFile">
+                            <li class="registFormLi photoList">
+                                <span class="colName col07_2">제품사진</span>
+                                <label class="fileButton2" for="inputFile">
                                     썸네일
                                   </label>
                                   <input type="file" id="inputFile" style="display:none;"> 
-                                  <label class="fileButton inputFileContent" for="inputFileContent">
+                                  <label class="fileButton inputFileContent2" for="inputFileContent">
                                     본문
                                   </label>
                                   <input type="file" id="inputFileContent" style="display:none;"> 
                             </li>
                         </ul>
-                        <input type="button" class="submitButton" value="등록하기" onclick="alert('제품이 등록되었습니다.')">
-                        <input type="button" class="removeButton" value="삭제하기" onclick="alert('제품이 삭제되었습니다.')">
+                        <input type="button" class="submitButton" value="수정" onclick="alert('제품이 수정되었습니다.')">
+                        <input type="button" class="removeButton" value="삭제" onclick="alert('제품이 삭제되었습니다.')">
                     </form>
                 </div>
 

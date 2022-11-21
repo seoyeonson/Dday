@@ -124,20 +124,25 @@
                     </body>
                 </div>
                 <div class="orderedBox">
+                    <div class="odrdeTitle">
+                        <h3>배송 관리</h3>
+                    </div>
                     <div class="orderedList">
                         <p>결제 완료된 상품 리스트</p>
                         <table border="1" class="orderedTable">
-                            <th>번호</th>
-                            <th>상품주문번호</th>
-                            <th>이미지</th>
-                            <th>주문상품</th>
-                            <th>수량</th>
-                            <th>판매가</th>
-                            <th>총 할인금액</th>
-                            <th>배송비</th>
-                            <th>총 주문금액</th>
-                            <th>송장번호</th>
-                            <th>처리상태</th>
+                            <tr>
+                                <th>번호</th>
+                                <th>상품주문번호</th>
+                                <th>이미지</th>
+                                <th>주문상품</th>
+                                <th>수량</th>
+                                <th>판매가</th>
+                                <th>총 할인금액</th>
+                                <th>배송비</th>
+                                <th>총 주문금액</th>
+                                <th>송장번호</th>
+                                <th>처리상태</th>
+                            </tr>
                             <tr>
                                 <td>2</td>
                                 <td rowspan="2">299550</td>
@@ -157,7 +162,7 @@
                                 </td>
                                 <td rowspan="2">
                                     <!-- <a href="https://tracker.delivery/#/kr.epost/1111111111111" target="_blank"> -->
-                                    <input type="button" class="deliveryButton" value="보기" onclick="delieveryDetail();">
+                                    <input type="button" class="statusButton" value="보기" onclick="delieveryDetail();">
                                 </a>
                                 </td>
                             </tr>
@@ -169,7 +174,8 @@
                                     <p>1</p>
                                     <p class="orderStock">재고:15</p>
                                 </td>
-                                <td>9,000원</td>
+                                <td style="border-right:1px">9,000원</td>
+                                
                             </tr>
                         </table>
                     </div>
