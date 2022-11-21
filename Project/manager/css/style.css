@@ -260,7 +260,7 @@ body {
 .contents .nameText{
     position: relative;
     top: 2px;
-    left: 410px;
+    left: 405px;
     padding: 5px;
 }
 
@@ -305,7 +305,7 @@ body {
     background-color: #ff3d00;
     color: #fff;
     padding: 10px;
-    padding-right: 90px;
+    padding-right: 89px;
 }
 .contents .divideRadio{
     position: relative;
@@ -628,8 +628,24 @@ body {
 
 .contents #textarea{
     position: relative;
-    top: -30px;
+    top: -35px;
     resize: none;
     border-color: #FFF;
 }
 
+.contents .memberAddressText #sample6_address{
+    position: relative;
+    top: 2px;
+    left: 20px;
+    width: 530px;
+}
+.contents .memberAddressText #sample6_extraAddress{
+    position: relative;
+    left: -200px;
+    top: 41px;
+    width: 200px;
+}
+.contents .memberAddressText #sample6_detailAddress{
+    position: relative;
+    top: 10px;
+}
