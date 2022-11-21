@@ -91,9 +91,9 @@
     cursor: pointer;
 }
 
-.contents .duplicationBtn{
+/* .contents .duplicationBtn{
     position: relative;
-    top: -50px;
+    top: 2px;
     left: 25px;
     padding: 5px;
     background-color: #FFF;
@@ -102,7 +102,7 @@
     border-color: #ff3d00;
     font-weight: bold;
     cursor: pointer;
-}
+} */
 
 
 .contents .memberAddressText .addressBtn{
