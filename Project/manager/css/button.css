@@ -12,8 +12,6 @@
     display: inline-block;
     font-size: 16px;
     border-radius: 4px;
-    left: 1390px;
-    top: 50px;
     cursor: pointer;
 }
 .contents .notice_btn{
@@ -27,11 +25,40 @@
     display: inline-block;
     font-size: 16px;
     border-radius: 4px;
-    left: 1090px;
-    top: 50px;
     cursor: pointer;
 }
-.contents .banner_btn{
+
+#button2{
+    position: relative;
+    left: 17px;
+    top: 60px;
+    width: 100%;
+    height: 100%;
+
+}
+#button3{
+    position: relative;
+    left: 17px;
+    top: 60px;
+    width: 100%;
+    height: 100%;
+
+}
+.banner_btn{
+    position: fixed;
+    background-color: #ff3d00;
+    color: white;
+    border: none;
+    padding: 13px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+.deleteBanner_btn{
     position: relative;
     background-color: #ff3d00;
     color: white;
@@ -42,24 +69,8 @@
     display: inline-block;
     font-size: 16px;
     border-radius: 4px;
-    left: 1090px;
-    top: 50px;
     cursor: pointer;
-}
-.contents .deleteBanner_btn{
-    position: relative;
-    background-color: #ff3d00;
-    color: white;
-    border: none;
-    padding: 13px 28px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 4px;
-    left: 1390px;
-    top: 50px;
-    cursor: pointer;
+    left: 130px;
 }
 
 
