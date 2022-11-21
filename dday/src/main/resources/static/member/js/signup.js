@@ -125,10 +125,10 @@ const $checkboxs = $(".agree_content input[type=checkbox]");
 
 $agreeAll.on("click", function(){
     if($(this).is(":checked")){
-        $checkboxs.next().attr("src", "../image/check.svg");
+        $checkboxs.next("span").addClass("fill");
         $checkboxs.prop("checked", true);
     } else {
-        $checkboxs.next().attr("src", "../image/no-check.svg");
+        $checkboxs.next("span").removeClass("fill");
         $checkboxs.prop("checked", false);
     }
 })
@@ -136,9 +136,9 @@ $agreeAll.on("click", function(){
 $agrees.on("click", function(){
     let check = 0
     if($(this).is(":checked")){
-        $(this).next().prop("src", "../image/check.svg");
+        $(this).next("span").addClass("fill");
     } else {
-        $(this).next().prop("src", "../image/no-check.svg");
+        $(this).next("span").removeClass("fill");
     }
 
     $.each($agrees, function(){
@@ -148,13 +148,36 @@ $agrees.on("click", function(){
     });
 
     if(check == $agrees.length){
-        $agreeAll.next().attr("src", "../image/check.svg");
+        $agreeAll.next("span").addClass("fill");
         $agreeAll.prop("checked", true);
     } else {
-        $agreeAll.next().attr("src", "../image/no-check.svg");
+        $agreeAll.next("span").removeClass("fill");
         $agreeAll.prop("checked", false);
     }
 });
+
+// $agrees.on("click", function(){
+//     let check = 0
+//     if($(this).is(":checked")){
+//         $(this).next().prop("src", "../image/check.svg");
+//     } else {
+//         $(this).next().prop("src", "../image/no-check.svg");
+//     }
+
+//     $.each($agrees, function(){
+//         if($(this).is(":checked")){
+//             check += 1
+//         }
+//     });
+
+//     if(check == $agrees.length){
+//         $agreeAll.next().attr("src", "../image/check.svg");
+//         $agreeAll.prop("checked", true);
+//     } else {
+//         $agreeAll.next().attr("src", "../image/no-check.svg");
+//         $agreeAll.prop("checked", false);
+//     }
+// });
 
 $(".signup_submit button").on("click", function(){
     // if(signupForm.[name명].value == ""){

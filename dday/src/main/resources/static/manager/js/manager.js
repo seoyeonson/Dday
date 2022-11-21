@@ -78,11 +78,16 @@ function remove_tr(This) {
   }
 }
 
+/* 비밀번호 확인 */
 function test() {
   var p1 = document.getElementById('password').value;
   var p2 = document.getElementById('confirm_password').value;
   let move = confirm("해당 정보를 저장하시겠습니까?");
 
+  if(p1.length == ''){
+    alert('비밀번호를 입력해주세요.');
+    return false;
+  }
   if (p1.length < 9 || p1.length > 17) {
     alert('비밀번호는 10 ~ 16자리 이하여야합니다.');
     return false;
@@ -100,4 +105,6 @@ function test() {
     }
   }
 }
+
+
 

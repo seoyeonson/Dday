@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>찜한상품</title>
+    <link rel="stylesheet" href="/Project/myPage/css/myPageLike.css">
+    <link rel="stylesheet" href="/Project/main/css/header.css">
+    <link rel="stylesheet" href="/Project/main/css/footer.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+</head>
+<body>
+    <!-- 헤더시작 -->
+    <header>
+        <div class="header">
+            <div class="searchbar">
+                <div class="loginbar">
+                    <a class="join">회원가입</a>
+                    <div class="barbar"></div>
+                    <a class="login lobo">로그인</a>
+                    <div class="barbar"></div>
+                    <div class="service_centor">
+                        <a class="service lobo css-over">고객센터<span class="plusbar"></span></a>
+                        <div class="menubar">
+                            <div class="menubar_subtitle">공지사항</div>
+                            <div class="menubar_subtitle">자주하는 질문</div>
+                            <div class="menubar_subtitle">1:1 문의</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 로그인바 종료-->
+                <div class="subsearchbar">
+                    <div class="logo">
+                        <img src="/Project/main/image/banner/logo-대체.webp" alt="마켓컬리 로고" class="main-logo e1s3pt0j0">
+                        <button class="active purple text1010">D-Day</button>
+                    </div>
+                    <div class="hiddenlogo">
+                        <div class="mainsearchbar">
+                            <input id="gnb_search" placeholder="검색어를 입력해주세요" required="" class="searchbar-title" value="">
+                            <button id="submit" aria-label="submit" class="searchbar-search">
+                                <img src="/Project/main/image/main/search.png" class="search-image">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hiddenlogo">
+                        <div class="link-service">
+                            <div class=" css1-icon"></div>
+                            <button class="css2-icon" aria-label="찜하기" type="button"></button>
+                            <div class="css3-icon">
+                                <div>
+                                    <div>
+                                        <button class="shopping-basket"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div id="header" class="trueheader">
+            <div class="head-line">
+                <div>
+                    <div class="css1-line">
+                        <span class="adidas"></span>
+                        <span class="subtitle">카테고리</span>
+                        <!-- 카테고리 건들면 다침-->
+                        <div class="category">
+                            <div width="268" class="category-bar">
+                                <ul class="category-ul-bar">
+                                    <li class="category-li-bar">
+                                        <div class="category-image">
+                                            <img src="https://collection-image.kurly.com/site-category-groups/1/4IYbd0CEWkokpqiN00CAL9cDC2Q7nT101TDEn0tF.png" alt="채소" class="category-background-image">
+                                            <span class="category-sub-name">채소</span>
+                                        </div>
+                                    </li>
+                                    <li class="category-li-bar">
+                                        <div class="category-image">
+                                            <img src="https://collection-image.kurly.com/site-category-groups/2/DNXCcUaXoXakDOdHiGhIMCNUeUjJioG9EyeQ7RRX.png" alt="과일·견과·쌀" class="category-background-image">
+                                            <span class="category-sub-name">과일·견과·쌀</span>
+                                        </div>
+                                    </li>
+                                    <li class="category-li-bar">
+                                        <div class="category-image">
+                                            <img src="https://collection-image.kurly.com/site-category-groups/3/fivaoZPBTeqaDswJUgr3k0xMV0von36Qb9qnn7ZZ.png" alt="수산·해산·건어물" class="category-background-image">
+                                            <span class="category-sub-name">수산·해산·건어물</span>
+                                        </div>
+                                    </li>
+                                    <li class="category-li-bar">
+                                        <div class="category-image">
+                                            <img src="https://collection-image.kurly.com/site-category-groups/4/jj6zZg2sY94aytlc2k1udIAmWWvmUignR9VYaMcm.png" alt="정육·계란" class="category-background-image">
+                                            <span class="category-sub-name">정육·계란</span>
+                                        </div>
+                                    </li>
+                                    <li class="category-li-bar">
+                                        <div class="category-image">
+                                            <img src="https://collection-image.kurly.com/site-category-groups/5/CkyoRnUe2q9ngIOLW3bJPRYBw9xq9BHZ3fNQIq1c.png" alt="국·반찬·메인요리" class="category-background-image">
+                                            <span class="category-sub-name">국·반찬·메인요리</span>
+                                        </div>
+                                    </li>
+                                    <li class="category-li-bar">
+                                        <div class="category-image">
+                                            <img src="https://collection-image.kurly.com/site-category-groups/6/kwat5Szmq0ONTpMd4hlbcGmCOBd3FsMPyTzWxKBb.png" alt="샐러드·간편식" class="category-background-image">
+                                            <span class="category-sub-name">샐러드·간편식</span>
+                                        </div>
+                                    </li>
+                                    <li class="category-li-bar">
+                                        <div class="category-image">
+                                            <img src="https://collection-image.kurly.com/site-category-groups/7/CL0LpJynh8Nh2Vqmnm62RVTPePWVU84VkWwQPjdO.png" alt="면·양념·오일" class="category-background-image">
+                                            <span class="category-sub-name">면·양념·오일</span>
+                                        </div>
+                                    </li>
+                                    <li class="category-li-bar">
+                                        <div class="category-image">
+                                            <img src="https://collection-image.kurly.com/site-category-groups/8/bKllScRqF9gQ5q58LcmBfOOhgBrCOdVypPiRvQkL.png" alt="생수·음료·우유·커피" class="category-background-image">
+                                            <span class="category-sub-name">생수·음료·우유·커피</span>
+                                        </div>
+                                    </li>
+                                    <li class="category-li-bar">
+                                        <div class="category-image">
+                                            <img src="https://collection-image.kurly.com/site-category-groups/9/5qKRHLtIeBWLxUPa1g3koUhqsAkc39YjtMnyIXCJ.png" alt="간식·과자·떡" class="category-background-image">
+                                            <span class="category-sub-name">간식·과자·떡</span>
+                                        </div>
+                                    </li>
+                                    <li class="category-li-bar">
+                                        <div class="category-image">
+                                            <img src="https://collection-image.kurly.com/site-category-groups/10/bIjVH9L4oDFYv0GpjBijA6QQEjiDOW0KoflLVNC1.png" alt="베이커리·치즈·델리" class="category-background-image">
+                                            <span class="category-sub-name">베이커리·치즈·델리</span>
+                                        </div>
+                                    </li>
+                                    <li class="category-li-bar">
+                                        <div class="category-image">
+                                            <img src="https://collection-image.kurly.com/site-category-groups/11/vEGBXqN7a2bxTC3v6jntEzTqQiwG4ogLkiruPwRs.png" alt="건강식품" class="category-background-image">
+                                            <span class="category-sub-name">건강식품</span>
+                                        </div>
+                                    </li>
+                                    <li class="category-li-bar">
+                                        <div class="category-image">
+                                            <img src="https://collection-image.kurly.com/site-category-groups/12/UnO3V0GDnss8p37EKmTGvnF9SzeyzgyzC0O7Wh1R.png" alt="와인" class="category-background-image">
+                                            <span class="category-sub-name">와인</span>
+                                        </div>
+                                    </li>
+                                    <li class="category-li-bar">
+                                        <div class="category-image">
+                                            <img src="https://collection-image.kurly.com/site-category-groups/13/1vmSDtWcIbzUc8QNl8CV9EQ7h5dWGc4uMg4uY6cP.png" alt="전통주" class="category-background-image">
+                                            <span class="category-sub-name">전통주</span>
+                                        </div>
+                                    </li>
+                                    <li class="category-li-bar">
+                                        <div class="category-image">
+                                            <img src="https://collection-image.kurly.com/site-category-groups/14/1vTroAoaidyGvcDf1MRU8GhS73GMp9oZ7lm7IT0Z.png" alt="생활용품·리빙·캠핑" class="category-background-image">
+                                            <span class="category-sub-name">생활용품·리빙·캠핑</span>
+                                        </div>
+                                    </li>
+                                    <li class="category-li-bar">
+                                        <div class="category-image">
+                                            <img src="https://collection-image.kurly.com/site-category-groups/15/3OUDPGzCOTPixqHY1wdFEUfHacXxynCpnlzFzFBD.png" alt="스킨케어·메이크업" class="category-background-image">
+                                            <span class="category-sub-name">스킨케어·메이크업</span>
+                                        </div>
+                                    </li>
+                                    <li class="category-li-bar">
+                                        <div class="category-image">
+                                            <img src="https://collection-image.kurly.com/site-category-groups/16/APNr2Xb1ZeF9WcBDky1V9GWHZaCy7kifCkwSjTjy.png" alt="헤어·바디·구강" class="category-background-image">
+                                            <span class="category-sub-name">헤어·바디·구강</span>
+                                        </div>
+                                    </li>
+                                    <li class="category-li-bar">
+                                        <div class="category-image">
+                                            <img src="https://collection-image.kurly.com/site-category-groups/17/K81cs1Af4uRkEvbnfEV51E5UcwP5v6HhH1xyFqHK.png" alt="주방용품" class="category-background-image">
+                                            <span class="category-sub-name">주방용품</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="main-title">
+                    <li class="main-subtitle">
+                        <span class="main-subsubtitle">당일 판매상품</span>
+                    </li>
+                    <li class="main-subtitle">
+                        <span class="main-subsubtitle">신상품</span>
+                    </li>
+                    <li class="main-subtitle">
+                        <span class="main-subsubtitle">베스트</span>
+                    </li>
+                    <li class="main-subtitle">
+                        <span class="main-subsubtitle">대박 할인 상품</span>
+                    </li>
+                </ul>
+                <div class="delivery-text-box">
+                    <a href="#" class="delivery-text">
+                        <span class="small-purple">샛별・낮</span> 배송안내
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="hiddenbar"></div>
+    </header>
+    <!-- 마이페이지 고정 틀 start -->
+    <div class="mypageWrap">
+        <div class="mypageHeader">
+            <div class="headerTop">
+                <div class="header1">
+                    <div class="headerInfo">
+                        <div class="headerGrade">회원</div>
+                        <div class="headerName">
+                            <strong class="headerRname">
+                                황재승님
+                            </strong>
+                        </div>
+                    </div>
+                    <div class="savingPercent">
+                        <p class="savingPercent">적립 0.1%</p>
+                    </div>
+                    <div class="seeGrade">
+                        <button class="seeAll">전체등급 보기</button>
+                        <button class="seeNext">다음 달 예상등급 보기</button>
+                    </div>
+                </div>
+                <div class="header2">
+                    <button class="savingMoney">
+                        <div class="savingMoney">
+                            적립금
+                            <span class="savingMoney"></span>
+                        </div>
+                        <div class="savingDetail">
+                            25
+                            <span class="savingDetail">원</span>
+                        </div>
+                        <div class="savingChange">
+                            소멸예정 0원
+                        </div>
+                    </button>
+                </div>
+                <div class="header3">
+                    <button class="coupon">
+                        <div class="couponName">
+                            쿠폰
+                            <span class="couponName"></span>
+                        </div>
+                        <div class="couponCount">
+                            1
+                            <span class="couponCount">개</span>
+                        </div>
+                        <div class="savingChange">쿠폰이 도착했어요!</div>
+                    </button>
+                </div>
+            </div>
+            <a href="https://www.kurly.com/shop/event/kurlyEvent.php?htmid=event/2022/1107/beauty_grand" class="ad">
+                <img class="ad" src="https://product-image.kurly.com/banner/da-banner/0ad4b09b-7fc1-4bb2-be70-65a089d266d5.jpg" 
+                alt="">
+            </a>
+        </div>
+        <div class="mypageBottom">
+            <div class="mypageBottomLeft">
+                <div class="leftTitle">마이컬리</div>
+                <ul class="leftList">
+                    <li class="orderList">
+                        <a href="" class="orderList">
+                            주문 내역
+                            <span class="orderList"></span>
+                        </a>
+                    </li>
+                    <li class="orderList">
+                        <a href="" class="orderList2">
+                            찜한 상품
+                            <span class="orderList2"></span>
+                        </a>
+                    </li>
+                    <li class="orderList">
+                        <a href="" class="orderList3">
+                            배송지 관리
+                            <span class="orderList3"></span>
+                        </a>
+                    </li>
+                    <li class="orderList">
+                        <a href="" class="orderList4">
+                            상품후기
+                            <span class="orderList4"></span>
+                        </a>
+                    </li>
+                    <li class="orderList">
+                        <a href="" class="orderList5">
+                            상품문의
+                            <span class="orderList5"></span>
+                        </a>
+                    </li>
+                    <li class="orderList">
+                        <a href="" class="orderList6">
+                            적립금
+                            <span class="orderList6"></span>
+                        </a>
+                    </li>
+                    <li class="orderList">
+                        <a href="" class="orderList7">
+                            쿠폰
+                            <span class="orderList7"></span>
+                        </a>
+                    </li>
+                    <li class="orderList">
+                        <a href="" class="orderList8">
+                            개인 정보 수정
+                            <span class="orderList8"></span>
+                        </a>
+                    </li>
+                </ul>
+                <a href="" class="assist">
+                    <div class="assist">
+                        <span class="assist">도움이 필요하신가요 ?</span>
+                        <span class="assist2">1:1 문의하기</span>
+                    </div>
+                    <span class="assist3"></span>
+                </a>
+            </div>
+            <!-- 마이페이지 고정 틀 end -->
+            <div class="bottomRight">
+                <div class="bottomRightHeader">
+                    <div class="brhLeft">
+                        <h2 class="brhLeft">
+                            찜한상품(1)
+                        </h2>
+                        <span class="brhLeft">
+                            찜한 상품은 최대 200개까지 저장됩니다.
+                        </span>
+                    </div>
+                </div>
+                <div class="brhLine"></div>
+                <div class="likeGoods">
+                    <div class="likeGoodsList">
+                        <a href="" class="likeGoods">
+                            <span class="likeGoodsImg"></span>
+                        </a>
+                        <div class="likeGoodsInfo">
+                            <div class="infoLeft">
+                                <div class="leftName">
+                                    <a href="" class="leftName">[굽네] 닭가슴살 만두 3종</a>
+                                </div>
+                                <div class="leftPrice">
+                                    <span class="leftPrice">2,450원</span>
+                                </div>
+                            </div>
+                            <div class="infoRight">
+                                <button class="infoRight" type="button" width="104" height="36" radius="4">
+                                    <span class="infoRight">삭제</span>
+                                </button>
+                                <button class="infoRight2" type="button" width="104" height="36" radius="4">
+                                    <span class="infoRight2">
+                                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzYiIGhlaWdodD0iMzYiIHZpZXdCb3g9IjAgMCAzNiAzNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTM2IDM2SDBWMGgzNnoiLz4KICAgICAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1LjE2NCA2LjU0NykiIHN0cm9rZT0iIzVmMDA4MCIgc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjciPgogICAgICAgICAgICA8cGF0aCBkPSJtMjUuNjggMy42Ni0yLjcyIDExLjU3SDcuMzdMNC42NiAzLjY2eiIvPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSIyMC41MiIgY3k9IjIwLjc4IiByPSIyLjE0Ii8+CiAgICAgICAgICAgIDxjaXJjbGUgY3g9IjkuODEiIGN5PSIyMC43OCIgcj0iMi4xNCIvPgogICAgICAgICAgICA8cGF0aCBkPSJNMCAwaDMuOGwxLjc2IDcuNSIvPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg==" alt="" class="infoRight2">
+                                        담기</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="modal">
+            <div class="modal_content" 
+                 title="클릭하면 창이 닫힙니다.">
+              <div class="modalText">삭제하시겠습니까?</div>
+              <div class="modalFooter">
+                <button class="cancel">취소</button>
+                <button class="remove">삭제</button>
+              </div>
+            </div>
+        </div>
+        <div class="modal2">
+            <div class="modal_content2" 
+                 title="클릭하면 창이 닫힙니다.">
+              <div class="modalText2">
+                <div class="modalText2Title">[굽네] 닭가슴살 만두 3종</div>
+                <div class="modalTextInfo">
+                    <div class="modalTextInfoDetail">
+                        <div class="modalTextInfoDetailTitle">
+                            <span class="modalTextInfoDetailTitle">[굽네] 닭가슴살 갈비맛 만두</span>
+                        </div>
+                        <div class="modalTextInfoDetailBottom">
+                            <div class="modalTextInfoDetailBottomPrice">
+                                <span class="modalTextInfoDetailBottomPrice">2,450원</span>
+                            </div>
+                            <div class="modalTextInfoDetailBottomCount">
+                                <button class="decrease" type="button" aria-label="수량내리기"></button>
+                                <div class="middleCount">0</div>
+                                <button class="increase" type="button"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modalText2Bottom">
+                    <div class="modalText2Bottom2">
+                        <div class="modalText2BottomSum">
+                            <p class="sum">합계</p>
+                            <div>
+                                <span class="sumPrice">0</span>
+                                <span class="sumWon">원</span>
+                            </div>
+                        </div>
+                        <div class="modalSaving">
+                            <span class="modalSavingBox">적립</span>
+                            <span class="modalSavingBox2">
+                                구매시
+                                <span class="modalSavingBox3">
+                                    0원적립립
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modalText2Footer">
+                    <button class="footerLeft" type="button">
+                        <span class="footerLeft">취소</span>
+                    </button>
+                    <button class="footerRight">
+                        <span class="footerRight">장바구니 담기</span>
+                    </button>
+                </div>
+
+              </div>
+              
+            </div>
+        </div>
+        </div>
+        </body>
+        <!--푸터-->
+     <footer>
+        <div class="css-footer">
+            <div id="footer" class="footer">
+                <div class="head-footer">
+                    <div class="call-centor">
+                        <h2 class="call-centor-title">고객행복센터</h2>
+                        <strong class="call-centor-number">1644-1107
+                            <span class="call-centor-Opening">월~토요일 오전 7시 - 오후 6시</span>
+                        </strong>
+                        <div class="footer-box">
+                            <div class="call-centor-qna">
+                                <button class="kakao-qna">카카오톡 문의</button>
+                                <div class="qna-text">월~토요일
+                                    <svg width="1" height="10" viewBox="0 0 1 10" fill="none" xmlns="http://www.w3.org/2000/svg" class="css-w0fx7a eam2qm50">
+                                        <line x1="0.5" y1="2.18557e-08" x2="0.5" y2="10" stroke="#ccc"></line>
+                                    </svg>오전 7시 - 오후 6시
+                                    <br>일/공휴일
+                                    <svg width="1" height="10" viewBox="0 0 1 10" fill="none" xmlns="http://www.w3.org/2000/svg" class="css-w0fx7a eam2qm50">
+                                        <line x1="0.5" y1="2.18557e-08" x2="0.5" y2="10" stroke="#ccc"></line>
+                                    </svg>오전 7시 - 오후 1시
+                                </div>
+                            </div>
+                            <div class="call-centor-qna">
+                                <button class="qna1-1">1:1 문의</button>
+                                <div class="qna-text">365일<br>고객센터 운영시간에 순차적으로 답변드리겠습니다.</div>
+                            </div>
+                        </div>
+                        <div class="qna-phonenumber">비회원 문의 : 
+                            <a href="mailto:help@kurlycorp.com">help@kurlycorp.com</a>
+                        </div>
+                    </div>
+                    <div class="footer-box">
+                        <ul class="footer-categori">
+                            <li class="footer-title-categori">
+                                <a href="/introduce" target="_self" class="css-1tfhwyj e13nap1l0">컬리소개</a>
+                            </li>
+                            <li class="footer-title-categori">
+                                <a href="https://www.youtube.com/embed/WEep7BcboMQ?rel=0&amp;showinfo=0&amp;wmode=opaque&amp;enablejsapi=1" target="_self" class="css-1tfhwyj e13nap1l0">컬리소개영상</a>
+                            </li>
+                            <li class="footer-title-categori">
+                                <a href="https://marketkurly.recruiter.co.kr/appsite/company/index" target="_blank" class="css-1tfhwyj e13nap1l0">인재채용</a>
+                            </li>
+                            <li class="footer-title-categori">
+                                <a href="/user-terms/agreement" target="_self" class="css-1tfhwyj e13nap1l0">이용약관</a>
+                            </li>
+                            <li class="footer-title-categori">
+                                <a href="/user-terms/privacy-policy" target="_self" class="css-1tfhwyj e13nap1l0">개인정보처리방침</a>
+                            </li>
+                            <li class="footer-title-categori">
+                                <a href="/user-guide" target="_self" class="css-1tfhwyj e13nap1l0">이용안내</a>
+                            </li>
+                        </ul>
+                        <div class="introduce-company">법인명 (상호) : 주식회사 컬리 
+                            <span class="company-text"></span> 사업자등록번호 : 261-81-23567
+                            <a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=2618123567&amp;apv_perm_no=" target="_blank" rel="noreferrer" class="footer-text-purple">사업자정보 확인</a><br>통신판매업 : 제 2018-서울강남-01646 호 
+                            <span class="company-text"></span> 개인정보보호책임자 : 이원준<br>주소 : 서울특별시 강남구 테헤란로 133, 18층(역삼동) 
+                            <span class="company-text"></span> 대표이사 : 김슬아<br>입점문의 :
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLScLB7YkGJwNRzpGpp0gbR1i4C1_uvTEFj43SFfJ_XEadTn3gQ/viewform?usp=sf_link" target="_blank" rel="noreferrer" class="footer-text-purple">입점문의하기</a>
+                            <span class="company-text"></span>제휴문의 :<a href="mailto:business@kurlycorp.com" class="footer-text-purple">business@kurlycorp.com</a><br>채용문의 :
+                            <a href="mailto:recruit@kurlycorp.com" class="footer-text-purple">recruit@kurlycorp.com</a><br>팩스: 070 - 7500 - 6098
+                        </div>
+                        <ul class="link-icon">
+                            <a href="https://instagram.com/marketkurly" target="_blank" rel="noreferrer" class="icon-link">
+                                <img src="https://res.kurly.com/pc/ico/1810/ico_instagram.png" alt="마켓컬리 인스타그램 바로가기">
+                            </a>
+                            <a href="https://www.facebook.com/marketkurly" target="_blank" rel="noreferrer" class="icon-link">
+                                <img src="https://res.kurly.com/pc/ico/1810/ico_fb.png" alt="마켓컬리 페이스북 바로가기">
+                            </a>
+                            <a href="https://blog.naver.com/marketkurly" target="_blank" rel="noreferrer" class="icon-link">
+                                <img src="https://res.kurly.com/pc/ico/1810/ico_blog.png" alt="마켓컬리 네이버블로그 바로가기">
+                            </a>
+                            <a href="https://m.post.naver.com/marketkurly" target="_blank" rel="noreferrer" class="icon-link">
+                                <img src="https://res.kurly.com/pc/ico/1810/ico_naverpost.png" alt="마켓컬리 네이버포스트 바로가기">
+                            </a>
+                            <a href="https://www.youtube.com/channel/UCfpdjL5pl-1qKT7Xp4UQzQg" target="_blank" rel="noreferrer" class="icon-link">
+                                <img src="https://res.kurly.com/pc/ico/1810/ico_youtube.png" alt="마켓컬리 유튜브 바로가기">
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+                <div class="certification-mark">
+                    <button class="certification-link">
+                        <img src="https://res.kurly.com/pc/ico/2208/logo_isms.svg" alt="isms 로고" class="certification-image">
+                        <p class="certification-text">[인증범위] 마켓컬리 쇼핑몰 서비스 개발·운영
+                            <br>(심사받지 않은 물리적 인프라 제외)
+                            <br>[유효기간] 2022.01.19 ~ 2025.01.18
+                        </p>
+                    </button>
+                    <button class="certification-link">
+                        <img src="https://res.kurly.com/pc/ico/2208/logo_privacy.svg" alt="eprivacy plus 로고" class="certification-image">
+                        <p class="certification-text">개인정보보호 우수 웹사이트 ·<br>개인정보처리시스템 인증 (ePRIVACY PLUS)
+                        </p>
+                    </button>
+                    <button class="certification-link">
+                        <img src="https://res.kurly.com/pc/ico/2208/logo_tosspayments.svg" alt="payments 로고" class="woori-bank-image">
+                        <p class="certification-text">토스페이먼츠 구매안전(에스크로)<br>서비스를 이용하실 수 있습니다.
+                        </p>
+                    </button>
+                    <button class="certification-link">
+                        <img src="https://res.kurly.com/pc/ico/2208/logo_wooriBank.svg" alt="우리은행 로고" class="certification-image">
+                        <p class="certification-text">
+                            고객님이 현금으로 결제한 금액에 대해 우리은행과
+                            <br>채무지급보증 계약을 체결하여 안전거래를 보장하고
+                            <br>있습니다.</p>
+                        </button>
+                    </div>
+                </div>
+                <div class="last-comments">마켓컬리에서 판매되는 상품 중에는 마켓컬리에 입점한 개별 판매자가 판매하는 마켓플레이스(오픈마켓) 상품이 포함되어 있습니다.
+                    <br>마켓플레이스(오픈마켓) 상품의 경우 컬리는 통신판매중개자로서 통신판매의 당사자가 아닙니다. 컬리는 해당 상품의 주문, 품질, 교환/환불 등 의무와 책임을 부담하지 않습니다.
+                    <em class="last-tab">© KURLY CORP. ALL RIGHTS RESERVED</em>
+                </div>
+            </div>
+    </footer>
+        <!-- <div id="modal1" class="modal">
+            <p>모달창안의 내용부분</p>
+            <a href="#" rel="modal:close">닫기</a>
+          </div>
+          
+          <p><a href="#modal1" rel="modal:open">모달창띄우기</a></p> -->
+    </body>
+    </html>
+
+<script>
+$(function(){ 
+
+$("button.infoRight").click(function(){
+  $(".modal").fadeIn();
+  $('body').css("overflow", "hidden");
+});
+
+$(".modal_content").click(function(){
+    $(".modal").fadeOut();
+    $('body').css("overflow", "visible");
+});
+
+});
+
+$(function(){ 
+
+$("button.infoRight2").click(function(){
+  $(".modal2").fadeIn();
+  $('body').css("overflow", "hidden");
+});
+
+$(".modal_content2").click(function(){
+    $(".modal2").fadeOut();
+    $('body').css("overflow", "visible");
+
+});
+
+});
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" /> -->
+        
+                

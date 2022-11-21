@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배너 수정하기</title>
+
+    <link rel="stylesheet" href="/Project/manager/css/button.css">
+    <link rel="stylesheet" href="/Project/manager/css/table.css">
+    <link rel="stylesheet" href="/Project/manager/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+    <!-- <div class="wrapper"> -->
+    <!-- 사이드 바 -->
+    <div class="sidebar">
+        <!-- 로고(image) -->
+        <div class="logo">
+            <!-- 로고 들어오면 넣어주세요 -->
+            <img src="">로고
+            <!-- 사이트 이름 정해지면 넣어주세요 -->
+            <h1 style="color:#ff3d00">&nbsp;&nbsp;&nbsp; 사이트 이름</h1>
+        </div>
+        <!-- 메인페이지 링크 나오면 추가해주세요 -->
+        <ul>
+            <li>
+                <a href="" class="menu"><img src="/Project/manager/image/globe.png">사이트 바로가기</a>
+            </li>
+            <!-- 회원 관리 -->
+            <li>
+                <a><img src="/Project/manager/image/user.png">회원 관리 <img src="/Project/manager/image/menu-burger.png"
+                        style="float: right; height:20px;"></a>
+                <ul>
+                    <li><a href="/Project/manager/html/member/memberAll.html">전체회원관리</a></li>
+                  <!--   <li><a href="memberReport.html">신고회원관리</a></li> -->
+                </ul>
+            </li>
+            <li>
+                <a><img src="/Project/manager/image/apps.png">콘텐츠 관리<img src="/Project/manager/image/menu-burger.png" style="float: right; height:20px;"></a>
+                    <ul>
+                        <li><a href="/Project/manager/html/manager/managerNotice.html">공지사항관리</a></li>
+                        <li><a href="/Project/manager/html/manager/managerFAQ.html">문의하기관리</a></li>
+                    </ul>
+        </li>
+            <li>
+                <a><img src="/Project/manager/image/settings.png">환경 설정<img src="/Project/manager/image/menu-burger.png"
+                        style="float: right; height:20px;"></a>
+                 <ul>
+                        <li><a href="/Project/manager/html/banner/managerBanner.html">배너 관리</a></li>
+                    </ul>
+            </li>
+        </ul>
+    </div>
+    <!-- 사이드 바 end -->
+
+    <!-- </div> -->
+    <!-- 회원 구매정보 -->
+    <div class="contents">
+        <h3 class="list">회원 상세보기</h3>
+        <!-- <span class="memberFrontInfo">
+            <h2>홍길동</h2>
+            <h5>개인회원</h5>
+            <div>
+                <h5>
+                    <span>총 주문금액 <strong style="color: red;">158,000원</strong></span> |
+                    <span>총 주문상품건수 <strong style="color: red;">4회</strong></span> |
+                    <span>마일리지 <strong style="color: red;">1058점</strong></span> |
+                    <span>총 쿠폰수<strong style="color: red;">2개</strong></span>
+                </h5>
+            </div>
+        </span> -->
+        <!-- 회원 구매정보 end-->
+
+        <!-- 회원 정보 -->
+        <div class="memberInfo">
+            <span><strong class="information">회원 정보</strong></span>
+
+            <hr class="informationHr">
+            <span class="memberGrade">
+                <span class="memberGradePick">회원등급</span>
+                <input type="radio">개인회원<input type="radio">사업자회원
+            </span>
+            <span class="memberApprove">
+                <span class="memberApprovePick">승인</span>
+                <span class="memberApproveRadio">
+                    <input type="radio" name="">승인<input type="radio" name="">미승인
+                </span>
+            </span>
+            <hr id="Viewhr1">
+
+            <span class="member_Id">
+
+                <span class="id"><span id="redStar">*</span>아이디</span>
+                <input type="text" class="idText">
+
+                <span class="memberName">
+                    <span><span id="redStar">*</span>이름</span>
+                </span>
+                <input type="text" class="nameText">
+                <hr id="Viewhr2">
+
+                <span class="pwd">
+                    
+                    <span class="password"><span id="redStar">*</span>비밀번호</span> 
+                </span>
+                <span class="writePwd">
+                    <input type="password" placeholder="비밀번호입력" class="pwdText" id="password" required>
+                </span>
+                <span class="confirmPwd">
+                    <input type="password" placeholder="비밀번호확인" class="pwdText" id="confirm_password" required>
+                </span>
+                <h6 class="warning" style="color: red;">*영문대문자/영문소문자/숫자/특수문자 중 2개 이상 포함, 10 ~ 16자리 이하로<br>설정할 수 있습니다.
+                </h6>
+                <hr id="Viewhr3">
+
+                <span>
+                    <span class="orderSum">주문금액</span>
+                    <span class="sum">158,000원</span>
+                </span>
+                <span>
+                    <span class="mileage">적립금</span>
+                    <span class="mileageSum">1058점</span>
+                </span>
+                <hr id="Viewhr4">
+
+                <span>
+                    <span class="email"><span id="redStar">*</span>이메일</span>
+                    <span class="emailText">
+                        <input type="text" class="emailWrite"> <span class="aa">@</span> <input type="text" class="emailWrite"> 
+                    </span>
+                    <span>
+                        <select name="" id="emailPick">
+                            <option value="email00">직접입력</option>
+                            <option value="email01">naver.com</option>
+                            <option value="email02">gmail.com</option>
+                            <option value="email03">daum.net</option>
+                        </select>
+                        <button class="duplicationBtn">중복확인</button>
+                    </span>
+                    <hr id="Viewhr5">
+                </span>
+
+                <span>
+                    <span class="memberPhone"><span id="redStar">*</span>휴대폰번호</span>
+                    <span class="memberPhoneText">
+                        <input type="text" class="phoneWrite">  <span class="minus">-</span>  <input type="text"class="phoneWrite">  <span class="minus">-</span>  <input type="text"class="phoneWrite">
+                    </span>
+                </span>
+
+                <span>
+                    <span class="memberGender">성별</span>
+                    <span class="genderPick">
+                        <input type="radio" >남성 <input type="radio">여성
+                    </span>
+                </span>
+                <hr id="Viewhr6">
+
+                <span>
+                    <span class="memberAddress"><span id="redStar">*</span>주소</span>
+                    <span class="memberAddressText">
+                        <input type="text" class="add" placeholder="우편번호">
+                        <button class="addressBtn">우편번호찾기</button>
+                        <div class="backAddress">
+                            <input type="text" class="add" placeholder="주소">
+                        </div>
+                    </span>
+                </span>
+                <hr id="Viewhr7">
+
+                <span>
+                    <span class="Text">남기는 말씀</span>
+                    <textarea name="" id="textarea" cols="211" rows="13" style="display: flex;"></textarea>
+                </span>
+
+        </div>
+
+        <!-- 회원 정보 End -->
+        <!-- 저장하기 버튼 -->
+        <span>
+            <button id="submitBtn" type="submit" onclick="test()">저장하기</button>
+        </span>
+    </div>
+
+</body>
+<script src="/Project/manager/js/manager.js"></script>
+
+</html>
