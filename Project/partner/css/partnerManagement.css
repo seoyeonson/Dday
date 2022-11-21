@@ -5,8 +5,23 @@
     padding: 0px 25px 10px;
 }
 
+h3 {
+    font-size: 22px;
+    color: #222222;
+}
+
+.managementTitle{
+    border-bottom: 2px solid #888888;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
 .availableList {
     height: 400px;
+}
+
+.cancelList, .returnList {
+    height: 300px;
 }
 
 table {
@@ -16,7 +31,16 @@ table {
     margin-top: 5px;
 }
 
-.availableList > p{
+table tbody tr th:first-child,
+table tbody tr td:first-child {
+	border-left: hidden;
+}
+table tr th:last-child,
+table tr td:last-child {
+	border-right: hidden;
+}
+
+.availableList > p, .cancelList > p, .returnList > p{
     font-size: 16px;
 }
 th {
@@ -32,7 +56,7 @@ tr {
     height: 35px;
 }
 
-.availableTable td:nth-child(3){
+.availableTable td:nth-child(3), .returnTable td:nth-child(6), .cancelTable td:nth-child(3){
     text-align: left;
 }
 

@@ -1,0 +1,72 @@
+@charset "utf-8";
+
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+}
+
+input, button{
+    border: none;
+    background-color: white;
+}
+
+button{
+    cursor: pointer;
+    padding: 0px;
+    cursor: pointer;
+}
+
+ol, ul{
+    list-style: none;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.signup_ok_main{
+    min-width: 1050px;
+    margin-top: 90px;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.signup_ok_main>h2{
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 20px;
+    margin-top: 30px;
+}
+
+.button_area{
+    margin-top: 40px;
+}
+
+.button_area button{
+    display: block;
+    padding: 0 10px;
+    text-align: center;
+    overflow: hidden;
+    width: 20%;
+    height: 54px;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.signup_btn{
+    border: 1px solid #ff3d00;
+    background-color: #ff3d00;
+    color: white;
+    margin-top: 10px;
+    margin: 0 auto;
+    font-weight: 400 !important;
+}
+
