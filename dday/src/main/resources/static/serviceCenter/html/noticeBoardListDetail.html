@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지사항 상세페이지</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Project/serviceCenter/css/noticeBoardListDetail.css">
+    <link rel="stylesheet" href="/Project/main/css/header.css">
+    <link rel="stylesheet" href="/Project/main/css/footer.css">
+</head>
+
+<body>
+    <div id="header"></div>
+    <div class="wrapper">
+        <div class="titleContainer">
+            <div class="detailTitle">공지사항</div>
+            <div class="titleMessage">컬리의 새로운 소식들과 유용한 정보들을 한곳에서 확인하세요.</div>
+        </div>
+        <div class="contentBox">
+            <div class="rowBox">
+                <div class="colName">제목</div>
+                <div class="inputCol">[안내] 컬리 소비자 분쟁해결 기준 안내</div>
+            </div>
+            <div class="rowBox">
+                <div class="colName">작성자</div>
+                <div class="inputCol">컬리</div>
+            </div>
+            <div class="rowBox">
+                <div class="colName">작성일</div>
+                <div class="inputCol">2022.07.27</div>
+            </div>
+            <div class="content">
+                <div>
+                    <div>
+                        <br>
+                    </div>
+                    <div <br>
+                    </div>
+                    <div>
+                        <img src="//img-cf.kurly.com/shop/data/editor/28f99e4c221fdf66.jpg">
+                        <br>
+                    </div>
+                    <div>
+                        <br>
+                    </div>
+                    <div>
+                        <font face="Tahoma">● 고객행복센터 :
+                            <a href="https://www.kurly.com/m2/introduce/customerSystem/customer_satisfaction.php">바로가기</a>
+                        </font>
+                    </div>
+                    <div>
+                        <font face="Tahoma"><br></font>
+                    </div>
+                    <div>
+                        <font face="Tahoma">●&nbsp;컬리 이용약관 :
+                            <a href="https://www.kurly.com/shop/service/agreement.php">바로가기</a>
+                        </font>
+                    </div>
+                    <div>
+                        <font face="Tahoma"><br></font>
+                    </div>
+                    <div>
+                        <span style="line-height: 107%;">
+                            <font face="Tahoma">●&nbsp;소비자보호에 관한 법률 :
+                                <a href="https://www.law.go.kr/lsSc.do?section=&amp;menuId=1&amp;subMenuId=15&amp;tabMenuId=81&amp;eventGubun=060101&amp;query=%EC%A0%84%EC%9E%90%EC%83%81%EA%B1%B0%EB%9E%98#liBgcolor0">바로가기</a>
+                            </font>
+                        </span>
+                    </div>
+                    <div>
+                        <font face="Tahoma"><br></font>
+                    </div>
+                    <div>
+                        <span style="line-height: 107%;">
+                            <font face="Tahoma">●&nbsp;소비자 분쟁해결 기준 :
+                                <a style
+                                    href="https://www.ccn.go.kr/board2/board.ccn?mode=list&amp;boardCode=372&amp;gSiteCode=2&amp;gMenuCode=5&amp;nMenuCode=63&amp;gSiteCode=2&amp;nMenuCode=63&amp;gMenuCode=5">바로가기</a>
+                            </font>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="listBox">
+                <button class="listButton" id="listButton" type="button" width="150" height="42" radius="0">
+                    <span class="buttonText">목록</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="/Project/serviceCenter/js/serviceCenter.js"></script>
+<script>
+$(document).ready( function() {
+    $("#header").load("/Project/main/html/header.html");  // 원하는 파일 경로를 삽입하면 된다
+    $("#footer").load("/Project/main/html/footer.html");  // 추가 인클루드를 원할 경우 이런식으로 추가하면 된다
+});
+</script>
+</html>

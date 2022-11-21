@@ -1,0 +1,61 @@
+.orderedBox {
+    width: 1000px;
+    height: 1000px;
+    margin: auto;
+    padding: 0px 25px 10px;
+}
+
+.orderedList {
+    height: 400px;
+}
+
+table {
+    width: 100%;
+    border: 1px solid rgb(163, 163, 163);
+    border-collapse: collapse;
+    margin-top: 5px;
+}
+
+.orderedList > p{
+    font-size: 16px;
+}
+th {
+    background-color: lightgray;
+}
+
+th, tr {
+    padding: 3px;
+}
+
+tr {
+    text-align: center;
+    height: 35px;
+}
+
+.orderProductName{
+    text-align: left;
+}
+
+.orderStock {
+    color: rgb(163, 163, 163);
+}
+
+.deliveryButton{
+    height:25px;
+    width: 35px;
+    font-size: 10px;
+}
+
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.deliveryNumber {
+    width: 130px;
+}
+
+.numberSubmit {
+    font-size:10px;
+    height:25px;
+    width:35px;
+}

@@ -1,0 +1,182 @@
+form {
+    position: relative;
+}
+
+.registrationBox {
+    width: 1000px;
+    height: 1300px;
+    margin: auto;
+    padding: 0px 25px 10px;
+
+}
+
+.colName {
+    font-size: 20px;
+}
+
+.col01 {
+    margin-right: 180px;
+}
+
+.col02, .col06, .col07, .col06_1, .closingTime, .address{
+    margin-right: 162px;
+}
+
+
+select {
+    height: 40px;
+    width: 150px;
+    font-size: 16px;
+}
+
+.col03, .stock {
+    margin-right: 198px;
+}
+
+.col04, .col05 {
+    margin-right: 162px;
+}
+
+input[type=date] {
+    height: 40px;
+    width: 150px;
+}
+
+input[type=time]{
+    height: 40px;
+    width: 150px;
+}
+
+.registFormLi {
+    margin-bottom: 20px;
+}
+
+.detailList {
+    height:460px;
+    position: relative;
+}
+
+.col06 {
+    position:absolute;
+    top:5px;
+
+}
+
+textarea {
+    position: absolute;
+    left:25%;
+    top:5px;
+    width: 500px;
+    height: 450px;
+}
+
+.registFormLi > input[type=text] {
+    width: 500px;
+    height: 40px;
+    font-size: 16px;
+}
+
+
+.registPrice, .registStock {
+    width:520px;
+}
+
+.fileButton {
+    padding: 8px 30px;
+    margin-right: 5px;;
+    background-color:  rgb(57, 59, 63);
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.inputFileContent {
+    padding: 8px 40px;
+}
+
+input[type=checkbox] {  
+    display: none;  
+}
+
+input[type=checkbox] + label{
+    display: inline-block;  
+    cursor: pointer;  
+    position: relative;  
+    padding-left: 80px;  
+    margin-right: 15px;  
+    font-size: 18px;
+}
+
+input[type=checkbox]+ label:before {     
+
+    content: "";  
+    display: inline-block;  
+  
+    width: 25px;  
+    height: 25px;  
+  
+    margin-left: 40px;
+    margin-right: 10px;  
+    position: absolute;  
+    left: 0;  
+    bottom: 1px;  
+    background-color: #ccc;  
+    border-radius: 2px; 
+}
+input[type=checkbox]:checked + label:before { 
+
+    content: "\2713";  /* 체크모양 */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);  
+    font-size: 23px; 
+    font-weight:800; 
+    color: #fff;  
+    background:#2f87c1;
+    text-align: center;  
+    line-height: 20px;  
+
+} 
+
+.submitButton {
+    position: absolute;
+    right: 5%;
+    padding: 10px 50px;
+    border-style: none;
+    /* background-color:  rgb(57, 59, 63); */
+    background-color: #fa2828;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+
+}
+
+.removeButton {
+    position: absolute;
+    right: 23%;
+    padding: 10px 50px;
+    border-style: none;
+    /* background-color:  rgb(57, 59, 63); */
+    background-color: #fa2828;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.addressList{
+    display:flex;
+}
+
+.address {
+    width:78px;
+}
+
+.addressFind {
+    width:350px;
+}
+.addressFind > input[type=text]{
+    width: 300px;
+    height: 40px;
+    margin-bottom: 3px;
+}

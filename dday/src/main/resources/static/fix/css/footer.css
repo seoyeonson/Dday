@@ -1,0 +1,215 @@
+body, button, input, select, textarea {
+    font-size: 14px;
+    color: #333;
+}
+
+b, optgroup, strong {
+    font-weight: 700;
+}
+
+*, :after, :before, legend, td, th {
+    padding: 0;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+ol, ul {
+    list-style-type: none;
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+    color: inherit;
+}
+
+bo
+
+img, legend {
+    border: 0;
+    vertical-align: top;
+}
+
+canvas, img, video {
+    max-width: 100%;
+}
+
+.css-footer{
+    padding-top: 30px;
+    border-top: 1px solid rgb(247, 247, 247);
+}
+
+.footer{
+    width: 1050px;
+    margin: 0px auto;
+}
+
+.head-footer{
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    overflow: hidden;
+    padding-bottom: 30px;
+}
+
+.call-centor-title{
+    padding-bottom: 17px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 29px;
+}
+
+.call-centor-number{
+    display: block;
+    padding-bottom: 20px;
+    font-size: 28px;
+    line-height: 40px;
+}
+
+.call-centor-Opening{
+    margin-left: 8px;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.footer-box{
+    display: flex;
+    flex-direction: column;
+}
+
+.call-centor-qna{
+    display: flex;
+    flex-direction: row;
+}
+
+.kakao-qna{
+    display: block;
+    width: 140px;
+    height: 40px;
+    border: 1px solid rgb(226, 226, 226);
+    border-radius: 3px;
+    line-height: 39px;
+    text-align: center;
+    margin-right: 16px;
+    margin-bottom: 16px;
+}
+
+.qna-text{
+    margin-top: 2px;
+    color: rgb(153, 153, 153);
+    letter-spacing: -0.5px;
+    line-height: 16.8px;
+}
+
+.qna1-1{
+    display: block;
+    width: 140px;
+    height: 40px;
+    margin-bottom: 16px;
+    margin-right: 16px;
+    border: 1px solid rgb(226, 226, 226);
+    border-radius: 3px;
+    line-height: 39px;
+    text-align: center;
+}
+
+.qna-phonenumber{
+    font-size: 12px;
+    line-height: 18px;
+    color: rgb(153, 153, 153);
+}
+
+.footer-categori{
+    display: flex;
+    width: 100%;
+    padding-bottom: 29px;
+}
+
+.footer-title-categori:first-of-type {
+    margin-left: 0px;
+}
+
+.footer-title-categori{
+    margin-left: 14px;
+}
+
+.footer-text-purple{
+    margin-left: 3px;
+    color: rgb(95, 0, 128); 
+}
+
+.introduce-company{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: rgb(153, 153, 153);
+    margin-bottom: 40px;
+}
+
+.company-text{
+    padding-left: 4px;
+}
+
+.link-icon{
+    display: flex;
+}
+
+.icon-link{
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.certification-mark{
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding: 26px 0px 33px;
+    border-top: 1px solid rgb(238, 238, 238);
+}
+
+.certification-link{
+    display: flex;
+    text-align: left;
+}
+
+.certification-image{
+    width: 34px;
+    margin-right: 10px;
+}
+
+.woori-bank-image{
+    width: 102px;
+    margin-right: 10px;
+}
+
+.certification-text{
+    font-size: 10px;
+    line-height: 14.5px;
+    color: rgb(153, 153, 153);
+    word-break: break-word; 
+    text-align: left;
+}
+
+.last-comments{
+    padding: 20px 0px 30px;
+    font-size: 10px;
+    line-height: 15px;
+    text-align: center;
+    background-color: rgb(247, 247, 247);
+    color: rgb(153, 153, 153);
+}
+
+.last-tab{
+    display: block;
+    padding-top: 7px;
+    font-style: normal;   
+}

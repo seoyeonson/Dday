@@ -1,0 +1,307 @@
+* {
+    padding:0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family:"Noto Sans", "malgun gothic", AppleGothic, dotum, sans-serif;
+    /* font-family: 'Noto Sans KR', sans-serif; */
+    font-size: 14px;
+    color: #333;
+    position: relative;
+    min-width: 1050px;
+    line-height: 1.15;
+}
+
+ul {
+    list-style-type: none;
+}
+
+div {
+    display: block;
+}
+
+.wrapperBig {
+    position: relative;
+    min-width: 1050px;
+}
+
+.wrapper {
+    display: flex;
+    width: 1050px;
+    padding: 50px 0 80px 0;
+    margin: 0 auto;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.sidebar {
+    width: 200px;
+}
+
+.sidebarName {
+    height: 75px;
+    padding: 5px 0px 35px 1px;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 35px;
+    color: rgb(51, 51, 51);
+    letter-spacing: -1px;
+}
+
+.sidebarList {
+    border: 1px solid rgb(242, 242, 242);
+}
+
+.sidebarMenu.active, .sidebarMenu:hover {
+    background-color: #fafafa;
+    color: #ff3d00;
+    font-weight: 500;
+}
+
+.sidebarMenu {
+    cursor: pointer;
+    border-bottom: 1px solid #f2f2f2;
+    padding: 14px 20px 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 19px;
+    letter-spacing: -.3px;
+    font-size: 14px;
+    color: #666;
+}
+
+.sidebarMenu.active > span, .sidebarMenu:hover > span {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2IiBoZWlnaHQ9IjExIiB2aWV3Qm94PSIwIDAgNiAxMSI+CiAgICA8cGF0aCBmaWxsPSIjNUYwMDgwIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xIDExTDYgNS41IDEgMCAwIDEuMSA0IDUuNSAwIDkuOXoiLz4KPC9zdmc+Cg==);
+}
+
+.arrow {
+    display: inline-block;
+    width: 6px;
+    height: 11px;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2IiBoZWlnaHQ9IjExIiB2aWV3Qm94PSIwIDAgNiAxMSI+CiAgICA8cGF0aCBmaWxsPSIjOTk5IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xIDExTDYgNS41IDEgMCAwIDEuMSA0IDUuNSAwIDkuOXoiLz4KPC9zdmc+Cg==);
+    background-size: cover;
+    background-position: center;
+}
+
+.sidebarList {
+    border: 1px solid #f2f2f2;
+    list-style: none;
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+    color: inherit;
+}
+
+.questionMenu {
+    width: 100%;
+    height: 60px;
+    padding: 0 20px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0 100px 100px 0;
+    background-color: #fafafa;
+    line-height: 20px;
+}
+
+.questionMenu > div {
+    display: flex;
+    flex-direction: column;
+    color: rgb(51, 51, 51);
+}
+
+.firstLine {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.secondLine {
+    font-size: 12px;
+}
+
+.arrow2 {
+    display: inline-block;
+    width: 6px;
+    height: 11px;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2IiBoZWlnaHQ9IjExIiB2aWV3Qm94PSIwIDAgNiAxMSI+CiAgICA8cGF0aCBmaWxsPSIjNUYwMDgwIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xIDExTDYgNS41IDEgMCAwIDEuMSA0IDUuNSAwIDkuOXoiLz4KPC9zdmc+Cg==);
+    background-size: cover;
+    background-position: center center;
+}
+
+.noticeBox {
+    width: 820px;
+}
+
+.MessageConatiner {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding-bottom: 27px;
+    justify-content: space-between;
+}
+
+.Message {
+    display: flex;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.ContainerTitle {
+    font-weight: 500;
+    font-size: 24px;
+    color: rgb(51, 51, 51);
+    letter-spacing: -0.5px;
+    line-height: 48px;
+}
+
+.ContainerMesaage {
+    padding-left: 11px;
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    color: rgb(153, 153, 153);
+    line-height: 20px;
+}
+
+.BoardContainer {
+    display: flex;
+    width: 100%;
+    padding: 20px 0px;
+    border-bottom: 1px solid rgb(51, 51, 51);
+    border-top: 2px solid rgb(51, 51, 51);
+}
+
+.noticeBoardNum {
+    flex-basis: 50px;
+    text-align: center;
+    line-height: 20px;
+    font-weight: 400;
+    color: rgb(51, 51, 51);
+}
+
+.noticeBoardTitle {
+    flex-grow: 1;
+    text-align: center;
+    line-height: 20px;
+    font-weight: 400;
+    color: rgb(51, 51, 51);
+}
+
+.noticeBoardWriter, .noticeBoardDate {
+    flex-basis: 100px;
+    text-align: center;
+    line-height: 20px;
+    font-weight: 400;
+    color: rgb(51, 51, 51);
+}
+
+.noticeBoardLists {
+    display: flex;
+    flex-direction: column;
+}
+
+.noticeBoardList {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid rgb(244, 244, 244);
+}
+
+.noticeListNum {
+    text-align: center;
+    padding: 20px 0px;
+    color: rgb(76, 76, 76);
+    flex-basis: 50px;
+}
+
+.noticeListTitle {
+    padding: 20px 0px 20px 20px;
+    color: rgb(76, 76, 76);
+    flex: 1 1 0%;
+    text-align: left;
+}
+
+.noticeListWriter {
+    text-align: center;
+    padding: 20px 0px;
+    color: rgb(76, 76, 76);
+    flex-basis: 100px;
+}
+
+.noticeListDate {
+    text-align: center;
+    padding: 20px 0px;
+    flex-basis: 100px;
+    color: rgb(153, 153, 153);
+}
+
+.pageButtonBox {
+    display: flex;
+    justify-content: center;
+    padding: 60px 0px 30px;
+}
+
+.prevButton:disabled {
+    background-image: url(https://res.kurly.com/kurly/ico/2021/paging-prev-disabled.svg);
+    cursor: default;
+}
+
+.prevButton {
+    width: 44px;
+    height: 44px;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    cursor: pointer;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.prevMessage {
+    overflow: hidden;
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+}
+
+.pageButtons button + button {
+    margin-left: 12px;
+}
+
+.nextButton {
+    width: 44px;
+    height: 44px;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    cursor: pointer;
+    background-color: transparent;
+    background-image: url(https://res.kurly.com/kurly/ico/2021/paging-next-activated.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.nextMessage {
+    overflow: hidden;
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+}
+
+#bannerImage{
+    position: relative;
+    top: 40px;
+}
+
+.imageBox{
+    position: relative;
+    top: -40px;
+}

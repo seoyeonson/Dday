@@ -1,0 +1,22 @@
+.line-banners{
+    height: 100%;
+}
+
+.line-banners-padding{
+    width: 1050px;
+    margin: 0px auto;
+    padding: 40px 0px;
+}
+
+.line-banners-link{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    height: 140px;
+}
+
+.line-banners-padding > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
