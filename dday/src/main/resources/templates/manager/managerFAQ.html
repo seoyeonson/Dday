@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문의사항 관리</title>
+
+    <link rel="stylesheet" href="/manager/css/style.css">
+    <link rel="stylesheet" href="/manager/css/table.css">
+    <link rel="stylesheet" href="/manager/css/button.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- <div class="wrapper"> -->
+   <!-- 사이드 바 -->
+   <div class="sidebar">
+    <!-- 로고(image) -->
+    <div class="logo">
+        <!-- 로고 들어오면 넣어주세요 -->
+        <img src="">로고
+        <!-- 사이트 이름 정해지면 넣어주세요 -->
+        <h1 style="color:#ff3d00">&nbsp;&nbsp;&nbsp; 사이트 이름</h1>
+    </div>
+    <!-- 메인페이지 링크 나오면 추가해주세요 -->
+    <ul>
+        <li>
+            <a href="" class="menu"><img src="/manager/image/globe.png">사이트 바로가기</a>
+        </li>
+        <!-- 회원 관리 -->
+        <li>
+            <a><img src="/manager/image/user.png">회원 관리 <img src="/manager/image/menu-burger.png"
+                    style="float: right; height:20px;"></a>
+            <ul>
+                <li><a href="/manager/html/member/memberAll.html">전체회원관리</a></li>
+              <!--   <li><a href="memberReport.html">신고회원관리</a></li> -->
+            </ul>
+        </li>
+        <li>
+            <a><img src="/manager/image/apps.png">콘텐츠 관리<img src="/manager/image/menu-burger.png" style="float: right; height:20px;"></a>
+                <ul>
+                    <li><a href="/manager/html/manager/managerNotice.html">공지사항관리</a></li>
+                    <li><a href="/manager/html/manager/managerFAQ.html">문의하기관리</a></li>
+                </ul>
+    </li>
+        <li>
+            <a><img src="/manager/image/settings.png">환경 설정<img src="/manager/image/menu-burger.png"
+                    style="float: right; height:20px;"></a>
+             <ul>
+                    <li><a href="/manager/html/banner/managerBanner.html">배너 관리</a></li>
+                </ul>
+        </li>
+    </ul>
+</div>
+<!-- 사이드 바 end -->
+
+<!-- </div> -->
+    <div class="contents">
+        <h3>문의사항 관리</h3>
+
+        <!--   <input type="button" value="선택 문의 삭제" class="confirm_btn" onclick="confirmNotice()"> -->
+
+          <table class="confirm">
+            <thead>
+            <tr>
+                <th>
+                    <input type="checkbox" name="selectall" id="all-check" onclick='selectAll(this)'>
+                </th>
+                <th>번호</th><th>카테고리</th><th>제목</th><th>작성자</th><th>등록일</th><th>문의 링크</th><th>답변여부</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="check_btn" id="check1" onclick='checkSelectAll()'>
+                    </td>
+                    <td>6</td>
+                    <td>주문/결제/대량주문</td>
+                    <td>구매 영수증은 어떻게 발급 받나요?</td>
+                    <td>홍길동</td>
+                    <td>0000-00-00</td>
+                    <td><a href="">링크</a></td>
+                    <td>답변 전</td>
+                  </tr>
+              <tr>
+                <td>
+                    <input type="checkbox" name="check_btn" id="check1" onclick='checkSelectAll()'>
+                </td>
+                <td>5</td>
+                <td>취소/교환/환불</td>
+                <td>교환(반품) 진행 시, 배송비가 부과 되나요?</td>
+                <td>이순신</td>
+                <td>0000-00-00</td>
+                <td><a href="">링크</a></td>
+                <td>답변완료</td>
+              </tr>
+
+              <tr>
+                <td>
+                    <input type="checkbox" name="check_btn" id="check1" onclick='checkSelectAll()'>
+                </td>
+                <td>4</td>
+                <td>선물하기</td>
+                <td>선물하기 주문을 취소하고 싶어요</td>
+                <td>이순신</td>
+                <td>0000-00-00</td>
+                <td><a href="">링크</a></td>
+                <td>답변 전</td>
+              </tr>
+
+              <tr>
+                <td>
+                    <input type="checkbox" name="check_btn" id="check1" onclick='checkSelectAll()'>
+                </td>
+                <td>3</td>
+                <td>포장</td>
+                <td>포장재를 회수하기도 하나요?</td>
+                <td>아무개</td>
+                <td>0000-00-00</td>
+                <td><a href="">링크</a></td>
+                <td>답변완료</td>
+              </tr>
+              
+              <tr>
+                <td>
+                    <input type="checkbox" name="check_btn" id="check1" onclick='checkSelectAll()'>
+                </td>
+                <td>2</td>
+                <td>회원</td>
+                <td>아이디, 비밀번호를 잊어버렸습니다.</td>
+                <td>장보고</td>
+                <td>0000-00-00</td>
+                <td><a href="">링크</a></td>
+                <td>답변완료</td>
+              </tr>
+
+              <tr>
+                <td>
+                    <input type="checkbox" name="check_btn" id="check1" onclick='checkSelectAll()'>
+                </td>
+                <td>1</td>
+                <td>이벤트/쿠폰/적립금</td>
+                <td>적립금은 언제 지급 되나요?</td>
+                <td>연개소문</td>
+                <td>0000-00-00</td>
+                <td><a href="">링크</a></td>
+                <td>답변완료</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</body>
+<script src="/manager/js/manager.js"></script>
+</html>

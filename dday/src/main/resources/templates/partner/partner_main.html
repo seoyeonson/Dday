@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>파트너 페이지</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/partner/css/change.css">
+    <link rel="stylesheet" href="/partner/css/partner.css">
+    <link rel="stylesheet" href="/partner/css/calendar.css">
+    <link rel="stylesheet" href="/partner/css/partenermain.css">
+    <link rel="stylesheet" href="/partner/css/partner_footer.css">
+</head>
+<body>
+<header th:replace="partner/header.html" :: ph></header>
+    <div id="container-wrap" class="container-wrap">
+            <div id="content-wrap">
+                <div class="container-fluid pd0">
+                    <div id="content" class="row">
+                        <div class="col-xs-12">
+                            <!-- 서비스 정보 내용 시작 -->
+                            <div class="row main-layout main-header reform mgt-33">
+                                <div class="wrap">
+                                    <div class="layout-left">
+                                        <h1>
+                                            <a href="/partner/html/partner_main.html">네이버</a> 
+                                            <a href="#">
+                                                <small>naver.com</small>
+                                            </a>
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--주요 현황-->
+                <div class="main-layout main-content reform">
+                    <div class="main-statistics main-content reform mg0 pd0">
+                        <div class="content-main">
+                                <div class="row">
+                                    <div class="col-xs-8">
+                                                        <!-- 주문 관리 내용 시작 -->
+                                                        <!-- 주문관리 -->
+                                        <div class="main-section order-management">
+                                            <div class="table-title btm-line">
+                                                <span class="gd-help-manual">주문관리 
+                                                    <a href="" target="_blank" class="link-help">페이지 도움말
+                                                    </a>
+                                                </span>
+                                                <div class="pull-right">
+                                                    <a href="#" class="btn btn-icon-setting btn-sm btn-white js-setting-order" style="background-image: url(/partner/image/icon_setting_off.png);" data-role="orderSetting">세팅</a>
+                                                </div>
+                                            </div>
+                                            <div class="main-section-inner">
+                                                <ol class="content order list-unstyled reform">
+                                                    <li class="active">
+                                                        <a href="">
+                                                            <span class="status">당일판매</span>
+                                                            <div class="order-list-val">1</div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="active">
+                                                        <a href="">
+                                                            <span class="status">결제완료</span>
+                                                            <div class="order-list-val">15</div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="active">
+                                                        <a href="/partner/html/partner_shipping.html">
+                                                            <span class="status">상품준비중</span>
+                                                            <div class="order-list-val">2</div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="active">
+                                                        <a href="/partner/html/partner_shipping.html">
+                                                            <span class="status">배송중</span>
+                                                            <div class="order-list-val">217</div>
+                                                        </a>
+                                                    </li>
+                                                </ol>
+                                                <ol class="content order list-unstyled reform">
+                                                    <li class="active">
+                                                        <a href="">
+                                                            <span class="status">배송완료</span>
+                                                            <div class="order-list-val">459</div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="active">
+                                                        <a href="">
+                                                            <span class="status">구매확정</span>
+                                                            <div class="order-list-val">142</div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="">
+                                                        <a href="">
+                                                            <span class="status">교환접수</span>
+                                                            <div class="order-list-val">0</div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="">
+                                                        <a href="">
+                                                            <span class="status">환불접수</span>
+                                                            <div class="order-list-val">0</div>
+                                                        </a>
+                                                    </li>
+                                                </ol>
+                                            </div>
+                                            <div class="clear-both"></div>
+                                        </div>
+                                        <!-- 주문 관리 내용 끝 -->
+                                    </div>
+                                    <div class="col-xs-4">
+                                    <!-- 문의 / 답변 관리 내용 시작 -->
+                                        <div class="main-section">
+                                            <div class="table-title btm-line">
+                                                <span class="gd-help-manual">제품 관리 
+                                                    <a href="#" target="_blank" class="link-help">페이지 도움말</a>
+                                                </span>
+                                                <div class="pull-right">
+                                                    <a href="/partner/html/partner_management.html" style="background-image: url(/partner/image/icon_setting_off.png);"  class="btn btn-icon-setting btn-sm btn-white js-setting-cs">세팅</a>
+                                                </div>
+                                            </div>
+                                            <div class="qa-board-box reform">
+                                                <ol class="content list-unstyled reform">
+                                                    <li>
+                                                        <a href="">판매중인 제품
+                                                            <span class="qa-board-val">
+                                                                <b class="c-gdred">1</b>건
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                </ol>   
+                                            </div>
+                                        </div>
+                                        <!-- 문의 / 답변 관리 내용 끝 -->
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="main-section">
+                        <div class="table-title">
+                            <span class="gd-help-manual">주요일정 <a href="http://manual.godomall5.godomall.com/data/manual_view.php?category=base__index___index#주요일정" target="_blank" class="link-help">페이지 도움말</a></span>
+                        </div>
+                        <div class="cal-box" style="display: flex;">
+                            <!--달력-->
+                            <div class="col-calendar">
+                                <div class="cal" style="padding: 20px;">
+                                    <div class="sec_cal">
+                                        <div class="cal_nav">
+                                          <a href="javascript:;" class="nav-btn go-prev">prev</a>
+                                          <div class="year-month"></div>
+                                          <a href="javascript:;" class="nav-btn go-next">next</a>
+                                        </div>
+                                        <div class="cal_wrap">
+                                            <div class="days">
+                                                <div class="day">MON</div>
+                                                <div class="day">TUE</div>
+                                                <div class="day">WED</div>
+                                                <div class="day">THU</div>
+                                                <div class="day">FRI</div>
+                                                <div class="day">SAT</div>
+                                                <div class="day">SUN</div>
+                                            </div>
+                                            <div class="dates"></div>
+                                        </div>
+                                    </div>
+                                </div>  
+                            </div>
+                            <div class="col-schedule">
+                                <div class="memo">
+                                    <div class="title">
+                                        <span style="font-size:14px;font-weight:bold;color:#333">11/20</span> 일정이 없습니다.
+                                        <div class="pull-right" style="padding-top:6px;color:#888;font-size:11px">
+                                        <input type="button" href="" class="btn-link" value="일정추가">
+                                        </div>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <span>집에 가야 해요</span>
+                                        </li>
+                                        <li>
+                                            <span>집에 가야 해요</span>
+                                        </li>
+                                        <li>
+                                            <span>집에 가야 해요</span>
+                                        </li>
+                                        <li>
+                                            <span>집에 가야 해요</span>
+                                        </li>
+                                        <li>
+                                            <span>집에 가야 해요</span>
+                                        </li>
+                                        <li>
+                                            <span>집에 가야 해요</span>
+                                        </li>
+                                        <li>
+                                            <span>집에 가야 해요</span>
+                                        </li>
+                                        <li>
+                                            <span>집에 가야 해요</span>
+                                        </li>
+                                        <li>
+                                            <span>집에 가야 해요</span>
+                                        </li>
+                                        <li>
+                                            <span>집에 가야 해요</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--메모-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<footer th:replace="partner/footer.html" :: pf></footer>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="bootstrap-dialog-header">
+                    <div class="bootstrap-dialog-close-button" style="display: block;">
+                        <button class="close">
+                            ×</button>
+                        </div>
+                        <div class="bootstrap-dialog-title">일정관리</div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="bootstrap-dialog-body">
+                        <div class="bootstrap-dialog-message">
+                            <div id="layer-wrap">
+                                <form id="frmReg" name="frmReg" action="../base/schedule_ps.php" method="post" novalidate="novalidate">
+                                    <input type="hidden" name="mode" value="add">
+                                    <input type="hidden" name="scdDt" value="2022-11-20">
+                                    <div class="schedule-icon-title">
+                                        <div class="pdl30">
+                                            <span class="date-text">2022-11-20            
+                                                <span>
+                                                    <span style="color: #f91d11;font-weight: bold">0건</span>의 일정이 있습니다.
+                                                </span>
+                                            </span>
+                                            <span class="pull-right pdl5 pdt5"> 
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <table class="table table-rows table-fixed" id="sch-content" style="border : 0px;">
+                                        <colgroup>
+                                            <col width="87%"></col>
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <td style="padding-left:0px">
+                                                    <input type="hidden" mode="sno[]" value="">
+                                                    <textarea name="contents[]" style="min-width: 507px; max-width: 507px;"></textarea>
+                                                </td>
+                                                <td>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="text-center" style="padding: 20px 0 25px 0;border-top: 1px solid #e6e6e6">
+                                        <button type="submit" class="btn btn-xl btn-black">저장</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="display: none;">
+                    <div class="bootstrap-dialog-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="/partner/js/calendar.js"></script>
+    <script>
+      $(".btn-link").click("on", function(i, v){
+        $(".modal-dialog").css("display", "block");
+    })
+    $(".close").click("on", function(i, v){
+        $(".modal-dialog").css("display", "none");
+    })  
+    </script>
+</body>
+</html>

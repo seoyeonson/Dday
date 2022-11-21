@@ -538,48 +538,47 @@
                     <em class="last-tab">© KURLY CORP. ALL RIGHTS RESERVED</em>
                 </div>
             </div>
-    </footer>
-        <!-- <div id="modal1" class="modal">
-            <p>모달창안의 내용부분</p>
-            <a href="#" rel="modal:close">닫기</a>
-          </div>
-          
-          <p><a href="#modal1" rel="modal:open">모달창띄우기</a></p> -->
+            <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" /> -->
+                    
+                            
+            </footer>
+            <!-- <div id="modal1" class="modal">
+                <p>모달창안의 내용부분</p>
+                <a href="#" rel="modal:close">닫기</a>
+            </div>
+            
+            <p><a href="#modal1" rel="modal:open">모달창띄우기</a></p> -->
+            <script>
+            $(function(){ 
+            
+            $("button.infoRight").click(function(){
+              $(".modal").fadeIn();
+              $('body').css("overflow", "hidden");
+            });
+            
+            $(".modal_content").click(function(){
+                $(".modal").fadeOut();
+                $('body').css("overflow", "visible");
+            });
+            
+            });
+            
+            $(function(){ 
+            
+            $("button.infoRight2").click(function(){
+              $(".modal2").fadeIn();
+              $('body').css("overflow", "hidden");
+            });
+            
+            $(".modal_content2").click(function(){
+                $(".modal2").fadeOut();
+                $('body').css("overflow", "visible");
+            
+            });
+            
+            });
+            </script>
     </body>
     </html>
-
-<script>
-$(function(){ 
-
-$("button.infoRight").click(function(){
-  $(".modal").fadeIn();
-  $('body').css("overflow", "hidden");
-});
-
-$(".modal_content").click(function(){
-    $(".modal").fadeOut();
-    $('body').css("overflow", "visible");
-});
-
-});
-
-$(function(){ 
-
-$("button.infoRight2").click(function(){
-  $(".modal2").fadeIn();
-  $('body').css("overflow", "hidden");
-});
-
-$(".modal_content2").click(function(){
-    $(".modal2").fadeOut();
-    $('body').css("overflow", "visible");
-
-});
-
-});
-</script>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" /> -->
-        
-                

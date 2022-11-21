@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- 할인 하는 제품일 경우 해당 배너 사용 -->
+    <div class="special-sale" th:fragment="ss2">
+    <div class="special-product">
+        <div class="product-title">
+            <h2 class="product-title-main">시간 한정</h2>
+            <h3 class="product-title-sub">마감 전 시간 한정 특별 할인 오픈!</h3>
+            <div class="product-time">
+                <div class="lottie-timer">
+                    <p>
+                    <label for="Timer2">남은 시간:</label>
+                    <input id="Timer2" type="text" value="" disabled style="background-color: #fff;"/>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="product-image">
+            <div class="product-imagee">
+                <div class="product-image-header">
+                    <img src="https://img-cf.kurly.com/shop/data/goods/1636017928381z0.jpg" alt="상품 이미지" loading="lazy">
+                    <div>
+                        <button type="button" class="product-function product-absolute">
+                            <img src="/main/image/main/run.png" width="45px" height="45px" alt="바로가기 아이콘">
+                        </button>
+                    </div>
+                </div>
+                <div class="product-image-footer product-info">
+                    <div class="product-description">두루 사용하기 좋은 간편 새우</div>
+                    <h3 class="product-name">우주 프리미엄 손질 생새우살 200g (냉동)(26/30사이즈)</h3>
+                    <div class="content-row now-price">
+                        <div class="product-price css-product-discount">
+                            <span class="discount-rate discount-orange">32%</span>
+                            <span class="sales-price">9,900
+                                <span class="won">원</span>
+                            </span>
+                        </div>
+                        <span class="dimmed-price">8,400<span class="won"> 원</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

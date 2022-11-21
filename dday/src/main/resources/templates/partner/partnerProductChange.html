@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>파트너 페이지</title>
+    <link rel="stylesheet" href="/partner/css/partner.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/partner/css/partenerRegistration.css">
+<link rel="stylesheet" href="/partner/css/partner_footer.css">
+</head>
+<body>
+<header th:replace="partner/header.html" :: ph></header>
+    <div id="container-wrap" class="container-wrap">
+        <div id="container" class="row">
+            <div id="content-wrap">
+                <div class="container-fluid pd0">
+                    <div id="content" class="row">
+                        <div class="col-xs-12">
+                            <!-- 서비스 정보 내용 시작 -->
+                            <div class="row main-layout main-header reform mgt-33">
+                                <div class="wrap">
+                                    <div class="layout-left">
+                                        <h1>
+                                            <a href="/partner/html/partner_main.html">네이버</a> 
+                                            <a href="#">
+                                                <small>naver.com</small>
+                                            </a>
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--주요 현황-->
+                <div class="main-layout main-content reform">
+                    <body class="base main-statistics layout-no-iframe menu-no-border">
+                        <div class="main-statistics main-content reform mg0 pd0">
+                            <div class="content-main">
+                                <div class="main-section" id="presentationSection">
+                                    <div class="table-title">
+                                        <span class="">제품 수정</span>
+                                    </div>
+                                    <div class="statics-box reform">
+                                        <div class="nav-tabs-top">
+                                            <ul class="nav nav-tabs tab-fluid-5" id="presentationMainTab" role="tablist" data-period ="30">
+                                                <li role="presentation" class="" data-name="sales">
+                                                    <a href="/partner/html/partner_change_info.html" role="tab" data-toggle="tab"><h2>정보 수정</h2>
+                                                        <img class="js-period-icon" src="">
+                                                    </a>
+                                                </li>
+                                                <li role="presentation" class="active" data-name="order">
+                                                    <a href="/partner/html/partner_registration.html" role="tab" data-toggle="tab" aria-expanded="false"><h2>제품 수정</h2>
+                                                        <img class="js-period-icon" src="">
+                                                    </a>
+                                                </li>
+                                                <li role="presentation" class="" data-name="visit">
+                                                    <a href="/partner/html/partner_management.html" role="tab" data-toggle="tab" aria-expanded="false"><h2>판매 관리</h2>
+                                                        <img class="js-period-icon" src="">
+                                                    </a>
+                                                </li>
+                                                <li role="presentation" class="" data-name="member">
+                                                    <a href="/partner/html/partner_shipping.html" role="tab" data-toggle="tab" aria-expanded="false"><h2>배송 관리</h2>
+                                                        <img class="js-period-icon" src="">
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </body>
+                </div>
+                <div class="registrationBox">
+                    <form class="registrationForm registForm">
+                        <div class="registTitle">
+                            <h3>제품 수정</h3>
+                        </div>
+                        <ul>
+                            <li class="registFormLi">
+                                <span class="colName col01">상품명</span>
+                                <input type="text" class="registName" placeholder="제품명을 입력해주세요">
+                                <input type="checkbox" name="당일판매제품" id="checkToday1" >
+                                <label for="checkToday1">당일 판매 여부</label>
+                            </li>
+                            <li class="registFormLi">
+                                <span class="colName col02">카테고리</span>
+                                <select name="" id="" class="categorySelectBox">
+                                    <option>상품 분류 선택</option>
+                                    <option value="01">채소</option>
+                                    <option value="02">과일.견과.쌀</option>
+                                    <option value="03">수산.해산.건어물</option>
+                                    <option value="04">정육.계란</option>
+                                    <option value="05">국.반찬.메인요리</option>
+                                    <option value="06">샐러드.간편식</option>
+                                    <option value="07">면.양념.오일</option>
+                                    <option value="08">생수.음료.우유.커피</option>
+                                    <option value="09">간식.과자.떡</option>
+                                    <option value="10">베이커리.치즈.델리</option>
+                                </select>
+                            </li>
+                            <li class="registFormLi">
+                                <span class="colName col03">가격</span>
+                                <input type="text" class="registPrice" placeholder="판매가격을 입력해주세요">
+                            </li>
+                            <li class="registFormLi">
+                                <span class="colName stock">재고</span>
+                                <input type="text" class="registStock" placeholder="판매가능 수량을 입력해주세요">
+                            </li>
+                            <li class="registFormLi">
+                                    <span class="colName col04">제조일자</span>
+                                    <input type="date" name="" id="">
+                                </li>
+                                <li class="registFormLi">
+                                <span class="colName col05">유통기한</span>
+                                <input type="date" name="" id="">
+                            </li>
+                            <li class="registFormLi">
+                                <span class="colName col06_1">한줄설명</span>
+                                <input type="text" class="simpleContent" placeholder="미리보기에 표시될 상품의 한줄 설명을 작성해주세요">
+                            </li>
+                            <li class="registFormLi detailList">
+                                <span class="colName col06">상세설명</span>
+                                <textarea rows="10" cols="10" class="detailContents"></textarea>
+                            </li>
+                            <li class="registFormLi">
+                                <span class="colName col07">제품사진</span>
+                                <label class="fileButton" for="inputFile">
+                                    썸네일
+                                  </label>
+                                  <input type="file" id="inputFile" style="display:none;"> 
+                                  <label class="fileButton inputFileContent" for="inputFileContent">
+                                    본문
+                                  </label>
+                                  <input type="file" id="inputFileContent" style="display:none;"> 
+                            </li>
+                        </ul>
+                        <input type="button" class="submitButton" value="수정" onclick="alert('제품이 수정되었습니다.')">
+                        <input type="button" class="removeButton" value="삭제" onclick="alert('제품이 삭제되었습니다.')">
+                    </form>
+                    <form class="registrationForm todayResgistForm">
+                        <div class="registTitle">
+                            <h3>제품 등록</h3>
+                        </div>
+                        <ul>
+                            <li class="registFormLi">
+                                <span class="colName col01">상품명</span>
+                                <input type="text" class="registName" placeholder="제품명을 입력해주세요">
+                                <input type="checkbox" name="당일판매제품" id="checkToday2" checked="on">
+                                <label for="checkToday2">당일 판매 여부</label>
+                            </li>
+                            <li class="registFormLi">
+                                <span class="colName col02">카테고리</span>
+                                <select name="" id="">
+                                    <option>상품 분류 선택</option>
+                                    <option value="01">채소</option>
+                                    <option value="02">과일.견과.쌀</option>
+                                    <option value="03">수산.해산.건어물</option>
+                                    <option value="04">정육.계란</option>
+                                    <option value="05">국.반찬.메인요리</option>
+                                    <option value="06">샐러드.간편식</option>
+                                    <option value="07">면.양념.오일</option>
+                                    <option value="08">생수.음료.우유.커피</option>
+                                    <option value="09">간식.과자.떡</option>
+                                    <option value="10">베이커리.치즈.델리</option>
+                                </select>
+                            </li>
+                            <li class="registFormLi">
+                                <span class="colName col03">가격</span>
+                                <input type="text" class="registPrice" placeholder="판매가격을 입력해주세요">
+                            </li>
+                            <li class="registFormLi">
+                                <span class="colName closingTime">영업시간</span>
+                                <input type="time" class="registClosingTime"  max="24:00:00">
+                            </li>
+                            <li class="registFormLi addressList">
+                                <span class="colName address">가게주소</span>
+                                <div class="addressFind">
+                                <input id="member_post"  type="text" placeholder="우편번호" readonly onclick="findAddr()">
+                                <input id="member_addr" type="text" placeholder="주소" readonly> <br>
+                                <input type="text" placeholder="상세 주소">
+                            </div>
+                            </li>
+<!--                             <li class="registFormLi">
+                                    <span class="colName col04">제조일자</span>
+                                    <input type="date" name="" id="">
+                                </li>
+                                <li class="registFormLi">
+                                <span class="colName col05">유통기한</span>
+                                <input type="date" name="" id="">
+                            </li> -->
+                            <li class="registFormLi simpleContentList">
+                                <span class="colName col06_1">한줄설명</span>
+                                <input type="text" class="simpleContent2" placeholder="미리보기에 표시될 상품의 한줄 설명을 작성해주세요">
+                            </li>
+                            <li class="registFormLi detailList">
+                                <span class="colName col06_2">상세설명</span>
+                                <textarea rows="10" cols="10" class="detailContents2"></textarea>
+                            </li>
+                            <li class="registFormLi photoList">
+                                <span class="colName col07_2">제품사진</span>
+                                <label class="fileButton2" for="inputFile">
+                                    썸네일
+                                  </label>
+                                  <input type="file" id="inputFile" style="display:none;"> 
+                                  <label class="fileButton inputFileContent2" for="inputFileContent">
+                                    본문
+                                  </label>
+                                  <input type="file" id="inputFileContent" style="display:none;"> 
+                            </li>
+                        </ul>
+                        <input type="button" class="submitButton" value="수정" onclick="alert('제품이 수정되었습니다.')">
+                        <input type="button" class="removeButton" value="삭제" onclick="alert('제품이 삭제되었습니다.')">
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+<footer th:replace="partner/footer.html" :: pf></footer>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="/partner/js/partner.js"></script>
+    <script>
+        function findAddr(){
+            new daum.Postcode({
+                oncomplete: function(data) {
+                    
+                    console.log(data);
+                    
+                    // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+                    // 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
+                    // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                    var roadAddr = data.roadAddress; // 도로명 주소 변수
+                    var jibunAddr = data.jibunAddress; // 지번 주소 변수
+                    // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                    document.getElementById('member_post').value = data.zonecode;
+                    if(roadAddr !== ''){
+                        document.getElementById("member_addr").value = roadAddr;
+                    } 
+                    else if(jibunAddr !== ''){
+                        document.getElementById("member_addr").value = jibunAddr;
+                    }
+                }
+            }).open();
+        }
+        </script>
+        <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+</body>
+</html>

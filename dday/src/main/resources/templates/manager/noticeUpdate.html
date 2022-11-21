@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지 수정</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/manager/css/questionForm.css">
+    <link rel="stylesheet" href="/manager/css/serviceNotice.css">
+</head>
+
+<body>
+    <div class="wrapperBig">
+        <div class="wrapper">
+            <!-- 사이드 바 -->
+            <div class="sidebar">
+                <div class="sidebarName">고객센터</div>
+                <ul class="sidebarList">
+                    <li>
+                        <a href="/serviceCenter/html/serviceNotice.html" class="sidebarMenu">공지사항
+                            <span class="arrow"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/serviceCenter/html/serviceFAQ.html" class="sidebarMenu">자주하는 질문
+                            <span class="arrow"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/serviceCenter/html/serviceQuestion.html" class="sidebarMenu">1:1 문의
+                            <span class="arrow"></span>
+                        </a>
+                    </li>
+                </ul>
+                <a href="/serviceCenter/html/serviceQuestion.html" class="questionMenu">
+                    <div>
+                        <span class="firstLine">도움이 필요하신가요?</span>
+                        <span class="secondLine">1:1 문의하기</span>
+                    </div>
+                    <span class="arrow2"></span>
+                </a>
+            </div>
+            <!-- 사이드 바 end -->
+
+            <div class="noticeBox">
+                <div class="MessageConatiner">
+                    <div class="Message">
+                        <h2 class="ContainerTitle">공지 수정</h2>
+                    </div>
+                </div>
+                <hr>
+                <form id="questionForm">
+                    <div>
+                        <div class="typeBox">
+                            <label data-testid="label-text" class="typeText">유형
+                              <!--   <span data-testid="label-required-text" class="redStar">*</span> -->
+                            </label>
+                            <div class="typeContainer">
+                                <div class="typeInnerContainer">
+                                    <div class="FirstSelect">
+                                        <select id="mainType" , onchange="typeChange(this)"><i
+                                                class="fi fi-rr-caret-down"></i>
+                                            <option>공지유형을 선택해주세요</option>
+                                            <option value="01" id="main01">[안내]</option>
+                                            <option value="02">[이벤트]</option>
+                                            <option value="03">[가격인상공지]</option>
+                                            <option value="04">[서비스공지]]</option>
+                                            <option value="05">[마켓컬리]]</option>
+                                            <option value="06">[시스템]</option>
+                                            <option value="07">[기타]</option>
+                                        </select>
+
+                                    </div>
+                                   <!--  <div class="subSelect">
+                                        <select id="detailType">
+                                            <option>상세유형을 선택해주세요</option>
+                                        </select>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="titleBox">
+                            <label data-testid="label-text" class="typeText">제목
+                                <!-- <span data-testid="label-required-text" class="redStar">*</span> -->
+                            </label>
+                            <div class="titleContainer">
+                                <div class="titleInnerContainer">
+                                    <input type="text" placeholder="제목을 입력해주세요" class="inputTitle">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contentBox">
+                            <label data-testid="label-text" class="typeText">내용
+                              <!--   <span data-testid="label-required-text" class="redStar">*</span> -->
+                            </label>
+                            <div class="contentContainer">
+                                <div class="contentInnerContainer">
+                                    <textarea name="contents" class="contentsArea" id="contentsArea" cols="30"
+                                        rows="10"></textarea>
+                                    <div class="textLengthWrap">
+                                        <span class="textCount" style="color: rgb(51, 51, 51);">0자</span>
+                                        <span class="textTotal" style="color: rgb(153, 153, 153);">/5000자</span>
+                                    </div>
+                                    <!-- 글상자 -->
+                                    <div class="placeholderBox">
+                                    </div>
+                                    <!-- 글상자  end -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="photoBox">
+                            <label data-testid="label-text" class="typeText">
+                              <!--   <span data-testid="label-required-text" class="redStar"></span> -->
+                            </label>
+                            <div class="photoContainer">
+                                <div class="inputPhotoBox">
+                                    <div id="realImage">
+                                        <img src="" id="thumb">
+                                        <label for="photo-picker" class="photoLabel">
+                                            <button type="button" class="photoButton">
+                                                <span class="photoImg"></span>
+                                            </button>
+                                            <input multiple="" type="file"
+                                                accept="image/jpg, image/jpeg, image/png, image/bmp" class="fileInput"
+                                                id="fileInput">
+                                        </label>
+                                        <div class="fileGuide">
+                                            <ul>
+                                                <li>ㆍ30MB 이하의 이미지만 업로드 가능합니다.</li>
+                                                <li>ㆍ상품과 무관한 내용익나 음란 및 불법적인 내용은 통보없이 삭제 될 수 있습니다.</li>
+                                                <li>ㆍ사진은 최대 8장까지 등록가능합니다.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="submitBox">
+                        <button type="button" class="submitButton" id="submitButton" onclick="check()">등록</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="/manager/js/managerNotice.js"></script>
+
+</html>

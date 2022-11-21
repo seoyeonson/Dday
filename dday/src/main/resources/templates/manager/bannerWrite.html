@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배너 등록</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/manager/css/questionForm.css">
+    <link rel="stylesheet" href="/manager/css/serviceNotice.css">
+</head>
+
+<body>
+    <div class="wrapperBig">
+        <div class="wrapper">
+            <div class="noticeBox">
+                <div class="MessageConatiner">
+                    <div class="Message">
+                        <h2 class="ContainerTitle">배너 등록</h2>
+                    </div>
+                </div>
+                <hr>
+                <!-- 구분, 링크주소, 이미지 설명, 이미지 첨부 -->
+                <form id="bannerForm">
+                    <div>
+                        <div class="typeBox">
+                            <label data-testid="label-text" class="typeText">구분
+                            </label>
+                            <div class="typeContainer">
+                                <div class="typeInnerContainer">
+                                    <div class="bannerBox">
+                                        <select id="mainType">
+                                            <i class="fi fi-rr-caret-down"></i>
+                                            <option>배너 번호를 선택해주세요</option>
+                                            <option value="01" id="main01">메인 배너 - 01</option>
+                                            <option value="02">메인 배너 - 02</option>
+                                            <option value="03">메인 배너 - 03</option>
+                                            <option value="04">메인 배너 - 04</option>
+                                            <option value="05">메인 배너 - 05</option>
+                                            <option value="06">메인 배너 - 06</option>
+                                            <option value="07">메인 배너 - 07</option>
+                                            <option value="08">메인 배너 - 08</option>
+                                            <option value="09">메인 배너 - 09</option>
+                                            <option value="10">메인 배너 - 10</option>
+                                            <option value="11">메인 배너 - 11</option>
+                                            <option value="12">메인 배너 - 12</option>
+                                            <option value="13">메인 배너 - 13</option>
+                                            <option value="14">메인 배너 - 14</option>
+                                            <option value="15">메인 배너 - 15</option>
+                                            <option value="16">메인 배너 - 16</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="linkBox">
+                            <label data-testid="label-text" class="typeText">배너 링크 주소
+                            </label>
+                            <div class="bannerLinkContainer">
+                                <div class="bannerLinkInnerContainer">
+                                    <input type="text" placeholder="https://" class="inputLink">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contentBox">
+                            <label data-testid="label-text" class="typeText">배너 이미지 설명
+                            </label>
+                            <div class="contentContainer">
+                                <div class="contentInnerContainer">
+                                    <textarea name="contents" class="contentsArea" id="contentsArea" cols="30"
+                                        rows="10"></textarea>
+                                    <div class="textLengthWrap">
+                                        <span class="textCount" style="color: rgb(51, 51, 51);">0자</span>
+                                        <span class="textTotal" style="color: rgb(153, 153, 153);">/5000자</span>
+                                    </div>
+                                    <!-- 글상자 -->
+                                    <div class="placeholderBox">
+                                    </div>
+                                    <!-- 글상자  end -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="imageBox">
+                            <label data-testid="label-text" class="typeText" id="bannerImage">배너 이미지
+                            </label>
+                        <div class="photoBox">
+                            <label data-testid="label-text" class="typeText">
+                            </label>
+                            <div class="photoContainer">
+                                <div class="inputPhotoBox">
+                                    <div id="realImage">
+                                        <img src="" id="thumb">
+                                        <label for="photo-picker" class="photoLabel">
+                                            <button type="button" class="photoButton1">
+                                                <span class="photoImg"></span>
+                                            </button>
+                                            <input multiple="" type="file"
+                                                accept="image/jpg, image/jpeg, image/png, image/bmp" class="fileInput"
+                                                id="fileInput">
+                                        </label>
+                                        <div class="fileGuide1">
+                                            <ul>
+                                                <li>ㆍ30MB 이하의 이미지만 업로드 가능합니다.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="submitBox">
+                        <button type="button" class="submitButton" id="submitButton" onclick="bannerSubmit()">등록</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="/manager/js/managerNotice.js"></script>
+
+</html>
