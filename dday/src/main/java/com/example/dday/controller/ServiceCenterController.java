@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @Controller
-@RequestMapping("/serviceCentor/*")
-public class ServiceCentorController {
+@RequestMapping("/serviceCenter/*")
+public class ServiceCenterController {
     @GetMapping("/noticeBoardListDetail")
     public void noticeBoardListDetail(){}
 
