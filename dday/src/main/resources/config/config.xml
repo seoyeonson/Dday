@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0/EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <typeAliases>
+        <typeAlias type="com.example.dday.domain.vo.CartVO" alias="cartVO"/>
+        <typeAlias type="com.example.dday.domain.vo.MemberVO" alias="memberVO"/>
+        <typeAlias type="com.example.dday.domain.vo.OrderDetailVO" alias="orderDetailVO"/>
+        <typeAlias type="com.example.dday.domain.vo.OrderVO" alias="orderVO"/>
+        <typeAlias type="com.example.dday.domain.vo.PartnerVO" alias="partnerVO"/>
+        <typeAlias type="com.example.dday.domain.vo.PointVO" alias="pointVO"/>
+        <typeAlias type="com.example.dday.domain.vo.ProductLikeVO" alias="productLikeVO"/>
+        <typeAlias type="com.example.dday.domain.vo.ProductVO" alias="productVO"/>
+    </typeAliases>
 </configuration>
