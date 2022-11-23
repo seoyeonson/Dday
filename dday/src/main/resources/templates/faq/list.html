@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자주하는 질문</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/serviceCenter/css/serviceNotice.css">
-    <link rel="stylesheet" href="/serviceCenter/css/serviceFAQ.css">
+    <link rel="stylesheet" href="/faq/css/serviceNotice.css">
+    <link rel="stylesheet" href="/faq/css/serviceFAQ.css">
     <link rel="stylesheet" href="/main/css/footer.css">
     <link rel="stylesheet" href="/main/css/header.css">
 </head>
 <body>
-<header th:replace="main/header.html" :: h></header>
+<header th:replace="/main/header.html" :: h></header>
         <div class="wrapperBig">
             <div class="wrapper">
                 <div class="noticeBox">
@@ -355,10 +355,10 @@
                 </div>
             </div>
         </div>
-<footer th:replace="main/footer.html" :: f></footer>
+<footer th:replace="/main/footer.html" :: f></footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script src="/serviceCenter/js/serviceCenter.js"></script>
+<script src="/faq/js/serviceCenter.js"></script>
 <script src="/main/js/header.js"></script>
 <script>
     $(document).ready( function() {

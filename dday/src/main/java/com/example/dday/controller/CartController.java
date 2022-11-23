@@ -8,20 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 @Controller
 @RequestMapping("/cart/*")
 public class CartController {
-
-    @GetMapping("/cart")
-    public void cart(){}
+//    장바구니 목록
+    @GetMapping("/list")
+    public void list(){}
 
     @GetMapping("/cartEmpty")
     public void cartEmpty(){}
-
-    @GetMapping("/orderComplete")
-    public void cartorderCompleteEmpty(){}
-
-    @GetMapping("/order")
-    public void order(){}
-
-    @GetMapping("/recieverDetail")
-    public void cartErecieverDetailmpty(){}
 
 }

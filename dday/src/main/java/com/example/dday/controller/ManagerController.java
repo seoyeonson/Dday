@@ -5,11 +5,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/search")
-public class SearchProductController {
-    @GetMapping("/search")
-    public void search(){}
+@RequestMapping("/manager/*")
+public class ManagerController {
+    @GetMapping("/memberAll")
+    public void memberAll(){}
 
-    @GetMapping("/searchNull")
-    public void searchNull(){}
+    @GetMapping("/memberView")
+    public void memberView(){}
+
 }
