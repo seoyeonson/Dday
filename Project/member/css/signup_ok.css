@@ -40,13 +40,13 @@ a{
 
 .signup_ok_main>h2{
     font-weight: 300;
-    font-size: 30px;
+    font-size: 24px;
     line-height: 20px;
     margin-top: 30px;
 }
 
 .button_area{
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 .button_area button{
@@ -54,10 +54,10 @@ a{
     padding: 0 10px;
     text-align: center;
     overflow: hidden;
-    width: 20%;
-    height: 54px;
+    width: 15%;
+    height: 44px;
     border-radius: 3px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
 }
 

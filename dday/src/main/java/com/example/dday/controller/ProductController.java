@@ -5,11 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/search/*")
-public class SearchController {
-    @GetMapping("/search")
-    public void search(){}
+@RequestMapping("/product/*")
+public class ProductController {
 
-    @GetMapping("/searchNull")
-    public void searchNull(){}
 }
