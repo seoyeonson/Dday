@@ -14,11 +14,12 @@ import java.util.Date;
 import java.util.List;
 
 @Controller
-@RequestMapping("/main/*")
+@RequestMapping("")
 public class MainController {
-
     @GetMapping("/main")
-    public void main(){}
+    public String main(){
+        return "/index";
+    }
 }
 
 

@@ -2,9 +2,7 @@ package com.example.dday.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 @Controller
 @RequestMapping("/member/*")
@@ -19,13 +17,36 @@ public class MemberController {
     @GetMapping("/login")
     public void login(){}
 
-    @GetMapping("/signup")
-    public void signup(){}
+    @GetMapping("/join")
+    public void join(){}
 
-    @GetMapping("/signupOK")
-    public void signupOK(){}
+    @GetMapping("/joinOk")
+    public void joinOk(){}
 
-    @GetMapping("/userDivide")
-    public void userDivide(){}
+    @GetMapping("/divide")
+    public void divide(){}
+
+//    mypage
+    @GetMapping("/mypageCoupon")
+    public void mypageCoupon(){}
+
+    @GetMapping("/mypageDelivery")
+    public void mypageDelivery(){}
+
+    @GetMapping("/mypageEpi")
+    public void mypageEpi(){}
+
+    @GetMapping("/mypageEpiModify")
+    public void mypageEpiModify(){}
+
+    @GetMapping("/mypageLike")
+    public void mypageLike(){}
+
+    @GetMapping("/mypageOrderDetail")
+    public void mypageOrderDetail(){}
+
+    @GetMapping("/mypageSaving")
+    public void mypageSaving(){}
+
 
 }
