@@ -25,4 +25,7 @@ public class PartnerController {
     @GetMapping("/partnerProductChange")
     public void partnerProductChange(){}
 
+    @GetMapping("/deliveryStatusForm")
+    public void deliveryStatusForm(){}
+
 }

@@ -28,9 +28,9 @@ h3 {
 select {
     height: 30px;
     width: 140px;
-    font-size: 16px;
+    font-size: 14px;
 }
-.registName, select {
+.registName, .registDiscountRate, select {
     position: absolute;
     left: 24%;
 }
@@ -46,6 +46,7 @@ select {
     top: 96%;
     width: 450px;
     height: 300px;
+    resize: none;
 }
 
 
@@ -89,7 +90,7 @@ input[type=time]{
 .registFormLi > input[type=text] {
     width: 450px;
     height: 30px;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 
@@ -155,7 +156,7 @@ input[type=checkbox]:checked + label:before {
 
     content: "\2713";  /* 체크모양 */
     text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);  
-    font-size: 23px; 
+    font-size: 22px;
     font-weight:800; 
     color: #fff;  
     background:#2f87c1;
@@ -183,15 +184,15 @@ input[type=checkbox]:checked + label:before {
     right: 8%;
 }
 
-.addressList{
+/*.addressList{
     display:flex;
 }
 
 .address {
     width:78px;
-}
+}*/
 
-.addressFind {
+/*.addressFind {
     width:350px;
     left: 24%;
     position: absolute;
@@ -200,11 +201,11 @@ input[type=checkbox]:checked + label:before {
     width: 300px;
     height: 30px;
     margin-bottom: 3px;
-}
+}*/
 
 .simpleContentList {
     position: absolute;
-    top: 132%;
+    top: 109%;
 }
 
 .simpleContent2 {
@@ -214,19 +215,20 @@ input[type=checkbox]:checked + label:before {
 
 .col06_2, .detailContents2{
     position: absolute;
-    top:147%;
+    top:127%;
 }
 
 .detailContents2{
     left:24%;
     width: 450px;
     height: 300px;
+    resize: none;
 }
 
 
 .col07_2{
     position: absolute;
-    top:260%;
+    top:240%;
 }
 
 .fileButton2{
@@ -239,6 +241,19 @@ input[type=checkbox]:checked + label:before {
 }
 
 .fileButton2, .inputFileContent2 {
-    top:260%;
+    top:240%;
     position: absolute;
+}
+
+.registDiscountRate{
+    width: 150px;
+    height: 30px;
+    font-size: 14px;
+
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
