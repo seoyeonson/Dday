@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>배송현황</title>
+</head>
+<body>
+    <div style="display:flex; padding:10px;">
+        현재 상태 : <p class="deliveryNow" style="margin: 0px"> 방문 예정</p>
+    </div>
+    <form action='' style="padding: 10px">
+        상태 변경<br>
+        <input type='radio' name='deliveryStatus' value='배송 중'/>배송 중
+        <input type='radio' name='deliveryStatus' value='배송 완료' />배송 완료
+        <input type='radio' name='deliveryStatus' value='구매 확정' />구매 확정
+        <input type='button' value="변경" class="deliveryStatusChange">
+    </form>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+</body>
+<script>
+
+    $('input.deliveryStatusChange').on('click', function(){
+        var getValue = $('input[name=deliveryStatus]:checked').val();
+        console.log(getValue);
+        $('p.deliveryNow').text(getValue);
+    });
+</script>
+</html>

@@ -12,34 +12,18 @@
     <link rel="stylesheet" href="/partner/css/change.css">
     <link rel="stylesheet" href="/partner/css/partner.css">
     <link rel="stylesheet" href="/partner/css/calendar.css">
-    <link rel="stylesheet" href="/partner/css/partenermain.css">
+    <link rel="stylesheet" href="/partner/css/partnermain.css">
+    <link rel="stylesheet" href="/partner/css/partnerManagement.css">
     <link rel="stylesheet" href="/partner/css/partner_footer.css">
 </head>
 <body>
 <header th:replace="partner/header.html" :: ph></header>
     <div id="container-wrap" class="container-wrap">
             <div id="content-wrap">
-                <div class="container-fluid pd0">
-                    <div id="content" class="row">
-                        <div class="col-xs-12">
-                            <!-- 서비스 정보 내용 시작 -->
-                            <div class="row main-layout main-header reform mgt-33">
-                                <div class="wrap">
-                                    <div class="layout-left">
-                                        <h1>
-                                            <a href="/partner/html/partner_main.html">네이버</a> 
-                                            <a href="#">
-                                                <small>naver.com</small>
-                                            </a>
-                                        </h1>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
                 <!--주요 현황-->
                 <div class="main-layout main-content reform">
+                    <div class="greetingBox"><p>파트너님</p> <p>어서오세요!</p></div>
                     <div class="main-statistics main-content reform mg0 pd0">
                         <div class="content-main">
                                 <div class="row">
@@ -47,14 +31,9 @@
                                                         <!-- 주문 관리 내용 시작 -->
                                                         <!-- 주문관리 -->
                                         <div class="main-section order-management">
+
                                             <div class="table-title btm-line">
-                                                <span class="gd-help-manual">주문관리 
-                                                    <a href="" target="_blank" class="link-help">페이지 도움말
-                                                    </a>
-                                                </span>
-                                                <div class="pull-right">
-                                                    <a href="#" class="btn btn-icon-setting btn-sm btn-white js-setting-order" style="background-image: url(/partner/image/icon_setting_off.png);" data-role="orderSetting">세팅</a>
-                                                </div>
+                                                <span class="gd-help-manual"><h3>주문 관리</h3></span>
                                             </div>
                                             <div class="main-section-inner">
                                                 <ol class="content order list-unstyled reform">
@@ -64,26 +43,29 @@
                                                             <div class="order-list-val">1</div>
                                                         </a>
                                                     </li>
-                                                    <li class="active">
-                                                        <a href="">
-                                                            <span class="status">결제완료</span>
-                                                            <div class="order-list-val">15</div>
-                                                        </a>
-                                                    </li>
+
                                                     <li class="active">
                                                         <a href="/partner/html/partner_shipping.html">
                                                             <span class="status">상품준비중</span>
                                                             <div class="order-list-val">2</div>
                                                         </a>
                                                     </li>
+                                                </ol>
+                                                    <ol class="content order list-unstyled reform">
                                                     <li class="active">
                                                         <a href="/partner/html/partner_shipping.html">
                                                             <span class="status">배송중</span>
                                                             <div class="order-list-val">217</div>
                                                         </a>
                                                     </li>
+                                                    <li class="active">
+                                                        <a href="">
+                                                            <span class="status">배송완료</span>
+                                                            <div class="order-list-val">459</div>
+                                                        </a>
+                                                    </li>
                                                 </ol>
-                                                <ol class="content order list-unstyled reform">
+                                                <!--<ol class="content order list-unstyled reform">
                                                     <li class="active">
                                                         <a href="">
                                                             <span class="status">배송완료</span>
@@ -108,37 +90,13 @@
                                                             <div class="order-list-val">0</div>
                                                         </a>
                                                     </li>
-                                                </ol>
+                                                </ol>-->
                                             </div>
                                             <div class="clear-both"></div>
                                         </div>
                                         <!-- 주문 관리 내용 끝 -->
                                     </div>
-                                    <div class="col-xs-4">
-                                    <!-- 문의 / 답변 관리 내용 시작 -->
-                                        <div class="main-section">
-                                            <div class="table-title btm-line">
-                                                <span class="gd-help-manual">제품 관리 
-                                                    <a href="#" target="_blank" class="link-help">페이지 도움말</a>
-                                                </span>
-                                                <div class="pull-right">
-                                                    <a href="/partner/html/partner_management.html" style="background-image: url(/partner/image/icon_setting_off.png);"  class="btn btn-icon-setting btn-sm btn-white js-setting-cs">세팅</a>
-                                                </div>
-                                            </div>
-                                            <div class="qa-board-box reform">
-                                                <ol class="content list-unstyled reform">
-                                                    <li>
-                                                        <a href="">판매중인 제품
-                                                            <span class="qa-board-val">
-                                                                <b class="c-gdred">1</b>건
-                                                            </span>
-                                                        </a>
-                                                    </li>
-                                                </ol>   
-                                            </div>
-                                        </div>
-                                        <!-- 문의 / 답변 관리 내용 끝 -->
-                                    </div>
+
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-6">
@@ -146,80 +104,60 @@
                                 </div>
                         </div>
                     </div>
-                    <div class="main-section">
-                        <div class="table-title">
-                            <span class="gd-help-manual">주요일정 <a href="http://manual.godomall5.godomall.com/data/manual_view.php?category=base__index___index#주요일정" target="_blank" class="link-help">페이지 도움말</a></span>
-                        </div>
-                        <div class="cal-box" style="display: flex;">
-                            <!--달력-->
-                            <div class="col-calendar">
-                                <div class="cal" style="padding: 20px;">
-                                    <div class="sec_cal">
-                                        <div class="cal_nav">
-                                          <a href="javascript:;" class="nav-btn go-prev">prev</a>
-                                          <div class="year-month"></div>
-                                          <a href="javascript:;" class="nav-btn go-next">next</a>
-                                        </div>
-                                        <div class="cal_wrap">
-                                            <div class="days">
-                                                <div class="day">MON</div>
-                                                <div class="day">TUE</div>
-                                                <div class="day">WED</div>
-                                                <div class="day">THU</div>
-                                                <div class="day">FRI</div>
-                                                <div class="day">SAT</div>
-                                                <div class="day">SUN</div>
-                                            </div>
-                                            <div class="dates"></div>
-                                        </div>
-                                    </div>
-                                </div>  
-                            </div>
-                            <div class="col-schedule">
-                                <div class="memo">
-                                    <div class="title">
-                                        <span style="font-size:14px;font-weight:bold;color:#333">11/20</span> 일정이 없습니다.
-                                        <div class="pull-right" style="padding-top:6px;color:#888;font-size:11px">
-                                        <input type="button" href="" class="btn-link" value="일정추가">
-                                        </div>
-                                    </div>
-                                    <ul>
-                                        <li>
-                                            <span>집에 가야 해요</span>
-                                        </li>
-                                        <li>
-                                            <span>집에 가야 해요</span>
-                                        </li>
-                                        <li>
-                                            <span>집에 가야 해요</span>
-                                        </li>
-                                        <li>
-                                            <span>집에 가야 해요</span>
-                                        </li>
-                                        <li>
-                                            <span>집에 가야 해요</span>
-                                        </li>
-                                        <li>
-                                            <span>집에 가야 해요</span>
-                                        </li>
-                                        <li>
-                                            <span>집에 가야 해요</span>
-                                        </li>
-                                        <li>
-                                            <span>집에 가야 해요</span>
-                                        </li>
-                                        <li>
-                                            <span>집에 가야 해요</span>
-                                        </li>
-                                        <li>
-                                            <span>집에 가야 해요</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!--메모-->
-                        </div>
                     </div>
+                <!--<div class="managementBox">
+                    <div class="managementTitle">
+                        <h3>판매 관리</h3>
+                    </div>
+                    <div class="availableList">
+&lt;!&ndash;                        <p>판매중인 상품리스트</p>&ndash;&gt;
+                        <table border="1" class="availableTable">
+                            <th>번호</th>
+                            <th>이미지</th>
+                            <th>상품명</th>
+                            <th>판매가</th>
+                            <th>재고</th>
+                            <th>등록일/수정일</th>
+                            <th>수정</th>
+                            <tr>
+                                <td>1</td>
+                                <td><img src="" alt=""></td>
+                                <td class="productName">[유통기한2022.12.29]루스타 영양강화 강력밀가루 20kg</td>
+                                <td>24,600원</td>
+                                <td>12</td>
+                                <td>
+                                    <p>2022-11-16</p>
+                                    <p>2022-11-16</p>
+                                </td>
+                                <td>
+                                    <input type="button" class="productChangeButton"  value="수정">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><img src="" alt=""></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td> <input type="button" class="productChangeButton"  value="수정"></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>-->
+
+                <div class="partnerNoticeBox">
+                    <h2>파트너 플랫폼 이용안내</h2>
+                    <p>고객센터 : 1111 - 1111</p>
+                    <ul>
+                        <li>- 파트너 플랫폼에 오신 것을 환영합니다.</li>
+                        <li>- 파트너 플랫폼에서는 주문상세정보 등을 확인할 수 있습니다.</li>
+                        <li>- 파트너 플랫폼에서 처리하시는 고객 개인정보(성명 연락처 등)는 반드시 주문처리활용을 목적으로만 사용해주시길 바람니다.
+                        주문처리활용 목적 외로 개인정보 활용 또는 외부로 개인정보를 유출 하실 수 없습니다.</li>
+                        <li>- 관련 법령에 의거 배송왼료가 된 후에는 고객 개인정보가 마스킹 처리됩니다.</li>
+                        <li>- 관련 법령에 의거 파트너로 승인된 사용자만이 사용가능합니다.</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -283,6 +221,7 @@
                 </div>
             </div>
         </div>
+</div>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="/partner/js/calendar.js"></script>
     <script>

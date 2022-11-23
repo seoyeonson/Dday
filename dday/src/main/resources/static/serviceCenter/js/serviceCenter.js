@@ -2,40 +2,47 @@ $('#listButton').on("click", function(){
     $(location).attr("href", "/Project/serviceCenter/html/serviceNotice.html");
 });
 
+// $('li.answer').hide();
+// $('li.faq').on("click", function(){
+//     $('this.li.answer').toggle();
+// });
+
 $('li.answer').hide();
-$('li.faq').on("click", function(){
-    $('li.answer').toggle();
+$("li.faq").click(function(){
+    var indexNo = ($(this).index())/2;
+    // $("li.answer").stop().fadeOut("fast"); //모든 .bk 끄기
+    $("li.answer").eq(indexNo).toggle(); //.bk 중에 idx와 같은 순서의 요소 fadeIn.
 });
 
 $('button.questionButton').on("click", function(){
     $(location).attr("href", "/Project/serviceCenter/html/questionForm.html");
 });
 
-function typeChange(e) {
-    var detailType_01 = ["상세유형을 선택해주세요", "주문취소 해주세요", "상품 반품을 원해요", "상품 교환을 원해요", "주문/결제는 어떻게 하나요?", "오류로 주문/결제가 안 돼요", "기타(직접 입력)"];
-    var detailType_02 = ["상세유형을 선택해주세요", "쿠폰 관련 문의드려요","적립금 관련 문의드려요", "이벤트 관련 문의드려요", "증정품 관련 문의드려요", "할인 관련 문의드려요", "기타(직접 입력)"];
-    var detailType_03 = ["상세유형을 선택해주세요", "불량상품 환불 해주세요", "파손 상품 환불 해주세요", "상품에 대해 알려주세요", "기타(직접 입력)"];
-    var detailType_04 = ["상세유형을 선택해주세요", "상품이 다른곳으로 갔어요","배송 상품이 안 왔어요", "배송정보 변경 해주세요", "포장 상태가 좋지 않아요", "상품이 회수되지 않았어요", "배송비에 대해 궁금합니다", "기타(직접 입력)"];
-    var detailType_05 = ["상세유형을 선택해주세요", "누락된 상품 환불해주세요","다른 상품와서 환불 원해요", "기타(직접 입력)"];
-    var detailType_06 = ["상세유형을 선택해주세요", "로그인/회원 문의하고 싶어요", "이용 중 오류가 발생했어요", "컬리패스에 대해 알고싶어요", "퍼플박스에 대해 알고싶어요", "컬리에게 제안하고 싶어요", "기타(직접 입력)"];
-    var target = document.getElementById("detailType");
-   
-    if(e.value == "01") var d = detailType_01;
-    else if(e.value == "02") var d = detailType_02;
-    else if(e.value == "03") var d = detailType_03;
-    else if(e.value == "04") var d = detailType_04;
-    else if(e.value == "05") var d = detailType_04;
-    else if(e.value == "06") var d = detailType_06;
-   
-    target.options.length = 0;
-   
-    for (x in d) {
-      var opt = document.createElement("option");
-      opt.value = d[x];
-      opt.innerHTML = d[x];
-      target.appendChild(opt);
-    } 
-  }
+// function typeChange(e) {
+//     var detailType_01 = ["상세유형을 선택해주세요", "주문취소 해주세요", "상품 반품을 원해요", "상품 교환을 원해요", "주문/결제는 어떻게 하나요?", "오류로 주문/결제가 안 돼요", "기타(직접 입력)"];
+//     var detailType_02 = ["상세유형을 선택해주세요", "쿠폰 관련 문의드려요","적립금 관련 문의드려요", "이벤트 관련 문의드려요", "증정품 관련 문의드려요", "할인 관련 문의드려요", "기타(직접 입력)"];
+//     var detailType_03 = ["상세유형을 선택해주세요", "불량상품 환불 해주세요", "파손 상품 환불 해주세요", "상품에 대해 알려주세요", "기타(직접 입력)"];
+//     var detailType_04 = ["상세유형을 선택해주세요", "상품이 다른곳으로 갔어요","배송 상품이 안 왔어요", "배송정보 변경 해주세요", "포장 상태가 좋지 않아요", "상품이 회수되지 않았어요", "배송비에 대해 궁금합니다", "기타(직접 입력)"];
+//     var detailType_05 = ["상세유형을 선택해주세요", "누락된 상품 환불해주세요","다른 상품와서 환불 원해요", "기타(직접 입력)"];
+//     var detailType_06 = ["상세유형을 선택해주세요", "로그인/회원 문의하고 싶어요", "이용 중 오류가 발생했어요", "컬리패스에 대해 알고싶어요", "퍼플박스에 대해 알고싶어요", "컬리에게 제안하고 싶어요", "기타(직접 입력)"];
+//     var target = document.getElementById("detailType");
+//
+//     if(e.value == "01") var d = detailType_01;
+//     else if(e.value == "02") var d = detailType_02;
+//     else if(e.value == "03") var d = detailType_03;
+//     else if(e.value == "04") var d = detailType_04;
+//     else if(e.value == "05") var d = detailType_04;
+//     else if(e.value == "06") var d = detailType_06;
+//
+//     target.options.length = 0;
+//
+//     for (x in d) {
+//       var opt = document.createElement("option");
+//       opt.value = d[x];
+//       opt.innerHTML = d[x];
+//       target.appendChild(opt);
+//     }
+//   }
 
 $('textArea.contentsArea').on("click", function(){
     $('div.placeholder').hide();
