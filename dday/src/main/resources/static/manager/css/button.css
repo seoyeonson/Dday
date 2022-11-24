@@ -67,7 +67,7 @@
     left: 70%;
 }
 
-.contents .removeList, .contents .seeDetail, .contents .returnDetail, .contents .seeBanner {
+.contents .removeList, .contents .seeDetail, .contents .returnDetail, .contents .seeBanner, .contents .memberReturn{
     background-color: lightgray;
     border: none;
     padding: 7px;
