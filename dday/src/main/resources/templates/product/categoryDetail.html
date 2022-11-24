@@ -8,351 +8,360 @@
     <!-- Noto Sans KR -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+          rel="stylesheet">
     <!-- css -->
-    <link rel="stylesheet" href="/serviceCenter/css/serviceNotice.css">
-    <link rel="stylesheet" href="/category/css/categoryDetail.css">
+    <!--    <link rel="stylesheet" href="/Project/serviceCenter/css/serviceNotice.css">-->
+    <link rel="stylesheet" href="/product/css/categoryDetail.css">
     <link rel="stylesheet" href="/main/css/header.css">
     <link rel="stylesheet" href="/main/css/footer.css">
 </head>
 <body>
 <header th:replace="main/header.html" :: h></header>
-    <div id="detail">
-        <main>
-            <div class="detail_img"></div>
-            <section>
-                <div class="title_top">일반상품</div>
-                <div>
-                    <div class="title">
-                        <h1>[강남면옥] 갈비탕</h1>
-                        <button class="detail_share"></button>
-                    </div>
-                    <h2 class="title_bottom">든든하고 푸짐한 한 그릇</h2>
+<div id="detail">
+    <main>
+        <div class="detail_img"></div>
+        <section>
+            <div class="title_top">일반상품</div>
+            <div>
+                <div class="title">
+                    <h1>[강남면옥] 갈비탕</h1>
+                    <button class="detail_share"></button>
                 </div>
-                <h2 class="price">
-                    <span class="sale_percent">10%</span>
-                    <span>11,900</span>
-                    <span>원</span>
-                </h2>
-                <span class="price_origin">11,900</span>
-                <div class="login_sale">로그인 후, 할인 및 적립 혜택이 제공됩니다.</div>
+                <h2 class="title_bottom">든든하고 푸짐한 한 그릇</h2>
+            </div>
+            <h2 class="price">
+                <span class="sale_percent">10%</span>
+                <span>11,900</span>
+                <span>원</span>
+            </h2>
+            <span class="price_origin">11,900</span>
+            <div class="login_sale">로그인 후, 할인 및 적립 혜택이 제공됩니다.</div>
+            <div class="selling_detail">
+                <dl>
+                    <dt>판매자</dt>
+                    <dd>
+                        <p>컬리</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>상품기한</dt>
+                    <dd>
+                        <p>제조일자 - 유통기한</p>
+                        <p>2022.11.19 - 2022.11.30</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>안내사항</dt>
+                    <dd>
+                        <p>- 모든 제품은 정품 검수 완료된 상품으로, 박스 개봉 이후에는 교환 및 반품은 불가 한 점 양해 부탁 드립니다.
+                        </p>
+                    </dd>
+                </dl>
+            </div>
+            <div>
                 <div class="selling_detail">
                     <dl>
-                        <dt>판매자</dt>
-                        <dd>
-                            <p>컬리</p>
-                        </dd>
-                    </dl>
-                    <dl>
-                        <dt>상품기한</dt>
-                        <dd>
-                            <p>제조일자 - 유통기한</p>
-                            <p>2022.11.19 - 2022.11.30</p>
-                        </dd>
-                    </dl>
-                    <dl>
-                        <dt>안내사항</dt>
-                        <dd>
-                            <p>- 모든 제품은  정품 검수 완료된 상품으로, 박스 개봉 이후에는 교환 및 반품은 불가 한 점 양해 부탁 드립니다.
-                            </p>
-                        </dd>
+                        <dt>상품선택</dt>
+                        <div class="selling_choice">
+                            <div class="product_name">
+                                <span>[강남면옥] 갈비탕</span>
+                            </div>
+                            <div class="product_cnt_box">
+                                <div class="product_cnt">
+                                    <button class="minus"></button>
+                                    <div class="cnt">1</div>
+                                    <button class="plus"></button>
+                                </div>
+                                <div class="cnt_price">
+                                    <span>11,900원</span>
+                                </div>
+                            </div>
+                        </div>
                     </dl>
                 </div>
                 <div>
-                    <div class="selling_detail">
-                        <dl>
-                            <dt>상품선택</dt>
-                            <div class="selling_choice">
-                                <div class="product_name">
-                                    <span>[강남면옥] 갈비탕</span>
-                                </div>
-                                <div class="product_cnt_box">
-                                    <div class="product_cnt">
-                                        <button class="minus"></button>
-                                        <div class="cnt">1</div>
-                                        <button class="plus"></button>
-                                    </div>
-                                    <div class="cnt_price">
-                                        <span>11,900원</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </dl>
-                    </div>
                     <div>
-                        <div>
-                            <div class="total_price">
-                                <span>총 상품금액 :</span>
-                                <span>11,900</span>
-                                <span>원</span>
-                            </div>
-                            <div class="total_point">
-                                <span>적립</span>
-                                <span>로그인 후, 적립 혜택 제공</span>
-                            </div>
+                        <div class="total_price">
+                            <span>총 상품금액 :</span>
+                            <span class="changePrice">11,900</span>
+                            <span>원</span>
+                        </div>
+                        <div class="total_point">
+                            <span>적립</span>
+                            <span>로그인 후, 적립 혜택 제공</span>
                         </div>
                     </div>
-                    <div class="purchase_button">
-                        <!-- <button class="btn">
-                            <span>
-                                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIHN0cm9rZT0iI0NDQyIgc3Ryb2tlLXdpZHRoPSIxLjYiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTEyLjY2NiAyM2EzLjMzMyAzLjMzMyAwIDEgMCA2LjY2NiAwIi8+CiAgICAgICAgPHBhdGggZD0iTTI1Ljk5OCAyMi43MzhINmwuMDEzLS4wM2MuMDc2LS4xMzUuNDcxLS43MDQgMS4xODYtMS43MDlsLjc1LTEuMDV2LTYuNjM1YzAtNC40ODUgMy40MzgtOC4xNCA3Ljc0MS04LjMwOEwxNiA1YzQuNDQ2IDAgOC4wNSAzLjcyMiA4LjA1IDguMzE0djYuNjM0bDEuNzA3IDIuNDExYy4xNzMuMjUzLjI1NC4zOC4yNDIuMzh6IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICAgIDwvZz4KPC9zdmc+Cg==" alt="">
-                            </span>
-                        </button> -->
-                        <button class="heart_button btn">
-                            <span>
-                                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0yNS44MDcgNy44NjNhNS43NzcgNS43NzcgMCAwIDAtOC4xNzIgMEwxNiA5LjQ5N2wtMS42MzUtMS42MzRhNS43NzkgNS43NzkgMCAxIDAtOC4xNzMgOC4xNzJsMS42MzQgMS42MzQgNy40NjYgNy40NjdhMSAxIDAgMCAwIDEuNDE1IDBzMCAwIDAgMGw3LjQ2Ni03LjQ2N2gwbDEuNjM0LTEuNjM0YTUuNzc3IDUuNzc3IDAgMCAwIDAtOC4xNzJ6IiBzdHJva2U9IiM1RjAwODAiIHN0cm9rZS13aWR0aD0iMS42IiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K">
-                            </span>
-                        </button>
-                        <button class="in_cart">
-                            <span>장바구니 담기</span>
-                        </button>
-                        <!-- <div class="cart_btn_area"></div> -->
-                    </div>
                 </div>
-            </section>
-        </main>
+                <div class="purchase_button">
+                    <!-- <button class="btn">
+                        <span>
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIHN0cm9rZT0iI0NDQyIgc3Ryb2tlLXdpZHRoPSIxLjYiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTEyLjY2NiAyM2EzLjMzMyAzLjMzMyAwIDEgMCA2LjY2NiAwIi8+CiAgICAgICAgPHBhdGggZD0iTTI1Ljk5OCAyMi43MzhINmwuMDEzLS4wM2MuMDc2LS4xMzUuNDcxLS43MDQgMS4xODYtMS43MDlsLjc1LTEuMDV2LTYuNjM1YzAtNC40ODUgMy40MzgtOC4xNCA3Ljc0MS04LjMwOEwxNiA1YzQuNDQ2IDAgOC4wNSAzLjcyMiA4LjA1IDguMzE0djYuNjM0bDEuNzA3IDIuNDExYy4xNzMuMjUzLjI1NC4zOC4yNDIuMzh6IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICAgIDwvZz4KPC9zdmc+Cg==" alt="">
+                        </span>
+                    </button> -->
+                    <button class="heart_button btn">
+                            <span>
+                                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0yNS44MDcgNy44NjNhNS43NzcgNS43NzcgMCAwIDAtOC4xNzIgMEwxNiA5LjQ5N2wtMS42MzUtMS42MzRhNS43NzkgNS43NzkgMCAxIDAtOC4xNzMgOC4xNzJsMS42MzQgMS42MzQgNy40NjYgNy40NjdhMSAxIDAgMCAwIDEuNDE1IDBzMCAwIDAgMGw3LjQ2Ni03LjQ2N2gwbDEuNjM0LTEuNjM0YTUuNzc3IDUuNzc3IDAgMCAwIDAtOC4xNzJ6IiBzdHJva2U9IiM1RjAwODAiIHN0cm9rZS13aWR0aD0iMS42IiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K"
+                                     class="blankHeart">
+                            </span>
+                    </button>
+                    <button class="in_cart">
+                        <span>장바구니 담기</span>
+                    </button>
+                    <!-- <div class="cart_btn_area"></div> -->
+                </div>
+            </div>
+        </section>
+    </main>
+    <div>
+        <nav class="product_nav">
+            <ul>
+                <li>
+                    <a href="#product_wrap">
+                        <span class="name">상품설명</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#review_wrap">
+                        <span class="name">상품리뷰</span>
+                        <span class="count">(9,999+)</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#seller_wrap">
+                        <span class="name">판매자정보</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
         <div>
-            <nav class="product_nav">
-                <ul>
-                    <li>
-                        <a href="#product_wrap">
-                            <span class="name">상품설명</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#review_wrap">
-                            <span class="name">상품리뷰</span>
-                            <span class="count">(9,999+)</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#seller_wrap">
-                            <span class="name">판매자정보</span>
-                        </a>
-                    </li>  
-                </ul>
-            </nav>
-            <div>
-                <!-- 상품설명 -->
-                <div id="description" class="product_content">
-                    <div class="product_wrap" id="product_wrap">
-                        <div class="product_intro">
-                            <div>
-                                <img src="https://img-cf.kurly.com/shop/data/goodsview/20200420/gv10000091198_1.jpg">
-                            </div>
-                            <div class="product_context">
-                                <h3><small>든든하고 푸짐한 한 그릇</small> [강남면옥] 갈비탕 </h3>
-                                <p class="words">따뜻하게 속을 데우는 요리로 갈비탕을 빼놓으면 서운해요. 뼈에 붙은 갈비를 살살 발라 국물과 함께 먹으면 몸과 마음이 모두 든든해지죠. 갈비탕으로 소문난 브랜드인 강남면옥 또한 푸짐한 갈비탕을 들고 컬리를 찾았습니다. 살이 실하게 붙은 호주산 소갈비를 골라 깨끗하게 손질하고, 삶은 후 오래 뜸을 들여 육질이 부드러워요. 갈비 삶은 물로 육수를 만들어 국물맛 또한 깊지요. 잘 데운 후 밥과 함께 뜨끈한 한 상을 차려보세요. 기호에 따라 후추, 당면 등을 더해서 드셔도 좋습니다. </p>
-                            </div>
+            <!-- 상품설명 -->
+            <div id="description" class="product_content">
+                <div class="product_wrap" id="product_wrap">
+                    <div class="product_intro">
+                        <div>
+                            <img src="https://img-cf.kurly.com/shop/data/goodsview/20200420/gv10000091198_1.jpg">
+                        </div>
+                        <div class="product_context">
+                            <h3><small>든든하고 푸짐한 한 그릇</small> [강남면옥] 갈비탕 </h3>
+                            <p class="words">따뜻하게 속을 데우는 요리로 갈비탕을 빼놓으면 서운해요. 뼈에 붙은 갈비를 살살 발라 국물과 함께 먹으면 몸과 마음이 모두 든든해지죠.
+                                갈비탕으로 소문난 브랜드인 강남면옥 또한 푸짐한 갈비탕을 들고 컬리를 찾았습니다. 살이 실하게 붙은 호주산 소갈비를 골라 깨끗하게 손질하고, 삶은 후 오래
+                                뜸을 들여 육질이 부드러워요. 갈비 삶은 물로 육수를 만들어 국물맛 또한 깊지요. 잘 데운 후 밥과 함께 뜨끈한 한 상을 차려보세요. 기호에 따라 후추, 당면
+                                등을 더해서 드셔도 좋습니다. </p>
                         </div>
                     </div>
                 </div>
-                <!-- 상품리뷰 -->
-                <div class="review_wrap product_content" id="review_wrap">
-                    <section>
-                        <header>
-                            <h2>상품후기</h2>
-                        </header>
-                        <ul>
-                            <li>사진후기 100원, 글후기 50원 적립금 혜택이 있어요.</li>
-                            <li>퍼플, 더퍼플은 2배 적립 (사진 200원, 글 100원) / 주간 베스트 후기로 선정 시 5,000원을 추가 적립</li>
-                            <li>후기 작성은 배송완료일로부터 30일 이내 가능합니다.</li>
-                            <li>작성하신 후기는 확인 후 적립금이 지급됩니다. (영업일 기준 평균 1~2일 소요)</li>
-                        </ul>
-                        <div class="reviews">
-                            <div class="reviews_cnt">
-                                <span>총 27,220개</span>
-                            </div>
-                            <!-- review start -->
-                            <div class="review">
-                                <div class="member_name_area">
-                                    <div class="member_name">
-                                        <span>공**</span>
-                                    </div>
-                                </div>
-                                <article>
-                                    <div class="review_detail">
-                                        <div class="review_prod_title">
-                                            <h3>[강남면옥] 갈비탕</h3>
-                                        </div>
-                                        <p>유명하길래 냅다 픽해봤어요 맛있길 바라며</p>
-                                        <div class="review_img">
-                                            <button></button>
-                                        </div>
-                                    </div>
-                                    <footer>
-                                        <span>2022.11.19</span>
-                                    </footer>
-                                </article>
-                            </div>
-                            <!-- review end -->
-                            <!-- review start -->
-                            <div class="review">
-                                <div class="member_name_area">
-                                    <div class="member_name">
-                                        <span>배**</span>
-                                    </div>
-                                </div>
-                                <article>
-                                    <div class="review_detail">
-                                        <div class="review_prod_title">
-                                            <h3>[강남면옥] 갈비탕</h3>
-                                        </div>
-                                        <p>강남면옥 갈비탕 추천합니다!^^
-                                            컬리에서 파는 갈비탕은 왜이렇게 다 괜찮죠..?ㅎㅎ
-                                            너무 든든하네요ㅜㅜ♡
-                                            
-                                            1. 배송&보관
-                                            -보냉팩 밖에 따로 두지않았는데, 박스에서도 냉동상태로 배송이 잘 왔어요! 받자마자 냉동실 보관했습니당
-                                            -전 저녁으로먹으려고,먹기전날밤에 냉장실로 옮겼어용(아침출근할때 넣어둬도 될것같아용!)
-                                            
-                                            2. 조리방법
-                                            -냉장실에서 꺼내자마자 인덕션8-9 센불로 냄비에 넣었더니 금새 녹았습니다. 거의10분 안된것같았어요.
-                                            개인적으로 파를 남편 저 둘다 엄청먹는편이라
-                                            대파 집에있는거 엄청 넣었어요!
-                                            +저는 물살짝더넣고 다진마늘도 조금추가해서 넣었어요.
-                                            끓을때 간보면서 조절하세용!
-                                            
-                                            3.구성
-                                            -갈빗대 한..7-8개?가 들어있는데 긴갈빗대가아니고 짤뚱짤뚱갈빗대가 한8개정도 있는데 가격대비 성인2인분 갈비탕인데 고기양이 괜찮았어요
-                                            **사진에 다먹고난 뼈 모아둔건데,저기에서 한개인가 두개 더나왔었어요 (먹다가찍은거라서)
-                                            -그리고 대추1알이랑 팽이버섯이!!같이 들어가있었어요.
-                                            (계란지단은 제가 따로한거에요~)
-                                            -양이 혼자먹기엔 많고 성인2인기준 또는 성인1에 애기들2명정도일것같아요.!
-                                            
-                                            4.맛
-                                            -국물은 기본적으로 깔끔하고 담백한고깃국물맛입니다.
-                                            무난하게 갈비탕 좋아하는분들이면 실패없을거에요.
-                                            고기누린내같은건 없었어요.깔끔한 서울식 갈비탕맛입니다. 조금 간을센걸 좋아하는분들은
-                                            소금후추,마늘등 더 추가하면될것같아요
-                                            
-                                            5.총평
-                                            -컬리에서 파는 갈비탕들은 정말 사랑이네요ㅠㅠ
-                                            냉동실에 일단 1-2개있으면 마음이 든든하고,
-                                            퇴근하고 저녁한끼 해먹을때 너무너무 편리하면서
-                                            맛보장이 되니까 좋습니다.
-                                            종종 세일하면 하나씩은 꼭 살것같아요.~
-                                            
-                                            다들 건강하고 맛있는 한끼 챙겨드세요♡</p>
-                                        <div class="review_img">
-                                        </div>
-                                    </div>
-                                    <footer>
-                                        <span>2022.11.19</span>
-                                    </footer>
-                                </article>
-                            </div>
-                            <!-- review end -->
-                            <!-- review start -->
-                            <div class="review">
-                                <div class="member_name_area">
-                                    <div class="member_name">
-                                        <span>김**</span>
-                                    </div>
-                                </div>
-                                <article>
-                                    <div class="review_detail">
-                                        <div class="review_prod_title">
-                                            <h3>[강남면옥] 갈비탕</h3>
-                                        </div>
-                                        <p>아이랑 둘이 맛있게 먹었네요. 갈비가 조금 더 있었으면 좋겠다는 생각이 드네요.</p>
-                                        <div class="review_img">
-                                        </div>
-                                    </div>
-                                    <footer>
-                                        <span>2022.11.19</span>
-                                    </footer>
-                                </article>
-                            </div>
-                            <!-- review end -->
-                            <!-- review start -->
-                            <div class="review">
-                                <div class="member_name_area">
-                                    <div class="member_name">
-                                        <span>공**</span>
-                                    </div>
-                                </div>
-                                <article>
-                                    <div class="review_detail">
-                                        <div class="review_prod_title">
-                                            <h3>[강남면옥] 갈비탕</h3>
-                                        </div>
-                                        <p>진짜 너무 맛잇어요 친구 추천으로 시켰는데 남편이 또 시키재요 쟁여두고 먹어야겠어여 따끈따끈 몸살이 나을거같아요</p>
-                                        <div class="review_img">
-                                        </div>
-                                    </div>
-                                    <footer>
-                                        <span>2022.11.19</span>
-                                    </footer>
-                                </article>
-                            </div>
-                            <!-- review end -->
-                            <!-- review start -->
-                            <div class="review">
-                                <div class="member_name_area">
-                                    <div class="member_name">
-                                        <span>공**</span>
-                                    </div>
-                                </div>
-                                <article>
-                                    <div class="review_detail">
-                                        <div class="review_prod_title">
-                                            <h3>[강남면옥] 갈비탕</h3>
-                                        </div>
-                                        <p>유명하길래 냅다 픽해봤어요 맛있길 바라며</p>
-                                        <div class="review_img">
-                                        </div>
-                                    </div>
-                                    <footer>
-                                        <span>2022.11.19</span>
-                                    </footer>
-                                </article>
-                            </div>
-                            <!-- review end -->      
+            </div>
+            <!-- 상품리뷰 -->
+            <div class="review_wrap product_content" id="review_wrap">
+                <section>
+                    <header>
+                        <h2>상품후기</h2>
+                    </header>
+                    <ul>
+                        <li>사진후기 100원, 글후기 50원 적립금 혜택이 있어요.</li>
+                        <li>퍼플, 더퍼플은 2배 적립 (사진 200원, 글 100원) / 주간 베스트 후기로 선정 시 5,000원을 추가 적립</li>
+                        <li>후기 작성은 배송완료일로부터 30일 이내 가능합니다.</li>
+                        <li>작성하신 후기는 확인 후 적립금이 지급됩니다. (영업일 기준 평균 1~2일 소요)</li>
+                    </ul>
+                    <div class="reviews">
+                        <div class="reviews_cnt">
+                            <span>총 27,220개</span>
                         </div>
-                        <div class="pageButtonBox">
-                            <div class="pageButtons">
-                                <button disabled type="button" class="prevButton">
-                                    <div class="prevMessage">이전</div>
-                                </button>
-                                <button type="button" class="nextButton">
-                                    <div class="nextMessage">다음</div>
-                                </button>
+                        <!-- review start -->
+                        <div class="review">
+                            <div class="member_name_area">
+                                <div class="member_name">
+                                    <span>공**</span>
+                                </div>
                             </div>
+                            <article>
+                                <div class="review_detail">
+                                    <div class="review_prod_title">
+                                        <h3>[강남면옥] 갈비탕</h3>
+                                    </div>
+                                    <p>유명하길래 냅다 픽해봤어요 맛있길 바라며</p>
+                                    <div class="review_img">
+                                        <button></button>
+                                    </div>
+                                </div>
+                                <footer>
+                                    <span>2022.11.19</span>
+                                </footer>
+                            </article>
                         </div>
-                    </section>
-                </div>
-                <!-- 판매자정보 -->
-                <div class="seller review_wrap" class="product_content" id="seller_wrap">
-                    <section>
-                        <header>
-                            <h2>판매자 정보</h2>
-                        </header>
-                        <ul>
-                            <li>판매자 정보를 제공하는 공간입니다.</li>
-                            <li>제공되는 전화번호나 연락수단으로 상품에 대한 문의를 할 수 있습니다.</li>
-                        </ul>
-                        <ul style="padding-top: 0px;">
-                            <li>회사명</li>
-                            <li>컬리</li>
-                            <li>홈페이지</li>
-                            <li><a href="https://www.naver.com" target="_blank">https://www.naver.com</a></li>
-                            <li>대표자명</li>
-                            <li>홍길동</li>
-                            <li>대표이메일</li>
-                            <li>test@aaa.aaa</li>
-                            <li>대표전화</li>
-                            <li>02)333-3333</li>
-                            <li>사업장 주소</li>
-                            <li>서울특별시 관악구 신림동 1132-1</li>
-                        </ul>
-                    </section>
-                </div>
+                        <!-- review end -->
+                        <!-- review start -->
+                        <div class="review">
+                            <div class="member_name_area">
+                                <div class="member_name">
+                                    <span>배**</span>
+                                </div>
+                            </div>
+                            <article>
+                                <div class="review_detail">
+                                    <div class="review_prod_title">
+                                        <h3>[강남면옥] 갈비탕</h3>
+                                    </div>
+                                    <p>강남면옥 갈비탕 추천합니다!^^
+                                        컬리에서 파는 갈비탕은 왜이렇게 다 괜찮죠..?ㅎㅎ
+                                        너무 든든하네요ㅜㅜ♡
+
+                                        1. 배송&보관
+                                        -보냉팩 밖에 따로 두지않았는데, 박스에서도 냉동상태로 배송이 잘 왔어요! 받자마자 냉동실 보관했습니당
+                                        -전 저녁으로먹으려고,먹기전날밤에 냉장실로 옮겼어용(아침출근할때 넣어둬도 될것같아용!)
+
+                                        2. 조리방법
+                                        -냉장실에서 꺼내자마자 인덕션8-9 센불로 냄비에 넣었더니 금새 녹았습니다. 거의10분 안된것같았어요.
+                                        개인적으로 파를 남편 저 둘다 엄청먹는편이라
+                                        대파 집에있는거 엄청 넣었어요!
+                                        +저는 물살짝더넣고 다진마늘도 조금추가해서 넣었어요.
+                                        끓을때 간보면서 조절하세용!
+
+                                        3.구성
+                                        -갈빗대 한..7-8개?가 들어있는데 긴갈빗대가아니고 짤뚱짤뚱갈빗대가 한8개정도 있는데 가격대비 성인2인분 갈비탕인데 고기양이 괜찮았어요
+                                        **사진에 다먹고난 뼈 모아둔건데,저기에서 한개인가 두개 더나왔었어요 (먹다가찍은거라서)
+                                        -그리고 대추1알이랑 팽이버섯이!!같이 들어가있었어요.
+                                        (계란지단은 제가 따로한거에요~)
+                                        -양이 혼자먹기엔 많고 성인2인기준 또는 성인1에 애기들2명정도일것같아요.!
+
+                                        4.맛
+                                        -국물은 기본적으로 깔끔하고 담백한고깃국물맛입니다.
+                                        무난하게 갈비탕 좋아하는분들이면 실패없을거에요.
+                                        고기누린내같은건 없었어요.깔끔한 서울식 갈비탕맛입니다. 조금 간을센걸 좋아하는분들은
+                                        소금후추,마늘등 더 추가하면될것같아요
+
+                                        5.총평
+                                        -컬리에서 파는 갈비탕들은 정말 사랑이네요ㅠㅠ
+                                        냉동실에 일단 1-2개있으면 마음이 든든하고,
+                                        퇴근하고 저녁한끼 해먹을때 너무너무 편리하면서
+                                        맛보장이 되니까 좋습니다.
+                                        종종 세일하면 하나씩은 꼭 살것같아요.~
+
+                                        다들 건강하고 맛있는 한끼 챙겨드세요♡</p>
+                                    <div class="review_img">
+                                    </div>
+                                </div>
+                                <footer>
+                                    <span>2022.11.19</span>
+                                </footer>
+                            </article>
+                        </div>
+                        <!-- review end -->
+                        <!-- review start -->
+                        <div class="review">
+                            <div class="member_name_area">
+                                <div class="member_name">
+                                    <span>김**</span>
+                                </div>
+                            </div>
+                            <article>
+                                <div class="review_detail">
+                                    <div class="review_prod_title">
+                                        <h3>[강남면옥] 갈비탕</h3>
+                                    </div>
+                                    <p>아이랑 둘이 맛있게 먹었네요. 갈비가 조금 더 있었으면 좋겠다는 생각이 드네요.</p>
+                                    <div class="review_img">
+                                    </div>
+                                </div>
+                                <footer>
+                                    <span>2022.11.19</span>
+                                </footer>
+                            </article>
+                        </div>
+                        <!-- review end -->
+                        <!-- review start -->
+                        <div class="review">
+                            <div class="member_name_area">
+                                <div class="member_name">
+                                    <span>공**</span>
+                                </div>
+                            </div>
+                            <article>
+                                <div class="review_detail">
+                                    <div class="review_prod_title">
+                                        <h3>[강남면옥] 갈비탕</h3>
+                                    </div>
+                                    <p>진짜 너무 맛잇어요 친구 추천으로 시켰는데 남편이 또 시키재요 쟁여두고 먹어야겠어여 따끈따끈 몸살이 나을거같아요</p>
+                                    <div class="review_img">
+                                    </div>
+                                </div>
+                                <footer>
+                                    <span>2022.11.19</span>
+                                </footer>
+                            </article>
+                        </div>
+                        <!-- review end -->
+                        <!-- review start -->
+                        <div class="review">
+                            <div class="member_name_area">
+                                <div class="member_name">
+                                    <span>공**</span>
+                                </div>
+                            </div>
+                            <article>
+                                <div class="review_detail">
+                                    <div class="review_prod_title">
+                                        <h3>[강남면옥] 갈비탕</h3>
+                                    </div>
+                                    <p>유명하길래 냅다 픽해봤어요 맛있길 바라며</p>
+                                    <div class="review_img">
+                                    </div>
+                                </div>
+                                <footer>
+                                    <span>2022.11.19</span>
+                                </footer>
+                            </article>
+                        </div>
+                        <!-- review end -->
+                    </div>
+                    <div class="pageButtonBox">
+                        <div class="pageButtons">
+                            <button disabled type="button" class="prevButton">
+                                <div class="prevMessage">이전</div>
+                            </button>
+                            <button type="button" class="nextButton">
+                                <div class="nextMessage">다음</div>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- 판매자정보 -->
+            <div class="seller review_wrap product_content" id="seller_wrap">
+                <section>
+                    <header>
+                        <h2>판매자 정보</h2>
+                    </header>
+                    <ul>
+                        <li>판매자 정보를 제공하는 공간입니다.</li>
+                        <li>제공되는 전화번호나 연락수단으로 상품에 대한 문의를 할 수 있습니다.</li>
+                    </ul>
+                    <ul style="padding-top: 0px;">
+                        <li>회사명</li>
+                        <li>컬리</li>
+                        <li>홈페이지</li>
+                        <li><a href="https://www.naver.com" target="_blank">https://www.naver.com</a></li>
+                        <li>대표자명</li>
+                        <li>홍길동</li>
+                        <li>대표이메일</li>
+                        <li>test@aaa.aaa</li>
+                        <li>대표전화</li>
+                        <li>02)333-3333</li>
+                        <li>사업장 주소</li>
+                        <li>서울특별시 관악구 신림동 1132-1</li>
+                    </ul>
+                </section>
             </div>
         </div>
     </div>
+</div>
+
+
 <footer th:replace="main/footer.html" :: f></footer>
-</body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/product/js/category.js"></script>
 <script src="/main/js/header.js"></script>
+
+</body>
 </html>

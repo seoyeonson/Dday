@@ -153,9 +153,13 @@ function page(){
     });
 }
 
-
-
 $(function(){
 // table pagination
     page();
+});
+
+// 파트너 인증 버튼 클릭시
+$('input.partnerSubmitButton').on('click', function(){
+    alert('인증되었습니다');
+    //사업자 인증 api
 });
