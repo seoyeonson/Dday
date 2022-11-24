@@ -100,7 +100,7 @@ function test() {
     if(move){
 
       alert("수정 성공!");
-      location.href="/Project/manager/html/member/memberAll.html";
+      location.href="/manager/memberAll";
       return true;
     }
   }

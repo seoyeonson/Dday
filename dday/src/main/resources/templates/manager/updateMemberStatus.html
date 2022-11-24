@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>전체 회원 관리</title>
+    <title>탈퇴 회원 관리</title>
 
     <link rel="stylesheet" href="/manager/css/button.css">
     <link rel="stylesheet" href="/manager/css/table.css">
@@ -32,7 +32,7 @@
         <!-- 회원 관리 -->
         <li>
             <a><img src="/manager/images/user.png">회원 관리 <img src="/manager/images/menu-burger.png"
-                                                             style="float: right; height:20px;"></a>
+                                                              style="float: right; height:20px;"></a>
             <ul>
                 <li><a href="/manager/memberAll">전체회원관리</a></li>
                 <li><a href="/manager/updateMemberStatus">탈퇴회원관리</a></li>
@@ -135,7 +135,7 @@
         <thead>
         <tr>
             <th>회원번호</th><th>회원명</th><th>아이디</th><th>가입 일자</th><th>적립금</th><th>주문상품건수</th><th>주문금액</th>
-            <th>등급</th><th>가입승인</th><th>회원 상세보기</th>
+            <th>등급</th><th>가입승인</th></th><th>회원 복구하기</th>
         </tr>
         </thead>
         <tbody>
@@ -148,7 +148,7 @@
         <td>158,000원</td>
         <td>사업자회원</td>
         <td>승인</td>
-        <td><button class="seeDetail" onclick="location.href='/manager/memberView'">상세보기</button></td>
+        <td><button class="memberReturn">복구하기</button></td>
         </tr>
         <tr>
             <td></td>
