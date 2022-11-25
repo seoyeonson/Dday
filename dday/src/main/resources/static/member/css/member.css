@@ -1093,3 +1093,17 @@ footer{
     margin-right: 12px;
 }
 
+span.timer{
+    position: absolute;
+    left: -65%;
+    top: 48%;
+    transform: translateY(-50%);
+}
+span.timer2 {
+    color: rgb(240, 63, 64);
+}
+
+
+.num_check_input{
+    display: none;
+}
