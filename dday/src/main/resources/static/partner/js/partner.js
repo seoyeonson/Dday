@@ -1,9 +1,9 @@
 $('input.submitButton').on("click", function(){
-    $(location).attr("href","/Project/partner/html/partner_management.html");
+    $(location).attr("href","/partner/partner_management");
 });
 
 $('input.removeButton').on("click", function(){
-    $(location).attr("href","/Project/partner/html/partner_management.html");
+    $(location).attr("href","/partner/partner_management");
 });
 
 
