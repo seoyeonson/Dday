@@ -27,6 +27,9 @@ public class MemberController {
     public void divide(){}
 
 //    mypage
+    @GetMapping("/mypage")
+    public void mypage(){}
+
     @GetMapping("/mypageCoupon")
     public void mypageCoupon(){}
 
@@ -47,6 +50,9 @@ public class MemberController {
 
     @GetMapping("/mypageSaving")
     public void mypageSaving(){}
+
+    @GetMapping("/mypageReview")
+    public void mypageReview(){}
 
 
 }
