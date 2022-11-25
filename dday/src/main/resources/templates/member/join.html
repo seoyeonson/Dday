@@ -41,7 +41,7 @@
             <div class="main_start">
                 <span class="essential">* </span>필수입력사항
             </div>
-            <form name="signupForm">
+            <form name="joinForm" method="POST">
                 <div class="main_section">
                     <div class="label_div">
                         <label>아이디<span class="essential">*</span></label>
@@ -105,10 +105,22 @@
                         <label>휴대폰<span class="essential">*</span></label>
                     </div>
                     <div class="input_section">
-                        <input class="input_box" maxlength="11" type="tel" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="숫자만 입력해주세요.">
+                        <input class="input_box" id="memberPhoneNumber" maxlength="11" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="숫자만 입력해주세요." autocomplete="off">
                     </div>
                     <div class="button_section">
-                        <button class="disabled_button">인증번호 받기</button>
+                        <button type="button" class="phone_check_button disabled_button">인증번호 받기</button>
+                    </div>
+                </div>
+                <div class="main_section num_check_input" >
+                    <div class="label_div"></div>
+                    <div class="input_section">
+                        <input class="input_box" id="phoneNumCheck" maxlength="6" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="인증번호를 입력해주세요." autocomplete="off">
+                    </div>
+                    <div class="button_section" style="position: relative">
+                        <button type="button" class="disabled_button num_check_button">확인</button>
+                        <span class="timer">
+                            <span class="timer2" id="timer"></span>
+                        </span>
                     </div>
                 </div>
                 <div class="main_section">
@@ -174,7 +186,7 @@
                     <div class="agree_content">
                         <label class="agree_all">
                             <input type="checkbox" id="agreeAll">
-                            <span class="material-symbols-outlined" class="check_img" style="font-size: 32px;">check_circle</span>
+                            <span class="material-symbols-outlined check_img" style="font-size: 32px;">check_circle</span>
                             전체 동의 합니다.
                         </label>
                         <p>선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다.</p>
@@ -183,7 +195,7 @@
                         <div class="agree_box">
                             <label>
                                 <input type="checkbox" class="agree">
-                                <span class="material-symbols-outlined" class="check_img" style="font-size: 32px;">check_circle</span>
+                                <span class="material-symbols-outlined check_img" style="font-size: 32px;">check_circle</span>
                                 이용약관 동의
                             </label>
                             <span>(필수)</span>
@@ -194,7 +206,7 @@
                         <div class="agree_box">
                             <label>
                                 <input type="checkbox" class="agree">
-                                <span class="material-symbols-outlined" class="check_img" style="font-size: 32px;">check_circle</span>
+                                <span class="material-symbols-outlined check_img" style="font-size: 32px;">check_circle</span>
                                 개인정보 수집·이용 동의
                             </label>
                             <span>(필수)</span>
@@ -214,4 +226,127 @@
 <script src="https://kit.fontawesome.com/60492e1060.js" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="/member/js/join.js"></script>
+<script>
+    var $phone_check_button = $("button.phone_check_button");
+    var $memberPhoneNumber = $("input#memberPhoneNumber");
+    var $num_check_button = $("button.num_check_button");
+    var $phoneNumCheck = $("input#phoneNumCheck");
+    var x;
+
+    $memberPhoneNumber.on("keyup", function(){
+        keyupCheck($memberPhoneNumber, $phone_check_button);
+    });
+
+    $phoneNumCheck.on("keyup", function(){
+        keyupCheck($phoneNumCheck, $num_check_button);
+    });
+
+    $num_check_button.on("click", function(){
+        clearInterval(x);
+        let check = true;
+
+        if(check){
+            // 만약에 인증번호가 일치한다면 수정 불가능
+            document.getElementById("timer").innerHTML = "";
+
+            // 인증번호 버튼, 입력버튼 비활성화
+            buttonDisable($(this));
+            inputDisable($phoneNumCheck);
+        } else {
+            // 다시 인증번호 받기
+        }
+    });
+
+    // 번호 인증 버튼을 누를 경우
+    $phone_check_button.on("click", function(){
+        <!-- 카운트다운 타이머 -->
+        let time = 180; //기준시간설정
+        let min = ""; //분
+        let sec = ""; //초
+
+        //setInterval(함수, 시간) : 주기적인 실행
+        x = setInterval(function(){
+            //parseInt : 정수 반환
+            min = parseInt(time/60) /* 몫계산 */
+            sec = time%60; //나머지 계산
+
+            document.getElementById("timer").innerHTML = min + "분" + sec + "초";
+            time--;
+
+            //시간 끝나면
+            if(time < 0) {
+                clearInterval(x); //setInterval() 실행을 끝냄
+
+                // 번호 입력을 다시 받기.
+                $memberPhoneNumber.prop("placeholder", "다시 입력해주세요.");
+                $memberPhoneNumber.val("");
+
+                // 번호 입력창 활성화
+                inputAble($memberPhoneNumber);
+
+                // 인증번호 입력칸 감추기
+                $('div.num_check_input').css("display", "none");
+
+                // $phoneNumCheck.val("");
+                // $phone_check_button.attr("disabled", false);
+                //
+                // $memberPhoneNumber.prop("readonly", false);
+                // $memberPhoneNumber.css("color", "black");
+            }
+        }, 1000);
+
+        // 인증번호 입력칸 보이게 하기
+        $('div.num_check_input').css("display", "inline-flex");
+            // 인증번호 입력창, 버튼 활성화
+            inputDisable($memberPhoneNumber);
+            buttonDisable($(this));
+    });
+
+    // 번호 및 인증번호 길이에 맞게 입력시 버튼 활성화
+    function keyupCheck(input, btn){
+        let length = input.val().length;
+        let checkLength = input.attr("maxlength");
+
+        if(length == checkLength){
+            buttonAble(btn);
+        }
+    }
+
+    // 버튼 활성화
+    function buttonAble(btn){
+        btn.removeClass("disabled_button");
+        btn.attr("disabled", false);
+    }
+
+    // 버튼 비활성화
+    function buttonDisable(btn){
+        btn.addClass("disabled_button");
+        btn.attr("disabled", true);
+    }
+
+    // 입력창 비활성화
+    function inputDisable(input){
+        input.attr("readonly", true);
+        input.css("color", "rgb(221, 221, 221)");
+    }
+
+    // 입력창 활성화
+    function inputAble(input){
+        input.prop("readonly", false);
+        input.css("color", "black");
+    }
+
+    // 버튼, 입력창 비활성화
+    function inputAndButtonDisable(btn, input){
+        buttonDisable(btn);
+        inputDisable(btn, input);
+    }
+
+    // 버튼, 입력창 활성화
+    function inputAndButtonAble(btn, input){
+        buttonAble(btn);
+        inputAble(btn, input)
+    }
+
+</script>
 <script src="/main/js/header.js"></script>
