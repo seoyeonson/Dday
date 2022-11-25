@@ -188,6 +188,59 @@
         <div class="editModalBody">모달</div>
     </div>
 </div>
+<div class="modalContainer">
+    <div class="modalBox">
+        <div class="modal">
+            <div class="modalBody">
+                <div class="modalWrapper">
+                    <header class="modalHeader">
+                        <h2 class="writeReview">후기작성</h2>
+                        <button class="exitModal">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"></svg>
+                        </button>
+                    </header>
+                    <div class="reviewWrap">
+                        <div>
+                            <div class="goodsName">
+                                <span class="goodsName"><img class="reviewImg" srcset="https://img-cf.kurly.com/shop/data/goods/1637922047806l0.jpg"></span>
+                                <div class="goodsName2">
+                                    <span class="goodsName2">표고버섯 5~6입 100g</span>
+                                </div>
+                            </div>
+                            <form>
+                                <div class="reviewText">
+                                    <div class="reviewText2">
+                                        <label class="label1">
+                                            내용
+                                        </label>
+                                        <div class="reviewTextArea">
+                                            <div class="reviewTextArea2">
+                                                <textarea id="contents" class="reviewTextArea" inputmode="text" aria-label="textarea-message" name="contents">
+                                                    
+                                                </textarea>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="reviewText2"></div>
+                                    <div class="reviewText2"></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modalButtonBox">
+                        <button class="modalCancelButton" type="button">
+                            <span class="modalButtonText">취소</span>
+                        </button>
+                        <button type="button" class="modalOkButton">
+                            <span class="modalButtonText">장바구니 담기</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!--푸터-->
 <footer th:replace="/main/footer.html" :: f></footer>
 </body>
@@ -228,6 +281,23 @@
                 body.style.overflow = 'auto';
             }
         }
+    });
+
+    //후기 작성
+
+
+    $('div.modalContainer').hide();
+    $('button.reviewModal').on('click', function(){
+        $("div.modalContainer").fadeIn();
+    });
+
+    $('button.modalOkButton').on('click', function(){
+        $('div.modalContainer').fadeOut();
+        // 장바구니쪽 작은 모달나오기
+    });
+
+    $('button.modalCancelButton').on('click',function(){
+        $('div.modalContainer').fadeOut();
     });
 
 </script>
