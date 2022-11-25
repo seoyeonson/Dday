@@ -32,21 +32,18 @@ var delieveryNum = "";
 function getDelieveryNumber(){
     delieveryNum = $('input.deliveryNumber').val();
     alert('송장번호: ' + delieveryNum + '등록되었습니다');
+    $('p.changeDeliveryStatus').text("방문예정");
     // var inputURL = 'https://apis.tracker.delivery/carriers/kr.epost/tracks/' + delieveryNum;
     // window.open(inputURL,'송장등록', 'width:500px, height:500px;');
 }
 
 function delieveryDetail(){
     window.open('http://localhost:10004/partner/deliveryStatusForm?deliveryNum='+delieveryNum, '_blank', 'width=500px, height=500px');
-    // var fullURL = 'https://tracker.delivery/#/kr.epost/'+delieveryNum;
-    // window.open(fullURL, '배달현황', 'width:500px, height:500px;');
-    // $(location).attr('href', '"https://tracker.delivery/#/kr.epost/" + delieveryNum');
-    // <a href="https://tracker.delivery/#/kr.epost/1111111111111" target="_blank"></a>
 }
 
 
 function page(){
-    $('table.availableTable').each(function() {
+    $('table.paginationTable').each(function() {
         var pagesu = 10;  //페이지 번호 갯수
         var currentPage = 0;
         var numPerPage = 7;  //목록의 수
@@ -163,3 +160,8 @@ $('input.partnerSubmitButton').on('click', function(){
     alert('인증되었습니다');
     //사업자 인증 api
 });
+
+$("input[type=radio]").on('click',function(e){
+    $('p.changeDeliveryStatus').text(e.target.value);
+});
+

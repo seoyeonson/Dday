@@ -60,41 +60,10 @@
                                                 <h3>정보 수정            
                                                     <small>파트너의 기본적인 정보를 수정하실 수 있습니다.</small>
                                                 </h3>
-                                                <input type="submit" value="저장" class="btn btn-red">
+                                                <input type="submit" value="저장" class="btn btn-red partnerInfoSubmit">
                                             </div>
                                             <div class="table-title gd-help-manual">
-                                                <!--파트너 정보
-                                            <table class="table table-cols">
-                                                <colgroup>
-                                                    <col class="width-md">
-                                                    <col class="width-xl">
-                                                    <col class="width-md">
-                                                    <col>
-                                                </colgroup>
-                                                <tbody>
-                                                    <tr>
-                                                        <th>파트너명</th>
-                                                        <td class="form-inline">
-                                                            <input type="text" name="mallNm" value="" class="form-control width-lg">
-                                                        </td>
-                                                        <th class="">파트너영문명</th>
-                                                        <td class="form-inline ">
-                                                            <input type="text" name="mallNmEng" value="" class="form-control width-lg">
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th class="require">파트너 도메인</th>
-                                                        <td colspan="3" class="form-inline">
-                                                            <span class="font-eng">http://</span>
-                                                            <input type="text" name="mallDomain" value="" class="form-control width-2xl">
-                                                            <div class="notice-info">
-                                                            입력 시 쇼핑몰 및 관리자 화면에 도메인 정보가 노출됩니다. <br>
-                                                            실제 쇼핑몰 접속 도메인의 추가 및 변경은 마이페이지에서 가능합니다. <a class="btn-link" href="javascript:gotoGodomall('domain');">바로가기&gt;</a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>-->
+
                                             <div class="table-title gd-help-manual">파트너 정보</div>
                                             <table class="table table-cols">
                                                 <colgroup>
@@ -158,18 +127,12 @@
                                                     <td colspan="3">
                                                         <div class="form-inline mgb5" style="position: relative;">
                                                             <div class="addressFind">
-                                                                <input id="member_post"  type="text" placeholder="우편번호" readonly onclick="findAddr()">
+                                                                <input id="member_post"  type="text" placeholder="우편번호" readonly>
+                                                                <button type="button" onclick="findAddr()">검색</button>
                                                                 <input id="member_addr" type="text" placeholder="주소" readonly> <br>
                                                                 <input type="text" placeholder="상세 주소">
                                                             </div>
-                                                            <!--<input type="text" name="zonecode" value="" maxlength="5" class="form-control width-2xs">
-                                                            <input type="hidden" name="zipcode" value="-">
-                                                            <span id="zipcodeText" class="number display-none">우편번호</span>
-                                                        <span class="bootstrap-maxlength" style="display: none; position: absolute; white-space: nowrap; z-index: 999; top: -10.65px; left: 75px;"><em>5</em> / 5</span></div>
-                                                        <div class="form-inline">
-                                                            <input type="text" name="address" value="" class="form-control width-2xl"> 도로명 주소
-                                                            <input type="text" name="addressSub" value="" class="form-control width-2xl"> 상세 주소
-                                                        </div>-->
+
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -178,10 +141,6 @@
                                                         <input type="text" name="phone" value="" maxlength="12" class="form-control js-number-only width-md">
                                                     <span class="bootstrap-maxlength" style="display: none; position: absolute; white-space: nowrap; z-index: 999; top: -0.9px; left: 170px;"><em>10</em> / 12</span></td>
                                                     <td></td><td></td>
-                                                    <!--<th>팩스번호</th>
-                                                    <td class="form-inline" style="position: relative;">
-                                                        <input type="text" name="fax" value="" maxlength="12" class="form-control js-number-only width-md">
-                                                    <span class="bootstrap-maxlength" style="display: none; position: absolute; white-space: nowrap; z-index: 999; top: -0.9px; left: 170px;"><em>0</em> / 12</span></td>-->
                                                 </tr>
                                                 </tbody>
                                             </table>  
@@ -223,6 +182,10 @@
             }
         }).open();
     }
+
+    $('input.partnerInfoSubmit').on('click',function () {
+        alert('정보가 등록되었습니다');
+    });
 </script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </body>

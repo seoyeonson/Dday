@@ -153,9 +153,15 @@ th {
     margin-top: 5px;
     margin-bottom: 5px;
     width: 300px;
-    margin-right: 300px;
+    /*margin-right: 300px;*/
     height: 28px;
     border: 1px solid lightgrey;
+}
+
+.addressFind > button {
+    margin-right: 300px;
+    height: 28px;
+    width: 40px;
 }
 
 input:focus {

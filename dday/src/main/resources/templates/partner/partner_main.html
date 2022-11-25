@@ -17,9 +17,56 @@
     <link rel="stylesheet" href="/partner/css/partner_footer.css">
 </head>
 <body>
-<header th:replace="partner/header.html" :: ph></header>
     <div id="container-wrap" class="container-wrap">
             <div id="content-wrap">
+
+                <div id="header" class="col-xs-12">
+                    <nav class="navbar">
+                        <div class="container">
+                            <div class="navbar-inner" style="margin-right: 0px;">
+                                <div class="collapse navbar-collapse">
+                                    <ul class="nav navbar-nav reform">
+                                        <li class="">
+                                            <a href="/partner/partner_change_info" id="menu_policy" style="width:97.083333333333px;">정보수정</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="/partner/partner_registration" id="menu_goods" style="width:97.083333333333px;">제품등록</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="/partner/partner_management" id="menu_order" style="width:97.083333333333px;">판매관리</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="/partner/partner_shipping" id="menu_member" style="width:97.083333333333px;">배송관리</a>
+                                        </li>
+                                </div>
+                                <div class="navbar-header">
+                                    <a class="navbar-brand" href="#"></a>
+                                </div>
+                                <div class="gnb">
+                                    <ul class="list-inline">
+                                        <li class="no-bar">
+                                            <div class="dropdown">
+                                                <!-- header -->
+                                                <a href="#" class="dropdown-toggle gnb-idinfo" id="headerSubMenuManager" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+                                                    <span>판매자</span>님 (
+                                                    <span>wanted</span> )
+                                                    <img src="/partner/image/nav_menu_bar.gif">
+                                                    <span>로그아웃</span>
+                                                </a>
+                                                <ul class="dropdown-menu gnb-dropdown-menu" aria-labelledby="headerSubMenuManager">
+                                                    <li class="dropdown-item"><a href="#">판매자 정보</a></li>
+                                                    <!--운영자 마이페이지-->
+                                                    <li class="dropdown-item"><a href="#">로그아웃</a></li>
+                                                    <!-- 로그 아웃-->
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
 
                 <!--주요 현황-->
                 <div class="main-layout main-content reform">
@@ -38,7 +85,7 @@
                                             <div class="main-section-inner">
                                                 <ol class="content order list-unstyled reform">
                                                     <li class="active">
-                                                        <a href="partner/partner_management">
+                                                        <a href="/partner/partner_management">
                                                             <span class="status">당일판매</span>
                                                             <div class="order-list-val">1</div>
                                                         </a>

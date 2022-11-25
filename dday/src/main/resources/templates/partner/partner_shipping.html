@@ -66,55 +66,194 @@
                     </div>
                     <div class="orderedList">
                         <p>결제 완료된 상품 리스트</p>
-                        <table border="1" class="orderedTable">
-                            <tr>
-                                <th>번호</th>
-                                <th>상품주문번호</th>
-                                <th>이미지</th>
-                                <th>주문상품</th>
-                                <th>수량</th>
-                                <th>판매가</th>
-                                <th>총 할인금액</th>
-                                <th>배송비</th>
-                                <th>총 주문금액</th>
-                                <th>송장번호</th>
-                                <th>처리상태</th>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td rowspan="2">299550</td>
-                                <td><img src="" alt=""></td>
-                                <td class="orderProductName">[유통기한2022.12.29]루스타 영양강화 강력밀가루 20kg</td>
-                                <td>
-                                    <p>1</p>
-                                    <p class="orderStock">재고:10</p>
-                                </td>
-                                <td>8,000원</td>
-                                <td rowspan="2">0원</td>
-                                <td rowspan="2">3000원(선불)</td>
-                                <td rowspan="2">64,000원</td>
-                                <td rowspan="2">
-                                    <input type="number" class="deliveryNumber" placeholder="송장번호 입력">
-                                    <input type="button" class="numberSubmit" onclick="getDelieveryNumber();" value="등록">
-                                </td>
-                                <td rowspan="2">
-                                    <!-- <a href="https://tracker.delivery/#/kr.epost/1111111111111" target="_blank"> -->
-                                    <input type="button" class="statusButton" value="보기" onclick="delieveryDetail();">
-                                </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td><img src="" alt=""></td>
-                                <td class="orderProductName">피스타치오분태 (미국) 200g</td>
-                                <td>
-                                    <p>1</p>
-                                    <p class="orderStock">재고:15</p>
-                                </td>
-                                <td style="border-right:1px">9,000원</td>
-                                
-                            </tr>
+                        <table border="1" class="orderedTable paginationTable">
+                            <thead>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>상품주문번호</th>
+                                    <th>주문상품</th>
+                                    <th>수량</th>
+                                    <th>판매가</th>
+                                    <th>총 할인금액</th>
+                                    <th>배송비</th>
+                                    <th>총 주문금액</th>
+                                    <th>송장번호</th>
+                                    <th>처리상태</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2</td>
+                                    <td rowspan="2">299550</td>
+
+                                    <td class="orderProductName">[유통기한2022.12.29]루스타 영양강화 강력밀가루 20kg</td>
+                                    <td>
+                                        <p>1</p>
+                                        <p class="orderStock">재고:10</p>
+                                    </td>
+                                    <td>8,000원</td>
+                                    <td rowspan="2">0원</td>
+                                    <td rowspan="2">3000원(선불)</td>
+                                    <td rowspan="2">64,000원</td>
+                                    <td rowspan="2">
+                                        <input type="number" class="deliveryNumber" placeholder="송장번호 입력">
+                                        <input type="button" class="numberSubmit" onclick="getDelieveryNumber();" value="등록">
+                                    </td>
+                                    <td rowspan="2">
+                                        <div>
+                                            <p class="changeDeliveryStatus" style="margin-bottom:1px;"></p>
+                                            <input type="radio" name="deliveryStatus" value="배송중">배송 중
+                                            <input type="radio" name="deliveryStatus" value="배송완료">배송완료
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td class="orderProductName">피스타치오분태 (미국) 200g</td>
+                                    <td>
+                                        <p>1</p>
+                                        <p class="orderStock">재고:15</p>
+                                    </td>
+                                    <td style="border-right:1px">9,000원</td>
+
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
                         </table>
+                        <div class="btnContent">
+                            <div class="pagination" id="pagination">페이지 영역</div>
+                        </div>
                     </div>
             </div>
         </div>
