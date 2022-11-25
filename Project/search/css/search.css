@@ -463,6 +463,13 @@ menu {
   align-items: center;
 }
 
+.pricefilter {
+  position: relative;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
 .css-126imjl {
   letter-spacing: -0.3px;
   font-weight: 500;
@@ -572,6 +579,17 @@ video {
 }
 
 .css-1lapv13 > img {
+  width: 45px;
+  height: 45px;
+}
+
+.pickup {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+}
+
+.pickup > img {
   width: 45px;
   height: 45px;
 }
@@ -775,15 +793,15 @@ span.css-1buhy1h.ee933652:hover {
   align-items: center;
 }
 
-.check_content:first-of-type {
+/* .check_content:first-of-type {
   margin-top: 9px;
-}
+} */
 
 label {
   display: flex;
   -webkit-box-align: center;
   align-items: center;
-  margin-bottom: 18px;
+  margin-bottom: 12px;
 }
 
 .input_radio {
@@ -851,10 +869,7 @@ span.real_label:hover {
   color: #ff4500;
 }
 
-.fill {
-  color: #ff4500 !important;
-  font-variation-settings: "FILL" 1, "wght" 200, "GRAD" 0, "opsz" 48;
-}
+
 
 .agree_section {
   display: inline-flex;
@@ -1058,7 +1073,6 @@ span.real_label:hover {
 }
 
 .activate {
-  margin-left: 5px;
   font-weight: 500;
   color: rgb(102, 102, 102);
   stroke: rgb(102, 102, 102);
@@ -1073,4 +1087,423 @@ span.real_label:hover {
 
 .mouseover {
   cursor: pointer;
+}
+
+/* div.modal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 999;
+} */
+
+/* div.modal_content {
+  width: 360px;
+  height: 156px;
+  background: #fff;
+  border-radius: 10px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -200px;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 74px 0;
+  line-height: 23px;
+  cursor: pointer;
+} */
+
+button.cancel {
+  border: none;
+  font-size: 16px;
+  color: #ff4500;
+  background: transparent;
+  text-transform: none;
+  -webkit-appearance: button;
+  cursor: pointer;
+  overflow: visible;
+  font-weight: 500;
+  position: absolute;
+  left: 0px;
+  top: 109px;
+  font-family: "Noto Sans KR", sans-serif;
+  width: 180px;
+  height: 40px;
+}
+button.remove {
+  border: none;
+  font-size: 16px;
+  color: #ff4500;
+  background: transparent;
+  text-transform: none;
+  -webkit-appearance: button;
+  cursor: pointer;
+  overflow: visible;
+  font-weight: 500;
+  position: absolute;
+  left: 180px;
+  top: 109px;
+  font-family: "Noto Sans KR", sans-serif;
+  width: 180px;
+  height: 40px;
+}
+div.modalText {
+  font-size: 16px;
+  position: absolute;
+  left: 118px;
+  bottom: 87px;
+}
+
+div.modal2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 999;
+}
+
+div.modal_content2 {
+  padding: 30px;
+  width: 440px;
+  height: auto;
+  background: #fff;
+  border-radius: 10px;
+  position: relative;
+  top: 40%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -200px;
+  text-align: center;
+  box-sizing: border-box;
+  line-height: 23px;
+  cursor: pointer;
+}
+
+div.modalText2Title {
+  padding-bottom: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  border-bottom: 1px solid rgb(51, 51, 51);
+  text-align: left;
+}
+div.modalTextInfo {
+  overflow: hidden auto;
+  max-height: 355px;
+  min-height: 120px;
+}
+div.modalTextInfoDetail {
+  margin: 2px 0px 4px;
+  padding: 12px 0px;
+  border-radius: 3px;
+  border-bottom: 1px solid rgb(244, 244, 244);
+}
+div.modalTextInfoDetailTitle {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+}
+span.modalTextInfoDetailTitle {
+  font-size: 14px;
+  line-height: 19px;
+  color: rgb(51, 51, 51);
+  display: -webkit-box;
+  overflow: hidden;
+  word-break: break-all;
+  white-space: normal;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+div.modalTextInfoDetailBottom {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  padding-top: 6px;
+  color: rgba(0, 0, 0, 0.87);
+}
+span.modalTextInfoDetailBottomPrice {
+  font-weight: bold;
+  font-size: 16px;
+  color: rgb(51, 51, 51);
+  line-height: 21px;
+}
+div.modalTextInfoDetailBottomCount {
+  flex-direction: row;
+  -webkit-box-align: center;
+  align-items: center;
+  border: 1px solid rgb(221, 223, 225);
+  border-radius: 3px;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  width: 101px;
+  height: 36px;
+}
+button.decrease {
+  cursor: default;
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
+  border: none;
+  font-size: 1px;
+  color: transparent;
+  background-size: cover;
+  background-color: transparent;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0yMCAxNHYySDEwdi0yeiIgZmlsbD0iI0RERCIgZmlsbC1ydWxlPSJub256ZXJvIi8+Cjwvc3ZnPgo=);
+  vertical-align: top;
+  border-radius: 0;
+  -webkit-appearance: button;
+  text-transform: none;
+  margin: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+div.middleCount {
+  display: inline-flex;
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-box-pack: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(51, 51, 51);
+  text-align: center;
+  width: 31px;
+  height: 28px;
+  line-height: 28px;
+}
+button.increase {
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
+  border: none;
+  font-size: 1px;
+  color: transparent;
+  background-size: cover;
+  background-color: transparent;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0xNiAxMHY0aDR2MmgtNHY0aC0ydi00aC00di0yaDR2LTRoMnoiIGZpbGw9IiMzMzMiIGZpbGwtcnVsZT0ibm9uemVybyIvPgo8L3N2Zz4K);
+  vertical-align: top;
+  border-radius: 0;
+  -webkit-appearance: button;
+  cursor: pointer;
+  text-transform: none;
+  overflow: visible;
+  font: inherit;
+  margin: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+div.modalText2Bottom {
+  width: 100%;
+  margin-bottom: 20px;
+}
+div.modalText2Bottom2 {
+  display: flex;
+  flex-direction: column;
+  color: rgba(0, 0, 0, 0.87);
+}
+div.modalText2BottomSum {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+}
+p.sum {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+}
+span.sumPrice {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 24px;
+}
+span.sumWon {
+  margin-left: 3px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  vertical-align: 3px;
+}
+div.modalSaving {
+  display: flex;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  padding-top: 6px;
+}
+span.modalSavingBox {
+  width: 38px;
+  height: 20px;
+  margin-right: 6px;
+  border-radius: 9px;
+  background-color: rgb(255, 191, 0);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 20px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+span.modalSavingBox2 {
+  font-size: 14px;
+  line-height: 1.33;
+  color: rgb(51, 51, 51);
+}
+span.modalSavingBox3 {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.33;
+  color: rgb(51, 51, 51);
+}
+div.modalText2Footer {
+  display: flex;
+  flex-direction: row;
+}
+
+button.footerLeft {
+  margin-left: 0px;
+  width: 50%;
+  margin: 0px 4px;
+  height: 56px;
+  display: block;
+  padding: 0px 10px;
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+  height: 52px;
+  border-radius: 3px;
+  color: rgb(51, 51, 51);
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(221, 221, 221);
+  font-size: 14px;
+  -webkit-appearance: button;
+  cursor: pointer;
+  text-transform: none;
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+span.footerLeft {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  color: rgb(51, 51, 51);
+}
+
+button.footerRight {
+  margin-right: 0px;
+  width: 50%;
+  margin: 0px 4px;
+  height: 56px;
+  display: block;
+  padding: 0px 10px;
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+  height: 52px;
+  border-radius: 3px;
+  color: rgb(255, 255, 255);
+  background-color: #ff4500;
+  border: 0px none;
+  font-size: 14px;
+  -webkit-appearance: button;
+  cursor: pointer;
+  text-transform: none;
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Noto Sans KR", sans-serif;
+}
+span.footerRight {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+.modal {
+  display:none;
+  position: fixed;
+  z-index: 1300;
+  inset: 0px;
+}
+
+.modalblur {
+  opacity: 1;
+  transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  position: fixed;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  inset: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-tap-highlight-color: transparent;
+  z-index: -1;
+}
+
+.modaloutline {
+  opacity: 1;
+  transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  -webkit-box-align: center;
+  align-items: center;
+  height: 100%;
+  outline: 0px;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+.modalsquare {
+  height: auto;
+  width: 440px;
+  overflow-x: hidden;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: none;
+  background-color: rgb(255, 255, 255);
+  color: rgba(0, 0, 0, 0.87);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  margin: 32px;
+  position: relative;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100% - 64px);
+  max-width: 600px;
+}
+
+.modal_content {
+  height: auto;
+  width: 440px;
+  overflow-x: hidden;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: none;
+  background-color: rgb(255, 255, 255);
+  color: rgba(0, 0, 0, 0.87);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  margin: 32px;
+  position: relative;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100% - 64px);
+  max-width: 600px;
+}
+
+.fill {
+  color: #ff4500 !important;
+  font-variation-settings: "FILL" 1, "wght" 200, "GRAD" 0, "opsz" 48;
 }
