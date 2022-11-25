@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+<link rel="stylesheet" href="/main/css/header.css">
+<link rel="stylesheet" href="/main/css/footer.css">
+<link rel="stylesheet" href="/search/css/searchDemo.css">
+<link rel="stylesheet" href="/search/css/search.css">
+<style>
+    * {
+        font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum, sans-serif;
+    }
+</style>
+
+<body>
+<!-- header -->
+<header th:replace="main/header.html" :: h></header>
+<!-- header 종료 -->
+<div class="css-1qq5c2w e1j5v3ii1">
+    <div class="css-1wh226x e1j5v3ii0">
+        <div id="container" class="css-1i60c0e e2b3c3l0">
+            <h3 class="css-bv8gkm etf617g1">'<span class="css-h9gdz1 etf617g0">우유</span>'에 대한 검색결과</h3>
+            <div class="css-pzlq5x etf617g2">
+                <div class="css-1jgnig9 ev2ab494">
+                    <div class="css-11y1fso ev2ab493"><span class="css-wy76no ev2ab492">필터</span>
+                        <div class="divresetbutton">
+                            <button class="resetbutton">
+                                <svg width="12" height="12" viewBox="0 0 16 16" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path class="resetlogo" id="pathrefresh1"
+                                          d="M13.78 3.96303C12.504 2.16973 10.4086 1 8.04 1C4.15192 1 1 4.15192 1 8.04C1 11.9281 4.15192 15.08 8.04 15.08C11.9281 15.08 15.08 11.9281 15.08 8.04"
+                                          stroke="#ddd" stroke-width="1.6" stroke-linecap="square"
+                                          stroke-linejoin="round"></path>
+                                    <path class="resetlogo" id="pathrefresh2" d="M14.4933 1L14.4933 4.52H10.9733"
+                                          stroke="#ddd"
+                                          stroke-width="1.6" stroke-linecap="square" stroke-linejoin="round"></path>
+                                </svg>
+                                <span class="reset">초기화</span></button>
+                        </div>
+                    </div>
+                    <div class="css-0 egeqx0g0">
+                        <div class="css-146937 e1frj59j10">
+                            <button class="css-16ixplb e1frj59j9">
+                                <div class="css-1iwixyn e1frj59j8">카테고리</div>
+                            </button>
+                            <div class="categoryfilter">
+                                <div class="input_section">
+                                    <div class="check_content">
+                                        <label>
+                                            <input type="checkbox" class="check" id="vegetable">
+                                            <span class="material-symbols-outlined check_img">check_circle</span>
+                                            <span class="filter_name">채소</span>
+                                            <span class="css-ryw54y ee933651">24</span>
+                                        </label>
+                                    </div>
+                                    <div class="check_content">
+                                        <label>
+                                            <input type="checkbox" class="check" id="fruit_nut_rice">
+                                            <span class="material-symbols-outlined check_img">check_circle</span>
+                                            <span class="filter_name">과일·견과·쌀</span>
+                                            <span class="css-ryw54y ee933651">1</span>
+                                        </label>
+                                    </div>
+                                    <div class="check_content">
+                                        <label>
+                                            <input type="checkbox" class="check" id="seafood">
+                                            <span class="material-symbols-outlined check_img">check_circle</span>
+                                            <span class="filter_name">수산·해산·건어물</span>
+                                            <span class="css-ryw54y ee933651">1</span>
+                                        </label>
+                                    </div>
+                                    <div class="check_content">
+                                        <label>
+                                            <input type="checkbox" class="check" id="meat_egg">
+                                            <span class="material-symbols-outlined check_img">check_circle</span>
+                                            <span class="filter_name">정육·계란</span>
+                                            <span class="css-ryw54y ee933651">1</span>
+                                        </label>
+                                    </div>
+                                    <div class="check_content">
+                                        <label>
+                                            <input type="checkbox" class="check" id="soup_side_main">
+                                            <span class="material-symbols-outlined check_img">check_circle</span>
+                                            <span class="filter_name">국·반찬·메인요리</span>
+                                            <span class="css-ryw54y ee933651">1</span>
+                                        </label>
+                                    </div>
+                                    <div class="check_content">
+                                        <label>
+                                            <input type="checkbox" class="check" id="salad">
+                                            <span class="material-symbols-outlined check_img">check_circle</span>
+                                            <span class="filter_name">샐러드·간편식</span>
+                                            <span class="css-ryw54y ee933651">1</span>
+                                        </label>
+                                    </div>
+                                    <div class="check_content">
+                                        <label>
+                                            <input type="checkbox" class="check" id="noodle_sauce_oil">
+                                            <span class="material-symbols-outlined check_img">check_circle</span>
+                                            <span class="filter_name">면·양념·오일</span>
+                                            <span class="css-ryw54y ee933651">1</span>
+                                        </label>
+                                    </div>
+                                    <div class="check_content">
+                                        <label>
+                                            <input type="checkbox" class="check" id="drink">
+                                            <span class="material-symbols-outlined check_img">check_circle</span>
+                                            <span class="filter_name">생수·음료·우유·커피</span>
+                                            <span class="css-ryw54y ee933651">1</span>
+                                        </label>
+                                    </div>
+                                    <div class="check_content">
+                                        <label>
+                                            <input type="checkbox" class="check" id="snack">
+                                            <span class="material-symbols-outlined check_img">check_circle</span>
+                                            <span class="filter_name">간식·과자·떡</span>
+                                            <span class="css-ryw54y ee933651">1</span>
+                                        </label>
+                                    </div>
+                                    <div class="check_content">
+                                        <label>
+                                            <input type="checkbox" class="check" id="bakery_cheese">
+                                            <span class="material-symbols-outlined check_img">check_circle</span>
+                                            <span class="filter_name">베이커리·치즈·델리</span>
+                                            <span class="css-ryw54y ee933651">1</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="css-1d3w5wq ef36txc5">
+                    <div class="css-1stur9s eudxpx34">
+                        <div class="css-crqql1 eudxpx33">총 170건</div>
+                        <ul class="pricefilter">
+                            <li class="css-5uzvtq eudxpx31"><a class="css-19ce13b pricelow">낮은 가격순</a></li>
+                            <li class="css-5uzvtq eudxpx31"><a class="css-19ce13b pricehigh">높은 가격순</a></li>
+                        </ul>
+                    </div>
+                    <div class="css-15x6ap3 ef36txc4">
+                        <div href="/goods/5063110" class="css-1xyd46f e1c07x4811">
+                            <div class="css-0 e1c07x489">
+                                <div class="e1c07x4810 css-1mlybuj e3um3060"><img
+                                        src="https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/1637154205701l0.jpg"
+                                        alt="상품 이미지" loading="lazy">
+                                    <div>
+                                        <button type="button" class="pickup"><img src="/search/images/cart.png"
+                                                                                  alt="장바구니 아이콘"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="css-c1cgl e1c07x486"><span class="css-1qd61ut e1ms5t9c1"><span
+                                    class="css-1mp68i5 e1ms5t9c0">샛별배송</span></span><span class="css-rklo75 e1c07x485">[연세우유 x 마켓컬리]
+                    전용목장우유 900mL</span>
+                                <div class="e1c07x484 css-1sieafg ei5rudb2">
+                                    <div></div>
+                                    <span class="sales-price css-18tpqqq ei5rudb1">2,070<span
+                                            class="won"> 원</span></span>
+                                </div>
+                                <p class="css-13g46z0 e1c07x483">가격, 퀄리티 모두 만족스러운 1A등급 우유</p>
+                                <div class="css-1hrnl0u e1cvv2hm1"><span class="css-1e5t2sz e1cvv2hm0">Kurly Only</span><span
+                                        class="css-1er7oa7 e1cvv2hm0">재활용 우수</span></div>
+                            </div>
+                        </div>
+                        <div href="/goods/5007540" class="css-1xyd46f e1c07x4811">
+                            <div class="css-0 e1c07x489">
+                                <div class="e1c07x4810 css-1mlybuj e3um3060"><img
+                                        src="https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/1646638953618l0.jpg"
+                                        alt="상품 이미지" loading="lazy">
+                                    <div>
+                                        <button type="button" class="pickup"><img src="/search/images/cart.png"
+                                                                                  alt="장바구니 아이콘"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="css-c1cgl e1c07x486"><span class="css-1qd61ut e1ms5t9c1"><span
+                                    class="css-1mp68i5 e1ms5t9c0">샛별배송</span></span><span class="css-rklo75 e1c07x485">[상하목장] 유기농 우유
+                    &amp; 저지방 우유 750mL 2종</span>
+                                <div class="e1c07x484 css-1sieafg ei5rudb2">
+                                    <div></div>
+                                    <span class="sales-price css-18tpqqq ei5rudb1">4,900<span
+                                            class="won"> 원</span></span>
+                                </div>
+                                <p class="css-13g46z0 e1c07x483">행복한 소가 만들어낸 행복한 한 모금 </p>
+                            </div>
+                        </div>
+                        <div href="/goods/5049727" class="css-1xyd46f e1c07x4811">
+                            <div class="css-0 e1c07x489">
+                                <div class="e1c07x4810 css-1mlybuj e3um3060"><img
+                                        src="https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/1583462074699l0.jpg"
+                                        alt="상품 이미지" loading="lazy">
+                                    <div>
+                                        <button type="button" class="pickup"><img src="/search/images/cart.png"
+                                                                                  alt="장바구니 아이콘"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="css-c1cgl e1c07x486"><span class="css-1qd61ut e1ms5t9c1"><span
+                                    class="css-1mp68i5 e1ms5t9c0">샛별배송</span></span><span class="css-rklo75 e1c07x485">[서울우유] 나 100%
+                    우유 1.8L</span>
+                                <div class="e1c07x484 css-1sieafg ei5rudb2">
+                                    <div></div>
+                                    <span class="sales-price css-18tpqqq ei5rudb1">4,990<span
+                                            class="won"> 원</span></span>
+                                </div>
+                                <p class="css-13g46z0 e1c07x483">서울우유의 믿을 수 있는 품질! 든든한 용량 1등급 우유</p>
+                            </div>
+                        </div>
+                        <div href="/goods/5044571" class="css-1xyd46f e1c07x4811">
+                            <div class="css-0 e1c07x489">
+                                <div class="e1c07x4810 css-1mlybuj e3um3060"><img
+                                        src="https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/1637921690477l0.jpg"
+                                        alt="상품 이미지" loading="lazy">
+                                    <div>
+                                        <button type="button" class="pickup"><img src="/search/images/cart.png"
+                                                                                  alt="장바구니 아이콘"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="css-c1cgl e1c07x486"><span class="css-1qd61ut e1ms5t9c1"><span
+                                    class="css-1mp68i5 e1ms5t9c0">샛별배송</span></span><span class="css-rklo75 e1c07x485">[서울우유] 나 100%
+                    우유 1000mL</span>
+                                <div class="e1c07x484 css-1sieafg ei5rudb2">
+                                    <div></div>
+                                    <span class="sales-price css-18tpqqq ei5rudb1">2,710<span
+                                            class="won"> 원</span></span>
+                                </div>
+                                <p class="css-13g46z0 e1c07x483">서울우유의 믿을 수 있는 품질! 우리나라 대표 1A 우유</p>
+                            </div>
+                        </div>
+                        <div href="/goods/5048852" class="css-1xyd46f e1c07x4811">
+                            <div class="css-0 e1c07x489">
+                                <div class="e1c07x4810 css-1mlybuj e3um3060"><img
+                                        src="https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/1645694606714l0.jpg"
+                                        alt="상품 이미지" loading="lazy">
+                                    <div>
+                                        <button type="button" class="pickup"><img src="/search/images/cart.png"
+                                                                                  alt="장바구니 아이콘"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="css-c1cgl e1c07x486"><span class="css-1qd61ut e1ms5t9c1"><span
+                                    class="css-1mp68i5 e1ms5t9c0">샛별배송</span></span><span class="css-rklo75 e1c07x485">[상하목장] 유기농 우유
+                    900mL</span>
+                                <div class="e1c07x484 css-1sieafg ei5rudb2">
+                                    <div></div>
+                                    <span class="sales-price css-18tpqqq ei5rudb1">4,580<span
+                                            class="won"> 원</span></span>
+                                </div>
+                                <p class="css-13g46z0 e1c07x483">넉넉하게 만나는 유기농 우유</p>
+                            </div>
+                        </div>
+                        <div href="/goods/5034152" class="css-1xyd46f e1c07x4811">
+                            <div class="css-0 e1c07x489">
+                                <div class="e1c07x4810 css-1mlybuj e3um3060"><img
+                                        src="https://product-image.kurly.com/cdn-cgi/image/width=676,format=auto/product/image/53d88b56-ee1e-4405-9a7d-710eaf9af72e.jpg"
+                                        alt="상품 이미지" loading="lazy">
+                                    <div>
+                                        <button type="button" class="pickup"><img src="/search/images/cart.png"
+                                                                                  alt="장바구니 아이콘"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="css-c1cgl e1c07x486"><span class="css-1qd61ut e1ms5t9c1"><span
+                                    class="css-1mp68i5 e1ms5t9c0">샛별배송</span></span><span class="css-rklo75 e1c07x485">[매일] 소화가 잘되는
+                    우유 930mL 2종</span>
+                                <div class="e1c07x484 css-1sieafg ei5rudb2">
+                                    <div></div>
+                                    <span class="sales-price css-18tpqqq ei5rudb1">3,290<span
+                                            class="won"> 원</span></span>
+                                </div>
+                                <p class="css-13g46z0 e1c07x483">유당은 제거하고 칼슘은 높인</p>
+                            </div>
+                        </div>
+                        <div href="/goods/5060807" class="css-1xyd46f e1c07x4811">
+                            <div class="css-0 e1c07x489">
+                                <div class="e1c07x4810 css-1mlybuj e3um3060"><img
+                                        src="https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/1607314173577l0.jpg"
+                                        alt="상품 이미지" loading="lazy">
+                                    <div>
+                                        <button type="button" class="pickup"><img src="/search/images/cart.png"
+                                                                                  alt="장바구니 아이콘"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="css-c1cgl e1c07x486"><span class="css-1qd61ut e1ms5t9c1"><span
+                                    class="css-1mp68i5 e1ms5t9c0">샛별배송</span></span><span class="css-rklo75 e1c07x485">[우유공식] 무항생제
+                    우유 900ml</span>
+                                <div class="e1c07x484 css-1sieafg ei5rudb2">
+                                    <div></div>
+                                    <span class="sales-price css-18tpqqq ei5rudb1">3,200<span
+                                            class="won"> 원</span></span>
+                                </div>
+                                <p class="css-13g46z0 e1c07x483">목장의 과학으로 만든 우유</p>
+                                <div class="css-1hrnl0u e1cvv2hm1"><span class="css-1e5t2sz e1cvv2hm0">Kurly Only</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div href="/goods/5049893" class="css-1xyd46f e1c07x4811">
+                            <div class="css-0 e1c07x489">
+                                <div class="e1c07x4810 css-1mlybuj e3um3060"><img
+                                        src="https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/1585707320997l0.jpg"
+                                        alt="상품 이미지" loading="lazy">
+                                    <div>
+                                        <button type="button" class="pickup"><img src="/search/images/cart.png"
+                                                                                  alt="장바구니 아이콘"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="css-c1cgl e1c07x486"><span class="css-1qd61ut e1ms5t9c1"><span
+                                    class="css-1mp68i5 e1ms5t9c0">샛별배송</span></span><span class="css-rklo75 e1c07x485">[매일] 오리지널 우유
+                    1.5L</span>
+                                <div class="e1c07x484 css-1sieafg ei5rudb2">
+                                    <div></div>
+                                    <span class="sales-price css-18tpqqq ei5rudb1">4,390<span
+                                            class="won"> 원</span></span>
+                                </div>
+                                <p class="css-13g46z0 e1c07x483">세균수 1A 등급의 신선한 우유</p>
+                            </div>
+                        </div>
+                        <div href="/goods/5048854" class="css-1xyd46f e1c07x4811">
+                            <div class="css-0 e1c07x489">
+                                <div class="e1c07x4810 css-1mlybuj e3um3060"><img
+                                        src="https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/1653034416980l0.jpg"
+                                        alt="상품 이미지" loading="lazy">
+                                    <div>
+                                        <button type="button" class="pickup"><img src="/search/images/cart.png"
+                                                                                  alt="장바구니 아이콘"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="css-c1cgl e1c07x486"><span class="css-1qd61ut e1ms5t9c1"><span
+                                    class="css-1mp68i5 e1ms5t9c0">샛별배송</span></span><span class="css-rklo75 e1c07x485">[매일] 매일우유
+                    후레쉬팩 오리지널 900mL</span>
+                                <div class="e1c07x484 css-1sieafg ei5rudb2">
+                                    <div></div>
+                                    <span class="sales-price css-18tpqqq ei5rudb1">2,610<span
+                                            class="won"> 원</span></span>
+                                </div>
+                                <p class="css-13g46z0 e1c07x483">신선함과 고소함을 더한 살균 우유</p>
+                            </div>
+                        </div>
+                        <div href="/goods/5001691" class="css-1xyd46f e1c07x4811">
+                            <div class="css-0 e1c07x489">
+                                <div class="e1c07x4810 css-1mlybuj e3um3060"><img
+                                        src="https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/1628558475434l0.jpg"
+                                        alt="상품 이미지" loading="lazy">
+                                    <div>
+                                        <button type="button" class="pickup"><img src="/search/images/cart.png"
+                                                                                  alt="장바구니 아이콘"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="css-c1cgl e1c07x486"><span class="css-1qd61ut e1ms5t9c1"><span
+                                    class="css-1mp68i5 e1ms5t9c0">샛별배송</span></span><span class="css-rklo75 e1c07x485">[상하목장] 유기농 우유
+                    3종</span>
+                                <div class="e1c07x484 css-1sieafg ei5rudb2">
+                                    <div></div>
+                                    <span class="sales-price css-18tpqqq ei5rudb1">4,400<span
+                                            class="won"> 원</span>~</span>
+                                </div>
+                                <p class="css-13g46z0 e1c07x483">행복한 소가 주는 자연의 선물</p>
+                            </div>
+                        </div>
+                        <div href="/goods/5044650" class="css-1xyd46f e1c07x4811">
+                            <div class="css-0 e1c07x489">
+                                <div class="e1c07x4810 css-1mlybuj e3um3060"><img
+                                        src="https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/1575961965803l0.jpg"
+                                        alt="상품 이미지" loading="lazy">
+                                    <div>
+                                        <button type="button" class="pickup"><img src="/search/images/cart.png"
+                                                                                  alt="장바구니 아이콘"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="css-c1cgl e1c07x486"><span class="css-1qd61ut e1ms5t9c1"><span
+                                    class="css-1mp68i5 e1ms5t9c0">샛별배송</span></span><span class="css-rklo75 e1c07x485">[범산목장] 목초먹인
+                    유기농 우유 1000mL</span>
+                                <div class="e1c07x484 css-1sieafg ei5rudb2">
+                                    <div></div>
+                                    <span class="sales-price css-18tpqqq ei5rudb1">6,900<span
+                                            class="won"> 원</span></span>
+                                </div>
+                                <p class="css-13g46z0 e1c07x483">강원도 목초 우유를 대용량으로</p>
+                            </div>
+                        </div>
+                        <div href="/goods/5049894" class="css-1xyd46f e1c07x4811">
+                            <div class="css-0 e1c07x489">
+                                <div class="e1c07x4810 css-1mlybuj e3um3060"><img
+                                        src="https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/1585707959594l0.jpg"
+                                        alt="상품 이미지" loading="lazy">
+                                    <div>
+                                        <button type="button" class="pickup"><img src="/search/images/cart.png"
+                                                                                  alt="장바구니 아이콘"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="css-c1cgl e1c07x486"><span class="css-1qd61ut e1ms5t9c1"><span
+                                    class="css-1mp68i5 e1ms5t9c0">샛별배송</span></span><span class="css-rklo75 e1c07x485">[매일] 저지방 우유
+                    1.5L</span>
+                                <div class="e1c07x484 css-1sieafg ei5rudb2">
+                                    <div></div>
+                                    <span class="sales-price css-18tpqqq ei5rudb1">4,390<span
+                                            class="won"> 원</span></span>
+                                </div>
+                                <p class="css-13g46z0 e1c07x483">세균수 1A 등급의 저지방 우유</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="css-rdz8z7 e82lnfz1"><a class="css-1d20dg7 e82lnfz0"><img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAHCAQAAABwkq/rAAAAHUlEQVR42mNgAIPi/8X/kWkwA8SE0UQIMJAsCKMBBzk27fqtkcYAAAAASUVORK5CYII="
+                            alt="처음 페이지로 이동하기 아이콘"></a><a class="css-1d20dg7 e82lnfz0"><img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAQAAABqrk9lAAAAGElEQVR42mNgAIPi/8X/4QwwE5PBQJADAAKSG3cyVhtXAAAAAElFTkSuQmCC"
+                            alt="이전 페이지로 이동하기 아이콘"></a><a class="css-19yo1fh e82lnfz0">1</a><a
+                            class="css-1d20dg7 e82lnfz0">2</a><a class="css-1d20dg7 e82lnfz0">3</a><a
+                            class="css-1d20dg7 e82lnfz0">4</a><a class="css-1d20dg7 e82lnfz0">5</a><a
+                            class="css-1d20dg7 e82lnfz0">6</a><a class="css-1d20dg7 e82lnfz0">7</a><a
+                            class="css-1d20dg7 e82lnfz0">8</a><a class="css-1d20dg7 e82lnfz0">9</a><a
+                            class="css-1d20dg7 e82lnfz0">10</a><a class="css-1d20dg7 e82lnfz0"><img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAQAAABqrk9lAAAAGUlEQVR42mMo/l/8nwECQEwCHEwGhAlRBgA2mht3SwgzrwAAAABJRU5ErkJggg=="
+                            alt="다음 페이지로 이동하기 아이콘"></a><a class="css-1d20dg7 e82lnfz0"><img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAHCAQAAABwkq/rAAAAIElEQVR42mMo/l/8n4GBgQFGQ5kgDowmQZCwAMImhDkAb0k27Zcisn8AAAAASUVORK5CYII="
+                            alt="마지막 페이지로 이동하기 아이콘"></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- footer -->
+<footer th:replace="main/footer.html" :: f></footer>
+<div class="modal" role="presentation">
+    <div class="modalblur">
+        <div class="modal_content" title="클릭하면 창이 닫힙니다.">
+            <div class="modalText2">
+                <div class="modalTextInfo">
+                    <div class="modalTextInfoDetail">
+                        <div class="modalTextInfoDetailTitle">
+                            <span class="modalTextInfoDetailTitle">[서울우유] 나 100% 우유 1.8L</span>
+                        </div>
+                        <div class="modalTextInfoDetailBottom">
+                            <div class="modalTextInfoDetailBottomPrice">
+                                <span class="modalTextInfoDetailBottomPrice">2,450원</span>
+                            </div>
+                            <div class="modalTextInfoDetailBottomCount">
+                                <button class="decrease" type="button" aria-label="수량내리기"></button>
+                                <div class="middleCount">0</div>
+                                <button class="increase" type="button"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modalText2Bottom">
+                    <div class="modalText2Bottom2">
+                        <div class="modalText2BottomSum">
+                            <p class="sum">합계</p>
+                            <div>
+                                <span class="sumPrice">0</span>
+                                <span class="sumWon">원</span>
+                            </div>
+                        </div>
+                        <div class="modalSaving">
+                            <span class="modalSavingBox">적립</span>
+                            <span class="modalSavingBox2">
+                    구매시
+                    <span class="modalSavingBox3">
+                      0원적립립
+                    </span>
+                  </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modalText2Footer">
+                    <button class="footerLeft" type="button">
+                        <span class="footerLeft">취소</span>
+                    </button>
+                    <button class="footerRight">
+                        <span class="footerRight">장바구니 담기</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/main/js/header.js"></script>
+<script src="/search/js/search.js"></script>
+</body>
+</html>

@@ -8,8 +8,17 @@ import org.springframework.web.bind.annotation.RestController;
 @Controller
 @RequestMapping("/product/*")
 public class ProductController {
-    @GetMapping("/category")
-    public void category(){}
+    @GetMapping("/newCategory")
+    public void newCategory(){}
+
+    @GetMapping("/bestCategory")
+    public void bestCategory(){}
+
+    @GetMapping("/saleCategory")
+    public void saleCategory(){}
+
+    @GetMapping("/todayCategory")
+    public void todayCategory(){}
 
     @GetMapping("/categoryDetail")
     public void categoryDetail(){}
