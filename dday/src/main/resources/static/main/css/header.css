@@ -39,12 +39,12 @@ button {
 }
 
 
-.logo img {
+header .logo img {
     width: 82px;
     height: 42px;
 }
 
-.header.drop {
+header .header.drop {
     width: 100%;
     background-color: #fff;
 
@@ -62,14 +62,14 @@ button {
     }
   }
 
-.header .searchbar{
+header .header .searchbar{
         position: relative;
         width: 1050px;
         height: 100px;
         margin: 0px auto;
         letter-spacing: -0.3px;
 }
-.searchbar .loginbar {
+header .searchbar .loginbar {
     position: absolute;
     right: 0px;
     top: 0px;
