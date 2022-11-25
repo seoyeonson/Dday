@@ -47,7 +47,7 @@ li {
 }
 
 #container-wrap {
-    padding: 0;
+    /*padding: 0;*/
     min-width: 1200px;
     padding-bottom: 200px;
 }
@@ -215,8 +215,7 @@ li {
     border: 1px solid #999;
     /* border: 1px solid rgba(0, 0, 0, .15); */
     border-radius: 0px;
-    -webkit-box-shadow: 0 0px 0px rgb(0 0 0 / 0%);
-    box-shadow: 0 0px 0px rgb(0 0 0 / 0%);
+    /*box-shadow: 0 0px 0px rgb(0 0 0 / 0%);*/
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
 }
@@ -269,7 +268,7 @@ header .gnb-dropdown-menu {
     width: 100px;
     padding-left: 0;
     padding-right: 0;
-    background: url(/partner/image/nav_menu_bar.gif) no-repeat right top;
+    /*background: url(/partner/image/nav_menu_bar.gif) no-repeat right top;*/
 }
 
 #header .navbar-nav > li > a {
@@ -569,7 +568,7 @@ header .gnb-dropdown-menu {
 
 .notice-info {
     color: #999999;
-    background: url(/partner/image/icon_notice_gray.png) no-repeat left 5px;
+    /*background: url(/partner/image/icon_notice_gray.png) no-repeat left 5px;*/
 }
 .notice-info, .notice-danger, .icon-lock-on, .icon-lock-off {
     padding-left: 15px;
@@ -594,3 +593,4 @@ h1 small, .h1 small, h2 small, .h2 small, h3 small, .h3 small, h1 .small, .h1 .s
 .nav.nav-tabs.tab-fluid-5 > li > a > h2{
     padding-top: 5px;
 }
+

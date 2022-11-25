@@ -367,7 +367,7 @@ div#detail main section{
 .product_nav{
     z-index: 20;
     position: sticky;
-    top: 56px;
+    top: 0px;
     width: 1010px;
     box-shadow: rgb(221 221 221) 0px -0.5px 0px 0px inset;
     background-color: rgb(255, 255, 255);
