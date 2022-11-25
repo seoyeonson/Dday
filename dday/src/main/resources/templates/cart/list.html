@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
 <link rel="stylesheet" href="/main/css">
 <link rel="stylesheet" href="/main/css/header.css">
 <link rel="stylesheet" href="/main/css/footer.css">
@@ -25,28 +27,30 @@
     <h2 class="css-1n2hipb er0tf674">장바구니</h2>
     <div></div>
     <div class="css-a6t9xs er0tf673">
-        <div class="css-8wfj4z er0tf672">
+        <div class="cartleft">
             <div class="css-20o6z0 e149z643" id="bottomline">
-                <div class="css-zbxehx e149z642"><label class="css-1j5mumb e1dcessg3"><input type="checkbox"
-                                                                                             class="css-agvwxo e1dcessg2"><img
-                        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGc+CiAgICAgICAgICAgIDxnPgogICAgICAgICAgICAgICAgPGc+CiAgICAgICAgICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE3Ni4wMDAwMDAsIC0xMDkwLjAwMDAwMCkgdHJhbnNsYXRlKDEwMC4wMDAwMDAsIDkzNi4wMDAwMDApIHRyYW5zbGF0ZSg2MC4wMDAwMDAsIDE0Mi4wMDAwMDApIHRyYW5zbGF0ZSgxNi4wMDAwMDAsIDEyLjAwMDAwMCkiPgogICAgICAgICAgICAgICAgICAgICAgICA8Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iIzVGMDA4MCIvPgogICAgICAgICAgICAgICAgICAgICAgICA8cGF0aCBzdHJva2U9IiNGRkYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik03IDEyLjY2N0wxMC4zODUgMTYgMTggOC41Ii8+CiAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K"
-                        alt="" class="css-1wfsi82 e31wziv0"><span class="css-0 e1dcessg1">전체선택
-                                (3/3)</span></label><span class="css-454d5e e149z641"></span>
-                    <button
-                            class="css-0 e149z640">선택삭제
+                <div class="check_content">
+                    <label class="check_All">
+                        <input type="checkbox" id="checkAll">
+                        <span class="material-symbols-outlined" class="check_img">check_circle</span>
+                        <span class="css-0 e1dcessg1">전체선택 (3/3)</span></label>
+                    <span class="css-454d5e e149z641"></span>
+                    <button class="choose_delete"
+                            disabled="true">선택삭제
                     </button>
                 </div>
             </div>
             <div class="css-2lvxh7 ej77nku0">
                 <div>
                     <ul>
-                        <li class="css-1d6kgf6 esoayg811"><label class="css-dar8hv e1dcessg3"><input type="checkbox"
-                                                                                                     class="css-agvwxo e1dcessg2"
-                                                                                                     checked=""><img
-                                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGc+CiAgICAgICAgICAgIDxnPgogICAgICAgICAgICAgICAgPGc+CiAgICAgICAgICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE3Ni4wMDAwMDAsIC0xMDkwLjAwMDAwMCkgdHJhbnNsYXRlKDEwMC4wMDAwMDAsIDkzNi4wMDAwMDApIHRyYW5zbGF0ZSg2MC4wMDAwMDAsIDE0Mi4wMDAwMDApIHRyYW5zbGF0ZSgxNi4wMDAwMDAsIDEyLjAwMDAwMCkiPgogICAgICAgICAgICAgICAgICAgICAgICA8Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iIzVGMDA4MCIvPgogICAgICAgICAgICAgICAgICAgICAgICA8cGF0aCBzdHJva2U9IiNGRkYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik03IDEyLjY2N0wxMC4zODUgMTYgMTggOC41Ii8+CiAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K"
-                                alt="" class="css-1wfsi82 e31wziv0"><span
-                                class="css-0 e1dcessg1"></span></label><a class="css-3u0haf esoayg810"><span
-                                class="css-1ye1wuu esoayg89"></span></a>
+                        <li class="productlist">
+                            <div class="check_content">
+                                <label>
+                                    <input type="checkbox" class="check">
+                                    <span class="material-symbols-outlined" class="check_img">check_circle</span>
+                                </label>
+                            </div>
+                            <a class="css-3u0haf esoayg810"><span class="css-1ye1wuu esoayg89"></span></a>
                             <div class="css-14sb0pe esoayg88"><a class="css-e0dnmk esoayg87">
                                 <p class="css-5cezqo esoayg86">[연세우유 x 마켓컬리] 전용목장우유 900mL</p>
                             </a>
@@ -65,13 +69,14 @@
                             <button class="css-h5zdhc eudrkjx0" type="button" data-testid="delete"><span
                                     class="css-6mgkir e5h3i930"></span></button>
                         </li>
-                        <li class="css-1d6kgf6 esoayg811"><label class="css-dar8hv e1dcessg3"><input type="checkbox"
-                                                                                                     class="css-agvwxo e1dcessg2"
-                                                                                                     checked=""><img
-                                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGc+CiAgICAgICAgICAgIDxnPgogICAgICAgICAgICAgICAgPGc+CiAgICAgICAgICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE3Ni4wMDAwMDAsIC0xMDkwLjAwMDAwMCkgdHJhbnNsYXRlKDEwMC4wMDAwMDAsIDkzNi4wMDAwMDApIHRyYW5zbGF0ZSg2MC4wMDAwMDAsIDE0Mi4wMDAwMDApIHRyYW5zbGF0ZSgxNi4wMDAwMDAsIDEyLjAwMDAwMCkiPgogICAgICAgICAgICAgICAgICAgICAgICA8Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iIzVGMDA4MCIvPgogICAgICAgICAgICAgICAgICAgICAgICA8cGF0aCBzdHJva2U9IiNGRkYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik03IDEyLjY2N0wxMC4zODUgMTYgMTggOC41Ii8+CiAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K"
-                                alt="" class="css-1wfsi82 e31wziv0"><span
-                                class="css-0 e1dcessg1"></span></label><a class="css-3u0haf esoayg810"><span
-                                class="css-vfnj07 esoayg89"></span></a>
+                        <li class="productlist">
+                            <div class="check_content">
+                                <label>
+                                    <input type="checkbox" class="check">
+                                    <span class="material-symbols-outlined" class="check_img">check_circle</span>
+                                </label>
+                            </div>
+                            <a class="css-3u0haf esoayg810"><span class="css-vfnj07 esoayg89"></span></a>
                             <div class="css-14sb0pe esoayg88"><a class="css-e0dnmk esoayg87">
                                 <p class="css-5cezqo esoayg86">[서울우유] 나 100% 우유 1.8L</p>
                             </a>
@@ -90,13 +95,14 @@
                             <button class="css-h5zdhc eudrkjx0" type="button" data-testid="delete"><span
                                     class="css-6mgkir e5h3i930"></span></button>
                         </li>
-                        <li class="css-1d6kgf6 esoayg811"><label class="css-dar8hv e1dcessg3"><input type="checkbox"
-                                                                                                     class="css-agvwxo e1dcessg2"
-                                                                                                     checked=""><img
-                                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGc+CiAgICAgICAgICAgIDxnPgogICAgICAgICAgICAgICAgPGc+CiAgICAgICAgICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE3Ni4wMDAwMDAsIC0xMDkwLjAwMDAwMCkgdHJhbnNsYXRlKDEwMC4wMDAwMDAsIDkzNi4wMDAwMDApIHRyYW5zbGF0ZSg2MC4wMDAwMDAsIDE0Mi4wMDAwMDApIHRyYW5zbGF0ZSgxNi4wMDAwMDAsIDEyLjAwMDAwMCkiPgogICAgICAgICAgICAgICAgICAgICAgICA8Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iIzVGMDA4MCIvPgogICAgICAgICAgICAgICAgICAgICAgICA8cGF0aCBzdHJva2U9IiNGRkYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik03IDEyLjY2N0wxMC4zODUgMTYgMTggOC41Ii8+CiAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K"
-                                alt="" class="css-1wfsi82 e31wziv0"><span
-                                class="css-0 e1dcessg1"></span></label><a class="css-3u0haf esoayg810"><span
-                                class="css-11wtdvj esoayg89"></span></a>
+                        <li class="productlist">
+                            <div class="check_content">
+                                <label>
+                                    <input type="checkbox" class="check">
+                                    <span class="material-symbols-outlined" class="check_img">check_circle</span>
+                                </label>
+                            </div>
+                            <a class="css-3u0haf esoayg810"><span class="css-11wtdvj esoayg89"></span></a>
                             <div class="css-14sb0pe esoayg88"><a class="css-e0dnmk esoayg87">
                                 <p class="css-5cezqo esoayg86">[고기반찬] 고추장 제육 불고기 300g</p>
                             </a>
@@ -115,13 +121,14 @@
                             <button class="css-h5zdhc eudrkjx0" type="button" data-testid="delete"><span
                                     class="css-6mgkir e5h3i930"></span></button>
                         </li>
-                        <li class="css-1d6kgf6 esoayg811"><label class="css-dar8hv e1dcessg3"><input type="checkbox"
-                                                                                                     class="css-agvwxo e1dcessg2"
-                                                                                                     checked=""><img
-                                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGc+CiAgICAgICAgICAgIDxnPgogICAgICAgICAgICAgICAgPGc+CiAgICAgICAgICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE3Ni4wMDAwMDAsIC0xMDkwLjAwMDAwMCkgdHJhbnNsYXRlKDEwMC4wMDAwMDAsIDkzNi4wMDAwMDApIHRyYW5zbGF0ZSg2MC4wMDAwMDAsIDE0Mi4wMDAwMDApIHRyYW5zbGF0ZSgxNi4wMDAwMDAsIDEyLjAwMDAwMCkiPgogICAgICAgICAgICAgICAgICAgICAgICA8Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iIzVGMDA4MCIvPgogICAgICAgICAgICAgICAgICAgICAgICA8cGF0aCBzdHJva2U9IiNGRkYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik03IDEyLjY2N0wxMC4zODUgMTYgMTggOC41Ii8+CiAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K"
-                                alt="" class="css-1wfsi82 e31wziv0"><span
-                                class="css-0 e1dcessg1"></span></label><a class="css-3u0haf esoayg810"><span
-                                class="css-58sc5b esoayg89"></span></a>
+                        <li class="productlist">
+                            <div class="check_content">
+                                <label>
+                                    <input type="checkbox" class="check">
+                                    <span class="material-symbols-outlined" class="check_img">check_circle</span>
+                                </label>
+                            </div>
+                            <a class="css-3u0haf esoayg810"><span class="css-58sc5b esoayg89"></span></a>
                             <div class="css-14sb0pe esoayg88"><a class="css-e0dnmk esoayg87">
                                 <p class="css-5cezqo esoayg86">[에코후레쉬] 냉장고 냄새 탈취제</p>
                             </a>
@@ -143,30 +150,39 @@
                     </ul>
                 </div>
             </div>
-            <div class="css-20o6z0 e149z643">
-                <div class="css-zbxehx e149z642"><label class="css-1j5mumb e1dcessg3"><input type="checkbox"
-                                                                                             class="css-agvwxo e1dcessg2"><img
-                        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGc+CiAgICAgICAgICAgIDxnPgogICAgICAgICAgICAgICAgPGc+CiAgICAgICAgICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE3Ni4wMDAwMDAsIC0xMDkwLjAwMDAwMCkgdHJhbnNsYXRlKDEwMC4wMDAwMDAsIDkzNi4wMDAwMDApIHRyYW5zbGF0ZSg2MC4wMDAwMDAsIDE0Mi4wMDAwMDApIHRyYW5zbGF0ZSgxNi4wMDAwMDAsIDEyLjAwMDAwMCkiPgogICAgICAgICAgICAgICAgICAgICAgICA8Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iIzVGMDA4MCIvPgogICAgICAgICAgICAgICAgICAgICAgICA8cGF0aCBzdHJva2U9IiNGRkYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik03IDEyLjY2N0wxMC4zODUgMTYgMTggOC41Ii8+CiAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K"
-                        alt="" class="css-1wfsi82 e31wziv0"><span class="css-0 e1dcessg1">전체선택
-                                (3/3)</span></label><span class="css-454d5e e149z641"></span>
-                    <button
-                            class="css-0 e149z640">선택삭제
-                    </button>
+            <!-- <div class="css-20o6z0 e149z643">
+                <div class="checkAll">
+                    <label class="css-1j5mumb e1dcessg3" id="checkAll2">
+                        <input type="checkbox" class="check">
+                        <span class="material-symbols-outlined" class="check_img">check_circle</span>
+                        <span class="css-0 e1dcessg1">전체선택
+                            (3/3)</span></label>
+                    <span class="css-454d5e e149z641"></span><button class="choose_delete">선택삭제</button>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="css-1dta0ch er0tf671">
             <div class="css-50ad8x er0tf670">
                 <div class="css-oft680 e15fcx0p3">
                     <h3 class="css-1guaarh e15fcx0p2">배송지</h3>
                     <div class="css-50yi3o e15fcx0p1">
-                        <p class="css-iba1ml e1321nl41"><em>배송지를 등록</em>하고<br> <span
-                                class="css-1bmnxg7 e1321nl40">구매 가능한 상품을
-                                    확인하세요!</span></p>
-                        <button class="css-1bh2ea0 e4nu7ef3" type="button" height="36"
-                                radius="3"><span class="css-ymwvow e4nu7ef1"><img
-                                src="/cart/img/search.png" alt=""
-                                class="css-1m3kac1 e4nu7ef0">주소 검색</span></button>
+                        <p class="address_default"><em>배송지를 등록</em>하고<br>
+                            <span class="css-1bmnxg7 e1321nl40">구매 가능한 상품을
+                                    확인하세요!</span>
+                        </p>
+                        <p class="address_p">
+                                <span class="address_span">
+
+                                </span>
+                        </p>
+                        <button class="addressbutton" type="button" height="36" radius="3">
+                                <span class="searchaddress">
+                                    <img src="/Project/cart/img/search.png" alt="" class="css-1m3kac1 e4nu7ef0">주소 검색
+                                </span>
+                            <span class="changeaddress">
+                                    배송지 변경
+                                </span>
+                        </button>
                     </div>
                 </div>
                 <div class="css-1t6so8j em21elb0">
@@ -187,8 +203,10 @@
                     </div>
                 </div>
                 <div class="css-8qz8ia e1mybczi1">
-                    <button class="css-fwelhw e4nu7ef3" type="button" disabled=""
-                            height="56" radius="3"><span class="css-ymwvow e4nu7ef1">배송지를 입력해주세요</span></button>
+                    <button class="order_button" type="button" disabled="" height="56" radius="3">
+                        <span class="address_false">배송지를 입력해주세요</span>
+                        <span class="address_true">주문하기</span>
+                    </button>
                     <ul class="css-19kxq7d">
                         <li class="css-7s0nna ejr204i0">[주문완료] 상태일 경우에만 주문 취소 가능합니다.</li>
                         <li class="css-7s0nna ejr204i0">[마이컬리 &gt; 주문내역 상세페이지] 에서 직접 취소하실 수 있습니다.</li>
@@ -203,7 +221,9 @@
 <footer th:replace="main/footer.html" :: f></footer>
 <!-- footer 종료 -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="/main/js/header.js"></script>
+<script src="/cart/js/cart.js"></script>
 </body>
 
 </html>
