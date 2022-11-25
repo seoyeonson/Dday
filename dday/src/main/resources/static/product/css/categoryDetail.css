@@ -271,6 +271,8 @@ div#detail main section{
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+    padding-right: 13px;
+    margin-top: 100px;
 }
 
 .total_price span:nth-child(1){
