@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인페이지</title>
+    <link rel="stylesheet" href="/member/css/myPageReview.css">
+    <link rel="stylesheet" href="/main/css/header.css">
+    <link rel="stylesheet" href="/main/css/footer.css">
+    <link rel="stylesheet" href="/product/css/modal.css">
+</head>
+<body>
+<!-- 헤더시작 -->
+<header th:replace="/main/header.html" :: h></header>
+<!-- 마이페이지 고정 틀 start -->
+<div class="mypageWrap">
+    <div class="mypageHeader">
+        <div class="headerTop">
+            <div class="header1">
+                <div class="headerInfo">
+                    <div class="headerGrade">회원</div>
+                    <div class="headerName">
+                        <strong class="headerRname">
+                            황재승님
+                        </strong>
+                    </div>
+                </div>
+                <div class="savingPercent">
+                    <p class="savingPercent">적립 0.1%</p>
+                </div>
+                <div class="seeGrade">
+                    <button class="seeAll">전체등급 보기</button>
+                    <button class="seeNext">다음 달 예상등급 보기</button>
+                </div>
+            </div>
+            <div class="header2">
+                <button class="savingMoney">
+                    <div class="savingMoney">
+                        적립금
+                        <span class="savingMoney"></span>
+                    </div>
+                    <div class="savingDetail">
+                        25
+                        <span class="savingDetail">원</span>
+                    </div>
+                    <div class="savingChange">
+                        소멸예정 0원
+                    </div>
+                </button>
+            </div>
+            <div class="header3">
+                <button class="coupon">
+                    <div class="couponName">
+                        쿠폰
+                        <span class="couponName"></span>
+                    </div>
+                    <div class="couponCount">
+                        1
+                        <span class="couponCount">개</span>
+                    </div>
+                    <div class="savingChange">쿠폰이 도착했어요!</div>
+                </button>
+            </div>
+        </div>
+        <a href="https://www.kurly.com/shop/event/kurlyEvent.php?htmid=event/2022/1107/beauty_grand" class="ad">
+            <img class="ad" src="https://product-image.kurly.com/banner/da-banner/0ad4b09b-7fc1-4bb2-be70-65a089d266d5.jpg"
+                 alt="">
+        </a>
+    </div>
+    <div class="mypageBottom">
+        <div class="mypageBottomLeft">
+            <div class="leftTitle">마이컬리</div>
+            <ul class="leftList">
+                <li class="orderList">
+                    <a href="/member/mypage" class="orderList">
+                        주문 내역
+                        <span class="orderList"></span>
+                    </a>
+                </li>
+                <li class="orderList">
+                    <a href="/member/mypageLike" class="orderList2">
+                        찜한 상품
+                        <span class="orderList2"></span>
+                    </a>
+                </li>
+                <li class="orderList">
+                    <a href="/member/mypageDelivery" class="orderList3">
+                        배송지 관리
+                        <span class="orderList3"></span>
+                    </a>
+                </li>
+                <li class="orderList">
+                    <a href="" class="orderList4">
+                        상품후기
+                        <span class="orderList4"></span>
+                    </a>
+                </li>
+                <li class="orderList">
+                    <a href="/member/mypageSaving" class="orderList6">
+                        적립금
+                        <span class="orderList6"></span>
+                    </a>
+                </li>
+                <li class="orderList">
+                    <a href="/member/mypageEpi" class="orderList8">
+                        개인 정보 수정
+                        <span class="orderList8"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+        <!-- 마이페이지 고정 틀 end -->
+        <div class="bottomRight">
+            <div class="bottomRightHeader">
+                <div class="brhLeft">
+                    <h2 class="brhLeft">
+                        주문내역
+                    </h2>
+                </div>
+            </div>
+            <div class="tabReview">
+                <input type="radio" id="tab01" name="tabmenu" class="tab01" value="1" checked="checked">
+                <label for =tab01>작성 가능 후기</label>
+                <input type="radio" id="tab02" name="tabmenu" value="2" class="tab01">
+                <label for="tab02">작성한 후기</label>
+
+            </div>
+            <div class="conbox" id="conbox">
+                <ul class="reviewBenefit">
+                    <li class="line1">사진후기 100원, 글후기 50원 적립금 혜택이 있어요.</li>
+                    <li class="line2">퍼플,더퍼플은 2배 적립(사진 200원 글100원) / 주간 베스트 후기로 선정 시 5,000원을 추가 적립</li>
+                    <li class="line3">후기 작성은 배송완료일로부터 30일 이내 가능합니다</li>
+                    <li class="line4">작성하신 후기는 확인 후 적립금이 지급됩니다.(영업일 기준 평균 1~2일 수요)</li>
+                </ul>
+                <div class="reviewList">
+                    <span class="allCnt">총 1개</span>
+<!--                    <div class="brhLine"></div>-->
+                    <div class="reviewListGoods">
+                        <a href="">
+                            <img src="https://img-cf.kurly.com/shop/data/goods/1637922047806l0.jpg" class="reviewListGoodsImg"
+                            alt="표고버섯 5~6개입 100g">
+                        </a>
+                        <p>
+                            <a href="">
+                            <span class="goodsName">표고버섯 5~6입 100g</span>
+                            </a><br>
+                            <span class="deliveryDay">2022.11.16 배송완료</span>
+                        </p>
+                        <p class="ableReviewDay">
+                            <span>
+                                12.16까지 작성 가능
+                            </span>
+                        </p>
+                        <button class="reviewModal">후기작성</button>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="conbox2" id = "conbox2">
+                <div class="reviewList">
+                    <span class="allCnt">총 1개</span>
+                    <div class="afterReviewList">
+                        <div class="afterReviewDetail">
+                            <div class="afterReviewListDetail2">
+                                <a>
+                                    <span class="afterReviewListDetail2">[Sea to Table] 손질 생새우살 200g (냉동)
+                                    </span>
+
+                                <div class="afterReviewListDetail2Time">
+                                    <span class="afterReviewListDetail2Time">22.11.21 작성
+                                    </span>
+                                </div>
+                                </a>
+                            </div>
+                        </div>
+                        <button class="btnEditModal">후기 수정</button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="editModal">
+        <div class="editModalBody">모달</div>
+    </div>
+</div>
+<!--푸터-->
+<footer th:replace="/main/footer.html" :: f></footer>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/main/js/header.js"></script>
+<script>
+    $('input[type=radio][name=tabmenu]').on('click', function() {
+        var chkValue = $('input[type=radio][name=tabmenu]:checked').val();
+
+        if(chkValue == '1') {
+            $('#conbox').css('display', 'block');
+            $('#conbox2').css('display', 'none');
+        }
+        else if (chkValue == '2') {
+            $('#conbox').css('display', 'none');
+            $('#conbox2').css('display', 'block');
+        }
+    })
+
+    /*수정모달*/
+    const body = document.querySelector('body');
+    const modal = document.querySelector('.editModal');
+    const btnOpenPopup = document.querySelector('.btnEditModal');
+
+    btnOpenPopup.addEventListener('click', () => {
+        modal.classList.toggle('show');
+
+        if (modal.classList.contains('show')) {
+            body.style.overflow = 'hidden';
+        }
+    });
+
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.classList.toggle('show');
+
+            if (!modal.classList.contains('show')) {
+                body.style.overflow = 'auto';
+            }
+        }
+    });
+
+</script>
+
+</html>
