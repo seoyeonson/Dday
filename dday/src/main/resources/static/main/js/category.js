@@ -47,6 +47,15 @@ function countDown(){
     // 가격 변경 함수 호출
     priceChange();
 }
+function countReset(){
+    var nowCount = $('div.cnt').text();
+    var minusReset = (((Number(nowCount))) -((Number(nowCount))- 1));
+
+    $('div.cnt').text(minusReset);
+
+    // 가격 변경 함수 호출
+    priceChange();
+}
 
 $('button.plus').on('click',function(){
     countUp();
@@ -72,19 +81,24 @@ function priceChange(){
 
 }
 
-
 // 장바구니 이미지 클릭시 모달창
 $('div.modalContainer').hide();
-$('button.button-absolute').on('click', function(){
+$('button.mainCart.button-absolute').on('click', function(){
     $("div.modalContainer").fadeIn();
 });
 
 $('button.modalOkButton').on('click', function(){
-    $('div.modalContainer').fadeOut();
+    alert("장바구니에 담겼습니다.");
+    $('div.modalContainer').hide();
+    countReset();
     // 장바구니쪽 작은 모달나오기
 });
-
 $('button.modalCancelButton').on('click',function(){
-    $('div.modalContainer').fadeOut();
+    $('div.modalContainer').hide();
+    countReset();
 });
 
+
+/*($('div.modalContainer')||!$('div.modalContainer')).on('click', function(){
+    $('div.modalContainer').fadeOut();
+});*/
