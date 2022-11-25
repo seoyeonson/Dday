@@ -260,7 +260,7 @@
     // 번호 인증 버튼을 누를 경우
     $phone_check_button.on("click", function(){
         <!-- 카운트다운 타이머 -->
-        let time = 180; //기준시간설정
+        let time = 5; //기준시간설정
         let min = ""; //분
         let sec = ""; //초
 
@@ -287,11 +287,7 @@
                 // 인증번호 입력칸 감추기
                 $('div.num_check_input').css("display", "none");
 
-                // $phoneNumCheck.val("");
-                // $phone_check_button.attr("disabled", false);
-                //
-                // $memberPhoneNumber.prop("readonly", false);
-                // $memberPhoneNumber.css("color", "black");
+                $phoneNumCheck.val("");
             }
         }, 1000);
 
@@ -334,18 +330,6 @@
     function inputAble(input){
         input.prop("readonly", false);
         input.css("color", "black");
-    }
-
-    // 버튼, 입력창 비활성화
-    function inputAndButtonDisable(btn, input){
-        buttonDisable(btn);
-        inputDisable(btn, input);
-    }
-
-    // 버튼, 입력창 활성화
-    function inputAndButtonAble(btn, input){
-        buttonAble(btn);
-        inputAble(btn, input)
     }
 
 </script>
