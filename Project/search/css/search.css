@@ -262,7 +262,7 @@ svg {
   color: rgb(221, 221, 221);
 }
 
-.css-146937 {
+.category_section {
   border-bottom: 1px solid rgb(238, 238, 238);
 }
 
@@ -374,7 +374,7 @@ a {
   -webkit-box-orient: vertical;
 }
 
-.css-ryw54y {
+.filter_count {
   flex-shrink: 0;
   font-weight: 400;
   font-size: 12px;
@@ -436,11 +436,11 @@ menu {
   font-weight: 400;
 }
 
-.css-1d3w5wq {
+.result_section {
   width: 100%;
 }
 
-.css-1stur9s {
+.result_info {
   display: flex;
   -webkit-box-align: center;
   align-items: center;
@@ -450,7 +450,7 @@ menu {
   line-height: 20px;
 }
 
-.css-crqql1 {
+.total_search {
   font-size: 14px;
   font-weight: 500;
   color: rgb(51, 51, 51);
@@ -499,7 +499,7 @@ menu {
   letter-spacing: 0px;
 }
 
-.css-5uzvtq::before {
+.pricefilter_specify::before {
   content: "";
   display: flex;
   width: 1px;
@@ -508,7 +508,7 @@ menu {
   background-color: rgb(226, 226, 226);
 }
 
-.css-5uzvtq {
+.pricefilter_specify {
   display: flex;
   -webkit-box-align: center;
   align-items: center;
@@ -519,7 +519,7 @@ menu {
   color: rgb(153, 153, 153);
 }
 
-.css-19ce13b {
+.pricefilter_a {
   letter-spacing: -0.3px;
   cursor: pointer;
 }
@@ -530,14 +530,14 @@ menu {
     text-decoration: underline;
 }
  */
-.css-15x6ap3 {
+.product_grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, 249px);
   gap: 24px 18px;
   width: 100%;
 }
 
-.css-1xyd46f {
+.product_content {
   display: flex;
   flex-direction: column;
   height: 538px;
@@ -545,7 +545,7 @@ menu {
   cursor: pointer;
 }
 
-.css-1mlybuj {
+.product_img_section {
   overflow: hidden;
   position: relative;
   background-color: rgb(245, 245, 245);
@@ -553,7 +553,7 @@ menu {
   height: 320px;
 }
 
-.css-1mlybuj > img {
+.product_img_section > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -594,23 +594,23 @@ video {
   height: 45px;
 }
 
-.css-c1cgl {
+.product_info {
   padding: 14px 10px 0px 0px;
 }
 
-.css-1qd61ut {
+.delivery_info_section {
   display: block;
   padding-bottom: 2px;
 }
 
-.css-1mp68i5 {
+.delivery_info {
   font-size: 14px;
   color: rgb(153, 153, 153);
   line-height: 19px;
   letter-spacing: -0.5px;
 }
 
-.css-rklo75 {
+.product_name {
   max-height: 58px;
   margin-bottom: 8px;
   font-size: 16px;
@@ -624,13 +624,13 @@ video {
   -webkit-box-orient: vertical;
 }
 
-.css-1sieafg {
+.price_section {
   display: flex;
   flex-direction: column;
 }
 
-.css-1sieafg .discount-rate,
-.css-1sieafg .sales-price {
+.price_section .discount-rate,
+.price_section .sales-price {
   font-weight: 800;
   font-size: 16px;
   line-height: 24px;
@@ -638,12 +638,12 @@ video {
   letter-spacing: -0.5px;
 }
 
-.css-18tpqqq {
+.sales-price {
   color: rgb(51, 51, 51);
   white-space: nowrap;
 }
 
-.css-13g46z0 {
+.mini_info {
   padding-top: 12px;
   font-size: 12px;
   color: rgb(153, 153, 153);
@@ -685,7 +685,7 @@ video {
   line-height: 16px;
 }
 
-.css-rdz8z7 {
+.pagination {
   display: flex;
   -webkit-box-pack: center;
   justify-content: center;
@@ -694,11 +694,11 @@ video {
   margin-top: 36px;
 }
 
-.css-1d20dg7:first-of-type {
+.page_move:first-of-type {
   border-left: 1px solid rgb(221, 221, 221);
 }
 
-.css-1d20dg7 {
+.page_move {
   display: flex;
   -webkit-box-align: center;
   align-items: center;
@@ -714,7 +714,7 @@ video {
   cursor: pointer;
 }
 
-.css-19yo1fh {
+.current_page {
   display: flex;
   -webkit-box-align: center;
   align-items: center;
