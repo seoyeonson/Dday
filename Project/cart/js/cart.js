@@ -68,41 +68,29 @@ $(function () {
 
 
 /* modal */
-
-
-$("button.delete_individual").click(function () {
-    let product = $(this).parent("li");
-    let temp = 0;
-    var delete_true = 0;
+var product;
+$("button.delete_individual").on("click", function(){
+    product = "";
+    console.log("check1", product);
     $(".modal").fadeIn();
     $('body').css("overflow", "hidden");
-    temp = $(this).parent("li");
-    $(".confirm").click(function () {
-        product = temp;
-        product.remove();
-        $(".modal").fadeOut();
-        $('body').css("overflow", "visible");
-        delete_true = 1;
-        console.log(delete_true);
-        item_count = $(".productlist").length;
-        itemcheck = ($('.check:checked').length);
-        $(".item_count").text("(" + itemcheck + "/" + item_count + ")");
-    })
-    $(".cancel").click(function () {
-        $(".modal").fadeOut();
-        $('body').css("overflow", "visible");
-        delete_true = 0;
-        console.log(delete_true);
-        product = 0;
-    });
-    if (delete_true == 1) (function(){
-        item_count--;
-        console.log("item_count"+item_count);
-        $(".item_count").text("(" + itemcheck + "/" + item_count + ")");
-    });
-    $(".item_count").text("(" + itemcheck + "/" + item_count + ")");
+    product = $(this).parent("li");
+    console.log("check2", product);
 });
 
+$(".confirm").on("click", function () {
+    product.remove();
+    console.log("check3", product);
+    item_count = $(".productlist").length;
+    itemcheck = ($('.check:checked').length);
+    $(".item_count").text("(" + itemcheck + "/" + item_count + ")");
+    $(".modal").fadeOut();
+});
+
+$(".cancel").click(function () {
+    $(".modal").fadeOut();
+    $('body').css("overflow", "visible");
+});
 
 $("button.choose_delete").click(function () {
     let selected_product = $($(".check:checked").closest("li"));
