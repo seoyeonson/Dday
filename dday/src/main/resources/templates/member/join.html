@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/member/css/member.css">
     <link rel="stylesheet" href="/main/css/header.css">
     <link rel="stylesheet" href="/main/css/footer.css">
+    <link rel="stylesheet" href="/member/css/modal.css">
     <!-- icon -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
@@ -108,7 +109,7 @@
                         <input class="input_box" id="memberPhoneNumber" maxlength="11" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="숫자만 입력해주세요." autocomplete="off">
                     </div>
                     <div class="button_section">
-                        <button type="button" class="phone_check_button disabled_button">인증번호 받기</button>
+                        <button type="button" class="phone_check_button disabled_button" disabled="disabled">인증번호 받기</button>
                     </div>
                 </div>
                 <div class="main_section num_check_input" >
@@ -128,10 +129,16 @@
                         <label>주소<span class="essential">*</span></label>
                     </div>
                     <div class="input_section">
-                        <button class="address_search">
-                            <span><img src="/main/images/main/search.png">주소 검색</span>
-                        </button>
-                        <span class="address_text">배송지에 따라 상품 정보가 달라질 수 있습니다.</span>
+                        <input class="input_box" type="text" id="memberAddress" name="memberAddress" placeholder="주소를 입력해주세요." readonly>
+                    </div>
+                    <div class="button_section">
+                        <button type="button" onclick="sample6_execDaumPostcode()">검색</button>
+                    </div>
+                </div>
+                <div class="main_section">
+                    <div class="label_div"></div>
+                    <div class="input_section">
+                        <input class="input_box" type="text" id="memberAddressDetail" name="memberAddressDetail" placeholder="상세주소를 입력해주세요." autocomplete="off">
                     </div>
                     <div class="button_section"></div>
                 </div>
@@ -220,117 +227,36 @@
             </div>
         </section>
     </main>
+    <div class="modalContainer">
+        <div class="modalBox">
+            <div class="modal">
+                <div class="modalBody">
+                    <div class="modalWrapper">
+                        <div class="modalContent">
+                            <div class="modalProductName">
+                                <span>인증이 완료되었습니다.</span>
+                            </div>
+                        </div>
+                        <div class="modalButtonBox">
+                            <button class="modalCancelButton" type="button">
+                                <span class="modalButtonText">확인</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <footer th:replace="main/footer.html" :: f></footer>
 </body>
 </html>
 <script src="https://kit.fontawesome.com/60492e1060.js" crossorigin="anonymous"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="/member/js/join.js"></script>
 <script>
-    var $phone_check_button = $("button.phone_check_button");
-    var $memberPhoneNumber = $("input#memberPhoneNumber");
-    var $num_check_button = $("button.num_check_button");
-    var $phoneNumCheck = $("input#phoneNumCheck");
-    var x;
 
-    $memberPhoneNumber.on("keyup", function(){
-        keyupCheck($memberPhoneNumber, $phone_check_button);
-    });
-
-    $phoneNumCheck.on("keyup", function(){
-        keyupCheck($phoneNumCheck, $num_check_button);
-    });
-
-    $num_check_button.on("click", function(){
-        clearInterval(x);
-        let check = true;
-
-        if(check){
-            // 만약에 인증번호가 일치한다면 수정 불가능
-            document.getElementById("timer").innerHTML = "";
-
-            // 인증번호 버튼, 입력버튼 비활성화
-            buttonDisable($(this));
-            inputDisable($phoneNumCheck);
-        } else {
-            // 다시 인증번호 받기
-        }
-    });
-
-    // 번호 인증 버튼을 누를 경우
-    $phone_check_button.on("click", function(){
-        <!-- 카운트다운 타이머 -->
-        let time = 5; //기준시간설정
-        let min = ""; //분
-        let sec = ""; //초
-
-        //setInterval(함수, 시간) : 주기적인 실행
-        x = setInterval(function(){
-            //parseInt : 정수 반환
-            min = parseInt(time/60) /* 몫계산 */
-            sec = time%60; //나머지 계산
-
-            document.getElementById("timer").innerHTML = min + "분" + sec + "초";
-            time--;
-
-            //시간 끝나면
-            if(time < 0) {
-                clearInterval(x); //setInterval() 실행을 끝냄
-
-                // 번호 입력을 다시 받기.
-                $memberPhoneNumber.prop("placeholder", "다시 입력해주세요.");
-                $memberPhoneNumber.val("");
-
-                // 번호 입력창 활성화
-                inputAble($memberPhoneNumber);
-
-                // 인증번호 입력칸 감추기
-                $('div.num_check_input').css("display", "none");
-
-                $phoneNumCheck.val("");
-            }
-        }, 1000);
-
-        // 인증번호 입력칸 보이게 하기
-        $('div.num_check_input').css("display", "inline-flex");
-            // 인증번호 입력창, 버튼 활성화
-            inputDisable($memberPhoneNumber);
-            buttonDisable($(this));
-    });
-
-    // 번호 및 인증번호 길이에 맞게 입력시 버튼 활성화
-    function keyupCheck(input, btn){
-        let length = input.val().length;
-        let checkLength = input.attr("maxlength");
-
-        if(length == checkLength){
-            buttonAble(btn);
-        }
-    }
-
-    // 버튼 활성화
-    function buttonAble(btn){
-        btn.removeClass("disabled_button");
-        btn.attr("disabled", false);
-    }
-
-    // 버튼 비활성화
-    function buttonDisable(btn){
-        btn.addClass("disabled_button");
-        btn.attr("disabled", true);
-    }
-
-    // 입력창 비활성화
-    function inputDisable(input){
-        input.attr("readonly", true);
-        input.css("color", "rgb(221, 221, 221)");
-    }
-
-    // 입력창 활성화
-    function inputAble(input){
-        input.prop("readonly", false);
-        input.css("color", "black");
-    }
 
 </script>
 <script src="/main/js/header.js"></script>

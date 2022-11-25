@@ -56,6 +56,7 @@
 </div>
         <!-- 상승 아이콘-->
 <!--modal-->
+<form id="modalClear">
 <div class="modalContainer">
     <div class="modalBox">
         <div class="modal">
@@ -114,6 +115,7 @@
         </div>
     </div>
 </div>
+</form>
 <!--modal end-->
 <!--푸터-->
 <footer th:replace="main/footer.html" :: f></footer>
@@ -157,7 +159,7 @@ const todayProduct = new Swiper('.swiper-container-todayProduct', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev'
     },
-    loop: true
+    // loop: true
 })
     
 /*

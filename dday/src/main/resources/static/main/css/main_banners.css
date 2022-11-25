@@ -201,6 +201,11 @@ button{
   bottom: 16px;
   z-index: 10;
 }
+.mainCart{
+  right: 16px;
+  bottom: 16px;
+  z-index: 10;
+}
 
 .button-absolute{
   position: absolute;
