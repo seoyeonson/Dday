@@ -324,10 +324,10 @@ a.orderList2{
     line-height: 19px;
     letter-spacing: -0.3px;
     font-size: 15.5px;
-    color: #ff4500;
+    color: rgb(102, 102, 102);
     text-decoration: none;
     background-color: transparent;
-    font-weight: 700;
+
 
 }
 a.orderList3{
@@ -415,10 +415,10 @@ a.orderList8{
     line-height: 19px;
     letter-spacing: -0.3px;
     font-size: 15.5px;
-    color: rgb(102, 102, 102);
+    color: #ff4500;
     text-decoration: none;
     background-color: transparent;
-
+    font-weight: 600;
 }
 
 span.orderList{
@@ -1440,7 +1440,7 @@ div.recoId {
 }
 span.timer{
     position: absolute;
-    top: 128%;
+    top: 144.5%;
     transform: translateY(-50%);
     right: 447px;
 }
@@ -1452,6 +1452,12 @@ div.agreeRight{
     flex: 1 1 0%;
 
     color: #333;
+}
+
+.msg p{
+    font-size: 13px;
+    color: rgb(240, 63, 64);
+    margin-top: -4px;
 }
 div.agreeRight2{
     display: flex;
