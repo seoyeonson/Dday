@@ -1,4 +1,4 @@
-.modalContainer {
+.modalContainer{
     position: fixed;
     z-index: 1300;
     inset: 0px;
@@ -50,11 +50,15 @@
     max-width: 600px;
 }
 
+
+
 .modalWrapper {
     overflow: hidden auto;
     max-height: 355px;
     min-height: 120px;
 }
+
+
 
 .modalContent {
     margin: 2px 0px 4px;
@@ -69,6 +73,8 @@
     -webkit-box-align: center;
     align-items: center;
 }
+
+
 
 .priceAndCount{
     display: flex;
@@ -251,8 +257,4 @@
 }
 
 
-.modalButtonText {
-    display: inline-block;
-    font-size: 16px;
-    font-weight: 500;
-}
+

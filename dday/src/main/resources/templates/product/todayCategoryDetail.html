@@ -13,10 +13,8 @@
     <!-- css -->
     <!--    <link rel="stylesheet" href="/Project/serviceCenter/css/serviceNotice.css">-->
     <link rel="stylesheet" href="/product/css/categoryDetail.css">
-    <link rel="stylesheet" href="/product/css/modal.css">
     <link rel="stylesheet" href="/main/css/header.css">
     <link rel="stylesheet" href="/main/css/footer.css">
-
 </head>
 <body>
 <header th:replace="main/header.html" :: h></header>
@@ -28,7 +26,6 @@
             <div>
                 <div class="title">
                     <h1>[강남면옥] 갈비탕</h1>
-                    <button class="detail_share"></button>
                 </div>
                 <h2 class="title_bottom">든든하고 푸짐한 한 그릇</h2>
             </div>
@@ -38,7 +35,7 @@
                 <span>원</span>
             </h2>
             <span class="price_origin">11,900</span>
-            <div class="login_sale">로그인 후, 할인 및 적립 혜택이 제공됩니다.</div>
+<!--            <div class="login_sale">로그인 후, 할인 및 적립 혜택이 제공됩니다.</div>-->
             <div class="selling_detail">
                 <dl>
                     <dt>판매자</dt>
@@ -47,41 +44,48 @@
                     </dd>
                 </dl>
                 <dl>
-                    <dt>상품기한</dt>
+                    <dt>파트너 연락처</dt>
+                        <dd>
+                            <p>02-1111-1111</p>
+                        </dd>
+                </dl>
+                <dl>
+                    <dt>영업시간</dt>
                     <dd>
-                        <p>제조일자 - 유통기한</p>
-                        <p>2022.11.19 - 2022.11.30</p>
+<!--                        <p></p>-->
+                        <p>22:00</p>
                     </dd>
                 </dl>
                 <dl>
                     <dt>안내사항</dt>
                     <dd>
-                        <p>- 모든 제품은 정품 검수 완료된 상품으로, 박스 개봉 이후에는 교환 및 반품은 불가 한 점 양해 부탁 드립니다.
+                        <p>- 당일판매 상품인 만큼 재고의 유무가 확실하지 않다는 점 양해부탁드립니다.
+                            파트너사에 연락 후, 방문해주시길 바랍니다.
                         </p>
                     </dd>
                 </dl>
             </div>
             <div>
-                <div class="selling_detail">
+                <!--<div class="selling_detail">
                     <dl>
                         <dt>상품선택</dt>
                         <div class="selling_choice">
                             <div class="product_name">
                                 <span>[강남면옥] 갈비탕</span>
                             </div>
-                            <div class="product_cnt_box">
-                                <div class="product_cnt">
-                                    <button class="minus"></button>
-                                    <div class="cnt">1</div>
-                                    <button class="plus"></button>
-                                </div>
-                                <div class="cnt_price">
-                                    <span>11,900원</span>
-                                </div>
-                            </div>
+&lt;!&ndash;                            <div class="product_cnt_box">&ndash;&gt;
+&lt;!&ndash;                                <div class="product_cnt">&ndash;&gt;
+&lt;!&ndash;                                    <button class="minus"></button>&ndash;&gt;
+&lt;!&ndash;                                    <div class="cnt">1</div>&ndash;&gt;
+&lt;!&ndash;                                    <button class="plus"></button>&ndash;&gt;
+&lt;!&ndash;                                </div>&ndash;&gt;
+&lt;!&ndash;                                <div class="cnt_price">&ndash;&gt;
+&lt;!&ndash;                                    <span>11,900원</span>&ndash;&gt;
+&lt;!&ndash;                                </div>&ndash;&gt;
+&lt;!&ndash;                            </div>&ndash;&gt;
                         </div>
                     </dl>
-                </div>
+                </div>-->
                 <div>
                     <div>
                         <div class="total_price">
@@ -89,30 +93,24 @@
                             <span class="changePrice">11,900</span>
                             <span>원</span>
                         </div>
-                        <div class="total_point">
-                            <span>적립</span>
-                            <span>로그인 후, 적립 혜택 제공</span>
-                        </div>
+<!--                        <div class="total_point">-->
+<!--                            <span>적립</span>-->
+<!--                            <span>로그인 후, 적립 혜택 제공</span>-->
+<!--                        </div>-->
                     </div>
                 </div>
-                <div class="purchase_button">
-                    <!-- <button class="btn">
-                        <span>
-                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIHN0cm9rZT0iI0NDQyIgc3Ryb2tlLXdpZHRoPSIxLjYiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTEyLjY2NiAyM2EzLjMzMyAzLjMzMyAwIDEgMCA2LjY2NiAwIi8+CiAgICAgICAgPHBhdGggZD0iTTI1Ljk5OCAyMi43MzhINmwuMDEzLS4wM2MuMDc2LS4xMzUuNDcxLS43MDQgMS4xODYtMS43MDlsLjc1LTEuMDV2LTYuNjM1YzAtNC40ODUgMy40MzgtOC4xNCA3Ljc0MS04LjMwOEwxNiA1YzQuNDQ2IDAgOC4wNSAzLjcyMiA4LjA1IDguMzE0djYuNjM0bDEuNzA3IDIuNDExYy4xNzMuMjUzLjI1NC4zOC4yNDIuMzh6IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICAgIDwvZz4KPC9zdmc+Cg==" alt="">
-                        </span>
-                    </button> -->
-                    <button class="heart_button btn">
-                            <span>
-                                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0yNS44MDcgNy44NjNhNS43NzcgNS43NzcgMCAwIDAtOC4xNzIgMEwxNiA5LjQ5N2wtMS42MzUtMS42MzRhNS43NzkgNS43NzkgMCAxIDAtOC4xNzMgOC4xNzJsMS42MzQgMS42MzQgNy40NjYgNy40NjdhMSAxIDAgMCAwIDEuNDE1IDBzMCAwIDAgMGw3LjQ2Ni03LjQ2N2gwbDEuNjM0LTEuNjM0YTUuNzc3IDUuNzc3IDAgMCAwIDAtOC4xNzJ6IiBzdHJva2U9IiM1RjAwODAiIHN0cm9rZS13aWR0aD0iMS42IiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K"
-                                     class="blankHeart">
-                            </span>
-                    </button>
+<!--                <div class="purchase_button">-->
+<!--                    <button class="heart_button btn">-->
+<!--                            <span>-->
+<!--                                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0yNS44MDcgNy44NjNhNS43NzcgNS43NzcgMCAwIDAtOC4xNzIgMEwxNiA5LjQ5N2wtMS42MzUtMS42MzRhNS43NzkgNS43NzkgMCAxIDAtOC4xNzMgOC4xNzJsMS42MzQgMS42MzQgNy40NjYgNy40NjdhMSAxIDAgMCAwIDEuNDE1IDBzMCAwIDAgMGw3LjQ2Ni03LjQ2N2gwbDEuNjM0LTEuNjM0YTUuNzc3IDUuNzc3IDAgMCAwIDAtOC4xNzJ6IiBzdHJva2U9IiM1RjAwODAiIHN0cm9rZS13aWR0aD0iMS42IiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K"-->
+<!--                                     class="blankHeart">-->
+<!--                            </span>-->
+<!--                    </button>-->
 <!--                    <button class="in_cart" onclick="location.href='/cart/list'">-->
-                        <button class="in_cart">
-                        <span>장바구니 담기</span>
-                    </button>
-                    <!-- <div class="cart_btn_area"></div> -->
-                </div>
+<!--                        <span>장바구니 담기</span>-->
+<!--                    </button>-->
+<!--                    &lt;!&ndash; <div class="cart_btn_area"></div> &ndash;&gt;-->
+<!--                </div>-->
             </div>
         </section>
     </main>
@@ -124,12 +122,12 @@
                         <span class="name">상품설명</span>
                     </a>
                 </li>
-                <li>
-                    <a href="#review_wrap">
-                        <span class="name">상품리뷰</span>
-                        <span class="count">(9,999+)</span>
-                    </a>
-                </li>
+<!--                <li>-->
+<!--                    <a href="#review_wrap">-->
+<!--                        <span class="name">상품리뷰</span>-->
+<!--                        <span class="count">(9,999+)</span>-->
+<!--                    </a>-->
+<!--                </li>-->
                 <li>
                     <a href="#seller_wrap">
                         <span class="name">판매자정보</span>
@@ -155,7 +153,7 @@
                     </div>
                 </div>
             </div>
-            <!-- 상품리뷰 -->
+<!--            &lt;!&ndash; 상품리뷰 &ndash;&gt;
             <div class="review_wrap product_content" id="review_wrap">
                 <section>
                     <header>
@@ -171,7 +169,7 @@
                         <div class="reviews_cnt">
                             <span>총 27,220개</span>
                         </div>
-                        <!-- review start -->
+                        &lt;!&ndash; review start &ndash;&gt;
                         <div class="review">
                             <div class="member_name_area">
                                 <div class="member_name">
@@ -193,8 +191,8 @@
                                 </footer>
                             </article>
                         </div>
-                        <!-- review end -->
-                        <!-- review start -->
+                        &lt;!&ndash; review end &ndash;&gt;
+                        &lt;!&ndash; review start &ndash;&gt;
                         <div class="review">
                             <div class="member_name_area">
                                 <div class="member_name">
@@ -250,8 +248,8 @@
                                 </footer>
                             </article>
                         </div>
-                        <!-- review end -->
-                        <!-- review start -->
+                        &lt;!&ndash; review end &ndash;&gt;
+                        &lt;!&ndash; review start &ndash;&gt;
                         <div class="review">
                             <div class="member_name_area">
                                 <div class="member_name">
@@ -272,8 +270,8 @@
                                 </footer>
                             </article>
                         </div>
-                        <!-- review end -->
-                        <!-- review start -->
+                        &lt;!&ndash; review end &ndash;&gt;
+                        &lt;!&ndash; review start &ndash;&gt;
                         <div class="review">
                             <div class="member_name_area">
                                 <div class="member_name">
@@ -294,8 +292,8 @@
                                 </footer>
                             </article>
                         </div>
-                        <!-- review end -->
-                        <!-- review start -->
+                        &lt;!&ndash; review end &ndash;&gt;
+                        &lt;!&ndash; review start &ndash;&gt;
                         <div class="review">
                             <div class="member_name_area">
                                 <div class="member_name">
@@ -316,7 +314,7 @@
                                 </footer>
                             </article>
                         </div>
-                        <!-- review end -->
+                        &lt;!&ndash; review end &ndash;&gt;
                     </div>
                     <div class="pageButtonBox">
                         <div class="pageButtons">
@@ -329,7 +327,7 @@
                         </div>
                     </div>
                 </section>
-            </div>
+            </div>-->
             <!-- 판매자정보 -->
             <div class="seller review_wrap product_content" id="seller_wrap">
                 <section>
@@ -359,7 +357,6 @@
         </div>
     </div>
 </div>
-
 
 
 <footer th:replace="main/footer.html" :: f></footer>
