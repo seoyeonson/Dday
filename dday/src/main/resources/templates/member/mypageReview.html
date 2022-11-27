@@ -27,11 +27,11 @@
                     </div>
                 </div>
                 <div class="savingPercent">
-                    <p class="savingPercent">적립 0.1%</p>
+                    <p class="savingPercent">적립 1%</p>
                 </div>
                 <div class="seeGrade">
-                    <button class="seeAll">전체등급 보기</button>
-                    <button class="seeNext">다음 달 예상등급 보기</button>
+                    <button class="seeAll"><a href="/member/mypageReview">상품 후기</a></button>
+                    <button class="seeNext"><a href="/member/mypageEpi">개인 정보 수정</a></button>
                 </div>
             </div>
             <div class="header2">
@@ -52,14 +52,14 @@
             <div class="header3">
                 <button class="coupon">
                     <div class="couponName">
-                        쿠폰
+                        찜한 상품
                         <span class="couponName"></span>
                     </div>
                     <div class="couponCount">
                         1
                         <span class="couponCount">개</span>
                     </div>
-                    <div class="savingChange">쿠폰이 도착했어요!</div>
+                    <div class="savingChange">찜한 상품을 장바구니에 담아보세요!</div>
                 </button>
             </div>
         </div>
@@ -91,7 +91,7 @@
                     </a>
                 </li>
                 <li class="orderList">
-                    <a href="" class="orderList4">
+                    <a href="/member/mypageReview" class="orderList4">
                         상품후기
                         <span class="orderList4"></span>
                     </a>
@@ -176,7 +176,7 @@
                                 </a>
                             </div>
                         </div>
-                        <button class="btnEditModal">후기 수정</button>
+                        <button class="btnEditModal"></button>
                     </div>
 
                 </div>
@@ -192,7 +192,7 @@
     <div class="modalBox">
         <div class="modal">
             <div class="modalBody">
-                <div class="modalWrapper">
+                <div class="modalWrapper" style="max-height: 1000px" >
                     <header class="modalHeader">
                         <h2 class="writeReview">후기작성</h2>
                         <button class="exitModal">
@@ -202,7 +202,11 @@
                     <div class="reviewWrap">
                         <div>
                             <div class="goodsName">
-                                <span class="goodsName"><img class="reviewImg" srcset="https://img-cf.kurly.com/shop/data/goods/1637922047806l0.jpg"></span>
+<!--                               <span class="goodsName">-->
+<!--                                   <span class="goodsName1"></span>-->
+                                <img class="reviewImg" srcset="https://img-cf.kurly.com/shop/data/goods/1637922047806l0.jpg">
+<!--                                   <noscript></noscript>-->
+<!--                               </span>-->
                                 <div class="goodsName2">
                                     <span class="goodsName2">표고버섯 5~6입 100g</span>
                                 </div>
@@ -215,15 +219,46 @@
                                         </label>
                                         <div class="reviewTextArea">
                                             <div class="reviewTextArea2">
-                                                <textarea id="contents" class="reviewTextArea" inputmode="text" aria-label="textarea-message" name="contents">
-                                                    
-                                                </textarea>
+                                                <textarea id="contents" class="reviewTextArea" inputmode="text" aria-label="textarea-message" placeholder="상품 특성에 맞는 후기를 작성해주세요. 예) 레시피, 겉포장 속 실제 구성품 사진, 플레이팅 등" name="contents">
 
+                                                </textarea>
+                                                <div class="content">
+<!--                                                    <p class="content">-->
+<!--                                                        상품 특성에 맞는 후기를 작성해주세요. 예) 레시피, 겉포장 속 실제 구성품 사진, 플레이팅 등-->
+<!--                                                    </p>-->
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="reviewText2"></div>
-                                    <div class="reviewText2"></div>
+                                    <div class="reviewText2">
+                                        <label class="label1">
+                                            사진첨부
+                                        </label>
+                                        <div class="plusImg">
+                                            <div class="plusImg2">
+                                                <label class="plusImg2" for="">
+                                                    <button class="plusImg2" type="button" onclick="onClickUpload();">
+                                                        <span class="plusImg2"></span>
+                                                    </button>
+                                                    <input class="plusImg2" id="plusImg2" type="file" accept="image/jpeg, image/jpg, image/png">
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="reviewText2">
+                                        <label class="label1"></label>
+                                            <ul class="reviewRule">
+                                                <li class="reviewRule">
+                                                    사진은 최대 1장까지, 30MB 이하의 이미지만 업로드가 가능합니다.
+                                                </li>
+                                                <li class="reviewRule">
+                                                    상품과 무관하거나 반복되는 동일 단어/문장을 사용하여 후기로 볼 수 없는 글, 판매자와 고객의 후기 이용을 방해한다고 판단되는 경우, 배송 박스, 구매 상품을 구분할 수 없는 전체 사진, 화면캡쳐, 음란 및 부적절하거나 불법적인 내용은 통보없이 삭제 및 적립금 회수될 수 있습니다.
+                                                </li>
+                                                <li class="reviewRule">
+                                                    전화번호, 이메일, 주소, 계좌번호 등 개인정보가 노출되지 않도록 주의해주세요.
+                                                </li>
+                                            </ul>
+                                    </div>
                                 </div>
                             </form>
                         </div>
@@ -233,7 +268,7 @@
                             <span class="modalButtonText">취소</span>
                         </button>
                         <button type="button" class="modalOkButton">
-                            <span class="modalButtonText">장바구니 담기</span>
+                            <span class="modalButtonText">등록</span>
                         </button>
                     </div>
                 </div>
@@ -247,6 +282,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="/main/js/header.js"></script>
 <script>
+
+    function onClickUpload() {
+        let myInput = document.getElementById("plusImg2");
+        myInput.click();
+    }
+
+
+
     $('input[type=radio][name=tabmenu]').on('click', function() {
         var chkValue = $('input[type=radio][name=tabmenu]:checked').val();
 
