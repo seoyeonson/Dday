@@ -206,7 +206,7 @@ div#detail main section{
     color: rgb(51, 51, 51);
 }
 
-.product_cnt_box{
+.product_detail_cnt_box{
     display: flex;
     justify-content: space-between;
     align-items: center;

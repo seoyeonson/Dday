@@ -163,7 +163,7 @@ $pricehigh.on("click", function () {
 })
 
 
-/* 장바구니 추가 modal */
+/*/!* 장바구니 추가 modal *!/
 $(function () {
 
     $("button.infoRight").click(function () {
@@ -192,5 +192,5 @@ $(function () {
     });
 
 
-});
+});*/
 
