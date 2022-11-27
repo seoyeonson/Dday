@@ -83,8 +83,8 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>2</td>
-                                    <td rowspan="2">299550</td>
+                                    <td>1</td>
+                                    <td>299550</td>
 
                                     <td class="orderProductName">[유통기한2022.12.29]루스타 영양강화 강력밀가루 20kg</td>
                                     <td>
@@ -92,126 +92,20 @@
                                         <p class="orderStock">재고:10</p>
                                     </td>
                                     <td>8,000원</td>
-                                    <td rowspan="2">0원</td>
-                                    <td rowspan="2">3000원(선불)</td>
-                                    <td rowspan="2">64,000원</td>
-                                    <td rowspan="2">
+                                    <td>0원</td>
+                                    <td>3000원(선불)</td>
+                                    <td>64,000원</td>
+                                    <td>
                                         <input type="number" class="deliveryNumber" placeholder="송장번호 입력">
                                         <input type="button" class="numberSubmit" onclick="getDelieveryNumber();" value="등록">
                                     </td>
-                                    <td rowspan="2">
+                                    <td>
                                         <div>
                                             <p class="changeDeliveryStatus" style="margin-bottom:1px;"></p>
                                             <input type="radio" name="deliveryStatus" value="배송중">배송 중
                                             <input type="radio" name="deliveryStatus" value="배송완료">배송완료
                                         </div>
                                     </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td class="orderProductName">피스타치오분태 (미국) 200g</td>
-                                    <td>
-                                        <p>1</p>
-                                        <p class="orderStock">재고:15</p>
-                                    </td>
-                                    <td style="border-right:1px">9,000원</td>
-
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
                                 </tr>
                                 <tr>
                                     <td></td>
@@ -251,8 +145,32 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <div class="btnContent">
-                            <div class="pagination" id="pagination">페이지 영역</div>
+<!--                        <div class="btnContent">-->
+<!--                            <div class="pagination" id="pagination">페이지 영역</div>-->
+<!--                        </div>-->
+                        <div class="pagination">
+                            <a class="page_move">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAHCAQAAABwkq/rAAAAHUlEQVR42mNgAIPi/8X/kWkwA8SE0UQIMJAsCKMBBzk27fqtkcYAAAAASUVORK5CYII=" alt="처음 페이지로 이동하기 아이콘">
+                            </a>
+                            <a class="page_move">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAQAAABqrk9lAAAAGElEQVR42mNgAIPi/8X/4QwwE5PBQJADAAKSG3cyVhtXAAAAAElFTkSuQmCC" alt="이전 페이지로 이동하기 아이콘">
+                            </a>
+                            <a class="current_page">1</a>
+                            <a class="page_move">2</a>
+                            <a class="page_move">3</a>
+                            <a class="page_move">4</a>
+                            <a class="page_move">5</a>
+                            <a class="page_move">6</a>
+                            <a class="page_move">7</a>
+                            <a class="page_move">8</a>
+                            <a class="page_move">9</a>
+                            <a class="page_move">10</a>
+                            <a class="page_move">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAQAAABqrk9lAAAAGUlEQVR42mMo/l/8nwECQEwCHEwGhAlRBgA2mht3SwgzrwAAAABJRU5ErkJggg==" alt="다음 페이지로 이동하기 아이콘">
+                            </a>
+                            <a class="page_move">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAHCAQAAABwkq/rAAAAIElEQVR42mMo/l/8n4GBgQFGQ5kgDowmQZCwAMImhDkAb0k27Zcisn8AAAAASUVORK5CYII=" alt="마지막 페이지로 이동하기 아이콘">
+                            </a>
                         </div>
                     </div>
             </div>

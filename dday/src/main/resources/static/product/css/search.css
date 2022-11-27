@@ -1435,7 +1435,7 @@ span.footerRight {
     color: rgb(255, 255, 255);
 }
 
-.modal {
+/*.modal {
     display:none;
     position: fixed;
     z-index: 1300;
@@ -1505,7 +1505,7 @@ span.footerRight {
     flex-direction: column;
     max-height: calc(100% - 64px);
     max-width: 600px;
-}
+}*/
 
 .fill {
     color: #ff4500 !important;

@@ -13,6 +13,8 @@
 <link rel="stylesheet" href="/main/css/footer.css">
 <link rel="stylesheet" href="/product/css/searchDemo.css">
 <link rel="stylesheet" href="/product/css/search.css">
+<link rel="stylesheet" href="/product/css/modal.css">
+
 <style>
     * {
         font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum, sans-serif;
@@ -141,11 +143,11 @@
                         </ul>
                     </div>
                     <div class="product_grid">
-                        <div href="/goods/5001691" class="product_content">
+                        <div href="/goods/5001691" class="product_content delivery_product_content">
                             <div>
                                 <div class="product_img_section">
                                     <img src="https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/1628558475434l0.jpg" alt="상품 이미지">
-                                    <div><button type="button" class="pickup"><img src="/search/images/cart.png" alt="장바구니 아이콘"></button></div>
+                                    <div><button type="button" class="pickup inputCart"><img src="/search/images/cart.png" alt="장바구니 아이콘"></button></div>
                                 </div>
                             </div>
                             <div class="product_info"><span class="delivery_info_section"><span class="product_name">[상하목장] 유기농 우유 3종</span></span>
@@ -197,54 +199,60 @@
 <!-- footer -->
 <footer th:replace="main/footer.html" :: f></footer>
 <!-- modal -->
-<div class="modal" role="presentation">
-    <div class="modalblur">
-        <div class="modal_content" title="클릭하면 창이 닫힙니다.">
-            <div class="modalText2">
-                <div class="modalTextInfo">
-                    <div class="modalTextInfoDetail">
-                        <div class="modalTextInfoDetailTitle">
-                            <span class="modalTextInfoDetailTitle">[서울우유] 나 100% 우유 1.8L</span>
-                        </div>
-                        <div class="modalTextInfoDetailBottom">
-                            <div class="modalTextInfoDetailBottomPrice">
-                                <span class="modalTextInfoDetailBottomPrice">2,450원</span>
-                            </div>
-                            <div class="modalTextInfoDetailBottomCount">
-                                <button class="decrease" type="button" aria-label="수량내리기"></button>
-                                <div class="middleCount">0</div>
-                                <button class="increase" type="button"></button>
-                            </div>
+
+<div class="modalContainer">
+    <div class="modalBox">
+        <div class="modal">
+            <div class="modalBody">
+                <div class="modalWrapper">
+                    <div class="modalContent">
+                        <div class="modalProductName">
+                            <span>[KF365] 양념 소불고기 1kg(냉장)</span>
                         </div>
                     </div>
-                </div>
-                <div class="modalText2Bottom">
-                    <div class="modalText2Bottom2">
-                        <div class="modalText2BottomSum">
-                            <p class="sum">합계</p>
-                            <div>
-                                <span class="sumPrice">0</span>
-                                <span class="sumWon">원</span>
-                            </div>
+                    <div class="priceAndCount">
+                        <div>
+                          <span class="discountBox">
+                              17,590원
+                          </span>
+                            <span class="priceBox">
+                              18,990원
+                          </span>
                         </div>
-                        <div class="modalSaving">
-                            <span class="modalSavingBox">적립</span>
-                            <span class="modalSavingBox2">
-                    구매시
-                    <span class="modalSavingBox3">
-                      0원적립립
-                    </span>
-                  </span>
+                        <div class="product_cnt_box">
+                            <button class="minus"></button>
+                            <div class="cnt">1</div>
+                            <button class="plus"></button>
                         </div>
                     </div>
-                </div>
-                <div class="modalText2Footer">
-                    <button class="footerLeft" type="button">
-                        <span class="footerLeft">취소</span>
-                    </button>
-                    <button class="footerRight">
-                        <span class="footerRight">장바구니 담기</span>
-                    </button>
+                    <div class="totalPriceBox">
+                        <div class="totalPriceInner">
+                            <div class="totalLine">
+                                <p>
+                                    합계
+                                </p>
+                                <div>
+                                    <span class="changePrice">17,590</span>
+                                    <span class="totalWon">원</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pointBox">
+                            <span class="pointText">적립</span>
+                            <span class="pointCalText">구매 시
+                                  <span class="realPoint">5% 적립
+                                  </span>
+                              </span>
+                        </div>
+                    </div>
+                    <div class="modalButtonBox">
+                        <button class="modalCancelButton" type="button">
+                            <span class="modalButtonText">취소</span>
+                        </button>
+                        <button type="button" class="modalOkButton">
+                            <span class="modalButtonText">장바구니 담기</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -254,5 +262,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="/main/js/header.js"></script>
 <script src="/product/js/search.js"></script>
+<script src="/product/js/category.js"></script>
 </body>
 </html>
