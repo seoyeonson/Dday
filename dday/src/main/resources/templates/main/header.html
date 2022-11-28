@@ -3,6 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        function fn_search() {
+            alert("212");
+            if($("#searchPage")!= null){
+                alert(1);
+                document.searchForm.submit();
+                $.ajax({
+                    type:"GET",
+                    url:"/search/search",
+                    data: $("name[keyword]").serialize(),
+                    dataType:"JSON",
+                    success: function(data){
+                        console.log("통신성공");
+                        alert("통신성공")
+                        var productName = $("#gnb_search").val();
+                        console.log(productName);
+                    },
+                    error:function(){
+                        console.log("통신에러");
+                    }
+                })
+                alert(2);
+                return ;
+            }
+
+        }
+    </script>
 </head>
 <body>
 <header th:fragment="h">
@@ -20,18 +48,22 @@
                 </div>
                 <!-- 로그인바 종료-->
                 <div class="subsearchbar">
-                    <div class="logo" onclick="location.href='/'">
+                    <div class="logo"> <!--onclick="location.href='/'"-->
                         <img src="/main/images/banner/logo-대체.webp" alt="마켓컬리 로고" class="main-logo e1s3pt0j0">
                         <button class="active purple text1010">D-Day</button>
                     </div>
-                    <div class="hiddenlogo">
-                        <div class="mainsearchbar">
-                            <input id="gnb_search" placeholder="검색어를 입력해주세요" required="" class="searchbar-title" value="">
-                            <button id="submit" aria-label="submit" class="searchbar-search">
-                                <img src="/main/images/main/search.png" class="search-image">
-                            </button>
+                    <!--검색창-->
+                    <form name="searchForm" onsubmit="return false" action="/search/search"><!--action="/page/page.do"-->
+                        <div class="hiddenlogo">
+                            <div class="mainsearchbar">
+                                <input id="gnb_search" name="keyword" placeholder="검색어를 입력해주세요" required="" class="searchbar-title" value="">
+                                <button id="btn_search" aria-label="submit" class="searchbar-search" name="searchBtn" onclick="fn_search()">
+                                    <img src="/main/images/main/search.png" class="search-image">
+                                </button>
+                            </div>
                         </div>
-                    </div>
+                    </form>
+                    <!--검색창-->
                     <div class="hiddenlogo">
                         <div class="link-service">
                             <div class="css1-icon" onclick="location.href='/member/mypageDelivery'"></div>
@@ -74,4 +106,6 @@
     </div>
 </header>
 </body>
+
+
 </html>
