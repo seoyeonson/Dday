@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Data
 @NoArgsConstructor
-public class MemberVO {
+public class MemberDTO {
     private Long memberNumber;
     private String memberId;
     private String memberPw;
@@ -19,16 +19,10 @@ public class MemberVO {
     private String memberType;
     private String memberStatus;
 
-    public void create(MemberVO memberVO) {
-        this.memberNumber = memberVO.getMemberNumber();
-        this.memberId = memberVO.getMemberId();
-        this.memberPw = memberVO.getMemberPw();
-        this.memberName = memberVO.getMemberName();
-        this.memberEmail = memberVO.getMemberEmail();
-        this.memberPhoneNumber = memberVO.getMemberPhoneNumber();
-        this.memberGender = memberVO.getMemberGender();
-        this.memberType = memberVO.getMemberType();
-    }
+    private String addressMain;
+    private String addressDetail;
+    private String addressReceivePerson;
+    private String addressReceivePhoneNumber;
 
     public void create(String memberId, String memberPw, String memberName, String memberEmail, String memberPhoneNumber, String memberGender, String memberType) {
         this.memberId = memberId;
@@ -38,13 +32,5 @@ public class MemberVO {
         this.memberPhoneNumber = memberPhoneNumber;
         this.memberGender = memberGender;
         this.memberType = memberType;
-    }
-
-    public void create(String memberPw, String memberName, String memberEmail, String memberPhoneNumber, String memberGender) {
-        this.memberPw = memberPw;
-        this.memberName = memberName;
-        this.memberEmail = memberEmail;
-        this.memberPhoneNumber = memberPhoneNumber;
-        this.memberGender = memberGender;
     }
 }
