@@ -8,7 +8,7 @@
 </head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
 <link rel="stylesheet" href="/main/css/header.css">
 <link rel="stylesheet" href="/main/css/footer.css">
 <link rel="stylesheet" href="/cart/css/kurly.css">
@@ -23,48 +23,55 @@
 <!-- header 시작 -->
 <header th:replace="main/header.html" :: h></header>
 <!-- header 종료 -->
-<div class="css-1ykiyus e146m4rf2">
-    <div class="css-1uom1od e146m4rf0">
-        <h2 class="css-10owlr e146m4rf1">주문서</h2>
-        <div class="css-ixlb9s epvroj94">
-            <div class="css-zo1i6f edbbr7c2">
-                <h3 class="css-1ddzp0m edbbr7c1">주문 상품</h3>
-                <!-- <button class="css-lvqq7y e17cst861"><img
-                        src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8ZGVmcz4KICAgICAgICA8cGF0aCBpZD0iN2EwMnFxZzNqYSIgZD0iTTExIDEyaDl2OSIvPgogICAgPC9kZWZzPgogICAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8cGF0aCBkPSJNMCAwaDMwdjMwSDB6Ii8+CiAgICAgICAgPHVzZSBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSIgdHJhbnNmb3JtPSJyb3RhdGUoLTQ1IDE1LjUgMTYuNSkiIHhsaW5rOmhyZWY9IiM3YTAycXFnM2phIi8+CiAgICA8L2c+Cjwvc3ZnPgo="
-                        alt="접기" class="css-hvzkdq e17cst860"></button> -->
+<div class="order_page">
+    <div class="order_margin">
+        <h2 class="order_title">주문서</h2>
+        <div class="order_content">
+            <div class="item_title">
+                <h3 class="order_subtitle">주문 상품</h3>
             </div>
-            <div class="css-bd9p1l e17a7yib9"><span class="css-16q0xgm e17a7yib8"></span><span
-                    class="css-10nl60h e17a7yib7"><span class="css-1f86gv6 e17a7yib6">[서울우유] 나 100% 우유
-                            1.8L</span></span><span class="css-1efb5i1 e17a7yib4">1개</span><span
-                    class="css-1j31gob e17a7yib3"><span class="css-jnogx7 e17a7yib0">5,350원</span></span></div>
-            <div class="css-bd9p1l e17a7yib9"><span class="css-17mudi9 e17a7yib8"></span><span
-                    class="css-10nl60h e17a7yib7"><span class="css-1f86gv6 e17a7yib6">[연세우유 x 마켓컬리] 전용목장우유
-                            900mL</span></span><span class="css-1efb5i1 e17a7yib4">1개</span><span
-                    class="css-1j31gob e17a7yib3"><span class="css-jnogx7 e17a7yib0">2,070원</span></span></div>
-            <div class="css-bd9p1l e17a7yib9"><span class="css-1fxy0n6 e17a7yib8"></span><span
-                    class="css-10nl60h e17a7yib7"><span class="css-1f86gv6 e17a7yib6">[고기반찬] 고추장 제육 불고기
-                            300g</span></span><span class="css-1efb5i1 e17a7yib4">1개</span><span
-                    class="css-1j31gob e17a7yib3"><span class="css-jnogx7 e17a7yib0">5,300원</span></span></div>
-            <div class="css-bd9p1l e17a7yib9"><span class="css-119gcys e17a7yib8"></span><span
-                    class="css-10nl60h e17a7yib7"><span class="css-1f86gv6 e17a7yib6">[에코후레쉬] 냉장고 냄새
-                            탈취제</span></span><span class="css-1efb5i1 e17a7yib4">1개</span><span
-                    class="css-1j31gob e17a7yib3"><span class="css-jnogx7 e17a7yib0">5,500원</span></span></div>
-            <div class="css-6q17pt edbbr7c2">
-                <h3 class="css-1ddzp0m edbbr7c1">주문자 정보</h3>
+            <div class="product_content">
+                <span class="product_img1"></span>
+                <span class="product_name_section">
+                        <span class="product_name">[서울우유] 나 100% 우유
+                            1.8L</span>
+                    </span>
+                <span class="quantity">1개</span>
+                <span class="product_price_section"><span class="product_price">5,350원</span></span>
             </div>
-            <div id="kurly-orderer-info" class="css-shoa2s e1vfdada3">
-                <div class="css-1tq1t75 e150alo82"><span class="css-ln1csn e150alo81">보내는 분</span>
-                    <div class="css-82a6rk e150alo80">
-                        <div class="css-t6o2y8 e1vfdada2">강희수</div>
+            <div class="product_content">
+                <span class="product_img2"></span>
+                <span class="product_name_section">
+                        <span class="product_name">[연세우유 x 마켓컬리] 전용목장우유
+                            900mL</span>
+                    </span>
+                <span class="quantity">1개</span>
+                <span class="product_price_section"><span class="product_price">2,070원</span></span>
+            </div>
+            <div class="product_content"><span class="product_img3"></span><span class="product_name_section"><span
+                    class="product_name">[고기반찬] 고추장 제육 불고기
+                            300g</span></span><span class="quantity">1개</span><span class="product_price_section"><span
+                    class="product_price">5,300원</span></span></div>
+            <div class="product_content"><span class="product_img4"></span><span class="product_name_section"><span
+                    class="product_name">[에코후레쉬] 냉장고 냄새
+                            탈취제</span></span><span class="quantity">1개</span><span class="product_price_section"><span
+                    class="product_price">5,500원</span></span></div>
+            <div class="section_divider">
+                <h3 class="order_subtitle">주문자 정보</h3>
+            </div>
+            <div id="orderer-info" class="customer_info_section">
+                <div class="customer_info_layout"><span class="info_subtitle">보내는 분</span>
+                    <div class="info_content">
+                        <div class="customer_info">강희수</div>
                     </div>
                 </div>
-                <div class="css-1tq1t75 e150alo82"><span class="css-ln1csn e150alo81">휴대폰</span>
-                    <div class="css-82a6rk e150alo80">
-                        <div class="css-t6o2y8 e1vfdada2">010-7470-7511</div>
+                <div class="customer_info_layout"><span class="info_subtitle">휴대폰</span>
+                    <div class="info_content">
+                        <div class="customer_info">010-7470-7511</div>
                     </div>
                 </div>
-                <div class="css-1tq1t75 e150alo82"><span class="css-ln1csn e150alo81">이메일</span>
-                    <div class="css-82a6rk e150alo80">cairoking777@gmail.com
+                <div class="customer_info_layout"><span class="info_subtitle">이메일</span>
+                    <div class="info_content">cairoking777@gmail.com
                         <div class="css-1r0yqr6 e1vfdada1">
                             <p class="css-i7dt79 e1vfdada0">이메일을 통해 주문처리과정을 보내드립니다.</p>
                             <p class="css-i7dt79 e1vfdada0">정보 변경은 마이컬리 &gt; 개인정보 수정 메뉴에서 가능합니다.</p>
@@ -73,57 +80,47 @@
                 </div>
             </div>
             <div id="shipping-container">
-                <div class="css-6q17pt edbbr7c2">
-                    <h3 class="css-1ddzp0m edbbr7c1">배송 정보</h3>
+                <div class="section_divider">
+                    <h3 class="order_subtitle">배송 정보</h3>
                 </div>
-                <div class="css-1z0597s e17yjk9v2">
-                    <div class="css-k3lqzi e150alo82"><span class="css-ln1csn e150alo81">배송지</span>
-                        <div class="css-82a6rk e150alo80">
-                            <p class="css-36j4vu e17yjk9v0">서울 성동구 고산자로6길 20 (무학빌라)</p>
-                            <div class="address_specify">
-                                <label for="receiver-name" class="css-c3g9of e1uzxhvi4">상세주소</label><span
-                                    class="css-hx5wra e1uzxhvi5">*</span>
-                                <div height="44" class="css-t7kbxx e1uzxhvi3"><input data-testid="input-box"
-                                                                                     id="receiver-name" name="name"
-                                                                                     placeholder="상세주소" type="text"
-                                                                                     required=""
-                                                                                     height="44"
-                                                                                     class="css-n2am0u e1uzxhvi2"
-                                                                                     value=""></div>
-                            </div>
+                <div class="delivery_info">
+                    <div class="info_padding"><span class="info_subtitle">배송지</span>
+                        <div class="info_content">
+                            <p class="address">서울 성동구 고산자로6길 20 (무학빌라)</p>
+                            <!-- <div class="address_specify">
+                                <label for="receiver-name" class="input_title">상세주소</label><span
+                                    class="must">*</span>
+                                <div height="44" class="input_box"><input data-testid="input-box"
+                                        id="receiver-name" name="name" placeholder="상세주소" type="text" required=""
+                                        height="44" class="delivery_details_input" value=""></div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
-                <div id="checkout-shipping-details" class="css-1y0xj4c e1pxan881">
-                    <div class="css-k3lqzi e150alo82"><span class="css-ln1csn e150alo81">상세 정보</span>
-                        <div class="css-82a6rk e150alo80">
-                            <div class="css-acvisw e1uzxhvi6"><label for="receiver-name"
-                                                                     class="css-c3g9of e1uzxhvi4">받으실 분</label><span
-                                    class="css-hx5wra e1uzxhvi5">*</span>
-                                <div height="44" class="css-t7kbxx e1uzxhvi3"><input data-testid="input-box"
-                                                                                     id="receiver-name" name="name"
-                                                                                     placeholder="이름을 입력해 주세요"
-                                                                                     type="text"
-                                                                                     required="" height="44"
-                                                                                     class="css-n2am0u e1uzxhvi2"
-                                                                                     value=""></div>
+                <div id="checkout-shipping-details" class="delivery_details">
+                    <div class="info_padding"><span class="info_subtitle">상세 정보</span>
+                        <div class="info_content">
+                            <div class="delivery_details_content"><label for="receiver-name" class="input_title">받으실
+                                분</label><span class="must">*</span>
+                                <div height="44" class="input_box"><input data-testid="input-box" id="receiver-name"
+                                                                          name="name" placeholder="이름을 입력해 주세요"
+                                                                          type="text" required="" height="44"
+                                                                          class="delivery_details_input" value=""></div>
                             </div>
-                            <div class="css-acvisw e1uzxhvi6"><label for="receiver-phone"
-                                                                     class="css-c3g9of e1uzxhvi4">휴대폰</label><span
-                                    class="css-hx5wra e1uzxhvi5">*</span>
-                                <div height="44" class="css-t7kbxx e1uzxhvi3"><input data-testid="input-box"
-                                                                                     id="receiver-phone" name="phone"
-                                                                                     placeholder="숫자만 입력해 주세요"
-                                                                                     type="tel"
-                                                                                     required="" height="44"
-                                                                                     class="css-n2am0u e1uzxhvi2"
-                                                                                     value=""></div>
+                            <div class="delivery_details_content"><label for="receiver-phone"
+                                                                         class="input_title">휴대폰</label><span
+                                    class="must">*</span>
+                                <div height="44" class="input_box"><input data-testid="input-box"
+                                                                          id="receiver-phone" name="phone"
+                                                                          placeholder="숫자만 입력해 주세요" type="tel"
+                                                                          required="" height="44"
+                                                                          class="delivery_details_input" value=""></div>
                             </div>
                             <div>
-                                <label class="css-snlcph egijpni2">받으실 장소
-                                    <span class="css-hx5wra egijpni1">*</span>
+                                <label class="delivery_place_content">받으실 장소
+                                    <span class="must">*</span>
                                 </label>
-                                <div class="deliveryplace input_section">
+                                <div class="delivery_place input_section">
                                     <div class="input_radio">
                                         <label class="radio_label">
                                             <input id="door" name="receivePlace" type="radio" value="DOOR"
@@ -143,54 +140,7 @@
                                             <span class="radio_circle"><span class="radio_in_circle"></span></span>
                                             <span class="real_label">택배함</span>
                                         </label>
-                                        <label class="radio_label">
-                                            <input id="door" name="receivePlace" type="radio" value="ETC"
-                                                   checked="">
-                                            <span class="radio_circle"><span class="radio_in_circle"></span></span>
-                                            <span class="real_label">기타 장소</span>
-                                        </label>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="door">
-                                <label class="css-p29h8t e10wthef3">공동현관 출입방법
-                                    <span class="css-hx5wra e10wthef2">*</span>
-                                </label>
-                                <div class="css-0 e10wthef1">
-                                    <label class="css-7g0q88 et8nqc33" for="front-door-password">
-                                        <input data-testid="radio-PASSWORD" id="front-door-password"
-                                               name="frontDoorMethod" type="radio" class="css-1pes2r6 et8nqc32"
-                                               value="PASSWORD" checked="">
-                                        <span class="css-5xw1m2 e2sqze61">
-                                                <div class="css-1vic0rk e2sqze60"></div>
-                                            </span>
-                                        <span aria-labelledby="front-door-password" class="css-mgd87h et8nqc31">공동현관
-                                                비밀번호</span>
-                                    </label>
-                                    <div class="css-1jayavq e1uzxhvi6">
-                                        <div class="css-176lya2 e1uzxhvi3">
-                                            <input data-testid="input-box" id="front-door-password-field"
-                                                   name="frontDoorDetail" placeholder="예: #1234*" type="text"
-                                                   class="css-1bkd15f e1uzxhvi2" value="">
-                                        </div>
-                                    </div>
-                                    <p class="css-afl3da e10wthef0">특수문자를 포함한 정확한 비밀번호를 입력해 주세요.</p>
-                                    <label class="css-7g0q88 et8nqc33" for="front-door-free">
-                                        <input data-testid="radio-FREE" id="front-door-free" name="frontDoorMethod"
-                                               type="radio" class="css-1pes2r6 et8nqc32" value="FREE">
-                                        <span class="css-198i9ca e2sqze61">
-                                                <div class="css-1dahn5m e2sqze60"></div>
-                                            </span>
-                                        <span aria-labelledby="front-door-free" class="css-mgd87h et8nqc31">자유 출입
-                                                가능</span></label>
-                                    <label class="css-7g0q88 et8nqc33" for="front-door-etc"><input
-                                            data-testid="radio-ETC" id="front-door-etc" name="frontDoorMethod"
-                                            type="radio" class="css-1pes2r6 et8nqc32" value="ETC">
-                                        <span class="css-198i9ca e2sqze61">
-                                                <div class="css-1dahn5m e2sqze60"></div>
-                                            </span>
-                                        <span aria-labelledby="front-door-etc" class="css-mgd87h et8nqc31">기타</span>
-                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -198,58 +148,50 @@
                 </div>
             </div>
             <div></div>
-            <div class="css-4c6dm7 epvroj93">
-                <div class="css-134fy6p epvroj92">
-                    <div class="css-6q17pt edbbr7c2">
-                        <h3 class="css-1ddzp0m edbbr7c1">쿠폰 / 적립금</h3>
+            <div class="payment_section">
+                <div class="discount_section">
+                    <div class="section_divider">
+                        <h3 class="order_subtitle">적립금</h3>
                     </div>
-                    <div class="css-k3lqzi e150alo82"><span class="css-ln1csn e150alo81">쿠폰 적용</span>
-                        <div class="css-82a6rk e150alo80">
-                            <div class="css-1uj3loi e1brt3tk0">
-                                <button class="css-1cg046d e1wlhyxd1">사용가능 쿠폰 0장 / 전체
+                    <!-- <div class="info_padding"><span class="info_subtitle">쿠폰 적용</span>
+                        <div class="info_content">
+                            <div class="coupon_section"><button class="coupon_button">사용가능 쿠폰 0장 / 전체
                                     0장<span class="css-1e56lav e1wlhyxd0"><span rotate="0"
-                                                                                class="css-f2a03j ebkt7i80"></span></span>
-                                </button>
-                            </div>
-                            <button
-                                    type="button" class="css-y9957 e1rx731f1"><span class="css-s5xdrg e1rx731f0">쿠폰 사용
-                                        문의 (카카오톡) <span class="css-1q6xk2g e1563em20"></span></span></button>
+                                            class="css-f2a03j ebkt7i80"></span></span></button></div><button
+                                type="button" class="css-y9957 e1rx731f1"><span class="css-s5xdrg e1rx731f0">쿠폰 사용
+                                    문의 (카카오톡) <span class="css-1q6xk2g e1563em20"></span></span></button>
                         </div>
-                    </div>
-                    <div class="css-1mtcjcj e150alo82"><span class="css-ln1csn e150alo81">적립금 적용</span>
-                        <div class="css-82a6rk e150alo80">
-                            <div class="css-zjik7 e1gm2j0y2">
-                                <div class="css-1jg3w69 e1uzxhvi6">
-                                    <div height="44" class="css-t7kbxx e1uzxhvi3"><input data-testid="input-box"
-                                                                                         name="point-usage" disabled=""
-                                                                                         placeholder="0" type="text"
-                                                                                         height="44"
-                                                                                         class="css-n2am0u e1uzxhvi2"
-                                                                                         value="0">
+                    </div> -->
+                    <div class="point_section"><span class="info_subtitle">적립금 적용</span>
+                        <div class="info_content">
+                            <div class="point_input_section">
+                                <div class="point_input">
+                                    <div height="44" class="input_box">
+                                        <input data-testid="input-box" name="point-usage" placeholder="0"
+                                               type="text" height="44" class="delivery_details_input" value="0">
                                     </div>
                                 </div>
-                                <button class="css-197i5eo e4nu7ef3" type="button" disabled="" width="100"
-                                        height="44" radius="3"><span class="css-ymwvow e4nu7ef1">모두사용</span></button>
+                                <button class="point_all" type="button" width="100" height="44" radius="3">
+                                    <span class="button_font">모두사용</span>
+                                </button>
                             </div>
-                            <div class="css-5417ai e1gm2j0y1">사용가능 적립금 <strong
-                                    class="css-1q8axr4 e1gm2j0y0">0</strong>원
-                            </div>
+                            <div class="available_point">사용가능 적립금 <strong class="point">0</strong>원</div>
                             <div class="css-qubry4 ezr038b1">
-                                <p class="css-986r2u ezr038b0">적립금 내역: 마이컬리 &gt; 적립금</p>
+                                <p class="css-986r2u ezr038b0">적립금 내역: 마이페이지 &gt; 적립금</p>
                             </div>
                         </div>
                     </div>
-                    <div class="css-6q17pt edbbr7c2">
-                        <h3 class="css-1ddzp0m edbbr7c1">결제 수단</h3>
+                    <div class="section_divider">
+                        <h3 class="order_subtitle">결제 수단</h3>
                     </div>
-                    <div class="css-k3lqzi e150alo82"><span class="css-ln1csn e150alo81">결제수단 선택</span>
-                        <div class="css-82a6rk e150alo80">
-                            <div class="css-gd125q e4nb37r1">
+                    <div class="info_padding"><span class="info_subtitle">결제수단 선택</span>
+                        <div class="info_content">
+                            <div class="payment_method_section">
                                 <div>
-                                    <div class="css-18dvwsu ef0cmoa0">
-                                        <button type="button"
-                                                class="css-1ljbftn ehlmjxl0" data-testid="kakao-pay-button"
-                                                color="#f6e500"><span class="css-16nfv3t e106vb1p0">혜택</span><img
+                                    <div class="kakao_section">
+                                        <button type="button" class="kakao_pay"
+                                                data-testid="kakao-pay-button" color="#f6e500"><span
+                                                class="css-16nfv3t e106vb1p0">혜택</span><img
                                                 class="css-1wbfblw e1ewacwr0"
                                                 src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgICA8ZyBmaWxsPSIjMDAwIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxwYXRoIGQ9Ik03LjUxNSAyLjhDMy4zNjUgMi44IDAgNS40NDUgMCA4LjcwN2MwIDEuOTM4IDEuMTg3IDMuNjU3IDMuMDIxIDQuNzM0LS4xOTEuNzY4LS42ODQgMi43NDItLjc1IDIuOTU3LS4wODMuMjY2LS4xMDMgMS4wNDYuNzAyLjUxMi42MzQtLjQyIDIuNDc5LTEuNyAzLjU3LTIuMzQ4LjMxOC4wMzMuNjQyLjA1MS45NzIuMDUxIDQuMTUgMCA3LjUxNS0yLjY0NCA3LjUxNS01LjkwNiAwLTMuMjYyLTMuMzY1LTUuOTA3LTcuNTE1LTUuOTA3TTIxLjA0OCA0LjExM2MxLjUxNy0xLjMxMyAzLjQ2OC0xLjUwOCA0Ljg5My0uNTg1IDEuNzA3IDEuMTA2IDIuMTY4IDIuNzU0IDIuMTY4IDQuODkyIDAgMi40LTEuMTE1IDMuOTY4LTEuNjQyIDQuNDYtLjUyNi40OTMtMS42NzMgMS4yOTItMi44OCAxLjI5MkgyMS40MnYzLjc4NGgtMi45MTFWMy4yODJoMi4xMDZzLjI2LjU0OC40MzMuODN6bTEuOTUxIDEuMTUzYy0uNjk3IDAtMS4xNTMuMTc3LTEuNTMzLjQ3N3Y2LjMwNmgxLjEzOGMuNTU4IDAgMi41NDctLjUwNyAyLjU0Ny0zLjM4MyAwLS42NzctLjA5LTEuMzg1LS4yNzgtMS45LS4zNTctLjk3Ny0xLjI0Ny0xLjUtMS44NzQtMS41ek0zMy44MTcgMy4wNDZjMi4wODUgMCAyLjk0Mi43MTggMy40NDggMS4zNTQuNDgxLjYwNC44NjIgMS40OTcuODYyIDIuOHY2LjY4aC0yLjI2di0uOTU0cy0uNDQyLjQyLTEuMzc5LjgzMWMtLjk4LjQzLTIuNjUzLjg3Ny00LjA0MS0uMTg0LTEuMzk3LTEuMDY4LTEuMi0zLjQ3MS0uODUyLTQuMTU0LjQ4LS45MzggMS4zNjMtMS45NjggMy43MTYtMS45NjhoMi4wMjl2LS45MDhjMC0uNTU0LS41ODMtMS4xMDctMS43My0xLjEwNy0xLjI4IDAtMS44MzMuMTkyLTIuODE3LjYzNWwtLjk5Ni0xLjk0M3MxLjQ5Ni0xLjA4MiA0LjAyLTEuMDgyem0xLjQ3NyA2LjI1aC0xLjQxNWMtLjU5OSAwLTEuOTYxLjIxNi0xLjk2MSAxLjQ3NyAwIDEuMjgzIDEuMDkgMS4yNiAxLjQ0OCAxLjIzIDEuMDg5LS4wOTEgMS45MzgtLjc5NCAxLjkzOC0uNzk0bC0uMDEtMS45MTN6TTQ3LjA2MSAzLjA0NmwtMi4yOTEgOC4xMTEtMi41NC04LjExLTIuODQ5LjgyczMuNSA5LjM4MyAzLjYyNCA5Ljc4M2MuMTIzLjQtLjAwNS44NTgtLjI4IDEuMzIyLS4zNzEuNjMtMS44MjYgMi4wMy0xLjgyNiAyLjAzbDEuODc4IDEuNjYzcy44NTctLjY4OCAxLjc0NS0xLjc1NWMuNzQzLS44OTIgMS42MzYtMi44MyAxLjkzOC0zLjU3Ny44NTktMi4xMTkgMy40Mi05LjQ2NiAzLjQyLTkuNDY2bC0yLjgxOS0uODJ6Ii8+CiAgICA8L2c+Cjwvc3ZnPgo="
                                                 alt="카카오페이"></button>
@@ -274,7 +216,7 @@
                 <div class="css-1rz7w0y epvroj91">
                     <div class="css-1gxrfiw epvroj90">
                         <div class="css-6hge48 edbbr7c2">
-                            <h3 class="css-1ddzp0m edbbr7c1">결제 금액</h3>
+                            <h3 class="order_subtitle">결제 금액</h3>
                         </div>
                         <div class="css-hdnk73 e12lli9y0">
                             <div class="css-11quaim eahaaoi10">
@@ -328,8 +270,8 @@
                     </div>
                 </div>
             </div>
-            <div class="css-6q17pt edbbr7c2">
-                <h3 class="css-1ddzp0m edbbr7c1">개인정보 수집/제공</h3>
+            <div class="section_divider">
+                <h3 class="order_subtitle">개인정보 수집/제공</h3>
             </div>
             <div class="agree_content">
                 <div class="check_content">
@@ -342,21 +284,21 @@
                 <div class="check_content" style="padding-top: 16px;">
                     <label>
                         <input type="checkbox" class="check">
-                        <span class="material-symbols-outlined" class="check_img">check_circle</span>
+                        <span class="material-symbols-outlined check_img">check_circle</span>
                     </label>
                     <span class="css-1isbd8x ewp15qx0">(필수) 개인정보 수집∙이용 및 처리 동의</span>
                 </div>
                 <div class="check_content">
                     <label>
                         <input type="checkbox" class="check">
-                        <span class="material-symbols-outlined" class="check_img">check_circle</span>
+                        <span class="material-symbols-outlined check_img">check_circle</span>
                     </label>
                     <span class="css-1isbd8x ewp15qx0">(필수) 개인정보 제3자 제공 동의</span>
                 </div>
                 <div class="check_content">
                     <label>
                         <input type="checkbox" class="check">
-                        <span class="material-symbols-outlined" class="check_img">check_circle</span>
+                        <span class="material-symbols-outlined check_img">check_circle</span>
                     </label>
                     <span class="css-1isbd8x ewp15qx0">(필수) 전자지급 결제대행 서비스 이용약관 동의</span>
                 </div>
@@ -366,8 +308,9 @@
                 않습니다.
             </p>
             <div class="css-1azakc el0c5j41">
-                <button class="css-1lha8en e4nu7ef3" type="button" width="240"
-                        height="56" radius="3"><span class="css-ymwvow e4nu7ef1">18,220원 결제하기</span></button>
+                <button class="pay_button" type="button" width="240"
+                        height="56" radius="3"><span class="button_font" id="payment_button">18,220원 결제하기</span>
+                </button>
                 <p class="css-ias04p el0c5j40">[주문완료] 상태일 경우에만 주문 취소 가능합니다.<br>미성년자가 결제 시 법정대리인이 그 거래를 취소할 수
                     있습니다.<br>배송 불가
                     시, 결제수단으로 환불됩니다. 일부 또는 전체 상품이 품절 등의 사유로 배송 되지 못할 경우, 신속하게 환불해 드리겠습니다.<br>카카오페이, 토스, 네이버페이, 페이코
@@ -383,6 +326,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="/main/js/header.js"></script>
-<script src="/cart/js/order.js"></script>
+<script src="/order/js/order.js"></script>
 </body>
 </html>
