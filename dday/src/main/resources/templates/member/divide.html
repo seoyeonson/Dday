@@ -34,9 +34,9 @@
                         </svg>
                         <h5>판매자회원</h5>
                         <label>제품을 등록하고<br>판매하는 회원</label>
-                        <button type="button" id="owner_join">회원가입하기</button>
-                        <form name="sellerForm" action="." method="POST">
-                            <input type="hidden" name="join_type" value="admin">
+                        <button type="button" id="partner_join">회원가입하기</button>
+                        <form name="sellerForm" th:action="@{/member/join}" th:object="${member}" method="GET">
+                            <input type="hidden" th:field="*{memberType}" value="partner">
                         </form>
                     </div>
                     <div class="seller_member box">
@@ -45,9 +45,9 @@
                         </svg>
                         <h5>일반회원</h5>
                         <label>사이트를 이용하며<br>제품을 구매하는 회원</label>
-                        <button type="button" id="owner_join">회원가입하기</button>
-                        <form name="userForm" action="." method="POST">
-                            <input type="hidden" name="join_type" value="admin">
+                        <button type="button" id="basic_join">회원가입하기</button>
+                        <form name="userForm" th:action="@{/member/join}" th:object="${member}" method="GET">
+                            <input type="hidden" th:field="*{memberType}" value="normal">
                         </form>
                     </div>
                 </div>

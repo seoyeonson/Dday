@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('#owner_join').click(admin);
+    $('#partner_join').click(admin);
     $('#basic_join').click(basic);
 });
 

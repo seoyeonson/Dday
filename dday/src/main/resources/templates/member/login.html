@@ -20,15 +20,15 @@
         <h2>로그인</h2>
         <section class="main_content">
             <form>
-                <div class="main_input">
+                <div class="main_input" th:object="${member}">
                     <div>
                         <div class="input_box">
-                            <input type="text" placeholder="아이디를 입력해주세요">
+                            <input type="text" th:field="*{memberId}" placeholder="아이디를 입력해주세요">
                         </div>
                     </div>
                     <div>
                         <div class="input_box">
-                            <input type="password" placeholder="비밀번호를 입력해주세요">
+                            <input type="password" th:field="*{memberPw}" placeholder="비밀번호를 입력해주세요">
                         </div>
                     </div>
                 </div>
@@ -52,3 +52,22 @@
 </html>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="/main/js/header.js"></script>
+<script>
+    $(".login_btn").on("click", function(){
+        let memberId = $("#memberId").val();
+        let memberPw = $("#memberPw").val();
+
+        $.ajax({
+            url: "/member/login",
+            type: "post",
+            data: {memberId: memberId, memberPw: memberPw},
+            success: function(result){
+                if(result == 0){
+                    alert("아이디/비밀번호를 다시 입력해주세요.");
+                } else {
+                    location.href="/";
+                }
+            }
+        });
+    })
+</script>

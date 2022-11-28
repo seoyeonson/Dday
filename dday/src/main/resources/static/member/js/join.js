@@ -78,7 +78,7 @@ $radio_circle.on("click",function(){
 });
 
 function checkRadio(){
-    let $input_radio = $("input[name=gender]");
+    let $input_radio = $("input[name=memberGender]");
     $.each($input_radio, function(){
         if($(this).is(":checked")){
             $(this).next().addClass("input_choice");
@@ -307,16 +307,16 @@ function sample6_execDaumPostcode() {
                     extraAddr = ' (' + extraAddr + ')';
                 }
                 // 조합된 참고항목을 해당 필드에 넣는다.
-                $("#memberAddressDetail").val(extraAddr);
+                $("#addressDetail").val(extraAddr);
 
             } else {
-                $("#memberAddressDetail").val('');
+                $("addressDetail").val('');
             }
 
             // 주소 정보를 해당 필드에 넣는다.
-            $("#memberAddress").val(addr);
+            $("#addressMain").val(addr);
             // 커서를 상세주소 필드로 이동한다.
-            $("#memberAddressDetail").focus();
+            $("#addressDetail").focus();
         }
     }).open();
 }
@@ -329,4 +329,5 @@ $(".signup_submit button").on("click", function(){
     // else if (){ .. } ==> 필수 입력 모두 체크
     // else if(!$agreeAll.is(":checked")){ alert("약관을 동의해주세요.")}
     // else { signupForm.submit(); }
+    joinForm.submit();
 });
