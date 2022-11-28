@@ -318,10 +318,10 @@ a.orderList2{
     line-height: 19px;
     letter-spacing: -0.3px;
     font-size: 15.5px;
-    color: #ff4500;
+    color: rgb(102, 102, 102);
     text-decoration: none;
     background-color: transparent;
-    font-weight: 700;
+
 
 }
 a.orderList3{
@@ -409,9 +409,10 @@ a.orderList8{
     line-height: 19px;
     letter-spacing: -0.3px;
     font-size: 15.5px;
-    color: rgb(102, 102, 102);
+    color: #ff4500;
     text-decoration: none;
     background-color: transparent;
+    font-weight: 600;
 
 }
 

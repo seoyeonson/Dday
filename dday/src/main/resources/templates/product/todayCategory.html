@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+<link rel="stylesheet" href="/main/css/header.css">
+<link rel="stylesheet" href="/main/css/footer.css">
+<link rel="stylesheet" href="/product/css/searchDemo.css">
+<link rel="stylesheet" href="/product/css/search.css">
+<link rel="stylesheet" href="/product/css/modal.css">
+
+<style>
+    * {
+        font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum, sans-serif;
+    }
+</style>
+
+<body>
+<!-- header -->
+<header th:replace="main/header.html" :: h></header>
+<!-- header 종료 -->
+<div class="search_page">
+    <div class="side_margin">
+        <div id="container" class="content_width">
+            <h3 class="search_section">당일 판매 상품</h3>
+            <div class="css-pzlq5x etf617g2">
+                <div class="css-1jgnig9 ev2ab494">
+                    <div class="css-11y1fso ev2ab493"><span class="css-wy76no ev2ab492">필터</span>
+                        <div class="divresetbutton">
+                            <button class="resetbutton"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                <path class="resetlogo" id="pathrefresh1"
+                                      d="M13.78 3.96303C12.504 2.16973 10.4086 1 8.04 1C4.15192 1 1 4.15192 1 8.04C1 11.9281 4.15192 15.08 8.04 15.08C11.9281 15.08 15.08 11.9281 15.08 8.04"
+                                      stroke="#ddd" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="round"></path>
+                                <path class="resetlogo" id="pathrefresh2" d="M14.4933 1L14.4933 4.52H10.9733" stroke="#ddd"
+                                      stroke-width="1.6" stroke-linecap="square" stroke-linejoin="round"></path>
+                            </svg><span class="reset">초기화</span></button>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="category_section"><button class="css-16ixplb e1frj59j9">
+                            <div class="css-1iwixyn e1frj59j8">카테고리</div>
+                        </button>
+                            <div class="categoryfilter">
+                                <div class="input_section">
+                                    <div class="check_content">
+                                        <label>
+                                            <input type="checkbox" class="check" id="vegetable">
+                                            <span class="material-symbols-outlined check_img">check_circle</span>
+                                            <span class="filter_name">채소</span>
+                                            <span class="filter_count">24</span>
+                                        </label>
+                                    </div>
+                                    <div class="check_content">
+                                        <label>
+                                            <input type="checkbox" class="check" id="fruit_nut_rice">
+                                            <span class="material-symbols-outlined check_img">check_circle</span>
+                                            <span class="filter_name">과일·견과·쌀</span>
+                                            <span class="filter_count">1</span>
+                                        </label>
+                                    </div>
+                                    <div class="check_content">
+                                        <label>
+                                            <input type="checkbox" class="check" id="seafood">
+                                            <span class="material-symbols-outlined check_img">check_circle</span>
+                                            <span class="filter_name">수산·해산·건어물</span>
+                                            <span class="filter_count">1</span>
+                                        </label>
+                                    </div>
+                                    <div class="check_content">
+                                        <label>
+                                            <input type="checkbox" class="check" id="meat_egg">
+                                            <span class="material-symbols-outlined check_img">check_circle</span>
+                                            <span class="filter_name">정육·계란</span>
+                                            <span class="filter_count">1</span>
+                                        </label>
+                                    </div>
+                                    <div class="check_content">
+                                        <label>
+                                            <input type="checkbox" class="check" id="soup_side_main">
+                                            <span class="material-symbols-outlined check_img">check_circle</span>
+                                            <span class="filter_name">국·반찬·메인요리</span>
+                                            <span class="filter_count">1</span>
+                                        </label>
+                                    </div>
+                                    <div class="check_content">
+                                        <label>
+                                            <input type="checkbox" class="check" id="salad">
+                                            <span class="material-symbols-outlined check_img">check_circle</span>
+                                            <span class="filter_name">샐러드·간편식</span>
+                                            <span class="filter_count">1</span>
+                                        </label>
+                                    </div>
+                                    <div class="check_content">
+                                        <label>
+                                            <input type="checkbox" class="check" id="noodle_sauce_oil">
+                                            <span class="material-symbols-outlined check_img">check_circle</span>
+                                            <span class="filter_name">면·양념·오일</span>
+                                            <span class="filter_count">1</span>
+                                        </label>
+                                    </div>
+                                    <div class="check_content">
+                                        <label>
+                                            <input type="checkbox" class="check" id="drink">
+                                            <span class="material-symbols-outlined check_img">check_circle</span>
+                                            <span class="filter_name">생수·음료·우유·커피</span>
+                                            <span class="filter_count">1</span>
+                                        </label>
+                                    </div>
+                                    <div class="check_content">
+                                        <label>
+                                            <input type="checkbox" class="check" id="snack">
+                                            <span class="material-symbols-outlined check_img">check_circle</span>
+                                            <span class="filter_name">간식·과자·떡</span>
+                                            <span class="filter_count">1</span>
+                                        </label>
+                                    </div>
+                                    <div class="check_content">
+                                        <label>
+                                            <input type="checkbox" class="check" id="bakery_cheese">
+                                            <span class="material-symbols-outlined check_img">check_circle</span>
+                                            <span class="filter_name">베이커리·치즈·델리</span>
+                                            <span class="filter_count">1</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="result_section">
+                    <div class="result_info">
+                        <div class="total_search">총 170건</div>
+                        <ul class="pricefilter">
+                            <li class="pricefilter_specify"><a class="pricefilter_a pricelow">낮은 가격순</a></li>
+                            <li class="pricefilter_specify"><a class="pricefilter_a pricehigh">높은 가격순</a></li>
+                        </ul>
+                    </div>
+                    <div class="product_grid">
+                        <div href="/goods/5001691" class="product_content today_product_content">
+                            <div>
+                                <div class="product_img_section">
+                                    <img src="https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/1628558475434l0.jpg" alt="상품 이미지">
+                                    <div><button type="button" class="pickup inputCart"><img src="/search/images/cart.png" alt="장바구니 아이콘"></button></div>
+                                </div>
+                            </div>
+                            <div class="product_info"><span class="delivery_info_section"><span class="product_name">[상하목장] 유기농 우유 3종</span></span>
+                                <div class="price_section">
+                                    <div></div><span class="sales-price">4,400<span class="won"> 원</span>~</span>
+                                </div>
+                                <p class="mini_info">행복한 소가 주는 자연의 선물</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="pagination">
+                        <a class="page_move">
+                            <img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAHCAQAAABwkq/rAAAAHUlEQVR42mNgAIPi/8X/kWkwA8SE0UQIMJAsCKMBBzk27fqtkcYAAAAASUVORK5CYII="
+                                    alt="처음 페이지로 이동하기 아이콘">
+                        </a>
+                        <a class="page_move">
+                            <img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAQAAABqrk9lAAAAGElEQVR42mNgAIPi/8X/4QwwE5PBQJADAAKSG3cyVhtXAAAAAElFTkSuQmCC"
+                                    alt="이전 페이지로 이동하기 아이콘">
+                        </a>
+                        <a class="current_page">1</a>
+                        <a class="page_move">2</a>
+                        <a class="page_move">3</a>
+                        <a class="page_move">4</a>
+                        <a class="page_move">5</a>
+                        <a class="page_move">6</a>
+                        <a class="page_move">7</a>
+                        <a class="page_move">8</a>
+                        <a class="page_move">9</a>
+                        <a class="page_move">10</a>
+                        <a class="page_move">
+                            <img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAQAAABqrk9lAAAAGUlEQVR42mMo/l/8nwECQEwCHEwGhAlRBgA2mht3SwgzrwAAAABJRU5ErkJggg=="
+                                    alt="다음 페이지로 이동하기 아이콘">
+                        </a>
+                        <a class="page_move">
+                            <img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAHCAQAAABwkq/rAAAAIElEQVR42mMo/l/8n4GBgQFGQ5kgDowmQZCwAMImhDkAb0k27Zcisn8AAAAASUVORK5CYII="
+                                    alt="마지막 페이지로 이동하기 아이콘">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- footer -->
+<footer th:replace="main/footer.html" :: f></footer>
+<!-- modal -->
+
+<div class="modalContainer">
+    <div class="modalBox">
+        <div class="modal">
+            <div class="modalBody">
+                <div class="modalWrapper">
+                    <div class="modalContent">
+                        <div class="modalProductName">
+                            <span>[KF365] 양념 소불고기 1kg(냉장)</span>
+                        </div>
+                    </div>
+                    <div class="priceAndCount">
+                        <div>
+                          <span class="discountBox">
+                              17,590원
+                          </span>
+                            <span class="priceBox">
+                              18,990원
+                          </span>
+                        </div>
+                        <div class="product_cnt_box">
+                            <button class="minus"></button>
+                            <div class="cnt">1</div>
+                            <button class="plus"></button>
+                        </div>
+                    </div>
+                    <div class="totalPriceBox">
+                        <div class="totalPriceInner">
+                            <div class="totalLine">
+                                <p>
+                                    합계
+                                </p>
+                                <div>
+                                    <span class="changePrice">17,590</span>
+                                    <span class="totalWon">원</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pointBox">
+                            <span class="pointText">적립</span>
+                            <span class="pointCalText">구매 시
+                                  <span class="realPoint">5% 적립
+                                  </span>
+                              </span>
+                        </div>
+                    </div>
+                    <div class="modalButtonBox">
+                        <button class="modalCancelButton" type="button">
+                            <span class="modalButtonText">취소</span>
+                        </button>
+                        <button type="button" class="modalOkButton">
+                            <span class="modalButtonText">장바구니 담기</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/main/js/header.js"></script>
+<script src="/product/js/search.js"></script>
+<script src="/product/js/category.js"></script>
+</body>
+</html>

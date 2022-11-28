@@ -22,4 +22,8 @@ public class ProductController {
 
     @GetMapping("/categoryDetail")
     public void categoryDetail(){}
+
+    @GetMapping("/todayCategoryDetail")
+    public void todayCategoryDetail(){}
+
 }

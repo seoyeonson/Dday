@@ -1794,7 +1794,7 @@ body.swal2-toast-shown .swal2-container.swal2-bottom-right {
   min-height: 942px;
 }
 
-.cart_info{
+.cart_info {
   /* position: absolute;
   width: 284px;
   padding-top: 60px; */
@@ -1928,7 +1928,7 @@ body.swal2-toast-shown .swal2-container.swal2-bottom-right {
   padding-top: 0;
 }
 
-.css-8jmoub {
+.info_mid1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1940,31 +1940,44 @@ body.swal2-toast-shown .swal2-container.swal2-bottom-right {
   padding-top: 0;
 }
 
-.css-vmo0an {
+.info_font {
   width: 100px;
   font-size: 16px;
   line-height: 24px;
   white-space: nowrap;
 }
 
-.css-iinokh {
+.price_font {
+  display: flex;
   font-size: 18px;
   line-height: 24px;
   text-align: right;
+  float: right;
+  flex: auto;
+  justify-content: flex-end;
 }
 
-.css-hfgifi {
+.won_font {
   padding-left: 2px;
   font-size: 16px;
   font-weight: normal;
   vertical-align: bottom;
+  display: flex;
+  align-items: center;
 }
 
 .css-b8kzem {
   padding-top: 12px;
 }
 
-.css-t4mc5m {
+/* .css-vmo0an {
+  width: 100px;
+  font-size: 16px;
+  line-height: 24px;
+  white-space: nowrap;
+} */
+
+.info_mid2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1976,7 +1989,7 @@ body.swal2-toast-shown .swal2-container.swal2-bottom-right {
   padding-top: 12px;
 }
 
-.css-7ygxxm {
+.info_mid4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1989,14 +2002,14 @@ body.swal2-toast-shown .swal2-container.swal2-bottom-right {
   border-top: 1px solid #f4f4f4;
 }
 
-.css-da7gr8 {
+.total_price {
   width: 162px;
   font-size: 18px;
   line-height: 24px;
   text-align: right;
 }
 
-.css-xmbce4 {
+.total_price_font {
   font-size: 20px;
   font-weight: 700;
   line-height: 28px;
@@ -2062,6 +2075,14 @@ body.swal2-toast-shown .swal2-container.swal2-bottom-right {
   vertical-align: top;
   border-radius: 50%;
   content: "";
+}
+
+.big_won {
+  padding-left: 4px;
+  font-size: 16px;
+  vertical-align: 1px;
+  display: flex;
+  align-items: center;
 }
 
 .css-snlo96 {
@@ -2195,6 +2216,13 @@ body.swal2-toast-shown .swal2-container.swal2-bottom-right {
   color: rgb(51, 51, 51);
 }
 
+.real_price {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgb(51, 51, 51);
+}
+
 .css-lvqq7y {
   border: 0px;
   background: none;
@@ -2293,14 +2321,14 @@ body.swal2-toast-shown .swal2-container.swal2-bottom-right {
   background-position: center center;
 }
 
-.css-bi9ql0 {
+.info_mid5 {
   padding-top: 15px;
   font-size: 12px;
   line-height: 18px;
   text-align: right;
 }
 
-.css-1q66xvk {
+.point_highlight {
   display: inline-block;
   height: 18px;
   margin-right: 4px;
@@ -2314,7 +2342,17 @@ body.swal2-toast-shown .swal2-container.swal2-bottom-right {
   color: rgb(255, 255, 255);
 }
 
-.css-2biqhz {
+.point {
+  font-weight: 500;
+  color: rgb(102, 102, 102);
+}
+
+.jeoklip {
+  font-weight: 500;
+  color: rgb(102, 102, 102);
+}
+
+.info_mid3 {
   display: block;
   padding-top: 2px;
   color: #ff4500;

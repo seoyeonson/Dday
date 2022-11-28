@@ -13,8 +13,10 @@
     <!-- css -->
     <!--    <link rel="stylesheet" href="/Project/serviceCenter/css/serviceNotice.css">-->
     <link rel="stylesheet" href="/product/css/categoryDetail.css">
+    <link rel="stylesheet" href="/product/css/modal.css">
     <link rel="stylesheet" href="/main/css/header.css">
     <link rel="stylesheet" href="/main/css/footer.css">
+
 </head>
 <body>
 <header th:replace="main/header.html" :: h></header>
@@ -26,7 +28,6 @@
             <div>
                 <div class="title">
                     <h1>[강남면옥] 갈비탕</h1>
-                    <button class="detail_share"></button>
                 </div>
                 <h2 class="title_bottom">든든하고 푸짐한 한 그릇</h2>
             </div>
@@ -67,16 +68,16 @@
                             <div class="product_name">
                                 <span>[강남면옥] 갈비탕</span>
                             </div>
-                            <div class="product_cnt_box">
+                            <div class="product_detail_cnt_box">
                                 <div class="product_cnt">
                                     <button class="minus"></button>
                                     <div class="cnt">1</div>
                                     <button class="plus"></button>
                                 </div>
-                                <div class="cnt_price">
-                                    <span>11,900원</span>
-                                </div>
+                            <div class="cnt_price">
+                                <span>11,900원</span>
                             </div>
+                                                        </div>
                         </div>
                     </dl>
                 </div>
@@ -101,11 +102,12 @@
                     </button> -->
                     <button class="heart_button btn">
                             <span>
-                                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0yNS44MDcgNy44NjNhNS43NzcgNS43NzcgMCAwIDAtOC4xNzIgMEwxNiA5LjQ5N2wtMS42MzUtMS42MzRhNS43NzkgNS43NzkgMCAxIDAtOC4xNzMgOC4xNzJsMS42MzQgMS42MzQgNy40NjYgNy40NjdhMSAxIDAgMCAwIDEuNDE1IDBzMCAwIDAgMGw3LjQ2Ni03LjQ2N2gwbDEuNjM0LTEuNjM0YTUuNzc3IDUuNzc3IDAgMCAwIDAtOC4xNzJ6IiBzdHJva2U9IiM1RjAwODAiIHN0cm9rZS13aWR0aD0iMS42IiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K"
-                                     class="blankHeart">
+                                <img src="/product/images/heart.png"
+                                     class="blankHeart" style="width:24px;">
                             </span>
                     </button>
-                    <button class="in_cart" onclick="location.href='/cart/list'">
+<!--                    <button class="in_cart" onclick="location.href='/cart/list'">-->
+                        <button class="in_cart">
                         <span>장바구니 담기</span>
                     </button>
                     <!-- <div class="cart_btn_area"></div> -->
@@ -356,6 +358,7 @@
         </div>
     </div>
 </div>
+
 
 
 <footer th:replace="main/footer.html" :: f></footer>
