@@ -48,7 +48,6 @@ public class SearchProductController {
         productVO.setProductName(productName);
         model.addAttribute("keyword",productName);
         return searchProductService.searchProduct(productVO);
-
     }
 }
 

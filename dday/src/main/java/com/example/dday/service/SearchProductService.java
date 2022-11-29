@@ -16,6 +16,7 @@ public class SearchProductService {
     SearchProductDAO searchProductDAO;
 
     public List<ProductVO> searchProduct(ProductVO productVO) throws Exception {
+
         return searchProductDAO.selectSearchList(productVO);
     }
 }
