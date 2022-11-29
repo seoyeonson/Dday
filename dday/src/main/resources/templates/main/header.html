@@ -6,13 +6,15 @@
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script>
         function fn_search() {
-            alert("212");
-            if($("#searchPage")!= null){
-                alert(1);
+            /*alert("1차");*/
+            if($("#pageSearch")!= null){
+                /*alert("2차");*/
                 document.searchForm.submit();
+                /*alert("3차");*/
                 $.ajax({
                     type:"GET",
-                    url:"/search/search",
+                    url:"/search/page",
+
                     data: $("name[keyword]").serialize(),
                     dataType:"JSON",
                     success: function(data){
@@ -25,7 +27,6 @@
                         console.log("통신에러");
                     }
                 })
-                alert(2);
                 return ;
             }
 
@@ -48,7 +49,7 @@
                 </div>
                 <!-- 로그인바 종료-->
                 <div class="subsearchbar">
-                    <div class="logo"> <!--onclick="location.href='/'"-->
+                    <div class="logo" onclick="location.href='/'"> <!--onclick="location.href='/'"-->
                         <img src="/main/images/banner/logo-대체.webp" alt="마켓컬리 로고" class="main-logo e1s3pt0j0">
                         <button class="active purple text1010">D-Day</button>
                     </div>

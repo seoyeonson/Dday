@@ -13,20 +13,22 @@
 <link rel="stylesheet" href="/main/css/footer.css">
 <link rel="stylesheet" href="/search/css/searchDemo.css">
 <link rel="stylesheet" href="/search/css/search.css">
+<link rel="stylesheet" href="/search/css/modal.css">
 <style>
     * {
         font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum, sans-serif;
     }
 </style>
 
+
 <body>
 <!-- header -->
 <header th:replace="main/header.html" :: h></header>
 <!-- header 종료 -->
-<div class="search_page" id="searchPage">
+<div class="search_page" id="pageSearch">
     <div class="side_margin">
         <div id="container" class="content_width">
-            <h3 class="search_section">'<span class="key_word">우유</span>'에 대한 검색결과</h3>
+            <h3 class="search_section">'<span class="key_word"></span>'에 대한 검색결과</h3>
             <div class="css-pzlq5x etf617g2">
                 <div class="css-1jgnig9 ev2ab494">
                     <div class="css-11y1fso ev2ab493"><span class="css-wy76no ev2ab492">필터</span>
@@ -442,63 +444,72 @@
 </div>
 <!-- footer -->
 <footer th:replace="main/footer.html" :: f></footer>
-<!-- modal -->
-<div class="modal" role="presentation">
-    <div class="modalblur">
-        <div class="modal_content" title="클릭하면 창이 닫힙니다.">
-            <div class="modalText2">
-                <div class="modalTextInfo">
-                    <div class="modalTextInfoDetail">
-                        <div class="modalTextInfoDetailTitle">
-                            <span class="modalTextInfoDetailTitle">[서울우유] 나 100% 우유 1.8L</span>
-                        </div>
-                        <div class="modalTextInfoDetailBottom">
-                            <div class="modalTextInfoDetailBottomPrice">
-                                <span class="modalTextInfoDetailBottomPrice">2,450원</span>
-                            </div>
-                            <div class="modalTextInfoDetailBottomCount">
-                                <button class="decrease" type="button" aria-label="수량내리기"></button>
-                                <div class="middleCount">0</div>
-                                <button class="increase" type="button"></button>
+<!--modal-->
+<form id="modalClear">
+    <div class="modalContainer">
+        <div class="modalBox">
+            <div class="modal">
+                <div class="modalBody">
+                    <div class="modalWrapper">
+                        <div class="modalContent">
+                            <div class="modalProductName">
+                                <span>[KF365] 양념 소불고기 1kg(냉장)</span>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="modalText2Bottom">
-                    <div class="modalText2Bottom2">
-                        <div class="modalText2BottomSum">
-                            <p class="sum">합계</p>
+                        <div class="priceAndCount">
                             <div>
-                                <span class="sumPrice">0</span>
-                                <span class="sumWon">원</span>
+                          <span class="discountBox">
+                              17,590원
+                          </span>
+                                <span class="priceBox">
+                              18,990원
+                          </span>
+                            </div>
+                            <div class="product_cnt_box">
+                                <button class="minus"></button>
+                                <div class="cnt">1</div>
+                                <button class="plus"></button>
                             </div>
                         </div>
-                        <div class="modalSaving">
-                            <span class="modalSavingBox">적립</span>
-                            <span class="modalSavingBox2">
-                    구매시
-                    <span class="modalSavingBox3">
-                      0원적립립
-                    </span>
-                  </span>
+                        <div class="totalPriceBox">
+                            <div class="totalPriceInner">
+                                <div class="totalLine">
+                                    <p>
+                                        합계
+                                    </p>
+                                    <div>
+                                        <span class="changePrice">17,590</span>
+                                        <span class="totalWon">원</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pointBox">
+                                <span class="pointText">적립</span>
+                                <span class="pointCalText">구매 시
+                                  <span class="realPoint">0원 적립
+                                  </span>
+                              </span>
+                            </div>
+                        </div>
+                        <div class="modalButtonBox">
+                            <button class="modalCancelButton" type="button">
+                                <span class="modalButtonText">취소</span>
+                            </button>
+                            <button type="button" class="modalOkButton">
+                                <span class="modalButtonText">장바구니 담기</span>
+                            </button>
                         </div>
                     </div>
-                </div>
-                <div class="modalText2Footer">
-                    <button class="footerLeft" type="button">
-                        <span class="footerLeft">취소</span>
-                    </button>
-                    <button class="footerRight">
-                        <span class="footerRight">장바구니 담기</span>
-                    </button>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</form>
+<!--modal end-->
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="/main/js/header.js"></script>
 <script src="/search/js/search.js"></script>
+<script src="/search/js/modal.js"></script>
 </body>
 </html>

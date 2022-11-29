@@ -15,7 +15,8 @@ public class SearchProductService {
     @Autowired
     SearchProductDAO searchProductDAO;
 
-    public List<ProductVO> searchProduct(ProductVO productVO)throws Exception{
+    public List<ProductVO> searchProduct(ProductVO productVO) throws Exception {
+
         return searchProductDAO.selectSearchList(productVO);
     }
 }

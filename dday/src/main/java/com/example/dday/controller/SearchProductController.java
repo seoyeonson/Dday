@@ -29,7 +29,7 @@ public class SearchProductController {
     @Autowired
     SearchProductService searchProductService;
 
-    @RequestMapping("/search")
+    @RequestMapping("/page")
     public @ResponseBody  ResponseEntity<List<ProductVO>> searchProduct(@RequestParam(value = "productName", required = true, defaultValue = "") String productName){
 
         Map<String,Object> paramMap = new HashMap<String, Object>();
@@ -38,13 +38,15 @@ public class SearchProductController {
         System.out.println("성공");
         productVOList = searchProductMapper.getProductList(paramMap);
         System.out.println(productVOList);
+
         return new ResponseEntity(productVOList, HttpStatus.OK);
 
     }
-
-    private List<ProductVO> searchProduct(@RequestParam("keyword") String productName, Model model) throws Exception{
+    @GetMapping("/search")
+    private List<ProductVO> searchProduct(@RequestParam(value = "productName",required = false) String productName, Model model) throws Exception{
         ProductVO productVO = new ProductVO();
         productVO.setProductName(productName);
+        model.addAttribute("keyword",productName);
         return searchProductService.searchProduct(productVO);
     }
 }
