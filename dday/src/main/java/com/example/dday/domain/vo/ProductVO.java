@@ -25,6 +25,7 @@ public class ProductVO {
     String productOpenHours;
     Long productSalePercent;
     Long productViewCount;
+    Long productSalePrice;
 
     public void create(String productName, String productCategory, Long productPrice, Long productStock, String productManufactureDate, String productExpirationDate, String productOnelineInformation, String productInformation, String productThumbnailName, String productMainImageName, String productTodaySale, Long productSalePercent) {
         this.productName = productName;
