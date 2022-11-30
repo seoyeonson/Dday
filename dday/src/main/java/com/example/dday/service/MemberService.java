@@ -22,12 +22,13 @@ public class MemberService {
     public void join(MemberDTO memberDTO){
         memberDAO.save(memberDTO);
 
-        AddressVO addressVO = new AddressVO();
-        addressVO.setAddressMain(memberDTO.getAddressMain());
-        addressVO.setAddressDetail(memberDTO.getAddressDetail());
-        addressVO.setAddressReceivePerson(memberDTO.getMemberName());
-        addressVO.setAddressReceivePhoneNumber(memberDTO.getMemberPhoneNumber());
+        AddressVO addressVO = memberDTO.getAddressVO();
+//        addressVO.setAddressMain(memberDTO.getAddressMain());
+//        addressVO.setAddressDetail(memberDTO.getAddressDetail());
+//        addressVO.setAddressReceivePerson(memberDTO.getMemberName());
+//        addressVO.setAddressReceivePhoneNumber(memberDTO.getMemberPhoneNumber());
         addressVO.setMemberNumber(memberDTO.getMemberNumber());
+//        memberDTO.setAddressVO(addressVO);
         addressDAO.saveFirst(addressVO);
     };
 

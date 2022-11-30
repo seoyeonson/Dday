@@ -1,12 +1,7 @@
-$(document).ready(function(){
-    $('#partner_join').click(admin);
-    $('#basic_join').click(basic);
+$('#partner_join').on("click", function(){
+    sellerForm.submit();
 });
 
-function admin(){
-   sellerForm.submit();
-}
-
-function basic(){
+$('#basic_join').on("click", function(){
     userForm.submit();
-}
+});

@@ -71,6 +71,17 @@ $('#email').change(function() {
 
 // 성별선택
 const $radio_circle = $(".radio_circle");
+const $memberGender = $("input[name='memberGender']");
+$(document).ready(
+    function(){
+        $("input[value='선택안함']").prop("checked", true);
+        // console.log($memberGender);
+        // $.each($memberGender, function(){
+        //     console.log("checked: " + $(this).prop("checked"));
+        // })
+    }
+)
+
 
 $radio_circle.on("click",function(){
     $(this).prev().prop("checked", true);

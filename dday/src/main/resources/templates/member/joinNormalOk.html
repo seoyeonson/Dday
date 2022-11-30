@@ -13,28 +13,23 @@
     <link rel="stylesheet" href="/member/css/joinOk.css">
     <link rel="stylesheet" href="/main/css/header.css">
     <link rel="stylesheet" href="/main/css/footer.css">
-    <link rel="stylesheet" href="/partner/css/partner.css">
-    <link rel="stylesheet" href="/partner/css/partner_footer.css">
     <!-- icon -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
-    <header th:if="${memberType == 'normal'}" th:replace="/main/header.html" :: h></header>
-    <header th:if="${memberType == 'partner'}" th:replace="/partner/header.html" :: ph></header>
+    <header th:replace="/main/header.html" :: h></header>
     <main class="signup_ok_main">
         <span class="material-symbols-outlined" style="font-size: 80px; color: #ff3d00;">check_circle</span>
         <h2><span style="font-weight: 500;">회원가입이 완료</span>되었습니다.</h2>
         <div class="button_area">
             <div>
                 <div th:block>
-                    <button th:if="${memberType == 'partner'}" class="signup_btn" th:href="@{/partner/partner_change_info}">사업자 정보 등록하러가기</button>
-                    <button type="button" th:unless="${memberType == 'normal'}" class="signup_btn" th:href="@{/}">사이트 이용하기</button>
+                    <button type="button" class="signup_btn" th:href="@{/}">사이트 이용하기</button>
                 </div>
             </div>
         </div>
     </main>
-    <footer th:if="${memberType == 'normal'}" th:replace="main/footer.html" :: f></footer>
-    <footer th:if="${memberType == 'partner'}" th:replace="partner/footer.html" :: pf></footer>
+    <footer th:replace="main/footer.html" :: f></footer>
 </body>
 </html>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
