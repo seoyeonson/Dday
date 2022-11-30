@@ -8,4 +8,13 @@ import org.springframework.stereotype.Component;
 @Data
 @NoArgsConstructor
 public class CartVO {
+    private Long memberNumber;
+    private Long productNumber;
+    private Integer cartCount;
+
+    public void create(Long memberNumber, Long productNumber, Integer cartCount) {
+        this.memberNumber = memberNumber;
+        this.productNumber = productNumber;
+        this.cartCount = cartCount;
+    }
 }

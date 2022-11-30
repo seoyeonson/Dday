@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/member/*")
@@ -19,34 +21,41 @@ public class MemberController {
     private final MemberService memberService;
 
     @GetMapping("/divide")
-    public void divide(Model model){
-        model.addAttribute("member", new MemberVO());
-    }
-
-//    @PostMapping("/divide")
-//    public String divide(Model model){
-//        model.addAttribute("member", new MemberDTO());
-//        return "/member/join";
-//    }
+    public void divide(){;}
 
     @GetMapping("/join")
-    public void join(@RequestParam MemberVO member, Model model){
-        log.info("memberType: " + member.getMemberType());
+    public void join(String memberType, Model model){
+        log.info("memberType Get join: " + memberType);
         MemberDTO memberDTO = new MemberDTO();
-        memberDTO.setMemberType( member.getMemberType());
-        model.addAttribute("member", new MemberDTO());
+        memberDTO.setMemberType(memberType);
+        model.addAttribute("member", memberDTO);
     }
 
     @PostMapping("/join")
-    public RedirectView join(MemberDTO memberDTO, RedirectAttributes redirectAttributes){
-        memberService.join(memberDTO);
-        redirectAttributes.addFlashAttribute("memberType", memberDTO.getMemberType());
-        redirectAttributes.addFlashAttribute("memberNumber", memberDTO.getMemberNumber());
-        return new RedirectView("/member/joinOk");
+    public String join(MemberDTO member, HttpSession session){
+        log.info("member: " + member);
+        log.info("MemberType Posy join: " + member.getMemberType());
+        String url = "";
+
+        memberService.join(member);
+
+        session.setAttribute("memberName", member.getMemberName());
+        session.setAttribute("memberNumber", member.getMemberNumber());
+
+        if(member.getMemberType().equals("normal")){
+            url ="/member/joinNormalOk";
+        }else if (member.getMemberType().equals("partner")){
+            url = "/member/joinPartnerOk";
+        }
+
+        return url;
     }
 
-    @GetMapping("/joinOk")
-    public void joinOk(){;}
+    @GetMapping("/joinNormalOk")
+    public void joinNormalOk(){;}
+
+    @GetMapping("/joinPartnerOk")
+    public void joinPartnerOk(){;}
 
     @GetMapping("/login")
     public void login(Model model){ model.addAttribute("member", new MemberVO()); }

@@ -19,10 +19,12 @@ public class MemberDTO {
     private String memberType;
     private String memberStatus;
 
-    private String addressMain;
-    private String addressDetail;
-    private String addressReceivePerson;
-    private String addressReceivePhoneNumber;
+    private AddressVO addressVO;
+
+//    private String addressMain;
+//    private String addressDetail;
+//    private String addressReceivePerson;
+//    private String addressReceivePhoneNumber;
 
     public void create(String memberId, String memberPw, String memberName, String memberEmail, String memberPhoneNumber, String memberGender, String memberType) {
         this.memberId = memberId;

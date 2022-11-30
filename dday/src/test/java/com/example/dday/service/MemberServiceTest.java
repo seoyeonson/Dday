@@ -20,23 +20,21 @@ class MemberServiceTest {
     public void signup(){
         MemberDTO memberDTO = new MemberDTO();
         AddressVO addressVO = new AddressVO();
-        memberDTO.create("lss1234", "1234", "이순신", "lss1234@test.com", "01012341234", "남자", "파트너회원");
-        memberDTO.setAddressMain("서울특별시 관악구 신림동");
-        memberDTO.setAddressDetail("1234");
-        memberDTO.setAddressReceivePerson(memberDTO.getMemberName());
-        memberDTO.setAddressReceivePhoneNumber(memberDTO.getMemberPhoneNumber());
+        memberDTO.create("efw1234", "1234", "이순신", "few1234@test.com", "01012341234", "남자", "파트너회원");
+        addressVO.create("서울특별시 관악구 신림동", "1234", memberDTO.getMemberName(), memberDTO.getMemberPhoneNumber());
+        memberDTO.setAddressVO(addressVO);
         memberService.join(memberDTO);
     }
 
     @Test
     public void findByNumberTest(){
-        memberService.findByNumber(35L);
+        memberService.findByNumber(65L);
     };
 
     @Test
     public void modifyTest(){
         MemberVO memberVO = new MemberVO();
-        memberVO.create(memberService.findByNumber(35L));
+        memberVO.create(memberService.findByNumber(65L));
         memberVO.setMemberPw("1111");
         memberService.modify(memberVO);
     };
@@ -44,19 +42,19 @@ class MemberServiceTest {
     @Test
     public void modifyMemberStatusTest(){
         MemberVO memberVO = new MemberVO();
-        memberVO.setMemberNumber(35L);
+        memberVO.setMemberNumber(65L);
         memberVO.setMemberStatus("탈퇴");
         memberService.modifyMemberStatus(memberVO);
     };
 
     @Test
     public void checkIdTest(){
-        memberService.checkId("test");
+        memberService.checkId("efw1234");
     };
 
     @Test
     public void checkEmailTest(){
-        memberService.checkEmail("test2@test.com");
+        memberService.checkEmail("1234@test.com");
     };
 
     @Test
@@ -64,6 +62,6 @@ class MemberServiceTest {
         MemberVO memberVO = new MemberVO();
         memberVO.setMemberId("test");
         memberVO.setMemberPw("test");
-        memberService.login(memberVO);
+        log.info("일치하는 아이디/비밀번호: " + memberService.login(memberVO));
     };
 }
