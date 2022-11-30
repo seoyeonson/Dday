@@ -594,3 +594,39 @@ h1 small, .h1 small, h2 small, .h2 small, h3 small, .h3 small, h1 .small, .h1 .s
 .nav.nav-tabs.tab-fluid-5 > li > a > h2{
     padding-top: 5px;
 }
+
+.partner_info {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.side_spacer {
+    padding-right: 10px;
+}
+
+.top_spacer {
+    padding-top: 8px;
+    display: flex;
+    
+}
+.bottom_spacer {
+    padding-bottom: 8px;
+    display: flex;
+    
+}
+
+.vertical_spacer {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.width_space {
+    width: 100%;
+    display: flex;
+}
+
+.alignment {
+    width: 80px;
+    display: flex;
+}
+

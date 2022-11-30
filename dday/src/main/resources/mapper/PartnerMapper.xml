@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.dday.mapper.PartnerMapper">
+    <insert id="insert">
+        <selectKey keyProperty="partnerNumber" order="BEFORE" resultType="long">
+            SELECT SEQ_PARTNER.NEXTVAL FROM DUAL
+        </selectKey>
+        INSERT INTO TBL_PARTNER(PARTNER_NUMBER, MEMBER_NUMBER, PARTNER_STORE_NAME, PARTNER_REGISTRATION_NUMBER, PARTNER_OWNER_NAME, PARTNER_OWNER_EMAIL, PARTNER_STORE_ADDRESS, PARTNER_OWNER_PHONE_NUMBER)
+        VALUES(SEQ_PARTNER.NEXTVAL, #{memberNumber}, #{partnerStoreName}, #{partnerRegistrationNumber}, #{partnerOwnerName}, #{partnerOwnerEmail}, #{partnerStoreAddress}, #{partnerOwnerPhoneNumber})
+    </insert>
 
+    <update id="update">
+        UPDATE TBL_PARTNER
+        SET PARTNER_STORE_NAME = #{partnerStoreName}, PARTNER_REGISTRATION_NUMBER = #{partnerRegistrationNumber}, PARTNER_OWNER_NAME = #{partnerOwnerName}, PARTNER_OWNER_EMAIL = #{partnerOwnerEmail}, PARTNER_STORE_ADDRESS = #{partnerStoreAddress}, PARTNER_OWNER_PHONE_NUMBER = #{partnerOwnerPhoneNumber}
+        WHERE PARTNER_NUMBER = #{partnerNumber}
+    </update>
 </mapper>

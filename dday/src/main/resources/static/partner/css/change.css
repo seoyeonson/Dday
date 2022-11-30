@@ -167,3 +167,9 @@ th {
 input:focus {
     outline: 1px solid lightgrey;
 }
+
+.text_central {
+    display: inline-flex;
+    align-items: center;
+    float: right;
+}

@@ -148,3 +148,9 @@ nput[type="submit"] {
 th {
     text-align: left;
 }
+
+.text_central {
+    display: inline-flex;
+    align-items: center;
+    float: right;
+}
