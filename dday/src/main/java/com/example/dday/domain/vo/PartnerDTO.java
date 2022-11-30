@@ -7,7 +7,8 @@ import org.springframework.stereotype.Component;
 @Component
 @Data
 @NoArgsConstructor
-public class PartnerVO {
+public class PartnerDTO {
+    //    PartnerVO
     private Long partnerNumber;
     private String partnerStoreName;
     private String partnerRegistrationNumber;
@@ -25,4 +26,23 @@ public class PartnerVO {
         this.partnerStoreAddress = partnerStoreAddress;
         this.partnerOwnerPhoneNumber = partnerOwnerPhoneNumber;
     }
+
+    //    ProductVO
+    private Long productNumber;
+    private String productName;
+    private String productCategory;
+    private Long productPrice;
+    private Long productStock;
+    private String productManufactureDate;
+    private String productExpirationDate;
+    private String productOnelineInformation;
+    private String productInformation;
+    private String productThumbnailName;
+    private String productMainImageName;
+    private String productRegistDate;
+    private String productModifyDate;
+    private String productTodaySale;
+    private String productOpenHours;
+    private Long productSalePercent;
+
 }
