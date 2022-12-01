@@ -318,16 +318,16 @@ function sample6_execDaumPostcode() {
                     extraAddr = ' (' + extraAddr + ')';
                 }
                 // 조합된 참고항목을 해당 필드에 넣는다.
-                $("#addressDetail").val(extraAddr);
+                $(".addressDetail").val(extraAddr);
 
             } else {
-                $("addressDetail").val('');
+                $(".addressDetail").val('');
             }
 
             // 주소 정보를 해당 필드에 넣는다.
-            $("#addressMain").val(addr);
+            $(".addressMain").val(addr);
             // 커서를 상세주소 필드로 이동한다.
-            $("#addressDetail").focus();
+            $(".addressDetail").focus();
         }
     }).open();
 }

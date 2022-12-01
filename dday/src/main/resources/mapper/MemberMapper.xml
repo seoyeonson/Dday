@@ -48,8 +48,8 @@
 		WHERE MEMBER_EMAIL=#{memberEmail}
 	</select>
 
-    <select id="login" resultType="long">
-        select MEMBER_NUMBER FROM TBL_MEMBER
+    <select id="login" resultType="memberVO">
+        select MEMBER_NUMBER, MEMBER_NAME, MEMBER_TYPE FROM TBL_MEMBER
         WHERE MEMBER_ID=#{memberId} AND MEMBER_PW=#{memberPw}
     </select>
 </mapper>

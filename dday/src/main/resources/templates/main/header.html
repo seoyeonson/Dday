@@ -37,14 +37,24 @@
 <header th:fragment="h">
     <div id="header">
         <div class="header">
-            <div class="searchbar">
-                <div class="loginbar">
-                    <a class="join" href="/member/join">회원가입</a>
+            <div class="searchbar" th:object="${session.member}">
+                <input type="hidden" th:value="*{memberNumber}">
+                <div class="loginbar" th:if="*{memberNumber == 0}">
+                    <a class="join" href="/member/divide">회원가입</a>
                     <div class="barbar"></div>
                     <a class="login lobo" href="/member/login">로그인</a>
                     <div class="barbar"></div>
                     <div class="service_centor">
                         <a class="service lobo css-over" href="/faq/list">고객센터</a>
+                    </div>
+                </div>
+                <div class="loginbar" th:unless="*{memberNumber == 0}">
+                    <a class="join" th:text="*{memberName} + '님'"></a>
+                    <div class="barbar"></div>
+                    <a class="login lobo" href="/member/logout">로그아웃</a>
+                    <div class="barbar"></div>
+                    <div class="service_centor">
+                        <a class="service lobo css-over" href="/member/mypage">마이페이지</a>
                     </div>
                 </div>
                 <!-- 로그인바 종료-->
