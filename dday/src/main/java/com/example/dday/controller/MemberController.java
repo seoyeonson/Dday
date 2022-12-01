@@ -3,11 +3,13 @@ package com.example.dday.controller;
 import com.example.dday.domain.vo.MemberDTO;
 import com.example.dday.domain.vo.MemberVO;
 import com.example.dday.service.MemberService;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
@@ -39,8 +41,7 @@ public class MemberController {
 
         memberService.join(member);
 
-        session.setAttribute("memberName", member.getMemberName());
-        session.setAttribute("memberNumber", member.getMemberNumber());
+        session.setAttribute("member", member);
 
         if(member.getMemberType().equals("normal")){
             url ="/member/joinNormalOk";
@@ -62,8 +63,21 @@ public class MemberController {
 
     @PostMapping("/login")
     @ResponseBody
-    public Long login(MemberVO memberVO){
+    public Long login(@ModelAttribute("member") MemberVO memberVO, HttpSession session){
+        log.info("member: " + memberVO);
+        if(memberService.login(memberVO) != 0){
+            memberVO = memberService.findByNumber(memberService.login(memberVO));
+        } else {
+            memberVO = null;
+        }
+        session.setAttribute("member", memberVO);
         return memberService.login(memberVO);
+    }
+
+    @GetMapping("/logout")
+    public RedirectView logout(HttpSession session){
+        session.invalidate();
+        return new RedirectView("/");
     }
 
 //    mypage
