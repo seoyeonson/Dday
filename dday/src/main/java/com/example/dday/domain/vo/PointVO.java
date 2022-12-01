@@ -10,10 +10,14 @@ import org.springframework.stereotype.Component;
 @Data
 @NoArgsConstructor
 public class PointVO {
+<<<<<<< Updated upstream
     private Long pointNumber;
     private Long memberNumber;
     private Integer pointPrice;
     private String pointContent;
     private String pointDate;
     private String pointEndDate;
+=======
+
+>>>>>>> Stashed changes
 }
