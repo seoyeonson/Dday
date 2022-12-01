@@ -14,6 +14,7 @@ import java.lang.reflect.Member;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/")
@@ -21,8 +22,9 @@ import java.util.List;
 public class MainController {
     @GetMapping("/")
     public String main(Model model, HttpSession session){
-        MemberVO memberVO = (MemberVO)session.getAttribute("member");
-        model.addAttribute("member", memberVO != null ? memberVO : new MemberVO());
+        MemberVO memberVO = new MemberVO();
+        memberVO.setMemberNumber(0L);
+        session.setAttribute("member", Optional.ofNullable((MemberVO)session.getAttribute("member")).orElse(memberVO));
         return "/index";
    }
 }

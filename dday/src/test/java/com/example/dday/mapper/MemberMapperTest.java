@@ -56,7 +56,7 @@ class MemberMapperTest {
         MemberVO memberVO = new MemberVO();
         memberVO.setMemberId("test");
         memberVO.setMemberPw("21");
-        log.info("login Ok: " + (memberMapper.login(memberVO) == 0 ? "false" : "Ok"));
+        log.info("login Ok: " + (memberMapper.login(memberVO) == null ? "false" : "Ok"));
     }
 
 }

@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -55,6 +57,6 @@ class MemberDAOTest {
         MemberVO memberVO = new MemberVO();
         memberVO.setMemberId("test");
         memberVO.setMemberPw("test");
-        log.info("login Ok: " + (memberDAO.login(memberVO) == 0 ? "false" : "Ok"));
+        log.info("login Ok: " + (Optional.ofNullable(memberDAO.login(memberVO)).map(MemberVO::getMemberName).orElse("로그인실패")));
     }
 }

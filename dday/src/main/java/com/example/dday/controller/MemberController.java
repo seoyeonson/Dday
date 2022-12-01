@@ -3,6 +3,7 @@ package com.example.dday.controller;
 import com.example.dday.domain.vo.MemberDTO;
 import com.example.dday.domain.vo.MemberVO;
 import com.example.dday.service.MemberService;
+import com.example.dday.type.MemberType;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -14,6 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpSession;
+import java.lang.reflect.Member;
 
 @Controller
 @RequiredArgsConstructor
@@ -34,22 +36,19 @@ public class MemberController {
     }
 
     @PostMapping("/join")
-    public String join(MemberDTO member, HttpSession session){
+    public RedirectView join(MemberDTO member, HttpSession session){
         log.info("member: " + member);
-        log.info("MemberType Posy join: " + member.getMemberType());
         String url = "";
-
         memberService.join(member);
-
         session.setAttribute("member", member);
 
-        if(member.getMemberType().equals("normal")){
+        if(member.getMemberType().equals(MemberType.NORMAL.label())){
             url ="/member/joinNormalOk";
-        }else if (member.getMemberType().equals("partner")){
+        }else if (member.getMemberType().equals(MemberType.PARTNER.label())){
             url = "/member/joinPartnerOk";
         }
 
-        return url;
+        return new RedirectView(url);
     }
 
     @GetMapping("/joinNormalOk")
@@ -63,15 +62,10 @@ public class MemberController {
 
     @PostMapping("/login")
     @ResponseBody
-    public Long login(@ModelAttribute("member") MemberVO memberVO, HttpSession session){
-        log.info("member: " + memberVO);
-        if(memberService.login(memberVO) != 0){
-            memberVO = memberService.findByNumber(memberService.login(memberVO));
-        } else {
-            memberVO = null;
-        }
+    public MemberVO login(MemberVO memberVO, HttpSession session){
+        memberVO = memberService.login(memberVO);
         session.setAttribute("member", memberVO);
-        return memberService.login(memberVO);
+        return memberVO;
     }
 
     @GetMapping("/logout")
