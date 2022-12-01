@@ -11,5 +11,6 @@
         <typeAlias type="com.example.dday.domain.vo.ProductLikeVO" alias="productLikeVO"/>
         <typeAlias type="com.example.dday.domain.vo.ProductVO" alias="productVO"/>
         <typeAlias type="com.example.dday.domain.vo.AddressVO" alias="addressVO"/>
+        <typeAlias type="com.example.dday.domain.vo.ManagerDTO" alias="managerDTO"/>
     </typeAliases>
 </configuration>
