@@ -19,4 +19,11 @@ public class PartnerService {
     public void modify(PartnerDTO partnerDTO) {
         partnerDAO.setPartnerVO(partnerDTO);
     }
+
+//    조회
+    public PartnerDTO show(Long partnerNumber) {
+        PartnerDTO partnerDTO = new PartnerDTO();
+        partnerDTO.create(partnerDAO.findById(partnerNumber));
+        return partnerDTO;
+    }
 }
