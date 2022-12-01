@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dday.mapper.ManagerMapper">
+
+    <select id ="selectAll" resultType="managerDTO">
+        /*SELECT M.MEMBER_NUMBER, M.MEMBER_NAME, M.MEMBER_ID, M.MEMEBER_SIGNUP_DATE, P.POINT_PRICE, O.ORDER_NUMBER, O.ORDER_TOTAL_AMOUNT
+        FROM TBL_MEMBER M , TBL_POINT P , TBL_ORDER O
+        WHERE M.MEMBER_NUMER = P.MEMBER_NUMBER AND M.MEBER_NUMBER= O.MEMBER_NUMBER*/
+        SELECT DISTINCT M.MEMBER_NUMBER
+	    , M.MEMBER_NAME
+	    , M.MEMBER_ID
+	    , M.MEMBER_SIGNUP_DATE
+	    , P.POINT_PRICE
+	    , O.ORDER_NUMBER
+	    , O.ORDER_TOTAL_AMOUNT
+	    FROM TBL_MEMBER M
+	    INNER JOIN TBL_POINT P
+		ON M.MEMBER_NUMBER = P.MEMBER_NUMBER
+	    INNER JOIN TBL_ORDER O
+		ON M.MEMBER_NUMBER = O.MEMBER_NUMBER
+    </select>
+</mapper>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:tr="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,198 +12,295 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 </head>
 <body>
+<div class="all_wrapper">
+    <header>
+        <div class="logo">DDay</div>
+        <hr />
+        <div class="go_to_site"><a href="">사이트 바로가기</a></div>
+        <div class="list_wrapper">
+            <details class="user_manage">
+                <summary>
+                    <div style="position: absolute; left: 80px; top: 140px;">회원관리</div>
+
+                </summary>
+                <ul class="manage">
+                    <li><a href="#">&nbsp&nbsp&nbsp회원정보 조회</a></li>
+                    <li><a href="#">&nbsp&nbsp&nbsp차단된 회원</a></li>
+                </ul>
+            </details>
+            <!-- <details class="driver_manage">
+              <summary>
+                <div><a href="#">수거기사 관리</div></a>
+                <a href="#"><img src="/img/pngwing.com.png" /></a>
+              </summary>
+            </details> -->
+
+            <!-- <details class="store_manage">
+              <summary>
+                <div>스토어 관리</div>
+                <img src="/img/pngwing.com.png" />
+              </summary>
+              <ul class="manage">
+                <li><a href="#">&nbsp&nbsp&nbsp상품리스트</a></li>
+                <li><a href="#">&nbsp&nbsp&nbsp판매내역</a></li>
+                <li><a href="#">&nbsp&nbsp&nbsp재고현황</a></li>
+                <li><a href="#">&nbsp&nbsp&nbsp환불</a></li>
+              </ul>
+            </details> -->
+
+            <!-- <details class="notice_manage">
+              <summary>
+                <div>게시판 및 문의</div>
+                <img src="/img/pngwing.com.png" />
+              </summary>
+              <ul class="manage">
+                <li><a href="#">&nbsp&nbsp&nbsp게시판 관리</a></li>
+                <li><a href="#">&nbsp&nbsp&nbsp문의 및 답변</a></li>
+              </ul>
+            </details>
+          </div> -->
+    </header>
+    <main>
+        <!-- <div class="main_header">
+            <button type="button" class="button1">연장/업그레이드</button>
+            <button type="button" class="button2">로그아웃</button>
+        </div> -->
 
 
-<!-- <div class="wrapper"> -->
-<!-- 사이드 바 -->
-<div class="sidebar">
-    <!-- 로고(image) -->
-    <div class="logo">
-        <!-- 로고 들어오면 넣어주세요 -->
-        <img src="">로고
-        <!-- 사이트 이름 정해지면 넣어주세요 -->
-        <h1 style="color:#ff3d00">&nbsp;&nbsp;&nbsp; DDAY</h1>
-    </div>
-    <!-- 메인페이지 링크 나오면 추가해주세요 -->
-    <ul>
-        <li>
-            <a href="" class="menu"><img src="/manager/images/globe.png">사이트 바로가기</a>
-        </li>
-        <!-- 회원 관리 -->
-        <li>
-            <a><img src="/manager/images/user.png">회원 관리 <img src="/manager/images/menu-burger.png"
-                                                             style="float: right; height:20px;"></a>
-            <ul>
-                <li><a href="/manager/memberAll">전체회원관리</a></li>
-                <li><a href="/manager/updateMemberStatus">탈퇴회원관리</a></li>
-            </ul>
-        </li>
-        <!--<li>
-            <a><img src="/manager/images/apps.png">콘텐츠 관리<img src="/manager/images/menu-burger.png" style="float: right; height:20px;"></a>
-            <ul>
-                <li><a href="/manager/html/manager/managerNotice.html">공지사항관리</a></li>
-                <li><a href="/manager/html/manager/managerFAQ.html">문의하기관리</a></li>
-            </ul>
-        </li>-->
-        <!--<li>
-            <a><img src="/manager/images/settings.png">환경 설정<img src="/manager/images/menu-burger.png"
-                                                                style="float: right; height:20px;"></a>
-            <ul>
-                <li><a href="/manager/html/banner/managerBanner.html">배너 관리</a></li>
-            </ul>
-        </li>-->
-    </ul>
-</div>
-<!-- 사이드 바 end -->
+        <!-- main 주 내용 시작 -->
+        <div class="user_lookup_wrapper">
+            <div class="title">회원정보 조회</div>
+            <!-- <div class="site_comming_route">
+              <div class="admin">사이트 운영</div>
+              <div class="user">회원관리</div>
+              <div class="user_lookup">회원정보 조회</div>
+          </div> -->
 
-<!-- </div> -->
-<!-- 회원 검색 -->
-<div class="contents">
-    <h3 class="list">회원 리스트</h3>
-    <div class="memberList">
-        <span><strong class="find">회원 검색</strong></span>
-        <hr class="findHr">
-        <span class="search">
-        <span class="searchbox">검색어</span>
-        <select name="howtofind" id="howtofind">
-            <option value="box01">아이디</option>
-            <option value="box02">비밀번호</option>
-            <option value="box03">회원명</option>
-            <option value="box04">회원번호</option>
-        </select>
-        <span><input type="text" class="howtofindtext"></span>
-        </span>
-        <hr id="hr1">
-        <span class="grade">
-        <span class="gradebox">주문상품건수</span>
-        <select name="grade" id="gradebox">
-            <option value="gradebox00">0회</option>
-            <option value="gradebox01">10회미만</option>
-            <option value="gradebox02">10회이상</option>
-            <option value="gradebox02">20회이상</option>
-            <option value="gradebox02">30회이상</option>
-            <option value="gradebox02">40회이상</option>
-        </select>
-        <span class="dividebox">
-        <span>회원구분</span>
-        </span>
-        <span class="divideRadio">
-        <input type="radio">전체<input type="radio">개인회원<input type="radio">사업자회원
-         </span>
-        </span>
-        <hr id="hr2">
-        <span class="approve">
-        <span>가입승인</span>
-        </span>
-        <span class="approveRadio">
-        <input type="radio">전체<input type="radio">승인<input type="radio">미승인
-        </span>
-        <span class="registerDate">회원가입일</span>
-        <span>
-            <input type="date" class="cal1">
-            <span class="div">~</span>
-            <input type="date" class="cal2">
-        </span> <!-- 달력 구현 -->
-        <hr id="hr3">
-        <button id="findBtn">검색</button>
-    </div>
+            <!-- 검색 조건 시작 -->
 
-    <!-- 회원 검색 End -->
-    <!-- 검색된 회원 목록 테이블  -->
-    <span class="count">
-            <span class="allMember">
-                검색 <strong style="color: red;">0</strong>명 / 전체<strong style="color: red;">5712</strong>명
-            </span>
-        <span><select name="selectbydate" id="selectbydate">
-            <option value="selectbydate01">회원가입일순</option>
-            <option value="selectbydate02">회원번호순</option>
-            <option value="selectbydate03">적립금순</option>
-            <option value="selectbydate04">주문금액순</option>
-            <option value="selectbydate05">등급별</option>
-            <option value="selectbydate06">승인여부</option>
-        </select></span>
-        <span><select name="show" id="show">
-            <option value="show10">10개 보기</option>
-            <option value="show20">20개 보기</option>
-            <option value="show30">30개 보기</option>
-            <option value="show40">40개 보기</option>
-            <option value="show50">50개 보기</option>
-        </select></span>
-    </span>
-    <!--  <h3>회원 목록 관리</h3> -->
-    <table class="memberAll">
-        <thead>
-        <tr>
-            <th>회원번호</th><th>회원명</th><th>아이디</th><th>가입 일자</th><th>적립금</th><th>주문상품건수</th><th>주문금액</th>
-            <th>등급</th><th>가입승인</th><th>회원 상세보기</th>
-        </tr>
-        </thead>
-        <tbody>
-        <td class="memberId">0</td>
-        <td>000</td>
-        <td>000</td>
-        <td>0000-00-00</td>
-        <td>1058점</td>
-        <td>4회</td>
-        <td>158,000원</td>
-        <td>사업자회원</td>
-        <td>승인</td>
-        <td><button class="seeDetail" onclick="location.href='/manager/memberView'">상세보기</button></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td><!-- <button class="seeDetail" onclick="memberDetail()">상세보기</button> --></td>
-            <td><!-- <button class="removeList" onclick="remove_tr(this)">회원 삭제</button> --></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td><!-- <button class="seeDetail" onclick="memberDetail()">상세보기</button> --></td>
-            <td><!-- <button class="removeList" onclick="remove_tr(this)">회원 삭제</button> --></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td><!-- <button class="seeDetail" onclick="memberDetail()">상세보기</button> --></td>
-            <td><!-- <button class="removeList" onclick="remove_tr(this)">회원 삭제</button> --></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td><!-- <button class="seeDetail" onclick="memberDetail()">상세보기</button> --></td>
-            <td><!-- <button class="removeList" onclick="remove_tr(this)">회원 삭제</button> --></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        </tbody>
-    </table>
+            <div class="input_form_wrapper">
+                <form action="">
+                    <table class="admin_input">
+                        <!-- 1행 -->
+                        <tr>
+                            <th scope="row">검색어</th>
+                            <td style="border-right: none;"><select name="id_or_name" id="">
+                                <option value="id">아이디</option>
+                                <option value="name">이름</option>
+                            </select>
+                                <input type="text">
+                            </td>
+                            <th scope="row" style="border-right: none;"></th>
+                            <td></td>
+                        </tr>
 
+                        <tr>
+                            <th scope="row">이메일</th>
+                            <td style="border-right: none;">
+                                <input type="text" placeholder="닉네임 "> &nbsp@
+                                <select name="mail_company" id="">
+                                    <option value="gmail">gmail</option>
+                                    <option value="naver">naver</option>
+                                </select>
+                            </td>
+                            <th scope="row" style="border-right: none;"></th>
+                            <td></td>
+                        </tr>
 
-</div>
+                        <!-- 2행 -->
+                        <tr>
+                            <th scope="row">닉네임</th>
+                            <td style="border-right: none;">
+                                <input type="text" placeholder="닉네임 ">
+                            </td>
+                            <th scope="row" style="border-right: none;"></th>
+                            <td></td>
+                        </tr>
 
+                        <!-- 3행 -->
+                        <tr>
+                            <th scope="row">회원등급</th>
+                            <td><select name="user_grade_check" id="">
+                                <option value="normal">일반회원</option>
+                                <option value="great">사업자회원</option>
+                            </select></td>
+                            <th scope="row">회원유형</th>
+                            <td>
+                                <input type="radio" id="all_user" name="user_type"><label for="all_user">전체</label>
+                                <input type="radio" id="special_user" name="user_type"><label for="special_user">일반 회원</label>
+                                <input type="radio" id="trash_user" name="user_type"><label for="trash_user">사업자 회원</label>
+                            </td>
+                        </tr>
+
+                        <!-- 4행 -->
+                        <!-- <tr>
+                          <th scope="row">가입경로</th>
+                          <td>
+                            <input type="radio" id="pc_route" name="user_join_method"><label for="PC_route">PC</label>
+                            <input type="radio" id="mobile_route" name="user_join_method"><label for="mobile_route">모바일</label>
+                          </td>
+                          <th scope="row">유입경로</th>
+                          <td>
+                            <select name="user_join_route" id="">
+                              <option value="advertisement_internet">인터넷 광고</option>
+                              <option value="advertisement_mobile">문자 광고</option>
+                              <option value="friend_recommen">지인 추천</option>
+                            </select>
+                          </td>
+                        </tr> -->
+
+                        <!-- 5행 -->
+                        <!-- <tr>
+                          <th scope="row">가입일 / 기념일</th>
+                          <td style="border-right: none;">
+                            <select name="date_join_anniversary" id="">
+                              <option value="join">가입일</option>
+                              <option value="anniversary">기념일</option>
+                            </select>
+                          </td>
+                          <th scope="row" style="border-right: none;"></th>
+                          <td></td>
+                        </tr> -->
+
+                        <!-- 6행 -->
+                        <!-- <tr>
+                          <th scope="row">나이</th>
+                          <td>
+                            <input type="text">  ~
+                            <input type="text">
+                          </td>
+                          <th scope="row">성별</th>
+                          <td>
+                            <input type="radio" value="both" id="gender_all" name="user_gender"><label for="gender_all">전체</label>
+                            <input type="radio" value="men" id="gender_men" name="user_gender"><label for="gender_men">남자</label>
+                            <input type="radio" value="women" id="gender_women" name="user_gender"><label for="gender_women">여자</label>
+                          </td>
+                        </tr> -->
+
+                        <!-- 7행 -->
+                        <!-- <tr>
+                          <th scope="row">접속일</th>
+                          <td>
+                            <input type="date">
+                            ~
+                            <input type="date">
+                          </td>
+                          <th scope="row">접속 IP</th>
+                          <td>
+                            <input type="text">
+                            예) 123.123.123.123
+                          </td>
+                        </tr> -->
+
+                        <!-- 8행 -->
+                        <!-- <tr>
+                          <th scope="row">지역</th>
+                          <td>
+                            <select name="user_region" id="">
+                              <option value="seocho">서초구</option>
+                              <option value="gangnam">강남구</option>
+                              <option value="songpa">송파구</option>
+                              <option value="yang">양구</option>
+                              <option value="duckjin">덕진구</option>
+                            </select>
+                          </td>
+                          <th scope="row">상세주소</th>
+                          <td>
+                            <input type="text" placeholder="동,면,읍">
+                          </td>
+                        </tr> -->
+
+                        <!-- 9행 -->
+                        <!-- <tr>
+                          <th scope="row">구매날짜</th>
+                          <td style="border-right: none;">
+                            <input type="date">
+                            ~
+                            <input type="date">
+                          </td>
+                          <th scope="row" style="border-right: none;"></th>
+                          <td></td>
+                        </tr> -->
+
+                        <!-- 10행 -->
+                        <!-- <tr>
+                          <th scope="row">구매 건수/금액</th>
+                          <td style="border-right: none;">
+                            <select name="purchase_price_count" id="">
+                              <option value="price">구매 금액</option>
+                              <option value="count">구매 건수</option>
+                            </select>
+                          </td>
+                          <th scope="row" style="border-right: none;"></th>
+                          <td></td>
+                        </tr> -->
+
+                    </table>
+                    <button type="button" class="search_button">검색</button>
+                </form>
+            </div>
+
+            <div class="result_wrapper">
+                <div class="result_table_title">조회 결과</div>
+
+                <table class="result_table">
+                    <thead>
+                    <tr>
+                        <th scope="cols">회원번호</th>
+                        <th scope="cols">회원명</th>
+                        <th scope="cols">아이디</th>
+                        <th scope="cols">가입일자</th>
+                        <th scope="cols">적립금</th>
+                        <th scope="cols">주문상품건수</th>
+                        <th scope="cols">주문금액</th>
+                        <th scope="cols">회원상세보기</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr:block th:each="memberInfo:${memberInfo}">
+                        <tr th:object="${memberInfo}">
+                        <th th:text="*{memberNumber}" scope="row">유저1</th>
+                        <td th:text="*{memberName}">이종호</td>
+                        <td th:text="*{memberId}">caMelodain</td>
+                        <td th:text="*{memberSignupDate}">abcabc@gmail.com</td>
+                        <td th:text="*{pointPrice}">서울시</td>
+                        <td th:text="*{orderNumber}">서울시</td>
+                        <td th:text="*{orderTotalAmount}">서울시</td>
+                        <td><button style="color: black;" class="memberDetail">회원상세보기</button></a></td>
+                        </tr>
+                    </tr:>
+                    <!-- <tr>
+                      <th scope="row">유저2</th>
+                      <td>고진혁</td>
+                      <td>코머</td>
+                      <td>qweqwe@gmail.com</td>
+                      <td>제주시</td>
+                      <td>제주시</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">유저2</th>
+                      <td>노희찬</td>
+                      <td>감칠맛민초</td>
+                      <td>fuckingMintChoco@gmail.com</td>
+                      <td>서울시</td>
+                      <td>서울시</td>
+                    </tr> -->
+                    </tbody>
+                </table>
+
+                <!-- 페이지 이동 버튼 -->
+                <div class="change_page">
+                    <button>[1]</button>
+                    <button>[2]</button>
+                    <button>[3]</button>
+                    <button>[4]</button>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
 </body>
 
 <script src="/manager/js/manager.js"></script>
