@@ -79,31 +79,20 @@
                                                 <col class="width-md">
                                                 <col>
                                             </colgroup>
-                                            <tbody>
+                                            <tbody th:object="${partner}">
                                             <tr>
                                                 <th>상호(회사명)</th>
                                                 <td class="form-inline">
-                                                    <!-- <input type="text" name="companyNm" value=""
-                                                        class="form-control width-md"> -->
-                                                    <span class="partner_info">디데이</span>
+                                                    <span class="partner_info" th:text="*{partnerStoreName}"></span>
                                                 </td>
                                                 <th>사업자등록번호</th>
                                                 <td class="form-inline">
                                                     <div style="position: relative;">
-                                                        <!-- <input type="text" name="businessNo[]" value=""
-                                                            maxlength="3"
-                                                            class="form-control js-number-only width-3xs"> -
-                                                        <input type="text" name="businessNo[]" value=""
-                                                            maxlength="2"
-                                                            class="form-control js-number-only width-3xs"> -
-                                                        <input type="text" name="businessNo[]" value=""
-                                                            maxlength="5"
-                                                            class="form-control js-number-only width-3xs"> -->
-                                                        <span class="partner_info">111</span>
+                                                        <span class="partner_info" th:text="*{partnerRegistrationNumber1}"></span>
                                                         -
-                                                        <span class="partner_info">22</span>
+                                                        <span class="partner_info" th:text="*{partnerRegistrationNumber2}"></span>
                                                         -
-                                                        <span class="partner_info">3333</span>
+                                                        <span class="partner_info" th:text="*{partnerRegistrationNumber3}"></span>
                                                         <span class="bootstrap-maxlength"
                                                               style="display: none; position: absolute; white-space: nowrap; z-index: 999; top: -10.9px; left: 65px;"><em>3</em>
                                                                         / 3</span><span class="bootstrap-maxlength"
@@ -129,29 +118,13 @@
                                             <tr>
                                                 <th>대표자명</th>
                                                 <td colspan="3" class="form-inline">
-                                                    <!-- <input type="text" name="ceoNm" value=""
-                                                        class="form-control width-lg"> -->
-                                                    <span class="partner_info">강희수</span>
+                                                    <span class="partner_info" th:text="*{partnerOwnerName}"></span>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <th class="require">대표 이메일</th>
                                                 <td colspan="3" class="form-inline">
-                                                    <!-- <input type="text" name="email[]" value=""
-                                                        class="form-control width-lg"> @
-                                                    <input type="text" id="email" name="email[]" value=""
-                                                        class="form-control width-md js-email-domain">
-                                                    <select class="email_domain" id="email_domain" name="">
-                                                        <option value="self">직접입력</option>
-                                                        <option value="naver.com">naver.com</option>
-                                                        <option value="hanmail.net">hanmail.net</option>
-                                                        <option value="daum.net">daum.net</option>
-                                                        <option value="nate.com">nate.com</option>
-                                                        <option value="hotmail.com">hotmail.com</option>
-                                                        <option value="gmail.com">gmail.com</option>
-                                                        <option value="icloud.com">icloud.com</option>
-                                                    </select> -->
-                                                    <span class="partner_info">dday@gmail.com</span>
+                                                    <span class="partner_info" th:text="*{partnerOwnerEmail}"></span>
                                                     <div class="notice-info">
                                                         대표 이메일은 쇼핑몰에서 메일 발송 시 기본 발송자이메일 정보로 사용됩니다. <br>
                                                         발송자 이메일 정보가 없으면 자동메일 발송이 되지 않으니, 대표 이메일 정보를 반드시
@@ -169,7 +142,7 @@
                                                                             <span id="zipcodeText"
                                                                                   class="number display-none">우편번호</span>
                                                             </div>
-                                                            <span class="partner_info">06236</span>
+                                                            <span class="partner_info" th:text="*{partnerStorePostcode}"></span>
 
                                                         </div>
                                                         <span class="bootstrap-maxlength"
@@ -181,8 +154,7 @@
                                                             <div class="alignment">
                                                                 <span>도로명 주소</span>
                                                             </div>
-                                                            <span class="partner_info">서울 강남구 테헤란로
-                                                                            146</span>
+                                                            <span class="partner_info" th:text="*{partnerStoreAddress}"}></span>
                                                         </div>
                                                     </div>
                                                     <div class="form_inline bottom_spacer">
@@ -190,7 +162,7 @@
                                                             <div class="alignment">
                                                                 <span>상세 주소</span>
                                                             </div>
-                                                            <span class="partner_info">13층</span>
+                                                            <span class="partner_info" th:text="*{partnerStoreDetailedAddress}"></span>
                                                         </div>
 
                                                     </div>
@@ -199,7 +171,7 @@
                                             <tr>
                                                 <th>대표전화</th>
                                                 <td class="form-inline" style="position: relative;">
-                                                    <span class="partner_info">02-123-1324</span>
+                                                    <span class="partner_info" th:text="*{partnerOwnerPhoneNumber}"></span>
                                                     <span class="bootstrap-maxlength"
                                                           style="display: none; position: absolute; white-space: nowrap; z-index: 999; top: -0.9px; left: 170px;"><em>10</em>
                                                                     / 12</span>

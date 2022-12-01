@@ -10,5 +10,6 @@ public interface PartnerMapper {
     public void insert(PartnerDTO partnerDTO);
 //    파트너 정보 수정
     public void update(PartnerDTO partnerDTO);
-//
+//    파트너 정보 조회
+    public PartnerVO select(Long partnerNumber);
 }

@@ -5,13 +5,19 @@
         <selectKey keyProperty="partnerNumber" order="BEFORE" resultType="long">
             SELECT SEQ_PARTNER.NEXTVAL FROM DUAL
         </selectKey>
-        INSERT INTO TBL_PARTNER(PARTNER_NUMBER, MEMBER_NUMBER, PARTNER_STORE_NAME, PARTNER_REGISTRATION_NUMBER, PARTNER_OWNER_NAME, PARTNER_OWNER_EMAIL, PARTNER_STORE_ADDRESS, PARTNER_OWNER_PHONE_NUMBER)
-        VALUES(SEQ_PARTNER.NEXTVAL, #{memberNumber}, #{partnerStoreName}, #{partnerRegistrationNumber}, #{partnerOwnerName}, #{partnerOwnerEmail}, #{partnerStoreAddress}, #{partnerOwnerPhoneNumber})
+        INSERT INTO TBL_PARTNER(PARTNER_NUMBER, MEMBER_NUMBER, PARTNER_STORE_NAME, PARTNER_REGISTRATION_NUMBER1, PARTNER_REGISTRATION_NUMBER2, PARTNER_REGISTRATION_NUMBER3, PARTNER_OWNER_NAME, PARTNER_OWNER_EMAIL, PARTNER_STORE_POSTCODE, PARTNER_STORE_ADDRESS, PARTNER_STORE_DETAILED_ADDRESS, PARTNER_OWNER_PHONE_NUMBER)
+        VALUES(SEQ_PARTNER.NEXTVAL, #{memberNumber}, #{partnerStoreName}, #{partnerRegistrationNumber1}, #{partnerRegistrationNumber2}, #{partnerRegistrationNumber3}, #{partnerOwnerName}, #{partnerOwnerEmail}, #{partnerStorePostcode}, #{partnerStoreAddress}, #{partnerStoreDetailedAddress}, #{partnerOwnerPhoneNumber})
     </insert>
+
+    <select id="select" resultType="partnerVO">
+        SELECT PARTNER_NUMBER, MEMBER_NUMBER, PARTNER_STORE_NAME, PARTNER_REGISTRATION_NUMBER1, PARTNER_REGISTRATION_NUMBER2, PARTNER_REGISTRATION_NUMBER3, PARTNER_OWNER_NAME, PARTNER_OWNER_EMAIL, PARTNER_STORE_POSTCODE, PARTNER_STORE_ADDRESS, PARTNER_STORE_DETAILED_ADDRESS, PARTNER_OWNER_PHONE_NUMBER
+        FROM TBL_PARTNER
+        WHERE PARTNER_NUMBER = #{partnerNumber}
+    </select>
 
     <update id="update">
         UPDATE TBL_PARTNER
-        SET PARTNER_STORE_NAME = #{partnerStoreName}, PARTNER_REGISTRATION_NUMBER = #{partnerRegistrationNumber}, PARTNER_OWNER_NAME = #{partnerOwnerName}, PARTNER_OWNER_EMAIL = #{partnerOwnerEmail}, PARTNER_STORE_ADDRESS = #{partnerStoreAddress}, PARTNER_OWNER_PHONE_NUMBER = #{partnerOwnerPhoneNumber}
+        SET PARTNER_STORE_NAME = #{partnerStoreName}, PARTNER_REGISTRATION_NUMBER1 = #{partnerRegistrationNumber1}, PARTNER_REGISTRATION_NUMBER2 = #{partnerRegistrationNumber2}, PARTNER_REGISTRATION_NUMBER3 = #{partnerRegistrationNumber3}, PARTNER_OWNER_NAME = #{partnerOwnerName}, PARTNER_OWNER_EMAIL = #{partnerOwnerEmail}, PARTNER_STORE_POSTCODE = #{partnerStorePostcode}, PARTNER_STORE_ADDRESS = #{partnerStoreAddress}, PARTNER_STORE_DETAILED_ADDRESS = #{partnerStoreDetailedAddress}, PARTNER_OWNER_PHONE_NUMBER = #{partnerOwnerPhoneNumber}
         WHERE PARTNER_NUMBER = #{partnerNumber}
     </update>
 </mapper>
