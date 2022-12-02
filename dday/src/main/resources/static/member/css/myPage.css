@@ -172,8 +172,10 @@ span.savingMoney {
     width: 34px;
     height: 32px;
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAQAAAACj/OVAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfmAxYGNhJAM7wjAAAAd0lEQVRYw+3UsQ2AMAwAQQfRsESWiCmp2I+aJagYgZYBaGGItGYEIhQZIf3VVl5OYREAAP4oxRTrvdYUzGzh6EfHYFiss7Ve8pEFnZNpJkmSJEnT/ObGltzSrzl/KTly5PxzIjo5X8501sy1BTODyX657QcAgL8b8j9nkEwifVYAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDMtMjJUMDY6NTQ6MTYrMDA6MDClJXo+AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIyLTAzLTIyVDA2OjU0OjE2KzAwOjAw1HjCggAAAABJRU5ErkJggg==) 50% 50% / cover no-repeat;
-    bottom: 3.5px;
-    position: relative;
+    position: absolute;
+    left: 80px;
+    top: -3px;
+    left: 58px;
 }
 
 div.savingDetail {
@@ -182,9 +184,9 @@ div.savingDetail {
     color: #ff4500;
     margin-top: 42px;
 }
-span.savingDetail{
-    font-weight: 400;
-}
+/*span.savingDetail{*/
+/*    font-weight: 400;*/
+/*}*/
 
 button.coupon{
     display: flex;

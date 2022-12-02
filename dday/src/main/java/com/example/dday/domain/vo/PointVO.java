@@ -12,8 +12,10 @@ import org.springframework.stereotype.Component;
 public class PointVO {
     private Long pointNumber;
     private Long memberNumber;
+    private Integer pointRemain;
     private Integer pointPrice;
     private String pointContent;
     private String pointDate;
     private String pointEndDate;
+    private String pointType;
 }

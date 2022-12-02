@@ -67,4 +67,11 @@ class MemberServiceTest {
         memberVO.setMemberPw("test");
         log.info("일치하는 아이디/비밀번호: " + Optional.ofNullable(memberService.login(memberVO)).map(MemberVO::getMemberName).orElse("로그인실패"));
     };
+
+    @Test
+    public void getLikeTotalTest(){
+        log.info("찜한 상품 개수: " + memberService.findLikeTotalByNumber(26L));
+    }
+
+
 }

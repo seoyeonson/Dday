@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.dday.mapper.MemberMapper">
-<!--    <insert id="insert">-->
-<!--        <selectKey keyProperty="memberNumber" order="BEFORE" resultType="long">-->
-<!--            SELECT SEQ_MEMBER.NEXTVAL FROM DUAL-->
-<!--        </selectKey>-->
-<!--        INSERT ALL-->
-<!--            INTO TBL_MEMBER (MEMBER_NUMBER, MEMBER_ID, MEMBER_PW, MEMBER_NAME, MEMBER_EMAIL, MEMBER_PHONE_NUMBER, MEMBER_GENDER, MEMBER_BIRTH, MEMBER_SIGNUP_DATE, MEMBER_TYPE)-->
-<!--            VALUES(#{memberNumber}, #{memberId}, #{memberPw}, #{memberName}, #{memberEmail}, #{memberPhoneNumber}, #{memberGender}, #{memberBirth}, SYSDATE, #{memberType})-->
-<!--            INTO TBL_ADDRESS (ADDRESS_NUMBER, ADDRESS_MAIN, ADDRESS_DETAIL, ADDRESS_RECEIVE_PERSON, ADDRESS_RECEIVE_PHONE_NUMBER, MEMBER_NUMBER)-->
-<!--            VALUES(SEQ_ADDRESS.NEXTVAL, #{addressMain}, #{addressDetail}, #{memberName}, #{memberPhoneNumber}, #{memberNumber})-->
-<!--    </insert>-->
     <insert id="insert">
         <selectKey keyProperty="memberNumber" order="BEFORE" resultType="long">
             SELECT SEQ_MEMBER.NEXTVAL FROM DUAL
@@ -23,7 +13,6 @@
         UPDATE TBL_MEMBER
         SET MEMBER_PW=#{memberPw}, MEMBER_NAME=#{memberName}, MEMBER_EMAIL=#{memberEmail}, MEMBER_PHONE_NUMBER=#{memberPhoneNumber}, MEMBER_GENDER=#{memberGender}
         WHERE MEMBER_NUMBER=#{memberNumber}
-
     </update>
 
     <select id="select" resultType="memberVO">
@@ -49,7 +38,14 @@
 	</select>
 
     <select id="login" resultType="memberVO">
-        select MEMBER_NUMBER, MEMBER_NAME, MEMBER_TYPE FROM TBL_MEMBER
+        SELECT MEMBER_NUMBER, MEMBER_NAME, MEMBER_TYPE FROM TBL_MEMBER
         WHERE MEMBER_ID=#{memberId} AND MEMBER_PW=#{memberPw}
     </select>
+
+    <select id="getLikeTotal" resultType="long">
+        SELECT COUNT(PRODUCT_NUMBER) FROM TBL_PRODUCT_LIKE
+        WHERE MEMBER_NUMBER=#{memberNumber}
+    </select>
+
+<!--    <select></select>-->
 </mapper>

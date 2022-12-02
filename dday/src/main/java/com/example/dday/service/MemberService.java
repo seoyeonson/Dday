@@ -52,4 +52,6 @@ public class MemberService {
     public MemberVO login(MemberVO memberVO){
         return Optional.ofNullable(memberDAO.login(memberVO)).orElse(new MemberVO());
     };
+
+    public Long findLikeTotalByNumber(Long memberNumber){ return Optional.ofNullable(memberDAO.findLikeTotalByNumber(memberNumber)).orElse(0L); };
 }

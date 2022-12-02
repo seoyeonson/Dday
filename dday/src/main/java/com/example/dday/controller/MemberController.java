@@ -3,6 +3,7 @@ package com.example.dday.controller;
 import com.example.dday.domain.vo.MemberDTO;
 import com.example.dday.domain.vo.MemberVO;
 import com.example.dday.service.MemberService;
+import com.example.dday.service.PointService;
 import com.example.dday.type.MemberType;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -23,6 +24,7 @@ import java.lang.reflect.Member;
 @Slf4j
 public class MemberController {
     private final MemberService memberService;
+    private final PointService pointService;
 
     @GetMapping("/divide")
     public void divide(){;}
@@ -76,7 +78,13 @@ public class MemberController {
 
 //    mypage
     @GetMapping("/mypage")
-    public void mypage(){}
+    public void mypage(HttpSession session){
+        MemberVO memberVO = (MemberVO)session.getAttribute("member");
+        Long pointTotal = pointService.findPointTotalByNumber(memberVO.getMemberNumber());
+        Long likeTotal = memberService.findLikeTotalByNumber(memberVO.getMemberNumber());
+        session.setAttribute("pointTotal", pointTotal);
+        session.setAttribute("likeTotal", likeTotal);
+    }
 
     @GetMapping("/mypageCoupon")
     public void mypageCoupon(){}
@@ -85,10 +93,23 @@ public class MemberController {
     public void mypageDelivery(){}
 
     @GetMapping("/mypageEpi")
-    public void mypageEpi(){}
+    public void mypageEpi(HttpSession session, Model model){
+        MemberVO memberVO = memberService.findByNumber(((MemberVO)session.getAttribute("member")).getMemberNumber());
+        model.addAttribute("member", memberVO);
+    }
 
     @GetMapping("/mypageEpiModify")
-    public void mypageEpiModify(){}
+    public void mypageEpiModify(MemberVO member, HttpSession session, Model model){
+        MemberVO memberVO = memberService.findByNumber(((MemberVO)session.getAttribute("member")).getMemberNumber());
+        model.addAttribute("member", memberVO);
+    }
+
+    @PostMapping("/mypageEpiModify")
+    public RedirectView mypageEpiModify(MemberVO member, HttpSession session){
+        member.setMemberNumber(((MemberVO)session.getAttribute("member")).getMemberNumber());
+        memberService.modify(member);
+        return new RedirectView("/member/mypage");
+    }
 
     @GetMapping("/mypageLike")
     public void mypageLike(){}
@@ -97,7 +118,9 @@ public class MemberController {
     public void mypageOrderDetail(){}
 
     @GetMapping("/mypageSaving")
-    public void mypageSaving(){}
+    public void mypageSaving(HttpSession session, Model model){
+        model.addAttribute("points", pointService.showAll(((MemberVO)session.getAttribute("member")).getMemberNumber()));
+    }
 
     @GetMapping("/mypageReview")
     public void mypageReview(){}
