@@ -14,60 +14,7 @@
     <!-- 헤더시작 -->
     <header th:replace="main/header.html" :: h></header>
     <!-- 마이페이지 고정 틀 start -->
-    <div class="mypageWrap">
-        <div class="mypageHeader">
-            <div class="headerTop">
-                <div class="header1">
-                    <div class="headerInfo">
-                        <div class="headerGrade">회원</div>
-                        <div class="headerName">
-                            <strong class="headerRname">
-                                황재승님
-                            </strong>
-                        </div>
-                    </div>
-                    <div class="savingPercent">
-                        <p class="savingPercent">적립 1%</p>
-                    </div>
-                    <div class="seeGrade">
-                        <button class="seeAll"><a href="/member/mypageReview">상품 후기</a></button>
-                        <button class="seeNext"><a href="/member/mypageEpi">개인 정보 수정</a></button>
-                    </div>
-                </div>
-                <div class="header2">
-                    <button class="savingMoney">
-                        <div class="savingMoney">
-                            적립금
-                            <span class="savingMoney"></span>
-                        </div>
-                        <div class="savingDetail">
-                            25
-                            <span class="savingDetail">원</span>
-                        </div>
-                        <div class="savingChange">
-                            소멸예정 0원
-                        </div>
-                    </button>
-                </div>
-                <div class="header3">
-                    <button class="coupon">
-                        <div class="couponName">
-                            찜한 상품
-                            <span class="couponName"></span>
-                        </div>
-                        <div class="couponCount">
-                            1
-                            <span class="couponCount">개</span>
-                        </div>
-                        <div class="savingChange">찜한 상품을 장바구니에 담아보세요!</div>
-                    </button>
-                </div>
-            </div>
-            <a href="https://www.kurly.com/shop/event/kurlyEvent.php?htmid=event/2022/1107/beauty_grand" class="ad">
-                <img class="ad" src="https://product-image.kurly.com/banner/da-banner/0ad4b09b-7fc1-4bb2-be70-65a089d266d5.jpg"
-                     alt="">
-            </a>
-        </div>
+    <div th:replace="/member/mypageHeader.html" :: myh></div>
         <div class="mypageBottom">
             <div class="mypageBottomLeft">
                 <div class="leftTitle">마이컬리</div>

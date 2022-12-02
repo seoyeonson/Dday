@@ -12,309 +12,253 @@
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 </head>
 <body>
-    <!-- 헤더시작 -->
-    <header th:replace="main/header.html" :: h></header>
-    <!-- 마이페이지 고정 틀 start -->
-    <div class="mypageWrap">
-        <div class="mypageHeader">
-            <div class="headerTop">
-                <div class="header1">
-                    <div class="headerInfo">
-                        <div class="headerGrade">회원</div>
-                        <div class="headerName">
-                            <strong class="headerRname">
-                                황재승님
-                            </strong>
-                        </div>
-                    </div>
-                    <div class="savingPercent">
-                        <p class="savingPercent">적립 1%</p>
-                    </div>
-                    <div class="seeGrade">
-                        <button class="seeAll"><a href="/member/mypageReview">상품 후기</a></button>
-                        <button class="seeNext"><a href="/member/mypageEpi">개인 정보 수정</a></button>
-                    </div>
-                </div>
-                <div class="header2">
-                    <button class="savingMoney">
-                        <div class="savingMoney">
-                            적립금
-                            <span class="savingMoney"></span>
-                        </div>
-                        <div class="savingDetail">
-                            25
-                            <span class="savingDetail">원</span>
-                        </div>
-                        <div class="savingChange">
-                            소멸예정 0원
-                        </div>
-                    </button>
-                </div>
-                <div class="header3">
-                    <button class="coupon">
-                        <div class="couponName">
-                            찜한 상품
-                            <span class="couponName"></span>
-                        </div>
-                        <div class="couponCount">
-                            1
-                            <span class="couponCount">개</span>
-                        </div>
-                        <div class="savingChange">찜한 상품을 장바구니에 담아보세요!</div>
-                    </button>
-                </div>
+<!-- 헤더시작 -->
+<header th:replace="main/header.html" :: h></header>
+<!-- 마이페이지 고정 틀 start -->
+<div th:replace="/member/mypageHeader.html" :: myh></div>
+<div class="mypageBottom">
+    <div class="mypageBottomLeft">
+        <div class="leftTitle">마이컬리</div>
+        <ul class="leftList">
+            <li class="orderList">
+                <a href="/member/mypage" class="orderList">
+                    주문 내역
+                    <span class="orderList"></span>
+                </a>
+            </li>
+            <li class="orderList">
+                <a href="/member/mypageLike" class="orderList2">
+                    찜한 상품
+                    <span class="orderList2"></span>
+                </a>
+            </li>
+            <li class="orderList">
+                <a href="/member/mypageDelivery" class="orderList3">
+                    배송지 관리
+                    <span class="orderList3"></span>
+                </a>
+            </li>
+            <li class="orderList">
+                <a href="/member/mypageReview" class="orderList4">
+                    상품후기
+                    <span class="orderList4"></span>
+                </a>
+            </li>
+            <li class="orderList">
+                <a href="/member/mypageSaving" class="orderList6">
+                    적립금
+                    <span class="orderList6"></span>
+                </a>
+            </li>
+            <li class="orderList">
+                <a href="/member/mypageEpi" class="orderList8">
+                    개인 정보 수정
+                    <span class="orderList8"></span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+    <!-- 마이페이지 고정 틀 end -->
+    <div class="bottomRight">
+        <div class="bottomRightHeader">
+            <div class="brhLeft">
+                <h2 class="brhLeft">
+                    개인 정보 수정
+                </h2>
             </div>
-            <a href="https://www.kurly.com/shop/event/kurlyEvent.php?htmid=event/2022/1107/beauty_grand" class="ad">
-                <img class="ad" src="https://product-image.kurly.com/banner/da-banner/0ad4b09b-7fc1-4bb2-be70-65a089d266d5.jpg"
-                     alt="">
-            </a>
         </div>
-        <div class="mypageBottom">
-            <div class="mypageBottomLeft">
-                <div class="leftTitle">마이컬리</div>
-                <ul class="leftList">
-                    <li class="orderList">
-                        <a href="/member/mypage" class="orderList">
-                            주문 내역
-                            <span class="orderList"></span>
-                        </a>
-                    </li>
-                    <li class="orderList">
-                        <a href="/member/mypageLike" class="orderList2">
-                            찜한 상품
-                            <span class="orderList2"></span>
-                        </a>
-                    </li>
-                    <li class="orderList">
-                        <a href="/member/mypageDelivery" class="orderList3">
-                            배송지 관리
-                            <span class="orderList3"></span>
-                        </a>
-                    </li>
-                    <li class="orderList">
-                        <a href="/member/mypageReview" class="orderList4">
-                            상품후기
-                            <span class="orderList4"></span>
-                        </a>
-                    </li>
-                    <li class="orderList">
-                        <a href="/member/mypageSaving" class="orderList6">
-                            적립금
-                            <span class="orderList6"></span>
-                        </a>
-                    </li>
-                    <li class="orderList">
-                        <a href="/member/mypageEpi" class="orderList8">
-                            개인 정보 수정
-                            <span class="orderList8"></span>
-                        </a>
-                    </li>
-                </ul>
-
-            </div>
-            <!-- 마이페이지 고정 틀 end -->
-            <div class="bottomRight">
-                <div class="bottomRightHeader">
-                    <div class="brhLeft">
-                        <h2 class="brhLeft">
-                            개인 정보 수정
-                        </h2>
+        <div class="modifyWrap">
+            <form method="post" th:action="@{/member/mypageEpiModify}" th:object="${member}" name="modifyForm">
+                <div class="userId">
+                    <div class="idLeft">
+                        <label th:for="*{memberId}" class="idLeft">아이디</label>
+                    </div>
+                    <div class="idRight">
+                        <input type="text" class="userId" data-testid="input-box" th:field="*{memberId}"
+                               th:value="*{memberId}" readonly>
                     </div>
                 </div>
-                <div class="modifyWrap">
-                    <form action="#">
-                        <div class="userId">
-                            <div class="idLeft">
-                                <label for="userId" class="idLeft">아이디</label>
-                            </div>
-                            <div class="idRight">
-                                <input type="text" class="userId" data-testid="input-box" value="lisa0921">
-                            </div>
+                <div class="newPw">
+                    <div class="newPwLeft">
+                        <label th:for="*{memberPw}" class="newPwLeft">새 비밀번호</label>
+                    </div>
+                    <div class="newPwRight">
+                        <input type="password" class="newPwRight" th:field="*{memberPw}" data-testid="input-box"
+                               placeholder="새 비밀번호를 입력해주세요" autocomplete="off">
+                        <div class="msg">
+                            <p id="checkPw_msg"></p>
                         </div>
-                        <div class="userPw">
-                            <div class="pwLeft">
-                                <label for="userPw" class="pwLeft">현재 비밀번호</label>
-                            </div>
-                            <div class="pwRight">
-                                <input type="password" class="userPw"  data-testid="input-box" value="" placeholder="비밀번호를 입력해주세요" autocomplete="off">
-
-                            </div>
+                    </div>
+                </div>
+                <div class="newPw2">
+                    <div class="newPwLeft2">
+                        <label for="memberPwCheck" class="newPwLeft2">새 비밀번호 확인</label>
+                    </div>
+                    <div class="newPwRight2">
+                        <input type="password" class="newPwRight2" id="memberPwCheck" data-testid="input-box"
+                               placeholder="새 비밀번호를 다시 입력해주세요" autocomplete="off">
+                        <div class="msg">
+                            <p id="checkPwOk_msg"></p>
                         </div>
-                        <div class="newPw">
-                            <div class="newPwLeft">
-                                <label for="userPw" class="newPwLeft">새 비밀번호</label>
-                            </div>
-                            <div class="newPwRight">
-                                <input type="password" class="newPwRight" id="memberPw" data-testid="input-box" value="" placeholder="새 비밀번호를 입력해주세요" autocomplete="off">
-                                <div class="msg">
-                                    <p id="checkPw_msg"></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="newPw2">
-                            <div class="newPwLeft2">
-                                <label for="userPw" class="newPwLeft2">새 비밀번호 확인</label>
-                            </div>
-                            <div class="newPwRight2">
-                                <input type="password" class="newPwRight2" id="memberPwCheck" data-testid="input-box" value="" placeholder="새 비밀번호를 다시 입력해주세요" autocomplete="off">
-                                <div class="msg">
-                                    <p id="checkPwOk_msg"></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="userName">
-                            <div class="userNameLeft">
-                                <label for="userPw" class="userNameLeft">이름</label>
-                            </div>
-                            <div class="userNameRight">
-                                <input type="text" class="userNameRight" data-testid="input-box" value="임소영" placeholder="임소영" autocomplete="off">
-                            </div>
-                        </div>
-                        <div class="userEmail">
-                            <div class="userEmailLeft">
-                                <label for="userPw" class="userEmailLeft">이메일</label>
-                            </div>
-                            <div class="userEmailRight">
-                                <input type="text" class="userEmailRight" data-testid="input-box" value="lisa0798@naver.com" placeholder="lisa0798@naver.com" autocomplete="off">
-                            </div>
-                            <div class="emailCheck">
-                                <button class="emailCheck" type="button">
-                                    <span class="emailCheck">중복확인</span>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="userPhone">
-                            <div class="userPhoneLeft">
-                                <label for="userPw" class="userPhoneLeft">휴대폰</label>
-                            </div>
-                            <div class="userPhoneRight">
-                                <input type="text" class="userPhoneRight" data-testid="input-box" value="01021781274" placeholder="01021781274" autocomplete="off">
-                            </div>
-                            <div class="emailCheck">
-                                <button class="emailCheck" type="button">
-                                    <span class="emailCheck">다른번호 인증</span>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="userPhone2" style="display: none">
-                            <div class="userPhoneLeft">
-                                <label for="userPw" class="userPhoneLeft"></label>
-                            </div>
-                            <div class="userPhoneRight2">
-                                <input type="text" class="userPhoneRight2" data-testid="input-box" value="" placeholder="" autocomplete="off">
-                                <span class="timer">
+                    </div>
+                </div>
+                <div class="userName">
+                    <div class="userNameLeft">
+                        <label th:for="*{memberName}" class="userNameLeft">이름</label>
+                    </div>
+                    <div class="userNameRight">
+                        <input type="text" class="userNameRight" th:field="*{memberName}" data-testid="input-box"
+                               th:value="*{memberName}" autocomplete="off" readonly>
+                    </div>
+                </div>
+                <div class="userEmail">
+                    <div class="userEmailLeft">
+                        <label th:for="*{memberEmail}" class="userEmailLeft">이메일</label>
+                    </div>
+                    <div class="userEmailRight">
+                        <input type="text" class="userEmailRight" th:field="*{memberEmail}" data-testid="input-box"
+                               th:value="*{memberEmail}" autocomplete="off">
+                    </div>
+                    <div class="emailCheck">
+                        <button class="emailCheck" type="button">
+                            <span class="emailCheck">중복확인</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="userPhone">
+                    <div class="userPhoneLeft">
+                        <label th:for="*{memberPhoneNumber}" class="userPhoneLeft">휴대폰</label>
+                    </div>
+                    <div class="userPhoneRight">
+                        <input type="text" class="userPhoneRight" data-testid="input-box"
+                               th:field="*{memberPhoneNumber}" th:value="*{memberPhoneNumber}" autocomplete="off">
+                    </div>
+                    <div class="emailCheck">
+                        <button class="emailCheck" type="button">
+                            <span class="emailCheck">다른번호 인증</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="userPhone2" style="display: none">
+                    <div class="userPhoneLeft">
+                    </div>
+                    <div class="userPhoneRight2">
+                        <input type="text" class="userPhoneRight2" data-testid="input-box" autocomplete="off">
+                        <span class="timer">
                                     <span class="timer2" id="timer"></span>
                                 </span>
-                                
-                            </div>
-                            <div class="emailCheck2">
-                                <button class="emailCheck2" type="button">
-                                    <span class="emailCheck2">인증번호 확인</span>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="userGender">
-                            <div class="userGenderLeft">
-                                <label for="userPw" class="userGenderLeft">성별</label>
-                            </div>
-                            <div class="userGenderRight">
-                                <div class="userGenderRight2">
-                                    <label for="gender-man" class="userGenderRight">
-                                        <input type="radio" class="userGenderRight" value="MALE" name="gender">
-                                        <!-- <span class="userGenderRight"><div class="inCircle"></div></span> -->
-                                        <span class="userGenderRight2" aria-labelledby="gender-man">남자</span>
-                                    </label>
-                                    <label for="gender-woman" class="userGenderRight">
-                                        <input type="radio" class="userGenderRight" value="FEMALE" name="gender">
-                                        <!-- <span class="userGenderRight"><div class="inCircle"></div></span> -->
-                                        <span class="userGenderRight2" aria-labelledby="gender-man">여자</span>
-                                    </label>
-                                    <label for="" class="userGenderRight">
-                                        <input type="radio" class="userGenderRight" value="" name="gender">
-                                        <!-- <span class="userGenderRight"><div class="inCircle"></div></span> -->
-                                        <span class="userGenderRight2" aria-labelledby="gender-man">선택안함</span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <div class="userBirth">
-                            <div class="userBirthLeft">
-                                <label for="birthYear" class="userBirthLeft">생년월일</label>
-                            </div>
-                            <div class="userBirthRight">
-                                <div class="userBirthRight2">
-                                    <div class="userBirthRight3" height="40">
-                                    <input type="text" class="userBirthRight" data-testid="input-box" value="1999" placeholder="YYYY" height="40">
-                                    </div>
-                                    <span class="userBirthLine">
-                                    ::after
-                                    </span>
-                                    <div class="userBirthRight3" height="40">
-                                    <input type="text" class="userBirthRight" data-testid="input-box" value="09" placeholder="MM"  height="40">
-                                    </div>
-                                    <span class="userBirthLine">
-                                    ::after
-                                    </span>
-                                    <div class="userBirthRight3" height="40">
-                                    <input type="text" class="userBirthRight" data-testid="input-box" value="21" placeholder="DD" height="40">
-                                    </div>
-                                    <span class="userBirthLine">
-                                    ::after
-                                    </span>
-                                </div>
-                            </div>
-                        </div> -->
 
-
-                        <div class="modifyBtn">
-                            <button class="widthDrawBtn" type="button">
-                                <span class="widthDrawBtn">탈퇴하기</span>
-                            </button>
-                            <button class="modifyBtn" type="submit">
-                                <span class="modifyBtn">회원정보수정</span>
-                            </button>
+                    </div>
+                    <div class="emailCheck2">
+                        <button class="emailCheck2" type="button">
+                            <span class="emailCheck2">인증번호 확인</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="userGender">
+                    <div class="userGenderLeft">
+                        <label th:for="*{memberGender}" class="userGenderLeft">성별</label>
+                    </div>
+                    <div class="userGenderRight">
+                        <div class="userGenderRight2">
+                            <label class="userGenderRight">
+                                <input type="radio" th:field="*{memberGender}" class="userGenderRight" value="남자">
+                                <span class="userGenderRight2" aria-labelledby="gender-man">남자</span>
+                            </label>
+                            <label class="userGenderRight">
+                                <input type="radio" th:field="*{memberGender}" class="userGenderRight" value="여자">
+                                <span class="userGenderRight2" aria-labelledby="gender-man">여자</span>
+                            </label>
+                            <label class="userGenderRight">
+                                <input type="radio" th:field="*{memberGender}" class="userGenderRight" value="선택안함">
+                                <span class="userGenderRight2" aria-labelledby="gender-man">선택안함</span>
+                            </label>
                         </div>
-                    </form>
+                    </div>
                 </div>
+                <div class="modifyBtn">
+                    <button class="widthDrawBtn" type="button">
+                        <span class="widthDrawBtn">탈퇴하기</span>
+                    </button>
+                    <button class="modifyBtn" type="button">
+                        <span class="modifyBtn">회원정보수정</span>
+                    </button>
                 </div>
-                </div>
-                </div>
-    <footer th:replace="main/footer.html" :: f></footer>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+<footer th:replace="main/footer.html" :: f></footer>
 </body>
 </html>
 <script>
+    // 성별 가져오기
+    let genderValue = "[[${member.memberGender}]]";
+    console.log(genderValue);
+
+    $.each($("input[name='memberGender']"), function () {
+        if ($(this).val() == genderValue) {
+            $(this).prop("checked", true);
+        }
+    });
+
+    <!-- 카운트다운 타이머 -->
+    var time = 180; //기준시간설정
+    var min = ""; //분
+    var sc = ""; //초
+
+    //setInterval(함수, 시간) : 주기적인 실행
+    var x = setInterval(function () {
+        //parseInt : 정수 반환
+        min = parseInt(time / 60) /* 몫계산 */
+        sec = time % 60; //나머지 계산
+
+        document.getElementById("timer").innerHTML = min + "분" + sec + "초";
+        time--;
+
+        //시간 끝나면
+        if (time < 0) {
+            clearInterval(x); //setInterval() 실행을 끝냄
+            document.getElementById("timer").innerHTML = "시간초과";
+            alert("시간초과")
+            $('div.userPhone2').css("display", "none");
+        }
+    }, 1000);
+
     // 비밀번호 정규식
-    $("#memberPw").on("blur", function(){
-        if(!checkPw()){
+    $("#memberPw").on("blur", function () {
+        if (!checkPw()) {
             $("#checkPw_msg").closest(".msg").css("padding", "10px 0px");
         } else {
             $("#checkPw_msg").closest(".msg").css("padding", "");
         }
     });
 
-    function checkPw(){
+    function checkPw() {
         let memberPw = $("#memberPw").val();
         let num = memberPw.search(/[0-9]/g);
         let eng = memberPw.search(/[a-z]/ig);
         let spe = memberPw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
         let $checkPw_msg = $("#checkPw_msg");
 
-        if(memberPw.length < 8){
+        if (memberPw.length < 8) {
             $checkPw_msg.text("최소 8자 이상 입력");
             return false;
-        }else if( (num < 0 && eng < 0) || (eng < 0 && spe < 0) || (spe < 0 && num < 0) ){
+        } else if ((num < 0 && eng < 0) || (eng < 0 && spe < 0) || (spe < 0 && num < 0)) {
             $checkPw_msg.text("영문/숫자/특수문자(공백 제외)만 허용하며, 2개 이상 조합");
             return false;
-        }else {
+        } else {
             $checkPw_msg.text("");
         }
         return true;
     }
 
     // 비밀번호 재확인
-    $("#memberPwCheck").on("blur", function(){
-        if($("#memberPw").val() != ""){
-            if(!checkPwOk()){
+    $("#memberPwCheck").on("blur", function () {
+        if ($("#memberPw").val() != "") {
+            if (!checkPwOk()) {
                 $("#checkPwOk_msg").closest(".msg").css("padding", "10px 0px");
             } else {
                 $("#checkPwOk_msg").closest(".msg").css("padding", "");
@@ -322,12 +266,12 @@
         }
     });
 
-    function checkPwOk(){
+    function checkPwOk() {
         let memberPw = $("#memberPw").val();
         let memberPwCheck = $("#memberPwCheck").val();
         let $checkPwOk_msg = $("#checkPwOk_msg");
 
-        if(memberPw != memberPwCheck){
+        if (memberPw != memberPwCheck) {
             $checkPwOk_msg.text("동일한 비밀번호를 입력");
             return false;
         } else {
@@ -335,44 +279,19 @@
         }
         return true;
     }
-    <!-- 카운트다운 타이머 -->
-                    var time = 180; //기준시간설정
-                    var min = ""; //분
-                    var sc = ""; //초
 
-                //setInterval(함수, 시간) : 주기적인 실행
-                var x = setInterval(function() {
-                    //parseInt : 정수 반환
-                    min = parseInt(time/60) /* 몫계산 */
-                    sec = time%60; //나머지 계산
+    $(function () {
+        $("button.emailCheck").click(function () {
+            $('.userPhone2').css("display", "inline-flex");
+        });
+    });
 
-                    document.getElementById("timer").innerHTML = min + "분" + sec + "초";
-                    time--;
+    $(".modifyBtn").on("click", function(){
+        let $newPw = $("input[name='memberPw']");
+        if($newPw.val() == ''){
+            $newPw.val("[[${member.memberPw}]]");
+        }
 
-                    //시간 끝나면
-                    if(time < 0) {
-                        clearInterval(x); //setInterval() 실행을 끝냄
-                        document.getElementById("timer").innerHTML = "시간초과";
-                        alert("시간초과")
-                        $('div.userPhone2').css("display", "none");
-                    }
-                }, 1000);
-                
-                
-                
-                
-                
-                
-                </script>
-                
-                <script>
-                    $(function(){ 
-                    
-                    $("button.emailCheck").click(function(){
-                      $('.userPhone2').css("display", "inline-flex");
-                    });
-                    
-            
-                    
-                    });
-                    </script>
+        modifyForm.submit();
+    })
+</script>

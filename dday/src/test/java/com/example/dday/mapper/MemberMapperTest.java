@@ -59,4 +59,9 @@ class MemberMapperTest {
         log.info("login Ok: " + (memberMapper.login(memberVO) == null ? "false" : "Ok"));
     }
 
+    @Test
+    public void getLikeTotalTest(){
+        log.info("찜한 상품 개수: " + memberMapper.getLikeTotal(26L));
+    }
+
 }

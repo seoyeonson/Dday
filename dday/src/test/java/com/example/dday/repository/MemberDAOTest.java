@@ -59,4 +59,10 @@ class MemberDAOTest {
         memberVO.setMemberPw("test");
         log.info("login Ok: " + (Optional.ofNullable(memberDAO.login(memberVO)).map(MemberVO::getMemberName).orElse("로그인실패")));
     }
+
+    @Test
+    public void getLikeTotalTest(){
+        log.info("찜한 상품 개수: " + memberDAO.findLikeTotalByNumber(26L));
+    }
+
 }
