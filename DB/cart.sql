@@ -11,4 +11,5 @@ CREATE TABLE TBL_CART
 );
 
 DROP TABLE TBL_CART;
+SELECT * FROM TBL_CART;
 /* ----------------------------------------------------- */
