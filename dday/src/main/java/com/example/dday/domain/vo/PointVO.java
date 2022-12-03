@@ -17,7 +17,6 @@ public class PointVO {
     private String pointContent;
     private String pointDate;
     private String pointEndDate;
-
     private String pointType;
 
 }
