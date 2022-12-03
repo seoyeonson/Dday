@@ -2,6 +2,7 @@ package com.example.dday.controller;
 
 import com.example.dday.domain.vo.MemberDTO;
 import com.example.dday.domain.vo.MemberVO;
+import com.example.dday.service.AddressService;
 import com.example.dday.service.MemberService;
 import com.example.dday.service.PointService;
 import com.example.dday.type.MemberType;
@@ -25,6 +26,7 @@ import java.lang.reflect.Member;
 public class MemberController {
     private final MemberService memberService;
     private final PointService pointService;
+    private final AddressService addressService;
 
     @GetMapping("/divide")
     public void divide(){;}
@@ -90,7 +92,9 @@ public class MemberController {
     public void mypageCoupon(){}
 
     @GetMapping("/mypageDelivery")
-    public void mypageDelivery(){}
+    public void mypageDelivery(HttpSession session, Model model){
+        model.addAttribute("addresses", addressService.findAll(((MemberVO)session.getAttribute("member")).getMemberNumber()));
+    }
 
     @GetMapping("/mypageEpi")
     public void mypageEpi(HttpSession session, Model model){

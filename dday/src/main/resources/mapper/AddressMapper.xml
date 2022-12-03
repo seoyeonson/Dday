@@ -27,7 +27,7 @@
     <update id="updateStatusNormal">
         UPDATE TBL_ADDRESS
         SET ADDRESS_STATUS='배송지'
-        WHERE ADDRESS_STATUS=#{addressStatus} AND MEMBER_NUMBER=#{memberNumber}
+        WHERE ADDRESS_STATUS='기본배송지' AND MEMBER_NUMBER=#{memberNumber}
     </update>
 
     <update id="updateStatus">

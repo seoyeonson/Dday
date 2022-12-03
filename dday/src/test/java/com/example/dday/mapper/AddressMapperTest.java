@@ -42,7 +42,7 @@ class AddressMapperTest {
     //    전체 조회
     @Test
     public void selectAllTest(){
-        addressMapper.selectAll(26L);
+        addressMapper.selectAll(81L);
     };
 
 //    //    삭제
