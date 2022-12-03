@@ -56,7 +56,12 @@ class MemberMapperTest {
         MemberVO memberVO = new MemberVO();
         memberVO.setMemberId("test");
         memberVO.setMemberPw("21");
-        log.info("login Ok: " + (memberMapper.login(memberVO) == 0 ? "false" : "Ok"));
+        log.info("login Ok: " + (memberMapper.login(memberVO) == null ? "false" : "Ok"));
+    }
+
+    @Test
+    public void getLikeTotalTest(){
+        log.info("찜한 상품 개수: " + memberMapper.getLikeTotal(26L));
     }
 
 }

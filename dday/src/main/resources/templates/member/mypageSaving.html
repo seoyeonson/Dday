@@ -13,60 +13,7 @@
     <!-- 헤더시작 -->
     <header th:replace="main/header.html" :: h></header>
     <!-- 마이페이지 고정 틀 start -->
-    <div class="mypageWrap">
-        <div class="mypageHeader">
-            <div class="headerTop">
-                <div class="header1">
-                    <div class="headerInfo">
-                        <div class="headerGrade">회원</div>
-                        <div class="headerName">
-                            <strong class="headerRname">
-                                황재승님
-                            </strong>
-                        </div>
-                    </div>
-                    <div class="savingPercent">
-                        <p class="savingPercent">적립 1%</p>
-                    </div>
-                    <div class="seeGrade">
-                        <button class="seeAll"><a href="/member/mypageReview">상품 후기</a></button>
-                        <button class="seeNext"><a href="/member/mypageEpi">개인 정보 수정</a></button>
-                    </div>
-                </div>
-                <div class="header2">
-                    <button class="savingMoney">
-                        <div class="savingMoney">
-                            적립금
-                            <span class="savingMoney"></span>
-                        </div>
-                        <div class="savingDetail">
-                            25
-                            <span class="savingDetail">원</span>
-                        </div>
-                        <div class="savingChange">
-                            소멸예정 0원
-                        </div>
-                    </button>
-                </div>
-                <div class="header3">
-                    <button class="coupon">
-                        <div class="couponName">
-                            찜한 상품
-                            <span class="couponName"></span>
-                        </div>
-                        <div class="couponCount">
-                            1
-                            <span class="couponCount">개</span>
-                        </div>
-                        <div class="savingChange">찜한 상품을 장바구니에 담아보세요!</div>
-                    </button>
-                </div>
-            </div>
-            <a href="https://www.kurly.com/shop/event/kurlyEvent.php?htmid=event/2022/1107/beauty_grand" class="ad">
-                <img class="ad" src="https://product-image.kurly.com/banner/da-banner/0ad4b09b-7fc1-4bb2-be70-65a089d266d5.jpg"
-                     alt="">
-            </a>
-        </div>
+    <div th:replace="/member/mypageHeader.html" :: myh></div>
         <div class="mypageBottom">
             <div class="mypageBottomLeft">
                 <div class="leftTitle">마이컬리</div>
@@ -121,38 +68,22 @@
                             보유하고 계신 적립금의 내역을 한 눈에 확인 하실 수 있습니다.
                         </span>
                     </div>
-                    <!-- <div class="brhRight"> 
-                        <div class="brhRight2">
-                            <div>
-                                <div class="brhRight3">
-                                    <div class="brhRight4" variant="outlined">
-                                       <button class="deliveryAdd" type="button" height="60" onclick="sample6_execDaumPostcode()" value="우편번호 찾기">
-                                        <span class="deliveryAdd">
-                                            <img class="deliveryAdd" src="https://res.kurly.com/pc/ico/2006/ico_add_16x16.svg" alt="">
-                                            새 배송지 추가
-                                        </span>
-                                       </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
-                <section class="savingWon">
-                    <dl class="item">
-                        <dt class="label">현재 적립금</dt>
-                        <dd class="price">25
-                            <span class="unit">원</span>
-                        </dd>
-                    </dl>
-                    <dl class="item">
-                        <dt class="label">소멸예정 적립금</dt>
-                        <dd class="price">
-                            0
-                            <span class="unit">원</span>
-                        </dd>
-                    </dl>
-                </section>
+<!--                <section class="savingWon">-->
+<!--                    <dl class="item">-->
+<!--                        <dt class="label">현재 적립금</dt>-->
+<!--                        <dd class="price">25-->
+<!--                            <span class="unit">원</span>-->
+<!--                        </dd>-->
+<!--                    </dl>-->
+<!--                    <dl class="item">-->
+<!--                        <dt class="label">소멸예정 적립금</dt>-->
+<!--                        <dd class="price">-->
+<!--                            0-->
+<!--                            <span class="unit">원</span>-->
+<!--                        </dd>-->
+<!--                    </dl>-->
+<!--                </section>-->
                 <div class="brhLine"></div>
                 <div class="deliveryList">
                     <div class="deliveryChoice">날짜</div>
@@ -161,12 +92,20 @@
                     <div class="deliveryChoice4">금액</div>
                 </div>
                 <ul class="savingList">
-                    <li class="savingListDetail">
-                        <div class="savingDate">22.11.17</div>
-                        <div class="savingDetail1">[구매적립]주문(2287520280105) 0.1% 적립</div>
-                        <div class="expire-date">23.11.30</div>
-                        <div class="point">+42원</div>
-                    </li>
+                    <th:block th:each="point:${points}" th:if="${not #strings.isEmpty(points)}">
+                        <li class="savingListDetail" th:object="${point}">
+                            <div class="savingDate" th:text="*{pointDate}"></div>
+                            <div class="savingDetail1" th:text="*{pointContent}"></div>
+                            <div class="expire-date" th:text="*{pointEndDate}"></div>
+                            <div class="point" th:if="*{#strings.equals(pointType,'적립')}" th:text="'+' + *{pointPrice}"></div>
+                            <div class="point" th:unless="*{#strings.equals(pointType,'적립')}" th:text="'-' + *{pointPrice}" style="color: grey;"></div>
+                        </li>
+                    </th:block>
+                    <th:block th:unless="${not #strings.isEmpty(points)}">
+                        <li class="savingListDetail" style="justify-content: center;">
+                            적립금 내역이 없습니다.
+                        </li>
+                    </th:block>
                 </ul>
             </div>
         </div>

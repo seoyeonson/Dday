@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.dday.mapper.PointMapper">
+    <select id="getPointTotal" resultType="long">
+        SELECT POINT_REMAIN
+        FROM
+         (
+          SELECT POINT_REMAIN
+          FROM TBL_POINT
+          ORDER BY POINT_NUMBER DESC
+         )
+        WHERE ROWNUM = 1
+    </select>
+
+    <select id="selectAll" resultType="pointVO">
+        SELECT POINT_REMAIN, POINT_PRICE, POINT_CONTENT, POINT_DATE, POINT_END_DATE, POINT_TYPE FROM TBL_POINT
+        WHERE MEMBER_NUMBER=#{memberNumber}
+        ORDER BY POINT_NUMBER DESC
+    </select>
+
 
 </mapper>

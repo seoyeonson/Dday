@@ -19,5 +19,7 @@ public interface MemberMapper {
 //    이메일 체크
     public int checkEmail(String memberEmail);
 //    아이디/비밀번호 체크
-    public Long login(MemberVO memberVO);
+    public MemberVO login(MemberVO memberVO);
+//    전체 상품 찜 개수
+    public Long getLikeTotal(Long memberNumber);
 }

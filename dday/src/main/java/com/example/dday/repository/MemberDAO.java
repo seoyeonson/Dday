@@ -22,7 +22,8 @@ public class MemberDAO {
     public int checkId(String memberId){ return memberMapper.checkId(memberId); };
     //    이메일 체크
     public int checkEmail(String memberEmail){ return  memberMapper.checkEmail(memberEmail); };
-
     //    아이디/비밀번호 체크
-    public Long login(MemberVO memberVO){ return memberMapper.login(memberVO); };
+    public MemberVO login(MemberVO memberVO){ return memberMapper.login(memberVO); };
+    //    전체 상품 찜 개수
+    public Long findLikeTotalByNumber(Long memberNumber){ return memberMapper.getLikeTotal(memberNumber); };
 }

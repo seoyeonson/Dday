@@ -3,15 +3,20 @@ package com.example.dday.controller;
 import com.example.dday.domain.vo.MemberDTO;
 import com.example.dday.domain.vo.MemberVO;
 import com.example.dday.service.MemberService;
+import com.example.dday.service.PointService;
+import com.example.dday.type.MemberType;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpSession;
+import java.lang.reflect.Member;
 
 @Controller
 @RequiredArgsConstructor
@@ -19,6 +24,7 @@ import javax.servlet.http.HttpSession;
 @Slf4j
 public class MemberController {
     private final MemberService memberService;
+    private final PointService pointService;
 
     @GetMapping("/divide")
     public void divide(){;}
@@ -32,23 +38,19 @@ public class MemberController {
     }
 
     @PostMapping("/join")
-    public String join(MemberDTO member, HttpSession session){
+    public RedirectView join(MemberDTO member, HttpSession session){
         log.info("member: " + member);
-        log.info("MemberType Posy join: " + member.getMemberType());
         String url = "";
-
         memberService.join(member);
+        session.setAttribute("member", member);
 
-        session.setAttribute("memberName", member.getMemberName());
-        session.setAttribute("memberNumber", member.getMemberNumber());
-
-        if(member.getMemberType().equals("normal")){
+        if(member.getMemberType().equals(MemberType.NORMAL.label())){
             url ="/member/joinNormalOk";
-        }else if (member.getMemberType().equals("partner")){
+        }else if (member.getMemberType().equals(MemberType.PARTNER.label())){
             url = "/member/joinPartnerOk";
         }
 
-        return url;
+        return new RedirectView(url);
     }
 
     @GetMapping("/joinNormalOk")
@@ -62,13 +64,27 @@ public class MemberController {
 
     @PostMapping("/login")
     @ResponseBody
-    public Long login(MemberVO memberVO){
-        return memberService.login(memberVO);
+    public MemberVO login(MemberVO memberVO, HttpSession session){
+        memberVO = memberService.login(memberVO);
+        session.setAttribute("member", memberVO);
+        return memberVO;
+    }
+
+    @GetMapping("/logout")
+    public RedirectView logout(HttpSession session){
+        session.invalidate();
+        return new RedirectView("/");
     }
 
 //    mypage
     @GetMapping("/mypage")
-    public void mypage(){}
+    public void mypage(HttpSession session){
+        MemberVO memberVO = (MemberVO)session.getAttribute("member");
+        Long pointTotal = pointService.findPointTotalByNumber(memberVO.getMemberNumber());
+        Long likeTotal = memberService.findLikeTotalByNumber(memberVO.getMemberNumber());
+        session.setAttribute("pointTotal", pointTotal);
+        session.setAttribute("likeTotal", likeTotal);
+    }
 
     @GetMapping("/mypageCoupon")
     public void mypageCoupon(){}
@@ -77,10 +93,23 @@ public class MemberController {
     public void mypageDelivery(){}
 
     @GetMapping("/mypageEpi")
-    public void mypageEpi(){}
+    public void mypageEpi(HttpSession session, Model model){
+        MemberVO memberVO = memberService.findByNumber(((MemberVO)session.getAttribute("member")).getMemberNumber());
+        model.addAttribute("member", memberVO);
+    }
 
     @GetMapping("/mypageEpiModify")
-    public void mypageEpiModify(){}
+    public void mypageEpiModify(MemberVO member, HttpSession session, Model model){
+        MemberVO memberVO = memberService.findByNumber(((MemberVO)session.getAttribute("member")).getMemberNumber());
+        model.addAttribute("member", memberVO);
+    }
+
+    @PostMapping("/mypageEpiModify")
+    public RedirectView mypageEpiModify(MemberVO member, HttpSession session){
+        member.setMemberNumber(((MemberVO)session.getAttribute("member")).getMemberNumber());
+        memberService.modify(member);
+        return new RedirectView("/member/mypage");
+    }
 
     @GetMapping("/mypageLike")
     public void mypageLike(){}
@@ -89,7 +118,9 @@ public class MemberController {
     public void mypageOrderDetail(){}
 
     @GetMapping("/mypageSaving")
-    public void mypageSaving(){}
+    public void mypageSaving(HttpSession session, Model model){
+        model.addAttribute("points", pointService.showAll(((MemberVO)session.getAttribute("member")).getMemberNumber()));
+    }
 
     @GetMapping("/mypageReview")
     public void mypageReview(){}

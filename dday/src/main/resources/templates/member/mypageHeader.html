@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div class="mypageWrap" th:fragment="myh">
+    <div class="mypageHeader">
+        <div class="headerTop">
+            <div class="header1">
+                <div class="headerInfo">
+                    <div class="headerGrade">회원</div>
+                    <div class="headerName">
+                        <strong class="headerRname" th:object="${session.member}">
+                            <th:block th:text="*{memberName} + '님'"></th:block>
+                        </strong>
+                    </div>
+                </div>
+                <div class="savingPercent">
+                    <p class="savingPercent">적립 1%</p>
+                </div>
+                <div class="seeGrade">
+                    <button class="seeAll"><a href="/member/mypageReview">상품 후기</a></button>
+                    <button class="seeNext"><a href="/member/mypageEpi">개인 정보 수정</a></button>
+                </div>
+            </div>
+            <div class="header2">
+                <button class="savingMoney" onclick="location.href='/member/mypageSaving'">
+                    <div class="savingMoney">
+                        적립금
+                        <span class="savingMoney"></span>
+                    </div>
+                    <div class="savingDetail">
+                        <th:block th:text="${session.pointTotal}"></th:block>
+                        <span class="savingDetail">원</span>
+                    </div>
+                    <div class="savingChange">
+                        소멸예정 적립금을 확인하세요!
+                    </div>
+                </button>
+            </div>
+            <div class="header3">
+                <button class="coupon" onclick="location.href='/member/mypageLike'">
+                    <div class="couponName">
+                        찜한 상품
+                        <span class="couponName"></span>
+                    </div>
+                    <div class="couponCount">
+                        <th:block th:text="${session.likeTotal}"></th:block>
+                        <span class="couponCount">개</span>
+                    </div>
+                    <div class="savingChange">찜한 상품을 장바구니에 담아보세요!</div>
+                </button>
+            </div>
+        </div>
+        <a href="https://www.kurly.com/shop/event/kurlyEvent.php?htmid=event/2022/1107/beauty_grand" class="ad">
+            <img class="ad" src="https://product-image.kurly.com/banner/da-banner/0ad4b09b-7fc1-4bb2-be70-65a089d266d5.jpg"
+                 alt="">
+        </a>
+    </div>
+</div>
+</html>

@@ -23,12 +23,9 @@ public class MemberService {
         memberDAO.save(memberDTO);
 
         AddressVO addressVO = memberDTO.getAddressVO();
-//        addressVO.setAddressMain(memberDTO.getAddressMain());
-//        addressVO.setAddressDetail(memberDTO.getAddressDetail());
-//        addressVO.setAddressReceivePerson(memberDTO.getMemberName());
-//        addressVO.setAddressReceivePhoneNumber(memberDTO.getMemberPhoneNumber());
         addressVO.setMemberNumber(memberDTO.getMemberNumber());
-//        memberDTO.setAddressVO(addressVO);
+        addressVO.setAddressReceivePerson(memberDTO.getMemberName());
+        addressVO.setAddressReceivePhoneNumber(memberDTO.getMemberPhoneNumber());
         addressDAO.saveFirst(addressVO);
     };
 
@@ -52,11 +49,9 @@ public class MemberService {
         return memberDAO.checkEmail(memberEmail);
     };
 
-    public Long login(MemberVO memberVO){
-        if(Optional.ofNullable(memberDAO.login(memberVO)).isPresent()){
-            return memberDAO.login(memberVO);
-        } else {
-            return Long.valueOf(0);
-        }
+    public MemberVO login(MemberVO memberVO){
+        return Optional.ofNullable(memberDAO.login(memberVO)).orElse(new MemberVO());
     };
+
+    public Long findLikeTotalByNumber(Long memberNumber){ return Optional.ofNullable(memberDAO.findLikeTotalByNumber(memberNumber)).orElse(0L); };
 }

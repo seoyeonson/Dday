@@ -20,101 +20,101 @@
 <header th:replace="/main/header.html" :: h></header>
 <!--헤더-->
 <!--메인페이지-->
-    <div class="centor">
-        <!-- 메인 배너-->
-        <div th:replace="/main/mainBanner" ::mb></div>
-        <!-- 메인 배너-->
-        <!-- 스와이퍼 배너-->
-        <div th:replace="/main/todayRecommendProductsBanner" ::trpb></div>
-        <!-- 스와이퍼 배너-->
-        <!-- 타임딜1 -->
-        <div th:replace="/main/specialSaleBanner1" ::ss1></div>
-        <!-- 타임딜1 -->
-        <!-- 타임딜2 -->
-        <div th:replace="/main/specialSaleBanner2" ::ss2></div>
-        <!-- 타임딜2 -->
-        <!-- 스와이퍼 배너-->
-        <div th:replace="/main/todayHappniessBanner" ::thb></div>
-        <!-- 스와이퍼 배너-->
-        <!-- 라인 배너-->
-        <div th:replace="/main/lineBanner1" ::lb1></div>
-        <!-- 라인 배너-->
-        <!-- 스와이퍼 배너-->
-        <div th:replace="/main/frugalShoppringBanner" ::fsb></div>
-        <!-- 스와이퍼 배너-->
-        <!-- 스와이퍼 배너-->
-        <div th:replace="/main/fruitBanner" ::fb></div>
-        <!-- 스와이퍼 배너-->
-        <!-- 라인 배너-->
-        <div th:replace="/main/lineBanner2" ::lb2></div>
-        <!-- 라인 배너-->
-        <!--바디 종료-->
-        <!-- 상승 아이콘 포함시키지 마시오-->
-    </div>
+<div class="centor">
+    <!-- 메인 배너-->
+    <div th:replace="/main/mainBanner" ::mb></div>
+    <!-- 메인 배너-->
+    <!-- 스와이퍼 배너-->
+    <div th:replace="/main/todayRecommendProductsBanner" ::trpb></div>
+    <!-- 스와이퍼 배너-->
+    <!-- 타임딜1 -->
+    <div th:replace="/main/specialSaleBanner1" ::ss1></div>
+    <!-- 타임딜1 -->
+    <!-- 타임딜2 -->
+    <div th:replace="/main/specialSaleBanner2" ::ss2></div>
+    <!-- 타임딜2 -->
+    <!-- 스와이퍼 배너-->
+    <div th:replace="/main/todayHappniessBanner" ::thb></div>
+    <!-- 스와이퍼 배너-->
+    <!-- 라인 배너-->
+    <div th:replace="/main/lineBanner1" ::lb1></div>
+    <!-- 라인 배너-->
+    <!-- 스와이퍼 배너-->
+    <div th:replace="/main/frugalShoppringBanner" ::fsb></div>
+    <!-- 스와이퍼 배너-->
+    <!-- 스와이퍼 배너-->
+    <div th:replace="/main/fruitBanner" ::fb></div>
+    <!-- 스와이퍼 배너-->
+    <!-- 라인 배너-->
+    <div th:replace="/main/lineBanner2" ::lb2></div>
+    <!-- 라인 배너-->
+    <!--바디 종료-->
+    <!-- 상승 아이콘 포함시키지 마시오-->
+</div>
 <div id="topButton" style="cursor: pointer; width: 46px; height: 46px;">
     <img src="/main/images/main/up.PNG" id="topButtonImg">
 </div>
-        <!-- 상승 아이콘-->
+<!-- 상승 아이콘-->
 <!--modal-->
 <form id="modalClear">
-<div class="modalContainer">
-    <div class="modalBox">
-        <div class="modal">
-            <div class="modalBody">
-                <div class="modalWrapper">
-                    <div class="modalContent">
-                        <div class="modalProductName">
-                            <span>[KF365] 양념 소불고기 1kg(냉장)</span>
+    <div class="modalContainer">
+        <div class="modalBox">
+            <div class="modal">
+                <div class="modalBody">
+                    <div class="modalWrapper">
+                        <div class="modalContent">
+                            <div class="modalProductName">
+                                <span>[KF365] 양념 소불고기 1kg(냉장)</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="priceAndCount">
-                        <div>
+                        <div class="priceAndCount">
+                            <div>
                           <span class="discountBox">
                               17,590원
                           </span>
-                            <span class="priceBox">
+                                <span class="priceBox">
                               18,990원
                           </span>
-                        </div>
-                        <div class="product_cnt_box">
-                            <button class="minus"></button>
-                            <div class="cnt">1</div>
-                            <button class="plus"></button>
-                        </div>
-                    </div>
-                    <div class="totalPriceBox">
-                        <div class="totalPriceInner">
-                            <div class="totalLine">
-                                <p>
-                                    합계
-                                </p>
-                                <div>
-                                    <span class="changePrice">17,590</span>
-                                    <span class="totalWon">원</span>
-                                </div>
+                            </div>
+                            <div class="product_cnt_box">
+                                <button class="minus"></button>
+                                <div class="cnt">1</div>
+                                <button class="plus"></button>
                             </div>
                         </div>
-                        <div class="pointBox">
-                            <span class="pointText">적립</span>
-                            <span class="pointCalText">구매 시
+                        <div class="totalPriceBox">
+                            <div class="totalPriceInner">
+                                <div class="totalLine">
+                                    <p>
+                                        합계
+                                    </p>
+                                    <div>
+                                        <span class="changePrice">17,590</span>
+                                        <span class="totalWon">원</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pointBox">
+                                <span class="pointText">적립</span>
+                                <span class="pointCalText">구매 시
                                   <span class="realPoint">0원 적립
                                   </span>
                               </span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="modalButtonBox">
-                        <button class="modalCancelButton" type="button">
-                            <span class="modalButtonText">취소</span>
-                        </button>
-                        <button type="button" class="modalOkButton">
-                            <span class="modalButtonText">장바구니 담기</span>
-                        </button>
+                        <div class="modalButtonBox">
+                            <button class="modalCancelButton" type="button">
+                                <span class="modalButtonText">취소</span>
+                            </button>
+                            <button type="button" class="modalOkButton">
+                                <span class="modalButtonText">장바구니 담기</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </form>
 <!--modal end-->
 <!--푸터-->
@@ -127,68 +127,68 @@
 <script src="/main/js/header.js"></script>
 <script src="/main/js/category.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-<script>      
-const mySwiper = new Swiper('.swiper-container-mySwiper', {
-    spaceBetween: 0,
-    centeredSlides: true,
-    pagination: {
-    el: ".swiper-pagination",
-    type: "fraction",
-    clickable: true
-    },
-    navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev'
-    },
-    autoplay: {
-    delay: 2000,
-    disableOnInteraction: false // 쓸어 넘기거나 버튼 클릭 시 자동 슬라이드 정지.
-    },
-    loop: true
-})
-
-const todayProduct = new Swiper('.swiper-container-todayProduct', {
-    spaceBetween: 30,
-    centeredSlides: true,
-    pagination: {
-    el: ".swiper-pagination",
-    type: "fraction",
-    clickable: true
-    },
-    navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev'
-    },
-    // loop: true
-})
-    
-/*
 <script>
-      var swiper = new Swiper(".mySwiper", {
-        spaceBetween: 30,    // 슬라이드 사이 여백
-
-        slidesPerView : 'auto', // 한 슬라이드에 보여줄 갯수
-        centeredSlides: true,    //센터모드
-        autoplay: {     //자동슬라이드 (false-비활성화)
-          delay: 2500, // 시간 설정
-          disableOnInteraction: false, // false-스와이프 후 자동 재생
+    const mySwiper = new Swiper('.swiper-container-mySwiper', {
+        spaceBetween: 0,
+        centeredSlides: true,
+        pagination: {
+            el: ".swiper-pagination",
+            type: "fraction",
+            clickable: true
         },
-
-        loop : false,   // 슬라이드 반복 여부
-
-        loopAdditionalSlides : 1,
-
- // 슬라이드 반복 시 마지막 슬라이드에서 다음 슬라이드가 보여지지 않는 현상 수정
-        pagination: { // 호출(pager) 여부
-          el: ".swiper-pagination", //버튼을 담을 태그 설정
-          clickable: true, // 버튼 클릭 여부
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
         },
-        navigation: {   // 버튼
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
+        autoplay: {
+            delay: 2000,
+            disableOnInteraction: false // 쓸어 넘기거나 버튼 클릭 시 자동 슬라이드 정지.
         },
-      });
-*/
+        loop: true
+    })
+
+    const todayProduct = new Swiper('.swiper-container-todayProduct', {
+        spaceBetween: 30,
+        centeredSlides: true,
+        pagination: {
+            el: ".swiper-pagination",
+            type: "fraction",
+            clickable: true
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+        },
+        // loop: true
+    })
+
+    /*
+    <script>
+          var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,    // 슬라이드 사이 여백
+
+            slidesPerView : 'auto', // 한 슬라이드에 보여줄 갯수
+            centeredSlides: true,    //센터모드
+            autoplay: {     //자동슬라이드 (false-비활성화)
+              delay: 2500, // 시간 설정
+              disableOnInteraction: false, // false-스와이프 후 자동 재생
+            },
+
+            loop : false,   // 슬라이드 반복 여부
+
+            loopAdditionalSlides : 1,
+
+     // 슬라이드 반복 시 마지막 슬라이드에서 다음 슬라이드가 보여지지 않는 현상 수정
+            pagination: { // 호출(pager) 여부
+              el: ".swiper-pagination", //버튼을 담을 태그 설정
+              clickable: true, // 버튼 클릭 여부
+            },
+            navigation: {   // 버튼
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+          });
+    */
 
 </script>
 <script>
@@ -198,68 +198,68 @@ const todayProduct = new Swiper('.swiper-container-todayProduct', {
     let sec1=60;
 
 
-    Timer1.value=min1+":"+'00'; 
+    Timer1.value=min1+":"+'00';
 
     function TIMER1(){
-    PlAYTIME1=setInterval(function(){
-        time1=time1-1000; //1초씩 줄어듦
-        min1=time1/(60*1000); //초를 분으로 나눠준다.
+        PlAYTIME1=setInterval(function(){
+            time1=time1-1000; //1초씩 줄어듦
+            min1=time1/(60*1000); //초를 분으로 나눠준다.
 
-       if(sec1>0){ //sec=60 에서 1씩 빼서 출력해준다.
-            sec1=sec1-1;
-            Timer1.value=Math.floor(min1)+':'+sec1; //실수로 계산되기 때문에 소숫점 아래를 버리고 출력해준다.
-           
-        }
-        if(sec1===0){
-         	// 0에서 -1을 하면 -59가 출력된다.
-            // 그래서 0이 되면 바로 sec을 60으로 돌려주고 value에는 0을 출력하도록 해준다.
-            sec1=60;
-            Timer1.value=Math.floor(min1)+':'+'00'
-        }     
-   
-    },1000); //1초마다 
-}
+            if(sec1>0){ //sec=60 에서 1씩 빼서 출력해준다.
+                sec1=sec1-1;
+                Timer1.value=Math.floor(min1)+':'+sec1; //실수로 계산되기 때문에 소숫점 아래를 버리고 출력해준다.
+
+            }
+            if(sec1===0){
+                // 0에서 -1을 하면 -59가 출력된다.
+                // 그래서 0이 되면 바로 sec을 60으로 돌려주고 value에는 0을 출력하도록 해준다.
+                sec1=60;
+                Timer1.value=Math.floor(min1)+':'+'00'
+            }
+
+        },1000); //1초마다
+    }
 
 
-TIMER1();
-setTimeout1(function(){
-    clearInterval(PlAYTIME1);
-},1800000);//30분이 되면 타이머를 삭제한다.
+    TIMER1();
+    setTimeout1(function(){
+        clearInterval(PlAYTIME1);
+    },1800000);//30분이 되면 타이머를 삭제한다.
 </script>
 <script>
-   const Timer2=document.getElementById('Timer2'); //스코어 기록창-분
+    const Timer2=document.getElementById('Timer2'); //스코어 기록창-분
     let time2= 2700000;
     let min2=45;
     let sec2=60;
 
 
-    Timer2.value=min2+":"+'00'; 
+    Timer2.value=min2+":"+'00';
 
     function TIMER2(){
-    PlAYTIME2=setInterval(function(){
-        time2=time2-1000; //1초씩 줄어듦
-        min2=time2/(60*1000); //초를 분으로 나눠준다.
+        PlAYTIME2=setInterval(function(){
+            time2=time2-1000; //1초씩 줄어듦
+            min2=time2/(60*1000); //초를 분으로 나눠준다.
 
-       if(sec2>0){ //sec=60 에서 1씩 빼서 출력해준다.
-            sec2=sec2-1;
-            Timer2.value=Math.floor(min2)+':'+sec2; //실수로 계산되기 때문에 소숫점 아래를 버리고 출력해준다.
-           
-        }
-        if(sec2===0){
-         	// 0에서 -1을 하면 -59가 출력된다.
-            // 그래서 0이 되면 바로 sec을 60으로 돌려주고 value에는 0을 출력하도록 해준다.
-            sec2=60;
-            Timer2.value=Math.floor(min2)+':'+'00'
-        }     
-   
-    },1000); //1초마다 
-}
+            if(sec2>0){ //sec=60 에서 1씩 빼서 출력해준다.
+                sec2=sec2-1;
+                Timer2.value=Math.floor(min2)+':'+sec2; //실수로 계산되기 때문에 소숫점 아래를 버리고 출력해준다.
+
+            }
+            if(sec2===0){
+                // 0에서 -1을 하면 -59가 출력된다.
+                // 그래서 0이 되면 바로 sec을 60으로 돌려주고 value에는 0을 출력하도록 해준다.
+                sec2=60;
+                Timer2.value=Math.floor(min2)+':'+'00'
+            }
+
+        },1000); //1초마다
+    }
 
 
-TIMER2();
-setTimeout2(function(){
-    clearInterval(PlAYTIME2);
-},18000000);//30분이 되면 타이머를 삭제한다.
+    TIMER2();
+    setTimeout2(function(){
+        clearInterval(PlAYTIME2);
+    },18000000);//30분이 되면 타이머를 삭제한다.
 </script>
 </body>
 </html>

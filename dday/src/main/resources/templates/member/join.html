@@ -129,7 +129,7 @@
                         <label>주소<span class="essential">*</span></label>
                     </div>
                     <div class="input_section">
-                        <input class="input_box" type="text" th:field="*{addressMain}" placeholder="주소를 입력해주세요." readonly>
+                        <input class="input_box addressMain" type="text" th:field="*{addressVO.addressMain}" placeholder="주소를 입력해주세요." readonly>
                     </div>
                     <div class="button_section">
                         <button type="button" onclick="sample6_execDaumPostcode()">검색</button>
@@ -138,7 +138,7 @@
                 <div class="main_section">
                     <div class="label_div"></div>
                     <div class="input_section">
-                        <input class="input_box" type="text" th:field="*{addressDetail}" placeholder="상세주소를 입력해주세요." autocomplete="off">
+                        <input class="input_box addressDetail" type="text" th:field="*{addressVO.addressDetail}" placeholder="상세주소를 입력해주세요." autocomplete="off">
                     </div>
                     <div class="button_section"></div>
                 </div>
