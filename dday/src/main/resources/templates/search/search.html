@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 </head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet"
@@ -14,9 +15,13 @@
 <link rel="stylesheet" href="/search/css/searchDemo.css">
 <link rel="stylesheet" href="/search/css/search.css">
 <link rel="stylesheet" href="/search/css/modal.css">
+<link rel="stylesheet" href="/search/css/topButton.css">
 <style>
     * {
         font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum, sans-serif;
+    }
+    li{
+        list-style:none;
     }
 </style>
 
@@ -28,131 +33,133 @@
 <div class="search_page" id="pageSearch">
     <div class="side_margin">
         <div id="container" class="content_width">
-            <h3 class="search_section">'<span class="key_word"></span>'에 대한 검색결과</h3>
+            <h3 class="search_section">'<span class="key_word" id="searchKey" th:text="${keyword}"></span>'에 대한 검색결과</h3>
             <div class="css-pzlq5x etf617g2">
-                <div class="css-1jgnig9 ev2ab494">
-                    <div class="css-11y1fso ev2ab493"><span class="css-wy76no ev2ab492">필터</span>
-                        <div class="divresetbutton">
-                            <button class="resetbutton">
-                                <svg width="12" height="12" viewBox="0 0 16 16" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path class="resetlogo" id="pathrefresh1"
-                                          d="M13.78 3.96303C12.504 2.16973 10.4086 1 8.04 1C4.15192 1 1 4.15192 1 8.04C1 11.9281 4.15192 15.08 8.04 15.08C11.9281 15.08 15.08 11.9281 15.08 8.04"
-                                          stroke="#ddd" stroke-width="1.6" stroke-linecap="square"
-                                          stroke-linejoin="round"></path>
-                                    <path class="resetlogo" id="pathrefresh2" d="M14.4933 1L14.4933 4.52H10.9733"
-                                          stroke="#ddd"
-                                          stroke-width="1.6" stroke-linecap="square" stroke-linejoin="round"></path>
-                                </svg>
-                                <span class="reset">초기화</span></button>
+                <!--필터 바 start-->
+                <form onsubmit="return false">
+                    <div class="css-1jgnig9 ev2ab494">
+                        <div class="css-11y1fso ev2ab493"><span class="css-wy76no ev2ab492">필터</span>
+                            <!--<div class="divresetbutton">
+                                <button class="resetbutton" th:onclick="${#lists.contains(filterSearchList,'0')}" >
+                                    <svg width="12" height="12" viewBox="0 0 16 16" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path class="resetlogo" id="pathrefresh1"
+                                              d="M13.78 3.96303C12.504 2.16973 10.4086 1 8.04 1C4.15192 1 1 4.15192 1 8.04C1 11.9281 4.15192 15.08 8.04 15.08C11.9281 15.08 15.08 11.9281 15.08 8.04"
+                                              stroke="#ddd" stroke-width="1.6" stroke-linecap="square"
+                                              stroke-linejoin="round"></path>
+                                        <path class="resetlogo" id="pathrefresh2" d="M14.4933 1L14.4933 4.52H10.9733"
+                                              stroke="#ddd"
+                                              stroke-width="1.6" stroke-linecap="square" stroke-linejoin="round"></path>
+                                    </svg>
+                                    <span th:class="'reset '+ ${#lists.contains(filterSearchList,'0') ? 'fill': ''}">초기화</span>
+                                </button>
+                            </div>-->
                         </div>
-                    </div>
-                    <div>
-                        <div class="category_section">
-                            <button class="css-16ixplb e1frj59j9">
-                                <div class="css-1iwixyn e1frj59j8">카테고리</div>
-                            </button>
-                            <div class="categoryfilter">
-                                <div class="input_section">
-                                    <div class="check_content">
-                                        <label>
-                                            <input type="checkbox" class="check" id="vegetable">
-                                            <span class="material-symbols-outlined check_img">check_circle</span>
-                                            <span class="filter_name">채소</span>
-                                            <span class="filter_count">24</span>
-                                        </label>
-                                    </div>
-                                    <div class="check_content">
-                                        <label>
-                                            <input type="checkbox" class="check" id="fruit_nut_rice">
-                                            <span class="material-symbols-outlined check_img">check_circle</span>
-                                            <span class="filter_name">과일·견과·쌀</span>
-                                            <span class="filter_count">1</span>
-                                        </label>
-                                    </div>
-                                    <div class="check_content">
-                                        <label>
-                                            <input type="checkbox" class="check" id="seafood">
-                                            <span class="material-symbols-outlined check_img">check_circle</span>
-                                            <span class="filter_name">수산·해산·건어물</span>
-                                            <span class="filter_count">1</span>
-                                        </label>
-                                    </div>
-                                    <div class="check_content">
-                                        <label>
-                                            <input type="checkbox" class="check" id="meat_egg">
-                                            <span class="material-symbols-outlined check_img">check_circle</span>
-                                            <span class="filter_name">정육·계란</span>
-                                            <span class="filter_count">1</span>
-                                        </label>
-                                    </div>
-                                    <div class="check_content">
-                                        <label>
-                                            <input type="checkbox" class="check" id="soup_side_main">
-                                            <span class="material-symbols-outlined check_img">check_circle</span>
-                                            <span class="filter_name">국·반찬·메인요리</span>
-                                            <span class="filter_count">1</span>
-                                        </label>
-                                    </div>
-                                    <div class="check_content">
-                                        <label>
-                                            <input type="checkbox" class="check" id="salad">
-                                            <span class="material-symbols-outlined check_img">check_circle</span>
-                                            <span class="filter_name">샐러드·간편식</span>
-                                            <span class="filter_count">1</span>
-                                        </label>
-                                    </div>
-                                    <div class="check_content">
-                                        <label>
-                                            <input type="checkbox" class="check" id="noodle_sauce_oil">
-                                            <span class="material-symbols-outlined check_img">check_circle</span>
-                                            <span class="filter_name">면·양념·오일</span>
-                                            <span class="filter_count">1</span>
-                                        </label>
-                                    </div>
-                                    <div class="check_content">
-                                        <label>
-                                            <input type="checkbox" class="check" id="drink">
-                                            <span class="material-symbols-outlined check_img">check_circle</span>
-                                            <span class="filter_name">생수·음료·우유·커피</span>
-                                            <span class="filter_count">1</span>
-                                        </label>
-                                    </div>
-                                    <div class="check_content">
-                                        <label>
-                                            <input type="checkbox" class="check" id="snack">
-                                            <span class="material-symbols-outlined check_img">check_circle</span>
-                                            <span class="filter_name">간식·과자·떡</span>
-                                            <span class="filter_count">1</span>
-                                        </label>
-                                    </div>
-                                    <div class="check_content">
-                                        <label>
-                                            <input type="checkbox" class="check" id="bakery_cheese">
-                                            <span class="material-symbols-outlined check_img">check_circle</span>
-                                            <span class="filter_name">베이커리·치즈·델리</span>
-                                            <span class="filter_count">1</span>
-                                        </label>
+
+                        <div>
+                            <div class="category_section">
+                                <button class="css-16ixplb e1frj59j9">
+                                    <div class="css-1iwixyn e1frj59j8">카테고리</div>
+                                </button>
+                                <div class="categoryfilter">
+                                    <div class="input_section">
+                                        <div class="check_content">
+                                            <label>
+                                                <input name="filterBox" type="checkbox" class="check" id="vegetable" value="1" th:checked="${#lists.contains(filterSearchList,'1')}">
+                                                <!--<span th:if="${#lists.contains(filterSearchList,'1')}"></span>-->
+                                                <span th:class="'material-symbols-outlined check_img '+ ${#lists.contains(filterSearchList,'1') ? 'fill': ''}">check_circle</span>
+                                                <span class="filter_name">채소</span>
+                                            </label>
+                                        </div>
+                                        <div class="check_content">
+                                            <label>
+                                                <input name="filterBox" type="checkbox" class="check" id="fruit_nut_rice" value="2" th:checked="${#lists.contains(filterSearchList,'2')}">
+                                                <span th:class="'material-symbols-outlined check_img '+ ${#lists.contains(filterSearchList,'2') ? 'fill': ''}">check_circle</span>
+                                                <span class="filter_name">과일·견과·쌀</span>
+                                            </label>
+                                        </div>
+                                        <div class="check_content">
+                                            <label>
+                                                <input name="filterBox" type="checkbox" class="check" id="seafood" value="3" th:checked="${#lists.contains(filterSearchList,'3')}">
+                                                <span th:class="'material-symbols-outlined check_img '+ ${#lists.contains(filterSearchList,'3') ? 'fill': ''}">check_circle</span>
+                                                <span class="filter_name">수산·해산·건어물</span>
+                                            </label>
+                                        </div>
+                                        <div class="check_content">
+                                            <label>
+                                                <input name="filterBox" type="checkbox" class="check" id="meat_egg" value="4" th:checked="${#lists.contains(filterSearchList,'4')}">
+                                                <span th:class="'material-symbols-outlined check_img '+ ${#lists.contains(filterSearchList,'4') ? 'fill': ''}">check_circle</span>
+                                                <span class="filter_name">정육·계란</span>
+                                            </label>
+                                        </div>
+                                        <div class="check_content">
+                                            <label>
+                                                <input name="filterBox" type="checkbox" class="check" id="soup_side_main" value="5" th:checked="${#lists.contains(filterSearchList,'5')}">
+                                                <span th:class="'material-symbols-outlined check_img '+ ${#lists.contains(filterSearchList,'5') ? 'fill': ''}">check_circle</span>
+                                                <span class="filter_name">국·반찬·메인요리</span>
+                                            </label>
+                                        </div>
+                                        <div class="check_content">
+                                            <label>
+                                                <input name="filterBox" type="checkbox" class="check" id="salad" value="6" th:checked="${#lists.contains(filterSearchList,'6')}">
+                                                <span th:class="'material-symbols-outlined check_img '+ ${#lists.contains(filterSearchList,'6') ? 'fill': ''}">check_circle</span>
+                                                <span class="filter_name">샐러드·간편식</span>
+                                            </label>
+                                        </div>
+                                        <div class="check_content">
+                                            <label>
+                                                <input name="filterBox" type="checkbox" class="check" id="noodle_sauce_oil" value="7" th:checked="${#lists.contains(filterSearchList,'7')}">
+                                                <span th:class="'material-symbols-outlined check_img '+ ${#lists.contains(filterSearchList,'7') ? 'fill': ''}">check_circle</span>
+                                                <span class="filter_name">면·양념·오일</span>
+                                            </label>
+                                        </div>
+                                        <div class="check_content">
+                                            <label>
+                                                <input name="filterBox" type="checkbox" class="check" id="drink" value="8" th:checked="${#lists.contains(filterSearchList,'8')}">
+                                                <span th:class="'material-symbols-outlined check_img '+ ${#lists.contains(filterSearchList,'8') ? 'fill': ''}">check_circle</span>
+                                                <span class="filter_name">생수·음료·우유·커피</span>
+                                            </label>
+                                        </div>
+                                        <div class="check_content">
+                                            <label>
+                                                <input name="filterBox" type="checkbox" class="check" id="snack" value="9" th:checked="${#lists.contains(filterSearchList,'9')}">
+                                                <span th:class="'material-symbols-outlined check_img '+ ${#lists.contains(filterSearchList,'9') ? 'fill': ''}">check_circle</span>
+                                                <span class="filter_name">간식·과자·떡</span>
+                                            </label>
+                                        </div>
+                                        <div class="check_content">
+                                            <label>
+                                                <input name="filterBox" type="checkbox" class="check" id="bakery_cheese" value="10" th:checked="${#lists.contains(filterSearchList,'10')}">
+                                                <span th:class="'material-symbols-outlined check_img '+ ${#lists.contains(filterSearchList,'10') ? 'fill': ''}">check_circle</span>
+                                                <span class="filter_name">베이커리·치즈·델리</span>
+
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
-                </div>
+                </form>
+                <!--필터 바 end-->
+
                 <div class="result_section">
                     <div class="result_info">
-                        <div class="total_search">총 170건</div>
+                        <div class="total_search" th:text="${'총 '+countList+'건'}"></div>
                         <ul class="pricefilter">
-                            <li class="pricefilter_specify"><a class="pricefilter_a pricelow">낮은 가격순</a></li>
-                            <li class="pricefilter_specify"><a class="pricefilter_a pricehigh">높은 가격순</a></li>
+                            <li class="pricefilter_specify"><a class="pricefilter_a pricelow" onclick="fn_search(`low`)">낮은 가격순</a></li>
+                            <li class="pricefilter_specify"><a class="pricefilter_a pricehigh" onclick="fn_search(`high`)">높은 가격순</a></li>
                         </ul>
                     </div>
+
+                    <!--상품 나열 start-->
                     <div class="product_grid">
-                        <div href="/goods/5063110" class="product_content">
+                        <div href="/goods/5063110" class="product_content" th:each="product : ${productList}">
                             <div>
                                 <div class="product_img_section"><img
-                                        src="https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/1637154205701l0.jpg"
-                                        alt="상품 이미지" loading="lazy">
+                                        th:src="@{${'https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/'+product.productMainImageName+'.jpg'}}">
+                                    <!-- src="https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/1637154205701l0.jpg"-->
                                     <div>
                                         <button type="button" class="pickup"><img src="/search/images/cart.png"
                                                                                   alt="장바구니 아이콘"></button>
@@ -160,356 +167,168 @@
                                 </div>
                             </div>
                             <div class="product_info"><span class="delivery_info_section"><span
-                                    class="delivery_info">샛별배송</span></span><span class="product_name">[연세우유 x 마켓컬리]
-                    전용목장우유 900mL</span>
+                                    class="delivery_info">샛별배송</span></span><span class="product_name" th:text="${product.productThumbnailName}"></span>
                                 <div class="price_section">
                                     <div></div>
-                                    <span class="sales-price">2,070<span class="won"> 원</span></span>
+                                    <span class="sales-price" th:text="${#numbers.formatInteger(product.productPrice,1,'COMMA')+'원'}"></span>
                                 </div>
-                                <p class="mini_info">가격, 퀄리티 모두 만족스러운 1A등급 우유</p>
-                                <div class="css-1hrnl0u e1cvv2hm1"><span class="css-1e5t2sz e1cvv2hm0">Kurly Only</span><span
-                                        class="css-1er7oa7 e1cvv2hm0">재활용 우수</span></div>
+                                <p class="mini_info"th:text="${product.productInformation}"> </p>
                             </div>
                         </div>
-                        <div href="/goods/5007540" class="product_content">
-                            <div>
-                                <div class="product_img_section"><img
-                                        src="https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/1646638953618l0.jpg"
-                                        alt="상품 이미지" loading="lazy">
-                                    <div>
-                                        <button type="button" class="pickup"><img src="/search/images/cart.png"
-                                                                                  alt="장바구니 아이콘"></button>
-                                    </div>
+                        <!--상품 나열 end-->
+
+                        <!--페이징 start-->
+                        <!--<div class="pagination" th:object="${pagination}">
+
+                            <a class="page_move">
+                                <img
+                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAHCAQAAABwkq/rAAAAHUlEQVR42mNgAIPi/8X/kWkwA8SE0UQIMJAsCKMBBzk27fqtkcYAAAAASUVORK5CYII="
+                                        alt="처음 페이지로 이동하기 아이콘"></a>
+                            <a class="page_move" th:href="*{startPage - 1}" th:if="*{prev}">
+                                <code>
+                                    <img
+                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAQAAABqrk9lAAAAGElEQVR42mNgAIPi/8X/4QwwE5PBQJADAAKSG3cyVhtXAAAAAElFTkSuQmCC"
+
+                                            alt="이전 페이지로 이동하기 아이콘">
+                                </code>
+                            </a>
+
+                            <th:block th:each="pageNum:${#numbers.sequence(pagination.startPage, pagination.endPage)}">
+                                <a class="current_page" th:href="${pageNum}" th:if="${pagination.criteria.pageNum != pageNum}"><code th:text="${pageNum}"></code></a>
+                                <code th:unless="${pagination.criteria.pageNum != pageNum}" th:text="${pageNum}"></code>
+                                &lt;!&ndash; <a class="page_move">2</a>
+                                 <a class="page_move">3</a>
+                                 <a class="page_move">4</a>
+                                 <a class="page_move">5</a>
+                                 <a class="page_move">6</a>
+                                 <a class="page_move">7</a>
+                                 <a class="page_move">8</a>
+                                 <a class="page_move">9</a>
+                                 <a class="page_move">10</a>&ndash;&gt;
+                            </th:block>
+                            <a class="page_move" th:href="*{endPage + 1}" th:if="*{next}"><code>
+                                <img
+                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAQAAABqrk9lAAAAGUlEQVR42mMo/l/8nwECQEwCHEwGhAlRBgA2mht3SwgzrwAAAABJRU5ErkJggg=="
+                                        alt="다음 페이지로 이동하기 아이콘"></code>
+                            </a>
+                            <a class="page_move">
+                                <img
+                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAHCAQAAABwkq/rAAAAIElEQVR42mMo/l/8n4GBgQFGQ5kgDowmQZCwAMImhDkAb0k27Zcisn8AAAAASUVORK5CYII="
+                                        alt="마지막 페이지로 이동하기 아이콘">
+                            </a>
+                            <form th:action="@{/search/search}" th:object="${criteria}" name="pageForm">
+                                <input type="hidden" th:field="*{pageNum}">
+                                <input type="hidden" th:field="*{amount}">
+                            </form>
+                        </div>-->
+
+                        <!--</div>
+                                <div class="pagination">
+                                    <a class="page_move">
+                                        <img
+                                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAHCAQAAABwkq/rAAAAHUlEQVR42mNgAIPi/8X/kWkwA8SE0UQIMJAsCKMBBzk27fqtkcYAAAAASUVORK5CYII="
+                                                alt="처음 페이지로 이동하기 아이콘">
+                                    </a>
+                                    <a class="page_move">
+                                        <img
+                                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAQAAABqrk9lAAAAGElEQVR42mNgAIPi/8X/4QwwE5PBQJADAAKSG3cyVhtXAAAAAElFTkSuQmCC"
+                                                alt="이전 페이지로 이동하기 아이콘">
+                                    </a>
+                                    <a class="current_page">1</a>
+                                    <a class="page_move">2</a>
+                                    <a class="page_move">3</a>
+                                    <a class="page_move">4</a>
+                                    <a class="page_move">5</a>
+                                    <a class="page_move">6</a>
+                                    <a class="page_move">7</a>
+                                    <a class="page_move">8</a>
+                                    <a class="page_move">9</a>
+                                    <a class="page_move">10</a>
+                                    <a class="page_move">
+                                        <img
+                                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAQAAABqrk9lAAAAGUlEQVR42mMo/l/8nwECQEwCHEwGhAlRBgA2mht3SwgzrwAAAABJRU5ErkJggg=="
+                                                alt="다음 페이지로 이동하기 아이콘">
+                                    </a>
+                                    <a class="page_move">
+                                        <img
+                                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAHCAQAAABwkq/rAAAAIElEQVR42mMo/l/8n4GBgQFGQ5kgDowmQZCwAMImhDkAb0k27Zcisn8AAAAASUVORK5CYII="
+                                                alt="마지막 페이지로 이동하기 아이콘">
+                                    </a>
                                 </div>
-                            </div>
-                            <div class="product_info"><span class="delivery_info_section"><span
-                                    class="delivery_info">샛별배송</span></span><span class="product_name">[상하목장] 유기농 우유
-                    &amp; 저지방 우유 750mL 2종</span>
-                                <div class="price_section">
-                                    <div></div>
-                                    <span class="sales-price">4,900<span class="won"> 원</span></span>
-                                </div>
-                                <p class="mini_info">행복한 소가 만들어낸 행복한 한 모금 </p>
-                            </div>
-                        </div>
-                        <div href="/goods/5049727" class="product_content">
-                            <div>
-                                <div class="product_img_section"><img
-                                        src="https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/1583462074699l0.jpg"
-                                        alt="상품 이미지" loading="lazy">
-                                    <div>
-                                        <button type="button" class="pickup"><img src="/search/images/cart.png"
-                                                                                  alt="장바구니 아이콘"></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product_info"><span class="delivery_info_section"><span
-                                    class="delivery_info">샛별배송</span></span><span class="product_name">[서울우유] 나 100%
-                    우유 1.8L</span>
-                                <div class="price_section">
-                                    <div></div>
-                                    <span class="sales-price">4,990<span class="won"> 원</span></span>
-                                </div>
-                                <p class="mini_info">서울우유의 믿을 수 있는 품질! 든든한 용량 1등급 우유</p>
-                            </div>
-                        </div>
-                        <div href="/goods/5044571" class="product_content">
-                            <div>
-                                <div class="product_img_section"><img
-                                        src="https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/1637921690477l0.jpg"
-                                        alt="상품 이미지" loading="lazy">
-                                    <div>
-                                        <button type="button" class="pickup"><img src="/search/images/cart.png"
-                                                                                  alt="장바구니 아이콘"></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product_info"><span class="delivery_info_section"><span
-                                    class="delivery_info">샛별배송</span></span><span class="product_name">[서울우유] 나 100%
-                    우유 1000mL</span>
-                                <div class="price_section">
-                                    <div></div>
-                                    <span class="sales-price">2,710<span class="won"> 원</span></span>
-                                </div>
-                                <p class="mini_info">서울우유의 믿을 수 있는 품질! 우리나라 대표 1A 우유</p>
-                            </div>
-                        </div>
-                        <div href="/goods/5048852" class="product_content">
-                            <div>
-                                <div class="product_img_section"><img
-                                        src="https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/1645694606714l0.jpg"
-                                        alt="상품 이미지" loading="lazy">
-                                    <div>
-                                        <button type="button" class="pickup"><img src="/search/images/cart.png"
-                                                                                  alt="장바구니 아이콘"></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product_info"><span class="delivery_info_section"><span
-                                    class="delivery_info">샛별배송</span></span><span class="product_name">[상하목장] 유기농 우유
-                    900mL</span>
-                                <div class="price_section">
-                                    <div></div>
-                                    <span class="sales-price">4,580<span class="won"> 원</span></span>
-                                </div>
-                                <p class="mini_info">넉넉하게 만나는 유기농 우유</p>
-                            </div>
-                        </div>
-                        <div href="/goods/5034152" class="product_content">
-                            <div>
-                                <div class="product_img_section"><img
-                                        src="https://product-image.kurly.com/cdn-cgi/image/width=676,format=auto/product/image/53d88b56-ee1e-4405-9a7d-710eaf9af72e.jpg"
-                                        alt="상품 이미지" loading="lazy">
-                                    <div>
-                                        <button type="button" class="pickup"><img src="/search/images/cart.png"
-                                                                                  alt="장바구니 아이콘"></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product_info"><span class="delivery_info_section"><span
-                                    class="delivery_info">샛별배송</span></span><span class="product_name">[매일] 소화가 잘되는
-                    우유 930mL 2종</span>
-                                <div class="price_section">
-                                    <div></div>
-                                    <span class="sales-price">3,290<span class="won"> 원</span></span>
-                                </div>
-                                <p class="mini_info">유당은 제거하고 칼슘은 높인</p>
-                            </div>
-                        </div>
-                        <div href="/goods/5060807" class="product_content">
-                            <div>
-                                <div class="product_img_section"><img
-                                        src="https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/1607314173577l0.jpg"
-                                        alt="상품 이미지" loading="lazy">
-                                    <div>
-                                        <button type="button" class="pickup"><img src="/search/images/cart.png"
-                                                                                  alt="장바구니 아이콘"></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product_info"><span class="delivery_info_section"><span
-                                    class="delivery_info">샛별배송</span></span><span class="product_name">[우유공식] 무항생제
-                    우유 900ml</span>
-                                <div class="price_section">
-                                    <div></div>
-                                    <span class="sales-price">3,200<span class="won"> 원</span></span>
-                                </div>
-                                <p class="mini_info">목장의 과학으로 만든 우유</p>
-                                <div class="css-1hrnl0u e1cvv2hm1"><span class="css-1e5t2sz e1cvv2hm0">Kurly Only</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div href="/goods/5049893" class="product_content">
-                            <div>
-                                <div class="product_img_section"><img
-                                        src="https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/1585707320997l0.jpg"
-                                        alt="상품 이미지" loading="lazy">
-                                    <div>
-                                        <button type="button" class="pickup"><img src="/search/images/cart.png"
-                                                                                  alt="장바구니 아이콘"></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product_info"><span class="delivery_info_section"><span
-                                    class="delivery_info">샛별배송</span></span><span class="product_name">[매일] 오리지널 우유
-                    1.5L</span>
-                                <div class="price_section">
-                                    <div></div>
-                                    <span class="sales-price">4,390<span class="won"> 원</span></span>
-                                </div>
-                                <p class="mini_info">세균수 1A 등급의 신선한 우유</p>
-                            </div>
-                        </div>
-                        <div href="/goods/5048854" class="product_content">
-                            <div>
-                                <div class="product_img_section"><img
-                                        src="https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/1653034416980l0.jpg"
-                                        alt="상품 이미지" loading="lazy">
-                                    <div>
-                                        <button type="button" class="pickup"><img src="/search/images/cart.png"
-                                                                                  alt="장바구니 아이콘"></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product_info"><span class="delivery_info_section"><span
-                                    class="delivery_info">샛별배송</span></span><span class="product_name">[매일] 매일우유
-                    후레쉬팩 오리지널 900mL</span>
-                                <div class="price_section">
-                                    <div></div>
-                                    <span class="sales-price">2,610<span class="won"> 원</span></span>
-                                </div>
-                                <p class="mini_info">신선함과 고소함을 더한 살균 우유</p>
-                            </div>
-                        </div>
-                        <div href="/goods/5001691" class="product_content">
-                            <div>
-                                <div class="product_img_section"><img
-                                        src="https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/1628558475434l0.jpg"
-                                        alt="상품 이미지" loading="lazy">
-                                    <div>
-                                        <button type="button" class="pickup"><img src="/search/images/cart.png"
-                                                                                  alt="장바구니 아이콘"></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product_info"><span class="delivery_info_section"><span
-                                    class="delivery_info">샛별배송</span></span><span class="product_name">[상하목장] 유기농 우유
-                    3종</span>
-                                <div class="price_section">
-                                    <div></div>
-                                    <span class="sales-price">4,400<span class="won"> 원</span>~</span>
-                                </div>
-                                <p class="mini_info">행복한 소가 주는 자연의 선물</p>
-                            </div>
-                        </div>
-                        <div href="/goods/5044650" class="product_content">
-                            <div>
-                                <div class="product_img_section"><img
-                                        src="https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/1575961965803l0.jpg"
-                                        alt="상품 이미지" loading="lazy">
-                                    <div>
-                                        <button type="button" class="pickup"><img src="/search/images/cart.png"
-                                                                                  alt="장바구니 아이콘"></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product_info"><span class="delivery_info_section"><span
-                                    class="delivery_info">샛별배송</span></span><span class="product_name">[범산목장] 목초먹인
-                    유기농 우유 1000mL</span>
-                                <div class="price_section">
-                                    <div></div>
-                                    <span class="sales-price">6,900<span class="won"> 원</span></span>
-                                </div>
-                                <p class="mini_info">강원도 목초 우유를 대용량으로</p>
-                            </div>
-                        </div>
-                        <div href="/goods/5049894" class="product_content">
-                            <div>
-                                <div class="product_img_section"><img
-                                        src="https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/1585707959594l0.jpg"
-                                        alt="상품 이미지" loading="lazy">
-                                    <div>
-                                        <button type="button" class="pickup"><img src="/search/images/cart.png"
-                                                                                  alt="장바구니 아이콘"></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product_info"><span class="delivery_info_section"><span
-                                    class="delivery_info">샛별배송</span></span><span class="product_name">[매일] 저지방 우유
-                    1.5L</span>
-                                <div class="price_section">
-                                    <div></div>
-                                    <span class="sales-price">4,390<span class="won"> 원</span></span>
-                                </div>
-                                <p class="mini_info">세균수 1A 등급의 저지방 우유</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pagination">
-                        <a class="page_move">
-                            <img
-                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAHCAQAAABwkq/rAAAAHUlEQVR42mNgAIPi/8X/kWkwA8SE0UQIMJAsCKMBBzk27fqtkcYAAAAASUVORK5CYII="
-                                    alt="처음 페이지로 이동하기 아이콘">
-                        </a>
-                        <a class="page_move">
-                            <img
-                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAQAAABqrk9lAAAAGElEQVR42mNgAIPi/8X/4QwwE5PBQJADAAKSG3cyVhtXAAAAAElFTkSuQmCC"
-                                    alt="이전 페이지로 이동하기 아이콘">
-                        </a>
-                        <a class="current_page">1</a>
-                        <a class="page_move">2</a>
-                        <a class="page_move">3</a>
-                        <a class="page_move">4</a>
-                        <a class="page_move">5</a>
-                        <a class="page_move">6</a>
-                        <a class="page_move">7</a>
-                        <a class="page_move">8</a>
-                        <a class="page_move">9</a>
-                        <a class="page_move">10</a>
-                        <a class="page_move">
-                            <img
-                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAQAAABqrk9lAAAAGUlEQVR42mMo/l/8nwECQEwCHEwGhAlRBgA2mht3SwgzrwAAAABJRU5ErkJggg=="
-                                    alt="다음 페이지로 이동하기 아이콘">
-                        </a>
-                        <a class="page_move">
-                            <img
-                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAHCAQAAABwkq/rAAAAIElEQVR42mMo/l/8n4GBgQFGQ5kgDowmQZCwAMImhDkAb0k27Zcisn8AAAAASUVORK5CYII="
-                                    alt="마지막 페이지로 이동하기 아이콘">
-                        </a>
+                            </div>-->
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-<!-- footer -->
-<footer th:replace="main/footer.html" :: f></footer>
-<!--modal-->
-<form id="modalClear">
-    <div class="modalContainer">
-        <div class="modalBox">
-            <div class="modal">
-                <div class="modalBody">
-                    <div class="modalWrapper">
-                        <div class="modalContent">
-                            <div class="modalProductName">
-                                <span>[KF365] 양념 소불고기 1kg(냉장)</span>
-                            </div>
-                        </div>
-                        <div class="priceAndCount">
-                            <div>
+            <div id="topButton" style="cursor: pointer; width: 46px; height: 46px;">
+                <img src="/main/images/main/up.PNG" id="topButtonImg">
+            </div>
+            <!-- footer -->
+            <footer th:replace="main/footer.html" :: f></footer>
+            <!--modal-->
+            <div class="modalContainer">
+                <div class="modalBox">
+                    <div class="modal">
+                        <div class="modalBody">
+                            <div class="modalWrapper">
+                                <div class="modalContent">
+                                    <div class="modalProductName">
+                                        <span>[KF365] 양념 소불고기 1kg(냉장)</span>
+                                    </div>
+                                </div>
+                                <div class="priceAndCount">
+                                    <div>
                           <span class="discountBox">
                               17,590원
                           </span>
-                                <span class="priceBox">
+                                        <span class="priceBox">
                               18,990원
                           </span>
-                            </div>
-                            <div class="product_cnt_box">
-                                <button class="minus"></button>
-                                <div class="cnt">1</div>
-                                <button class="plus"></button>
-                            </div>
-                        </div>
-                        <div class="totalPriceBox">
-                            <div class="totalPriceInner">
-                                <div class="totalLine">
-                                    <p>
-                                        합계
-                                    </p>
-                                    <div>
-                                        <span class="changePrice">17,590</span>
-                                        <span class="totalWon">원</span>
+                                    </div>
+                                    <div class="product_cnt_box">
+                                        <button class="minus"></button>
+                                        <div class="cnt">1</div>
+                                        <button class="plus"></button>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="pointBox">
-                                <span class="pointText">적립</span>
-                                <span class="pointCalText">구매 시
+                                <div class="totalPriceBox">
+                                    <div class="totalPriceInner">
+                                        <div class="totalLine">
+                                            <p>
+                                                합계
+                                            </p>
+                                            <div>
+                                                <span class="changePrice">17,590</span>
+                                                <span class="totalWon">원</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pointBox">
+                                        <span class="pointText">적립</span>
+                                        <span class="pointCalText">구매 시
                                   <span class="realPoint">0원 적립
                                   </span>
                               </span>
+                                    </div>
+                                </div>
+                                <div class="modalButtonBox">
+                                    <button class="modalCancelButton" type="button">
+                                        <span class="modalButtonText">취소</span>
+                                    </button>
+                                    <button type="button" class="modalOkButton">
+                                        <span class="modalButtonText">장바구니 담기</span>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                        <div class="modalButtonBox">
-                            <button class="modalCancelButton" type="button">
-                                <span class="modalButtonText">취소</span>
-                            </button>
-                            <button type="button" class="modalOkButton">
-                                <span class="modalButtonText">장바구니 담기</span>
-                            </button>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</form>
-<!--modal end-->
-<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="/main/js/header.js"></script>
-<script src="/search/js/search.js"></script>
-<script src="/search/js/modal.js"></script>
+            <!--modal end-->
+            <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="/main/js/header.js"></script>
+            <script th:inline="javascript" src="/search/js/search.js"></script>
+            <script th:inline="javascript" src="/search/js/modal.js"></script>
+            <script th:inline="javascript" src="/search/js/topButton.js"></script>
 </body>
 </html>
