@@ -1,5 +1,6 @@
 package com.example.dday.mapper;
 
+import com.example.dday.domain.vo.ProductCriteria;
 import com.example.dday.domain.vo.ProductVO;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -15,7 +16,14 @@ public class ProductMapperTest {
     @Test
     public void insertTest() {
         ProductVO productVO = new ProductVO();
-        productVO.create("우유", "생수.음료.우유.커피", 1500L,10L,"20221127","20221130", "맛있어요","목초먹은 젖소에서 짜낸 신선한 우유에요", "썸네일","본문이미지", "20221128", 20L);
+        productVO.create("우유", "생수.음료.우유.커피", 1500L,10L,"20221127","20221130", "맛있어요","목초먹은 젖소에서 짜낸 신선한 우유에요", "썸네일","본문이미지", "20221128", 60L);
+        productMapper.insert(productVO);
+    }
+
+    @Test
+    public void insertTodayTest() {
+        ProductVO productVO = new ProductVO();
+        productVO.create2("당근", "채소", 5000L,8L,"20221129","20221205", "완숙이에요","아삭한 당근이에요!", "썸네일","본문이미지", "20221128", "2022-11-30", 70L);
         productMapper.insert(productVO);
     }
 
@@ -25,7 +33,12 @@ public class ProductMapperTest {
     }
 
     @Test
-    public void selectNewTest(){
-        productMapper.selectNew().stream().map(ProductVO::getProductName).forEach(log::info);
+    public void selectBestTest(){
+        productMapper.selectBest(new ProductCriteria().create(1, 10)).stream().map(ProductVO::getProductName).forEach(log::info);
+    }
+
+    @Test
+    public void selectTodayOne(){
+        log.info("product: " + productMapper.selectTodayOne(21L));
     }
 }
