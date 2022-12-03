@@ -67,7 +67,24 @@ $('button.minus').on('click',function(){
     }
 });
 
+// +버튼 클릭시, 수량이 2이상이면 -버튼 활성화
+$('button.plus').on('click',function(e){
+    e.preventDefault();
+    $('button.minus').css({"background":"url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0yMCAxNHYySDEwdi0yeiIgZmlsbD0iIzMzMyIgZmlsbC1ydWxlPSJub256ZXJvIi8+Cjwvc3ZnPgo=)"});
+    countUp();
+});
 
+// -버튼 클릭시, 수량이 1이면 -버튼 다시 비활성화
+$('button.minus').on('click',function(e){
+    e.preventDefault();
+    if(Number($('div.cnt').text()) > 1){
+        countDown();
+        if(Number($('div.cnt').text()) == 1){
+            $('button.minus').css({"background":"url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0yMCAxNHYySDEwdi0yeiIgZmlsbD0iI0RERCIgZmlsbC1ydWxlPSJub256ZXJvIi8+Cjwvc3ZnPgo=)"});
+        }
+    }
+
+});
 // 천단위 콤마 없애고 숫자로 변경
 var productPrice = Number($('span.changePrice').text().replace(",", ""));
 
