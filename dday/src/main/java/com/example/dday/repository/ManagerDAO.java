@@ -1,5 +1,6 @@
 package com.example.dday.repository;
 
+import com.example.dday.domain.vo.Criteria;
 import com.example.dday.domain.vo.ManagerDTO;
 import com.example.dday.domain.vo.MemberDTO;
 import com.example.dday.domain.vo.MemberVO;
@@ -16,8 +17,18 @@ public class ManagerDAO {
     private final ManagerMapper managerMapper;
 
     //전체 조회
-    public List<ManagerDTO> findAll() {
-        return  managerMapper.selectAll();
+    public List<ManagerDTO> findAll(Criteria criteria) {
+        return  managerMapper.selectAll(criteria);
+    }
+
+    //회원검색
+    public List<ManagerDTO> findAllBy(String memberId, Criteria criteria) {
+        return  managerMapper.selectAllBy(memberId, criteria);
+    }
+
+    //회원 상세조회
+    public MemberVO findMemberDetail(Long memberNumber) {
+        return managerMapper.selectMemberDetail(memberNumber);
     }
 
 }

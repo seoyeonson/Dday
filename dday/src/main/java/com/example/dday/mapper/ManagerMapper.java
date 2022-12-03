@@ -1,5 +1,6 @@
 package com.example.dday.mapper;
 
+import com.example.dday.domain.vo.Criteria;
 import com.example.dday.domain.vo.ManagerDTO;
 import com.example.dday.domain.vo.MemberVO;
 import org.apache.catalina.Manager;
@@ -11,6 +12,12 @@ import java.util.List;
 public interface ManagerMapper {
 
  //목록 조회
- public List<ManagerDTO> selectAll();
+ public List<ManagerDTO> selectAll(Criteria criteria);
+
+ //목록 조회
+ public List<ManagerDTO> selectAllBy(String memberId, Criteria criteria);
+
+ //회원 상세 조회
+ public MemberVO selectMemberDetail(Long memberNumber);
 
 }
