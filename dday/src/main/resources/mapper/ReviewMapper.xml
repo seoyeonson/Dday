@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dday.mapper.ReviewMapper">
+    <!-- 리뷰 페이징 -->
+    <select id="selectAllReview" resultType="reviewDTO">
+		SELECT REVIEW_NUMBER, PRODUCT_NUMBER, REVIEW_CONTENT, REVIEW_REGIST_DATE
+        FROM
+        (
+            SELECT ROWNUM R, REVIEW_NUMBER, PRODUCT_NUMBER, REVIEW_CONTENT, REVIEW_REGIST_DATE
+            FROM
+            (
+                SELECT REVIEW_NUMBER, PRODUCT_NUMBER, REVIEW_CONTENT, REVIEW_REGIST_DATE
+                FROM TBL_REVIEW
+                WHERE PRODUCT_NUMBER = #{productNumber}
+                ORDER BY REVIEW_REGIST_DATE DESC
+            )D2
+         <![CDATA[
+        WHERE ROWNUM <= #{page} * #{amount}
+        ) WHERE R > (#{page} - 1) * #{amount}
+        ]]>
+  	</select>
+
+    <select id="getReviewTotal" resultType="_int">
+  	    SELECT COUNT(*)
+  		FROM TBL_REVIEW
+  		where PRODUCT_NUMBER = #{productNumber}
+  	</select>
+
+</mapper>

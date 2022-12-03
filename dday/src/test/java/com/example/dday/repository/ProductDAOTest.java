@@ -1,5 +1,6 @@
 package com.example.dday.repository;
 
+import com.example.dday.domain.vo.ProductCriteria;
 import com.example.dday.domain.vo.ProductVO;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -27,7 +28,7 @@ class ProductDAOTest {
     }
 
     @Test
-    public void findAllNewTest(){
-        productDAO.findNew().stream().map(ProductVO::getProductName).forEach(log::info);
+    public void findAllBestTest(){
+        productDAO.findBest(new ProductCriteria().create(1, 10)).stream().map(ProductVO::getProductName).forEach(log::info);
     }
 }
