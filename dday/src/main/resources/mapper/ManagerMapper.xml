@@ -3,9 +3,62 @@
 <mapper namespace="com.example.dday.mapper.ManagerMapper">
 
     <select id ="selectAll" resultType="managerDTO">
-        /*SELECT M.MEMBER_NUMBER, M.MEMBER_NAME, M.MEMBER_ID, M.MEMEBER_SIGNUP_DATE, P.POINT_PRICE, O.ORDER_NUMBER, O.ORDER_TOTAL_AMOUNT
-        FROM TBL_MEMBER M , TBL_POINT P , TBL_ORDER O
-        WHERE M.MEMBER_NUMER = P.MEMBER_NUMBER AND M.MEBER_NUMBER= O.MEMBER_NUMBER*/
+		SELECT
+		MEMBER_NUMBER
+		, MEMBER_NAME
+		, MEMBER_ID
+		, MEMBER_SIGNUP_DATE
+		, SUM(POINT_PRICE) "POINT_PRICE"
+		, SUM(ORDER_NUMBER) "ORDER_NUMBER"
+		, SUM(ORDER_TOTAL_AMOUNT) "ORDER_TOTAL_AMOUNT"
+		FROM
+		(
+		SELECT ROWNUM R
+		, D2.MEMBER_NUMBER
+		, D2.MEMBER_NAME
+		, D2.MEMBER_ID
+		, D2.MEMBER_SIGNUP_DATE
+		, D2.POINT_PRICE
+		, D2.ORDER_NUMBER
+		, D2.ORDER_TOTAL_AMOUNT
+		FROM
+		(
+		SELECT DISTINCT M.MEMBER_NUMBER
+		, M.MEMBER_NAME
+		, M.MEMBER_ID
+		, M.MEMBER_SIGNUP_DATE
+		, P.POINT_PRICE
+		, O.ORDER_NUMBER
+		, O.ORDER_TOTAL_AMOUNT
+		FROM TBL_MEMBER M
+		LEFT JOIN TBL_POINT P
+		ON M.MEMBER_NUMBER = P.MEMBER_NUMBER
+		LEFT JOIN TBL_ORDER O
+		ON M.MEMBER_NUMBER = O.MEMBER_NUMBER
+		) D2
+		<![CDATA[
+		WHERE  ROWNUM <= #{page} * #{amount}
+		) WHERE R > (#{page} - 1) * #{amount}
+				]]>
+		GROUP BY MEMBER_ID, MEMBER_NUMBER, MEMBER_NAME,MEMBER_SIGNUP_DATE
+		ORDER BY MEMBER_NUMBER ASC
+	<!--
+	group by , 이름-아이디-회원번호
+	POINT_PRICE -> sum 함수
+	left조인,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+	inner 조인은 테이블 간에 on으로 같은 컬럼이 있을 경우만 가져온다.
+	left조인은 테이블 left거를 기준으로 가져온다
+
+	inner 조인은 각 pk 값에 해당하는 값들만 들고오는데
+	left  조인은 pk값에 해당하는 값 + 이외에 값들도 다 들고온다.
+
+	-->
+
+
+
+</select>
+
+	<select id ="selectAllBy" parameterType="String" resultType="managerDTO">
         SELECT DISTINCT M.MEMBER_NUMBER
 	    , M.MEMBER_NAME
 	    , M.MEMBER_ID
@@ -13,10 +66,28 @@
 	    , P.POINT_PRICE
 	    , O.ORDER_NUMBER
 	    , O.ORDER_TOTAL_AMOUNT
-	    FROM TBL_MEMBER M
+	    FROM (TBL_MEMBER M
 	    INNER JOIN TBL_POINT P
 		ON M.MEMBER_NUMBER = P.MEMBER_NUMBER
 	    INNER JOIN TBL_ORDER O
-		ON M.MEMBER_NUMBER = O.MEMBER_NUMBER
+		ON M.MEMBER_NUMBER = O.MEMBER_NUMBER)
+		WHERE M.MEMBER_ID LIKE '%' || #{memberId} || '%' OR M.MEMBER_NAME LIKE '%' || #{memberId} || '%'
     </select>
+
+	<select id="selectMemberDetail" resultType="memberVO">
+	SELECT
+	MEMBER_NUMBER ,
+   	MEMBER_ID ,
+   	MEMBER_PW ,
+   	MEMBER_NAME,
+  	MEMBER_EMAIL,
+  	MEMBER_PHONE_NUMBER,
+  	MEMBER_GENDER,
+  	MEMBER_BIRTH,
+ 	MEMBER_SIGNUP_DATE,
+  	MEMBER_TYPE,
+  	MEMBER_STATUS
+  	FROM TBL_MEMBER
+  	WHERE MEMBER_NUMBER=#{memberNumber}
+	</select>
 </mapper>

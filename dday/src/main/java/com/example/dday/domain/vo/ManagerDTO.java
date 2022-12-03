@@ -19,4 +19,6 @@ public class ManagerDTO {
     private Long orderNumber;
     private Long orderTotalAmount;
 
+    
+
 }

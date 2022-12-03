@@ -1,233 +1,139 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:tr="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원 상세보기</title>
 
-    <link rel="stylesheet" href="/manager/css/button.css">
-    <link rel="stylesheet" href="/manager/css/table.css">
-    <link rel="stylesheet" href="/manager/css/style.css">
+    <link rel="stylesheet" href="/manager/css/memberView.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 
-    <!-- <div class="wrapper"> -->
-    <!-- 사이드 바 -->
-    <div class="sidebar">
-        <!-- 로고(image) -->
-        <div class="logo">
-            <!-- 로고 들어오면 넣어주세요 -->
-            <img src="">로고
-            <!-- 사이트 이름 정해지면 넣어주세요 -->
-            <h1 style="color:#ff3d00">&nbsp;&nbsp;&nbsp; DDAY</h1>
-        </div>
-        <!-- 메인페이지 링크 나오면 추가해주세요 -->
-        <ul>
-            <li>
-                <a href="" class="menu"><img src="/manager/images/globe.png">사이트 바로가기</a>
-            </li>
-            <!-- 회원 관리 -->
-            <li>
-                <a><img src="/manager/images/user.png">회원 관리 <img src="/manager/images/menu-burger.png"
-                                                                  style="float: right; height:20px;"></a>
-                <ul>
-                    <li><a href="/manager/memberAll">전체회원관리</a></li>
-                    <li><a href="/manager/updateMemberStatus">탈퇴회원관리</a></li>
+<div class="all_wrapper">
+    <header>
+        <div class="logo">DDAY</div>
+        <hr/>
+        <div class="go_to_site"><a href="">사이트 바로가기</a></div>
+        <div class="list_wrapper">
+
+            <details class="user_manage">
+                <summary>
+                    <div>회원관리</div>
+                </summary>
+                <ul class="manage">
+                    <li><a href="#">&nbsp&nbsp&nbsp회원정보 조회</a></li>
+                    <li><a href="#">&nbsp&nbsp&nbsp차단된 회원</a></li>
                 </ul>
-            </li>
-            <!--<li>
-                <a><img src="/manager/images/apps.png">콘텐츠 관리<img src="/manager/images/menu-burger.png" style="float: right; height:20px;"></a>
-                <ul>
-                    <li><a href="/manager/html/manager/managerNotice.html">공지사항관리</a></li>
-                    <li><a href="/manager/html/manager/managerFAQ.html">문의하기관리</a></li>
-                </ul>
-            </li>-->
-            <!--<li>
-                <a><img src="/manager/images/settings.png">환경 설정<img src="/manager/images/menu-burger.png"
-                                                                    style="float: right; height:20px;"></a>
-                <ul>
-                    <li><a href="/manager/html/banner/managerBanner.html">배너 관리</a></li>
-                </ul>
-            </li>-->
-        </ul>
-    </div>
-    <!-- 사이드 바 end -->
+            </details>
 
-    <!-- </div> -->
-    <!-- 회원 구매정보 -->
-    <div class="contents">
-        <h3 class="list">회원 상세보기</h3>
-        <!-- 회원 구매정보 end-->
-
-        <!-- 회원 정보 -->
-        <div class="memberInfo">
-            <span><strong class="information">회원 정보</strong></span>
-
-            <hr class="informationHr">
-            <span class="memberGrade">
-                <span class="memberGradePick">회원등급</span>
-                <input type="radio">개인회원<input type="radio">사업자회원
-            </span>
-            <span class="memberApprove">
-                <span class="memberApprovePick">승인</span>
-                <span class="memberApproveRadio">
-                    <input type="radio" name="">승인<input type="radio" name="">미승인
-                </span>
-            </span>
-            <hr id="Viewhr1">
-
-            <span class="member_Id">
-
-                <span class="id"><span id="redStar">*</span>아이디</span>
-                <input type="text" class="idText" placeholder="아이디입력" value="000" readonly style="border:none">
-               <!--  <button class="duplicationBtn" onclick="duplicationTest()">중복확인</button> -->
-
-                <span class="memberName">
-                    <span><span id="redStar">*</span>이름</span>
-                </span>
-                <input type="text" class="nameText" value="000" readonly style="border:none">
-                <hr id="Viewhr2">
-
-                <span class="pwd">
-
-                    <span class="password"><span id="redStar">*</span>비밀번호</span>
-                </span>
-                <span class="writePwd">
-                    <input type="text" placeholder="비밀번호입력" class="pwdText" id="password" required value="Ab123456b!" readonly style="border:none">
-                </span>
-<!--                <span class="confirmPwd">-->
-<!--                    <input type="password" placeholder="비밀번호확인" class="pwdText" id="confirm_password" required value="Ab123456b!">-->
-<!--                </span>-->
-                <h6 class="warning" style="color: red;">*영문대문자/영문소문자/숫자/특수문자 중 2개 이상 포함, 10 ~ 16자리 이하로 설정할 수 있습니다.
-                </h6>
-                <hr id="Viewhr3">
-
-                <span>
-                    <span class="orderSum">주문금액</span>
-                    <span class="sum">158,000원</span>
-                </span>
-                <span>
-                    <span class="mileage">적립금</span>
-                    <span class="mileageSum">1058점</span>
-                </span>
-                <hr id="Viewhr4">
-
-                <span>
-                    <span class="email"><span id="redStar">*</span>이메일</span>
-                    <span class="emailText">
-                        <span>comeday7741@kakao.com</span><!--<input type="text" class="emailWrite" value="abcde" readonly style="border:none;width: 500px;">-->
-                    </span>
-<!--                    <span>-->
-<!--                        <select name="" id="emailPick">-->
-<!--                            <option value="email00">직접입력</option>-->
-<!--                            <option value="email01">naver.com</option>-->
-<!--                            <option value="email02">gmail.com</option>-->
-<!--                            <option value="email03">daum.net</option>-->
-<!--                        </select>-->
-<!--                        -->
-<!--                    </span>-->
-                    <hr id="Viewhr5">
-                </span>
-
-                <span>
-                    <span class="memberPhone"><span id="redStar">*</span>휴대폰번호</span>
-                    <span class="memberPhoneText">
-                        <span>01029487741</span><!--<input type="text" class="phoneWrite" value="01029487741" readonly style="border:none;width: 176px;">-->
-                    </span>
-                </span>
-
-                <span>
-                    <span class="memberGender">성별</span>
-                    <span class="genderPick">
-                        <span>남성</span><!--<input type="text" value="남성">-->
-                    </span>
-                </span>
-                <hr id="Viewhr6">
-
-                <span>
-                    <span class="memberAddress"><span id="redStar">*</span>주소</span>
-                    <span class="memberAddressText">
-                        <input type="text" class="add" placeholder="우편번호" id="sample6_postcode">
-                        <button class="addressBtn" onclick="sample6_execDaumPostcode()">우편번호찾기</button>
-                        <input type="text" id="sample6_address" placeholder="주소" class="add">
-                        <input type="text" id="sample6_extraAddress" placeholder="참고항목" class="add">
-                        <div class="backAddress">
-                            <input type="text" class="add" placeholder="상세주소"  id="sample6_detailAddress">
-                        </div>
-                    </span>
-                </span>
-                <hr id="Viewhr7">
-
-                <span>
-                    <span class="Text">남기는 말씀</span>
-                    <textarea name="" id="textarea" cols="211" rows="13" style="display: flex;"></textarea>
-                </span>
 
         </div>
+    </header>
+    <main>
 
-        <!-- 회원 정보 End -->
-        <!-- 저장하기 버튼 -->
-        <span>
-            <button id="submitBtn" type="submit" onclick="test()">저장하기</button>
-        </span>
-    </div>
 
+        <!-- main 주 내용 시작 -->
+        <div class="user_lookup_wrapper">
+            <div class="title" style="
+              font-size: 25px;
+              padding-bottom: 16px;
+          "
+            >회원정보 조회
+            </div>
+
+            <!-- 검색 조건 시작 -->
+
+            <div class="input_form_wrapper">
+                <form action="">
+                    <table class="admin_input">
+                        <tr:block th:each="memberDetail:${memberDetail}">
+                            <!-- 1행 -->
+                            <tr th:object="${memberDetail}">
+                                <th scope="row">이름</th>
+                                <td style="border-right: none;">
+                                    <span th:text="*{memberName}">황재승</span>
+                                </td>
+                                <th scope="row" style="border-right: none;background: white;"></th>
+                                <td></td>
+                            </tr>
+
+                            <tr th:object="${memberDetail}">
+                                <th scope="row">아이디</th>
+                                <td style="border-right: none;">
+                                    <span th:text="*{memberId}">Hwang</span>
+                                </td>
+                                <th scope="row" style="border-right: none;background: white;"></th>
+                                <td></td>
+                            </tr>
+
+                            <!-- 2행 -->
+<!--                            <tr th:object="${memberDetail}">-->
+<!--                                <th scope="row">주문금액</th>-->
+<!--                                <td style="border-right: none;">-->
+<!--                                    <span th:text="*{orderTotalAmount}">103,550원</span>-->
+<!--                                </td>-->
+<!--                                <th scope="row" style="border-right: none;background: white;"></th>-->
+<!--                                <td></td>-->
+<!--                            </tr>-->
+
+                            <!-- 3행 -->
+                            <tr th:object="${memberDetail}">
+                                <th scope="row">이메일</th>
+                                <td>
+                                    <span th:text="*{memberEmail}">comeday7741@kakao.com</span>
+                                </td>
+                                <th scope="row">회원 구분</th>
+                                <td>
+                                    <span>일반회원</span>
+                                </td>
+                            </tr>
+
+                            <!-- 4행 -->
+                            <tr th:object="${memberDetail}">
+                                <th scope="row">휴대폰번호</th>
+                                <td>
+                                    <span th:text="*{memberPhoneNumber}">01029487741</span>
+                                </td>
+                                <th scope="row">성별</th>
+                                <td>
+                                    <span>남자</span>
+                                </td>
+                            </tr>
+
+                            <!-- 5행 -->
+                            <tr>
+                                <th scope="row">회원번호</th>
+                                <td style="border-right: none;">
+                                                 <span >부산광역시 서면 더샵 센트럴스타 A동 5003호</span>
+                                </td>
+                                <th scope="row" style="border-right: none;background: white;"></th>
+                                <td></td>
+                            </tr>
+
+                            <tr th:object="${memberDetail}">
+                                <th scope="row">가입날짜</th>
+                                <td style="border-right: none;">
+                                    <span th:text="*{memberSignupDate}">2022년 12월 5일</span>
+                                </td>
+                                <th scope="row" style="border-right: none;background: white;"></th>
+                                <td></td>
+                            </tr>
+                        </tr:block>
+
+                    </table>
+                </form>
+
+
+                <!-- 페이지 이동 버튼 -->
+
+
+            </div>
+        </div>
+
+    </main>
 </body>
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script src="/manager/js/manager.js"></script>
-<!-- 주소 넣기 api -->
-<script>
-    function sample6_execDaumPostcode() {
-        new daum.Postcode({
-            oncomplete: function(data) {
-                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-
-                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
-                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-                var addr = ''; // 주소 변수
-                var extraAddr = ''; // 참고항목 변수
-
-                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
-                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
-                    addr = data.roadAddress;
-                } else { // 사용자가 지번 주소를 선택했을 경우(J)
-                    addr = data.jibunAddress;
-                }
-
-                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
-                if(data.userSelectedType === 'R'){
-                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
-                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-                        extraAddr += data.bname;
-                    }
-                    // 건물명이 있고, 공동주택일 경우 추가한다.
-                    if(data.buildingName !== '' && data.apartment === 'Y'){
-                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-                    }
-                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-                    if(extraAddr !== ''){
-                        extraAddr = ' (' + extraAddr + ')';
-                    }
-                    // 조합된 참고항목을 해당 필드에 넣는다.
-                    document.getElementById("sample6_extraAddress").value = extraAddr;
-                
-                } else {
-                    document.getElementById("sample6_extraAddress").value = '';
-                }
-
-                // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                document.getElementById('sample6_postcode').value = data.zonecode;
-                document.getElementById("sample6_address").value = addr;
-                // 커서를 상세주소 필드로 이동한다.
-                document.getElementById("sample6_detailAddress").focus();
-            }
-        }).open();
-    }
-</script>
-
 </html>
