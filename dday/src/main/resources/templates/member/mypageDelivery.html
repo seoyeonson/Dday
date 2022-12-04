@@ -55,10 +55,8 @@
                 </a>
             </li>
         </ul>
-
     </div>
     <!-- 마이페이지 고정 틀 end -->
-
     <div class="bottomRight">
         <div class="bottomRightHeader">
             <div class="brhLeft">
@@ -66,8 +64,8 @@
                     배송지관리
                 </h2>
                 <span class="brhLeft">
-                            배송지에 따라 상품정보 및 배송유형이 달라질 수 있습니다.
-                        </span>
+                    배송지에 따라 상품정보 및 배송유형이 달라질 수 있습니다.
+                </span>
             </div>
             <div class="brhRight">
                 <div class="brhRight2">
@@ -98,34 +96,6 @@
             <div class="deliveryChoice6">삭제</div>
         </div>
         <ul class="deliveryList">
-<!--            <th:block th:each="address:${addresses}">-->
-<!--                <li class="deliveryList" th:object="${address}">-->
-<!--                    <div class="deliveryListAll">-->
-<!--                        <div class="deliveryCheck">-->
-<!--                            <label for="" class="deliveryCheck">-->
-<!--                                <input type="radio" class="deliveryCheck" th:if="*{#strings.equals(addressStatus,'기본배송지')}" value="4711540" name="delivery" checked style="accent-color: #FF4500;" onchange="setDisplay()">-->
-<!--                                <input type="radio" class="deliveryCheck" th:unless="*{#strings.equals(addressStatus,'기본배송지')}" value="4711540" name="delivery" style="accent-color: #FF4500;" onchange="setDisplay()">-->
-<!--                                <span class="deliveryCheck"></span>-->
-<!--                            </label>-->
-<!--                        </div>-->
-<!--                        <div class="deliveryAddress">-->
-<!--                            <div>-->
-<!--                                <div class="deliveryAddressDetail" th:if="*{#strings.equals(addressStatus,'기본배송지')}">기본 배송지</div>-->
-<!--                                <th:block th:text="|*{addressMain} *{addressDetail}|"></th:block>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="deliveryName" th:text="*{addressReceivePerson}"></div>-->
-<!--                        <div class="deliveryPhone" th:text="*{addressReceivePhoneNumber}"></div>-->
-<!--                        <div class="deliveryEdit">-->
-<!--                            <input type="hidden" th:value="*{addressNumber}" id="addressNumber">-->
-<!--                            <button type="button" class="deliveryEdit" th:if="*{not #strings.equals(addressStatus,'기본배송지')}">-->
-<!--                                <img src="/member/images/delete.png" class="deliveryEdit" width="22" height="22"-->
-<!--                                     viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">-->
-<!--                            </button>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </li>-->
-<!--            </th:block>-->
         </ul>
     </div>
 </div>
@@ -139,34 +109,33 @@
                             <span>배송지 정보 입력</span>
                         </div>
                     </div>
-                    <div class="modalAddressWrapper">
-                        <div>
-                                      <span class="modalAddress">
-                                        <input id="member_post" type="text" readonly>
-                                        <input id="member_addr" type="text" readonly>
-                                        <input type="text" placeholder="상세주소를 입력해주세요" class="modalAddressInput"
-                                               name="detailAddress">
-                                      </span>
-                            <span class="modalAddress">
-                                          <p>받으실 분</p>
-                                          <input type="text" placeholder="이름을 입력해 주세요" class="modalAddressInput"
-                                                 name="receiverName">
-                                      </span>
-                            <span class="modalAddress">
-                                          <p>휴대폰</p>
-                                          <input type="number" placeholder="번호를 입력해 주세요" class="modalAddressInput"
-                                                 name="receiverPhoneNum">
-                                      </span>
+                    <form>
+                        <div class="modalAddressWrapper">
+                            <div>
+                                <span class="modalAddress">
+                                    <input id="member_post" type="text" readonly>
+                                    <input id="member_addr" type="text" readonly>
+                                    <input type="text" placeholder="상세주소를 입력해주세요" class="modalAddressInput" name="detailAddress">
+                                </span>
+                                <span class="modalAddress">
+                                  <p>받으실 분</p>
+                                  <input type="text" placeholder="이름을 입력해 주세요" class="modalAddressInput" name="receiverName">
+                                </span>
+                                <span class="modalAddress">
+                                    <p>휴대폰</p>
+                                    <input type="number" placeholder="번호를 입력해 주세요" class="modalAddressInput" name="receiverPhoneNum">
+                                </span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="addressModalButtonBox">
-                        <button class="addressModalOkButton" type="button">
-                            <span class="modalButtonText">저장</span>
-                        </button>
-                        <button type="button" class="addressModalCancelButton">
-                            <span class="modalButtonText">취소</span>
-                        </button>
-                    </div>
+                        <div class="addressModalButtonBox">
+                            <button class="addressModalOkButton" type="button">
+                                <span class="modalButtonText">저장</span>
+                            </button>
+                            <button type="button" class="addressModalCancelButton">
+                                <span class="modalButtonText">취소</span>
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -184,51 +153,43 @@
 <script src="/member/js/address.js"></script>
 <script>
 
+    getList();
+
     function getList(){
-        addressService.getList({
-        }, showList);
+        addressService.getList(showList);
     }
-    $("input.deliveryCheck").on("click", function () {
+
+    $("button.addressModalOkButton").on("click", function(){
+        let $detailAddress = $("input[name='detailAddress']");
+        let $receiverName = $("input[name='receiverName']");
+        let $receiverPhoneNum = $("input[name='receiverPhoneNum']");
+        let $member_addr = $("#member_addr");
+
+        addressService.add({
+            addressMain: $member_addr.val(),
+            addressDetail: $detailAddress.val(),
+            addressReceivePerson: $receiverName.val(),
+            addressReceivePhoneNumber: $receiverPhoneNum.val(),
+        }, getList);
+    });
+
+    $("ul.deliveryList").on("click", "input.deliveryCheck",function () {
         let check = confirm("기본배송지로 설정하시겠습니까?");
         let addressNumber = $(this).parent().parent().siblings(".deliveryEdit").children("#addressNumber").val();
-        console.log(addressNumber);
         if(check){
-            modifyStatus(addressNumber);
+            addressService.modify(addressNumber, getList);
+        } else {
+            getList();
         }
     })
 
-
-    $("button.deliveryEdit").on("click",function () {
+    $("ul.deliveryList").on("click", "button.deliveryEdit",function () {
         let check = confirm("배송지를 삭제하시겠습니까?");
         let addressNumber = $(this).prev("#addressNumber").val();
         if(check){
-            deleteAddress(addressNumber);
+            addressService.remove(addressNumber, getList);
         }
     })
-
-    // $("ul.replies").on("click", "a.modify", function(){
-    //     let replyNumber = this.classList[1];
-    //     replyService.modify({
-    //         replyNumber: replyNumber,
-    //         replyContent: $("textarea." + replyNumber).val()
-    //     }, function(){
-    //         getList();
-    //         check = true;
-    //     });
-    // });
-
-    function deleteAddress(addressNumber){
-        $.ajax({
-            url: "/address/",
-            success: function(){
-
-            }
-        });
-    }
-
-    function modifyStatus(addressNumber){
-        alert(addressNumber);
-    }
 
     function showList(addresses){
         let text = "";
@@ -262,21 +223,13 @@
             text += '<input type="hidden" value="' + address.addressNumber +'" id="addressNumber">';
             if(address.addressStatus != '기본배송지'){
                 text += '<button type="button" class="deliveryEdit">';
+                text += '<img src="/member/images/delete.png" class="deliveryEdit" width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">';
+                text += '</button>';
             }
-            text += '<img src="/member/images/delete.png" class="deliveryEdit" width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">';
-            text += '</button>';
             text += '</div>';
             text += '</div>';
             text += '</li>';
         });
         $("ul.deliveryList").html(text);
     }
-
-    $("ul.replies").on("click", "a.remove", function(e){
-        e.preventDefault();
-        let replyNumber = $(this).attr("href");
-        replyService.remove(replyNumber, function(){
-            getList();
-        });
-    });
 </script>

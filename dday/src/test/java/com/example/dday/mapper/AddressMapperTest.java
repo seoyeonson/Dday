@@ -55,17 +55,13 @@ class AddressMapperTest {
     @Test
     public void updateStatusNormalTest(){
         AddressVO addressVO = new AddressVO();
-        addressVO.setAddressStatus("기본배송지");
-        addressVO.setMemberNumber(26L);
-        addressMapper.updateStatusNormal(addressVO);
+        addressMapper.updateStatusNormal(26L);
     };
 
     //    수정
     @Test
     public void updateStatusTest(){
         AddressVO addressVO = new AddressVO();
-        addressVO.setAddressStatus("기본배송지");
-        addressVO.setAddressNumber(6L);
-        addressMapper.updateStatus(addressVO);
+        addressMapper.updateStatus(26L, 7L);
     };
 }

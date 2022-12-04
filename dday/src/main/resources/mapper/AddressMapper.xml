@@ -32,7 +32,7 @@
 
     <update id="updateStatus">
         UPDATE TBL_ADDRESS
-        SET ADDRESS_STATUS=#{addressStatus}
+        SET ADDRESS_STATUS='기본배송지'
         WHERE ADDRESS_NUMBER=#{addressNumber} AND MEMBER_NUMBER=#{memberNumber}
     </update>
 </mapper>
