@@ -15,5 +15,4 @@ public class ProductLikeVO {
         this.productNumber = productNumber;
         this.memberNumber = memberNumber;
     }
-
 }

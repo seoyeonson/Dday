@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.dday.mapper.ProductLikeMapper">
+    <select id="selectAll" resultType="productVO">
+        SELECT L.PRODUCT_NUMBER, PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_SALE_PRICE
+        FROM TBL_PRODUCT_LIKE L INNER JOIN TBL_PRODUCT P
+        ON L.PRODUCT_NUMBER=P.PRODUCT_NUMBER
+        WHERE L.MEMBER_NUMBER=#{memberNumber}
+    </select>
 
-    <insert id="insert">
-		INSERT INTO TBL_PRODUCT_LIKE(MEMBER_NUMBER, PRODUCT_NUMBER)
-		VALUES(#{memberNumber}, #{productNumber})
-	</insert>
+    <select id="getTotal" resultType="_int">
+        SELECT COUNT(PRODUCT_NUMBER) FROM TBL_PRODUCT_LIKE
+        WHERE MEMBER_NUMBER=#{memberNumber}
+    </select>
 
     <delete id="delete">
-		DELELTE FROM TBL_PRODUCT_LIKE
-		WHERE MEMBER_NUMBER = #{memberNumber} AND PRODUCT_NUMBER = #{PRODUCT_NUMBER}
-	</delete>
-
-
+        DELETE FROM TBL_PRODUCT_LIKE
+        WHERE PRODUCT_NUMBER=#{productNumber} AND MEMBER_NUMBER=#{memberNumber}
+    </delete>
 </mapper>

@@ -20,7 +20,7 @@ public class AddressDAO {
     //    삭제
     public void remove(Long addressNumber){ addressMapper.delete(addressNumber); };
     //    기본배송지 -> 배송지 수정
-    public void setStatusNormal(AddressVO addressVO){ addressMapper.updateStatusNormal(addressVO);};
+    public void setStatusNormal(Long memberNumber){ addressMapper.updateStatusNormal(memberNumber);};
     //    수정
-    public void setStatus(AddressVO addressVO){ addressMapper.updateStatus(addressVO); };
+    public void setStatus(Long addressNumber, Long memberNumber){ addressMapper.updateStatus(addressNumber, memberNumber); };
 }

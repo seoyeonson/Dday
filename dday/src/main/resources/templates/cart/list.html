@@ -67,7 +67,7 @@
                             </div>
                             <div class="product_price_section">
                                     <span aria-label="권장 소비자 가격" data-testid="product-price"
-                                          class="product_price">2,070원</span><!-- 낱개 가격 -->
+                                          class="product_price" id="price_delete">2,070원</span><!-- 낱개 가격 -->
                                 <span class="real_price" display="none">
                                         <!-- 곱한 가격 -->
                                     </span>
@@ -96,7 +96,7 @@
                             </div>
                             <div class="product_price_section">
                                     <span aria-label="권장 소비자 가격" data-testid="product-price"
-                                          class="product_price">5,350원</span>
+                                          class="product_price" id="price_delete">5,350원</span>
                                 <span class="real_price" display="none">
                                         <!-- 곱한 가격 -->
                                     </span>
@@ -125,7 +125,7 @@
                             </div>
                             <div class="product_price_section">
                                     <span aria-label="권장 소비자 가격" data-testid="product-price"
-                                          class="product_price">5,300원</span>
+                                          class="product_price" id="price_delete">5,300원</span>
                                 <span class="real_price" display="none">
                                         <!-- 곱한 가격 -->
                                     </span>
@@ -154,7 +154,7 @@
                             </div>
                             <div class="product_price_section">
                                     <span aria-label="권장 소비자 가격" data-testid="product-price"
-                                          class="product_price">5,500원</span>
+                                          class="product_price" id="price_delete">5,500원</span>
                                 <span class="real_price" display="none">
                                         <!-- 곱한 가격 -->
                                     </span>
@@ -171,22 +171,11 @@
                 <div class="info_top">
                     <h3 class="address_logo">배송지</h3>
                     <div class="address_content">
-                        <p class="address_default"><em>로그인</em>하시고<br>
-                            <span class="address_default2">구매 부탁드립니다!</span>
-                        </p>
                         <p class="address_p">
                                 <span class="address_span">
-                                    <!-- 주소 담는 곳 -->
+                                    경기 성남시 분당구 판교역로2번길 23
                                 </span>
                         </p>
-                        <button class="addressbutton" type="button" height="36" radius="3">
-                                <span class="searchaddress">
-                                    <img src="/cart/images/search.png" alt="" class="search_img">주소 검색
-                                </span>
-                            <span class="changeaddress">
-                                    배송지 변경
-                                </span>
-                        </button>
                     </div>
                 </div>
                 <div class="info_mid">
@@ -214,8 +203,7 @@
                     </div>
                 </div>
                 <div class="info_bottom">
-                    <button class="order_button" type="button" disabled="" height="56" radius="3">
-                        <span class="address_false">로그인 해주세요</span>
+                    <button class="order_button" type="button" height="56" radius="3">
                         <span class="address_true">주문하기</span>
                     </button>
                     <ul class="css-19kxq7d">
@@ -231,9 +219,32 @@
 <!-- footer 시작 -->
 <footer th:replace="main/footer.html" :: f></footer>
 <!-- footer 종료 -->
+<!-- 선택삭제 modal -->
+<div class="modal" id="modal1">
+    <div class="modalblur">
+        <div class="modal_content">
+            <div class="modalText">선택한 상품을 삭제하시겠습니까?</div>
+            <div class="modalFooter">
+                <button class="cancel" id="cancel1">취소</button>
+                <button class="confirm" id="confirm1">확인</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="modal2">
+    <div class="modalblur">
+        <div class="modal_content">
+            <div class="modalText">삭제하시겠습니까?</div>
+            <div class="modalFooter">
+                <button class="cancel" id="cancel2">취소</button>
+                <button class="confirm" id="confirm2">확인</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script src="/main/js/header.js"></script>
+<!--<script src="/main/js/header.js"></script>-->
 <script src="/cart/js/cart.js"></script>
 </body>
 

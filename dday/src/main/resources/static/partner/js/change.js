@@ -1,3 +1,4 @@
+/*
 // 도메인 직접 입력 or domain option 선택
 const domainListEl = document.querySelector('#email_domain')
 const domainInputEl = document.querySelector('#email')
@@ -13,4 +14,4 @@ domainListEl.addEventListener('change', (event) => {
     domainInputEl.value = ""
     domainInputEl.disabled = false
   }
-})
+})*/

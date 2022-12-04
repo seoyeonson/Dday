@@ -2,6 +2,7 @@ package com.example.dday.controller;
 
 import com.example.dday.domain.vo.MemberDTO;
 import com.example.dday.domain.vo.MemberVO;
+import com.example.dday.service.AddressService;
 import com.example.dday.service.MemberService;
 import com.example.dday.service.PointService;
 import com.example.dday.type.MemberType;
@@ -17,6 +18,7 @@ import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpSession;
 import java.lang.reflect.Member;
+import java.util.Optional;
 
 @Controller
 @RequiredArgsConstructor
@@ -25,7 +27,9 @@ import java.lang.reflect.Member;
 public class MemberController {
     private final MemberService memberService;
     private final PointService pointService;
+    private final AddressService addressService;
 
+//    Session으로 memberNumber, pointTotal, likeTotal Check는 AOP 를 이용하여 체크할 수 있도록 추후 수정
     @GetMapping("/divide")
     public void divide(){;}
 
@@ -90,7 +94,15 @@ public class MemberController {
     public void mypageCoupon(){}
 
     @GetMapping("/mypageDelivery")
-    public void mypageDelivery(){}
+    public void mypageDelivery(HttpSession session, Model model){
+        Long memberNumber = ((MemberVO)session.getAttribute("member")).getMemberNumber();
+        Long pointTotal = pointService.findPointTotalByNumber(memberNumber);
+        Long likeTotal = memberService.findLikeTotalByNumber(memberNumber);
+
+        session.setAttribute("pointTotal", pointTotal);
+        session.setAttribute("likeTotal", likeTotal);
+        model.addAttribute("addresses", addressService.findAll(memberNumber));
+    }
 
     @GetMapping("/mypageEpi")
     public void mypageEpi(HttpSession session, Model model){
@@ -112,7 +124,14 @@ public class MemberController {
     }
 
     @GetMapping("/mypageLike")
-    public void mypageLike(){}
+    public void mypageLike(HttpSession session){
+        MemberVO memberVO = (MemberVO)session.getAttribute("member");
+        Long pointTotal = pointService.findPointTotalByNumber(memberVO.getMemberNumber());
+        Long likeTotal = memberService.findLikeTotalByNumber(memberVO.getMemberNumber());
+
+        session.setAttribute("pointTotal", pointTotal);
+        session.setAttribute("likeTotal", likeTotal);
+    }
 
     @GetMapping("/mypageOrderDetail")
     public void mypageOrderDetail(){}

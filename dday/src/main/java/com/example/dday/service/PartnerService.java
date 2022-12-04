@@ -10,17 +10,17 @@ import org.springframework.stereotype.Service;
 public class PartnerService {
     private final PartnerDAO partnerDAO;
 
-    //    추가
+    //   파트너 정보 추가
     public void register(PartnerDTO partnerDTO) {
         partnerDAO.save(partnerDTO);
     }
 
-    //    수정
+    //  파트너 정보 수정
     public void modify(PartnerDTO partnerDTO) {
         partnerDAO.setPartnerVO(partnerDTO);
     }
 
-//    조회
+    //   파트너 정보 조회
     public PartnerDTO show(Long partnerNumber) {
         PartnerDTO partnerDTO = new PartnerDTO();
         partnerDTO.create(partnerDAO.findById(partnerNumber));

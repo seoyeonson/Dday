@@ -19,8 +19,8 @@ public class AddressService {
     //    삭제
     public void remove(Long addressNumber){ addressDAO.remove(addressNumber); };
     //    기본배송지 -> 배송지 수정
-    public void setStatusNormal(AddressVO addressVO){ addressDAO.setStatusNormal(addressVO);};
+    public void setStatusNormal(Long memberNumber){ addressDAO.setStatusNormal(memberNumber);};
     //    수정
-    public void setStatus(AddressVO addressVO){ addressDAO.setStatus(addressVO); };
+    public void setStatus(Long addressNumber, Long memberNumber){ addressDAO.setStatus(addressNumber, memberNumber); };
 
 }

@@ -8,162 +8,228 @@
     <link rel="stylesheet" href="/partner/css/partner.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/partner/css/partnerManagement.css">
-<link rel="stylesheet" href="/partner/css/partner_footer.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="/partner/css/partnerManagement.css">
+    <link rel="stylesheet" href="/partner/css/partner_footer.css">
 
 </head>
 <body>
 <header th:replace="partner/header.html" :: ph></header>
-    <div id="container-wrap" class="container-wrap">
-        <div id="container" class="row">
-            <div id="content-wrap">
+<div id="container-wrap" class="container-wrap">
+    <div id="container" class="row">
+        <div id="content-wrap">
 
-                <!--주요 현황-->
-                <div class="main-layout main-content reform">
-                    <body class="base main-statistics layout-no-iframe menu-no-border">
-                        <div class="main-statistics main-content reform mg0 pd0">
-                            <div class="content-main">
-                                <div class="main-section" id="presentationSection">
-                                    <div class="table-title">
-                                        <span class="">판매 관리</span>
-                                    </div>
-                                    <div class="statics-box reform">
-                                        <div class="nav-tabs-top">
-                                            <ul class="nav nav-tabs tab-fluid-5" id="presentationMainTab" role="tablist" data-period ="30">
-                                                <li role="presentation" class="" data-name="sales">
-                                                    <a href="/partner/partner_info" role="tab" data-toggle="tab"><h2>정보 수정</h2>
-                                                        <img class="js-period-icon" src="">
-                                                    </a>
-                                                </li>
-                                                <li role="presentation" class="" data-name="order">
-                                                    <a href="/partner/partner_registration" role="tab" data-toggle="tab" aria-expanded="false"><h2>제품 등록</h2>
-                                                        <img class="js-period-icon" src="">
-                                                     </a>
-                                                </li>
-                                                <li role="presentation" class="active" data-name="visit">
-                                                    <a href="/partner/partner_management" role="tab" data-toggle="tab" aria-expanded="false"><h2>판매 관리</h2>
-                                                        <img class="js-period-icon" src="">
-                                                    </a>
-                                                </li>
-                                                <li role="presentation" class="" data-name="member">
-                                                    <a href="/partner/partner_shipping" role="tab" data-toggle="tab" aria-expanded="false"><h2>배송 관리</h2>
-                                                        <img class="js-period-icon" src="">
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
+            <!--주요 현황-->
+            <div class="main-layout main-content reform">
+                <body class="base main-statistics layout-no-iframe menu-no-border">
+                <div class="main-statistics main-content reform mg0 pd0">
+                    <div class="content-main">
+                        <div class="main-section" id="presentationSection">
+                            <div class="table-title">
+                                <span class="">판매 관리</span>
+                            </div>
+                            <div class="statics-box reform">
+                                <div class="nav-tabs-top">
+                                    <ul class="nav nav-tabs tab-fluid-5" id="presentationMainTab" role="tablist"
+                                        data-period="30">
+                                        <li role="presentation" class="" data-name="sales">
+                                            <a href="/partner/partner_info" role="tab" data-toggle="tab"><h2>정보 수정</h2>
+                                                <img class="js-period-icon" src="">
+                                            </a>
+                                        </li>
+                                        <li role="presentation" class="" data-name="order">
+                                            <a href="/partner/partner_registration" role="tab" data-toggle="tab"
+                                               aria-expanded="false"><h2>제품 등록</h2>
+                                                <img class="js-period-icon" src="">
+                                            </a>
+                                        </li>
+                                        <li role="presentation" class="active" data-name="visit">
+                                            <a href="/partner/partner_management" role="tab" data-toggle="tab"
+                                               aria-expanded="false"><h2>판매 관리</h2>
+                                                <img class="js-period-icon" src="">
+                                            </a>
+                                        </li>
+                                        <li role="presentation" class="" data-name="member">
+                                            <a href="/partner/partner_shipping" role="tab" data-toggle="tab"
+                                               aria-expanded="false"><h2>배송 관리</h2>
+                                                <img class="js-period-icon" src="">
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                    </body>
-                </div>
-                
-                <div class="managementBox">
-                    <div class="managementTitle">
-                        <h3>판매 관리</h3>
                     </div>
-                    <div class="availableList">
-                        <p>판매중인 상품리스트</p>
-                        <table border="1" class="availableTable paginationTable">
-                            <thead>
-                                <tr>
-                                    <th>번호</th>
-                                    <th>이미지</th>
-                                    <th>상품명</th>
-                                    <th>판매가</th>
-                                    <th>재고</th>
-                                    <th>등록일/수정일</th>
-                                    <th>수정</th>
-                                </tr>
-                            </thead>
+                </div>
+                </body>
+            </div>
 
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td><img src="" alt=""></td>
-                                    <td class="productName">[유통기한2022.12.29]루스타 영양강화 강력밀가루 20kg</td>
-                                    <td>24,600원</td>
-                                    <td>12</td>
-                                    <td>
-                                        <p>2022-11-16</p>
-                                        <p>2022-11-16</p>
-                                    </td>
-                                    <td>
-                                        <input type="button" class="productChangeButton"  value="수정">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td><img src="" alt=""></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td> <input type="button" class="productChangeButton"  value="수정"></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td><img src="" alt=""></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td> <input type="button" class="productChangeButton"  value="수정"></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td><img src="" alt=""></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td> <input type="button" class="productChangeButton"  value="수정"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <!--<div class="btnContent">
-                            <div class="pagination" id="pagination">페이지 영역</div>
-                    </div>-->
-                        <div class="pagination">
-                            <a class="page_move">
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAHCAQAAABwkq/rAAAAHUlEQVR42mNgAIPi/8X/kWkwA8SE0UQIMJAsCKMBBzk27fqtkcYAAAAASUVORK5CYII=" alt="처음 페이지로 이동하기 아이콘">
+            <div class="managementBox">
+                <div class="managementTitle">
+                    <h3>판매 관리</h3>
+                </div>
+                <div class="availableList">
+                    <p>판매중인 상품리스트</p>
+                    <table border="1" class="availableTable paginationTable">
+                        <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th>이미지</th>
+                            <th>상품명</th>
+                            <th>판매가</th>
+                            <th>재고</th>
+                            <th>등록일/수정일</th>
+                            <th>수정</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <th:block th:each="product:${products}">
+                            <tr class="tBody" th:object="${product}">
+                                <td class="productNumber" th:text="*{productNumber}"></td>
+                                <td class="productThumbnailName"><img src="" alt=""></td>
+                                <td class="productName" th:text="*{productName}"></td>
+                                <td class="productPrice"
+                                    th:text="${#numbers.formatInteger(product.productPrice, 3, 'COMMA') + '원'}"></td>
+                                <td class="productStock" th:text="*{productStock}"></td>
+                                <td class="productDate">
+                                    <p class="productRegistDate" th:text="*{productRegistDate}"></p>
+                                    <p class="productModifyDate" th:text="*{productModifyDate}"></p>
+                                </td>
+                                <td>
+                                    <!--<a type="button" class="change" value="수정" th:href="*{productNumber}">
+                                        <input type="button" class="productChangeButton" value="수정">
+                                    </a>-->
+                                    <a type="button" class="change" value="수정"
+                                       th:href="@{/partner/partnerProductChange(productNumber=${product.productNumber})}">
+                                        <input type="button" class="productChangeButton" value="수정">
+                                    </a>
+                                </td>
+                            </tr>
+                        </th:block>
+                        <tr>
+                            <td>1</td>
+                            <td><img src="" alt=""></td>
+                            <td class="productName">[유통기한2022.12.29]루스타 영양강화 강력밀가루 20kg</td>
+                            <td>24,600원</td>
+                            <td>12</td>
+                            <td>
+                                <p>2022-11-16</p>
+                                <p>2022-11-16</p>
+                            </td>
+                            <td>
+                                <input type="button" class="productChangeButton" value="수정">
+                            </td>
+                        </tr>
+                        <!--<tr>
+                            <td></td>
+                            <td><img src="" alt=""></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td> <input type="button" class="productChangeButton"  value="수정"></td>
+                        </tr>-->
+                        </tbody>
+                    </table>
+                    <div class="btnContent">
+                        <div class="pagination" id="pagination">페이지 영역</div>
+                    </div>
+                    <div th:object="${pagination}">
+                        <div style="text-align: center" class="pagination">
+                            <a class="changePage page_move" th:href="*{startPage - 1}" th:if="*{prev}">
+                                <!--<code><</code>-->
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAQAAABqrk9lAAAAGElEQVR42mNgAIPi/8X/4QwwE5PBQJADAAKSG3cyVhtXAAAAAElFTkSuQmCC"
+                                     alt="이전 페이지로 이동하기 아이콘">
                             </a>
-                            <a class="page_move">
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAQAAABqrk9lAAAAGElEQVR42mNgAIPi/8X/4QwwE5PBQJADAAKSG3cyVhtXAAAAAElFTkSuQmCC" alt="이전 페이지로 이동하기 아이콘">
-                            </a>
-                            <a class="current_page">1</a>
-                            <a class="page_move">2</a>
-                            <a class="page_move">3</a>
-                            <a class="page_move">4</a>
-                            <a class="page_move">5</a>
-                            <a class="page_move">6</a>
-                            <a class="page_move">7</a>
-                            <a class="page_move">8</a>
-                            <a class="page_move">9</a>
-                            <a class="page_move">10</a>
-                            <a class="page_move">
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAQAAABqrk9lAAAAGUlEQVR42mMo/l/8nwECQEwCHEwGhAlRBgA2mht3SwgzrwAAAABJRU5ErkJggg==" alt="다음 페이지로 이동하기 아이콘">
-                            </a>
-                            <a class="page_move">
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAHCAQAAABwkq/rAAAAIElEQVR42mMo/l/8n4GBgQFGQ5kgDowmQZCwAMImhDkAb0k27Zcisn8AAAAASUVORK5CYII=" alt="마지막 페이지로 이동하기 아이콘">
+                            <th:block th:each="page:${#numbers.sequence(pagination.startPage, pagination.endPage)}">
+                                <a class="changePage page_move" th:href="${page}"
+                                   th:if="${pagination.partnerCriteria.page != page}">
+                                    <code th:text="${page}"></code>
+                                </a>
+                                <!--<a class="changePage page_move" th:href="@{/partner/partner_management(page=${pagination.page}&amount=2)}"
+                                   th:if="${pagination.partnerCriteria.page != page}">
+                                    <code th:text="${page}"></code>
+                                </a>-->
+                                <code class="current_page" th:unless="${pagination.partnerCriteria.page != page}"
+                                      th:text="${page}"></code>
+                            </th:block>
+                            <a class="changePage page_move" th:href="*{endPage + 1}" th:if="*{next}">
+                                <!--<code>></code>-->
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAQAAABqrk9lAAAAGUlEQVR42mMo/l/8nwECQEwCHEwGhAlRBgA2mht3SwgzrwAAAABJRU5ErkJggg=="
+                                     alt="다음 페이지로 이동하기 아이콘">
                             </a>
                         </div>
-
-
+                        <form th:action="@{/partner/partner_management}" th:object="${partnerCriteria}" name="pageForm">
+                            <input type="hidden" th:field="*{page}">
+                            <input type="hidden" th:field="*{amount}">
+                        </form>
+                    </div>
+                    <div class="pagination">
+                        <a class="page_move">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAHCAQAAABwkq/rAAAAHUlEQVR42mNgAIPi/8X/kWkwA8SE0UQIMJAsCKMBBzk27fqtkcYAAAAASUVORK5CYII="
+                                 alt="처음 페이지로 이동하기 아이콘">
+                        </a>
+                        <a class="page_move">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAQAAABqrk9lAAAAGElEQVR42mNgAIPi/8X/4QwwE5PBQJADAAKSG3cyVhtXAAAAAElFTkSuQmCC"
+                                 alt="이전 페이지로 이동하기 아이콘">
+                        </a>
+                        <a class="current_page">1</a>
+                        <a class="page_move">2</a>
+                        <a class="page_move">3</a>
+                        <a class="page_move">4</a>
+                        <a class="page_move">5</a>
+                        <a class="page_move">6</a>
+                        <a class="page_move">7</a>
+                        <a class="page_move">8</a>
+                        <a class="page_move">9</a>
+                        <a class="page_move">10</a>
+                        <a class="page_move">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAQAAABqrk9lAAAAGUlEQVR42mMo/l/8nwECQEwCHEwGhAlRBgA2mht3SwgzrwAAAABJRU5ErkJggg=="
+                                 alt="다음 페이지로 이동하기 아이콘">
+                        </a>
+                        <a class="page_move">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAHCAQAAABwkq/rAAAAIElEQVR42mMo/l/8n4GBgQFGQ5kgDowmQZCwAMImhDkAb0k27Zcisn8AAAAASUVORK5CYII="
+                                 alt="마지막 페이지로 이동하기 아이콘">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 <footer th:replace="partner/footer.html" :: pf></footer>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="/partner/js/partner.js"></script>
-<script>
-    $('input.productChangeButton').on("click",function(){
-        $(location).attr('href', '/partner/partnerProductChange');
+<script th:inline="javascript">
+    /*    $('input.productChangeButton').on("click",function(){
+            $(location).attr('href', '/partner/partnerProductChange');
+        });*/
+
+    // let productNumber = [[${product.productNumber}]];
+    let $pages = $("a.changePage");
+    let queryString = [[${pagination.partnerCriteria.queryString}]];
+    globalThis.page = 1;
+
+    const $change = $("a.change");
+
+    $pages.on("click", function (e) {
+        e.preventDefault();
+        $(document.pageForm.page).val($(this).attr("href"));
+        document.pageForm.submit();
     });
+
+    $change.on("click", function (e) {
+        e.preventDefault();
+        location.href = "/partner/partnerProductChange" + queryString + "&productNumber=" + $(this).attr("href");
+    });
+
+    function goUpdate(e) {
+        e.preventDefault();
+        location.href = "/partner/partnerProductChange" + queryString + "&productNumber=" + $(this).attr("href");
+    }
 </script>
 </body>
 </html>

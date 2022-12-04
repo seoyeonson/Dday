@@ -49,7 +49,6 @@ public class PartnerDTO {
         this.partnerOwnerPhoneNumber = partnerOwnerPhoneNumber;
     }
 
-
     //    ProductVO
     private Long productNumber;
     private String productName;

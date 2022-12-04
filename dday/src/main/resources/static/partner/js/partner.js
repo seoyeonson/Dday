@@ -6,18 +6,23 @@ $('input.removeButton').on("click", function(){
     $(location).attr("href","/partner/partner_management");
 });
 
+$('form.registForm').attr('id', 'writeForm');
 
-$('form.todayResgistForm').hide();
+$('form.todayRegistForm').hide();
 
 $showTodayForm = function() {
         $('#checkToday1').prop('checked',false);
+        $('form.todayRegistForm').attr('id', 'writeForm');
+        $('form.registForm').removeAttr('id', 'writeForm');
         $('form.registForm').hide();
-        $('form.todayResgistForm').show();
+        $('form.todayRegistForm').show();
 }
 
 $showRegistForm = function(){
     $('#checkToday2').prop('checked',true);
-    $('form.todayResgistForm').hide();
+    $('form.registForm').attr('id', 'writeForm');
+    $('form.todayRegistForm').removeAttr('id', 'writeForm');
+    $('form.todayRegistForm').hide();
     $('form.registForm').show();
 }
 

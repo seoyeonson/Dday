@@ -8,161 +8,190 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap"
+          rel="stylesheet">
     <link rel="stylesheet" href="/partner/css/change.css">
     <link rel="stylesheet" href="/partner/css/partner.css">
     <link rel="stylesheet" href="/partner/css/partner_footer.css">
 </head>
 <body>
 <header th:replace="partner/header.html" :: ph></header>
-    <div id="container-wrap" class="container-wrap">
-        <div id="container" class="row">
-            <div id="content-wrap">
+<div id="container-wrap" class="container-wrap">
+    <div id="container" class="row">
+        <div id="content-wrap">
 
-                <!--주요 현황-->
-                <div class="main-layout main-content reform">
-                    <body class="base main-statistics layout-no-iframe menu-no-border">
-                        <div class="main-statistics main-content reform mg0 pd0">
-                            <div class="content-main">
-                                <div class="main-section" id="presentationSection">
-                                    <div class="table-title">
-                                        <span class="">정보 수정</span>
-                                    </div>
-                                    <div class="statics-box reform">
-                                        <div class="nav-tabs-top">
-                                            <ul class="nav nav-tabs tab-fluid-5" id="presentationMainTab" role="tablist" data-period ="30">
-                                                <li role="presentation" class="active" data-name="sales">
-                                                    <a href="/partner/partner_info" role="tab" data-toggle="tab"><h2>정보 수정</h2>
-                                                        <img class="js-period-icon" src="">
-                                                    </a>
-                                                </li>
-                                                <li role="presentation" class="" data-name="order">
-                                                    <a href="/partner/partner_registration" role="tab" data-toggle="tab" aria-expanded="false"><h2>제품 등록</h2>
-                                                        <img class="js-period-icon" src="">
-                                                    </a>
-                                                </li>
-                                                <li role="presentation" class="" data-name="visit">
-                                                    <a href="/partner/partner_management" role="tab" data-toggle="tab" aria-expanded="false"><h2>판매 관리</h2>
-                                                           <img class="js-period-icon" src="">
-                                                    </a>
-                                                </li>
-                                                <li role="presentation" class="" data-name="member">
-                                                    <a href="/partner/partner_shipping" role="tab" data-toggle="tab" aria-expanded="false"><h2>배송 관리</h2>
-                                                           <img class="js-period-icon" src="">
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div id="change" class="change-form">
-                                        <form>
-                                            <div class="page-header js-affix affix-top" style="left: auto;">
-                                                <h3>정보 수정            
-                                                    <small>파트너의 기본적인 정보를 수정하실 수 있습니다.</small>
-                                                </h3>
-                                                <input type="submit" value="저장" class="btn btn-red partnerInfoSubmit">
-                                            </div>
-                                            <div class="table-title gd-help-manual">
-
-                                            <div class="table-title gd-help-manual">파트너 정보</div>
-                                            <table class="table table-cols">
-                                                <colgroup>
-                                                    <col class="width-md">
-                                                    <col class="width-xl">
-                                                    <col class="width-md">
-                                                    <col>
-                                                </colgroup>
-                                                <tbody><tr>
-                                                    <th>상호(회사명)</th>
-                                                    <td class="form-inline">
-                                                        <input type="text" name="companyNm" value="" class="form-control width-md">
-                                                    </td>
-                                                    <th>사업자등록번호</th>
-                                                    <td class="form-inline">
-                                                        <div style="position: relative;">
-                                                            <input type="text" name="businessNo[]" value="" maxlength="3" class="form-control js-number-only width-3xs"> -
-                                                            <input type="text" name="businessNo[]" value="" maxlength="2" class="form-control js-number-only width-3xs"> -
-                                                            <input type="text" name="businessNo[]" value="" maxlength="5" class="form-control js-number-only width-3xs">
-                                                            <input type="button" value="인증" class="partnerSubmitButton">
-                                                            <span class="bootstrap-maxlength" style="display: none; position: absolute; white-space: nowrap; z-index: 999; top: -10.9px; left: 65px;"><em>3</em> / 3</span><span class="bootstrap-maxlength" style="display: none; position: absolute; white-space: nowrap; z-index: 999; top: -10.9px; left: 138.359px;"><em>2</em> / 2</span><span class="bootstrap-maxlength" style="display: none; position: absolute; white-space: nowrap; z-index: 999; top: -10.9px; left: 211.719px;"><em>5</em> / 5</span></div>
-                                                        <div class="notice-info">
-                                                            인터넷 쇼핑몰 운영자는 전자상거래법에 의해 사업자정보 공개페이지를 쇼핑몰 홈페이지 초기 화면에 연결해야 합니다.
-                                                            <a href="https://www.nhn-commerce.com/customer/board-view.gd?type=notice&amp;idx=1101" target="_blank" class="btn-link">자세히보기 &gt;</a>
-                                                        </div>
-                                                        <div class="notice-info">
-                                                            사업자번호를 입력하면 쇼핑몰 하단 푸터에 자동으로 사업자정보 공개페이지가 연결됩니다.
-                                                            <a href="http://ftc.go.kr/info/bizinfo/communicationList.jsp" target="_black" class="btn-link">통신판매사업자 정보 공개페이지 &gt;</a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th>대표자명</th>
-                                                    <td colspan="3" class="form-inline">
-                                                        <input type="text" name="ceoNm" value="" class="form-control width-lg">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th class="require">대표 이메일</th>
-                                                    <td colspan="3" class="form-inline">
-                                                        <input type="text" name="email[]" value="" class="form-control width-lg"> @
-                                                        <input type="text" id="email" name="email[]" value="" class="form-control width-md js-email-domain">
-                                                        <select class="email_domain" id="email_domain" name="">
-                                                            <option value="self">직접입력</option>
-                                                            <option value="naver.com">naver.com</option>
-                                                            <option value="hanmail.net">hanmail.net</option>
-                                                            <option value="daum.net">daum.net</option>
-                                                            <option value="nate.com">nate.com</option>
-                                                            <option value="hotmail.com">hotmail.com</option>
-                                                            <option value="gmail.com">gmail.com</option>
-                                                            <option value="icloud.com">icloud.com</option>
-                                                        </select>                
-                                                        <div class="notice-info">
-                                                            대표 이메일은 쇼핑몰에서 메일 발송 시 기본 발송자이메일 정보로 사용됩니다. <br>
-                                                            발송자 이메일 정보가 없으면 자동메일 발송이 되지 않으니, 대표 이메일 정보를 반드시 입력해주세요.
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th>사업장 주소</th>
-                                                    <td colspan="3">
-                                                        <div class="form-inline mgb5" style="position: relative;">
-                                                            <div class="addressFind">
-                                                                <input id="member_post"  type="text" placeholder="우편번호" readonly>
-                                                                <button type="button" onclick="findAddr()">검색</button>
-                                                                <input id="member_addr" type="text" placeholder="주소" readonly> <br>
-                                                                <input type="text" placeholder="상세 주소">
-                                                            </div>
-
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th>대표전화</th>
-                                                    <td class="form-inline" style="position: relative;">
-                                                        <input type="text" name="phone" value="" maxlength="12" class="form-control js-number-only width-md">
-                                                    <span class="bootstrap-maxlength" style="display: none; position: absolute; white-space: nowrap; z-index: 999; top: -0.9px; left: 170px;"><em>10</em> / 12</span></td>
-                                                    <td></td><td></td>
-                                                </tr>
-                                                </tbody>
-                                            </table>  
-                                        </form>
-                                    </div>
+            <!--주요 현황-->
+            <div class="main-layout main-content reform">
+                <body class="base main-statistics layout-no-iframe menu-no-border">
+                <div class="main-statistics main-content reform mg0 pd0">
+                    <div class="content-main">
+                        <div class="main-section" id="presentationSection">
+                            <div class="table-title">
+                                <span class="">정보 수정</span>
+                            </div>
+                            <div class="statics-box reform">
+                                <div class="nav-tabs-top">
+                                    <ul class="nav nav-tabs tab-fluid-5" id="presentationMainTab" role="tablist"
+                                        data-period="30">
+                                        <li role="presentation" class="active" data-name="sales">
+                                            <a href="/partner/partner_info" role="tab" data-toggle="tab"><h2>정보 수정</h2>
+                                                <img class="js-period-icon" src="">
+                                            </a>
+                                        </li>
+                                        <li role="presentation" class="" data-name="order">
+                                            <a href="/partner/partner_registration" role="tab" data-toggle="tab"
+                                               aria-expanded="false"><h2>제품 등록</h2>
+                                                <img class="js-period-icon" src="">
+                                            </a>
+                                        </li>
+                                        <li role="presentation" class="" data-name="visit">
+                                            <a href="/partner/partner_management" role="tab" data-toggle="tab"
+                                               aria-expanded="false"><h2>판매 관리</h2>
+                                                <img class="js-period-icon" src="">
+                                            </a>
+                                        </li>
+                                        <li role="presentation" class="" data-name="member">
+                                            <a href="/partner/partner_shipping" role="tab" data-toggle="tab"
+                                               aria-expanded="false"><h2>배송 관리</h2>
+                                                <img class="js-period-icon" src="">
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
+                            <div id="change" class="change-form">
+                                <form method="post" th:action="@{/partner/partner_change_info(partnerNumber=${partner.partnerNumber})}" th:object="${partner}" id="updateForm">
+                                    <div class="page-header js-affix affix-top" style="left: auto;">
+                                        <h3>정보 수정
+                                            <small>파트너의 기본적인 정보를 수정하실 수 있습니다.</small>
+                                        </h3>
+                                        <input type="submit" value="저장" class="btn btn-red partnerInfoSubmit">
+                                    </div>
+                                    <div class="table-title gd-help-manual">
+
+                                        <div class="table-title gd-help-manual">파트너 정보</div>
+                                        <table class="table table-cols">
+                                            <colgroup>
+                                                <col class="width-md">
+                                                <col class="width-xl">
+                                                <col class="width-md">
+                                                <col>
+                                            </colgroup>
+                                            <tbody>
+                                            <tr>
+                                                <th>상호(회사명)</th>
+                                                <td class="form-inline">
+                                                    <input type="text" name="companyNm" value=""
+                                                           class="form-control width-md" th:field="*{partnerStoreName}">
+                                                </td>
+                                                <th>사업자등록번호</th>
+                                                <td class="form-inline">
+                                                    <div style="position: relative;">
+                                                        <input type="text" name="businessNo[]" value="" maxlength="3"
+                                                               class="form-control js-number-only width-3xs" th:field="*{partnerRegistrationNumber1}">
+                                                        -
+                                                        <input type="text" name="businessNo[]" value="" maxlength="2"
+                                                               class="form-control js-number-only width-3xs" th:field="*{partnerRegistrationNumber2}">
+                                                        -
+                                                        <input type="text" name="businessNo[]" value="" maxlength="5"
+                                                               class="form-control js-number-only width-3xs" th:field="*{partnerRegistrationNumber3}">
+                                                        <input type="button" value="인증" class="partnerSubmitButton">
+                                                        <span class="bootstrap-maxlength"
+                                                              style="display: none; position: absolute; white-space: nowrap; z-index: 999; top: -10.9px; left: 65px;"><em>3</em> / 3</span><span
+                                                            class="bootstrap-maxlength"
+                                                            style="display: none; position: absolute; white-space: nowrap; z-index: 999; top: -10.9px; left: 138.359px;"><em>2</em> / 2</span><span
+                                                            class="bootstrap-maxlength"
+                                                            style="display: none; position: absolute; white-space: nowrap; z-index: 999; top: -10.9px; left: 211.719px;"><em>5</em> / 5</span>
+                                                    </div>
+                                                    <div class="notice-info">
+                                                        인터넷 쇼핑몰 운영자는 전자상거래법에 의해 사업자정보 공개페이지를 쇼핑몰 홈페이지 초기 화면에 연결해야 합니다.
+                                                        <a href="https://www.nhn-commerce.com/customer/board-view.gd?type=notice&amp;idx=1101"
+                                                           target="_blank" class="btn-link">자세히보기 &gt;</a>
+                                                    </div>
+                                                    <div class="notice-info">
+                                                        사업자번호를 입력하면 쇼핑몰 하단 푸터에 자동으로 사업자정보 공개페이지가 연결됩니다.
+                                                        <a href="http://ftc.go.kr/info/bizinfo/communicationList.jsp"
+                                                           target="_black" class="btn-link">통신판매사업자 정보 공개페이지 &gt;</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>대표자명</th>
+                                                <td colspan="3" class="form-inline">
+                                                    <input type="text" name="ceoNm" value=""
+                                                           class="form-control width-lg" th:field="*{partnerOwnerName}">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="require">대표 이메일</th>
+                                                <td colspan="3" class="form-inline">
+                                                    <input type="text" name="email[]" value=""
+                                                           class="form-control width-lg" th:field="*{partnerOwnerEmail}">
+                                                    <!--<input type="text" id="email" name="email[]" value=""
+                                                           class="form-control width-md js-email-domain">
+                                                    <select class="email_domain" id="email_domain" name="">
+                                                        <option value="self">직접입력</option>
+                                                        <option value="naver.com">naver.com</option>
+                                                        <option value="hanmail.net">hanmail.net</option>
+                                                        <option value="daum.net">daum.net</option>
+                                                        <option value="nate.com">nate.com</option>
+                                                        <option value="hotmail.com">hotmail.com</option>
+                                                        <option value="gmail.com">gmail.com</option>
+                                                        <option value="icloud.com">icloud.com</option>
+                                                    </select>-->
+                                                    <div class="notice-info">
+                                                        대표 이메일은 쇼핑몰에서 메일 발송 시 기본 발송자이메일 정보로 사용됩니다. <br>
+                                                        발송자 이메일 정보가 없으면 자동메일 발송이 되지 않으니, 대표 이메일 정보를 반드시 입력해주세요.
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>사업장 주소</th>
+                                                <td colspan="3">
+                                                    <div class="form-inline mgb5" style="position: relative;">
+                                                        <div class="addressFind">
+                                                            <input id="member_post" type="text" placeholder="우편번호"
+                                                                   readonly th:field="*{partnerStorePostcode}">
+                                                            <button type="button" onclick="findAddr()">검색</button>
+                                                            <input id="member_addr" type="text" placeholder="주소"
+                                                                   readonly th:field="*{partnerStoreAddress}"> <br>
+                                                            <input type="text" placeholder="상세 주소" th:field="*{partnerStoreDetailedAddress}">
+                                                        </div>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>대표전화</th>
+                                                <td class="form-inline" style="position: relative;">
+                                                    <input type="text" name="phone" value="" maxlength="12"
+                                                           class="form-control js-number-only width-md" th:field="*{partnerOwnerPhoneNumber}">
+                                                    <span class="bootstrap-maxlength"
+                                                          style="display: none; position: absolute; white-space: nowrap; z-index: 999; top: -0.9px; left: 170px;"><em>10</em> / 12</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                </form>
+                            </div>
                         </div>
-                    </body>
+                    </div>
                 </div>
+                </body>
             </div>
         </div>
     </div>
+</div>
 <footer th:replace="partner/footer.html" :: pf></footer>
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script src="/partner/js/change.js"></script>
-    <script src="/partner/js/partner.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="/partner/js/change.js"></script>
+<script src="/partner/js/partner.js"></script>
 
-<script>
-    function findAddr(){
+<script th:inline="javascript">
+    function findAddr() {
         new daum.Postcode({
-            oncomplete: function(data) {
+            oncomplete: function (data) {
 
                 console.log(data);
 
@@ -173,20 +202,25 @@
                 var jibunAddr = data.jibunAddress; // 지번 주소 변수
                 // 우편번호와 주소 정보를 해당 필드에 넣는다.
                 document.getElementById('member_post').value = data.zonecode;
-                if(roadAddr !== ''){
+                if (roadAddr !== '') {
                     document.getElementById("member_addr").value = roadAddr;
-                }
-                else if(jibunAddr !== ''){
+                } else if (jibunAddr !== '') {
                     document.getElementById("member_addr").value = jibunAddr;
                 }
             }
         }).open();
     }
 
-    $('input.partnerInfoSubmit').on('click',function () {
+    /*$("input[type='submit']").on("click", function(e){
+        e.preventDefault();
+        let text = "";
+        $("form#updateForm").append(text).submit();
+    })*/
+
+/*    $('input.partnerInfoSubmit').on('click', function () {
         alert('정보가 등록되었습니다');
         location.replace("/partner/partner_info");
-    });
+    });*/
 </script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </body>

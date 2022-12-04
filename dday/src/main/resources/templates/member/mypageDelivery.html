@@ -10,176 +10,121 @@
     <link rel="stylesheet" href="/main/css/footer.css">
 </head>
 <body>
-    <!-- 헤더시작 -->
-    <header th:replace="main/header.html" :: h></header>
-    <!-- 마이페이지 고정 틀 start -->
-    <div th:replace="/member/mypageHeader.html" :: myh></div>
-        <div class="mypageBottom">
-            <div class="mypageBottomLeft">
-                <div class="leftTitle">마이컬리</div>
-                <ul class="leftList">
-                    <li class="orderList">
-                        <a href="/member/mypage" class="orderList">
-                            주문 내역
-                            <span class="orderList"></span>
-                        </a>
-                    </li>
-                    <li class="orderList">
-                        <a href="/member/mypageLike" class="orderList2">
-                            찜한 상품
-                            <span class="orderList2"></span>
-                        </a>
-                    </li>
-                    <li class="orderList">
-                        <a href="/member/mypageDelivery" class="orderList3">
-                            배송지 관리
-                            <span class="orderList3"></span>
-                        </a>
-                    </li>
-                    <li class="orderList">
-                        <a href="/member/mypageReview" class="orderList4">
-                            상품후기
-                            <span class="orderList4"></span>
-                        </a>
-                    </li>
-                    <li class="orderList">
-                        <a href="/member/mypageSaving" class="orderList6">
-                            적립금
-                            <span class="orderList6"></span>
-                        </a>
-                    </li>
-                    <li class="orderList">
-                        <a href="/member/mypageEpi" class="orderList8">
-                            개인 정보 수정
-                            <span class="orderList8"></span>
-                        </a>
-                    </li>
-                </ul>
-
+<!-- 헤더시작 -->
+<header th:replace="main/header.html" :: h></header>
+<!-- 마이페이지 고정 틀 start -->
+<div th:replace="/member/mypageHeader.html" :: myh></div>
+<div class="mypageBottom">
+    <div class="mypageBottomLeft">
+        <div class="leftTitle">마이컬리</div>
+        <ul class="leftList">
+            <li class="orderList">
+                <a href="/member/mypage" class="orderList">
+                    주문 내역
+                    <span class="orderList"></span>
+                </a>
+            </li>
+            <li class="orderList">
+                <a href="/member/mypageLike" class="orderList2">
+                    찜한 상품
+                    <span class="orderList2"></span>
+                </a>
+            </li>
+            <li class="orderList">
+                <a href="/member/mypageDelivery" class="orderList3">
+                    배송지 관리
+                    <span class="orderList3"></span>
+                </a>
+            </li>
+            <li class="orderList">
+                <a href="/member/mypageReview" class="orderList4">
+                    상품후기
+                    <span class="orderList4"></span>
+                </a>
+            </li>
+            <li class="orderList">
+                <a href="/member/mypageSaving" class="orderList6">
+                    적립금
+                    <span class="orderList6"></span>
+                </a>
+            </li>
+            <li class="orderList">
+                <a href="/member/mypageEpi" class="orderList8">
+                    개인 정보 수정
+                    <span class="orderList8"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- 마이페이지 고정 틀 end -->
+    <div class="bottomRight">
+        <div class="bottomRightHeader">
+            <div class="brhLeft">
+                <h2 class="brhLeft">
+                    배송지관리
+                </h2>
+                <span class="brhLeft">
+                    배송지에 따라 상품정보 및 배송유형이 달라질 수 있습니다.
+                </span>
             </div>
-            <!-- 마이페이지 고정 틀 end -->
-           
-            <div class="bottomRight">
-                <div class="bottomRightHeader">
-                    <div class="brhLeft">
-                        <h2 class="brhLeft">
-                            배송지관리
-                        </h2>
-                        <span class="brhLeft">
-                            배송지에 따라 상품정보 및 배송유형이 달라질 수 있습니다.
-                        </span>
-                    </div>
-                    <div class="brhRight"> 
-                        <div class="brhRight2">
-                            <div>
-                                <div class="brhRight3">
-                                    <div class="brhRight4" variant="outlined">
-                                       <button class="deliveryAdd" type="button" height="60" onclick="sample6_execDaumPostcode()" value="우편번호 찾기">
+            <div class="brhRight">
+                <div class="brhRight2">
+                    <div>
+                        <div class="brhRight3">
+                            <div class="brhRight4" variant="outlined">
+                                <button class="deliveryAdd" type="button" height="60"
+                                        onclick="sample6_execDaumPostcode()" value="우편번호 찾기">
                                         <span class="deliveryAdd">
-                                            <img class="deliveryAdd" src="https://res.kurly.com/pc/ico/2006/ico_add_16x16.svg" alt="">
+                                            <img class="deliveryAdd"
+                                                 src="https://res.kurly.com/pc/ico/2006/ico_add_16x16.svg" alt="">
                                             새 배송지 추가
                                         </span>
-                                       </button>
-                                    </div>
-                                </div>
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="brhLine"></div>
-                 <!-- 마이페이지 고정 틀 end -->
-                <div class="deliveryList">
-                    <div class="deliveryChoice">선택</div>
-                    <div class="deliveryChoice2">주소</div>
-                    <div class="deliveryChoice3">받으실 분</div>
-                    <div class="deliveryChoice4">연락처</div>
-                    <div class="deliveryChoice6">삭제</div>
-                </div>
-                <ul class="deliveryList">
-                    <li class="deliveryList">
-                        <div class="deliveryListAll">
-                            <div class="deliveryCheck">
-                                <label for="" class="deliveryCheck">
-                                    <input type="radio" class="deliveryCheck" value="4711540" name="delivery" checked style="accent-color: #FF4500;" onchange="setDisplay()">
-                                    <span class="deliveryCheck"></span>
-                                </label>
-                            </div>
-                            <div class="deliveryAddress">
-                                <div>
-                                    <div class="deliveryAddressDetail" style="display: none">기본 배송지</div>
-                                    서울 강남대로 17길 32 5801호
-                                </div>
-                            </div>
-                            <div class="deliveryName">황재승</div>
-                            <div class="deliveryPhone">010-1285-2282</div>
-
-                            <div class="deliveryEdit">
-                                <button class="deliveryEdit">
-                                    <img src="/member/images/delete.png" class="deliveryEdit" width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                </button>
-                            </div>
-
-                        </div>
-                    </li>
-                    <li class="deliveryList">
-                        <div class="deliveryListAll">
-                            <div class="deliveryCheck">
-                                <label for="" class="deliveryCheck">
-                                    <input type="radio" class="deliveryCheck" id="bbb" value="4711540"  name="delivery" style="accent-color: #FF4500;" onchange="setDisplay()">
-                                    <span class="deliveryCheck"></span>
-                                </label>
-                            </div>
-                            <div class="deliveryAddress">
-                                <div>
-                                    <div class="delaiveryAddressDetil" id="divId" style="display: none">기본 배송지</div>
-                                    부산광역시 서면 더샾 센트럴스타 C동 5003호
-                                </div>
-                            </div>
-                            <div class="deliveryName">황재승</div>
-                            <div class="deliveryPhone">010-1285-2282</div>
-
-                            <div class="deliveryEdit">
-                                <button class="deliveryEdit">
-
-                                    <img src="/member/images/delete.png" class="deliveryEdit" width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-
-                                    </img>
-
-                                </button>
-                            </div>
-
-                        </div>
-                    </li>
-
-                </ul>
             </div>
-            </div>
-            </div>
-    <div class="addressModalContainer">
-        <div class="addressModalBox">
-            <div class="addressModal">
-                <div class="addressModalBody">
-                    <div class="addressModalWrapper">
-                        <div class="modalContent">
-                            <div class="modalAddressTitle">
-                                <span>배송지 정보 입력</span>
-                            </div>
+        </div>
+        <div class="brhLine"></div>
+        <!-- 마이페이지 고정 틀 end -->
+        <div class="deliveryList">
+            <div class="deliveryChoice">선택</div>
+            <div class="deliveryChoice2">주소</div>
+            <div class="deliveryChoice3">받으실 분</div>
+            <div class="deliveryChoice4">연락처</div>
+            <div class="deliveryChoice6">삭제</div>
+        </div>
+        <ul class="deliveryList">
+        </ul>
+    </div>
+</div>
+<div class="addressModalContainer">
+    <div class="addressModalBox">
+        <div class="addressModal">
+            <div class="addressModalBody">
+                <div class="addressModalWrapper">
+                    <div class="modalContent">
+                        <div class="modalAddressTitle">
+                            <span>배송지 정보 입력</span>
                         </div>
+                    </div>
+                    <form>
                         <div class="modalAddressWrapper">
                             <div>
-                                      <span class="modalAddress">
-                                        <input id="member_post"  type="text" readonly>
-                                        <input id="member_addr" type="text" readonly>
-                                        <input type="text" placeholder="상세주소를 입력해주세요" class="modalAddressInput" name="detailAddress">
-                                      </span>
                                 <span class="modalAddress">
-                                          <p>받으실 분</p>
-                                          <input type="text" placeholder="이름을 입력해 주세요" class="modalAddressInput" name="receiverName">
-                                      </span>
+                                    <input id="member_post" type="text" readonly>
+                                    <input id="member_addr" type="text" readonly>
+                                    <input type="text" placeholder="상세주소를 입력해주세요" class="modalAddressInput" name="detailAddress">
+                                </span>
                                 <span class="modalAddress">
-                                          <p>휴대폰</p>
-                                          <input type="number" placeholder="번호를 입력해 주세요" class="modalAddressInput" name="receiverPhoneNum">
-                                      </span>
+                                  <p>받으실 분</p>
+                                  <input type="text" placeholder="이름을 입력해 주세요" class="modalAddressInput" name="receiverName">
+                                </span>
+                                <span class="modalAddress">
+                                    <p>휴대폰</p>
+                                    <input type="number" placeholder="번호를 입력해 주세요" class="modalAddressInput" name="receiverPhoneNum">
+                                </span>
                             </div>
                         </div>
                         <div class="addressModalButtonBox">
@@ -190,75 +135,101 @@
                                 <span class="modalButtonText">취소</span>
                             </button>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 
-    <footer th:replace="main/footer.html" :: f></footer>
+<footer th:replace="main/footer.html" :: f></footer>
 </body>
 </html>
 <!--푸터-->
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="/main/js/header.js"></script>
+<script src="/member/js/address.js"></script>
 <script>
 
-    async function sample6_execDaumPostcode() {
-        new daum.Postcode({
-            oncomplete: function(data) {
+    getList();
 
-                console.log(data);
-
-                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-                // 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
-                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-                var roadAddr = data.roadAddress; // 도로명 주소 변수
-                var jibunAddr = data.jibunAddress; // 지번 주소 변수
-                // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                document.getElementById('member_post').value = data.zonecode;
-                if(roadAddr !== ''){
-                    document.getElementById("member_addr").value = roadAddr;
-                    newDelivery();
-                }
-                else if(jibunAddr !== ''){
-                    document.getElementById("member_addr").value = jibunAddr;
-                    newDelivery();
-                }
-            }
-        }).open();
-        // await alert("안녕하세요");
+    function getList(){
+        addressService.getList(showList);
     }
 
+    $("button.addressModalOkButton").on("click", function(){
+        let $detailAddress = $("input[name='detailAddress']");
+        let $receiverName = $("input[name='receiverName']");
+        let $receiverPhoneNum = $("input[name='receiverPhoneNum']");
+        let $member_addr = $("#member_addr");
 
-    // 모달창 숨겨놓기
-    $('div.addressModalContainer').hide();
-    function newDelivery(){
-        $("div.addressModalContainer").fadeIn();
-
-// 저장버튼 누르면 모달창 사라짐
-        $('button.addressModalOkButton').on('click', function(){
-            $('div.addressModalContainer').hide();
-// 배달주소 리스트 추가
-
-        });
-
-// 취소버튼 누르면 모달창 사라짐
-        $('button.addressModalCancelButton').on('click',function(){
-            $('div.addressModalContainer').hide();
-        });
-    }
-
-
-
-    $("button.deliveryEdit").click(function () {
-        $(this).parent().parent().remove();
+        addressService.add({
+            addressMain: $member_addr.val(),
+            addressDetail: $detailAddress.val(),
+            addressReceivePerson: $receiverName.val(),
+            addressReceivePhoneNumber: $receiverPhoneNum.val(),
+        }, getList);
     });
 
-
-    $("input.deliveryCheck").click(function () {
-        $(this).closest(".deliveryAddressDetail").show();
+    $("ul.deliveryList").on("click", "input.deliveryCheck",function () {
+        let check = confirm("기본배송지로 설정하시겠습니까?");
+        let addressNumber = $(this).parent().parent().siblings(".deliveryEdit").children("#addressNumber").val();
+        if(check){
+            addressService.modify(addressNumber, getList);
+        } else {
+            getList();
+        }
     })
+
+    $("ul.deliveryList").on("click", "button.deliveryEdit",function () {
+        let check = confirm("배송지를 삭제하시겠습니까?");
+        let addressNumber = $(this).prev("#addressNumber").val();
+        if(check){
+            addressService.remove(addressNumber, getList);
+        }
+    })
+
+    function showList(addresses){
+        let text = "";
+        addresses.forEach(address => {
+            text += '<li class="deliveryList">';
+            text += '<div class="deliveryListAll">';
+            text += '<div class="deliveryCheck">';
+            text += '<label for="" class="deliveryCheck">';
+
+            if(address.addressStatus == '기본배송지'){
+                text += '<input type="radio" class="deliveryCheck" name="delivery" checked style="accent-color: #FF4500;" onchange="setDisplay()">';
+            } else {
+                text += '<input type="radio" class="deliveryCheck" name="delivery" style="accent-color: #FF4500;" onchange="setDisplay()">'
+            }
+            text += '<span class="deliveryCheck"></span>';
+            text += '</label>';
+            text += '</div>';
+            text += '<div class="deliveryAddress">';
+            text += '<div>';
+
+            if(address.addressStatus == '기본배송지'){
+                text += '<div class="deliveryAddressDetail">기본 배송지</div>';
+            }
+
+            text += address.addressMain + ' ' + address.addressDetail;
+            text += '</div>';
+            text += '</div>';
+            text += '<div class="deliveryName">' + address.addressReceivePerson+'</div>';
+            text += '<div class="deliveryPhone">' + address.addressReceivePhoneNumber + '</div>';
+            text += '<div class="deliveryEdit">';
+            text += '<input type="hidden" value="' + address.addressNumber +'" id="addressNumber">';
+            if(address.addressStatus != '기본배송지'){
+                text += '<button type="button" class="deliveryEdit">';
+                text += '<img src="/member/images/delete.png" class="deliveryEdit" width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">';
+                text += '</button>';
+            }
+            text += '</div>';
+            text += '</div>';
+            text += '</li>';
+        });
+        $("ul.deliveryList").html(text);
+    }
 </script>
