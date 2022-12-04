@@ -19,7 +19,10 @@ class ReviewMapperTest {
 
     @Test
     void selectAllReview() {
-        reviewMapper.selectAllReview(new ProductCriteria().create2(1, 5, 200)).stream().map(ReviewDTO::getReviews).forEach(reviews -> log.info(reviews.toString()));
+        ProductCriteria productCriteria = new ProductCriteria().create2(1, 5, 200);
+        log.info("cri : " + productCriteria);
+//        reviewMapper.selectAllReview(new ProductCriteria().create2(1, 5, 200)).stream().map(ReviewDTO::getReviews).forEach(reviews -> log.info(reviews.toString()));
+        log.info("reviews : " + reviewMapper.selectAllReview(productCriteria));
     }
 
     @Test

@@ -1,6 +1,8 @@
 package com.example.dday.mapper;
 
 import com.example.dday.domain.vo.ProductCriteria;
+import com.example.dday.domain.vo.ProductDetailDTO;
+import com.example.dday.domain.vo.ProductPageDTO;
 import com.example.dday.domain.vo.ProductVO;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -32,5 +34,8 @@ public interface ProductMapper {
     public int getBestTotal();
     public int getSaleTotal();
     public int getFreshTotal();
+
+    // 파트너 정보
+    public ProductDetailDTO selectPartner(Long productNumber);
 
 }

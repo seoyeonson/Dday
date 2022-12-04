@@ -1,6 +1,7 @@
 package com.example.dday.service;
 
 import com.example.dday.domain.vo.ProductCriteria;
+import com.example.dday.domain.vo.ProductDetailDTO;
 import com.example.dday.domain.vo.ProductVO;
 import com.example.dday.repository.ProductDAO;
 import lombok.RequiredArgsConstructor;
@@ -57,4 +58,8 @@ public class ProductService {
     public int getSaleTotal(){return productDAO.findCountSale();}
     public int getTodayTotal(){return productDAO.findCountToday();}
     public int getFreshTotal(){return productDAO.findCountFresh();}
+
+    public ProductDetailDTO showPartnerDetail(Long productNumber){
+        return productDAO.findPartnerById(productNumber);
+    }
 }

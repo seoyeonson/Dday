@@ -142,4 +142,21 @@
         SELECT COUNT(PRODUCT_NUMBER) FROM TBL_PRODUCT
          WHERE PRODUCT_VIEW_COUNT >= 3
     </select>
+
+
+    <select id="selectPartner" resultType="productDetailDTO">
+        SELECT PARTNER_NUMBER
+				,PARTNER_STORE_NAME
+				,PARTNER_OWNER_NAME
+				,PARTNER_OWNER_EMAIL
+				,PARTNER_STORE_ADDRESS
+				,PARTNER_OWNER_PHONE_NUMBER
+				,PR.MEMBER_NUMBER
+				,PRODUCT_NUMBER
+        FROM TBL_PARTNER PA
+        INNER JOIN TBL_PRODUCT PR
+        ON PR.MEMBER_NUMBER = PA.MEMBER_NUMBER
+        WHERE PRODUCT_NUMBER = #{productNumber}
+    </select>
+
 </mapper>

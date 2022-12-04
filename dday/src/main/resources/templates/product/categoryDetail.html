@@ -47,7 +47,7 @@
                 <dl>
                     <dt>판매자</dt>
                     <dd>
-                        <p>파트너1</p>
+                        <p th:text="${partner.partnerStoreName}">파트너1</p>
                     </dd>
                 </dl>
                 <dl>
@@ -136,7 +136,7 @@
                 <li>
                     <a href="#review_wrap">
                         <span class="name">상품리뷰</span>
-                        <span class="count">(9,999+)</span>
+<!--                        <span class="count">(9,999+)</span>-->
                     </a>
                 </li>
                 <li>
@@ -178,10 +178,10 @@
                         <li>후기 작성은 배송완료일로부터 30일 이내 가능합니다.</li>
                         <li>작성하신 후기는 확인 후 적립금이 지급됩니다. (영업일 기준 평균 1~2일 소요)</li>
                     </ul>
-                    <div class="reviews">
-                        <div class="reviews_cnt">
-                            <span>총 27,220개</span>
-                        </div>
+                    <div class="reviews" style="padding-top: 20px;">
+<!--                        <div class="reviews_cnt">-->
+<!--                            <span th:text="${product.getReviewTotal}">총 27,220개</span>-->
+<!--                        </div>-->
                         <div class="review_not_div">
 
                         </div>
@@ -237,19 +237,19 @@
                             <li>판매자 정보를 제공하는 공간입니다.</li>
                             <li>제공되는 전화번호나 연락수단으로 상품에 대한 문의를 할 수 있습니다.</li>
                         </ul>
-                        <ul style="padding-top: 0px;">
+                        <ul style="padding-top: 0px;" th:object="${partner}">
                             <li>회사명</li>
-                            <li>컬리</li>
-                            <li>홈페이지</li>
-                            <li><a href="https://www.naver.com" target="_blank">https://www.naver.com</a></li>
+                            <li th:text="*{partnerStoreName}">컬리</li>
+                            <li>파트너번호</li>
+                            <li th:text="*{partnerNumber}"></li>
                             <li>대표자명</li>
-                            <li>홍길동</li>
+                            <li th:text="*{partnerOwnerName}">홍길동</li>
                             <li>대표이메일</li>
-                            <li>test@aaa.aaa</li>
+                            <li th:text="*{partnerOwnerEmail}">test@aaa.aaa</li>
                             <li>대표전화</li>
-                            <li>02)333-3333</li>
+                            <li th:text="*{partnerOwnerPhoneNumber}">02)333-3333</li>
                             <li>사업장 주소</li>
-                            <li>서울특별시 관악구 신림동 1132-1</li>
+                            <li th:text="*{partnerStoreAddress}">서울특별시 관악구 신림동 1132-1</li>
                         </ul>
                     </section>
                 </div>
@@ -267,51 +267,54 @@
     <script th:inline="javascript">
         const productNumber = [[${product.productNumber}]];
         $(document).ready(function(){
-            $.getJSON("/review/list", {productNumber: productNumber}, function(obj) {
+            $.getJSON("/review/list", {productNumber: productNumber, page: 1, amount:5}, function(obj) {
                 console.log('들어옴');
                 console.log(productNumber);
-
                 makeReviewContent(obj);
             });
         });
 
             function makeReviewContent(obj) {
                 if (obj.list.length == 0) {
-                    $(".review_not_div").html('<span>리뷰가 없습니다.</span>');
+                    $(".review_not_div").html('<span style="font-size: 16px; margin: 420px;">작성된 리뷰가 없습니다.</span>');
                     $(".review_content_ul").html('');
                     $(".pageButtonBox").html('');
                 } else {
-
                     $(".review_not_div").html('');
-
+                    console.log(obj);
                     const list = obj.list;
                     const pf = obj.pageInfo;
-
+                    console.log(list);
+                    console.log(pf);
                     let review_list = '';
                     $(list).each(function (i, obj) {
-                        review_list += '<div class="review">';
-                        review_list += '<div class="member_name_area">';
-                        review_list += '<div class="member_name">';
-                        /* 아이디 */
-                        review_list += '<span class="name_span">' + 구매자 + '</span>';
-                        review_list += '</div>';
-                        review_list += '</div>';
-                        review_list += '<article>';
-                        review_list += '<div class="review_detail">';
-                        review_list += '<div class="review_prod_title">';
-                        review_list += '<h3 class="product_name">' + obj.productNumber + '</h3>';
-                        review_list += '</div>';
-                        review_list += '<p>' + obj.reviewContent + '</p>';
-                        review_list += '<div class="review_img">';
-                        review_list += '<button></button>';
-                        review_list += '</div>';
-                        review_list += '<footer>'
-                        review_list += '<span>' + obj.reviewRegistDate + '</span>';
-                        review_list += '</footer></article></div>';
-
+                        review_list += `<div class="reviews_cnt">`;
+                        review_list += `<span style="font-size: 16px;">총 ` + list.length + `개</span>`;
+                        review_list += `</div>`;
+                        review_list += `<div class="review">`;
+                        review_list += `<div class="member_name_area">`;
+                        review_list += `<div class="member_name">`;
+                        review_list += `<span class="name_span">`+ obj.reviewNumber + `.</span>`;
+                        review_list += `</div>`;
+                        review_list += `</div>`;
+                        review_list += `<article>`;
+                        review_list += `<div class="review_detail">`;
+                        review_list += `<div class="review_prod_title">`;
+                        review_list += `<h3 class="product_name">` + obj.productName + `</h3>`;
+                        review_list += `</div>`;
+                        review_list += `<p>` + obj.reviewContent + `</p>`;
+                        /*review_list += `<div class="review_img1">`;
+                        review_list += `<button>`+ obj.reviewImage +`</button>`;
+                        review_list += `</div>`;*/
+                        review_list += `<footer>`;
+                        review_list += `<span>` + obj.reviewRegistDate + `</span>`;
+                        review_list += `</footer>`;
+                        review_list += `</article>`;
+                        review_list += `</div>`;
                     });
 
-                    $(".review_content_ul").html(review_list);
+                    $("ul.review_content_ul").html(review_list);
+
 
                     /* 페이지 버튼 */
 
@@ -319,49 +322,64 @@
 
                     /* prev */
                     if (pf.prev) {
-                        let prev_num = pf.pageStart - 1;
-                        review_pageMaker += '<li class="pageMaker_btn prev">';
+                        let prev_num = pf.startPage - 1;
+                        review_pageMaker += '<div class="pageButtonBox">';
+                        review_pageMaker += '<div class="pageButtons">';
+                        review_pageMaker += '<button class="prevButton"></button>';
                         review_pageMaker += '<a href="' + prev_num + '">이전</a>';
-                        review_pageMaker += '</li>';
+                        review_pageMaker += '</div></div>';
                     }
                     /* numbre btn */
-                    for (let i = pf.pageStart; i < pf.pageEnd + 1; i++) {
-                        review_pageMaker += '<li class="pageMaker_btn ';
+                    for (let i = pf.startPage; i < pf.endPage + 1; i++) {
+                        review_pageMaker += '<div class="pageButtons" ';
                         if (pf.productCriteria.page == i) {
                             review_pageMaker += 'active';
                         }
                         review_pageMaker += '">';
                         review_pageMaker += '<a href="' + i + '">' + i + '</a>';
-                        review_pageMaker += '</li>';
+                        review_pageMaker += '</div>';
                     }
                     /* next */
                     if (pf.next) {
-                        let next_num = pf.pageEnd + 1;
-                        review_pageMaker += '<li class="pageMaker_btn next">';
+                        let next_num = pf.endPage + 1;
+                        review_pageMaker += '<div class="pageButtons">';
+                        review_pageMaker += '<div class="nextMessage">';
+                        review_pageMaker += '<button class="nextButton"></button>';
                         review_pageMaker += '<a href="' + next_num + '">다음</a>';
-                        review_pageMaker += '</li>';
+                        review_pageMaker += '</div></div>';
 
-                        $(".pageButtonBox").html(review_pageMaker);
+                        $(".review_pageInfo_div").html(review_pageMaker);
                     }
                 }
             }
 
-
         /* 댓글 페이지 정보 */
-        const cri = {
-            productNumber : '${product.productNumber}',
-            pageNum : 1,
+        const productCriteria = {
+            productNumber : [[${product.productNumber}]],
+            page: 1,
             amount : 5
         }
 
         let reviewListInit = function(){
-            $.getJSON("/review/list", cri , function(obj){
-
+            $.getJSON("/review/list", productCriteria , function(obj){
                 makeReviewContent(obj);
-
             });
         }
 
+        $(document).on("click",'.in_cart', function(){
+           let loginUser = $("").val();
+           let productNumber = [[${product.productNumber}]];
+           if(loginUser == undefined){
+               alert("로그인이 필요한 서비스입니다.");
+               location.href = "/member/login";
+               return false;
+           }
+           $.ajax({
+               url : "/productLike/addProduct",
+               type : "Get",
+               data : {productNumber: productNumber, memberNumber}
+           })
+        });
 
 
     </script>

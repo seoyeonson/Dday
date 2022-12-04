@@ -9,7 +9,6 @@ import java.util.List;
 
 @Component
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 public class ReviewDTO {
     private List<ReviewVO> reviews;

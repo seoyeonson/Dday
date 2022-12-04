@@ -4,6 +4,7 @@ import com.example.dday.domain.vo.ProductPageDTO;
 import com.example.dday.domain.vo.ProductVO;
 import com.example.dday.domain.vo.ProductCriteria;
 import com.example.dday.service.ProductService;
+import com.example.dday.service.ReviewService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -60,13 +61,17 @@ public class ProductController {
     public String categoryDetail(@RequestParam("productNumber") Long productNumber, Model model){
         productService.modifyViewCount(productNumber);
         model.addAttribute("product", productService.show(productNumber));
+        model.addAttribute("partner", productService.showPartnerDetail(productNumber));
         return "product/categoryDetail";
     }
 
     @RequestMapping(value="/todayCategoryDetail")
     public String todayCategoryDetail(@RequestParam("productNumber") Long productNumber, Model model){
         model.addAttribute("todayProduct", productService.showTodayOne(productNumber));
+        model.addAttribute("partner", productService.showPartnerDetail(productNumber));
         return "/product/todayCategoryDetail";
     }
+
+
 
 }

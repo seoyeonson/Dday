@@ -16,11 +16,11 @@ import static org.junit.jupiter.api.Assertions.*;
 class ReviewDAOTest {
     @Autowired
     ReviewDAO reviewDAO;
-
-    @Test
-    void findAllTest() {
-        reviewDAO.findAll(new ProductCriteria().create2(1, 5,200)).stream().map(ReviewDTO::getReviews).forEach(reviews -> log.info(reviews.toString()));
-    }
+//
+//    @Test
+//    void findAllTest() {
+//        reviewDAO.findAll(new ProductCriteria().create2(1, 5,200)).stream().map(ReviewVO::getReviewContent).forEach(reviews -> log.info(reviews.toString()));
+//    }
 
     @Test
     void countTest() {

@@ -19,23 +19,7 @@ public class ProductDetailDTO {
 
     // 상품 정보
     private Long productNumber;
-    private String productName;
-    private String productCategory;
-    private Long productPrice;
-    private Long productStock;
-    private String productManufactureDate;
-    private String productExpirationDate;
-    private String productOnelineInformation;
-    private String productInformation;
-    private String productThumbnailName;
-    private String productMainImageName;
-    private String productRegistDate;
-    private String productModifyDate;
-    private String productTodaySale;
-    private String productOpenHours;
-    private Long productSalePercent;
-    private Long productViewCount;
-    private Long productSalePrice;
+
 
 
 

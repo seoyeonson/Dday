@@ -7,11 +7,13 @@ import org.springframework.stereotype.Component;
 @Component
 @Data
 @NoArgsConstructor
-public class ReviewVO {
+public class ReviewProductDTO {
     private Long reviewNumber;
     private String reviewContent;
     private String reviewRegistDate;
     private String reviewUpdateDate;
     private Long productNumber;
     private Long orderDetailNumber;
+    private String productName;
+
 }

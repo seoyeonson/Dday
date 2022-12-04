@@ -23,9 +23,11 @@ public class ReviewController {
     private final ReviewService reviewService;
 
     @GetMapping(value="/list" , produces = MediaType.APPLICATION_JSON_VALUE)
-    public ReviewPageDTO reviewListPOST(ProductCriteria productCriteria) {
+    public ReviewPageDTO reviewListPOST(ProductCriteria productCriteria, Model model) {
         log.info("들어옴");
+        log.info("reviewController: " + productCriteria);
         return reviewService.reviewList(productCriteria);
+
     }
 
 

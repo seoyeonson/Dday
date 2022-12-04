@@ -3,6 +3,7 @@ package com.example.dday.repository;
 import com.example.dday.domain.vo.ProductVO;
 import com.example.dday.mapper.ProductLikeMapper;
 import lombok.RequiredArgsConstructor;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

@@ -41,13 +41,13 @@
                 <dl>
                     <dt>판매자</dt>
                     <dd>
-                        <p>컬리</p>
+                        <p th:text="${partner.partnerStoreName}">파트너1</p>
                     </dd>
                 </dl>
                 <dl>
                     <dt>파트너 연락처</dt>
                         <dd>
-                            <p>02-1111-1111</p>
+                            <p th:text="${partner.partnerOwnerPhoneNumber}">02-1111-1111</p>
                         </dd>
                 </dl>
                 <dl>
@@ -124,19 +124,19 @@
                         <li>판매자 정보를 제공하는 공간입니다.</li>
                         <li>제공되는 전화번호나 연락수단으로 상품에 대한 문의를 할 수 있습니다.</li>
                     </ul>
-                    <ul style="padding-top: 0px;">
+                    <ul style="padding-top: 0px;" th:object="${partner}">
                         <li>회사명</li>
-                        <li>컬리</li>
-                        <li>홈페이지</li>
-                        <li><a href="https://www.naver.com" target="_blank">https://www.naver.com</a></li>
+                        <li th:text="*{partnerStoreName}">컬리</li>
+                        <li>파트너번호</li>
+                        <li th:text="*{partnerNumber}"></li>
                         <li>대표자명</li>
-                        <li>홍길동</li>
+                        <li th:text="*{partnerOwnerName}">홍길동</li>
                         <li>대표이메일</li>
-                        <li>test@aaa.aaa</li>
+                        <li th:text="*{partnerOwnerEmail}">test@aaa.aaa</li>
                         <li>대표전화</li>
-                        <li>02)333-3333</li>
+                        <li th:text="*{partnerOwnerPhoneNumber}">02)333-3333</li>
                         <li>사업장 주소</li>
-                        <li>서울특별시 관악구 신림동 1132-1</li>
+                        <li th:text="*{partnerStoreAddress}">서울특별시 관악구 신림동 1132-1</li>
                     </ul>
                 </section>
             </div>

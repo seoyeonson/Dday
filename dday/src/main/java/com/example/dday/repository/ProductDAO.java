@@ -1,6 +1,7 @@
 package com.example.dday.repository;
 
 import com.example.dday.domain.vo.ProductCriteria;
+import com.example.dday.domain.vo.ProductDetailDTO;
 import com.example.dday.domain.vo.ProductVO;
 import com.example.dday.mapper.ProductMapper;
 import lombok.RequiredArgsConstructor;
@@ -54,4 +55,6 @@ public class ProductDAO {
     public int findCountSale(){return productMapper.getSaleTotal();}
     public int findCountFresh(){return productMapper.getFreshTotal();}
     public int findCountToday(){return productMapper.getTodayTotal();}
+
+    public ProductDetailDTO findPartnerById(Long productNumber){return productMapper.selectPartner(productNumber);}
 }

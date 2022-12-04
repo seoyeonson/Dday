@@ -41,4 +41,9 @@ public class ProductMapperTest {
     public void selectTodayOne(){
         log.info("product: " + productMapper.selectTodayOne(21L));
     }
+
+    @Test
+    public void selectPartnerTest(){
+        log.info("partnerDetail : " + productMapper.selectPartner(76L));
+    }
 }
