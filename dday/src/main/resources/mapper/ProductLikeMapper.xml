@@ -2,4 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.dday.mapper.ProductLikeMapper">
 
+    <insert id="insert">
+		INSERT INTO TBL_PRODUCT_LIKE(MEMBER_NUMBER, PRODUCT_NUMBER)
+		VALUES(#{memberNumber}, #{productNumber})
+	</insert>
+
+    <delete id="delete">
+		DELELTE FROM TBL_PRODUCT_LIKE
+		WHERE MEMBER_NUMBER = #{memberNumber} AND PRODUCT_NUMBER = #{PRODUCT_NUMBER}
+	</delete>
+
+
 </mapper>

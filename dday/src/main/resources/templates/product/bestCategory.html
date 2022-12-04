@@ -263,53 +263,6 @@
 <script th:src="@{/main/js/header.js}"></script>
 <script th:src="@{/product/js/search.js}"></script>
 <script th:src="@{/product/js/category.js}"></script>
-
-<!--<script th:inline="javascript">-->
-
-<!--    // Modal을 가져온다-->
-<!--    var modals = document.getElementsByClassName("modalContainer");-->
-<!--    // Modal을 띄우는 클래스 이름을 가져온다.-->
-<!--    var btns = document.getElementsByClassName("inputCart");-->
-<!--    // Modal을 닫는 close 클래스를 가져온다.-->
-<!--    var spanes = document.getElementsByClassName("modalCancelButton");-->
-<!--    var funcs = [];-->
-
-<!--    // Modal을 띄우고 닫는 클릭 이벤트를 정의한 함수-->
-<!--    function Modal(productNumber) {-->
-<!--        return function(){-->
-<!--            // 해당 클래스의 내용을 클릭하면 Modal을 띄운다.-->
-<!--            btns[productNumber].onclick = function(e){-->
-<!--                e.preventDefault();-->
-<!--                modals[productNumber].style.display = "block";-->
-<!--                console.log(productNumber);-->
-<!--            };-->
-
-<!--            // 닫기 버튼 클릭하면 Modal이 닫힌다.-->
-<!--            spanes[productNumber].onclick = function(e) {-->
-<!--                e.preventDefault();-->
-<!--                modals[productNumber].style.display = "none";-->
-<!--            };-->
-<!--        };-->
-
-<!--    }-->
-<!--    // 원하는 Modal 수만큼 Modal 함수를 호출해서 funcs 함수에 정의한다.-->
-<!--    for(var i = 0; i< btns.length; i++){-->
-<!--        funcs[i] = Modal(i);-->
-<!--    }-->
-<!--    // 원하는 Modal 수만큼 funcs 함수를 호출한다.-->
-<!--    for(var j = 0; j< btns.length; j++){-->
-<!--        funcs[j]();-->
-<!--    }-->
-<!--    // // Modal 영역 밖을 클릭하면 Modal을 닫는다.-->
-<!--    // window.onclick = function(event) {-->
-<!--    //     event.preventDefault();-->
-<!--    //     if(event.target.className == "modalContainer"){-->
-<!--    //         event.target.style.display = "none";-->
-<!--    //     }-->
-<!--    // };-->
-
-<!--// </script>-->
-
 <script th:inline="javascript">
     let productNumber = [[${productNumber}]];
     let $pages = $("a.changePage");

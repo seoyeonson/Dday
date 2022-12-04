@@ -21,12 +21,16 @@ public class ReviewService {
     /* 리뷰 페이징 */
     public ReviewPageDTO reviewList(ProductCriteria productCriteria) {
         ReviewPageDTO reviewPageDTO = new ReviewPageDTO();
+        ProductPageDTO productPageDTO = new ProductPageDTO();
 
         reviewPageDTO.setList(reviewMapper.selectAllReview(productCriteria));
-        reviewPageDTO.setPageInfo(new ProductPageDTO(productCriteria, reviewMapper.getReviewTotal(productCriteria.getProductNumber())));
+        reviewPageDTO.setPageInfo(productPageDTO.reviewProductPageDTO(productCriteria, reviewMapper.getReviewTotal(productCriteria.getProductNumber())));
+
         log.info("productNumber : " + productCriteria.getProductNumber());
+        log.info("reviewService : " + reviewPageDTO);
 
         return reviewPageDTO;
     }
+
 
 }

@@ -57,7 +57,7 @@ public class ProductControllerTest {
 
     @Test
     void categoryDetail() throws Exception{
-        log.info("model map: " + mockMvc.perform(MockMvcRequestBuilders.get("/product/categoryDetail").param("productNumber", "9"))
+        log.info("model map: " + mockMvc.perform(MockMvcRequestBuilders.get("/product/categoryDetail").param("productNumber", "76"))
                 .andReturn().getModelAndView().getModelMap());
     }
 

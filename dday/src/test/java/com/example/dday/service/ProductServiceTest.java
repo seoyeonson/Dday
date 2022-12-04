@@ -57,4 +57,9 @@ public class ProductServiceTest {
     public void modifyViewCountTest() {
         log.info("productCount: " + productService.modifyViewCount(37L));
     }
+
+    @Test
+    public void showPartnerDetailTest(){
+        log.info("productPartner: " + productService.showPartnerDetail(76L));
+    }
 }
