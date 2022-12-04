@@ -35,42 +35,26 @@
 
         <!-- main 주 내용 시작 -->
         <div class="user_lookup_wrapper">
-            <div class="title" style="position: absolute;left: 762px;z-index: 999;font-size: 30px;">회원정보 조회</div>
+            <div class="title" style="position: absolute;left: 762px;z-index: 999;font-size: 30px;top: 3px;">회원정보 조회</div>
 
 
             <!-- 검색 조건 시작 -->
 
             <div class="input_form_wrapper">
-                <form action="">
+                <form name="search-form">
                     <div class="fasfa">
-                        <img src="/manager/images/search.png" style="
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    left: 20px;
-    top: 79px;
-">
-                        <img src="/manager/images/keyboard.png" style="
-    width: 26px;
-    height: 26px;
-    position: absolute;
-    left: 584px;
-    top: 76px;
-">
+                        <img src="/manager/images/search.png" style="width: 20px;height: 20px; position: absolute; left: 20px; top: 79px;">
+                        <img src="/manager/images/keyboard.png" style="width: 26px; height: 26px; position: absolute; left: 584px; top: 76px;">
                         <i class="fas fa-search"></i>
-                        <input class="searchWrap" type="text" placeholder="아이디 혹은 이름으로 검색해주세요." onkeypress="show_name(event)">
-
+                        <input class="searchWrap" type="text" placeholder="아이디 혹은 이름으로 검색해주세요." onkeypress="show_name(event)" style="font-size: 14px;">
                         <i class="fas fa-keyboard"></i>
                         <span style="color:#4f86ec"><i class="fas fa-microphone" ></i>
                     </div>
-
-
-
                 </form>
             </div>
 
             <div class="result_wrapper">
-                <div class="result_table_title">조회 결과</div>
+
 
                 <table class="result_table">
                     <thead>
@@ -86,22 +70,35 @@
 
                     </tr>
                     </thead>
-                    <tbody>
                     <tr:block id="keyword" th:each="memberInfo:${memberInfo}">
 
                         <tr th:object="${memberInfo}">
-                        <th th:text="*{memberNumber}" scope="row">유저1</th>
-                        <td th:text="*{memberName}">이종호</td>
-                        <td th:text="*{memberId}">caMelodain</td>
-                        <td th:text="*{memberSignupDate}">abcabc@gmail.com</td>
-                        <td th:text="*{pointPrice}">서울시</td>
-                        <td th:text="*{orderNumber}">서울시</td>
-                        <td th:text="*{orderTotalAmount}">서울시</td>
-                        <td><a style="color: #2979ff" th:href="*{memberNumber}">회원상세보기</a></td>
+                            <th th:text="*{memberNumber}" scope="row">유저1</th>
+                            <td th:text="*{memberName}">이종호</td>
+                            <td th:text="*{memberId}">caMelodain</td>
+                            <td th:text="*{memberSignupDate}">abcabc@gmail.com</td>
+                            <td th:text="*{pointPrice}">서울시</td>
+                            <td th:text="*{orderNumber}">서울시</td>
+                            <td th:text="*{orderTotalAmount}">서울시</td>
+                            <td><a class="read" style="color: #2979ff" th:href="*{memberNumber}">회원상세보기</a></td>
                         </tr>
-                    </tr>
+                    </tr:block>
+                        <div th:object="${pagination}">
+                            <div style="text-align: center">
+                                <a class="changePage" th:href="*{startPage - 1}" th:if="*{prev}"><code><</code></a>
+                                <th:block th:each="page:${#numbers.sequence(pagination.startPage, pagination.endPage)}">
+                                    <a class="changePage" th:href="${page}" th:if="${pagination.criteria.page != page}"><code th:text="${page}"></code></a>
+                                    <code  th:unless="${pagination.criteria.page != page}" th:text="${page}"></code>
+                                </th:block>
+                                <a class="changePage" th:href="*{endPage + 1}" th:if="*{next}"><code>></code></a>
+                            </div>
+                            <form th:action="@{/manager/memberAll}" th:object="${criteria}" name="pageForm">
+                                <input type="hidden" th:field="*{page}">
+                                <input type="hidden" th:field="*{amount}">
+                            </form>
+                        </div>
 
-                    </tbody>
+
                 </table>
 
                 <!-- 페이지 이동 버튼 -->
@@ -119,34 +116,57 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="/manager/js/manager.js"></script>
-<script>
+<script th:inline="javascript">
+
+    let memberNumber = [[${memberNumber}]];
+    let $pages = $("a.changePage");
+    let queryString = [[${pagination.criteria.queryString}]];
+
+    const $read =$("a.read");
+
+    $read.on("click", function(e){
+        e.preventDefault();
+        location.href = "/manager/memberView" + queryString + "&memberNumber=" + $(this).attr("href");
+    });
+
+
+    $pages.on("click", function(e){
+        e.preventDefault();
+        $(document.pageForm.page).val($(this).attr("href"));
+        document.pageForm.submit();
+    });
 
     function show_name(e) {
         // e.preventDefault();
         if(e.keyCode == 13){
             alert("dd");
             console.log("들어옴");
-            let memberId = $("input.searchWrap").val()
+            let keyword = $("input.searchWrap").val()
             console.log(memberId);
             $.ajax({
+                type: 'get',
                 url: "/manager/memberAllBy",
-                type: "post",
-                data: {memberId: memberId},
+                data: $("form[name=search-form]").serialize(),
                 success: function (result) {
-                    text +=   ' <tbody>'
-                    text +=   '<tr:block id="keyword" th:each="memberInfo:${memberInfo}">'
-                    text +=   '<tr th:object="${memberInfo}">'
-                    text +=   '<th th:text="*{memberNumber}" scope="row">유저1</th>'
-                    text +=   ' <td th:text="*{memberName}">이종호</td>'
-                    text +=   '  <td th:text="*{memberId}">caMelodain</td>'
-                    text +=   ' <td th:text="*{memberSignupDate}">abcabc@gmail.com</td>'
-                    text +=   '<td th:text="*{pointPrice}">서울시</td>'
-                    text +=   ' <td th:text="*{orderNumber}">서울시</td>'
-                    text +=   '<td th:text="*{orderTotalAmount}">서울시</td>'
-                    text +=   '<td><a style="color: #2979ff" th:href="*{memberNumber}">회원상세보기</a></td>'
-                    text +=   '</tr>'
-                    text +=   '</tr>'
-                    text +=   '</tbody>'
+                    if(result.length>=1) {
+                       result.forEach(function (item) {
+                           str =   '<tbody>';
+                           str +=   '<tr id="keyword">';
+                           str +=   '<tr>';
+                           str +=   "<thscope='row'>"+item.memberNumber+"</th>";
+                           str +=   "<td>"+item.memberName+"</td>";
+                           str +=   "<td>"+item.memberId+"</td>";
+                           str +=   "<td>"+item.memberEmail+"</td>";
+                           str +=   "<td>"+item.pointPrice+"</td>";
+                           str +=   "<td>"+item.orderNumber+"</td>";
+                           str +=   "<td>"+item.orderTotalAmount+"</td>";
+                           str +=   "<td>""<a class='read' style='color: #2979ff' + item.memberNumber +">"+회원상세보기+</a></td>";
+                           str +=   "</tr>";
+                           str +=   "</tr>";
+                           str +=   "</tbody>";
+                           $('#boardtable').html(str);
+                       })
+                    }
                 },
                 error:function(request,status,error){
                     alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);

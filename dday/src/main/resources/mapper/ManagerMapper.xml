@@ -55,7 +55,6 @@
 	-->
 
 
-
 </select>
 
 	<select id ="selectAllBy" parameterType="String" resultType="managerDTO">
@@ -89,5 +88,9 @@
   	MEMBER_STATUS
   	FROM TBL_MEMBER
   	WHERE MEMBER_NUMBER=#{memberNumber}
+	</select>
+
+	<select id="getTotal" resultType="_int">
+		SELECT COUNT(MEMBER_NUMBER) FROM TBL_MEMBER
 	</select>
 </mapper>

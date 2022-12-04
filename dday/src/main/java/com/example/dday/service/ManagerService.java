@@ -21,8 +21,9 @@ public class ManagerService {
         return managerDAO.findAll(criteria);
     }
 
-    public List<ManagerDTO> showAllBy(String memberId, Criteria criteria) {
-        return managerDAO.findAllBy(memberId, criteria);
+    //검색
+    public List<ManagerDTO> showAllBy(ManagerDTO managerDTO Criteria criteria) throws Exception{
+        return managerDAO.findAllBy(managerDTO, criteria);
 
     }
 
@@ -30,4 +31,8 @@ public class ManagerService {
         return managerDAO.findMemberDetail(memberNumber);
     }
 
+    //전 체 개수
+    public int getTotal() {
+        return managerDAO.findCountAll();
+    }
 }

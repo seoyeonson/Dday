@@ -19,6 +19,7 @@ public class ManagerDTO {
     private Long orderNumber;
     private Long orderTotalAmount;
 
-    
-
+    //검색필터
+    private String type;
+    private String keyword;
 }
