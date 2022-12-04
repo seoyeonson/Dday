@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:tr="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -65,9 +65,14 @@
                                     <div class="page-header js-affix affix-top" style="left: auto;">
                                         <h3>내 정보
                                             <small>파트너의 기본적인 정보를 수정하실 수 있습니다.</small>
-                                            <a href="/partner/partner_change_info" class="btn btn-red text_central">
+                                            <!--<a th:href="${partner.partnerNumber}" class="btn btn-red text_central change">
+                                                수정
+                                            </a>-->
+                                            <a th:href="@{/partner/partner_change_info(partnerNumber=${partner.partnerNumber})}"
+                                               class="btn btn-red text_central change">
                                                 수정
                                             </a>
+                                            <!--<input type="button" class="btn btn-red text_central" value="수정" onclick="goUpdate()"/>-->
                                         </h3>
                                     </div>
                                     <div class="table-title gd-help-manual">
@@ -88,11 +93,14 @@
                                                 <th>사업자등록번호</th>
                                                 <td class="form-inline">
                                                     <div style="position: relative;">
-                                                        <span class="partner_info" th:text="*{partnerRegistrationNumber1}"></span>
+                                                            <span class="partner_info"
+                                                                  th:text="*{partnerRegistrationNumber1}"></span>
                                                         -
-                                                        <span class="partner_info" th:text="*{partnerRegistrationNumber2}"></span>
+                                                        <span class="partner_info"
+                                                              th:text="*{partnerRegistrationNumber2}"></span>
                                                         -
-                                                        <span class="partner_info" th:text="*{partnerRegistrationNumber3}"></span>
+                                                        <span class="partner_info"
+                                                              th:text="*{partnerRegistrationNumber3}"></span>
                                                         <span class="bootstrap-maxlength"
                                                               style="display: none; position: absolute; white-space: nowrap; z-index: 999; top: -10.9px; left: 65px;"><em>3</em>
                                                                         / 3</span><span class="bootstrap-maxlength"
@@ -124,7 +132,8 @@
                                             <tr>
                                                 <th class="require">대표 이메일</th>
                                                 <td colspan="3" class="form-inline">
-                                                    <span class="partner_info" th:text="*{partnerOwnerEmail}"></span>
+                                                        <span class="partner_info"
+                                                              th:text="*{partnerOwnerEmail}"></span>
                                                     <div class="notice-info">
                                                         대표 이메일은 쇼핑몰에서 메일 발송 시 기본 발송자이메일 정보로 사용됩니다. <br>
                                                         발송자 이메일 정보가 없으면 자동메일 발송이 되지 않으니, 대표 이메일 정보를 반드시
@@ -142,7 +151,8 @@
                                                                             <span id="zipcodeText"
                                                                                   class="number display-none">우편번호</span>
                                                             </div>
-                                                            <span class="partner_info" th:text="*{partnerStorePostcode}"></span>
+                                                            <span class="partner_info"
+                                                                  th:text="*{partnerStorePostcode}"></span>
 
                                                         </div>
                                                         <span class="bootstrap-maxlength"
@@ -154,7 +164,8 @@
                                                             <div class="alignment">
                                                                 <span>도로명 주소</span>
                                                             </div>
-                                                            <span class="partner_info" th:text="*{partnerStoreAddress}"}></span>
+                                                            <span class="partner_info"
+                                                                  th:text="*{partnerStoreAddress}" }></span>
                                                         </div>
                                                     </div>
                                                     <div class="form_inline bottom_spacer">
@@ -162,16 +173,17 @@
                                                             <div class="alignment">
                                                                 <span>상세 주소</span>
                                                             </div>
-                                                            <span class="partner_info" th:text="*{partnerStoreDetailedAddress}"></span>
+                                                            <span class="partner_info"
+                                                                  th:text="*{partnerStoreDetailedAddress}"></span>
                                                         </div>
-
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <tr>
+                                            <tr:block>
                                                 <th>대표전화</th>
                                                 <td class="form-inline" style="position: relative;">
-                                                    <span class="partner_info" th:text="*{partnerOwnerPhoneNumber}"></span>
+                                                        <span class="partner_info"
+                                                              th:text="*{partnerOwnerPhoneNumber}"></span>
                                                     <span class="bootstrap-maxlength"
                                                           style="display: none; position: absolute; white-space: nowrap; z-index: 999; top: -0.9px; left: 170px;"><em>10</em>
                                                                     / 12</span>
@@ -180,9 +192,9 @@
                                                 </td>
                                                 <td class="form-inline" style="position: relative;">
                                                 </td>
-                                            </tr>
                                             </tbody>
                                         </table>
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -197,33 +209,26 @@
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="/partner/js/change.js"></script>
 <script src="/partner/js/partner.js"></script>
+<script th:inline="javascript">
 
-<script>
-    function findAddr() {
-        new daum.Postcode({
-            oncomplete: function (data) {
+    /*    $('input.partnerInfoSubmit').on('click', function () {
+            alert('정보가 등록되었습니다');
+        });*/
 
-                console.log(data);
 
-                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-                // 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
-                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-                var roadAddr = data.roadAddress; // 도로명 주소 변수
-                var jibunAddr = data.jibunAddress; // 지번 주소 변수
-                // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                document.getElementById('member_post').value = data.zonecode;
-                if (roadAddr !== '') {
-                    document.getElementById("member_addr").value = roadAddr;
-                } else if (jibunAddr !== '') {
-                    document.getElementById("member_addr").value = jibunAddr;
-                }
-            }
-        }).open();
-    }
+    // let partnerNumber = [[${partner.partnerNumber}]];
+    let queryString = [[${pagination.criteria.queryString}]]
+    const $change = $("a.change")
 
-    $('input.partnerInfoSubmit').on('click', function () {
-        alert('정보가 등록되었습니다');
+    $change.on("click", function (e) {
+        e.preventDefault();
+        location.href = "/partner/partner_change_info" + queryString + "&partnerNumber=" + $(this).attr("href");
     });
+
+    /*    function goUpdate(e){
+            e.preventDefault();
+            location.href = "/partner/partnerProductChange" + queryString + "&partnerNumber=" + partnerNumber;
+        }*/
 </script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </body>

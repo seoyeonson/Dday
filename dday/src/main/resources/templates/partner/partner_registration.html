@@ -60,36 +60,36 @@
                     </body>
                 </div>
                 <div class="registrationBox">
-                    <form class="registrationForm registForm">
+                    <form class="registrationForm registForm" method="post" th:action="@{/partner/partner_registration}" th:object="${product}" enctype="multipart/form-data">
                         <div class="registTitle">
                             <h3>제품 등록</h3>
                         </div>
                         <ul>
                             <li class="registFormLi">
                                 <span class="colName col01">상품명</span>
-                                <input type="text" class="registName" placeholder="제품명을 입력해주세요">
+                                <input type="text" class="registName" placeholder="제품명을 입력해주세요" th:field="*{productName}">
                                 <input type="checkbox" name="당일판매제품" id="checkToday1" >
                                 <label for="checkToday1">당일 판매 여부</label>
                             </li>
                             <li class="registFormLi">
                                 <span class="colName col02">카테고리</span>
-                                <select name="" id="" class="categorySelectBox">
+                                <select th:field="*{productCategory}" th:value="*{productCategory}" name="" id="" class="categorySelectBox">
                                     <option>상품 분류 선택</option>
-                                    <option value="01">채소</option>
-                                    <option value="02">과일.견과.쌀</option>
-                                    <option value="03">수산.해산.건어물</option>
-                                    <option value="04">정육.계란</option>
-                                    <option value="05">국.반찬.메인요리</option>
-                                    <option value="06">샐러드.간편식</option>
-                                    <option value="07">면.양념.오일</option>
-                                    <option value="08">생수.음료.우유.커피</option>
-                                    <option value="09">간식.과자.떡</option>
-                                    <option value="10">베이커리.치즈.델리</option>
+                                    <option th:value="01">채소</option>
+                                    <option th:value="02">과일.견과.쌀</option>
+                                    <option th:value="03">수산.해산.건어물</option>
+                                    <option th:value="04">정육.계란</option>
+                                    <option th:value="05">국.반찬.메인요리</option>
+                                    <option th:value="06">샐러드.간편식</option>
+                                    <option th:value="07">면.양념.오일</option>
+                                    <option th:value="08">생수.음료.우유.커피</option>
+                                    <option th:value="09">간식.과자.떡</option>
+                                    <option th:value="10">베이커리.치즈.델리</option>
                                 </select>
                             </li>
                             <li class="registFormLi">
                                 <span class="colName col03">가격</span>
-                                <input type="text" class="registPrice" placeholder="판매가격을 입력해주세요">
+                                <input type="text" class="registPrice" placeholder="판매가격을 입력해주세요" th:field="">
                             </li>
                             <li class="registFormLi">
                                 <span class="colName discountRate">할인율(%)</span>
@@ -129,7 +129,7 @@
                         </ul>
                         <input type="button" class="submitButton" value="등록" onclick="alert('제품이 등록되었습니다.')">
                     </form>
-                    <form class="registrationForm todayResgistForm">
+                    <form class="registrationForm todayRegistForm">
                         <div class="registTitle">
                             <h3>제품 등록</h3>
                         </div>
@@ -215,5 +215,34 @@
     <footer th:replace="partner/footer.html" :: pf></footer>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="/partner/js/partner.js"></script>
+    <script th:inline="javascript">
+        let todaySale = [[${product.productTodaySale}]];
+        let today = new Date();
+
+        let year = today.getFullYear();
+        let month = ('0' + (today.getMonth() + 1)).slice(-2);
+        let day = ('0' + today.getDate()).slice(-2);
+
+        let dateString = year + '-' + month  + '-' + day;
+
+        $('input[type=checkbox][id=checkToday1]').change(function () {
+            if ($(this).is(':checked')) {
+                todaySale = dateString;
+                console.log("todaySale: " + todaySale);
+            } else {
+
+            }
+        })
+        $('input[type=checkbox][id=checkToday2]').change(function () {
+            if ($(this).is(':checked')) {
+                todaySale = "";
+                console.log("todaySale: " + todaySale);
+            } else {
+
+            }
+        })
+
+
+    </script>
 </body>
 </html>

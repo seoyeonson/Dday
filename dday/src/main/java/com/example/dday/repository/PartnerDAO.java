@@ -11,17 +11,17 @@ import org.springframework.stereotype.Repository;
 public class PartnerDAO {
     private final PartnerMapper partnerMapper;
 
-    //    추가
+    //    파트너 정보 추가
     public void save(PartnerDTO partnerDTO) {
         partnerMapper.insert(partnerDTO);
     }
 
-    //    수정
+    //    파트너 정보 수정
     public void setPartnerVO(PartnerDTO partnerDTO) {
         partnerMapper.update(partnerDTO);
     }
 
-    //    조회
+    //    파트너 정보 조회
     public PartnerVO findById(Long partnerNumber) {
         return partnerMapper.select(partnerNumber);
     }
