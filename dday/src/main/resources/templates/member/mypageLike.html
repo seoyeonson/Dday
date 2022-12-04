@@ -63,7 +63,7 @@
                 <div class="bottomRightHeader">
                     <div class="brhLeft">
                         <h2 class="brhLeft">
-                            찜한상품(1)
+                            찜한상품(<span class="likeCntAll"></span>)
                         </h2>
                         <span class="brhLeft">
                             찜한 상품은 최대 200개까지 저장됩니다.
@@ -72,34 +72,32 @@
                 </div>
                 <div class="brhLine"></div>
                 <div class="likeGoods">
-                    <div class="likeGoodsList">
-                        <a href="" class="likeGoods">
-                            <span class="likeGoodsImg"></span>
-                        </a>
-                        <div class="likeGoodsInfo">
-                            <div class="infoLeft">
-                                <div class="leftName">
-                                    <a href="" class="leftName">[굽네] 닭가슴살 만두 3종</a>
-                                </div>
-                                <div class="leftPrice">
-                                    <span class="leftPrice">2,450원</span>
-                                </div>
-                            </div>
-                            <div class="infoRight">
-                                <button class="infoRight" type="button" width="104" height="36" radius="4">
-                                    <span class="infoRight">삭제</span>
-                                </button>
-                                <button class="infoRight2" type="button" width="104" height="36" radius="4">
-                                    <span class="infoRight2">
+<!--                    <div class="likeGoodsList">-->
+<!--                        <a href="" class="likeGoods">-->
+<!--                            <span class="likeGoodsImg"></span>-->
+<!--                        </a>-->
+<!--                        <div class="likeGoodsInfo">-->
+<!--                            <div class="infoLeft">-->
+<!--                                <div class="leftName">-->
+<!--                                    <a href="" class="leftName">[굽네] 닭가슴살 만두 3종</a>-->
+<!--                                </div>-->
+<!--                                <div class="leftPrice">-->
+<!--                                    <span class="leftPrice">2,450원</span>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="infoRight">-->
+<!--                                <button class="infoRight" type="button" width="104" height="36" radius="4">-->
+<!--                                    <span class="infoRight">삭제</span>-->
+<!--                                </button>-->
+<!--                                <button class="infoRight2" type="button" width="104" height="36" radius="4">-->
+<!--                                    <span class="infoRight2">-->
 
-                                        담기</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
+<!--                                        담기</span>-->
+<!--                                </button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
                 </div>
-
             </div>
         </div>
 <!--        <div class="modal">-->
@@ -113,30 +111,27 @@
 <!--            </div>-->
 <!--        </div>-->
         <!--modal-->
-        <form id="modalClear">
+        <form id="modalForm">
             <div class="modalContainer" >
                 <div class="modalBox">
                     <div class="modal">
                         <div class="modalBody">
                             <div class="modalWrapper">
                                 <div class="modalContent">
+                                    <input type="hidden" name="productNumber">
                                     <div class="modalProductName">
                                         <span>[KF365] 양념 소불고기 1kg(냉장)</span>
                                     </div>
                                 </div>
                                 <div class="priceAndCount">
                                     <div>
-                          <span class="discountBox">
-                              17,590원
-                          </span>
-                                        <span class="priceBox">
-                              18,990원
-                          </span>
+                                        <span class="discountBox">17,590원</span>
+                                        <span class="priceBox">18,990원</span>
                                     </div>
                                     <div class="product_cnt_box">
-                                        <button class="minus"></button>
+                                        <button type="button" class="minus"></button>
                                         <div class="cnt">1</div>
-                                        <button class="plus"></button>
+                                        <button type="button" class="plus"></button>
                                     </div>
                                 </div>
                                 <div class="totalPriceBox">
@@ -154,7 +149,7 @@
                                     <div class="pointBox">
                                         <span class="pointText">적립</span>
                                         <span class="pointCalText">구매 시
-                                  <span class="realPoint">0원 적립
+                                  <span class="realPoint">5% 적립
                                   </span>
                               </span>
                                     </div>
@@ -174,141 +169,95 @@
             </div>
         </form>
         <!--modal end-->
-        </div>
+    <!--푸터-->
+    <footer th:replace="main/footer.html" :: f></footer>
 </body>
-        <!--푸터-->
-<footer th:replace="main/footer.html" :: f></footer>
-        <!-- <div id="modal1" class="modal">
-            <p>모달창안의 내용부분</p>
-            <a href="#" rel="modal:close">닫기</a>
-          </div>
-          
-          <p><a href="#modal1" rel="modal:open">모달창띄우기</a></p> -->
 </html>
 <script src="/main/js/header.js"></script>
-<!--<script src="/memeber/js/mypageLike.js"></script>-->
+<script src="/member/js/productLike.js"></script>
 <script>
-/*삭제버튼*/
-$("button.infoRight").click(function () {
-    $(this).parent().parent().parent().remove();
-});
+    // 천단위 콤마 없애고 숫자로 변경
+    var calcproductPrice;
 
+    getList();
 
-
-var blankUrl = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0yNS44MDcgNy44NjNhNS43NzcgNS43NzcgMCAwIDAtOC4xNzIgMEwxNiA5LjQ5N2wtMS42MzUtMS42MzRhNS43NzkgNS43NzkgMCAxIDAtOC4xNzMgOC4xNzJsMS42MzQgMS42MzQgNy40NjYgNy40NjdhMSAxIDAgMCAwIDEuNDE1IDBzMCAwIDAgMGw3LjQ2Ni03LjQ2N2gwbDEuNjM0LTEuNjM0YTUuNzc3IDUuNzc3IDAgMCAwIDAtOC4xNzJ6IiBzdHJva2U9IiM1RjAwODAiIHN0cm9rZS13aWR0aD0iMS42IiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K';
-var fullUrl = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0yNS44MDcgNy44NjNhNS43NzcgNS43NzcgMCAwIDAtOC4xNzIgMEwxNiA5LjQ5N2wtMS42MzUtMS42MzRhNS43NzkgNS43NzkgMCAxIDAtOC4xNzMgOC4xNzJsMS42MzQgMS42MzQgNy40NjYgNy40NjdhMSAxIDAgMCAwIDEuNDE1IDBzMCAwIDAgMGw3LjQ2Ni03LjQ2N2gwbDEuNjM0LTEuNjM0YTUuNzc3IDUuNzc3IDAgMCAwIDAtOC4xNzJ6IiBmaWxsPSIjRkY1QTVBIiBzdHJva2U9IiNGRjVBNUEiIHN0cm9rZS13aWR0aD0iMS42IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K';
-
-function inWishList(){
-    $('img.blankHeart').attr('src', fullUrl);
-}
-
-function outWishList(){
-    $('img.blankHeart').attr('src', blankUrl);
-}
-
-function checkHeart(){
-    var src = $('img.blankHeart').attr('src');
-    console.log(src);
-    if(src==blankUrl){
-        inWishList();
-    }else{
-        outWishList();
+    function getList(){
+        productLikeService.getList(showList);
     }
-}
 
-$('button.heart_button').on('click', function(){
-    console.log('클릭');
-    checkHeart();
-});
-
-
-// 상품 수량 변경 박스
-
-function countUp(){
-    var nowCount = $('div.cnt').text();
-    var plusCount = (Number(nowCount)) + 1;
-
-    $('div.cnt').text(plusCount);
-
-    // 가격 변경 함수 호출
-    priceChange();
-}
-
-function countDown(){
-    var nowCount = $('div.cnt').text();
-    var minusCount = (Number(nowCount)) - 1;
-
-    $('div.cnt').text(minusCount);
-
-    // 가격 변경 함수 호출
-    priceChange();
-}
-
-function countReset(){
-    var nowCount = $('div.cnt').text();
-    var minusReset = (((Number(nowCount))) -((Number(nowCount))- 1));
-
-    $('div.cnt').text(minusReset);
-
-    // 가격 변경 함수 호출
-    priceChange();
-}
-
-// +버튼 클릭시, 수량이 2이상이면 -버튼 활성화
-$('button.plus').on('click',function(){
-    $('button.minus').css({"background":"url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0yMCAxNHYySDEwdi0yeiIgZmlsbD0iIzMzMyIgZmlsbC1ydWxlPSJub256ZXJvIi8+Cjwvc3ZnPgo=)"});
-    countUp();
-});
-
-// -버튼 클릭시, 수량이 1이면 -버튼 다시 비활성화
-$('button.minus').on('click',function(){
-    if(Number($('div.cnt').text()) > 1){
-        countDown();
-        if(Number($('div.cnt').text()) == 1){
-            $('button.minus').css({"background":"url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0yMCAxNHYySDEwdi0yeiIgZmlsbD0iI0RERCIgZmlsbC1ydWxlPSJub256ZXJvIi8+Cjwvc3ZnPgo=)"});
+    /*삭제버튼*/
+    $("div.likeGoods").on("click", "button.infoRight",function () {
+        let check = confirm("찜한 상품을 삭제하시겠습니까?");
+        let productNumber = $(this).children("input").val();
+        if(check){
+            productLikeService.remove(productNumber, getList);
         }
+    });
+
+    // 장바구니 이미지 클릭시 모달창
+    $('div.modalContainer').hide();
+
+    // getList로 새롭게 html에 추가되었기 때문에
+    // $(처음부터 존재했던 새롭게 추가된 요소의 부모).on('click', 누를 요소, 함수) 로 사용!
+    $('div.likeGoods').on('click', "button.infoRight2", function(event){
+        event.stopPropagation();
+
+        // 장바구니 버튼이 포함된 li에서 정보 가져오기
+        // 상품 번호, 상품 가격, 상품 이름, 상품 세일가
+        let productNumber = $(this).prev().children("input#productNumber").val();
+        let productPrice = $(this).prev().children("input#productPrice").val();
+        let productName = $(this).parent().prev().children("div.leftName").text();
+        let productSalePrice = $(this).parent().prev().children("div.leftPrice").text();
+
+        // 상품 추가, 삭제 시 변경되는 상품 전체 가격을 위해 계산할 상품 가격을 수정
+        calcproductPrice = productPrice.replace(",", "").replace("원", "");
+
+        // 모달안의 정보 변경
+        // 상품 번호, 상품 가격 ,상품 이름, 상품 세일가, 계산될 상품 첫 가격
+        $("input[name='productNumber']").val(productNumber);
+        $(".modalProductName span").text(productName);
+        $("span.discountBox").text(productSalePrice);
+        $("span.priceBox").text(productPrice);
+        $("span.changePrice").text(productSalePrice);
+
+        $("div.modalContainer").fadeIn();
+    });
+
+    function showList(productDTO){
+        $("span.likeCntAll").html(productDTO.productLikeCount);
+        $("div.couponCount span:first-child").text(productDTO.productLikeCount);
+
+        let text = "";
+        productDTO.products.forEach(product => {
+            text += '<div class="likeGoodsList">';
+            text += '<a href="" class="likeGoods">';
+            text += '<span class="likeGoodsImg"></span>';
+            text += '</a>';
+            text += '<div class="likeGoodsInfo">';
+            text += '<div class="infoLeft">';
+            text += '<div class="leftName">';
+            text += '<a href="" class="leftName">' + product.productName +'</a>';
+            text += '</div>';
+            text += '<div class="leftPrice">';
+            text += '<span class="leftPrice">' + product.productSalePrice.toLocaleString('ko-KR') + '원</span>';
+            text += '</div>';
+            text += '</div>';
+            text += '<div class="infoRight">';
+            text += '<button class="infoRight" type="button" width="104" height="36" radius="4">';
+            text += '<span class="infoRight">삭제</span>';
+            text += '<input type="hidden" id="productNumber" value="'+ product.productNumber +'">';
+            text += '<input type="hidden" id="productPrice" value="'+ product.productPrice +'">';
+            text += '</button>';
+            text += '<button class="infoRight2" type="button" width="104" height="36" radius="4">';
+            text += '<span class="infoRight2"> 담기</span>';
+            text += '</button>';
+            text += '</div>';
+            text += '</div>';
+            text += '</div>';
+        });
+
+        $("div.likeGoods").html(text);
     }
-
-});
-
-
-// 천단위 콤마 없애고 숫자로 변경
-var productPrice = Number($('span.changePrice').text().replace(",", ""));
-
-function priceChange(){
-    var productCount = Number($('div.cnt').text());
-
-    // 총 상품가격 구하기
-    var realPrice = productCount * productPrice;
-    // toLocaleString()으로 천단위 콤마 찍어서 text에 출력
-    $('span.changePrice').text(realPrice.toLocaleString());
-
-}
-
-
-// 장바구니 이미지 클릭시 모달창
-$('div.modalContainer').hide();
-$('button.infoRight2').on('click', function(event){
-    event.stopPropagation();
-    $("div.modalContainer").fadeIn();
-});
-
-$('button.modalOkButton').on('click', function(){
-    $('div.modalContainer').hide();
-    countReset();
-    alert('장바구니에 상품이 추가되었습니다.');
-});
-
-$('button.modalCancelButton').on('click',function(){
-    $('div.modalContainer').hide();
-    countReset();
-});
-
 </script>
 
-
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" /> -->
-        
                 

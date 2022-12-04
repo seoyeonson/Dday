@@ -22,5 +22,5 @@ public class AddressDAO {
     //    기본배송지 -> 배송지 수정
     public void setStatusNormal(Long memberNumber){ addressMapper.updateStatusNormal(memberNumber);};
     //    수정
-    public void setStatus(AddressVO addressVO){ addressMapper.updateStatus(addressVO); };
+    public void setStatus(Long addressNumber, Long memberNumber){ addressMapper.updateStatus(addressNumber, memberNumber); };
 }

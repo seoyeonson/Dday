@@ -8,4 +8,6 @@ import org.springframework.stereotype.Component;
 @Data
 @NoArgsConstructor
 public class ProductLikeVO {
+    private Long productNumber;
+    private Long memberNumber;
 }

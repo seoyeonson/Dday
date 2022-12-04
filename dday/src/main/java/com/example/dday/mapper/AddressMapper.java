@@ -18,5 +18,5 @@ public interface AddressMapper {
 //    기본배송지 -> 배송지 수정
     public void updateStatusNormal(Long memberNumber);
 //    수정
-    public void updateStatus(AddressVO addressVO);
+    public void updateStatus(Long addressNumber, Long memberNumber);
 }
