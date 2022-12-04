@@ -21,6 +21,7 @@ package com.example.dday.controller;
 import com.example.dday.domain.vo.Criteria;
 import com.example.dday.domain.vo.ManagerDTO;
 import com.example.dday.domain.vo.MemberVO;
+import com.example.dday.domain.vo.PageDTO;
 import com.example.dday.service.ManagerService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -47,14 +48,18 @@ public class ManagerController {
         }
 
        model.addAttribute("memberInfo", managerService.showAll(criteria));
+        model.addAttribute("pagination",new PageDTO().createPageDTO(criteria, managerService.getTotal()));
     }
 
     // 조건 회원 목록(아디, 이름)
-    @PostMapping(value="/memberAllBy")
+    @GetMapping("/memberAllBy")
     @ResponseBody
-    public List<ManagerDTO> memberAllBy(String memberId, Criteria criteria) {
-        log.info("들어옴" + managerService.showAllBy(memberId, criteria));
-        return managerService.showAllBy(memberId, criteria);
+    public List<ManagerDTO> memberAllBy(@RequestParam("type") String type,
+                                        @RequestParam("keyword") String keyword, Model model, Criteria criteria)throws Exception {
+        ManagerDTO managerDTO = new ManagerDTO();
+        managerDTO.setType(type);
+        managerDTO.setKeyword(keyword);
+        return managerService.showAllBy(managerDTO, criteria);
     }
 
     //탈퇴회원페이지
@@ -64,8 +69,8 @@ public class ManagerController {
 
     //멤버상세페이지
     @GetMapping("/memberView")
-    public void memberView(Model model) {
-        model.addAttribute("memberDetail", managerService.showMemberDetail(4L));
+    public void memberView(Long memberNumber, Criteria criteria, Model model) {
+        model.addAttribute("memberDetail", managerService.showMemberDetail(memberNumber));
     }
 
 }

@@ -22,8 +22,8 @@ public class ManagerDAO {
     }
 
     //회원검색
-    public List<ManagerDTO> findAllBy(String memberId, Criteria criteria) {
-        return  managerMapper.selectAllBy(memberId, criteria);
+    public List<ManagerDTO> findAllBy(ManagerDTO managerDTO, Criteria criteria) throws Exception{
+        return  managerMapper.selectAllBy("Manager.findAllby", criteria);
     }
 
     //회원 상세조회
@@ -31,4 +31,8 @@ public class ManagerDAO {
         return managerMapper.selectMemberDetail(memberNumber);
     }
 
+    //전체 개수
+    public int findCountAll() {
+        return managerMapper.getTotal();
+    }
 }

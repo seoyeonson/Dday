@@ -20,4 +20,6 @@ public interface ManagerMapper {
  //회원 상세 조회
  public MemberVO selectMemberDetail(Long memberNumber);
 
+ //전체 개수
+ public int getTotal();
 }
