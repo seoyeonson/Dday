@@ -69,30 +69,58 @@ $(function () {
 /* modal */
 var product;
 $("button.delete_individual").on("click", function () {
+    let realPriceNode = $(this).prev().children('#price_delete');
+    let realPriceText = realPriceNode.text();
+    let minusWon = "";
+    minusWon = realPriceText.replace("원", "")
+    let priceDelete = Number(minusWon.replace(",", ""));
+    console.log(realPriceText);
     product = "";
     console.log("check1", product);
     $("#modal2").fadeIn();
-    $('body').css("overflow", "hidden");
+    // $('body').css("overflow", "hidden");
     product = $(this).parent("li");
     console.log("check2", product);
+    $("#confirm2").on("click", function () {
+        product.remove();
+        console.log("check3", product);
+        item_count = $(".productlist").length;
+        itemcheck = ($('.check:checked').length);
+        $(".item_count").text("(" + itemcheck + "/" + item_count + ")");
+        $("#modal2").fadeOut();
+        productSum -= priceDelete;
+        console.log(productSum);
+        productSumString = productSum.toLocaleString();
+        $('#productSum').text(productSumString);
+        totalPriceFunction();
+        priceDelete = 0;
+    });
+
+    $("#cancel2").click(function () {
+        $("#modal2").fadeOut();
+        $('body').css("overflow", "visible");
+        realPriceNode ="";
+        realPriceText = 0;
+        minusWon = 0;
+        priceDelete = "";
+        product = 0;
+    });
 });
 
-$("#confirm2").on("click", function () {
-    product.remove();
-    console.log("check3", product);
-    item_count = $(".productlist").length;
-    itemcheck = ($('.check:checked').length);
-    $(".item_count").text("(" + itemcheck + "/" + item_count + ")");
-    $("#modal2").fadeOut();
-});
 
-$("#cancel2").click(function () {
-    $("#modal2").fadeOut();
-    $('body').css("overflow", "visible");
-});
 
 $("button.choose_delete").click(function () {
     let selected_product = $($(".check:checked").closest("li"));
+    let selectedPriceNode = selected_product.children('.product_price_section').children('#price_delete');
+    let selectedPriceText = selectedPriceNode.text();
+    let removeComma = selectedPriceText.replaceAll(",", "");
+    let selectedPriceArr = removeComma.split('원');
+    let sumArr = 0;
+    selectedPriceArr.forEach((item) => {
+        sumArr += Number(item);
+    })
+
+    console.log(sumArr);
     $("#modal1").fadeIn();
     $('body').css("overflow", "hidden");
     $("#confirm1").click(function () {
@@ -103,18 +131,33 @@ $("button.choose_delete").click(function () {
         item_count = $(".productlist").length;
         itemcheck = ($('.check:checked').length);
         $(".item_count").text("(" + itemcheck + "/" + item_count + ")");
+        console.log(sumArr);
+        productSum -= sumArr;
+        console.log(productSum);
+        productSumString = productSum.toLocaleString();
+        $('#productSum').text(productSumString);
+        totalPriceFunction();
+        $deletebutton.prop('disabled', true);
+        sumArr = 0;
+
     })
     $("#cancel1").click(function () {
         $("#modal1").fadeOut();
         $('body').css("overflow", "visible");
-        selected_product = 0;
+        selected_product = "";
+        selectedPriceNode = "";
+        selectedPriceText = "";
+        removeComma = 0;
+        selectedPriceArr = '';
+        sumArr = 0;
     });
 
     $(".item_count").text("(" + itemcheck + "/" + item_count + ")");
+    totalPriceFunction();
 });
 
 /* 주소 api */
-const $addressbutton = $(".addressbutton");
+/* const $addressbutton = $(".addressbutton");
 const $addressdefault = $(".address_default");
 const $address_p = $(".address_p");
 const $address = $(".address_span");
@@ -138,7 +181,7 @@ $addressbutton.on("click", function () {
             $address_true.css('display', 'inline-block');
         }
     }).open();
-});
+}); */
 
 // +버튼 클릭시, 수량이 2이상이면 -버튼 활성화
 $('.quantity_plus').on('click', function quantityPlusFunction() {
@@ -165,9 +208,13 @@ $('.quantity_plus').on('click', function quantityPlusFunction() {
     if (productCount > 1) {
         productPriceNode.css('display', 'none');
         realPriceNode.css('display', 'inline-block');
+        realPriceNode.attr('id', 'price_delete');
+        productPriceNode.removeAttr('id', 'price_delete');
         realPriceNode.text(realPrice.toLocaleString() + "원");
     } else {
         productPriceNode.css('display', 'inline-block');
+        productPriceNode.attr('id', 'price_delete');
+        realPriceNode.removeAttr('id', 'price_delete');
         realPriceNode.css('display', 'none');
     }
     productSum += originalPrice;
@@ -201,10 +248,14 @@ $('.quantity_minus').on('click', function quantityMinusFunction() {
         if (productCount > 1) {
             productPriceNode.css('display', 'none');
             realPriceNode.css('display', 'inline-block');
+            realPriceNode.attr('id', 'price_delete');
+            productPriceNode.removeAttr('id', 'price_delete');
             realPriceNode.text(realPrice.toLocaleString() + "원");
         } else {
             productPriceNode.css('display', 'inline-block');
             realPriceNode.css('display', 'none');
+            productPriceNode.attr('id', 'price_delete');
+            realPriceNode.removeAttr('id', 'price_delete');
         }
         $('span.changePrice').text(realPrice.toLocaleString());
         if (Number($(this).next().text()) == 1) {
@@ -262,7 +313,6 @@ function totalPriceFunction() {
     point = Math.floor(totalPrice * 0.05);
     pointString = point.toLocaleString();
     $('.point').text(pointString);
-    
 }
 
 // 페이지 실행 때 함수들 실행

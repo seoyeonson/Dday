@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dday.mapper.PartnerProductMapper">
+    <insert id="insert">
+        <selectKey keyProperty="productNumber" order="BEFORE" resultType="long">
+            SELECT SEQ_PRODUCT.NEXTVAL FROM DUAL
+        </selectKey>
+        INSERT INTO TBL_PRODUCT(PRODUCT_NUMBER, PRODUCT_NAME, PRODUCT_CATEGORY, PRODUCT_PRICE, PRODUCT_STOCK,
+        PRODUCT_MANUFACTURE_DATE, PRODUCT_EXPIRATION_DATE, PRODUCT_ONELINE_INFORMATION, PRODUCT_INFORMATION,
+        PRODUCT_THUMBNAIL_NAME, PRODUCT_MAIN_IMAGE_NAME, PRODUCT_SALE_PERCENT, PRODUCT_TODAY_SALE, PRODUCT_OPEN_HOURS,
+        MEMBER_NUMBER)
+        VALUES(#{productNumber}, #{productName}, #{productCategory}, #{productPrice}, #{productStock},
+        #{productManufactureDate}, #{productExpirationDate}, #{productOnelineInfo}, #{productInformation},
+        #{productThumbnailName}, #{productMainImageName}, #{productSalePercent}, #{productTodaySale},
+        #{productOpenHours}, #{productMemberNumber})
+    </insert>
+
+    <update id="update">
+        UPDATE TBL_PRODUCT
+        SET PRODUCT_NAME=#{productName},
+            PRODUCT_CATEGORY=#{productCategory},
+            PRODUCT_PRICE=#{productPrice},
+            PRODUCT_STOCK=#{productStock},
+            PRODUCT_MANUFACTURE_DATE=#{productManufactureDate},
+            PRODUCT_EXPIRATION_DATE=#{productExpirationDate},
+            PRODUCT_ONELINE_INFORMATION=#{productOnelineInfo},
+            PRODUCT_INFORMATION=#{productInformation},
+            PRODUCT_THUMBNAIL_NAME='썸네일이미지',
+            PRODUCT_MAIN_IMAGE_NAME='본문이미지',
+            PRODUCT_REGIST_DATE=SYSDATE,
+            PRODUCT_MODIFY_DATE=SYSDATE,
+            PRODUCT_SALE_PERCENT=#{productSalePercent},
+            PRODUCT_TODAY_SALE=#{productTodaySale},
+            PRODUCT_OPEN_HOURS=#{productOpenHours},
+            PRODUCT_SALE_PRICE=#{productSalePrice}
+        WHERE PRODUCT_NUMBER = #{productNumber}
+    </update>
+
+    <select id="select" resultType="productVO">
+        SELECT PRODUCT_NUMBER,
+               PRODUCT_NAME,
+               PRODUCT_CATEGORY,
+               PRODUCT_PRICE,
+               PRODUCT_STOCK,
+               PRODUCT_MANUFACTURE_DATE,
+               PRODUCT_EXPIRATION_DATE,
+               PRODUCT_ONELINE_INFORMATION,
+               PRODUCT_INFORMATION,
+               PRODUCT_THUMBNAIL_NAME,
+               PRODUCT_MAIN_IMAGE_NAME,
+               PRODUCT_REGIST_DATE,
+               PRODUCT_MODIFY_DATE,
+               PRODUCT_SALE_PERCENT,
+               PRODUCT_TODAY_SALE,
+               PRODUCT_OPEN_HOURS,
+               PRODUCT_SALE_PRICE,
+               MEMBER_NUMBER
+        FROM TBL_PRODUCT
+        WHERE PRODUCT_NUMBER = #{productNumber}
+    </select>
+
+    <select id="selectAll" resultType="productVO">
+        SELECT PRODUCT_NUMBER, PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_STOCK, PRODUCT_REGIST_DATE, PRODUCT_MODIFY_DATE
+        FROM (
+                 SELECT ROWNUM R,
+                        PRODUCT_NUMBER,
+                        PRODUCT_NAME,
+                        PRODUCT_PRICE,
+                        PRODUCT_STOCK,
+                        PRODUCT_REGIST_DATE,
+                        PRODUCT_MODIFY_DATE
+                 FROM (
+                          SELECT PRODUCT_NUMBER,
+                                 PRODUCT_NAME,
+                                 PRODUCT_PRICE,
+                                 PRODUCT_STOCK,
+                                 PRODUCT_REGIST_DATE,
+                                 PRODUCT_MODIFY_DATE
+                          FROM TBL_PRODUCT P
+                          ORDER BY PRODUCT_NUMBER DESC
+                      ) D2
+        <![CDATA[
+                 WHERE ROWNUM <= #{page} * #{amount}
+             )
+        WHERE R > (#{page} - 1) * #{amount}
+        ]]>
+    </select>
+
+    <select id="getTotal" resultType="_int">
+        SELECT COUNT(PRODUCT_NUMBER)
+        FROM TBL_PRODUCT
+    </select>
+</mapper>

@@ -8,177 +8,186 @@
     <link rel="stylesheet" href="/partner/css/partner.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/partner/css/partnerShipping.css">
-<link rel="stylesheet" href="/partner/css/partner_footer.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="/partner/css/partnerShipping.css">
+    <link rel="stylesheet" href="/partner/css/partner_footer.css">
 </head>
 <body>
 <header th:replace="partner/header.html" :: ph></header>
-    <div id="container-wrap" class="container-wrap">
-        <div id="container" class="row">
-            <div id="content-wrap">
+<div id="container-wrap" class="container-wrap">
+    <div id="container" class="row">
+        <div id="content-wrap">
 
 
-                <!--주요 현황-->
-                <div class="main-layout main-content reform">
-                    <body class="base main-statistics layout-no-iframe menu-no-border">
-                        <div class="main-statistics main-content reform mg0 pd0">
-                            <div class="content-main">
-                                <div class="main-section" id="presentationSection">
-                                    <div class="table-title">
-                                        <span class="">배송 관리</span>
-                                    </div>
-                                    <div class="statics-box reform">
-                                        <div class="nav-tabs-top">
-                                            <ul class="nav nav-tabs tab-fluid-5" id="presentationMainTab" role="tablist" data-period ="30">
-                                                <li role="presentation" class="" data-name="sales">
-                                                    <a href="/partner/partner_info" role="tab" data-toggle="tab"><h2>정보 수정</h2>
-                                                        <img class="js-period-icon" src="">
-                                                    </a>
-                                                </li>
-                                                <li role="presentation" class="" data-name="order">
-                                                    <a href="/partner/partner_registration" role="tab" data-toggle="tab" aria-expanded="false"><h2>제품 등록</h2>
-                                                        <img class="js-period-icon" src="">
-                                                    </a>
-                                                </li>
-                                                <li role="presentation" class="" data-name="visit">
-                                                    <a href="/partner/partner_management" role="tab" data-toggle="tab" aria-expanded="false"><h2>판매 관리</h2>
-                                                        <img class="js-period-icon" src="">
-                                                    </a>
-                                                </li>
-                                                <li role="presentation" class="active" data-name="member">
-                                                    <a href="/partner/partner_shipping" role="tab" data-toggle="tab" aria-expanded="false"><h2>배송 관리</h2>
-                                                        <img class="js-period-icon" src="">
-                                                     </a>
-                                                </li>
-                                            </ul>
-                                           </div>
-                                    </div>
+            <!--주요 현황-->
+            <div class="main-layout main-content reform">
+                <body class="base main-statistics layout-no-iframe menu-no-border">
+                <div class="main-statistics main-content reform mg0 pd0">
+                    <div class="content-main">
+                        <div class="main-section" id="presentationSection">
+                            <div class="table-title">
+                                <span class="">배송 관리</span>
+                            </div>
+                            <div class="statics-box reform">
+                                <div class="nav-tabs-top">
+                                    <ul class="nav nav-tabs tab-fluid-5" id="presentationMainTab" role="tablist"
+                                        data-period="30">
+                                        <li role="presentation" class="" data-name="sales">
+                                            <a href="/partner/partner_info" role="tab" data-toggle="tab"><h2>정보 수정</h2>
+                                                <img class="js-period-icon" src="">
+                                            </a>
+                                        </li>
+                                        <li role="presentation" class="" data-name="order">
+                                            <a href="/partner/partner_registration" role="tab" data-toggle="tab"
+                                               aria-expanded="false"><h2>제품 등록</h2>
+                                                <img class="js-period-icon" src="">
+                                            </a>
+                                        </li>
+                                        <li role="presentation" class="" data-name="visit">
+                                            <a href="/partner/partner_management" role="tab" data-toggle="tab"
+                                               aria-expanded="false"><h2>판매 관리</h2>
+                                                <img class="js-period-icon" src="">
+                                            </a>
+                                        </li>
+                                        <li role="presentation" class="active" data-name="member">
+                                            <a href="/partner/partner_shipping" role="tab" data-toggle="tab"
+                                               aria-expanded="false"><h2>배송 관리</h2>
+                                                <img class="js-period-icon" src="">
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                    </body>
+                    </div>
                 </div>
-                <div class="orderedBox">
-                    <div class="orderTitle">
-                        <h3>배송 관리</h3>
-                    </div>
-                    <div class="orderedList">
-                        <p>결제 완료된 상품 리스트</p>
-                        <table border="1" class="orderedTable paginationTable">
-                            <thead>
-                                <tr>
-                                    <th>번호</th>
-                                    <th>상품주문번호</th>
-                                    <th>주문상품</th>
-                                    <th>수량</th>
-                                    <th>판매가</th>
-                                    <th>총 할인금액</th>
-                                    <th>배송비</th>
-                                    <th>총 주문금액</th>
-                                    <th>송장번호</th>
-                                    <th>처리상태</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>299550</td>
+                </body>
+            </div>
+            <div class="orderedBox">
+                <div class="orderTitle">
+                    <h3>배송 관리</h3>
+                </div>
+                <div class="orderedList">
+                    <p>결제 완료된 상품 리스트</p>
+                    <table border="1" class="orderedTable paginationTable">
+                        <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th>상품주문번호</th>
+                            <th>주문상품</th>
+                            <th>수량</th>
+                            <th>판매가</th>
+                            <th>총 할인금액</th>
+                            <th>배송비</th>
+                            <th>총 주문금액</th>
+                            <th>송장번호</th>
+                            <th>처리상태</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>299550</td>
 
-                                    <td class="orderProductName">[유통기한2022.12.29]루스타 영양강화 강력밀가루 20kg</td>
-                                    <td>
-                                        <p>1</p>
-                                        <p class="orderStock">재고:10</p>
-                                    </td>
-                                    <td>8,000원</td>
-                                    <td>0원</td>
-                                    <td>3000원(선불)</td>
-                                    <td>64,000원</td>
-                                    <td>
-                                        <input type="number" class="deliveryNumber" placeholder="송장번호 입력">
-                                        <input type="button" class="numberSubmit" onclick="getDelieveryNumber();" value="등록">
-                                    </td>
-                                    <td>
-                                        <div>
-                                            <p class="changeDeliveryStatus" style="margin-bottom:1px;"></p>
-                                            <input type="radio" name="deliveryStatus" value="배송중">배송 중
-                                            <input type="radio" name="deliveryStatus" value="배송완료">배송완료
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-<!--                        <div class="btnContent">-->
-<!--                            <div class="pagination" id="pagination">페이지 영역</div>-->
-<!--                        </div>-->
-                        <div class="pagination">
-                            <a class="page_move">
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAHCAQAAABwkq/rAAAAHUlEQVR42mNgAIPi/8X/kWkwA8SE0UQIMJAsCKMBBzk27fqtkcYAAAAASUVORK5CYII=" alt="처음 페이지로 이동하기 아이콘">
-                            </a>
-                            <a class="page_move">
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAQAAABqrk9lAAAAGElEQVR42mNgAIPi/8X/4QwwE5PBQJADAAKSG3cyVhtXAAAAAElFTkSuQmCC" alt="이전 페이지로 이동하기 아이콘">
-                            </a>
-                            <a class="current_page">1</a>
-                            <a class="page_move">2</a>
-                            <a class="page_move">3</a>
-                            <a class="page_move">4</a>
-                            <a class="page_move">5</a>
-                            <a class="page_move">6</a>
-                            <a class="page_move">7</a>
-                            <a class="page_move">8</a>
-                            <a class="page_move">9</a>
-                            <a class="page_move">10</a>
-                            <a class="page_move">
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAQAAABqrk9lAAAAGUlEQVR42mMo/l/8nwECQEwCHEwGhAlRBgA2mht3SwgzrwAAAABJRU5ErkJggg==" alt="다음 페이지로 이동하기 아이콘">
-                            </a>
-                            <a class="page_move">
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAHCAQAAABwkq/rAAAAIElEQVR42mMo/l/8n4GBgQFGQ5kgDowmQZCwAMImhDkAb0k27Zcisn8AAAAASUVORK5CYII=" alt="마지막 페이지로 이동하기 아이콘">
-                            </a>
-                        </div>
+                            <td class="orderProductName">[유통기한2022.12.29]루스타 영양강화 강력밀가루 20kg</td>
+                            <td>
+                                <p>1</p>
+                                <p class="orderStock">재고:10</p>
+                            </td>
+                            <td>8,000원</td>
+                            <td>0원</td>
+                            <td>3000원(선불)</td>
+                            <td>64,000원</td>
+                            <td>
+                                <input type="number" class="deliveryNumber" placeholder="송장번호 입력">
+                                <input type="button" class="numberSubmit" onclick="getDelieveryNumber();" value="등록">
+                            </td>
+                            <td>
+                                <div>
+                                    <p class="changeDeliveryStatus" style="margin-bottom:1px;"></p>
+                                    <input type="radio" name="deliveryStatus" value="배송중">배송 중
+                                    <input type="radio" name="deliveryStatus" value="배송완료">배송완료
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!--                        <div class="btnContent">-->
+                    <!--                            <div class="pagination" id="pagination">페이지 영역</div>-->
+                    <!--                        </div>-->
+                    <div class="pagination">
+                        <a class="page_move">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAHCAQAAABwkq/rAAAAHUlEQVR42mNgAIPi/8X/kWkwA8SE0UQIMJAsCKMBBzk27fqtkcYAAAAASUVORK5CYII="
+                                 alt="처음 페이지로 이동하기 아이콘">
+                        </a>
+                        <a class="page_move">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAQAAABqrk9lAAAAGElEQVR42mNgAIPi/8X/4QwwE5PBQJADAAKSG3cyVhtXAAAAAElFTkSuQmCC"
+                                 alt="이전 페이지로 이동하기 아이콘">
+                        </a>
+                        <a class="current_page">1</a>
+                        <a class="page_move">2</a>
+                        <a class="page_move">3</a>
+                        <a class="page_move">4</a>
+                        <a class="page_move">5</a>
+                        <a class="page_move">6</a>
+                        <a class="page_move">7</a>
+                        <a class="page_move">8</a>
+                        <a class="page_move">9</a>
+                        <a class="page_move">10</a>
+                        <a class="page_move">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAQAAABqrk9lAAAAGUlEQVR42mMo/l/8nwECQEwCHEwGhAlRBgA2mht3SwgzrwAAAABJRU5ErkJggg=="
+                                 alt="다음 페이지로 이동하기 아이콘">
+                        </a>
+                        <a class="page_move">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAHCAQAAABwkq/rAAAAIElEQVR42mMo/l/8n4GBgQFGQ5kgDowmQZCwAMImhDkAb0k27Zcisn8AAAAASUVORK5CYII="
+                                 alt="마지막 페이지로 이동하기 아이콘">
+                        </a>
                     </div>
+                </div>
             </div>
         </div>
     </div>
-    </div>
-    <footer th:replace="partner/footer.html" :: pf></footer>
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script src="/partner/js/partner.js"></script>
+</div>
+<footer th:replace="partner/footer.html" :: pf></footer>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="/partner/js/partner.js"></script>
 </body>
 </html>
