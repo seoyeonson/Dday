@@ -19,14 +19,14 @@ SELECT * FROM TBL_ORDER;
 DROP TABLE TBL_ORDER;
 
 INSERT INTO TBL_ORDER
-VALUES(SEQ_ORDER.NEXTVAL, SYSDATE, 2, '20000', '¼­¿ïÆ¯º°½Ã °ü¾Ç±¸ ½Å¸²µ¿', '1234-1', 1);
+VALUES(SEQ_ORDER.NEXTVAL, SYSDATE, 2, 6000, 'ï¿½ï¿½ï¿½ï¿½Æ¯ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ç±ï¿½ ï¿½Å¸ï¿½ï¿½ï¿½', '1234-1', 26);
 
 INSERT INTO TBL_ORDER
-VALUES(SEQ_ORDER.NEXTVAL, SYSDATE, 5, '100000', '¼­¿ïÆ¯º°½Ã °ü¾Ç±¸ ½Å¸²µ¿', '1234-1', 1);
+VALUES(SEQ_ORDER.NEXTVAL, SYSDATE, 5, '100000', 'ï¿½ï¿½ï¿½ï¿½Æ¯ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ç±ï¿½ ï¿½Å¸ï¿½ï¿½ï¿½', '1234-1', 26);
 
 INSERT INTO TBL_ORDER
-VALUES(SEQ_ORDER.NEXTVAL, SYSDATE, 3, '60000', 'Á¦ÁÖÆ¯º°ÀÚÄ¡µµ Á¦ÁÖ½Ã ¿µÆòµ¿ 2181', '231È£', 1);
+VALUES(SEQ_ORDER.NEXTVAL, SYSDATE, 3, '60000', 'ï¿½ï¿½ï¿½ï¿½Æ¯ï¿½ï¿½ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½Ö½ï¿½ ï¿½ï¿½ï¿½ï¿½ 2181', '231È£', 1);
 
 INSERT INTO TBL_ORDER
-VALUES(SEQ_ORDER.NEXTVAL, SYSDATE, 1, '10000', '¼­¿ï °ü¾Ç±¸ °ü¾Ç»ê³ªµé±æ 1-2', '(½Å¸²µ¿)', 3);
+VALUES(SEQ_ORDER.NEXTVAL, SYSDATE, 1, '10000', 'ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ç±ï¿½ ï¿½ï¿½ï¿½Ç»ê³ªï¿½ï¿½ï¿½ 1-2', '(ï¿½Å¸ï¿½ï¿½ï¿½)', 3);
 /* ----------------------------------------------------- */

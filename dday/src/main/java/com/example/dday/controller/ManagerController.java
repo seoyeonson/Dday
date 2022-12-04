@@ -52,15 +52,15 @@ public class ManagerController {
     }
 
     // 조건 회원 목록(아디, 이름)
-    @GetMapping("/memberAllBy")
-    @ResponseBody
-    public List<ManagerDTO> memberAllBy(@RequestParam("type") String type,
-                                        @RequestParam("keyword") String keyword, Model model, Criteria criteria)throws Exception {
-        ManagerDTO managerDTO = new ManagerDTO();
-        managerDTO.setType(type);
-        managerDTO.setKeyword(keyword);
-        return managerService.showAllBy(managerDTO, criteria);
-    }
+//    @GetMapping("/memberAllBy")
+//    @ResponseBody
+//    public List<ManagerDTO> memberAllBy(@RequestParam("type") String type,
+//                                        @RequestParam("keyword") String keyword, Model model, Criteria criteria)throws Exception {
+//        ManagerDTO managerDTO = new ManagerDTO();
+//        managerDTO.setType(type);
+//        managerDTO.setKeyword(keyword);
+//        return managerService.showAllBy(managerDTO, criteria);
+//    }
 
     //탈퇴회원페이지
     @GetMapping("/updateMemberStatus")
