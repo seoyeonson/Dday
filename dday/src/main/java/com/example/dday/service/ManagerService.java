@@ -22,10 +22,10 @@ public class ManagerService {
     }
 
     //검색
-    public List<ManagerDTO> showAllBy(ManagerDTO managerDTO Criteria criteria) throws Exception{
-        return managerDAO.findAllBy(managerDTO, criteria);
-
-    }
+//    public List<ManagerDTO> showAllBy(ManagerDTO managerDTO Criteria criteria) throws Exception{
+//        return managerDAO.findAllBy(managerDTO, criteria);
+//
+//    }
 
     public MemberVO showMemberDetail(Long memberNumber) {
         return managerDAO.findMemberDetail(memberNumber);

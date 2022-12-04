@@ -210,7 +210,7 @@
         let productSalePrice = $(this).parent().prev().children("div.leftPrice").text();
 
         // 상품 추가, 삭제 시 변경되는 상품 전체 가격을 위해 계산할 상품 가격을 수정
-        calcproductPrice = productPrice.replace(",", "").replace("원", "");
+        calcproductPrice = productSalePrice.replace(",", "").replace("원", "");
 
         // 모달안의 정보 변경
         // 상품 번호, 상품 가격 ,상품 이름, 상품 세일가, 계산될 상품 첫 가격
