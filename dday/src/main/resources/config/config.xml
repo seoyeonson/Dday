@@ -8,6 +8,8 @@
         <typeAlias type="com.example.dday.domain.vo.OrderDetailVO" alias="orderDetailVO"/>
         <typeAlias type="com.example.dday.domain.vo.OrderVO" alias="orderVO"/>
         <typeAlias type="com.example.dday.domain.vo.PartnerVO" alias="partnerVO"/>
+        <typeAlias type="com.example.dday.domain.vo.PartnerDTO" alias="partnerDTO"/>
+        <typeAlias type="com.example.dday.domain.vo.PartnerProductDTO" alias="partnerProductDTO"/>
         <typeAlias type="com.example.dday.domain.vo.PointVO" alias="pointVO"/>
         <typeAlias type="com.example.dday.domain.vo.ProductLikeVO" alias="productLikeVO"/>
         <typeAlias type="com.example.dday.domain.vo.ProductVO" alias="productVO"/>
