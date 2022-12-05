@@ -13,20 +13,6 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class SearchProductService {
-
     @Autowired
     SearchProductDAO searchProductDAO;
-
-
-  /*  public List<ProductVO> searchProduct(ProductVO productVO) throws Exception {
-
-        return searchProductDAO.selectSearchList(productVO);
-    }
-    public List<ProductVO> getProductList(SearchProductCriteria criteria) {
-        return searchProductDAO.searchProduct(criteria);
-    }*/
-
- /*   public int getProductCount(){
-        return searchProductDAO.findCountAll();
-    }*/
 }

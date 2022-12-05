@@ -1,6 +1,8 @@
 package com.example.dday.controller;
 
 /*import com.example.dday.domain.vo.SearchProductPageDTO;*/
+import com.example.dday.domain.vo.ProductCriteria;
+import com.example.dday.domain.vo.ProductPageDTO;
 import com.example.dday.domain.vo.ProductVO;
 /*import com.example.dday.domain.vo.SearchProductCriteria;*/
 import com.example.dday.mapper.SearchProductMapper;
@@ -20,33 +22,8 @@ public class SearchProductController {
 
     @Autowired(required = false)
     private SearchProductMapper searchProductMapper;
-
     @Autowired
     SearchProductService searchProductService;
-/*
-    @Autowired
-    SearchProductCriteria searchProductCriteria;
-
-    @Autowired
-    SearchProductPageDTO searchProductPageDTO;*/
-
-    /*@RequestMapping("/page")
-    public @ResponseBody
-    ResponseEntity<List<ProductVO>> searchProduct(@RequestParam(value = "productThumbnailName", required = true, defaultValue = "") String productThumbnailName
-            , @RequestParam(value = "productPrice", required = true, defaultValue = "") Long productPrice) {
-
-        Map<String, Object> paramMap = new HashMap<String, Object>();
-        paramMap.put("productThumbnailName", productThumbnailName);
-        paramMap.put("productPrice", productPrice);
-        List<ProductVO> productVOList = new ArrayList<ProductVO>();
-        System.out.println("성공");
-        productVOList = searchProductMapper.getProductList(paramMap);
-        System.out.println(productVOList);
-
-        return new ResponseEntity(productVOList, HttpStatus.OK);
-
-    }*/
-
     @GetMapping("/search")
     private void searchProduct(@RequestParam(value = "keyword", required = false) String productName,
                                @RequestParam(value = "highlow", required = false) String productSort,
@@ -64,7 +41,7 @@ public class SearchProductController {
             filterSearchList = new ArrayList<String>();
         }
         Map<String, Object> paramMap = new HashMap<String, Object>();
-        paramMap.put("productThumbnailName", productName);
+        paramMap.put("productName", productName);
         paramMap.put("highlow", productSort);
         paramMap.put("filterSearch", filterSearchList);
 
@@ -76,25 +53,6 @@ public class SearchProductController {
         model.addAttribute("filterSearchList", filterSearchList);
         int totalCount = searchProductMapper.getProductCount(paramMap);
         countList.addAttribute("countList",totalCount);
-
-
-        /*paging*/
-     /*   if(criteria.getPageNum() == 0){
-            criteria.create(1,10);
-        }
-
-        paramMap.put("amount", criteria.getAmount());
-        searchProductPageDTO.createPageDTO(criteria,totalCount);
-        if(endPageYN != null && endPageYN.equals("Y")){
-            paramMap.put("pageNum", searchProductPageDTO.getRealEnd());
-        }else if(searchPageNum != null && !searchPageNum.equals("")){
-            paramMap.put("pageNum", searchPageNum);
-        }else{
-            paramMap.put("pageNum", 1);
-        }*/
-
-        /*   ProductVO productVO = new ProductVO();*/
-        /* productVO.setProductName(productName);*/
 
         List<ProductVO> productVOList = new ArrayList<ProductVO>();
         System.out.println("성공");

@@ -1,6 +1,7 @@
 
 package com.example.dday.repository;
 
+        import com.example.dday.domain.vo.ProductDetailDTO;
         import com.example.dday.domain.vo.ProductVO;
         import com.example.dday.mapper.SearchProductMapper;
         import lombok.RequiredArgsConstructor;
@@ -18,21 +19,5 @@ public class SearchProductDAO {
         @Qualifier("sqlSessionTemplate")
         @Autowired
         private SqlSessionTemplate sqlSession;
-/*
 
-
-    public List<ProductVO> selectSearchList(ProductVO productVO) throws Exception{
-        return sqlSession.selectList("com.example.dday.mapper.SearchProductMapper.getProductList",productVO);
-    }
-    public List<ProductVO> searchProduct(SearchProductCriteria criteria){
-        return searchProductMapper.getProductList();
-//        return sqlSession.selectList("com.example.dday.mapper.SearchProductMapper.getListWithPaging",criteria);
-    }
-*/
-        SearchProductMapper searchProductMapper;
-
- /*   public int findCountAll(){
-//            return sqlSession.selectList("com.example.dday.mapper.SearchProductMapper.getProductCount", );
-        return searchProductMapper.getProductCount();
-    }*/
 }

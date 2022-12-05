@@ -72,21 +72,6 @@
                 <form name="filterBanner" id="filterBanner" onsubmit="return false">
                     <div class="css-1jgnig9 ev2ab494">
                         <div class="css-11y1fso ev2ab493"><span class="css-wy76no ev2ab492">필터</span>
-                            <!--<div class="divresetbutton">
-                                <button class="resetbutton" th:onclick="${#lists.contains(filterSearchList,'0')}" >
-                                    <svg width="12" height="12" viewBox="0 0 16 16" fill="none"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <path class="resetlogo" id="pathrefresh1"
-                                              d="M13.78 3.96303C12.504 2.16973 10.4086 1 8.04 1C4.15192 1 1 4.15192 1 8.04C1 11.9281 4.15192 15.08 8.04 15.08C11.9281 15.08 15.08 11.9281 15.08 8.04"
-                                              stroke="#ddd" stroke-width="1.6" stroke-linecap="square"
-                                              stroke-linejoin="round"></path>
-                                        <path class="resetlogo" id="pathrefresh2" d="M14.4933 1L14.4933 4.52H10.9733"
-                                              stroke="#ddd"
-                                              stroke-width="1.6" stroke-linecap="square" stroke-linejoin="round"></path>
-                                    </svg>
-                                    <span th:class="'reset '+ ${#lists.contains(filterSearchList,'0') ? 'fill': ''}">초기화</span>
-                                </button>
-                            </div>-->
                         </div>
 
                         <div>
@@ -99,7 +84,6 @@
                                         <div class="check_content">
                                             <label>
                                                 <input name="filterBox" type="checkbox" class="check" id="vegetable" value="1" th:checked="${#lists.contains(filterSearchList,'1')}">
-                                                <!--<span th:if="${#lists.contains(filterSearchList,'1')}"></span>-->
                                                 <span th:class="'material-symbols-outlined check_img '+ ${#lists.contains(filterSearchList,'1') ? 'fill': ''}">check_circle</span>
                                                 <span class="filter_name">채소</span>
                                             </label>
@@ -193,19 +177,27 @@
                         <div href="/goods/5063110" class="product_content" th:each="product : ${productList}"
                            >
                             <div>
-                                <div class="product_img_section"><img
-                                        onclick="location.href='/product/categoryDetail'"
-                                        th:src="@{${'https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/'+product.productMainImageName+'.jpg'}}">
-                                    <!-- src="https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/1637154205701l0.jpg"-->
+                                <div class="product_img_section">
+                                    <a th:href="@{/product/categoryDetail(productNumber=${product.productNumber})}">
+                                        <img th:src="@{${'https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/'+product.productThumbnailName+'.jpg'}}">
+                                    </a>
+
                                     <div>
                                         <button type="button" class="pickup"><img src="/search/images/cart.png"
-                                                                                  alt="장바구니 아이콘"></button>
+                                                                                  alt="장바구니 아이콘">
+                                            <input type="hidden" id="productNumber" th:value="${product.productNumber}">
+                                            <input type="hidden" id="productSalePrice" th:value="${product.productSalePrice}">
+                                            <input type="hidden" id="productName" th:value="${product.productName}">
+                                            <input type="hidden" id="productPrice" th:value="${product.productPrice}">
+                                        </button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="product_info"><span class="delivery_info_section"><span
-                                    class="delivery_info">샛별배송</span></span><span class="product_name" th:text="${product.productThumbnailName}"
-                                                                                  onclick="location.href='/product/categoryDetail'"></span>
+                            <div class="product_info"><span class="delivery_info_section">
+                                <span class="delivery_info">샛별배송</span></span>
+                                <a th:href="@{/product/categoryDetail(productNumber=${product.productNumber})}">
+                                <span class="product_name" th:text="${product.productName}"></span>
+                                </a>
                                 <div class="price_section">
                                     <div></div>
                                     <span class="sales-price" th:text="${#numbers.formatInteger(product.productPrice,1,'COMMA')+'원'}"></span>
@@ -235,153 +227,74 @@
                                 </svg><span class="css-o337e7 ef36txc2">검색된 상품이 없습니다.</span></div>
                             </div>
                         </div>
-
-                        <!--페이징 start-->
-                        <!--<div class="pagination" th:object="${pagination}">
-
-                            <a class="page_move">
-                                <img
-                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAHCAQAAABwkq/rAAAAHUlEQVR42mNgAIPi/8X/kWkwA8SE0UQIMJAsCKMBBzk27fqtkcYAAAAASUVORK5CYII="
-                                        alt="처음 페이지로 이동하기 아이콘"></a>
-                            <a class="page_move" th:href="*{startPage - 1}" th:if="*{prev}">
-                                <code>
-                                    <img
-                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAQAAABqrk9lAAAAGElEQVR42mNgAIPi/8X/4QwwE5PBQJADAAKSG3cyVhtXAAAAAElFTkSuQmCC"
-
-                                            alt="이전 페이지로 이동하기 아이콘">
-                                </code>
-                            </a>
-
-                            <th:block th:each="pageNum:${#numbers.sequence(pagination.startPage, pagination.endPage)}">
-                                <a class="current_page" th:href="${pageNum}" th:if="${pagination.criteria.pageNum != pageNum}"><code th:text="${pageNum}"></code></a>
-                                <code th:unless="${pagination.criteria.pageNum != pageNum}" th:text="${pageNum}"></code>
-                                &lt;!&ndash; <a class="page_move">2</a>
-                                 <a class="page_move">3</a>
-                                 <a class="page_move">4</a>
-                                 <a class="page_move">5</a>
-                                 <a class="page_move">6</a>
-                                 <a class="page_move">7</a>
-                                 <a class="page_move">8</a>
-                                 <a class="page_move">9</a>
-                                 <a class="page_move">10</a>&ndash;&gt;
-                            </th:block>
-                            <a class="page_move" th:href="*{endPage + 1}" th:if="*{next}"><code>
-                                <img
-                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAQAAABqrk9lAAAAGUlEQVR42mMo/l/8nwECQEwCHEwGhAlRBgA2mht3SwgzrwAAAABJRU5ErkJggg=="
-                                        alt="다음 페이지로 이동하기 아이콘"></code>
-                            </a>
-                            <a class="page_move">
-                                <img
-                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAHCAQAAABwkq/rAAAAIElEQVR42mMo/l/8n4GBgQFGQ5kgDowmQZCwAMImhDkAb0k27Zcisn8AAAAASUVORK5CYII="
-                                        alt="마지막 페이지로 이동하기 아이콘">
-                            </a>
-                            <form th:action="@{/search/search}" th:object="${criteria}" name="pageForm">
-                                <input type="hidden" th:field="*{pageNum}">
-                                <input type="hidden" th:field="*{amount}">
-                            </form>
-                        </div>-->
-
-                        <!--</div>
-                                <div class="pagination">
-                                    <a class="page_move">
-                                        <img
-                                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAHCAQAAABwkq/rAAAAHUlEQVR42mNgAIPi/8X/kWkwA8SE0UQIMJAsCKMBBzk27fqtkcYAAAAASUVORK5CYII="
-                                                alt="처음 페이지로 이동하기 아이콘">
-                                    </a>
-                                    <a class="page_move">
-                                        <img
-                                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAQAAABqrk9lAAAAGElEQVR42mNgAIPi/8X/4QwwE5PBQJADAAKSG3cyVhtXAAAAAElFTkSuQmCC"
-                                                alt="이전 페이지로 이동하기 아이콘">
-                                    </a>
-                                    <a class="current_page">1</a>
-                                    <a class="page_move">2</a>
-                                    <a class="page_move">3</a>
-                                    <a class="page_move">4</a>
-                                    <a class="page_move">5</a>
-                                    <a class="page_move">6</a>
-                                    <a class="page_move">7</a>
-                                    <a class="page_move">8</a>
-                                    <a class="page_move">9</a>
-                                    <a class="page_move">10</a>
-                                    <a class="page_move">
-                                        <img
-                                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAHCAQAAABqrk9lAAAAGUlEQVR42mMo/l/8nwECQEwCHEwGhAlRBgA2mht3SwgzrwAAAABJRU5ErkJggg=="
-                                                alt="다음 페이지로 이동하기 아이콘">
-                                    </a>
-                                    <a class="page_move">
-                                        <img
-                                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAHCAQAAABwkq/rAAAAIElEQVR42mMo/l/8n4GBgQFGQ5kgDowmQZCwAMImhDkAb0k27Zcisn8AAAAASUVORK5CYII="
-                                                alt="마지막 페이지로 이동하기 아이콘">
-                                    </a>
-                                </div>
-                            </div>-->
                     </div>
                 </div>
             </div>
             <!-- footer -->
             <footer th:replace="main/footer.html" :: f></footer>
             <!--modal-->
-            <div class="modalContainer">
-                <div class="modalBox">
-                    <div class="modal">
-                        <div class="modalBody">
-                            <div class="modalWrapper">
-                                <div class="modalContent">
-                                    <div class="modalProductName">
-                                        <span>[KF365] 양념 소불고기 1kg(냉장)</span>
-                                    </div>
-                                </div>
-                                <div class="priceAndCount">
-                                    <div>
-                          <span class="discountBox">
-                              17,590원
-                          </span>
-                                        <span class="priceBox">
-                              18,990원
-                          </span>
-                                    </div>
-                                    <div class="product_cnt_box">
-                                        <button class="minus"></button>
-                                        <div class="cnt">1</div>
-                                        <button class="plus"></button>
-                                    </div>
-                                </div>
-                                <div class="totalPriceBox">
-                                    <div class="totalPriceInner">
-                                        <div class="totalLine">
-                                            <p>
-                                                합계
-                                            </p>
-                                            <div>
-                                                <span class="changePrice">17,590</span>
-                                                <span class="totalWon">원</span>
-                                            </div>
+            <form id="modalForm">
+                <div class="modalContainer" >
+                    <div class="modalBox">
+                        <div class="modal">
+                            <div class="modalBody">
+                                <div class="modalWrapper">
+                                    <div class="modalContent">
+                                        <input type="hidden" name="productNumber">
+                                        <div class="modalProductName">
+                                            <span></span>
                                         </div>
                                     </div>
-                                    <div class="pointBox">
-                                        <span class="pointText">적립</span>
-                                        <span class="pointCalText">구매 시
-                                  <span class="realPoint">0원 적립
+                                    <div class="priceAndCount">
+                                        <div>
+                                            <span class="discountBox"></span>
+                                            <span class="priceBox"></span>
+                                        </div>
+                                        <div class="product_cnt_box">
+                                            <button type="button" class="minus"></button>
+                                            <div class="cnt" id="cartCount">1</div>
+                                            <button type="button" class="plus"></button>
+                                        </div>
+                                    </div>
+                                    <div class="totalPriceBox">
+                                        <div class="totalPriceInner">
+                                            <div class="totalLine">
+                                                <p>
+                                                    합계
+                                                </p>
+                                                <div>
+                                                    <span class="changePrice"></span>
+                                                    <span class="totalWon">원</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pointBox">
+                                            <span class="pointText">적립</span>
+                                            <span class="pointCalText">구매 시
+                                  <span class="realPoint">5% 적립
                                   </span>
                               </span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="modalButtonBox">
-                                    <button class="modalCancelButton" type="button">
-                                        <span class="modalButtonText">취소</span>
-                                    </button>
-                                    <button type="button" class="modalOkButton">
-                                        <span class="modalButtonText">장바구니 담기</span>
-                                    </button>
+                                    <div class="modalButtonBox">
+                                        <button class="modalCancelButton" type="button">
+                                            <span class="modalButtonText">취소</span>
+                                        </button>
+                                        <button type="button" class="modalOkButton addCart_btn">
+                                            <span class="modalButtonText">장바구니 담기</span>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </form>
             <!--modal end-->
-            <div id="topButton" style="cursor: pointer; width: 46px; height: 46px;">
-                <img src="/main/images/main/up.PNG" id="topButtonImg"   style="width: 100px; height: 70px;">
+
+            <!--상승버튼-->
+            <div id="topButton" style="cursor: pointer; width: 60px; height: 60px;">
+                <img src="/main/images/main/up.PNG" id="topButtonImg">
             </div>
             <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
