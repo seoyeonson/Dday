@@ -83,6 +83,8 @@ public class CartController {
         MemberVO memberVO = ((MemberVO)session.getAttribute("member"));
         cartVO.setMemberNumber((memberVO.getMemberNumber()));
 
+        cartService.getEachCount(cartVO);
+        cartVO.setCartCount(cartService.getEachCount(cartVO)+cartVO.getCartCount());
         cartService.save(cartVO);
 
     }

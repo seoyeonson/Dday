@@ -7,6 +7,7 @@ import com.example.dday.domain.vo.ProductVO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface ProductMapper {
@@ -37,5 +38,9 @@ public interface ProductMapper {
 
     // 파트너 정보
     public ProductDetailDTO selectPartner(Long productNumber);
+
+    public List<ProductVO> getProductList(Map<String, Object> map);
+
+    public int getProductCount(Map<String, Object> map);
 
 }

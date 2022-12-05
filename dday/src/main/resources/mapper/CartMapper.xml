@@ -52,4 +52,10 @@
         INSERT(MEMBER_NUMBER, PRODUCT_NUMBER, CART_COUNT)
         VALUES(#{memberNumber}, #{productNumber}, #{cartCount})
     </update>
+
+    <select id="getCartCount" resultType="int">
+        SELECT CART_COUNT
+        FROM TBL_CART
+        WHERE PRODUCT_NUMBER = #{productNumber} AND MEMBER_NUMBER = #{memberNumber}
+    </select>
 </mapper>

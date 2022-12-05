@@ -152,7 +152,7 @@
 <!--                                    <img th:src="@{${item.getImgPath()}}">-->
                                     <img src="https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/1628558475434l0.jpg" alt="상품 이미지">
                                     <div><button type="button" class="pickup inputCart">
-                                        <input type="hidden" id="productNumber" th:value="${product.productNumber}">
+                                        <input type="hidden" class="productNumber" th:value="${product.productNumber}">
                                         <input type="hidden" id="productSalePrice" th:value="${product.productSalePrice}">
                                         <input type="hidden" id="productName" th:value="${product.productName}">
                                         <input type="hidden" id="productPrice" th:value="${product.productPrice}">
@@ -262,6 +262,7 @@
 <footer th:replace="main/footer.html" :: f></footer>
 <!-- modal -->
 
+<footer th:replace="main/footer.html" :: f></footer>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script th:src="@{/main/js/header.js}"></script>
@@ -279,8 +280,6 @@
         $(document.pageForm.page).val($(this).attr("href"));
         document.pageForm.submit();
     });
-
-
 </script>
 
 </body>
