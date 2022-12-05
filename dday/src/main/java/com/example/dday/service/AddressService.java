@@ -22,5 +22,7 @@ public class AddressService {
     public void setStatusNormal(Long memberNumber){ addressDAO.setStatusNormal(memberNumber);};
     //    수정
     public void setStatus(Long addressNumber, Long memberNumber){ addressDAO.setStatus(addressNumber, memberNumber); };
+    //    기본 배송지 조회
+    public AddressVO findByMemberNumber(Long memberNumber){ return addressDAO.findByMemberNumber(memberNumber); };
 
 }

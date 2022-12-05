@@ -4,6 +4,7 @@
 
     <typeAliases>
         <typeAlias type="com.example.dday.domain.vo.CartVO" alias="cartVO"/>
+        <typeAlias type="com.example.dday.domain.vo.CartDTO" alias="cartDTO"/>
         <typeAlias type="com.example.dday.domain.vo.MemberVO" alias="memberVO"/>
         <typeAlias type="com.example.dday.domain.vo.OrderDetailVO" alias="orderDetailVO"/>
         <typeAlias type="com.example.dday.domain.vo.OrderVO" alias="orderVO"/>

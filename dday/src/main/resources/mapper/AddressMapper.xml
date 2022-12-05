@@ -35,4 +35,10 @@
         SET ADDRESS_STATUS='기본배송지'
         WHERE ADDRESS_NUMBER=#{addressNumber} AND MEMBER_NUMBER=#{memberNumber}
     </update>
+
+    <select id="select" resultType="addressVO">
+        SELECT ADDRESS_NUMBER, ADDRESS_MAIN, ADDRESS_DETAIL, ADDRESS_STATUS, ADDRESS_RECEIVE_PERSON, ADDRESS_RECEIVE_PHONE_NUMBER
+        FROM TBL_ADDRESS
+        WHERE MEMBER_NUMBER=#{memberNumber} AND ADDRESS_STATUS='기본배송지'
+    </select>
 </mapper>
