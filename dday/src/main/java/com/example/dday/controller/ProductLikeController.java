@@ -1,5 +1,6 @@
 package com.example.dday.controller;
 
+import com.example.dday.domain.vo.CartVO;
 import com.example.dday.domain.vo.ProductLikeVO;
 import com.example.dday.service.ProductLikeService;
 import lombok.extern.slf4j.Slf4j;
@@ -31,11 +32,16 @@ public class ProductLikeController {
         productLikeService.remove(productNumber, memberNumber);
     }
 
+    // 찜목록 담기
     @ResponseBody
-    @GetMapping("/addProduct")
-    public String addProductToList(ProductLikeVO productLikeVO) {
-        log.info("productNumber! : " + productLikeVO.getProductNumber());
-        return productLikeService.clickLikeButton(productLikeVO);
+    @RequestMapping(value = "/addLike", method = RequestMethod.POST)
+    public void addCart(ProductLikeVO productLikeVO, HttpSession session){
+        log.info("productLikeVO :" + productLikeVO);
+        MemberVO memberVO = ((MemberVO)session.getAttribute("member"));
+        productLikeVO.setMemberNumber((memberVO.getMemberNumber()));
+
+        productLikeService.save(productLikeVO);
+
     }
 }
 

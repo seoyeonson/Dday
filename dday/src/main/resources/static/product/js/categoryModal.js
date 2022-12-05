@@ -11,7 +11,7 @@ $('button.inputCart').on('click', function(event){
 
     // 장바구니 버튼이 포함된 li에서 정보 가져오기
     // 상품 번호, 상품 가격, 상품 이름, 상품 세일가
-    let productNumber = $(this).find("input#productNumber").val();
+    let productNumber = $(this).find("input.productNumber").val();
     let productPrice = $(this).find("input#productPrice").val();
     let productName = $(this).find("input#productName").val();
     let productSalePrice = $(this).find("input#productSalePrice").val();
@@ -107,8 +107,14 @@ function priceChange(){
 }
 
 function addCart(){
-        var productNumber = $("input#productNumber").val();
+        var productNumber = $("input[name='productNumber']").val();
         var cartCount = $("#cartCount").text();
+
+       // var memberNumber = [[${memberNumber}]];
+       //  if(memberNumber==null){
+       //      alert("로그인이 필요합니다");
+       //      location.href = "/member/login";
+       //  }
 
         var data = {
             productNumber : productNumber,
@@ -124,8 +130,7 @@ function addCart(){
                 $("#cartCount").text("1");
             },
             error : function(){
-                alert("로그인이 필요합니다");
-                location.href="/member/login";
+                alert("상품 담기 실패");
             }
         });
     }

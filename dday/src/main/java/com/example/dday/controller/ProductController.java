@@ -3,12 +3,15 @@ package com.example.dday.controller;
 import com.example.dday.domain.vo.ProductPageDTO;
 import com.example.dday.domain.vo.ProductVO;
 import com.example.dday.domain.vo.ProductCriteria;
+import com.example.dday.mapper.ProductMapper;
 import com.example.dday.service.ProductService;
 import com.example.dday.service.ReviewService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.*;
 
 @Controller
 @RequiredArgsConstructor
@@ -71,7 +74,6 @@ public class ProductController {
         model.addAttribute("partner", productService.showPartnerDetail(productNumber));
         return "/product/todayCategoryDetail";
     }
-
 
 
 }

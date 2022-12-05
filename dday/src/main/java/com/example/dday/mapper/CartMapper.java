@@ -23,5 +23,7 @@ public interface CartMapper {
     public Integer getTotal(Long memberNumber);
 //    장바구니 상품 개수 수정
     public void update(CartVO cartVO);
+//  장바구니에서 각 상품별 개수
+    public Integer getCartCount(CartVO cartVO);
 
 }

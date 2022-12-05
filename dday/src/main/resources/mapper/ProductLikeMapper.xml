@@ -18,8 +18,13 @@
         WHERE PRODUCT_NUMBER=#{productNumber} AND MEMBER_NUMBER=#{memberNumber}
     </delete>
 
-    <insert id="insert">
-        INSERT INTO TBL_PRODUCT_LIKE(MEMBER_NUMBER, PRODUCT_NUMBER)
-		VALUES(#{memberNumber}, #{productNumber})
-    </insert>
+
+    <update id="insert">
+        MERGE INTO TBL_PRODUCT_LIKE
+        USING DUAL
+        ON (MEBMBER_NUMBER=#{memberNumber} AND PRODUCT_NUMBER=#{productNumber})
+        WHEN NOT MATCHED THEN
+        INSERT(MEMBER_NUMBER, PRODUCT_NUMBER)
+        VALUES(#{memberNumber},#{productNumber})
+    </update>
 </mapper>
