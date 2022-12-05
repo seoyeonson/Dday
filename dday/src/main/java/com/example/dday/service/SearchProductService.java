@@ -13,8 +13,6 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class SearchProductService {
-
     @Autowired
     SearchProductDAO searchProductDAO;
-
 }

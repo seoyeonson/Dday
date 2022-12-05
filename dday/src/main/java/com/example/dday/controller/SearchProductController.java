@@ -22,10 +22,8 @@ public class SearchProductController {
 
     @Autowired(required = false)
     private SearchProductMapper searchProductMapper;
-
     @Autowired
     SearchProductService searchProductService;
-
     @GetMapping("/search")
     private void searchProduct(@RequestParam(value = "keyword", required = false) String productName,
                                @RequestParam(value = "highlow", required = false) String productSort,

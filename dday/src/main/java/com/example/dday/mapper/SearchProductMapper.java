@@ -16,7 +16,6 @@ public interface SearchProductMapper {
 
     public int getProductCount(Map<String, Object> map);
 
-    // 파트너 정보
     public ProductDetailDTO selectPartner(Long productNumber);
 
     public List<ProductVO> selectNew();
