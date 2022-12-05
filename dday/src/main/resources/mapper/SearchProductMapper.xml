@@ -3,9 +3,9 @@
 <!--xmlns="http://mybatis.org/dtd/mybatis-3-mapper.dtd"-->
 <mapper namespace="com.example.dday.mapper.SearchProductMapper">
     <select id="getProductList" parameterType="hashmap" resultType="ProductVO">
-        SELECT PRODUCT_NUMBER, PRODUCT_NAME,PRODUCT_PRICE, PRODUCT_INFORMATION,PRODUCT_THUMBNAIL_NAME, PRODUCT_MAIN_IMAGE_NAME
+        SELECT PRODUCT_NUMBER, PRODUCT_NAME,PRODUCT_PRICE, PRODUCT_INFORMATION,PRODUCT_THUMBNAIL_NAME, PRODUCT_MAIN_IMAGE_NAME,PRODUCT_SALE_PRICE, MEMBER_NUMBER
         FROM TBL_PRODUCT
-        WHERE PRODUCT_THUMBNAIL_NAME LIKE '%'||#{productThumbnailName, jdbcType=VARCHAR}||'%'
+        WHERE PRODUCT_NAME LIKE '%'||#{productName, jdbcType=VARCHAR}||'%'
         <if test="filterSearch != null and filterSearch.size != 0">
         AND PRODUCT_CATEGORY IN
             <foreach
@@ -23,26 +23,9 @@
         </if>
     </select>
 
-    <!--
-        <select id="getListWithPaging" resultType="ProductVO">
-            SELECT PRODUCT_NUMBER, PRODUCT_THUMBNAIL_NAME,PRODUCT_PRICE, PRODUCT_INFORMATION
-            FROM
-            (
-            SELECT ROWNUM R, PRODUCT_NUMBER, PRODUCT_THUMBNAIL_NAME,PRODUCT_PRICE, PRODUCT_INFORMATION
-            FROM (
-            SELECT PRODUCT_NUMBER, PRODUCT_THUMBNAIL_NAME,PRODUCT_PRICE, PRODUCT_INFORMATION
-            FROM TBL_PRODUCT P
-            ORDER BY PRODUCT_NUMBER DESC
-            ) D2
-            <![CDATA[
-         WHERE ROWNUM <= #{pageNum} * #{amount}
-        ) WHERE R > (#{pageNum} - 1) * #{amount}
-         ]]>
-        </select>-->
-
     <select id="getProductCount" parameterType="hashmap" resultType="_int">
         SELECT COUNT(1) AS totCnt FROM TBL_PRODUCT
-        WHERE PRODUCT_THUMBNAIL_NAME LIKE '%'||#{productThumbnailName, jdbcType=VARCHAR}||'%'
+        WHERE PRODUCT_NAME LIKE '%'||#{productName, jdbcType=VARCHAR}||'%'
         <if test="filterSearch != null and filterSearch.size != 0" >
             AND PRODUCT_CATEGORY IN
             <foreach collection="filterSearch" item="item" separator="," index="index" open="(" close=")">
@@ -51,19 +34,4 @@
         </if>
     </select>
 
-
-
-
-    <!--   <![CDATA[
-          SELECT * FROM (
-          SELECT /*INDEX_DESC (TBL_PRODUCT PK_PRODUCT) */ ROWNUM RN, PRODUCT_NUMBER, PRODUCT_THUMBNAIL_NAME, PRODUCT_PRICE, PRODUCT_INFOMATION
-          FROM TBL_PRODUCT
-          WHERE PRODUCT_NUMBER > 0 AND ROWNUM >0 AND ROWNUM <=20
-          )
-          WHERE RN > 10
-           ]]>-->
-    <!--
-        <select id="getTotal" resultType="_int">
-            SELECT COUNT(PRODUCT_NUMBER) FROM TBL_PRODUCT
-        </select>-->
 </mapper>
