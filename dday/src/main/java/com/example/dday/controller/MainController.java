@@ -31,13 +31,15 @@ public class MainController {
         MemberVO memberVO = new MemberVO();
         memberVO.setMemberNumber(0L);
         session.setAttribute("member", Optional.ofNullable((MemberVO)session.getAttribute("member")).orElse(memberVO));
-        return "/index";
+        model.addAttribute("mainProduct", mainService.showMainProduct());
+        return "index";
    }
 
-   @PostMapping("/")
-    public void selectAll(Model model) {
-        model.addAttribute("mainProduct", mainService.showMainProduct());
-   }
+//   @GetMapping("/")
+//    public void selectAll(Model model) {
+//        log.info("메인들어옴");
+//        model.addAttribute("mainProduct", mainService.showMainProduct());
+//   }
 
 
 }

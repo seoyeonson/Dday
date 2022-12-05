@@ -5,7 +5,10 @@
     <title>Title</title>
 </head>
 <body>
+
+
     <div class="special-sale" th:fragment="ss1">
+        <th:block th:each="mainProduct:${mainProduct}">
     <div class="special-product">
         <div class="product-title">
             <h2 class="product-title-main">시간 한정</h2>
@@ -29,12 +32,13 @@
                         </button>
                     </div>
                 </div>
+
                 <div class="product-image-footer product-info">
                     <div class="product-description">부담 없이 즐기는 바삭 촉촉 옛날 통닭</div>
-                    <h3 class="product-name">두 마리 99치킨 (에어프라이어용)</h3>
+                    <h3 th:text="${mainProduct.productName}" class="product-name">두 마리 99치킨 (에어프라이어용)</h3>
                     <div class="content-row now-price">
                         <div class="product-price">
-                            <span class="sales-price css-18tpqqq">9,900
+                            <span th:text="${mainProduct.productPrice}+원" class="sales-price css-18tpqqq">9,900
                                 <span class="won">원</span>
                             </span>
                         </div>
@@ -43,6 +47,7 @@
             </div>
         </div>
     </div>
+
 </div>
 </body>
 </html>

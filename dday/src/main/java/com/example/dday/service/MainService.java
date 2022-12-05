@@ -1,10 +1,6 @@
 package com.example.dday.service;
 
-import com.example.dday.domain.vo.AddressVO;
-import com.example.dday.domain.vo.Criteria;
-import com.example.dday.domain.vo.ManagerDTO;
 import com.example.dday.domain.vo.ProductVO;
-import com.example.dday.repository.AddressDAO;
 import com.example.dday.repository.MainDAO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
