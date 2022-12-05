@@ -107,8 +107,32 @@ tr {
     border-right: 1px solid rgb(221, 221, 221);
     border-bottom: 1px solid rgb(221, 221, 221);
     border-image: initial;
-    border-left: none;
+    border-left: 1px solid rgb(221, 221, 221);
     cursor: pointer;
     background-color: rgb(247, 247, 247);
 }
+
+
+
+.productNumber{
+    width: 5%;
+}
+
+.productName {
+    width: 40%;
+}
+
+.productPrice {
+    width: 10%;
+}
+
+.productStock {
+    width: 10%;
+}
+
+
+.productDate {
+    width: 15%;
+}
+
 

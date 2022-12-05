@@ -35,4 +35,14 @@ public class MemberDTO {
         this.memberGender = memberGender;
         this.memberType = memberType;
     }
+
+    public void create2(MemberVO memberVO) {
+        this.memberId = memberVO.getMemberId();
+        this.memberPw = memberVO.getMemberPw();
+        this.memberName = memberVO.getMemberName();
+        this.memberEmail = memberVO.getMemberEmail();
+        this.memberPhoneNumber = memberVO.getMemberPhoneNumber();
+        this.memberGender = memberVO.getMemberGender();
+        this.memberType = memberVO.getMemberType();
+    }
 }

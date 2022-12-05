@@ -10,8 +10,30 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
+
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.Resource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.util.FileCopyUtils;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.nio.file.Files;
+import java.text.SimpleDateFormat;
+import java.util.*;
+
+import java.io.IOException;
+import java.util.List;
 
 @Slf4j
 @Controller
@@ -76,7 +98,7 @@ public class PartnerController {
     //    상품 추가하기
     @GetMapping("/partner_registration")
     public void productNew(PartnerCriteria partnerCriteria, Model model) {
-        model.addAttribute("partner", new ProductVO());
+        model.addAttribute("product", new ProductVO());
     }
 
     @PostMapping("/partner_registration")
@@ -85,6 +107,39 @@ public class PartnerController {
         redirectAttributes.addFlashAttribute("productNumber", partnerProductDTO.getProductNumber());
         return new RedirectView("/partner/partner_management");
     }
+
+    @PostMapping("/upload")
+    @ResponseBody
+    public String upload(MultipartFile upload) throws IOException {
+        String rootPath = "C:/upload";
+        String uploadPath = getUploadPath();
+        String uploadFileName = "";
+        String productThumbnailName = rootPath + "/";
+
+        File uploadFullPath = new File(rootPath, uploadPath);
+        if(!uploadFullPath.exists()){uploadFullPath.mkdirs();}
+
+        UUID uuid = UUID.randomUUID();
+        String fileName = upload.getOriginalFilename();
+        uploadFileName = uuid.toString() + "_" + fileName;
+
+        productThumbnailName += uploadFileName;
+
+        File fullPath = new File(uploadFullPath, uploadFileName);
+        upload.transferTo(fullPath);
+
+        return productThumbnailName;
+    }
+
+    @GetMapping("/display")
+    public byte[] display(String fileName) throws IOException{
+        return FileCopyUtils.copyToByteArray(new File("C:/upload", fileName));
+    }
+
+    private String getUploadPath(){
+        return new SimpleDateFormat("yyyy/MM/dd").format(new Date());
+    }
+
 
     @GetMapping("/partner_shipping")
     public void partner_shipping() {

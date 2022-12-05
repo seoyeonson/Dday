@@ -17,9 +17,11 @@ public class ManagerService {
 
     private  final ManagerDAO managerDAO;
 
+    //멤버 리스트 전체보기
     public List<ManagerDTO> showAll(Criteria criteria) {
         return managerDAO.findAll(criteria);
     }
+
 
     //검색
 //    public List<ManagerDTO> showAllBy(ManagerDTO managerDTO Criteria criteria) throws Exception{
@@ -27,11 +29,19 @@ public class ManagerService {
 //
 //    }
 
+
+    //멤버 검색
+    public List<ManagerDTO> showAllBy(String keyword, Criteria criteria) {
+        return managerDAO.findAllBy(keyword, criteria);
+
+    }
+    //멤버 상세보기
+
     public MemberVO showMemberDetail(Long memberNumber) {
         return managerDAO.findMemberDetail(memberNumber);
     }
 
-    //전 체 개수
+    // 페이지 전체개수
     public int getTotal() {
         return managerDAO.findCountAll();
     }

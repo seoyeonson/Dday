@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="/manager/css/managerLogin.css">
+<body style="
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+">
+<div class="login-wrapper" style="
+    margin-top: 185px;
+    border: 1px solid;
+    border-radius: 7px;
+    border-color: #d4d4d4;
+">
+    <h2>로그인</h2>
+    <form method="get" th:action="@{/manager/memberAll}" id="login-form" onsubmit="return jbSubmit();">
+        <input type="text" name="userName" placeholder="아이디" id="userName">
+        <input type="password" name="userPassword" placeholder="비밀번호" id="userPassword">
+        <label for="remember-check">
+            <input type="checkbox" id="remember-check" checked style="
+    margin-right: 5px;
+">아이디 저장하기
+        </label>
+        <input type="submit" value="관리자 로그인" id="loginBtn">
+    </form>
+</div>
+</body>
+</html>
+<script>
+    function jbSubmit() {
+        var pw1 = document.getElementById( 'userPassword' ).value;
+        var pw2 = "1234";
+        var id1 = document.getElementById( 'userName' ).value;
+        var id2 = "admin";
+        if ( pw1 != pw2 ) {
+            alert( '비밀번호를 확인해주세요!' );
+            return false;
+        }
+        else if(id1 != id2){
+            alert("아이디를 확인해주세요");
+            return false;
+
+        }
+    }
+
+
+</script>

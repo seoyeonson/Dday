@@ -283,6 +283,7 @@ svg {
   width: 100%;
   height: 52px;
   overflow: hidden;
+  cursor: auto;
 }
 
 .css-1iwixyn {
@@ -560,6 +561,14 @@ menu {
   width: 249px;
   height: 320px;
 }
+/* 상승아이콘 */
+#topButton {
+  position: fixed;
+  right: 2%;
+  bottom: 50px;
+  display: none;
+  z-index: 999;
+}
 
 .product_img_section > img {
   width: 100%;
@@ -616,6 +625,7 @@ video {
   color: rgb(153, 153, 153);
   line-height: 19px;
   letter-spacing: -0.5px;
+  cursor: auto;
 }
 
 .product_name {
@@ -649,6 +659,7 @@ video {
 .sales-price {
   color: rgb(51, 51, 51);
   white-space: nowrap;
+  cursor: auto;
 }
 
 .mini_info {
@@ -663,6 +674,7 @@ video {
   white-space: normal;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  cursor: auto;
 }
 
 .css-1hrnl0u {
@@ -776,7 +788,10 @@ video {
   height: 480px;
   -webkit-box-align: center;
   align-items: center;
+  /*
   margin: auto;
+  */
+  margin-left: -200px;
   padding: 100px 0px;
 }
 
@@ -1054,6 +1069,7 @@ span.real_label:hover {
 .material-symbols-outlined {
   padding-right: 5px;
   color: rgb(221 221 221);
+  cursor: pointer;
 }
 
 .filter_name {
@@ -1068,6 +1084,7 @@ span.real_label:hover {
   white-space: normal;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  cursor: pointer;
 }
 
 .filter_name:hover {

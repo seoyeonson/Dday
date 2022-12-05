@@ -30,48 +30,32 @@
             <div class="item_title">
                 <h3 class="order_subtitle">주문 상품</h3>
             </div>
-            <div class="product_content">
-                <span class="product_img1"></span>
-                <span class="product_name_section">
-                        <span class="product_name">[서울우유] 나 100% 우유
-                            1.8L</span>
-                    </span>
-                <span class="quantity">1개</span>
-                <span class="product_price_section"><span class="product_price">5,350원</span></span>
-            </div>
-            <div class="product_content">
-                <span class="product_img2"></span>
-                <span class="product_name_section">
-                        <span class="product_name">[연세우유 x 마켓컬리] 전용목장우유
-                            900mL</span>
-                    </span>
-                <span class="quantity">1개</span>
-                <span class="product_price_section"><span class="product_price">2,070원</span></span>
-            </div>
-            <div class="product_content"><span class="product_img3"></span><span class="product_name_section"><span
-                    class="product_name">[고기반찬] 고추장 제육 불고기
-                            300g</span></span><span class="quantity">1개</span><span class="product_price_section"><span
-                    class="product_price">5,300원</span></span></div>
-            <div class="product_content"><span class="product_img4"></span><span class="product_name_section"><span
-                    class="product_name">[에코후레쉬] 냉장고 냄새
-                            탈취제</span></span><span class="quantity">1개</span><span class="product_price_section"><span
-                    class="product_price">5,500원</span></span></div>
+            <th:block th:each="cart:${cartList}">
+                <div class="product_content" th:object="${cart}">
+                    <span class="product_img1"></span>
+                    <span class="product_name_section">
+                            <span class="product_name" th:text="*{productName}"></span>
+                        </span>
+                    <span class="quantity"><th:block th:text="*{cartCount}"></th:block>개</span>
+                    <span class="product_price_section"><span class="product_price"><th:block th:text="*{productSalePrice}"></th:block>원</span></span>
+                </div>
+            </th:block>
             <div class="section_divider">
                 <h3 class="order_subtitle">주문자 정보</h3>
             </div>
-            <div id="orderer-info" class="customer_info_section">
+            <div id="orderer-info" class="customer_info_section" th:object="${member}">
                 <div class="customer_info_layout"><span class="info_subtitle">보내는 분</span>
                     <div class="info_content">
-                        <div class="customer_info">강희수</div>
+                        <div class="customer_info" th:text="*{memberName}"></div>
                     </div>
                 </div>
                 <div class="customer_info_layout"><span class="info_subtitle">휴대폰</span>
                     <div class="info_content">
-                        <div class="customer_info">010-7470-7511</div>
+                        <div class="customer_info"><span th:text="*{memberPhoneNumber}"></div>
                     </div>
                 </div>
                 <div class="customer_info_layout"><span class="info_subtitle">이메일</span>
-                    <div class="info_content">cairoking777@gmail.com
+                    <div class="info_content"><span th:text="*{memberEmail}"></span>
                         <div class="css-1r0yqr6 e1vfdada1">
                             <p class="css-i7dt79 e1vfdada0">이메일을 통해 주문처리과정을 보내드립니다.</p>
                             <p class="css-i7dt79 e1vfdada0">정보 변경은 마이컬리 &gt; 개인정보 수정 메뉴에서 가능합니다.</p>
@@ -79,14 +63,14 @@
                     </div>
                 </div>
             </div>
-            <div id="shipping-container">
+            <div id="shipping-container" th:object="${member}">
                 <div class="section_divider">
                     <h3 class="order_subtitle">배송 정보</h3>
                 </div>
                 <div class="delivery_info">
                     <div class="info_padding"><span class="info_subtitle">배송지</span>
                         <div class="info_content">
-                            <p class="address">서울 성동구 고산자로6길 20 (무학빌라)</p>
+                            <p class="address"><span th:text="*{addressVO.addressMain}"></span> <span th:text="*{addressVO.addressDetail}"></span></p>
                             <!-- <div class="address_specify">
                                 <label for="receiver-name" class="input_title">상세주소</label><span
                                     class="must">*</span>
@@ -102,19 +86,25 @@
                         <div class="info_content">
                             <div class="delivery_details_content"><label for="receiver-name" class="input_title">받으실
                                 분</label><span class="must">*</span>
-                                <div height="44" class="input_box"><input data-testid="input-box" id="receiver-name"
-                                                                          name="name" placeholder="이름을 입력해 주세요"
-                                                                          type="text" required="" height="44"
-                                                                          class="delivery_details_input" value=""></div>
+                                <div height="44" class="input_box">
+                                    <span th:text="*{addressVO.addressReceivePerson}"></span>
+<!--                                    <input data-testid="input-box" id="receiver-name"-->
+<!--                                                                          name="name" placeholder="이름을 입력해 주세요"-->
+<!--                                                                          type="text" required="" height="44"-->
+<!--                                                                          class="delivery_details_input" value="">-->
+                                </div>
                             </div>
                             <div class="delivery_details_content"><label for="receiver-phone"
                                                                          class="input_title">휴대폰</label><span
                                     class="must">*</span>
-                                <div height="44" class="input_box"><input data-testid="input-box"
-                                                                          id="receiver-phone" name="phone"
-                                                                          placeholder="숫자만 입력해 주세요" type="tel"
-                                                                          required="" height="44"
-                                                                          class="delivery_details_input" value=""></div>
+                                <div height="44" class="input_box">
+                                    <span th:text="*{addressVO.addressReceivePhoneNumber}"></span>
+<!--                                    <input data-testid="input-box"-->
+<!--                                                                          id="receiver-phone" name="phone"-->
+<!--                                                                          placeholder="숫자만 입력해 주세요" type="tel"-->
+<!--                                                                          required="" height="44"-->
+<!--                                                                          class="delivery_details_input" value="">-->
+                                </div>
                             </div>
                             <div>
                                 <label class="delivery_place_content">받으실 장소
@@ -175,7 +165,7 @@
                                     <span class="button_font">모두사용</span>
                                 </button>
                             </div>
-                            <div class="available_point">사용가능 적립금 <strong class="point">0</strong>원</div>
+                            <div class="available_point">사용가능 적립금 <strong class="point" th:text="${point}"></strong>원</div>
                             <div class="css-qubry4 ezr038b1">
                                 <p class="css-986r2u ezr038b0">적립금 내역: 마이페이지 &gt; 적립금</p>
                             </div>
@@ -221,8 +211,10 @@
                         <div class="css-hdnk73 e12lli9y0">
                             <div class="css-11quaim eahaaoi10">
                                 <div class="css-yct5co eahaaoi9">주문금액</div>
-                                <div><span class="css-2pg1ps eahaaoi8"><span
-                                        class="css-rfpchb eahaaoi1"></span>18,220</span><span
+                                <div>
+                                    <span class="css-2pg1ps eahaaoi8">
+                                        <span
+                                        class="css-rfpchb eahaaoi1"></span></span><span
                                         class="css-vu318a eahaaoi6">원</span></div>
                             </div>
                             <div class="css-1d81lpa eahaaoi7">

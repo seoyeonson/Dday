@@ -42,22 +42,9 @@
 				]]>
 		GROUP BY MEMBER_ID, MEMBER_NUMBER, MEMBER_NAME,MEMBER_SIGNUP_DATE
 		ORDER BY MEMBER_NUMBER ASC
-	<!--
-	group by , 이름-아이디-회원번호
-	POINT_PRICE -> sum 함수
-	left조인,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-	inner 조인은 테이블 간에 on으로 같은 컬럼이 있을 경우만 가져온다.
-	left조인은 테이블 left거를 기준으로 가져온다
-
-	inner 조인은 각 pk 값에 해당하는 값들만 들고오는데
-	left  조인은 pk값에 해당하는 값 + 이외에 값들도 다 들고온다.
-
-	-->
-
-
 </select>
 
-	<select id ="selectAllBy" parameterType="String" resultType="managerDTO">
+	<select id ="selectAllBy"  resultType="managerDTO">
         SELECT DISTINCT M.MEMBER_NUMBER
 	    , M.MEMBER_NAME
 	    , M.MEMBER_ID
@@ -66,11 +53,11 @@
 	    , O.ORDER_NUMBER
 	    , O.ORDER_TOTAL_AMOUNT
 	    FROM (TBL_MEMBER M
-	    INNER JOIN TBL_POINT P
+	    LEFT JOIN TBL_POINT P
 		ON M.MEMBER_NUMBER = P.MEMBER_NUMBER
-	    INNER JOIN TBL_ORDER O
+	    LEFT JOIN TBL_ORDER O
 		ON M.MEMBER_NUMBER = O.MEMBER_NUMBER)
-		WHERE M.MEMBER_ID LIKE '%' || #{memberId} || '%' OR M.MEMBER_NAME LIKE '%' || #{memberId} || '%'
+		WHERE M.MEMBER_ID LIKE CONCAT('%', CONCAT(#{keyword}, '%')) OR M.MEMBER_NAME LIKE CONCAT('%', CONCAT(#{keyword}, '%'))
     </select>
 
 	<select id="selectMemberDetail" resultType="memberVO">
@@ -82,7 +69,6 @@
   	MEMBER_EMAIL,
   	MEMBER_PHONE_NUMBER,
   	MEMBER_GENDER,
-  	MEMBER_BIRTH,
  	MEMBER_SIGNUP_DATE,
   	MEMBER_TYPE,
   	MEMBER_STATUS

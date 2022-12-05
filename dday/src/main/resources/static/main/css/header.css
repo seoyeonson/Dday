@@ -40,8 +40,8 @@ button {
 
 
 header .logo img {
-    width: 82px;
-    height: 42px;
+    width: auto;
+    height: 50px;
 }
 
 header .header.drop {
@@ -220,15 +220,15 @@ header .searchbar .loginbar {
     -webkit-box-pack: justify;
     justify-content: space-between;
     position: absolute;
-    left: 325px;
+    left: 241px;
     top: -55px;
-    width: 400px;
+    width: 594px;
     height: 48px;
     padding-left: 14px;
     border: 1px solid #ff4500;
     border-radius: 6px;
     background-color: rgb(255, 255, 255);
-    box-shadow: rgb(247, 247, 247) 0px 0px 0px 1px inset;
+    box-shadow: rgb(247 247 247) 0px 0px 0px 1px inset;
 }
 
 .searchbar-title{

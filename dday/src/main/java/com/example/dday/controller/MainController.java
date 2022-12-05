@@ -1,6 +1,8 @@
 package com.example.dday.controller;
 
 import com.example.dday.domain.vo.MemberVO;
+import com.example.dday.service.MainService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,16 +19,29 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
+@RequiredArgsConstructor
 @RequestMapping("/")
 @Slf4j
 public class MainController {
+
+    private final MainService mainService;
+
     @GetMapping("/")
     public String main(Model model, HttpSession session){
         MemberVO memberVO = new MemberVO();
         memberVO.setMemberNumber(0L);
         session.setAttribute("member", Optional.ofNullable((MemberVO)session.getAttribute("member")).orElse(memberVO));
-        return "/index";
+        model.addAttribute("mainProduct", mainService.showMainProduct());
+        return "index";
    }
+
+//   @GetMapping("/")
+//    public void selectAll(Model model) {
+//        log.info("메인들어옴");
+//        model.addAttribute("mainProduct", mainService.showMainProduct());
+//   }
+
+
 }
 
 
