@@ -75,4 +75,16 @@ public class CartController {
     @GetMapping("/cartEmpty")
     public void cartEmpty(){}
 
+    // 카트 담기
+    @ResponseBody
+    @RequestMapping(value = "/addCart", method = RequestMethod.POST)
+    public void addCart(CartVO cartVO, HttpSession session){
+
+        MemberVO memberVO = ((MemberVO)session.getAttribute("member"));
+        cartVO.setMemberNumber((memberVO.getMemberNumber()));
+
+        cartService.save(cartVO);
+
+    }
+
 }

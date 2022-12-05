@@ -111,63 +111,63 @@
 <!--            </div>-->
 <!--        </div>-->
         <!--modal-->
-        <form id="modalForm">
-            <div class="modalContainer" >
-                <div class="modalBox">
-                    <div class="modal">
-                        <div class="modalBody">
-                            <div class="modalWrapper">
-                                <div class="modalContent">
-                                    <input type="hidden" name="productNumber">
-                                    <div class="modalProductName">
-                                        <span>[KF365] 양념 소불고기 1kg(냉장)</span>
-                                    </div>
+    <form id="modalForm">
+        <div class="modalContainer" >
+            <div class="modalBox">
+                <div class="modal">
+                    <div class="modalBody">
+                        <div class="modalWrapper">
+                            <div class="modalContent">
+                                <input type="hidden" name="productNumber">
+                                <div class="modalProductName">
+                                    <span></span>
                                 </div>
-                                <div class="priceAndCount">
-                                    <div>
-                                        <span class="discountBox">17,590원</span>
-                                        <span class="priceBox">18,990원</span>
-                                    </div>
-                                    <div class="product_cnt_box">
-                                        <button type="button" class="minus"></button>
-                                        <div class="cnt">1</div>
-                                        <button type="button" class="plus"></button>
-                                    </div>
+                            </div>
+                            <div class="priceAndCount">
+                                <div>
+                                    <span class="discountBox"></span>
+                                    <span class="priceBox"></span>
                                 </div>
-                                <div class="totalPriceBox">
-                                    <div class="totalPriceInner">
-                                        <div class="totalLine">
-                                            <p>
-                                                합계
-                                            </p>
-                                            <div>
-                                                <span class="changePrice">17,590</span>
-                                                <span class="totalWon">원</span>
-                                            </div>
+                                <div class="product_cnt_box">
+                                    <button type="button" class="minus"></button>
+                                    <div class="cnt" id="cartCount">1</div>
+                                    <button type="button" class="plus"></button>
+                                </div>
+                            </div>
+                            <div class="totalPriceBox">
+                                <div class="totalPriceInner">
+                                    <div class="totalLine">
+                                        <p>
+                                            합계
+                                        </p>
+                                        <div>
+                                            <span class="changePrice"></span>
+                                            <span class="totalWon">원</span>
                                         </div>
                                     </div>
-                                    <div class="pointBox">
-                                        <span class="pointText">적립</span>
-                                        <span class="pointCalText">구매 시
+                                </div>
+                                <div class="pointBox">
+                                    <span class="pointText">적립</span>
+                                    <span class="pointCalText">구매 시
                                   <span class="realPoint">5% 적립
                                   </span>
                               </span>
-                                    </div>
                                 </div>
-                                <div class="modalButtonBox">
-                                    <button class="modalCancelButton" type="button">
-                                        <span class="modalButtonText">취소</span>
-                                    </button>
-                                    <button type="button" class="modalOkButton">
-                                        <span class="modalButtonText">장바구니 담기</span>
-                                    </button>
-                                </div>
+                            </div>
+                            <div class="modalButtonBox">
+                                <button class="modalCancelButton" type="button">
+                                    <span class="modalButtonText">취소</span>
+                                </button>
+                                <button type="button" class="modalOkButton addCart_btn">
+                                    <span class="modalButtonText">장바구니 담기</span>
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </form>
+        </div>
+    </form>
         <!--modal end-->
     <!--푸터-->
     <footer th:replace="main/footer.html" :: f></footer>
@@ -175,6 +175,7 @@
 </html>
 <script src="/main/js/header.js"></script>
 <script src="/member/js/productLike.js"></script>
+<script src="/cart/js/cart.js"></script>
 <script>
     // 천단위 콤마 없애고 숫자로 변경
     var calcproductPrice;
@@ -258,6 +259,9 @@
 
         $("div.likeGoods").html(text);
     }
+
+
+
 </script>
 
                 

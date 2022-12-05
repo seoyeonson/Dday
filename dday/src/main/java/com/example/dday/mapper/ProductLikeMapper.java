@@ -13,4 +13,5 @@ public interface ProductLikeMapper {
     public List<ProductVO> selectAll(Long memberNumber);
     public int getTotal(Long memberNumber);
     public void delete(Long productNumber, Long memberNumber);
+    public void insert(ProductLikeVO productLikeVO);
 }

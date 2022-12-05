@@ -17,4 +17,9 @@
         DELETE FROM TBL_PRODUCT_LIKE
         WHERE PRODUCT_NUMBER=#{productNumber} AND MEMBER_NUMBER=#{memberNumber}
     </delete>
+
+    <insert id="insert">
+        INSERT INTO TBL_PRODUCT_LIKE(MEMBER_NUMBER, PRODUCT_NUMBER)
+		VALUES(#{memberNumber}, #{productNumber})
+    </insert>
 </mapper>

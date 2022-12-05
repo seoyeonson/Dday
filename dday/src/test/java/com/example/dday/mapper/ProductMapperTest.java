@@ -23,7 +23,7 @@ public class ProductMapperTest {
     @Test
     public void insertTodayTest() {
         ProductVO productVO = new ProductVO();
-        productVO.create2("당근", "채소", 5000L,8L,"20221129","20221205", "완숙이에요","아삭한 당근이에요!", "썸네일","본문이미지", "20221128", "2022-11-30", 70L);
+        productVO.create2("당근", "채소", 5000L,8L,"20221129","20221205", "완숙이에요","아삭한 당근이에요!", "썸네일","본문이미지", "20221128", "20221205", 70L);
         productMapper.insert(productVO);
     }
 

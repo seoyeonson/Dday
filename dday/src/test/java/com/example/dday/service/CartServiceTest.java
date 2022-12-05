@@ -45,7 +45,7 @@ class CartServiceTest {
         CartVO cartVO = new CartVO();
         cartVO.setCartCount(2);
         cartVO.setMemberNumber(26L);
-        cartVO.setProductNumber(3L);
+        cartVO.setProductNumber(100L);
         cartService.save(cartVO);
     }
 
