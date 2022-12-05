@@ -13,11 +13,11 @@
             #{item}
             </foreach>
         </if>
-        <if test= 'highlow != null and highlow == "high"'>
+        <if test= 'highlow != null and highlow == "higher"'>
             ORDER BY
             PRODUCT_PRICE DESC
         </if>
-        <if test= 'highlow != null and highlow == "low"'>
+        <if test= 'highlow != null and highlow == "lower"'>
             ORDER BY
             PRODUCT_PRICE ASC
         </if>
