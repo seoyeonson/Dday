@@ -5,6 +5,7 @@ import com.example.dday.service.PartnerProductService;
 import com.example.dday.service.PartnerService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,6 +37,7 @@ import java.io.IOException;
 import java.util.List;
 
 @Slf4j
+@Configuration
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/partner/*")
@@ -103,6 +105,7 @@ public class PartnerController {
 
     @PostMapping("/partner_registration")
     public RedirectView productNew(PartnerProductDTO partnerProductDTO, RedirectAttributes redirectAttributes) {
+        log.info("partnerProductDTO: " + partnerProductDTO.getProductMainImageName());
         partnerProductService.register(partnerProductDTO);
         redirectAttributes.addFlashAttribute("productNumber", partnerProductDTO.getProductNumber());
         return new RedirectView("/partner/partner_management");
@@ -115,6 +118,7 @@ public class PartnerController {
         String uploadPath = getUploadPath();
         String uploadFileName = "";
         String productThumbnailName = rootPath + "/";
+        String productName = "/";
 
         File uploadFullPath = new File(rootPath, uploadPath);
         if(!uploadFullPath.exists()){uploadFullPath.mkdirs();}
@@ -123,15 +127,25 @@ public class PartnerController {
         String fileName = upload.getOriginalFilename();
         uploadFileName = uuid.toString() + "_" + fileName;
 
-        productThumbnailName += uploadFileName;
 
         File fullPath = new File(uploadFullPath, uploadFileName);
         upload.transferTo(fullPath);
+        log.info("uploadPath: "+uploadPath);
 
-        return productThumbnailName;
+        productThumbnailName += uploadPath;
+        productThumbnailName += "/";
+        productThumbnailName += uploadFileName;
+        log.info("productName: " + productThumbnailName);
+
+        productName += uploadPath;
+        productName += "/";
+        productName += uploadFileName;
+
+        return productName;
     }
 
     @GetMapping("/display")
+    @ResponseBody
     public byte[] display(String fileName) throws IOException{
         return FileCopyUtils.copyToByteArray(new File("C:/upload", fileName));
     }
@@ -144,6 +158,8 @@ public class PartnerController {
     @GetMapping("/partner_shipping")
     public void partner_shipping() {
     }
+
+
 
     //    상품 정보 수정하기
     @PostMapping("/partnerProductChange")
