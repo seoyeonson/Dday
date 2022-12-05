@@ -127,11 +127,17 @@ function showList(result){
         text += '</li>';
         item_count += 1;
     });
-
+    if(productSum == 0){
+        $("#deliveryFee").text(0);
+        $("span.point").text(0)
+        $("#totalPrice").text(0);
+    } else {
+        $("#deliveryFee").text(Number(3000).toLocaleString('ko-KR'));
+        $("span.point").text(((productSum+3000) * 0.05).toLocaleString('ko-KR'))
+        $("#totalPrice").text((productSum+3000).toLocaleString('ko-KR'));
+    }
     $("span#productSum").text(productSum.toLocaleString('ko-KR'));
-    $("#totalPrice").text((productSum+3000).toLocaleString('ko-KR'));
     // $(".totalCnt").text(item_count);
-    $("span.point").text(((productSum+3000) * 0.05).toLocaleString('ko-KR'))
     $("ul#productAll").html(text);
 
     $(".item_count").text("(" + itemcheck + "/" + item_count + ")");
@@ -383,3 +389,11 @@ $('ul#productAll').on('click', '.quantity_minus', function quantityMinusFunction
 // $(document).ready(function () {
 //     totalPriceFunction()
 // });
+
+$(".order_button").on("click", function(){
+    if($("span#productSum").text() != 0){
+        location.href="/order/order";
+    } else {
+        alert("상품을 추가헤주세요.");
+    }
+});
