@@ -22,8 +22,8 @@ public class ManagerDAO {
     }
 
     //회원검색
-    public List<ManagerDTO> findAllBy(ManagerDTO managerDTO, Criteria criteria) throws Exception{
-        return  managerMapper.selectAllBy("Manager.findAllby", criteria);
+    public List<ManagerDTO> findAllBy(String keyword, Criteria criteria) {
+        return  managerMapper.selectAllBy(keyword, criteria);
     }
 
     //회원 상세조회

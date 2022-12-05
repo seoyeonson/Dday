@@ -41,22 +41,23 @@
             <!-- 검색 조건 시작 -->
 
             <div class="input_form_wrapper">
-                <form name="search-form">
+<!--                <form name="search-form">-->
                     <div class="fasfa">
                         <img src="/manager/images/search.png" style="width: 20px;height: 20px; position: absolute; left: 20px; top: 79px;">
                         <img src="/manager/images/keyboard.png" style="width: 26px; height: 26px; position: absolute; left: 584px; top: 76px;">
                         <i class="fas fa-search"></i>
-                        <input class="searchWrap" type="text" placeholder="아이디 혹은 이름으로 검색해주세요." onkeypress="show_name(event)" style="font-size: 14px;">
+                        <input class="searchWrap" type="text" placeholder="아이디 혹은 이름으로 검색해주세요."
+                               onkeypress="show_name(event)" style="font-size: 14px;" name="keyword" id="keyword">
                         <i class="fas fa-keyboard"></i>
-                        <span style="color:#4f86ec"><i class="fas fa-microphone" ></i>
+                        <span style="color:#4f86ec"><i class="fas fa-microphone" ></i></span>
                     </div>
-                </form>
+<!--                </form>-->
             </div>
 
             <div class="result_wrapper">
 
 
-                <table class="result_table">
+                <table class="result_table" id="result_table">
                     <thead>
                     <tr>
                         <th scope="cols">회원번호</th>
@@ -70,7 +71,7 @@
 
                     </tr>
                     </thead>
-                    <tr:block id="keyword" th:each="memberInfo:${memberInfo}">
+                    <tr:block  th:each="memberInfo:${memberInfo}">
 
                         <tr th:object="${memberInfo}">
                             <th th:text="*{memberNumber}" scope="row">유저1</th>
@@ -111,72 +112,99 @@
 
             </div>
         </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="/manager/js/manager.js"></script>
+        <script th:inline="javascript">
 
+
+
+            let memberNumber = [[${memberNumber}]];
+            let $pages = $("a.changePage");
+            let queryString = [[${pagination.criteria.queryString}]];
+
+            const $read =$("a.read");
+
+            $read.on("click", function(e){
+                e.preventDefault();
+                location.href = "/manager/memberView" + queryString + "&memberNumber=" + $(this).attr("href");
+            });
+
+
+            $pages.on("click", function(e){
+                e.preventDefault();
+                $(document.pageForm.page).val($(this).attr("href"));
+                document.pageForm.submit();
+            });
+
+            function show_name(e) {
+                // e.preventDefault();
+                if (e.keyCode != 13) {
+                    return;
+                }
+                console.log("들어옴");
+                let keyword = $("input.searchWrap").val();
+                console.log(keyword);
+                let jsonstring = "";
+                jsonstring = JSON.stringify(keyword);
+                let keywordstring = "";
+                keywordstring = jsonstring.replaceAll('"','');
+                console.log(keywordstring);
+                let detailLink = "/manager/memberView" + queryString + "&memberNumber=";
+
+                $.ajax({
+                    type: 'post',
+                    url: "/manager/memberAllBy",
+                    contentType: "application/json; charset=utf-8",
+                    // data: $("form[name=search-form]").serialize(),
+                    data: keywordstring,
+                    success: function (result) {
+                        var str = "";
+                        if (result.length >= 1) {
+                            str +=  '<thead>';
+                            str +=   ' <tr>';
+                            str +=  ' <th scope="cols">회원번호</th>';
+                            str +=  '<th scope="cols">회원명</th>';
+                            str +=  '<th scope="cols">아이디</th>';
+                            str +=  '<th scope="cols">가입일자</th>';
+                            str +=  '<th scope="cols">적립금</th>';
+                            str += ' <th scope="cols">주문상품건수</th>';
+                            str +=  '<th scope="cols">주문금액</th>';
+                            str +=  '<th scope="cols">회원상세보기</th>';
+                            str += ' </tr>';
+                            str +=  '</thead>';
+                            result.forEach(function (item) {
+
+                                str += '<tbody>';
+                                str += '<tr id="keyword2">';
+                                str += '<tr>';
+                                str += "<th scope='row'>" + item.memberNumber + "</th>";
+                                str += "<td>" + item.memberName + "</td>";
+                                str += "<td>" + item.memberId + "</td>";
+                                str += "<td>" + item.memberSignupDate + "</td>";
+                                str += "<td>" + item.pointPrice + "</td>";
+                                str += "<td>" + item.orderNumber + "</td>";
+                                str += "<td>" + item.orderTotalAmount + "</td>";
+                                str += "<td>"+"<a class='read' style='color: #2979ff' href='" + detailLink +item.memberNumber+"'>"+"회원상세보기"+"</a>";
+                                str += "</tr>";
+                                str += "</tr>";
+                                str += "</tbody>";
+                                $('#result_table').html(str);
+                                console.log("e나감");
+                            })
+                             }
+
+
+                        },
+                        error:function(request, status, error) {
+                            console.log("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+                        }
+
+                    })
+            }
+
+
+        </script>
     </main>
 </body>
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="/manager/js/manager.js"></script>
-<script th:inline="javascript">
 
-    let memberNumber = [[${memberNumber}]];
-    let $pages = $("a.changePage");
-    let queryString = [[${pagination.criteria.queryString}]];
-
-    const $read =$("a.read");
-
-    $read.on("click", function(e){
-        e.preventDefault();
-        location.href = "/manager/memberView" + queryString + "&memberNumber=" + $(this).attr("href");
-    });
-
-
-    $pages.on("click", function(e){
-        e.preventDefault();
-        $(document.pageForm.page).val($(this).attr("href"));
-        document.pageForm.submit();
-    });
-
-    function show_name(e) {
-        // e.preventDefault();
-        if(e.keyCode == 13){
-            alert("dd");
-            console.log("들어옴");
-            let keyword = $("input.searchWrap").val()
-            console.log(memberId);
-            $.ajax({
-                type: 'get',
-                url: "/manager/memberAllBy",
-                data: $("form[name=search-form]").serialize(),
-                success: function (result) {
-                    if(result.length>=1) {
-                       result.forEach(function (item) {
-                           str =   '<tbody>';
-                           str +=   '<tr id="keyword">';
-                           str +=   '<tr>';
-                           str +=   "<thscope='row'>"+item.memberNumber+"</th>";
-                           str +=   "<td>"+item.memberName+"</td>";
-                           str +=   "<td>"+item.memberId+"</td>";
-                           str +=   "<td>"+item.memberEmail+"</td>";
-                           str +=   "<td>"+item.pointPrice+"</td>";
-                           str +=   "<td>"+item.orderNumber+"</td>";
-                           str +=   "<td>"+item.orderTotalAmount+"</td>";
-                           str +=   "<td>""<a class='read' style='color: #2979ff' + item.memberNumber +">"+회원상세보기+</a></td>";
-                           str +=   "</tr>";
-                           str +=   "</tr>";
-                           str +=   "</tbody>";
-                           $('#boardtable').html(str);
-                       })
-                    }
-                },
-                error:function(request,status,error){
-                    alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-                }
-
-            })
-
-        }
-    }
-
-
-</script>
 </html>
