@@ -193,8 +193,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="product_info"><span class="delivery_info_section"><span
-                                    class="delivery_info">샛별배송</span></span><span class="product_name" th:text="${product.productName}"></span>
+                            <div class="product_info"><span class="delivery_info_section">
+                                <span class="delivery_info">샛별배송</span></span>
+                                <a th:href="@{/product/categoryDetail(productNumber=${product.productNumber})}">
+                                <span class="product_name" th:text="${product.productName}"></span>
+                                </a>
                                 <div class="price_section">
                                     <div></div>
                                     <span class="sales-price" th:text="${#numbers.formatInteger(product.productPrice,1,'COMMA')+'원'}"></span>
