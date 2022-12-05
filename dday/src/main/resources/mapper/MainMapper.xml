@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dday.mapper.ManagerMapper">
+
+    <select id ="selectProduct" resultType="productVO">
+		SELECT
+		PRODUCT_NAME,
+		PRODUCT_PRICE,
+		PRODUCT_THUMBNAIL_NAME,
+		FROM TBL_PRODUCT
+	</select>
+
+
+</mapper>

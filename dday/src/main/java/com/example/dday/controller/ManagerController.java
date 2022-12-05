@@ -40,8 +40,16 @@ public class ManagerController {
     // 이 코드가 있어야 밑에서 managerService를 인식해서 Service의 메소드를 쓸 수 있다.
     private final ManagerService managerService;
 
+    //로그인 페이지
+    @GetMapping("/managerLogin")
+    public void managerLogin() {
+
+    }
+
+
+    //    @GetMapping("/memberAll") 원래 이거임 ㅋ
     //회원 목록
-    @GetMapping("/memberAll")
+    @RequestMapping(value = "/memberAll", method = {RequestMethod.POST,RequestMethod.GET})
     public void memberAll(Criteria criteria, Model model) {
         if(criteria.getPage() == 0) {
             criteria.create(1,10);
@@ -51,6 +59,7 @@ public class ManagerController {
         model.addAttribute("pagination",new PageDTO().createPageDTO(criteria, managerService.getTotal()));
     }
 
+<<<<<<< Updated upstream
     // 조건 회원 목록(아디, 이름)
 //    @GetMapping("/memberAllBy")
 //    @ResponseBody
@@ -61,6 +70,24 @@ public class ManagerController {
 //        managerDTO.setKeyword(keyword);
 //        return managerService.showAllBy(managerDTO, criteria);
 //    }
+=======
+     //조건 회원 목록(아디, 이름)
+    @PostMapping("/memberAllBy")
+    @ResponseBody
+//    public void memberAllBy(@RequestBody String keyword, Model model, Criteria criteria){
+//        log.info("asfas"+keyword);
+//        ManagerDTO managerDTO = new ManagerDTO();
+//        managerDTO.setKeyword(keyword);
+//         managerService.showAllBy(managerDTO, criteria);
+//    }
+
+    public List<ManagerDTO> memberAllBy(@RequestBody String keyword, Model model, Criteria criteria) {
+        log.info(keyword);
+        ManagerDTO managerDTO = new ManagerDTO();
+        managerDTO.setKeyword(keyword);
+        return managerService.showAllBy(keyword, criteria);
+    }
+>>>>>>> Stashed changes
 
     //탈퇴회원페이지
     @GetMapping("/updateMemberStatus")

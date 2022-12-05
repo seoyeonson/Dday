@@ -15,7 +15,7 @@ public interface ManagerMapper {
  public List<ManagerDTO> selectAll(Criteria criteria);
 
  //목록 조회
- public List<ManagerDTO> selectAllBy(String memberId, Criteria criteria);
+ public List<ManagerDTO> selectAllBy(String keyword, Criteria criteria);
 
  //회원 상세 조회
  public MemberVO selectMemberDetail(Long memberNumber);
