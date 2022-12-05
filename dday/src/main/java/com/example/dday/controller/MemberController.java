@@ -70,7 +70,10 @@ public class MemberController {
     @ResponseBody
     public MemberVO login(MemberVO memberVO, HttpSession session){
         memberVO = memberService.login(memberVO);
-        session.setAttribute("member", memberVO);
+        log.info("memberVO: " + memberVO);
+        if(memberVO.getMemberNumber() != null){
+            session.setAttribute("member", memberVO);
+        }
         return memberVO;
     }
 
