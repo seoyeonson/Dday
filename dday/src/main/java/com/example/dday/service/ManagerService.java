@@ -22,21 +22,21 @@ public class ManagerService {
         return managerDAO.findAll(criteria);
     }
 
-<<<<<<< Updated upstream
+
     //검색
 //    public List<ManagerDTO> showAllBy(ManagerDTO managerDTO Criteria criteria) throws Exception{
 //        return managerDAO.findAllBy(managerDTO, criteria);
 //
 //    }
 
-=======
+
     //멤버 검색
     public List<ManagerDTO> showAllBy(String keyword, Criteria criteria) {
         return managerDAO.findAllBy(keyword, criteria);
 
     }
     //멤버 상세보기
->>>>>>> Stashed changes
+
     public MemberVO showMemberDetail(Long memberNumber) {
         return managerDAO.findMemberDetail(memberNumber);
     }
