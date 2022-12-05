@@ -68,13 +68,14 @@
                             <li class="registFormLi">
                                 <span class="colName col01">상품명</span>
                                 <input type="text" class="registName" placeholder="제품명을 입력해주세요" th:field="*{productName}">
-                                <input type="checkbox" name="당일판매제품" id="checkToday1" >
+                                <input type="checkbox" name="당일판매제품" id="checkToday1" value="">
+                                <input type="hidden" th:field="*{productTodaySale}" th:value="2022-12-05">
                                 <label for="checkToday1">당일 판매 여부</label>
                             </li>
                             <li class="registFormLi">
                                 <span class="colName col02">카테고리</span>
                                 <select th:field="*{productCategory}" th:value="*{productCategory}" name="" id="" class="categorySelectBox">
-                                    <option>상품 분류 선택</option>
+                                    <option th:value="00">상품 분류 선택</option>
                                     <option th:value="01">채소</option>
                                     <option th:value="02">과일.견과.쌀</option>
                                     <option th:value="03">수산.해산.건어물</option>
@@ -89,31 +90,31 @@
                             </li>
                             <li class="registFormLi">
                                 <span class="colName col03">가격</span>
-                                <input type="text" class="registPrice" placeholder="판매가격을 입력해주세요" th:field="">
+                                <input type="text" class="registPrice" placeholder="판매가격을 입력해주세요" th:field="*{productPrice}">
                             </li>
                             <li class="registFormLi">
                                 <span class="colName discountRate">할인율(%)</span>
-                                <input type="number" class="registDiscountRate" placeholder="할인율을 입력해주세요">
+                                <input type="number" class="registDiscountRate" placeholder="할인율을 입력해주세요" th:field="*{productSalePercent}">
                             </li>
                             <li class="registFormLi">
                                 <span class="colName stock">재고</span>
-                                <input type="text" class="registStock" placeholder="판매가능 수량을 입력해주세요">
+                                <input type="text" class="registStock" placeholder="판매가능 수량을 입력해주세요" th:field="*{productStock}">
                             </li>
                             <li class="registFormLi">
                                     <span class="colName col04">제조일자</span>
-                                    <input type="date" name="" id="">
+                                    <input type="date" name="" id="" th:field="*{productManufactureDate}">
                                 </li>
                                 <li class="registFormLi">
                                 <span class="colName col05">유통기한</span>
-                                <input type="date" name="" id="">
+                                <input type="date" name="" id="" th:field="*{productExpirationDate}">
                             </li>
                             <li class="registFormLi">
                                 <span class="colName col06_1">한줄설명</span>
-                                <input type="text" class="simpleContent" placeholder="미리보기에 표시될 상품의 한줄 설명을 작성해주세요">
+                                <input type="text" class="simpleContent" placeholder="미리보기에 표시될 상품의 한줄 설명을 작성해주세요" th:field="*{productOnelineInformation}">
                             </li>
                             <li class="registFormLi detailList">
                                 <span class="colName col06">상세설명</span>
-                                <textarea rows="10" cols="10" class="detailContents"></textarea>
+                                <textarea rows="10" cols="10" class="detailContents" th:field="*{productInformation}"></textarea>
                             </li>
                             <li class="registFormLi">
                                 <span class="colName col07">제품사진</span>
@@ -127,46 +128,46 @@
                                   <input type="file" id="inputFileContent" style="display:none;"> 
                             </li>
                         </ul>
-                        <input type="button" class="submitButton" value="등록" onclick="alert('제품이 등록되었습니다.')">
+                        <input type="submit" class="submitButton" value="등록" onclick="alert('제품이 등록되었습니다.')">
                     </form>
-                    <form class="registrationForm todayRegistForm">
+                    <form class="registrationForm todayRegistForm" method="post" th:action="@{/partner/partner_registration}" th:object="${product}" enctype="multipart/form-data">
                         <div class="registTitle">
                             <h3>제품 등록</h3>
                         </div>
                         <ul>
                             <li class="registFormLi">
                                 <span class="colName col01">상품명</span>
-                                <input type="text" class="registName" placeholder="제품명을 입력해주세요">
+                                <input type="text" class="registName" placeholder="제품명을 입력해주세요" th:field="*{productName}">
                                 <input type="checkbox" name="당일판매제품" id="checkToday2" checked="on">
                                 <label for="checkToday2">당일 판매 여부</label>
                             </li>
                             <li class="registFormLi">
                                 <span class="colName col02">카테고리</span>
-                                <select name="" id="">
-                                    <option>상품 분류 선택</option>
-                                    <option value="01">채소</option>
-                                    <option value="02">과일.견과.쌀</option>
-                                    <option value="03">수산.해산.건어물</option>
-                                    <option value="04">정육.계란</option>
-                                    <option value="05">국.반찬.메인요리</option>
-                                    <option value="06">샐러드.간편식</option>
-                                    <option value="07">면.양념.오일</option>
-                                    <option value="08">생수.음료.우유.커피</option>
-                                    <option value="09">간식.과자.떡</option>
-                                    <option value="10">베이커리.치즈.델리</option>
+                                <select th:field="*{productCategory}" th:value="*{productCategory}" name="" id="" class="categorySelectBox">
+                                    <option th:value="00">상품 분류 선택</option>
+                                    <option th:value="01">채소</option>
+                                    <option th:value="02">과일.견과.쌀</option>
+                                    <option th:value="03">수산.해산.건어물</option>
+                                    <option th:value="04">정육.계란</option>
+                                    <option th:value="05">국.반찬.메인요리</option>
+                                    <option th:value="06">샐러드.간편식</option>
+                                    <option th:value="07">면.양념.오일</option>
+                                    <option th:value="08">생수.음료.우유.커피</option>
+                                    <option th:value="09">간식.과자.떡</option>
+                                    <option th:value="10">베이커리.치즈.델리</option>
                                 </select>
                             </li>
                             <li class="registFormLi">
                                 <span class="colName col03">가격</span>
-                                <input type="text" class="registPrice" placeholder="판매가격을 입력해주세요">
+                                <input type="text" class="registPrice" placeholder="판매가격을 입력해주세요" th:field="*{productPrice}">
                             </li>
                             <li class="registFormLi">
                                 <span class="colName discountRate">할인율(%)</span>
-                                    <input type="number" class="registDiscountRate" placeholder="할인율을 입력해주세요">
+                                    <input type="text" class="registDiscountRate" placeholder="할인율을 입력해주세요" th:field="*{productSalePercent}">
                             </li>
                             <li class="registFormLi">
                                 <span class="colName closingTime">영업시간</span>
-                                <input type="time" class="registClosingTime"  max="24:00:00">
+                                <input type="time" class="registClosingTime"  max="24:00:00" th:field="*{productOpenHours}">
                             </li>
                             <!--<li class="registFormLi addressList">
                                 <span class="colName address">가게주소</span>
@@ -186,11 +187,11 @@
                             </li> -->
                             <li class="registFormLi simpleContentList">
                                 <span class="colName col06_1">한줄설명</span>
-                                <input type="text" class="simpleContent2" placeholder="미리보기에 표시될 상품의 한줄 설명을 작성해주세요">
+                                <input type="text" class="simpleContent2" placeholder="미리보기에 표시될 상품의 한줄 설명을 작성해주세요" th:field="*{productOnelineInformation}">
                             </li>
                             <li class="registFormLi detailList">
                                 <span class="colName col06_2">상세설명</span>
-                                <textarea rows="10" cols="10" class="detailContents2"></textarea>
+                                <textarea rows="10" cols="10" class="detailContents2" th:field="*{productInformation}"></textarea>
                             </li>
                             <li class="registFormLi photoList">
                                 <span class="colName col07_2">제품사진</span>
@@ -204,11 +205,9 @@
                                   <input type="file" id="inputFileContent" style="display:none;">
                             </li>
                         </ul>
-                        <input type="button" class="submitButton" value="등록" onclick="alert('제품이 등록되었습니다.')">
+                        <input type="submit" class="submitButton" value="등록" onclick="alert('제품이 등록되었습니다.')">
                     </form>
                 </div>
-
-
             </div>
         </div>
     </div>
@@ -216,7 +215,7 @@
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="/partner/js/partner.js"></script>
     <script th:inline="javascript">
-        let todaySale = [[${product.productTodaySale}]];
+        let todaySale = "";
         let today = new Date();
 
         let year = today.getFullYear();
@@ -224,25 +223,31 @@
         let day = ('0' + today.getDate()).slice(-2);
 
         let dateString = year + '-' + month  + '-' + day;
-
+        let [[${product.productTodaySale}]] = dateString;
+        console.log([[${product.productTodaySale}]]);
         $('input[type=checkbox][id=checkToday1]').change(function () {
             if ($(this).is(':checked')) {
                 todaySale = dateString;
+                console.log("dateString: " + dateString);
                 console.log("todaySale: " + todaySale);
             } else {
-
+                todaySale = "";
+                console.log("todaySale: " + todaySale);
+                console.log("dateString: " + dateString);
             }
         })
+
         $('input[type=checkbox][id=checkToday2]').change(function () {
             if ($(this).is(':checked')) {
                 todaySale = "";
                 console.log("todaySale: " + todaySale);
+                console.log("dateString: " + dateString);
             } else {
-
+                todaySale = dateString;
+                console.log("todaySale: " + todaySale);
+                console.log("dateString: " + dateString);
             }
         })
-
-
     </script>
 </body>
 </html>

@@ -99,17 +99,17 @@
                                     <p class="productModifyDate" th:text="*{productModifyDate}"></p>
                                 </td>
                                 <td>
-                                    <!--<a type="button" class="change" value="수정" th:href="*{productNumber}">
-                                        <input type="button" class="productChangeButton" value="수정">
-                                    </a>-->
-                                    <a type="button" class="change" value="수정"
-                                       th:href="@{/partner/partnerProductChange(productNumber=${product.productNumber})}">
+                                    <a type="button" class="change" value="수정" th:href="*{productNumber}">
                                         <input type="button" class="productChangeButton" value="수정">
                                     </a>
+                                    <!--<a type="button" class="change" value="수정"
+                                       th:href="@{/partner/partnerProductChange(productNumber=${product.productNumber})}">
+                                        <input type="button" class="productChangeButton" value="수정">
+                                    </a>-->
                                 </td>
                             </tr>
                         </th:block>
-                        <tr>
+                        <!--<tr>
                             <td>1</td>
                             <td><img src="" alt=""></td>
                             <td class="productName">[유통기한2022.12.29]루스타 영양강화 강력밀가루 20kg</td>
@@ -122,7 +122,7 @@
                             <td>
                                 <input type="button" class="productChangeButton" value="수정">
                             </td>
-                        </tr>
+                        </tr>-->
                         <!--<tr>
                             <td></td>
                             <td><img src="" alt=""></td>
@@ -134,9 +134,6 @@
                         </tr>-->
                         </tbody>
                     </table>
-                    <div class="btnContent">
-                        <div class="pagination" id="pagination">페이지 영역</div>
-                    </div>
                     <div th:object="${pagination}">
                         <div style="text-align: center" class="pagination">
                             <a class="changePage page_move" th:href="*{startPage - 1}" th:if="*{prev}">
@@ -167,7 +164,7 @@
                             <input type="hidden" th:field="*{amount}">
                         </form>
                     </div>
-                    <div class="pagination">
+                    <!--<div class="pagination">
                         <a class="page_move">
                             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAHCAQAAABwkq/rAAAAHUlEQVR42mNgAIPi/8X/kWkwA8SE0UQIMJAsCKMBBzk27fqtkcYAAAAASUVORK5CYII="
                                  alt="처음 페이지로 이동하기 아이콘">
@@ -194,7 +191,7 @@
                             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAHCAQAAABwkq/rAAAAIElEQVR42mMo/l/8n4GBgQFGQ5kgDowmQZCwAMImhDkAb0k27Zcisn8AAAAASUVORK5CYII="
                                  alt="마지막 페이지로 이동하기 아이콘">
                         </a>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </div>
@@ -204,11 +201,6 @@
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="/partner/js/partner.js"></script>
 <script th:inline="javascript">
-    /*    $('input.productChangeButton').on("click",function(){
-            $(location).attr('href', '/partner/partnerProductChange');
-        });*/
-
-    // let productNumber = [[${product.productNumber}]];
     let $pages = $("a.changePage");
     let queryString = [[${pagination.partnerCriteria.queryString}]];
     globalThis.page = 1;
