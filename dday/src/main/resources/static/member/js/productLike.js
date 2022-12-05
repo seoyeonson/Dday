@@ -118,10 +118,10 @@ $('button.minus').on('click',function(){
 /*
 * 장바구니 담기를 했거나 취소한 경우 수량 초기화 */
 
-$('button.modalOkButton').on('click', function(){
+$('button.addCart_btn').on('click', function(){
     $('div.modalContainer').hide();
+    addCart();
     countReset();
-    alert('장바구니에 상품이 추가되었습니다.');
 });
 
 $('button.modalCancelButton').on('click',function(){
@@ -129,6 +129,34 @@ $('button.modalCancelButton').on('click',function(){
     countReset();
 });
 /* ---------------------------------------- */
+
+
+
+function addCart(){
+    var productNumber = $("input#productNumber").val();
+    var cartCount = $("#cartCount").text();
+    console.log(productNumber);
+    console.log(cartCount);
+
+    var data = {
+        productNumber : productNumber,
+        cartCount : cartCount
+    };
+
+    $.ajax({
+        url : "/cart/addCart",
+        type : "post",
+        data : data,
+        success : function(result){
+            alert("장바구니에 상품이 담겼습니다");
+            $("#cartCount").text("1");
+        },
+        error : function(){
+            alert("로그인이 필요합니다");
+            location.href="/member/login";
+        }
+    });
+}
 
 // $("div.likeGoods").on('click', "button.heart_button", function(){
 //     console.log('클릭');

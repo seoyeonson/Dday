@@ -145,72 +145,18 @@
                     <div class="product_grid" >
                         <th:block th:each="product:${bests}">
                             <a class="read" th:href="@{/product/categoryDetail(productNumber=${product.productNumber})}">
+
                         <div class="product_content delivery_product_content" th:object="${product}">
                             <div>
                                 <div class="product_img_section">
 <!--                                    <img th:src="@{${item.getImgPath()}}">-->
                                     <img src="https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/1628558475434l0.jpg" alt="상품 이미지">
-                                    <div><button type="button" class="pickup inputCart"><img src="/search/images/cart.png" alt="장바구니 아이콘"></button></div>
-<!--                                    모달창-->
-                                    <div class="modalContainer" style="display: none";>
-                                        <div class="modalBox">
-                                            <div class="modal">
-                                                <div class="modalBody">
-                                                    <div class="modalWrapper">
-                                                        <div class="modalContent">
-                                                            <div class="modalProductName">
-                                                                <span th:text="*{productName}">[KF365] 양념 소불고기 1kg(냉장)</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="priceAndCount">
-                                                            <div>
-                          <span class="discountBox" th:text="*{productSalePrice}">
-                              17,590원
-                          </span>
-                                                                <span class="priceBox" th:text="*{productPrice}" >
-                              18,990원
-                          </span>
-                                                            </div>
-                                                            <div class="product_cnt_box">
-                                                                <button class="minus"></button>
-                                                                <div class="cnt">1</div>
-                                                                <button class="plus"></button>
-                                                            </div>
-                                                        </div>
-                                                        <div class="totalPriceBox">
-                                                            <div class="totalPriceInner">
-                                                                <div class="totalLine">
-                                                                    <p>
-                                                                        합계
-                                                                    </p>
-                                                                    <div>
-                                                                        <span class="changePrice" th:text="*{productSalePrice}">17,590</span>
-                                                                        <span class="totalWon">원</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="pointBox">
-                                                                <span class="pointText">적립</span>
-                                                                <span class="pointCalText">구매 시
-                                  <span class="realPoint">5% 적립
-                                  </span>
-                              </span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="modalButtonBox">
-                                                            <button class="modalCancelButton" type="button">
-                                                                <span class="modalButtonText">취소</span>
-                                                            </button>
-                                                            <button type="button" class="modalOkButton">
-                                                                <span class="modalButtonText">장바구니 담기</span>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--                            모달창 끝-->
+                                    <div><button type="button" class="pickup inputCart">
+                                        <input type="hidden" id="productNumber" th:value="${product.productNumber}">
+                                        <input type="hidden" id="productSalePrice" th:value="${product.productSalePrice}">
+                                        <input type="hidden" id="productName" th:value="${product.productName}">
+                                        <input type="hidden" id="productPrice" th:value="${product.productPrice}">
+                                        <img src="/search/images/cart.png" alt="장바구니 아이콘"></button></div>
 
                                 </div>
                             </div>
@@ -254,6 +200,64 @@
         </div>
     </div>
 </div>
+<form id="modalForm">
+    <div class="modalContainer" >
+        <div class="modalBox">
+            <div class="modal">
+                <div class="modalBody">
+                    <div class="modalWrapper">
+                        <div class="modalContent">
+                            <input type="hidden" name="productNumber">
+                            <div class="modalProductName">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="priceAndCount">
+                            <div>
+                                <span class="discountBox"></span>
+                                <span class="priceBox"></span>
+                            </div>
+                            <div class="product_cnt_box">
+                                <button type="button" class="minus"></button>
+                                <div class="cnt" id="cartCount">1</div>
+                                <button type="button" class="plus"></button>
+                            </div>
+                        </div>
+                        <div class="totalPriceBox">
+                            <div class="totalPriceInner">
+                                <div class="totalLine">
+                                    <p>
+                                        합계
+                                    </p>
+                                    <div>
+                                        <span class="changePrice"></span>
+                                        <span class="totalWon">원</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pointBox">
+                                <span class="pointText">적립</span>
+                                <span class="pointCalText">구매 시
+                                  <span class="realPoint">5% 적립
+                                  </span>
+                              </span>
+                            </div>
+                        </div>
+                        <div class="modalButtonBox">
+                            <button class="modalCancelButton" type="button">
+                                <span class="modalButtonText">취소</span>
+                            </button>
+                            <button type="button" class="modalOkButton addCart_btn">
+                                <span class="modalButtonText">장바구니 담기</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<!--modal end-->
 <!-- footer -->
 <footer th:replace="main/footer.html" :: f></footer>
 <!-- modal -->
@@ -262,7 +266,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script th:src="@{/main/js/header.js}"></script>
 <script th:src="@{/product/js/search.js}"></script>
-<script th:src="@{/product/js/category.js}"></script>
+<script th:src="@{/product/js/categoryModal.js}"></script>
+<script th:src="@{/cart/js/cart.js}"></script>
 <script th:inline="javascript">
     let productNumber = [[${productNumber}]];
     let $pages = $("a.changePage");
@@ -274,6 +279,8 @@
         $(document.pageForm.page).val($(this).attr("href"));
         document.pageForm.submit();
     });
+
+
 </script>
 
 </body>

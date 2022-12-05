@@ -34,8 +34,6 @@ $('button.heart_button').on('click', function(){
 function countUp(){
     var nowCount = $('div.cnt').text();
     var plusCount = (Number(nowCount)) + 1;
-    console.log(nowCount);
-    console.log(plusCount);
 
     $('div.cnt').text(plusCount);
 
@@ -84,11 +82,10 @@ $('button.minus').on('click',function(e){
 
 
 // 천단위 콤마 없애고 숫자로 변경
-var productPrice = Number($('span.changePrice').text().replace(",", ""));
+var productPrice = Number($('span.changePrice').text().replace(",", "").replace("원", ""));
 
 function priceChange(){
     var productCount = Number($('div.cnt').text());
-
     // 총 상품가격 구하기
     var realPrice = productCount * productPrice;
     // toLocaleString()으로 천단위 콤마 찍어서 text에 출력
@@ -96,82 +93,7 @@ function priceChange(){
 
 }
 
-// Modal을 가져온다
-var modals = document.getElementsByClassName("modalContainer");
-// Modal을 띄우는 클래스 이름을 가져온다.
-var btns = document.getElementsByClassName("inputCart");
-// Modal을 닫는 close 클래스를 가져온다.
-var spanes = document.getElementsByClassName("modalCancelButton");
-
-var cnts = document.getElementsByClassName("cnt");
-
-var funcs = [];
-
-// Modal을 띄우고 닫는 클릭 이벤트를 정의한 함수
-function Modal(productNumber) {
-    return function(){
-        // 해당 클래스의 내용을 클릭하면 Modal을 띄운다.
-        btns[productNumber].onclick = function(e){
-            e.preventDefault();
-            modals[productNumber].style.display = "block";
-            console.log(productNumber);
-        };
-
-        // 닫기 버튼 클릭하면 Modal이 닫힌다.
-        spanes[productNumber].onclick = function(e) {
-            e.preventDefault();
-            modals[productNumber].style.display = "none";
-        };
-
-        cnts[productNumber].onclick = function(e){
-            e.preventDefault();
-            // modals[productNumber]
-        }
-    };
-
-}
-// 원하는 Modal 수만큼 Modal 함수를 호출해서 funcs 함수에 정의한다.
-for(var i = 0; i< btns.length; i++){
-    funcs[i] = Modal(i);
-}
-// 원하는 Modal 수만큼 funcs 함수를 호출한다.
-for(var j = 0; j< btns.length; j++){
-    funcs[j]();
-}
 
 
 
 
-// // 장바구니 이미지 클릭시 모달창
-// // $('div.modalContainer').hide();
-//     $('button.inputCart').on('click', function(e){
-//         e.preventDefault();
-//         // $("div.modalContainer").fadeIn();
-//         console.log(productNumber);
-//         $("div.modalContainer").css('display', 'flex');
-//     });
-//
-//     $('button.modalOkButton').on('click', function(){
-//         $('div.modalContainer').hide();
-//         countReset();
-//         alert('장바구니에 상품이 추가되었습니다.');
-//     });
-//
-//     $('button.modalCancelButton').on('click',function(){
-//         $('div.modalContainer').hide();
-//         countReset();
-//     });
-
-
-
-// $('div.today_product_content').on('click', function(){
-//     $(location).attr('href','/product/todayCategoryDetail');
-// });
-// $('div.delivery_product_content').on('click', function(){
-//     $(location).attr('href','/product/categoryDetail');
-// });
-
-$('button.in_cart').on('click', function(){
-    alert('장바구니에 상품이 추가되었습니다.');
-    // $(location).attr('href','/product/categoryDetail');
-});

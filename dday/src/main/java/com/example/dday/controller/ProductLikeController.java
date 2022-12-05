@@ -1,5 +1,6 @@
 package com.example.dday.controller;
 
+import com.example.dday.domain.vo.ProductLikeVO;
 import com.example.dday.service.ProductLikeService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
@@ -28,6 +29,13 @@ public class ProductLikeController {
         Long memberNumber = ((MemberVO)session.getAttribute("member")).getMemberNumber();
         session.setAttribute("likeTotal", productLikeService.findCountAll(memberNumber));
         productLikeService.remove(productNumber, memberNumber);
+    }
+
+    @ResponseBody
+    @GetMapping("/addProduct")
+    public String addProductToList(ProductLikeVO productLikeVO) {
+        log.info("productNumber! : " + productLikeVO.getProductNumber());
+        return productLikeService.clickLikeButton(productLikeVO);
     }
 }
 
