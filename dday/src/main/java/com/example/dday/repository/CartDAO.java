@@ -25,4 +25,8 @@ public class CartDAO {
     public void save(CartVO cartVO){ cartMapper.insert(cartVO); };
     //    장바구니 상품 총 개수
     public Integer getTotal(Long memberNumber){ return cartMapper.getTotal(memberNumber); };
+    //  장바구니 각 상품 개수
+    public Integer getEachCount(CartVO cartVO){
+        return cartMapper.getCartCount(cartVO);
+    }
 }

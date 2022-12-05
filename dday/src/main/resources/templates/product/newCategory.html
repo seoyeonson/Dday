@@ -136,7 +136,7 @@
                 </div>
                 <div class="result_section">
                     <div class="result_info">
-                        <div class="total_search" th:text="총 + ${freshesTotal} + 건"></div>
+                        <div class="total_search" th:text="총 + ${freshesTotal} + 건">총 170건</div>
                         <ul class="pricefilter">
                             <li class="pricefilter_specify"><a class="pricefilter_a pricelow">낮은 가격순</a></li>
                             <li class="pricefilter_specify"><a class="pricefilter_a pricehigh">높은 가격순</a></li>
@@ -145,17 +145,19 @@
                     <div class="product_grid" >
                         <th:block th:each="product:${freshes}">
                             <a class="read" th:href="@{/product/categoryDetail(productNumber=${product.productNumber})}">
+
                                 <div class="product_content delivery_product_content" th:object="${product}">
                                     <div>
                                         <div class="product_img_section">
-<!--                                            <img th:src="@{${item.getImgPath()}}">-->
+                                            <!--                                    <img th:src="@{${item.getImgPath()}}">-->
                                             <img src="https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/1628558475434l0.jpg" alt="상품 이미지">
                                             <div><button type="button" class="pickup inputCart">
-                                                <input type="hidden" id="productNumber" th:value="${product.productNumber}">
+                                                <input type="hidden" class="productNumber" th:value="${product.productNumber}">
                                                 <input type="hidden" id="productSalePrice" th:value="${product.productSalePrice}">
                                                 <input type="hidden" id="productName" th:value="${product.productName}">
                                                 <input type="hidden" id="productPrice" th:value="${product.productPrice}">
                                                 <img src="/search/images/cart.png" alt="장바구니 아이콘"></button></div>
+
                                         </div>
                                     </div>
                                     <div class="product_info"><span class="delivery_info_section"><span class="product_name" th:text="*{productName}"></span></span>
@@ -186,11 +188,13 @@
                                      alt="다음 페이지로 이동하기 아이콘">
                             </code></a>
                         </div>
-                        <form th:action="@{/product/newCategory}" th:object="${productCriteria}" name="pageForm">
+                        <form th:action="@{/product/bestCategory}" th:object="${productCriteria}" name="pageForm">
                             <input type="hidden" th:field="*{page}">
                             <input type="hidden" th:field="*{amount}">
                         </form>
                     </div>
+
+
                 </div>
             </div>
         </div>
@@ -255,6 +259,9 @@
 </form>
 <!--modal end-->
 <!-- footer -->
+<footer th:replace="main/footer.html" :: f></footer>
+<!-- modal -->
+
 <footer th:replace="main/footer.html" :: f></footer>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

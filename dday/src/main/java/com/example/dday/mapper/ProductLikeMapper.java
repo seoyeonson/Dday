@@ -1,5 +1,6 @@
 package com.example.dday.mapper;
 
+import com.example.dday.domain.vo.CartVO;
 import com.example.dday.domain.vo.ProductLikeVO;
 import com.example.dday.domain.vo.ProductVO;
 import org.apache.ibatis.annotations.Mapper;

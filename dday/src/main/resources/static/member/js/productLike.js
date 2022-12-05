@@ -133,7 +133,7 @@ $('button.modalCancelButton').on('click',function(){
 
 
 function addCart(){
-    var productNumber = $("input#productNumber").val();
+    var productNumber = $("input[name='productNumber']").val();
     var cartCount = $("#cartCount").text();
     console.log(productNumber);
     console.log(cartCount);

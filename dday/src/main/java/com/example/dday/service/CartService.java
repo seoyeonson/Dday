@@ -30,4 +30,9 @@ public class CartService {
     };
     //    장바구니 상품 총 개수
     public Integer getTotal(Long memberNumber){ return cartDAO.getTotal(memberNumber); };
+
+    public int getEachCount(CartVO cartVO){
+        Integer cartCount = Optional.ofNullable(cartDAO.checkCart(cartVO)).orElse(0);
+        return cartCount;
+    }
 }

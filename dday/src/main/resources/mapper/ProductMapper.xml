@@ -65,7 +65,7 @@
         ORDER BY PRODUCT_REGIST_DATE DESC
         )
         <![CDATA[
-                WHERE ROWNUM <=50
+                WHERE ROWNUM <=40
                 ]]>
     </select>
 <!--    <select id="selectNew" resultType="productVO">-->
@@ -133,7 +133,7 @@
                 ORDER BY PRODUCT_REGIST_DATE DESC
             )
          <![CDATA[
-        WHERE ROWNUM <=50
+        WHERE ROWNUM <=36
         ]]>
     </select>
 
@@ -158,5 +158,7 @@
         ON PR.MEMBER_NUMBER = PA.MEMBER_NUMBER
         WHERE PRODUCT_NUMBER = #{productNumber}
     </select>
+
+
 
 </mapper>
