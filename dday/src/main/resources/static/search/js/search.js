@@ -21,22 +21,6 @@ function checkRadio() {
         }
     });
 }
-$(document).ready(function() {
-
-    $(window).scroll(function() {
-        // top button controll
-        if ($(this).scrollTop() > 500) {
-            $('#topButton').fadeIn();
-        } else {
-            $('#topButton').fadeOut();
-        }
-    });
-
-    $("#topButtonImg").click(function() {
-        $('html, body').animate({scrollTop:0}, '300');
-    });
-
-});
 
 const $agrees = $(".agree");
 const $agreeAll = $("#agreeAll");
@@ -120,7 +104,7 @@ $checks.on("click", function () {
 
 
 /* 필터 초기화 */
-$divresetbutton.on("click", function () {
+/*$divresetbutton.on("click", function () {
     console.log("clickeddiv");
     $checks.next("span").removeClass("fill");
     $checks.prop("checked", false);
@@ -138,7 +122,7 @@ $resetbutton.on("click", function () {
     $checks.prop("checked", false);
     $reset.removeClass("activate");
     $resetlogo.removeClass("activate");
-})
+})*/
 
 /* 가격 필터 */
 
@@ -161,6 +145,25 @@ $pricelow.on("click", function () {
     }
     console.log(pricefilter);
 })
+/* 가격 필터2 */
+
+const $pricelow = $("#pricelow1");
+const $pricehigh = $("#pricehigh1");
+var pricefilter = 0;
+
+$pricelow.on("click", function () {
+    if (pricefilter == 0) {
+        $pricelow.addClass("activate");
+        pricefilter = 1;
+    } else if (pricefilter == 1) {
+        $pricelow.removeClass("activate");
+        pricefilter = 0;
+    } else {
+        $pricelow.addClass("activate");
+        $pricehigh.removeClass("activate");
+        pricefilter = 1;
+    }
+});
 
 $pricehigh.on("click", function () {
     console.log("pricehigh");
@@ -180,7 +183,7 @@ $pricehigh.on("click", function () {
 
 
 /* 장바구니 추가 modal */
-$(function () {
+/*$(function () {
 
     $("button.infoRight").click(function () {
         $(".modal").fadeIn();
@@ -208,5 +211,5 @@ $(function () {
     });
 
 
-});
+});*/
 

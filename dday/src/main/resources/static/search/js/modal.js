@@ -47,9 +47,13 @@ function countDown(){
     // 가격 변경 함수 호출
     priceChange();
 }
+//리셋
 function countReset(){
     var nowCount = $('div.cnt').text();
     var minusReset = (((Number(nowCount))) -((Number(nowCount))- 1));
+    $('button.minus').css({"background":"url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0yMCAxNHYySDEwdi0yeiIgZmlsbD0iI0RERCIgZmlsbC1ydWxlPSJub256ZXJvIi8+Cjwvc3ZnPgo=)"});
+
+
 
     $('div.cnt').text(minusReset);
 
@@ -114,8 +118,3 @@ $('button.modalCancelButton').on('click',function(){
     $('div.modalContainer').hide();
     countReset();
 });
-
-
-/*($('div.modalContainer')||!$('div.modalContainer')).on('click', function(){
-    $('div.modalContainer').fadeOut();
-});*/
