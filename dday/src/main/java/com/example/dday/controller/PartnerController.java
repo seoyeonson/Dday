@@ -108,25 +108,38 @@ public class PartnerController {
         return new RedirectView("/partner/partner_management");
     }
 
-/*    @PostMapping("/upload")
-    public String upload(List<MultipartFile> upload) throws IOException {
+    @PostMapping("/upload")
+    @ResponseBody
+    public String upload(MultipartFile upload) throws IOException {
         String rootPath = "C:/upload";
         String uploadPath = getUploadPath();
         String uploadFileName = "";
+        String productThumbnailName = rootPath + "/";
 
         File uploadFullPath = new File(rootPath, uploadPath);
         if(!uploadFullPath.exists()){uploadFullPath.mkdirs();}
 
-        for(MultipartFile multipartFile : upload){
-            UUID uuid = UUID.randomUUID();
-            String fileName = multipartFile.getOriginalFilename();
-            uploadFileName = uuid.toString() + "_" + fileName;
+        UUID uuid = UUID.randomUUID();
+        String fileName = upload.getOriginalFilename();
+        uploadFileName = uuid.toString() + "_" + fileName;
 
-            File fullPath = new File(uploadFullPath, uploadFileName);
-            multipartFile.transferTo(fullPath);
-        }
-        return uploadFileName;
-    }*/
+        productThumbnailName += uploadFileName;
+
+        File fullPath = new File(uploadFullPath, uploadFileName);
+        upload.transferTo(fullPath);
+
+        return productThumbnailName;
+    }
+
+    @GetMapping("/display")
+    public byte[] display(String fileName) throws IOException{
+        return FileCopyUtils.copyToByteArray(new File("C:/upload", fileName));
+    }
+
+    private String getUploadPath(){
+        return new SimpleDateFormat("yyyy/MM/dd").format(new Date());
+    }
+
 
     @GetMapping("/partner_shipping")
     public void partner_shipping() {
