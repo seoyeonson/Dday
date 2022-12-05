@@ -277,7 +277,7 @@
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="/Project/partner/js/partner.js"></script>
     <script>
-        function findAddr(){
+        /* function findAddr(){
             new daum.Postcode({
                 oncomplete: function(data) {
                     
@@ -298,7 +298,31 @@
                     }
                 }
             }).open();
-        }
+        } */
+        let todaySale = "";
+        let today = new Date();
+
+        let year = today.getFullYear();
+        let month = ('0' + (today.getMonth() + 1)).slice(-2);
+        let day = ('0' + today.getDate()).slice(-2);
+
+        let dateString = year + '-' + month  + '-' + day;
+
+        $('input[type=checkbox][id=checkToday1]').change(function () {
+            if ($(this).is(':checked')) {
+                todaySale += dateString;
+                console.log("dateString: " + dateString);
+                console.log("todaySale: " + todaySale);
+            }
+        })
+        $('input[type=checkbox][id=checkToday2]').change(function () {
+            if ($(this).is(':checked')) {
+                todaySale += dateString;
+                console.log("todaySale: " + todaySale);
+                console.log("dateString: " + dateString);
+            }
+        })
+
         </script>
         <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </body>

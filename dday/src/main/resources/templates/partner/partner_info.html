@@ -19,7 +19,6 @@
 <div id="container-wrap" class="container-wrap">
     <div id="container" class="row">
         <div id="content-wrap">
-
             <!--주요 현황-->
             <div class="main-layout main-content reform">
                 <body class="base main-statistics layout-no-iframe menu-no-border">
@@ -61,14 +60,18 @@
                                 </div>
                             </div>
                             <div id="change" class="change-form">
-                                <form>
+                                <form th:object="${partner}">
                                     <div class="page-header js-affix affix-top" style="left: auto;">
                                         <h3>내 정보
                                             <small>파트너의 기본적인 정보를 수정하실 수 있습니다.</small>
-                                            <!--<a th:href="${partner.partnerNumber}" class="btn btn-red text_central change">
+                                            <!--<a th:href="@{/partner/partner_change_info(partnerNumber=${partner.partnerNumber})}" class="btn btn-red text_central change">
                                                 수정
                                             </a>-->
-                                            <a th:href="@{/partner/partner_change_info(partnerNumber=${partner.partnerNumber})}"
+                                            <!--<a th:href="${partner.partnerNumber}"
+                                               class="btn btn-red text_central change">
+                                                수정
+                                            </a>-->
+                                            <a th:href="@{/partner/partner_change_info}"
                                                class="btn btn-red text_central change">
                                                 수정
                                             </a>
@@ -84,7 +87,7 @@
                                                 <col class="width-md">
                                                 <col>
                                             </colgroup>
-                                            <tbody th:object="${partner}">
+                                            <tbody>
                                             <tr>
                                                 <th>상호(회사명)</th>
                                                 <td class="form-inline">
@@ -209,27 +212,14 @@
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="/partner/js/change.js"></script>
 <script src="/partner/js/partner.js"></script>
-<script th:inline="javascript">
-
-    /*    $('input.partnerInfoSubmit').on('click', function () {
-            alert('정보가 등록되었습니다');
-        });*/
-
-
-    // let partnerNumber = [[${partner.partnerNumber}]];
-    let queryString = [[${pagination.criteria.queryString}]]
+<!--<script th:inline="javascript">
     const $change = $("a.change")
 
     $change.on("click", function (e) {
         e.preventDefault();
-        location.href = "/partner/partner_change_info" + queryString + "&partnerNumber=" + $(this).attr("href");
+        location.href = "/partner/partner_change_info" + "&partnerNumber=" + $(this).attr("href");
     });
-
-    /*    function goUpdate(e){
-            e.preventDefault();
-            location.href = "/partner/partnerProductChange" + queryString + "&partnerNumber=" + partnerNumber;
-        }*/
-</script>
+</script>-->
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </body>
 </html>

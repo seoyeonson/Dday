@@ -7,12 +7,10 @@
         </selectKey>
         INSERT INTO TBL_PRODUCT(PRODUCT_NUMBER, PRODUCT_NAME, PRODUCT_CATEGORY, PRODUCT_PRICE, PRODUCT_STOCK,
         PRODUCT_MANUFACTURE_DATE, PRODUCT_EXPIRATION_DATE, PRODUCT_ONELINE_INFORMATION, PRODUCT_INFORMATION,
-        PRODUCT_THUMBNAIL_NAME, PRODUCT_MAIN_IMAGE_NAME, PRODUCT_SALE_PERCENT, PRODUCT_TODAY_SALE, PRODUCT_OPEN_HOURS,
-        MEMBER_NUMBER)
-        VALUES(#{productNumber}, #{productName}, #{productCategory}, #{productPrice}, #{productStock},
-        #{productManufactureDate}, #{productExpirationDate}, #{productOnelineInfo}, #{productInformation},
-        #{productThumbnailName}, #{productMainImageName}, #{productSalePercent}, #{productTodaySale},
-        #{productOpenHours}, #{productMemberNumber})
+        PRODUCT_THUMBNAIL_NAME, PRODUCT_MAIN_IMAGE_NAME,PRODUCT_SALE_PERCENT, PRODUCT_TODAY_SALE)
+        VALUES(#{productNumber}, #{productName}, #{productCategory}, #{productPrice},
+        #{productStock},#{productManufactureDate}, #{productExpirationDate}, #{productOnelineInformation},
+        #{productInformation},#{productThumbnailName}, #{productMainImageName}, #{productSalePercent}, #{productTodaySale})
     </insert>
 
     <update id="update">
@@ -23,7 +21,7 @@
             PRODUCT_STOCK=#{productStock},
             PRODUCT_MANUFACTURE_DATE=#{productManufactureDate},
             PRODUCT_EXPIRATION_DATE=#{productExpirationDate},
-            PRODUCT_ONELINE_INFORMATION=#{productOnelineInfo},
+            PRODUCT_ONELINE_INFORMATION=#{productOnelineInformation},
             PRODUCT_INFORMATION=#{productInformation},
             PRODUCT_THUMBNAIL_NAME='썸네일이미지',
             PRODUCT_MAIN_IMAGE_NAME='본문이미지',
