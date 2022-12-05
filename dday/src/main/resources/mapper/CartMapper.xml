@@ -1,7 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.dday.mapper.CartMapper">
-    <select id="selectAll" resultType="cartVO">
-
+    <select id="selectAll" resultType="cartDTO">
+        SELECT C.PRODUCT_NUMBER, CART_COUNT, PRODUCT_NAME, PRODUCT_SALE_PRICE, ADDRESS_MAIN, ADDRESS_DETAIL
+        FROM (TBL_ADDRESS A LEFT JOIN TBL_CART C
+              ON A.MEMBER_NUMBER=C.MEMBER_NUMBER
+                INNER JOIN TBL_PRODUCT P
+               ON C.PRODUCT_NUMBER=P.PRODUCT_NUMBER)
+        WHERE A.MEMBER_NUMBER = #{memberNumber} AND A.ADDRESS_STATUS='기본배송지'
     </select>
+
+    <delete id="delete">
+        DELETE FROM TBL_CART
+        WHERE PRODUCT_NUMBER=#{productNumber} AND MEMBER_NUMBER=#{memberNumber}
+    </delete>
+
+    <update id="updateCount">
+        UPDATE TBL_CART
+        SET CART_COUNT=#{cartCount}
+        WHERE MEMBER_NUMBER=#{memberNumber} AND PRODUCT_NUMBER=#{productNumber}
+    </update>
+
+    <select id="checkCart" resultType="int">
+        SELECT CART_COUNT FROM TBL_CART
+        WHERE MEMBER_NUMBER=#{memberNumber} AND PRODUCT_NUMBER=#{productNumber}
+    </select>
+
+<!--    <insert id="insert">-->
+<!--        INSERT INTO TBL_CART(MEMBER_NUMBER, PRODUCT_NUMBER, CART_COUNT)-->
+<!--        VALUES(#{memberNumber}, #{productNumber}, #{cartCount})-->
+<!--    </insert>-->
+
+    <select id="getTotal" resultType="int">
+        SELECT COUNT(PRODUCT_NUMBER) FROM TBL_CART
+        WHERE MEMBER_NUMBER=#{memberNumber}
+    </select>
+
+<!--    <update id="plus">-->
+<!--        UPDATE TBL_CART-->
+<!--        SET CART_COUNT=#{cartCount}-->
+<!--        WHERE MEMBER_NUMBER=#{memberNumber} AND PRODUCT_NUMBER=#{productNumber}-->
+<!--    </update>-->
+
+    <update id="insert">
+        MERGE INTO TBL_CART
+        USING DUAL
+        ON (MEMBER_NUMBER=#{memberNumber} AND PRODUCT_NUMBER=#{productNumber})
+        WHEN MATCHED THEN
+        UPDATE SET CART_COUNT=#{cartCount}
+        WHEN NOT MATCHED THEN
+        INSERT(MEMBER_NUMBER, PRODUCT_NUMBER, CART_COUNT)
+        VALUES(#{memberNumber}, #{productNumber}, #{cartCount})
+    </update>
 </mapper>

@@ -23,4 +23,6 @@ public class AddressDAO {
     public void setStatusNormal(Long memberNumber){ addressMapper.updateStatusNormal(memberNumber);};
     //    수정
     public void setStatus(Long addressNumber, Long memberNumber){ addressMapper.updateStatus(addressNumber, memberNumber); };
+    //    기본 배송지 조회
+    public AddressVO findByMemberNumber(Long memberNumber){ return addressMapper.select(memberNumber); };
 }

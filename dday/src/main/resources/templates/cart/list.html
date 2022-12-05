@@ -32,12 +32,12 @@
             <div class="selector" id="bottomline">
                 <div class="check_content">
                     <label class="check_All">
-                        <input type="checkbox" id="checkAll">
+                        <input type="checkbox" id="checkAll" checked>
                         <span class="material-symbols-outlined check_img">check_circle</span>
                         <span class="select_All">전체선택&nbsp;</span>
                         <span class="item_count">
-                                <!-- 상품 갯수 (3/3) -->
-                            </span>
+<!--                            (<span class="choiceCnt">3</span>/<span class="totalCnt">3</span>)-->
+                        </span>
                     </label>
                     <span class="vertical_divider"></span>
                     <button class="choose_delete" disabled="true">선택삭제</button>
@@ -45,153 +45,64 @@
             </div>
             <div class="css-2lvxh7 ej77nku0">
                 <div>
-                    <ul>
-                        <li class="productlist">
-                            <div class="check_content">
-                                <label>
-                                    <input type="checkbox" class="check">
-                                    <span class="material-symbols-outlined check_img">check_circle</span>
-                                </label>
-                            </div>
-                            <a class="product_defaultimg"><span class="product_img1"></span></a>
-                            <div class="product_name_section">
-                                <a class="product_link">
-                                    <p class="product_name">[연세우유 x 마켓컬리] 전용목장우유 900mL</p>
-                                </a>
-                            </div>
-                            <div class="quantity_controller">
-                                <button type="button" aria-label="수량내리기" disabled=""
-                                        class="quantity_minus"></button>
-                                <div class="quantity">1</div>
-                                <button type="button" aria-label="수량올리기" class="quantity_plus"></button>
-                            </div>
-                            <div class="product_price_section">
-                                    <span aria-label="권장 소비자 가격" data-testid="product-price"
-                                          class="product_price" id="price_delete">2,070원</span><!-- 낱개 가격 -->
-                                <span class="real_price" display="none">
-                                        <!-- 곱한 가격 -->
-                                    </span>
-                            </div>
-                            <button class="delete_individual" type="button" data-testid="delete"><span
-                                    class="delete_icon"></span></button>
-                        </li>
-                        <li class="productlist">
-                            <div class="check_content">
-                                <label>
-                                    <input type="checkbox" class="check">
-                                    <span class="material-symbols-outlined check_img">check_circle</span>
-                                </label>
-                            </div>
-                            <a class="product_defaultimg"><span class="product_img2"></span></a>
-                            <div class="product_name_section"><a class="product_link">
-                                <p class="product_name">[서울우유] 나 100% 우유 1.8L</p>
-                            </a>
-                            </div>
-                            <div class="quantity_controller">
-                                <button type="button" aria-label="수량내리기" disabled=""
-                                        class="quantity_minus"></button>
-                                <div class="quantity">1</div>
-                                <button type="button" aria-label="수량올리기"
-                                        class="quantity_plus"></button>
-                            </div>
-                            <div class="product_price_section">
-                                    <span aria-label="권장 소비자 가격" data-testid="product-price"
-                                          class="product_price" id="price_delete">5,350원</span>
-                                <span class="real_price" display="none">
-                                        <!-- 곱한 가격 -->
-                                    </span>
-                            </div>
-                            </span>
-                            <button class="delete_individual" type="button" data-testid="delete"><span
-                                    class="delete_icon"></span></button>
-                        </li>
-                        <li class="productlist">
-                            <div class="check_content">
-                                <label>
-                                    <input type="checkbox" class="check">
-                                    <span class="material-symbols-outlined check_img">check_circle</span>
-                                </label>
-                            </div>
-                            <a class="product_defaultimg"><span class="product_img3"></span></a>
-                            <div class="product_name_section"><a class="product_link">
-                                <p class="product_name">[고기반찬] 고추장 제육 불고기 300g</p>
-                            </a>
-                            </div>
-                            <div class="quantity_controller">
-                                <button type="button" aria-label="수량내리기" disabled=""
-                                        class="quantity_minus"></button>
-                                <div class="quantity">1</div>
-                                <button type="button" aria-label="수량올리기" class="quantity_plus"></button>
-                            </div>
-                            <div class="product_price_section">
-                                    <span aria-label="권장 소비자 가격" data-testid="product-price"
-                                          class="product_price" id="price_delete">5,300원</span>
-                                <span class="real_price" display="none">
-                                        <!-- 곱한 가격 -->
-                                    </span>
-                            </div>
-                            <button class="delete_individual" type="button" data-testid="delete"><span
-                                    class="delete_icon"></span></button>
-                        </li>
-                        <li class="productlist">
-                            <div class="check_content">
-                                <label>
-                                    <input type="checkbox" class="check">
-                                    <span class="material-symbols-outlined check_img">check_circle</span>
-                                </label>
-                            </div>
-                            <a class="product_defaultimg"><span class="product_img4"></span></a>
-                            <div class="product_name_section"><a class="product_link">
-                                <p class="product_name">[에코후레쉬] 냉장고 냄새 탈취제</p>
-                            </a>
-                            </div>
-                            <div class="quantity_controller">
-                                <button type="button" aria-label="수량내리기" disabled=""
-                                        class="quantity_minus"></button>
-                                <div class="quantity">1</div>
-                                <button type="button" aria-label="수량올리기"
-                                        class="quantity_plus"></button>
-                            </div>
-                            <div class="product_price_section">
-                                    <span aria-label="권장 소비자 가격" data-testid="product-price"
-                                          class="product_price" id="price_delete">5,500원</span>
-                                <span class="real_price" display="none">
-                                        <!-- 곱한 가격 -->
-                                    </span>
-                            </div>
-                            <button class="delete_individual" type="button" data-testid="delete"><span
-                                    class="delete_icon"></span></button>
-                        </li>
+                    <ul id="productAll">
+<!--                        <li class="productlist">-->
+<!--                            <div class="check_content">-->
+<!--                                <label>-->
+<!--                                    <input type="checkbox" class="check">-->
+<!--                                    <span class="material-symbols-outlined check_img">check_circle</span>-->
+<!--                                </label>-->
+<!--                            </div>-->
+<!--                            <a class="product_defaultimg"><span class="product_img1"></span></a>-->
+<!--                            <div class="product_name_section">-->
+<!--                                <a class="product_link">-->
+<!--                                    <p class="product_name">[연세우유 x 마켓컬리] 전용목장우유 900mL</p>-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                            <div class="quantity_controller">-->
+<!--                                <button type="button" aria-label="수량내리기" disabled=""-->
+<!--                                        class="quantity_minus"></button>-->
+<!--                                <div class="quantity">1</div>-->
+<!--                                <button type="button" aria-label="수량올리기" class="quantity_plus"></button>-->
+<!--                            </div>-->
+<!--                            <div class="product_price_section">-->
+<!--                                    <span aria-label="권장 소비자 가격" data-testid="product-price"-->
+<!--                                          class="product_price" id="price_delete">2,070원</span>&lt;!&ndash; 낱개 가격 &ndash;&gt;-->
+<!--                                <span class="real_price" display="none">-->
+<!--                                        &lt;!&ndash; 곱한 가격 &ndash;&gt;-->
+<!--                                    </span>-->
+<!--                            </div>-->
+<!--                            <button class="delete_individual" type="button" data-testid="delete"><span-->
+<!--                                    class="delete_icon"></span></button>-->
+<!--                        </li>-->
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="cartright">
+        <div class="cartright" th:object="${address}">
             <div class="cart_info">
                 <div class="info_top">
                     <h3 class="address_logo">배송지</h3>
                     <div class="address_content">
                         <p class="address_p">
-                                <span class="address_span">
-                                    경기 성남시 분당구 판교역로2번길 23
-                                </span>
+                            <span class="address_span" th:text="|*{addressMain} *{addressDetail}|"></span>
                         </p>
                     </div>
                 </div>
                 <div class="info_mid">
                     <div class="info_mid1"><span class="info_font">상품금액</span>
-                        <span class="price_font" id="productSum">12,870</span>
+                        <span class="price_font" id="productSum"></span>
                         <span class="won_font" id="productSumWon">원</span>
                     </div>
-                    <div class="info_mid2"><span class="info_font">상품할인금액</span>
-                        <span class="price_font" id="discountSum">0</span>
-                        <span class="won_font">원</span>
-                    </div>
+<!--                    <div class="info_mid2"><span class="info_font">상품할인금액</span>-->
+<!--                        <span class="price_font" id="discountSum">0</span>-->
+<!--                        <span class="won_font">원</span>-->
+<!--                    </div>-->
                     <div class="info_mid2"><span class="info_font">배송비</span><span class="price_font"
                                                                                    id="deliveryFee">+3,000</span>
                         <span class="won_font">원</span>
                     </div>
-                    <p class="info_mid3">27,130원 추가주문 시, <strong>무료배송</strong></p>
+<!--                    <p class="info_mid3">27,130원 추가주문 시, <strong>무료배송</strong></p>-->
                     <div class="info_mid4"><span class="info_font">결제예정금액</span>
                         <span class="total_price"><strong class="total_price_font" id="totalPrice">15,870</strong>
                             </span>
@@ -246,6 +157,7 @@
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <!--<script src="/main/js/header.js"></script>-->
 <script src="/cart/js/cart.js"></script>
+<script>
+</script>
 </body>
-
 </html>
