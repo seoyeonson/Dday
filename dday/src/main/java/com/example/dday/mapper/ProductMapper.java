@@ -41,6 +41,5 @@ public interface ProductMapper {
 
     public List<ProductVO> getProductList(Map<String, Object> map);
 
-    public int getProductCount(Map<String, Object> map);
 
 }

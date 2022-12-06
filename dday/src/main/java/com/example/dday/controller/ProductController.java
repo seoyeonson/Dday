@@ -4,9 +4,11 @@ import com.example.dday.domain.vo.ProductPageDTO;
 import com.example.dday.domain.vo.ProductVO;
 import com.example.dday.domain.vo.ProductCriteria;
 import com.example.dday.mapper.ProductMapper;
+import com.example.dday.mapper.SearchProductMapper;
 import com.example.dday.service.ProductService;
 import com.example.dday.service.ReviewService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -20,45 +22,8 @@ public class ProductController {
     private final ProductService productService;
     private final ProductVO productVO;
 
-    @GetMapping("/newCategory")
-    public void newCategory(ProductCriteria productCriteria,Model model){
-        if(productCriteria.getPage() == 0){
-            productCriteria.create(1,12);
-        }
-        model.addAttribute("freshes" ,productService.showNew());
-        model.addAttribute("pagination", new ProductPageDTO().createProductPageDTO(productCriteria, productService.getFreshTotal()));
-        model.addAttribute("freshesTotal",productService.getFreshTotal());
-    }
-
-    @GetMapping("/bestCategory")
-    public void bestCategory(ProductCriteria productCriteria,Model model){
-        if(productCriteria.getPage() == 0){
-            productCriteria.create(1,12);
-        }
-        model.addAttribute("bests", productService.showBest(productCriteria));
-        model.addAttribute("pagination",new ProductPageDTO().createProductPageDTO(productCriteria, productService.getBestTotal()));
-        model.addAttribute("bestsTotal",productService.getBestTotal());
-    }
-
-    @GetMapping("/saleCategory")
-    public void saleCategory(ProductCriteria productCriteria,Model model){
-        if(productCriteria.getPage() == 0){
-            productCriteria.create(1,12);
-        }
-        model.addAttribute("sales", productService.showSale(productCriteria));
-        model.addAttribute("pagination",new ProductPageDTO().createProductPageDTO(productCriteria, productService.getSaleTotal()));
-        model.addAttribute("salesTotal",productService.getSaleTotal());
-    }
-
-    @GetMapping("/todayCategory")
-    public void todayCategory(ProductCriteria productCriteria,Model model){
-        if(productCriteria.getPage() == 0){
-            productCriteria.create(1,12);
-        }
-        model.addAttribute("todays", productService.showToday(productCriteria));
-        model.addAttribute("pagination",new ProductPageDTO().createProductPageDTO(productCriteria, productService.getTodayTotal()));
-        model.addAttribute("todaysTotal",productService.getTodayTotal());
-    }
+    @Autowired(required = false)
+    private ProductMapper productMapper;
 
     @RequestMapping(value = "/categoryDetail")
     public String categoryDetail(@RequestParam("productNumber") Long productNumber, Model model){
@@ -74,6 +39,181 @@ public class ProductController {
         model.addAttribute("partner", productService.showPartnerDetail(productNumber));
         return "/product/todayCategoryDetail";
     }
+
+    @GetMapping("/newCategory")
+    public void newCategory(@RequestParam(value = "highlow", required = false) String productSort,
+                            @RequestParam(value = "filterSearch", required = false) String filterSearch,
+                            @RequestParam(value = "productColNum", required = false) String productColNum,
+                            ProductCriteria productCriteria,Model model, Model SearchList){
+        if(productCriteria.getPage() == 0){
+            productCriteria.create(1,12);
+        }
+        model.addAttribute("freshes" ,productService.showNew());
+        model.addAttribute("pagination", new ProductPageDTO().createProductPageDTO(productCriteria, productService.getFreshTotal()));
+        model.addAttribute("freshesTotal",productService.getFreshTotal());
+
+        List<String> filterSearchList = null;
+
+
+        System.out.println("filterSearch        >>" + filterSearch + "]");
+        if(filterSearch != null && !filterSearch.equals("")) {
+
+            filterSearchList = new ArrayList(Arrays.asList((String[]) filterSearch.split(",")));
+        }else{
+            filterSearchList = new ArrayList<String>();
+        }
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        paramMap.put("highlow", productSort);
+        paramMap.put("filterSearch", filterSearchList);
+        paramMap.put("productColNum", productColNum);
+
+        /*System.out.println("filterSearchList.size()        >>" + filterSearchList.size());*/
+        System.out.println("filterSearchList         >>" + filterSearchList);
+        System.out.println("productSort     >>"+productSort);
+        System.out.println("columnNum   >>" +productColNum);
+
+        model.addAttribute("filterSearchList", filterSearchList);
+//        int totalCount = productMapper.getProductCount(paramMap);
+
+        List<ProductVO> productVOList = new ArrayList<ProductVO>();
+        System.out.println("성공");
+        productVOList = productMapper.getProductList(paramMap);
+        SearchList.addAttribute("productList",productVOList);
+        System.out.println(productVOList);
+
+    }
+
+    @GetMapping("/bestCategory")
+    public void bestCategory(@RequestParam(value = "highlow", required = false) String productSort,
+                             @RequestParam(value = "filterSearch", required = false) String filterSearch,
+                             @RequestParam(value = "productColNum", required = false) String productColNum,
+                             ProductCriteria productCriteria,Model model, Model SearchList){
+        if(productCriteria.getPage() == 0){
+            productCriteria.create(1,12);
+        }
+        model.addAttribute("bests", productService.showBest(productCriteria));
+        model.addAttribute("pagination",new ProductPageDTO().createProductPageDTO(productCriteria, productService.getBestTotal()));
+        model.addAttribute("bestsTotal",productService.getBestTotal());
+
+        List<String> filterSearchList = null;
+
+
+        System.out.println("filterSearch        >>" + filterSearch + "]");
+        if(filterSearch != null && !filterSearch.equals("")) {
+
+            filterSearchList = new ArrayList(Arrays.asList((String[]) filterSearch.split(",")));
+        }else{
+            filterSearchList = new ArrayList<String>();
+        }
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        paramMap.put("highlow", productSort);
+        paramMap.put("filterSearch", filterSearchList);
+        paramMap.put("productColNum", productColNum);
+
+        /*System.out.println("filterSearchList.size()        >>" + filterSearchList.size());*/
+        System.out.println("filterSearchList         >>" + filterSearchList);
+        System.out.println("productSort     >>"+productSort);
+        System.out.println("columnNum   >>" +productColNum);
+
+        model.addAttribute("filterSearchList", filterSearchList);
+//        int totalCount = productMapper.getProductCount(paramMap);
+
+        List<ProductVO> productVOList = new ArrayList<ProductVO>();
+        System.out.println("성공");
+        productVOList = productMapper.getProductList(paramMap);
+        SearchList.addAttribute("productList",productVOList);
+        System.out.println(productVOList);
+
+    }
+
+    @GetMapping("/saleCategory")
+    public void saleCategory(@RequestParam(value = "highlow", required = false) String productSort,
+                             @RequestParam(value = "filterSearch", required = false) String filterSearch,
+                             @RequestParam(value = "productColNum", required = false) String productColNum,
+                             ProductCriteria productCriteria,Model model, Model SearchList){
+        if(productCriteria.getPage() == 0){
+            productCriteria.create(1,12);
+        }
+        model.addAttribute("sales", productService.showSale(productCriteria));
+        model.addAttribute("pagination",new ProductPageDTO().createProductPageDTO(productCriteria, productService.getSaleTotal()));
+        model.addAttribute("salesTotal",productService.getSaleTotal());
+
+        List<String> filterSearchList = null;
+
+
+        System.out.println("filterSearch        >>" + filterSearch + "]");
+        if(filterSearch != null && !filterSearch.equals("")) {
+
+            filterSearchList = new ArrayList(Arrays.asList((String[]) filterSearch.split(",")));
+        }else{
+            filterSearchList = new ArrayList<String>();
+        }
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        paramMap.put("highlow", productSort);
+        paramMap.put("filterSearch", filterSearchList);
+        paramMap.put("productColNum", productColNum);
+
+        /*System.out.println("filterSearchList.size()        >>" + filterSearchList.size());*/
+        System.out.println("filterSearchList         >>" + filterSearchList);
+        System.out.println("productSort     >>"+productSort);
+        System.out.println("columnNum   >>" +productColNum);
+
+        model.addAttribute("filterSearchList", filterSearchList);
+//        int totalCount = productMapper.getProductCount(paramMap);
+
+        List<ProductVO> productVOList = new ArrayList<ProductVO>();
+        System.out.println("성공");
+        productVOList = productMapper.getProductList(paramMap);
+        SearchList.addAttribute("productList",productVOList);
+        System.out.println(productVOList);
+
+    }
+
+
+
+    @GetMapping("/todayCategory")
+    public void todayCategory(@RequestParam(value = "highlow", required = false) String productSort,
+                              @RequestParam(value = "filterSearch", required = false) String filterSearch,
+                              @RequestParam(value = "productColNum", required = false) String productColNum,
+                              ProductCriteria productCriteria,Model model, Model SearchList){
+        if(productCriteria.getPage() == 0){
+            productCriteria.create(1,12);
+        }
+        model.addAttribute("todays", productService.showToday(productCriteria));
+        model.addAttribute("pagination",new ProductPageDTO().createProductPageDTO(productCriteria, productService.getTodayTotal()));
+        model.addAttribute("todaysTotal",productService.getTodayTotal());
+
+        List<String> filterSearchList = null;
+
+
+        System.out.println("filterSearch        >>" + filterSearch + "]");
+        if(filterSearch != null && !filterSearch.equals("")) {
+
+            filterSearchList = new ArrayList(Arrays.asList((String[]) filterSearch.split(",")));
+        }else{
+            filterSearchList = new ArrayList<String>();
+        }
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        paramMap.put("highlow", productSort);
+        paramMap.put("filterSearch", filterSearchList);
+        paramMap.put("productColNum", productColNum);
+
+        /*System.out.println("filterSearchList.size()        >>" + filterSearchList.size());*/
+        System.out.println("filterSearchList         >>" + filterSearchList);
+        System.out.println("productSort     >>"+productSort);
+        System.out.println("columnNum   >>" +productColNum);
+
+        model.addAttribute("filterSearchList", filterSearchList);
+//        int totalCount = productMapper.getProductCount(paramMap);
+
+        List<ProductVO> productVOList = new ArrayList<ProductVO>();
+        System.out.println("성공");
+        productVOList = productMapper.getProductList(paramMap);
+        SearchList.addAttribute("productList",productVOList);
+        System.out.println(productVOList);
+
+    }
+
 
 
 }

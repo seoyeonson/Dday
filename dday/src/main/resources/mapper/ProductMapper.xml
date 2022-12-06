@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.dday.mapper.ProductMapper">
 
-        <select id="selectToday" resultType="productVO">
+    <select id="selectToday" resultType="productVO">
             SELECT PRODUCT_NUMBER, PRODUCT_NAME, PRODUCT_CATEGORY, PRODUCT_PRICE, PRODUCT_STOCK, PRODUCT_MANUFACTURE_DATE, PRODUCT_EXPIRATION_DATE, PRODUCT_ONELINE_INFORMATION, PRODUCT_INFORMATION, PRODUCT_THUMBNAIL_NAME, PRODUCT_MAIN_IMAGE_NAME, PRODUCT_REGIST_DATE, PRODUCT_MODIFY_DATE, PRODUCT_TODAY_SALE, PRODUCT_SALE_PERCENT, PRODUCT_SALE_PRICE
             FROM
             (
@@ -18,19 +18,19 @@
         WHERE ROWNUM <= #{page} * #{amount}
         ) WHERE R > (#{page} - 1) * #{amount}
         ]]>
-        </select>
+    </select>
 
-        <select id="selectTodayOne" resultType="productVO">
+    <select id="selectTodayOne" resultType="productVO">
         SELECT PRODUCT_NUMBER, PRODUCT_NAME, PRODUCT_CATEGORY, PRODUCT_PRICE, PRODUCT_ONELINE_INFORMATION, PRODUCT_INFORMATION, PRODUCT_THUMBNAIL_NAME, PRODUCT_MAIN_IMAGE_NAME, PRODUCT_REGIST_DATE, PRODUCT_MODIFY_DATE, PRODUCT_TODAY_SALE, PRODUCT_OPEN_HOURS, PRODUCT_SALE_PERCENT, PRODUCT_SALE_PRICE
         FROM TBL_PRODUCT
         WHERE PRODUCT_NUMBER = #{productNumber}
     </select>
-    
+
     <insert id="insert">
         INSERT INTO TBL_PRODUCT(PRODUCT_NUMBER, PRODUCT_NAME, PRODUCT_CATEGORY, PRODUCT_PRICE, PRODUCT_STOCK, PRODUCT_MANUFACTURE_DATE, PRODUCT_EXPIRATION_DATE, PRODUCT_ONELINE_INFORMATION, PRODUCT_INFORMATION, PRODUCT_THUMBNAIL_NAME, PRODUCT_MAIN_IMAGE_NAME, PRODUCT_TODAY_SALE, PRODUCT_SALE_PERCENT, PRODUCT_OPEN_HOURS, PRODUCT_SALE_PRICE)
         VALUES(SEQ_PRODUCT.NEXTVAL, #{productName}, #{productCategory}, #{productPrice}, #{productStock}, #{productManufactureDate}, #{productExpirationDate}, #{productOnelineInformation}, #{productInformation}, #{productThumbnailName}, #{productMainImageName}, #{productTodaySale}, #{productSalePercent}, #{productOpenHours}, #{productSalePrice})
     </insert>
-    
+
 
     <select id="select" resultType="productVO">
         SELECT PRODUCT_NUMBER, PRODUCT_NAME, PRODUCT_CATEGORY, PRODUCT_PRICE, PRODUCT_STOCK, PRODUCT_MANUFACTURE_DATE, PRODUCT_EXPIRATION_DATE, PRODUCT_ONELINE_INFORMATION, PRODUCT_INFORMATION, PRODUCT_THUMBNAIL_NAME, PRODUCT_MAIN_IMAGE_NAME, PRODUCT_REGIST_DATE, PRODUCT_MODIFY_DATE, PRODUCT_SALE_PERCENT, PRODUCT_VIEW_COUNT, PRODUCT_SALE_PRICE
@@ -68,22 +68,22 @@
                 WHERE ROWNUM <=40
                 ]]>
     </select>
-<!--    <select id="selectNew" resultType="productVO">-->
-<!--        SELECT PRODUCT_NUMBER, PRODUCT_NAME, PRODUCT_CATEGORY, PRODUCT_PRICE, PRODUCT_STOCK, PRODUCT_MANUFACTURE_DATE, PRODUCT_EXPIRATION_DATE, PRODUCT_ONELINE_INFORMATION, PRODUCT_INFORMATION, PRODUCT_THUMBNAIL_NAME, PRODUCT_MAIN_IMAGE_NAME, PRODUCT_REGIST_DATE, PRODUCT_MODIFY_DATE, PRODUCT_SALE_PERCENT, PRODUCT_SALE_PRICE-->
-<!--        FROM-->
-<!--        (-->
-<!--            SELECT ROWNUM R, PRODUCT_NUMBER, PRODUCT_NAME, PRODUCT_CATEGORY, PRODUCT_PRICE, PRODUCT_STOCK, PRODUCT_MANUFACTURE_DATE, PRODUCT_EXPIRATION_DATE, PRODUCT_ONELINE_INFORMATION, PRODUCT_INFORMATION, PRODUCT_THUMBNAIL_NAME, PRODUCT_MAIN_IMAGE_NAME, PRODUCT_REGIST_DATE, PRODUCT_MODIFY_DATE, PRODUCT_SALE_PERCENT, PRODUCT_SALE_PRICE-->
-<!--            FROM-->
-<!--            (-->
-<!--                    SELECT PRODUCT_NUMBER, PRODUCT_NAME, PRODUCT_CATEGORY, PRODUCT_PRICE, PRODUCT_STOCK, PRODUCT_MANUFACTURE_DATE, PRODUCT_EXPIRATION_DATE, PRODUCT_ONELINE_INFORMATION, PRODUCT_INFORMATION, PRODUCT_THUMBNAIL_NAME, PRODUCT_MAIN_IMAGE_NAME, PRODUCT_REGIST_DATE, PRODUCT_MODIFY_DATE, PRODUCT_SALE_PERCENT, PRODUCT_SALE_PRICE-->
-<!--                    FROM TBL_PRODUCT-->
-<!--                    ORDER BY PRODUCT_REGIST_DATE DESC-->
-<!--            )D2-->
-<!--        <![CDATA[-->
-<!--        WHERE ROWNUM <= #{page} * #{amount}-->
-<!--        ) WHERE R > (#{page} - 1) * #{amount}-->
-<!--        ]]>-->
-<!--    </select>-->
+    <!--    <select id="selectNew" resultType="productVO">-->
+    <!--        SELECT PRODUCT_NUMBER, PRODUCT_NAME, PRODUCT_CATEGORY, PRODUCT_PRICE, PRODUCT_STOCK, PRODUCT_MANUFACTURE_DATE, PRODUCT_EXPIRATION_DATE, PRODUCT_ONELINE_INFORMATION, PRODUCT_INFORMATION, PRODUCT_THUMBNAIL_NAME, PRODUCT_MAIN_IMAGE_NAME, PRODUCT_REGIST_DATE, PRODUCT_MODIFY_DATE, PRODUCT_SALE_PERCENT, PRODUCT_SALE_PRICE-->
+    <!--        FROM-->
+    <!--        (-->
+    <!--            SELECT ROWNUM R, PRODUCT_NUMBER, PRODUCT_NAME, PRODUCT_CATEGORY, PRODUCT_PRICE, PRODUCT_STOCK, PRODUCT_MANUFACTURE_DATE, PRODUCT_EXPIRATION_DATE, PRODUCT_ONELINE_INFORMATION, PRODUCT_INFORMATION, PRODUCT_THUMBNAIL_NAME, PRODUCT_MAIN_IMAGE_NAME, PRODUCT_REGIST_DATE, PRODUCT_MODIFY_DATE, PRODUCT_SALE_PERCENT, PRODUCT_SALE_PRICE-->
+    <!--            FROM-->
+    <!--            (-->
+    <!--                    SELECT PRODUCT_NUMBER, PRODUCT_NAME, PRODUCT_CATEGORY, PRODUCT_PRICE, PRODUCT_STOCK, PRODUCT_MANUFACTURE_DATE, PRODUCT_EXPIRATION_DATE, PRODUCT_ONELINE_INFORMATION, PRODUCT_INFORMATION, PRODUCT_THUMBNAIL_NAME, PRODUCT_MAIN_IMAGE_NAME, PRODUCT_REGIST_DATE, PRODUCT_MODIFY_DATE, PRODUCT_SALE_PERCENT, PRODUCT_SALE_PRICE-->
+    <!--                    FROM TBL_PRODUCT-->
+    <!--                    ORDER BY PRODUCT_REGIST_DATE DESC-->
+    <!--            )D2-->
+    <!--        <![CDATA[-->
+    <!--        WHERE ROWNUM <= #{page} * #{amount}-->
+    <!--        ) WHERE R > (#{page} - 1) * #{amount}-->
+    <!--        ]]>-->
+    <!--    </select>-->
 
     <select id="selectSale" resultType="productVO">
         SELECT PRODUCT_NUMBER, PRODUCT_NAME, PRODUCT_CATEGORY, PRODUCT_PRICE, PRODUCT_STOCK, PRODUCT_MANUFACTURE_DATE, PRODUCT_EXPIRATION_DATE, PRODUCT_ONELINE_INFORMATION, PRODUCT_INFORMATION, PRODUCT_THUMBNAIL_NAME, PRODUCT_MAIN_IMAGE_NAME, PRODUCT_REGIST_DATE, PRODUCT_MODIFY_DATE, PRODUCT_SALE_PERCENT,PRODUCT_VIEW_COUNT, PRODUCT_SALE_PRICE
@@ -109,9 +109,9 @@
         WHERE PRODUCT_NUMBER = #{productNumber}
     </update>
 
-<!--    <select id="getTotal" resultType="_int">-->
-<!--        SELECT COUNT(PRODUCT_NUMBER) FROM TBL_PRODUCT-->
-<!--    </select>-->
+    <!--    <select id="getTotal" resultType="_int">-->
+    <!--        SELECT COUNT(PRODUCT_NUMBER) FROM TBL_PRODUCT-->
+    <!--    </select>-->
 
     <select id="getTodayTotal" resultType="_int">
         SELECT COUNT(PRODUCT_NUMBER) FROM TBL_PRODUCT
@@ -159,6 +159,44 @@
         WHERE PRODUCT_NUMBER = #{productNumber}
     </select>
 
+    <select id="getProductList" parameterType="hashmap" resultType="ProductVO">
+        SELECT PRODUCT_NUMBER, PRODUCT_NAME, PRODUCT_CATEGORY, PRODUCT_PRICE, PRODUCT_STOCK, PRODUCT_MANUFACTURE_DATE, PRODUCT_EXPIRATION_DATE, PRODUCT_ONELINE_INFORMATION, PRODUCT_INFORMATION, PRODUCT_THUMBNAIL_NAME, PRODUCT_MAIN_IMAGE_NAME, PRODUCT_REGIST_DATE, PRODUCT_MODIFY_DATE, PRODUCT_TODAY_SALE, PRODUCT_SALE_PERCENT, PRODUCT_SALE_PRICE, PRODUCT_COL_NUM
+        FROM TBL_PRODUCT
+        WHERE 1=1
+        <if test="filterSearch != null and filterSearch.size != 0">
+            AND PRODUCT_CATEGORY IN
+            <foreach
+                    collection="filterSearch" item="item" separator="," index="index" open="(" close=")">
+                #{item}
+            </foreach>
+        </if>
+        <if test= "productColNum != null">
+            <trim prefix="AND">
+                <choose>
+                    <when test="productColNum == '1'.toString()">
+                        PRODUCT_COL_NUM = #{productColNum}
+                    </when>
+                    <when test="productColNum == '2'.toString()">
+                        PRODUCT_COL_NUM = #{productColNum}
+                    </when>
+                    <when test="productColNum == '3'.toString()">
+                        PRODUCT_COL_NUM = #{productColNum}
+                    </when>
+                    <when test="productColNum == '4'.toString()">
+                        PRODUCT_COL_NUM = #{productColNum}
+                    </when>
+                </choose>
+            </trim>
+        </if>
+        <if test= 'highlow != null and highlow == "high"'>
+            ORDER BY
+            PRODUCT_PRICE DESC
+        </if>
+        <if test= 'highlow != null and highlow == "low"'>
+            ORDER BY
+            PRODUCT_PRICE ASC
+        </if>
+    </select>
 
 
 </mapper>
