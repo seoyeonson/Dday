@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpSession;
@@ -55,8 +56,10 @@ public class OrderController {
 
     @PostMapping("/order")
     @Transactional(rollbackFor = Exception.class)
-    public RedirectView order(HttpSession session, OrderVO orderVO){
+    public RedirectView order(HttpSession session, OrderVO orderVO, @RequestParam("point-usage") Integer pointUsage, Integer pointAmount){
+        log.info("pointUsage: "+ pointUsage + "pointAmount: " +pointAmount);
         OrderDTO orderDTO = new OrderDTO();
+        PointVO pointVO = new PointVO();
         if(Optional.ofNullable(((MemberVO)session.getAttribute("member")).getMemberNumber()).orElse(0L) == 0){
             return new RedirectView("/");
         }
@@ -77,6 +80,22 @@ public class OrderController {
             orderDetailVO.setOrderDetailTotalAmount(cart.getCartCount() * cart.getProductSalePrice());
             orderDetailService.save(orderDetailVO);
         });
+        pointVO.setMemberNumber(memberNumber);
+        
+        if(pointUsage != 0){
+            pointVO.setPointContent("[포인트 사용]" + pointUsage + "원 사용 완료!");
+            pointVO.setPointPrice(pointUsage);
+            pointVO.setPointRemain((Integer)pointService.findPointTotalByNumber(memberNumber) - pointUsage);
+    
+            pointService.saveUse(pointVO);
+        }
+
+
+        pointVO.setPointContent("[구매 적립]" + pointAmount + "원 적립 완료!");
+        pointVO.setPointPrice(pointAmount);
+        pointVO.setPointRemain((Integer)pointService.findPointTotalByNumber(memberNumber) + pointAmount);
+
+        pointService.saveOrder(pointVO);
         return new RedirectView("/member/mypage");
     }
 

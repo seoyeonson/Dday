@@ -93,7 +93,7 @@ public class MemberController {
     @GetMapping("/mypage")
     public void mypage(HttpSession session, Model model){
         MemberVO memberVO = (MemberVO)session.getAttribute("member");
-        Long pointTotal = pointService.findPointTotalByNumber(memberVO.getMemberNumber());
+        Integer pointTotal = pointService.findPointTotalByNumber(memberVO.getMemberNumber());
         Long likeTotal = memberService.findLikeTotalByNumber(memberVO.getMemberNumber());
         model.addAttribute("orders", orderService.findByMemberNumber(memberVO.getMemberNumber()));
 
@@ -107,7 +107,7 @@ public class MemberController {
     @GetMapping("/mypageDelivery")
     public void mypageDelivery(HttpSession session, Model model){
         Long memberNumber = ((MemberVO)session.getAttribute("member")).getMemberNumber();
-        Long pointTotal = pointService.findPointTotalByNumber(memberNumber);
+        Integer pointTotal = pointService.findPointTotalByNumber(memberNumber);
         Long likeTotal = memberService.findLikeTotalByNumber(memberNumber);
 
         session.setAttribute("pointTotal", pointTotal);
@@ -137,7 +137,7 @@ public class MemberController {
     @GetMapping("/mypageLike")
     public void mypageLike(HttpSession session){
         MemberVO memberVO = (MemberVO)session.getAttribute("member");
-        Long pointTotal = pointService.findPointTotalByNumber(memberVO.getMemberNumber());
+        Integer pointTotal = pointService.findPointTotalByNumber(memberVO.getMemberNumber());
         Long likeTotal = memberService.findLikeTotalByNumber(memberVO.getMemberNumber());
 
         session.setAttribute("pointTotal", pointTotal);

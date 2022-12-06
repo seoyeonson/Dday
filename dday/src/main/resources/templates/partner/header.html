@@ -40,9 +40,8 @@
                                     <div class="dropdown">
                                         <!-- header -->
                                         <a href="#" class="dropdown-toggle gnb-idinfo" id="headerSubMenuManager" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
-                                            <span>판매자</span>님 (
-                                            <span>wanted</span> )
-                                            <span>로그아웃</span>
+                                            <span th:text="${session.member.memberName}"></span>님
+                                            <span onclick="location.href='/member/logout'">로그아웃</span>
                                         </a>
                                         <ul class="dropdown-menu gnb-dropdown-menu" aria-labelledby="headerSubMenuManager">
                                             <li class="dropdown-item"><a href="#">판매자 정보</a></li>
