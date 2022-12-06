@@ -90,51 +90,56 @@ function showList(result){
     let text = "";
     let productSum = 0;
     // result.cartTotal
-    result.products.forEach(product => {
-        let productSalePriceInt = product.productSalePrice;
-        let cartCountInt = product.cartCount;
-        let productFinalPrice = productSalePriceInt * cartCountInt;
-        productSum += productFinalPrice;
-        text += '<li class="productlist">';
-        text += '<div class="check_content">';
-        text += '<label>';
-        text += '<input type="checkbox" class="check">';
-        text += '<span class="material-symbols-outlined check_img">check_circle</span>';
-        text += '</label>';
-        text += '</div>';
-        text += '<a class="product_defaultimg"><span class="product_img1"></span></a>';
-        text += '<div class="product_name_section">';
-        text += '<a class="product_link">';
-        text += '<p class="product_name">' + product.productName + '</p>';
-        text += '</a>';
-        text += '</div>';
-        text += '<div class="quantity_controller">';
-        if(product.cartCount == 1){
-            text += '<button type="button" aria-label="수량내리기" disabled class="quantity_minus"></button>';
-        } else {
-            text += '<button type="button" aria-label="수량내리기" class="quantity_minus" style="background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0yMCAxNHYySDEwdi0yeiIgZmlsbD0iIzMzMyIgZmlsbC1ydWxlPSJub256ZXJvIi8+Cjwvc3ZnPgo=)"></button>';
-        }
-        text += '<div class="quantity"><span>' + product.cartCount +'</span></div>';
-        text += '<button type="button" aria-label="수량올리기" class="quantity_plus"></button>';
-        text += '<input type="hidden" value="' + product.productNumber +'">';
-        text += '</div>';
-        text += '<div class="product_price_section">';
-        text += '<span aria-label="권장 소비자 가격" data-testid="product-price" class="product_price" id="price_delete">' + productFinalPrice.toLocaleString('ko-KR') + '원</span>';
-        text += '<span class="real_price" display="none">';
-        text += '</span>';
-        text += '</div>';
-        text += '<button class="delete_individual" type="button" data-testid="delete"><span class="delete_icon"></span></button>';
-        text += '</li>';
-        item_count += 1;
-    });
+    if(result.products.length > 0){
+
+        result.products.forEach(product => {
+            let productSalePriceInt = product.productSalePrice;
+            let cartCountInt = product.cartCount;
+            let productFinalPrice = productSalePriceInt * cartCountInt;
+            productSum += productFinalPrice;
+            text += '<li class="productlist">';
+            text += '<div class="check_content">';
+            text += '<label>';
+            text += '<input type="checkbox" class="check">';
+            text += '<span class="material-symbols-outlined check_img">check_circle</span>';
+            text += '</label>';
+            text += '</div>';
+            text += '<a class="product_defaultimg"><span class="product_img1"></span></a>';
+            text += '<div class="product_name_section">';
+            text += '<a class="product_link">';
+            text += '<p class="product_name">' + product.productName + '</p>';
+            text += '</a>';
+            text += '</div>';
+            text += '<div class="quantity_controller">';
+            if(product.cartCount == 1){
+                text += '<button type="button" aria-label="수량내리기" disabled class="quantity_minus"></button>';
+            } else {
+                text += '<button type="button" aria-label="수량내리기" class="quantity_minus" style="background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0yMCAxNHYySDEwdi0yeiIgZmlsbD0iIzMzMyIgZmlsbC1ydWxlPSJub256ZXJvIi8+Cjwvc3ZnPgo=)"></button>';
+            }
+            text += '<div class="quantity"><span>' + product.cartCount +'</span></div>';
+            text += '<button type="button" aria-label="수량올리기" class="quantity_plus"></button>';
+            text += '<input type="hidden" value="' + product.productNumber +'">';
+            text += '</div>';
+            text += '<div class="product_price_section">';
+            text += '<span aria-label="권장 소비자 가격" data-testid="product-price" class="product_price" id="price_delete">' + productFinalPrice.toLocaleString('ko-KR') + '원</span>';
+            text += '<span class="real_price" display="none">';
+            text += '</span>';
+            text += '</div>';
+            text += '<button class="delete_individual" type="button" data-testid="delete"><span class="delete_icon"></span></button>';
+            text += '</li>';
+            item_count += 1;
+        });
+    } else {
+        text += '<p class="css-l1lu2l eqymnpn0">장바구니에 담긴 상품이 없습니다</p>';
+    }
     if(productSum == 0){
         $("#deliveryFee").text(0);
         $("span.point").text(0)
         $("#totalPrice").text(0);
     } else {
         $("#deliveryFee").text(Number(3000).toLocaleString('ko-KR'));
-        $("span.point").text(((productSum+3000) * 0.05).toLocaleString('ko-KR'))
-        $("#totalPrice").text((productSum+3000).toLocaleString('ko-KR'));
+        $("span.point").text(parseInt((productSum * 0.05).toLocaleString('ko-KR')));
+        $("#totalPrice").text(productSum.toLocaleString('ko-KR'));
     }
     $("span#productSum").text(productSum.toLocaleString('ko-KR'));
     // $(".totalCnt").text(item_count);
@@ -394,6 +399,6 @@ $(".order_button").on("click", function(){
     if($("span#productSum").text() != 0){
         location.href="/order/order";
     } else {
-        alert("상품을 추가헤주세요.");
+        alert("상품을 추가해주세요.");
     }
 });

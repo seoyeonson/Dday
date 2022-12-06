@@ -14,6 +14,13 @@
 <link rel="stylesheet" href="/main/css/footer.css">
 <link rel="stylesheet" href="/cart/css/kurly.css">
 <link rel="stylesheet" href="/cart/css/cart.css">
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script>
+    if([[${session.member.memberNumber}]] == 0){
+        alert('로그인 후 이용가능합니다.');
+        location.href='/member/login';
+    }
+</script>
 <style>
     * {
         font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum, sans-serif;
@@ -91,7 +98,7 @@
                 </div>
                 <div class="info_mid">
                     <div class="info_mid1"><span class="info_font">상품금액</span>
-                        <span class="price_font" id="productSum"></span>
+                        <span class="price_font" id="productSum">0</span>
                         <span class="won_font" id="productSumWon">원</span>
                     </div>
 <!--                    <div class="info_mid2"><span class="info_font">상품할인금액</span>-->
@@ -99,17 +106,17 @@
 <!--                        <span class="won_font">원</span>-->
 <!--                    </div>-->
                     <div class="info_mid2"><span class="info_font">배송비</span><span class="price_font"
-                                                                                   id="deliveryFee">+3,000</span>
+                                                                                   id="deliveryFee">0</span>
                         <span class="won_font">원</span>
                     </div>
 <!--                    <p class="info_mid3">27,130원 추가주문 시, <strong>무료배송</strong></p>-->
                     <div class="info_mid4"><span class="info_font">결제예정금액</span>
-                        <span class="total_price"><strong class="total_price_font" id="totalPrice">15,870</strong>
+                        <span class="total_price"><strong class="total_price_font" id="totalPrice">0</strong>
                             </span>
                         <span class="big_won">원</span>
                     </div>
                     <div class="info_mid5"><span class="point_highlight">적립</span>
-                        <span class="point"></span>
+                        <span class="point">0</span>
                         <span class="jeoklip">원 적립(5%)</span>
                     </div>
                 </div>
@@ -155,7 +162,6 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-<!--<script src="/main/js/header.js"></script>-->
 <script src="/cart/js/cart.js"></script>
 <script>
 </script>

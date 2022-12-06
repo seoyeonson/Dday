@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.dday.mapper.OrderMapper">
-    <select id="select">
-
+    <select id="select" resultType="orderVO">
+        SELECT ORDER_NUMBER, ORDER_DATE, ORDER_TOTAL_AMOUNT FROM TBL_ORDER
+        WHERE MEMBER_NUMBER=#{memberNumber}
     </select>
+
+    <insert id="insert">
+        <selectKey keyProperty="orderNumber" order="BEFORE" resultType="long">
+            SELECT SEQ_ORDER.NEXTVAL FROM DUAL
+        </selectKey>
+        INSERT INTO TBL_ORDER(ORDER_NUMBER, ORDER_DATE, ORDER_TOTAL_AMOUNT, ORDER_DELIVERY_ADRRESS, ORDER_DELIVERY_ADRRESS_DETAIL, ORDER_SHIPPING_PLACE, MEMBER_NUMBER)
+        VALUES(#{orderNumber}, SYSDATE, #{orderTotalAmount}, #{orderDeliveryAddress}, #{orderDeliveryAddressDetail}, #{orderShippingPlace}, #{memberNumber})
+    </insert>
 </mapper>

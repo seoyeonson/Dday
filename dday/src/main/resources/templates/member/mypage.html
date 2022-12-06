@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="/main/css/footer.css">
 </head>
 <body>
+<th:block th:if="${session.member.memberNumber == 0}">
+    <input type="hidden" onclick="alert('로그인 후 이용가능합니다.'); location.href='/member/login'">
+</th:block>
     <!-- 헤더시작 -->
     <header th:replace="/main/header.html" :: h></header>
     <!-- 마이페이지 고정 틀 start -->
@@ -64,46 +67,45 @@
                         <h2 class="brhLeft">
                             주문내역
                         </h2>
-                        <span class="brhLeft">
-                            최대 지난 3년간의 주문 내역까지 확인할 수 있어요
-                        </span>
+<!--                        <span class="brhLeft">-->
+<!--                            최대 지난 3년간의 주문 내역까지 확인할 수 있어요-->
+<!--                        </span>-->
                     </div>
                 </div>
                 <div class="brhLine"></div>
                 <div class="orderHistory"> <!-- 주문 내역 리스트 시작-->
-                    <div class="orderList">
-                        <div class="orderListHeader">
-                            <span class="orderTime">2022.11.15 (20시 28분)</span>
-                            <a href="" class="orderDetail">주문내역상세보기</a>
-                        </div>
-                    </div>
-                    <div class="goodsDetail">
-                        <div class="goodsLeft">
-                            <img src="https://img-cf.kurly.com/shop/data/goods/1637922047806l0.jpg" alt="" class="goods">
-                            <div class="goodsInfo">
-                                <dl class="goodsName">
-                                    <dt class="goodsName2">상품명</dt>
-                                    <dd class="goodsName3">표고버섯 5~6입 100g 외 10건</dd>
-                                </dl>
-                                <dl class="orderNum">
-                                    <dt class="orderNum2">주문번호</dt>
-                                    <dd class="orderNum3">2287520280105</dd>
-                                </dl>
-                                <dl class="orderWay">
-                                    <dt class="orderWay2">결제방법</dt>
-                                    <dd class="orderWay3">카카오페이</dd>
-                                </dl>
-                                <dl class="orderPrice">
-                                    <dt class="orderPrice2">결제금액</dt>
-                                    <dd class="orderPrice3">41,985원</dd>
-                                </dl>
+<!--                    <div class="orderList">-->
+<!--                        <div class="orderListHeader">-->
+<!--                            <span class="orderTime">2022.11.15 (20시 28분)</span>-->
+<!--                            <a href="" class="orderDetail">주문내역상세보기</a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+                    <th:block th:each="order:${orders}">
+                        <div class="goodsDetail" th:object="${order}">
+                            <div class="goodsLeft">
+                                <img src="https://img-cf.kurly.com/shop/data/goods/1637922047806l0.jpg" alt="" class="goods">
+                                <div class="goodsInfo">
+                                    <dl class="orderNum">
+                                        <dt class="orderNum2">주문번호</dt>
+                                        <dd class="orderNum3" th:text="*{orderNumber}"></dd>
+                                    </dl>
+                                    <dl class="orderWay">
+                                        <dt class="orderWay2">주문날짜</dt>
+                                        <dd class="orderWay3" th:text="*{orderDate}"></dd>
+                                    </dl>
+                                    <dl class="orderPrice">
+                                        <dt class="orderPrice2">결제금액</dt>
+                                        <dd class="orderPrice3" th:text="*{#numbers.formatInteger(orderTotalAmount, 0, 'COMMA')}+원"></dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="goodsRight">
+                                <span class="orderStatus">배송완료</span>
+
                             </div>
                         </div>
-                        <div class="goodsRight">
-                            <span class="orderStatus">배송완료</span>
 
-                        </div>
-                    </div>
+                    </th:block>
                 </div>
             </div>
         </div>
@@ -113,5 +115,6 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="/main/js/header.js"></script>
-
+<script>
+</script>
 </html>

@@ -30,3 +30,6 @@ VALUES(SEQ_ORDER.NEXTVAL, SYSDATE, 3, '60000', '����Ư����ġ��
 INSERT INTO TBL_ORDER
 VALUES(SEQ_ORDER.NEXTVAL, SYSDATE, 1, '10000', '���� ���Ǳ� ���ǻ곪��� 1-2', '(�Ÿ���)', 3);
 /* ----------------------------------------------------- */
+
+SELECT * FROM TBL_ORDER_DETAIL;
+CREATE SEQUENCE SEQ_ORDER_DETAIL;

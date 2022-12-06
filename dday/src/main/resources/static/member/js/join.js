@@ -332,13 +332,75 @@ function sample6_execDaumPostcode() {
     }).open();
 }
 
+$("#idCheck").on("click", function(){
+    let memberId = $("input[name='memberId']").val();
+    $.ajax({
+        url: "/member/checkId/" + memberId,
+        success: function(result){
+            if(result > 0){
+                $("#checkId_msg").text("중복된 아이디입니다. 다시 입력해주세요.");
+                $("#checkId_msg").parent().css("padding", "10px 0px");
+                $("input[name='memberId']").val();
+            } else {
+                $("#checkId_msg").text("사용 가능한 아이디입니다.");
+                $("#checkId_msg").parent().css("padding", "10px 0px");
+                $("#checkId_msg").css("color", "blue");
+            }
+        }
+    })
+});
+
+$("#emailCheck").on("click", function(){
+    let memberEmail = $("input[name='memberEmail']").val();
+    $.ajax({
+        url: "/member/checkEmail/" + memberEmail,
+        success: function(result){
+            if(result > 0){
+                $("#checkEmail_msg").text("중복된 이메일입니다. 다시 입력해주세요.");
+                $("#checkEmail_msg").parent().css("padding", "10px 0px");
+                $("input[name='memberEmail']").val();
+            } else {
+                $("#checkEmail_msg").text("사용 가능한 이메일입니다.");
+                $("#checkEmail_msg").css("color", "blue");
+                $("#checkEmail_msg").parent().css("padding", "10px 0px");
+            }
+        }
+    })
+});
+
 
 $(".signup_submit button").on("click", function(){
-    // if(signupForm.[name명].value == ""){
-    //     alert("이름을 입력해주세요.");
-    // } 
-    // else if (){ .. } ==> 필수 입력 모두 체크
-    // else if(!$agreeAll.is(":checked")){ alert("약관을 동의해주세요.")}
-    // else { signupForm.submit(); }
-    joinForm.submit();
+    if($("input[name='memberId']").val() == ""){
+        alert("아이디를 입력해주세요.");
+        $("input[name='memberId']").focus();
+
+    }else if($("input[name='memberPw']").val() == ""){
+        alert("비밀번호를 입력해주세요.");
+        $("input[name='memberPw']").focus();
+
+    }else if($("input[name='memberPwCheck']").val() == ""){
+        alert("비밀번호를 확인해주세요.");
+        $("input[name='memberPwCheck']").focus();
+
+    }else if($("input[name='memberName']").val() == ""){
+        alert("이름을 입력해주세요.");
+        $("input[name='memberName']").focus();
+
+    }else if ($("input[name='memberEmail']").val() == ""){
+        alert("이메일을 입력해주세요.");
+        $("input[name='memberEmail']").focus();
+
+    }else if ($("input[name='memberPhoneNumber']").val() == ""){
+        alert("휴대폰 번호를 입력해주세요.");
+        $("input[name='memberPhoneNumber']").focus();
+
+    }else if ($("input[name='addressMain']").val() == ""){
+        alert("주소를 입력해주세요.");
+        $("input[name='addressMain']").focus();
+
+    }else if(!$agreeAll.is(":checked")){
+        alert("약관을 동의해주세요.");
+    } else {
+        joinForm.submit();
+    }
 });

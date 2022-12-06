@@ -4,6 +4,7 @@ import com.example.dday.domain.vo.MemberDTO;
 import com.example.dday.domain.vo.MemberVO;
 import com.example.dday.service.AddressService;
 import com.example.dday.service.MemberService;
+import com.example.dday.service.OrderService;
 import com.example.dday.service.PointService;
 import com.example.dday.type.MemberType;
 import lombok.Getter;
@@ -28,6 +29,7 @@ public class MemberController {
     private final MemberService memberService;
     private final PointService pointService;
     private final AddressService addressService;
+    private final OrderService orderService;
 
 //    Session으로 memberNumber, pointTotal, likeTotal Check는 AOP 를 이용하여 체크할 수 있도록 추후 수정
     @GetMapping("/divide")
@@ -46,7 +48,11 @@ public class MemberController {
         log.info("member: " + member);
         String url = "";
         memberService.join(member);
-        session.setAttribute("member", member);
+        MemberVO memberVO = new MemberVO();
+        memberVO.setMemberNumber(member.getMemberNumber());
+        memberVO.setMemberName(member.getMemberName());
+        memberVO.setMemberType(member.getMemberType());
+        session.setAttribute("member", memberVO);
 
         if(member.getMemberType().equals(MemberType.NORMAL.label())){
             url ="/member/joinNormalOk";
@@ -85,10 +91,12 @@ public class MemberController {
 
 //    mypage
     @GetMapping("/mypage")
-    public void mypage(HttpSession session){
+    public void mypage(HttpSession session, Model model){
         MemberVO memberVO = (MemberVO)session.getAttribute("member");
         Long pointTotal = pointService.findPointTotalByNumber(memberVO.getMemberNumber());
         Long likeTotal = memberService.findLikeTotalByNumber(memberVO.getMemberNumber());
+        model.addAttribute("orders", orderService.findByMemberNumber(memberVO.getMemberNumber()));
+
         session.setAttribute("pointTotal", pointTotal);
         session.setAttribute("likeTotal", likeTotal);
     }
@@ -134,6 +142,18 @@ public class MemberController {
 
         session.setAttribute("pointTotal", pointTotal);
         session.setAttribute("likeTotal", likeTotal);
+    }
+
+    @GetMapping("/checkId/{memberId}")
+    @ResponseBody
+    public int checkId(@PathVariable String memberId){
+        return memberService.checkId(memberId);
+    }
+
+    @GetMapping("/checkEmail/{memberEmail}")
+    @ResponseBody
+    public int checkEmail(@PathVariable String memberEmail){
+        return memberService.checkEmail(memberEmail);
     }
 
     @GetMapping("/mypageOrderDetail")

@@ -23,6 +23,7 @@
 <!-- header 시작 -->
 <header th:replace="main/header.html" :: h></header>
 <!-- header 종료 -->
+<form name="orderOkForm" th:action="@{/order/order}" method="post">
 <div class="order_page">
     <div class="order_margin">
         <h2 class="order_title">주문서</h2>
@@ -32,12 +33,15 @@
             </div>
             <th:block th:each="cart:${cartList}">
                 <div class="product_content" th:object="${cart}">
+                    <input type="hidden" th:value="*{productNumber}" id="productNumber" name="productNumber">
+                    <input type="hidden" th:value="*{cartCount}" id="orderDetailCount" name="orderDetailCount">
+                    <input type="hidden" th:value="*{productSalePrice}" id="orderDetailPrice" name="orderDetailPrice">
                     <span class="product_img1"></span>
                     <span class="product_name_section">
                             <span class="product_name" th:text="*{productName}"></span>
                         </span>
-                    <span class="quantity"><th:block th:text="*{cartCount}"></th:block>개</span>
-                    <span class="product_price_section"><span class="product_price"><th:block th:text="*{productSalePrice}"></th:block>원</span></span>
+                    <span class="quantity cartCount" th:text="*{cartCount} + 개" th:id="cartCount" th:name="cartCount"></span>
+                    <span class="product_price_section"><span class="product_price productSalePrice" th:text="*{productSalePrice} + 원" th:id="productSalePrice" th:name="productSalePrice"></span></span>
                 </div>
             </th:block>
             <div class="section_divider">
@@ -51,7 +55,7 @@
                 </div>
                 <div class="customer_info_layout"><span class="info_subtitle">휴대폰</span>
                     <div class="info_content">
-                        <div class="customer_info"><span th:text="*{memberPhoneNumber}"></div>
+                        <div class="customer_info"><span th:text="*{memberPhoneNumber}"></span></div>
                     </div>
                 </div>
                 <div class="customer_info_layout"><span class="info_subtitle">이메일</span>
@@ -70,6 +74,8 @@
                 <div class="delivery_info">
                     <div class="info_padding"><span class="info_subtitle">배송지</span>
                         <div class="info_content">
+                            <input type="hidden" th:value="*{addressVO.addressMain}" id="orderDeliveryAddress" name="orderDeliveryAddress">
+                            <input type="hidden" th:value="*{addressVO.addressDetail}" id="orderDeliveryAddressDetail" name="orderDeliveryAddressDetail">
                             <p class="address"><span th:text="*{addressVO.addressMain}"></span> <span th:text="*{addressVO.addressDetail}"></span></p>
                             <!-- <div class="address_specify">
                                 <label for="receiver-name" class="input_title">상세주소</label><span
@@ -88,22 +94,12 @@
                                 분</label><span class="must">*</span>
                                 <div height="44" class="input_box">
                                     <span th:text="*{addressVO.addressReceivePerson}"></span>
-<!--                                    <input data-testid="input-box" id="receiver-name"-->
-<!--                                                                          name="name" placeholder="이름을 입력해 주세요"-->
-<!--                                                                          type="text" required="" height="44"-->
-<!--                                                                          class="delivery_details_input" value="">-->
                                 </div>
                             </div>
-                            <div class="delivery_details_content"><label for="receiver-phone"
-                                                                         class="input_title">휴대폰</label><span
+                            <div class="delivery_details_content"><label for="receiver-phone" class="input_title">휴대폰</label><span
                                     class="must">*</span>
                                 <div height="44" class="input_box">
                                     <span th:text="*{addressVO.addressReceivePhoneNumber}"></span>
-<!--                                    <input data-testid="input-box"-->
-<!--                                                                          id="receiver-phone" name="phone"-->
-<!--                                                                          placeholder="숫자만 입력해 주세요" type="tel"-->
-<!--                                                                          required="" height="44"-->
-<!--                                                                          class="delivery_details_input" value="">-->
                                 </div>
                             </div>
                             <div>
@@ -113,24 +109,23 @@
                                 <div class="delivery_place input_section">
                                     <div class="input_radio">
                                         <label class="radio_label">
-                                            <input id="door" name="receivePlace" type="radio" value="DOOR"
+                                            <input name="receivePlace" type="radio" value="문 앞"
                                                    checked="">
                                             <span class="radio_circle"><span class="radio_in_circle"></span></span>
                                             <span class="real_label">문 앞</span>
                                         </label>
                                         <label class="radio_label">
-                                            <input id="door" name="receivePlace" type="radio"
-                                                   value="SECURITY_OFFICE" checked="">
+                                            <input name="receivePlace" type="radio" value="경비실" checked="">
                                             <span class="radio_circle"><span class="radio_in_circle"></span></span>
                                             <span class="real_label">경비실</span>
                                         </label>
                                         <label class="radio_label">
-                                            <input id="door" name="receivePlace" type="radio" value="PICKUP_BOX"
-                                                   checked="">
+                                            <input name="receivePlace" type="radio" value="택배함" checked="">
                                             <span class="radio_circle"><span class="radio_in_circle"></span></span>
                                             <span class="real_label">택배함</span>
                                         </label>
                                     </div>
+                                    <input type="hidden" name="orderShippingPlace" id="orderShippingPlace">
                                 </div>
                             </div>
                         </div>
@@ -213,50 +208,55 @@
                                 <div class="css-yct5co eahaaoi9">주문금액</div>
                                 <div>
                                     <span class="css-2pg1ps eahaaoi8">
-                                        <span
-                                        class="css-rfpchb eahaaoi1"></span></span><span
-                                        class="css-vu318a eahaaoi6">원</span></div>
+                                        <span class="css-rfpchb eahaaoi1" id="orderPriceTotal"></span></span><span class="css-vu318a eahaaoi6">원</span></div>
                             </div>
-                            <div class="css-1d81lpa eahaaoi7">
-                                <div class="css-yct5co eahaaoi9">상품금액</div>
-                                <div><span class="css-2pg1ps eahaaoi8"><span
-                                        class="css-rfpchb eahaaoi1"></span>18,220</span><span
-                                        class="css-vu318a eahaaoi6">원</span></div>
-                            </div>
-                            <div class="css-1d81lpa eahaaoi7">
-                                <div class="css-yct5co eahaaoi9">상품할인금액</div>
-                                <div><span class="css-2pg1ps eahaaoi8"><span
-                                        class="css-rfpchb eahaaoi1"></span>0</span><span
-                                        class="css-vu318a eahaaoi6">원</span></div>
-                            </div>
+<!--                            <div class="css-1d81lpa eahaaoi7">-->
+<!--                                <div class="css-yct5co eahaaoi9">상품금액</div>-->
+<!--                                <div>-->
+<!--                                    <span class="css-2pg1ps eahaaoi8">-->
+<!--                                        <span class="css-rfpchb eahaaoi1"></span>-->
+
+<!--                                    </span>-->
+<!--                                    <span class="css-vu318a eahaaoi6">원</span>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="css-1d81lpa eahaaoi7">-->
+<!--                                <div class="css-yct5co eahaaoi9">상품할인금액</div>-->
+<!--                                <div><span class="css-2pg1ps eahaaoi8"><span-->
+<!--                                        class="css-rfpchb eahaaoi1"></span>0</span><span-->
+<!--                                        class="css-vu318a eahaaoi6">원</span></div>-->
+<!--                            </div>-->
                             <div class="css-1bj5qaf eahaaoi10">
                                 <div class="css-yct5co eahaaoi9">배송비</div>
-                                <div><span class="css-2pg1ps eahaaoi8"><span
-                                        class="css-rfpchb eahaaoi1"></span>0</span><span
-                                        class="css-vu318a eahaaoi6">원</span></div>
+                                <div><span class="css-2pg1ps eahaaoi8"><span class="css-rfpchb eahaaoi1"></span>+3,000</span>
+                                    <span class="css-vu318a eahaaoi6">원</span></div>
                             </div>
-                            <div class="css-1bj5qaf eahaaoi10">
-                                <div class="css-yct5co eahaaoi9">쿠폰할인</div>
-                                <div class="css-0"><span class="css-2pg1ps eahaaoi8"><span
-                                        class="css-rfpchb eahaaoi1"></span>0</span><span
-                                        class="css-vu318a eahaaoi6">원</span></div>
-                            </div>
+<!--                            <div class="css-1bj5qaf eahaaoi10">-->
+<!--                                <div class="css-yct5co eahaaoi9">쿠폰할인</div>-->
+<!--                                <div class="css-0"><span class="css-2pg1ps eahaaoi8"><span-->
+<!--                                        class="css-rfpchb eahaaoi1"></span>0</span><span-->
+<!--                                        class="css-vu318a eahaaoi6">원</span></div>-->
+<!--                            </div>-->
                             <div class="css-1bj5qaf eahaaoi10">
                                 <div class="css-yct5co eahaaoi9">적립금사용</div>
-                                <div class="css-37wf0k"><span class="css-2pg1ps eahaaoi8"><span
-                                        class="css-rfpchb eahaaoi1"></span>0</span><span
-                                        class="css-vu318a eahaaoi6">원</span></div>
+                                <div class="css-37wf0k">
+                                    <span class="css-2pg1ps eahaaoi8">
+                                        <span class="css-rfpchb eahaaoi1" id="usePoint">0</span>
+                                    </span>
+                                    <span class="css-vu318a eahaaoi6">원</span></div>
                             </div>
                             <div class="css-gs4y0w eahaaoi5">
                                 <div class="css-yct5co eahaaoi9">최종결제금액</div>
-                                <div><span class="css-2pg1ps eahaaoi8"><span
-                                        class="css-rfpchb eahaaoi1"></span>18,220</span><span
-                                        class="css-vu318a eahaaoi6">원</span></div>
+                                <input type="hidden" id="orderTotalAmount" name="orderTotalAmount">
+                                <div>
+                                    <span class="css-2pg1ps eahaaoi8">
+                                        <span class="css-rfpchb eahaaoi1"></span>
+                                        <span id="finalOrderPrice"></span>
+                                    </span>
+                                    <span class="css-vu318a eahaaoi6">원</span></div>
                             </div>
                             <div class="css-i93a3v eahaaoi3"><span class="css-5lws00 eahaaoi2">적립</span>구매 시
-                                <div
-                                        class="css-1xkempz eahaaoi4">808원(5%)
-                                </div>
+                                <div class="css-1xkempz eahaaoi4" id="pointAmount">808원(5%)</div>
                             </div>
                         </div>
                     </div>
@@ -301,7 +301,7 @@
             </p>
             <div class="css-1azakc el0c5j41">
                 <button class="pay_button" type="button" width="240"
-                        height="56" radius="3"><span class="button_font" id="payment_button">18,220원 결제하기</span>
+                        height="56" radius="3"><span class="button_font" id="payment_button">결제하기</span>
                 </button>
                 <p class="css-ias04p el0c5j40">[주문완료] 상태일 경우에만 주문 취소 가능합니다.<br>미성년자가 결제 시 법정대리인이 그 거래를 취소할 수
                     있습니다.<br>배송 불가
@@ -312,6 +312,7 @@
         </div>
     </div>
 </div>
+</form>
 <!-- footer 시작 -->
 <footer th:replace="main/footer.html" :: f></footer>
 <!-- footer 종료 -->
@@ -319,5 +320,65 @@
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="/main/js/header.js"></script>
 <script src="/order/js/order.js"></script>
+<script>
+    var $cartCount = $(".cartCount");
+    var $productSalePrice = $(".productSalePrice");
+    var $orderPriceTotal = $("#orderPriceTotal");
+    var $usePoint = $("#usePoint");
+    var $finalOrderPrice = $("#finalOrderPrice");
+    var $pointAmount = $("#pointAmount");
+    var arrCartCount = [];
+    var arrProductSalePrice = [];
+    var orderPriceTotal = 0;
+    var usePoint = 0;
+    var finalOrderPrice = 0;
+    var pointAmount = 0;
+
+
+
+    $.each($cartCount, function () {
+        arrCartCount.push($(this).text());
+    })
+
+    $.each($productSalePrice, function () {
+        arrProductSalePrice.push($(this).text());
+    })
+
+    for (var i = 0; i < arrCartCount.length; i++){
+        orderPriceTotal += arrCartCount[i].replace("개", "") * arrProductSalePrice[i].replace("원", "");
+    }
+
+    $orderPriceTotal.text(orderPriceTotal.toLocaleString('ko-KR'));
+    $pointAmount.text(parseInt((orderPriceTotal * 0.05)).toLocaleString('ko-KR') + "원");
+
+    finalPriceChange();
+
+    $(".point_all").on("click", function(){
+        usePoint = Number($(".point").text());
+        $usePoint.text(usePoint.toLocaleString('ko-KR'));
+        $("input[name='point-usage']").val($(".point").text());
+        finalPriceChange();
+    });
+
+    $("input[name='point-usage']").on("change", function(){
+        $usePoint.text(Number($("input[name='point-usage']").val()).toLocaleString('ko-KR'));
+        usePoint = Number($("input[name='point-usage']").val());
+        finalPriceChange();
+    });
+
+    function finalPriceChange(){
+        finalOrderPrice = orderPriceTotal + 3000 - usePoint;
+        $finalOrderPrice.text(finalOrderPrice.toLocaleString('ko-KR'));
+        $("#orderTotalAmount").val(finalOrderPrice);
+    }
+
+    $(".pay_button").on("click", function(){
+        let check = confirm("상품을 주문하시겠습니까?");
+
+        if(check){
+            orderOkForm.submit();
+        }
+    });
+</script>
 </body>
 </html>
