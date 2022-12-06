@@ -25,6 +25,7 @@ import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -75,8 +76,7 @@ public class PartnerController {
     }*/
 
     @GetMapping("/partner_main")
-    public void partner_main() {
-    }
+    public void partner_main() { ; }
 
     //    파트너 상품리스트 가져오기
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.dday.mapper.PointMapper">
-    <select id="getPointTotal" resultType="long">
+    <select id="getPointTotal" resultType="int">
         SELECT POINT_REMAIN
         FROM
          (
@@ -18,5 +18,20 @@
         ORDER BY POINT_NUMBER DESC
     </select>
 
+    <insert id="insertUse">
+        <selectKey keyProperty="pointNumber" order="BEFORE" resultType="long">
+            SELECT SEQ_POINT.NEXTVAL FROM DUAL
+        </selectKey>
+        INSERT INTO TBL_POINT(POINT_NUMBER, MEMBER_NUMBER, POINT_REMAIN, POINT_PRICE, POINT_CONTENT, POINT_DATE, POINT_TYPE)
+        VALUES (#{pointNumber}, #{memberNumber}, #{pointRemain}, #{pointPrice}, #{pointContent}, SYSDATE, '사용')
+    </insert>
+
+    <insert id="insertOrder">
+        <selectKey keyProperty="pointNumber" order="BEFORE" resultType="long">
+            SELECT SEQ_POINT.NEXTVAL FROM DUAL
+        </selectKey>
+        INSERT INTO TBL_POINT(POINT_NUMBER, MEMBER_NUMBER, POINT_REMAIN, POINT_PRICE, POINT_CONTENT, POINT_DATE, POINT_END_DATE, POINT_TYPE)
+        VALUES (#{pointNumber}, #{memberNumber}, #{pointRemain}, #{pointPrice}, #{pointContent}, SYSDATE, ADD_MONTHS(SYSDATE, 1), '적립')
+    </insert>
 
 </mapper>
