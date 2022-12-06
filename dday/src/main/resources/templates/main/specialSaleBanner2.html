@@ -23,9 +23,9 @@
         </div>
         <div class="product-image">
             <div class="product-imagee">
-                <div class="product-image-header">
-                    <a th:href="@{/product/todayCategoryDetail(productNumber=${mainProduct3.productNumber})}">
-                        <img th:src="@{/partner/display(fileName=${mainProduct3.productMainImageName})}">
+                <div class="product-image-header specialHeight">
+                    <a class="fitSize" th:href="@{/product/todayCategoryDetail(productNumber=${mainProduct3.productNumber})}">
+                        <img class="specialWidth" th:src="@{/partner/display(fileName=${mainProduct3.productMainImageName})}">
                     </a>
                     <div>
                         <button type="button" class="product-function product-absolute inputCart">
