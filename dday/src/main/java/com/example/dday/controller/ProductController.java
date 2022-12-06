@@ -8,6 +8,7 @@ import com.example.dday.mapper.SearchProductMapper;
 import com.example.dday.service.ProductService;
 import com.example.dday.service.ReviewService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
+@Slf4j
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/product/*")
@@ -66,6 +68,8 @@ public class ProductController {
         paramMap.put("highlow", productSort);
         paramMap.put("filterSearch", filterSearchList);
         paramMap.put("productColNum", productColNum);
+
+        log.info("productColNum : " + productColNum);
 
         /*System.out.println("filterSearchList.size()        >>" + filterSearchList.size());*/
         System.out.println("filterSearchList         >>" + filterSearchList);
@@ -126,15 +130,19 @@ public class ProductController {
 
     }
 
-    @GetMapping("/saleCategory")
+    @GetMapping(value="/saleCategory")
     public void saleCategory(@RequestParam(value = "highlow", required = false) String productSort,
                              @RequestParam(value = "filterSearch", required = false) String filterSearch,
-                             @RequestParam(value = "productColNum", required = false) String productColNum,
+                             @RequestParam(value = "productColNum", required = false) Integer productColNum,
                              ProductCriteria productCriteria,Model model, Model SearchList){
         if(productCriteria.getPage() == 0){
             productCriteria.create(1,12);
         }
+        int col4 = 4;
+        productVO.setProductColNum(col4);
         model.addAttribute("sales", productService.showSale(productCriteria));
+        log.info("showSleController: " + productCriteria);
+        log.info("colNum~~~~~~~~~~" + productColNum);
         model.addAttribute("pagination",new ProductPageDTO().createProductPageDTO(productCriteria, productService.getSaleTotal()));
         model.addAttribute("salesTotal",productService.getSaleTotal());
 

@@ -27,7 +27,7 @@ public class ProductVO {
     private Long productViewCount;
     private Long productSalePrice;
     private Long memberNumber;
-    private Long productColNum;
+    private int productColNum;
 
     public void create(String productName, String productCategory, Long productPrice, Long productStock, String productManufactureDate, String productExpirationDate, String productOnelineInformation, String productInformation, String productThumbnailName, String productMainImageName, String productTodaySale, Long productSalePercent) {
         this.productName = productName;

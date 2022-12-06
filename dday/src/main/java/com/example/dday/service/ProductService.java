@@ -15,7 +15,11 @@ import java.util.List;
 @Slf4j
 public class ProductService {
     private final ProductDAO productDAO;
-
+    private final ProductVO productVO;
+    int col1 =1;
+    int col2 = 2;
+    int col3 = 3;
+    int col4 = 4;
     // 추가
     public void register(ProductVO productVO){
         productVO.setProductSalePrice((long)(productVO.getProductPrice() * (1-productVO.getProductSalePercent()/(double)100)));
@@ -31,18 +35,23 @@ public class ProductService {
     }
     // 당일판매상품 조회
     public List<ProductVO> showToday(ProductCriteria productCriteria){
+       productVO.setProductColNum(col1);
         return productDAO.findToday(productCriteria);
     }
     // 베스트 상품 조회
     public List<ProductVO> showBest(ProductCriteria productCriteria){
+        productVO.setProductColNum(col3);
         return productDAO.findBest(productCriteria);
     }
     // 신상품 조회
     public List<ProductVO> showNew(){
+        productVO.setProductColNum(col2);
         return productDAO.findNew();
     }
     // 대박할인상품 조회
     public List<ProductVO> showSale(ProductCriteria productCriteria){
+        productVO.setProductColNum(col4);
+        log.info("colNum!!!!!!!!!!!!!!! : " + productVO.getProductColNum());
         return productDAO.findSale(productCriteria);
     }
     // 상품 조회수
@@ -62,4 +71,5 @@ public class ProductService {
     public ProductDetailDTO showPartnerDetail(Long productNumber){
         return productDAO.findPartnerById(productNumber);
     }
+
 }

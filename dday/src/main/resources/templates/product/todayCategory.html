@@ -30,110 +30,98 @@
         <div id="container" class="content_width">
             <h3 class="search_section">당일 판매 상품</h3>
             <div class="css-pzlq5x etf617g2">
-                <div class="css-1jgnig9 ev2ab494">
-                    <div class="css-11y1fso ev2ab493"><span class="css-wy76no ev2ab492">필터</span>
-                        <div class="divresetbutton">
-                            <button class="resetbutton"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"
-                                                             xmlns="http://www.w3.org/2000/svg">
-                                <path class="resetlogo" id="pathrefresh1"
-                                      d="M13.78 3.96303C12.504 2.16973 10.4086 1 8.04 1C4.15192 1 1 4.15192 1 8.04C1 11.9281 4.15192 15.08 8.04 15.08C11.9281 15.08 15.08 11.9281 15.08 8.04"
-                                      stroke="#ddd" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="round"></path>
-                                <path class="resetlogo" id="pathrefresh2" d="M14.4933 1L14.4933 4.52H10.9733" stroke="#ddd"
-                                      stroke-width="1.6" stroke-linecap="square" stroke-linejoin="round"></path>
-                            </svg><span class="reset">초기화</span></button>
+                <!--필터 바 start-->
+                <form name="filterBanner" id="filterBanner" onsubmit="return false">
+                    <div class="css-1jgnig9 ev2ab494">
+                        <div class="css-11y1fso ev2ab493"><span class="css-wy76no ev2ab492">필터</span>
+
                         </div>
-                    </div>
-                    <div>
-                        <div class="category_section"><button class="css-16ixplb e1frj59j9">
-                            <div class="css-1iwixyn e1frj59j8">카테고리</div>
-                        </button>
-                            <div class="categoryfilter">
-                                <div class="input_section">
-                                    <div class="check_content">
-                                        <label>
-                                            <input type="checkbox" class="check" id="vegetable">
-                                            <span class="material-symbols-outlined check_img">check_circle</span>
-                                            <span class="filter_name">채소</span>
-                                            <span class="filter_count">24</span>
-                                        </label>
-                                    </div>
-                                    <div class="check_content">
-                                        <label>
-                                            <input type="checkbox" class="check" id="fruit_nut_rice">
-                                            <span class="material-symbols-outlined check_img">check_circle</span>
-                                            <span class="filter_name">과일·견과·쌀</span>
-                                            <span class="filter_count">1</span>
-                                        </label>
-                                    </div>
-                                    <div class="check_content">
-                                        <label>
-                                            <input type="checkbox" class="check" id="seafood">
-                                            <span class="material-symbols-outlined check_img">check_circle</span>
-                                            <span class="filter_name">수산·해산·건어물</span>
-                                            <span class="filter_count">1</span>
-                                        </label>
-                                    </div>
-                                    <div class="check_content">
-                                        <label>
-                                            <input type="checkbox" class="check" id="meat_egg">
-                                            <span class="material-symbols-outlined check_img">check_circle</span>
-                                            <span class="filter_name">정육·계란</span>
-                                            <span class="filter_count">1</span>
-                                        </label>
-                                    </div>
-                                    <div class="check_content">
-                                        <label>
-                                            <input type="checkbox" class="check" id="soup_side_main">
-                                            <span class="material-symbols-outlined check_img">check_circle</span>
-                                            <span class="filter_name">국·반찬·메인요리</span>
-                                            <span class="filter_count">1</span>
-                                        </label>
-                                    </div>
-                                    <div class="check_content">
-                                        <label>
-                                            <input type="checkbox" class="check" id="salad">
-                                            <span class="material-symbols-outlined check_img">check_circle</span>
-                                            <span class="filter_name">샐러드·간편식</span>
-                                            <span class="filter_count">1</span>
-                                        </label>
-                                    </div>
-                                    <div class="check_content">
-                                        <label>
-                                            <input type="checkbox" class="check" id="noodle_sauce_oil">
-                                            <span class="material-symbols-outlined check_img">check_circle</span>
-                                            <span class="filter_name">면·양념·오일</span>
-                                            <span class="filter_count">1</span>
-                                        </label>
-                                    </div>
-                                    <div class="check_content">
-                                        <label>
-                                            <input type="checkbox" class="check" id="drink">
-                                            <span class="material-symbols-outlined check_img">check_circle</span>
-                                            <span class="filter_name">생수·음료·우유·커피</span>
-                                            <span class="filter_count">1</span>
-                                        </label>
-                                    </div>
-                                    <div class="check_content">
-                                        <label>
-                                            <input type="checkbox" class="check" id="snack">
-                                            <span class="material-symbols-outlined check_img">check_circle</span>
-                                            <span class="filter_name">간식·과자·떡</span>
-                                            <span class="filter_count">1</span>
-                                        </label>
-                                    </div>
-                                    <div class="check_content">
-                                        <label>
-                                            <input type="checkbox" class="check" id="bakery_cheese">
-                                            <span class="material-symbols-outlined check_img">check_circle</span>
-                                            <span class="filter_name">베이커리·치즈·델리</span>
-                                            <span class="filter_count">1</span>
-                                        </label>
+
+                        <div>
+                            <div class="category_section">
+                                <button class="css-16ixplb e1frj59j9">
+                                    <div class="css-1iwixyn e1frj59j8">카테고리</div>
+                                </button>
+                                <div class="categoryfilter">
+                                    <div class="input_section">
+                                        <div class="check_content">
+                                            <label>
+                                                <input name="filterBox" type="checkbox" class="check" id="vegetable" value="1" th:checked="${#lists.contains(filterSearchList,'1')}">
+                                                <!--<span th:if="${#lists.contains(filterSearchList,'1')}"></span>-->
+                                                <span th:class="'material-symbols-outlined check_img '+ ${#lists.contains(filterSearchList,'1') ? 'fill': ''}">check_circle</span>
+                                                <span class="filter_name">채소</span>
+                                            </label>
+                                        </div>
+                                        <div class="check_content">
+                                            <label>
+                                                <input name="filterBox" type="checkbox" class="check" id="fruit_nut_rice" value="2" th:checked="${#lists.contains(filterSearchList,'2')}">
+                                                <span th:class="'material-symbols-outlined check_img '+ ${#lists.contains(filterSearchList,'2') ? 'fill': ''}">check_circle</span>
+                                                <span class="filter_name">과일·견과·쌀</span>
+                                            </label>
+                                        </div>
+                                        <div class="check_content">
+                                            <label>
+                                                <input name="filterBox" type="checkbox" class="check" id="seafood" value="3" th:checked="${#lists.contains(filterSearchList,'3')}">
+                                                <span th:class="'material-symbols-outlined check_img '+ ${#lists.contains(filterSearchList,'3') ? 'fill': ''}">check_circle</span>
+                                                <span class="filter_name">수산·해산·건어물</span>
+                                            </label>
+                                        </div>
+                                        <div class="check_content">
+                                            <label>
+                                                <input name="filterBox" type="checkbox" class="check" id="meat_egg" value="4" th:checked="${#lists.contains(filterSearchList,'4')}">
+                                                <span th:class="'material-symbols-outlined check_img '+ ${#lists.contains(filterSearchList,'4') ? 'fill': ''}">check_circle</span>
+                                                <span class="filter_name">정육·계란</span>
+                                            </label>
+                                        </div>
+                                        <div class="check_content">
+                                            <label>
+                                                <input name="filterBox" type="checkbox" class="check" id="soup_side_main" value="5" th:checked="${#lists.contains(filterSearchList,'5')}">
+                                                <span th:class="'material-symbols-outlined check_img '+ ${#lists.contains(filterSearchList,'5') ? 'fill': ''}">check_circle</span>
+                                                <span class="filter_name">국·반찬·메인요리</span>
+                                            </label>
+                                        </div>
+                                        <div class="check_content">
+                                            <label>
+                                                <input name="filterBox" type="checkbox" class="check" id="salad" value="6" th:checked="${#lists.contains(filterSearchList,'6')}">
+                                                <span th:class="'material-symbols-outlined check_img '+ ${#lists.contains(filterSearchList,'6') ? 'fill': ''}">check_circle</span>
+                                                <span class="filter_name">샐러드·간편식</span>
+                                            </label>
+                                        </div>
+                                        <div class="check_content">
+                                            <label>
+                                                <input name="filterBox" type="checkbox" class="check" id="noodle_sauce_oil" value="7" th:checked="${#lists.contains(filterSearchList,'7')}">
+                                                <span th:class="'material-symbols-outlined check_img '+ ${#lists.contains(filterSearchList,'7') ? 'fill': ''}">check_circle</span>
+                                                <span class="filter_name">면·양념·오일</span>
+                                            </label>
+                                        </div>
+                                        <div class="check_content">
+                                            <label>
+                                                <input name="filterBox" type="checkbox" class="check" id="drink" value="8" th:checked="${#lists.contains(filterSearchList,'8')}">
+                                                <span th:class="'material-symbols-outlined check_img '+ ${#lists.contains(filterSearchList,'8') ? 'fill': ''}">check_circle</span>
+                                                <span class="filter_name">생수·음료·우유·커피</span>
+                                            </label>
+                                        </div>
+                                        <div class="check_content">
+                                            <label>
+                                                <input name="filterBox" type="checkbox" class="check" id="snack" value="9" th:checked="${#lists.contains(filterSearchList,'9')}">
+                                                <span th:class="'material-symbols-outlined check_img '+ ${#lists.contains(filterSearchList,'9') ? 'fill': ''}">check_circle</span>
+                                                <span class="filter_name">간식·과자·떡</span>
+                                            </label>
+                                        </div>
+                                        <div class="check_content">
+                                            <label>
+                                                <input name="filterBox" type="checkbox" class="check" id="bakery_cheese" value="10" th:checked="${#lists.contains(filterSearchList,'10')}">
+                                                <span th:class="'material-symbols-outlined check_img '+ ${#lists.contains(filterSearchList,'10') ? 'fill': ''}">check_circle</span>
+                                                <span class="filter_name">베이커리·치즈·델리</span>
+
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </form>
                 <div class="result_section">
                     <div class="result_info">
                         <div class="total_search" th:text="총 + ${todaysTotal} + 건"></div>

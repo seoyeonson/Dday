@@ -66,7 +66,8 @@
 <div class="search_page" id="pageSearch">
     <div class="side_margin">
         <div id="container" class="content_width">
-            <h3 class="search_section">'<span class="key_word" id="searchKey" th:text="${keyword}"></span>'에 대한 검색결과</h3>
+            <h3 class="search_section"th:if="${not #strings.isEmpty(keyword)}">'<span class="key_word" id="searchKey" th:text="${keyword}"></span>'에 대한 검색결과
+                <span class="key_word" id="searchKey" th:unless="${not #strings.isEmpty(keyword)}"></span></h3>
             <div class="css-pzlq5x etf617g2">
                 <!--필터 바 start-->
                 <form name="filterBanner" id="filterBanner" onsubmit="return false">
@@ -312,6 +313,5 @@
                 }
                 /*]]>*/
             </script>
-
 </body>
 </html>
