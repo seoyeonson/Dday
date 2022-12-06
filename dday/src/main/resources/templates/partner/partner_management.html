@@ -89,7 +89,7 @@
                         <th:block th:each="product:${products}">
                             <tr class="tBody" th:object="${product}">
                                 <td class="productNumber" th:text="*{productNumber}"></td>
-                                <td class="productThumbnailName"><img src="" alt=""></td>
+                                <td class="productThumbnailName"><img src="C:\upload\ab700ac7-635b-4a66-9057-5c07e8ba1b13_Spring_project_ERD.png" alt=""></td>
                                 <td class="productName" th:text="*{productName}"></td>
                                 <td class="productPrice"
                                     th:text="${#numbers.formatInteger(product.productPrice, 3, 'COMMA') + '원'}"></td>

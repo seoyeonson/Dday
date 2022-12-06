@@ -280,6 +280,8 @@
     //첨부파일
     let arrayFile = [];
 
+    let text = "";
+
     $("input#inputFile").on('change', function () {
         let formData = new FormData();
         let files = this.files;
@@ -315,7 +317,18 @@
         $(files).each(function (i, file) {
             formData.append("upload", file);
         });
+        console.log($(formData));
+        for (let key of formData.keys()) {
 
+            console.log(key);
+
+        }
+
+        for (let value of formData.values()) {
+
+            console.log(value);
+
+        }
         $.ajax({
             url: "/partner/upload",
             type: "post",
@@ -325,19 +338,21 @@
             success: showMainImgResult
         })
     });
-
     function showThumbnailResult(path) {
         let text = "";
-        text += "<li>";
-        text += "<img src='/display?filePath=" + path + "'>";
-        text += "</li>";
+        console.log(path);
+        text += "<span>";
+        text += "<img src='/partner/display?fileName=" + path + "'>";
+        text += "<input name='productThumbnailName' id ='productThumbnailName' value='"+ path+ "'>";
+        text += "</span>";
         $(".thumbnailResult").html(text);
     }
 
     function showMainImgResult(path) {
         let text = "";
         text += "<li>";
-        text += "<img src='/display?filePath=" + path + "'>";
+        text += "<img src='/partner/display?fileName=" + path + "'>";
+        text += "<input name='productMainImageName' id ='productMainImageName' value='"+ path+ "'>";
         text += "</li>";
         $(".mainImgResult").html(text);
     }
@@ -345,29 +360,30 @@
     $("input[type='submit']").on("click", function (e) {
         e.preventDefault();
         let text = "";
-        $.each($(".thumbnailResult li"), function (i, li) {
-            let fileName = $(li).data("file-name");
-            let fileUploadPath = $(li).data("file-upload-path");
-            let fileUuid = $(li).data("file-uuid");
-            let fileSize = $(li).data("file-size");
-            let fileImageCheck = $(li).data("file-image-check");
-            text += `<input type="hidden" name="files[` + i + `].fileName" value="` + fileName + `">`;
-            text += `<input type="hidden" name="files[` + i + `].fileUploadPath" value="` + fileUploadPath + `">`;
-            text += `<input type="hidden" name="files[` + i + `].fileUuid" value="` + fileUuid + `">`;
-            text += `<input type="hidden" name="files[` + i + `].fileSize" value="` + fileSize + `">`;
-        });
-        $.each($(".mainImgResult li"), function (i, li) {
-            let fileName = $(li).data("file-name");
-            let fileUploadPath = $(li).data("file-upload-path");
-            let fileUuid = $(li).data("file-uuid");
-            let fileSize = $(li).data("file-size");
-            let fileImageCheck = $(li).data("file-image-check");
-            text += `<input type="hidden" name="files[` + i + `].fileName" value="` + fileName + `">`;
-            text += `<input type="hidden" name="files[` + i + `].fileUploadPath" value="` + fileUploadPath + `">`;
-            text += `<input type="hidden" name="files[` + i + `].fileUuid" value="` + fileUuid + `">`;
-            text += `<input type="hidden" name="files[` + i + `].fileSize" value="` + fileSize + `">`;
-        });
-        $("form#writeForm").append(text).submit();
+        // $.each($(".thumbnailResult li"), function (i, li) {
+        //     let fileName = $(li).data("file-name");
+        //     let fileUploadPath = $(li).data("file-upload-path");
+        //     let fileUuid = $(li).data("file-uuid");
+        //     let fileSize = $(li).data("file-size");
+        //     let fileImageCheck = $(li).data("file-image-check");
+        //     text += `<input type="hidden" name="files[` + i + `].fileName" value="` + fileName + `">`;
+        //     text += `<input type="hidden" name="files[` + i + `].fileUploadPath" value="` + fileUploadPath + `">`;
+        //     text += `<input type="hidden" name="files[` + i + `].fileUuid" value="` + fileUuid + `">`;
+        //     text += `<input type="hidden" name="files[` + i + `].fileSize" value="` + fileSize + `">`;
+        // });
+        // $.each($(".mainImgResult li"), function (i, li) {
+        //     let fileName = $(li).data("file-name");
+        //     let fileUploadPath = $(li).data("file-upload-path");
+        //     let fileUuid = $(li).data("file-uuid");
+        //     let fileSize = $(li).data("file-size");
+        //     let fileImageCheck = $(li).data("file-image-check");
+        //     text += `<input type="hidden" name="files[` + i + `].fileName" value="` + fileName + `">`;
+        //     text += `<input type="hidden" name="files[` + i + `].fileUploadPath" value="` + fileUploadPath + `">`;
+        //     text += `<input type="hidden" name="files[` + i + `].fileUuid" value="` + fileUuid + `">`;
+        //     text += `<input type="hidden" name="files[` + i + `].fileSize" value="` + fileSize + `">`;
+        // });
+        // $("form#writeForm").append(text).submit();
+        $("form#writeForm").submit();
     });
 
 

@@ -58,13 +58,14 @@
     </select>
 
     <select id="selectAll" resultType="productVO">
-        SELECT PRODUCT_NUMBER, PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_STOCK, PRODUCT_REGIST_DATE, PRODUCT_MODIFY_DATE
+        SELECT PRODUCT_NUMBER, PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_STOCK, PRODUCT_THUMBNAIL_NAME, PRODUCT_REGIST_DATE, PRODUCT_MODIFY_DATE
         FROM (
                  SELECT ROWNUM R,
                         PRODUCT_NUMBER,
                         PRODUCT_NAME,
                         PRODUCT_PRICE,
                         PRODUCT_STOCK,
+                        PRODUCT_THUMBNAIL_NAME,
                         PRODUCT_REGIST_DATE,
                         PRODUCT_MODIFY_DATE
                  FROM (
@@ -72,6 +73,7 @@
                                  PRODUCT_NAME,
                                  PRODUCT_PRICE,
                                  PRODUCT_STOCK,
+                                 PRODUCT_THUMBNAIL_NAME,
                                  PRODUCT_REGIST_DATE,
                                  PRODUCT_MODIFY_DATE
                           FROM TBL_PRODUCT P
