@@ -87,6 +87,23 @@ button{
   width: 694px
 }
 
+.specialHeight {
+  height: 347px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+}
+
+.specialWidth {
+  width: 100%;
+}
+
+.fitSize {
+  width: -webkit-fill-available;
+}
+
 .product-image-header{
   overflow: hidden;
   position: relative;
