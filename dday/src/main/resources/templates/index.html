@@ -64,31 +64,28 @@
     <img src="/main/images/main/up.PNG" id="topButtonImg">
 </div>
 <!-- 상승 아이콘-->
-<!--modal-->
-<form id="modalClear">
-    <div class="modalContainer">
+<!--모달창-->
+<form id="modalForm">
+    <div class="modalContainer" >
         <div class="modalBox">
             <div class="modal">
                 <div class="modalBody">
                     <div class="modalWrapper">
                         <div class="modalContent">
+                            <input type="hidden" name="productNumber">
                             <div class="modalProductName">
-                                <span>[KF365] 양념 소불고기 1kg(냉장)</span>
+                                <span></span>
                             </div>
                         </div>
                         <div class="priceAndCount">
                             <div>
-                          <span class="discountBox">
-                              17,590원
-                          </span>
-                                <span class="priceBox">
-                              18,990원
-                          </span>
+                                <span class="discountBox"></span>
+                                <span class="priceBox"></span>
                             </div>
                             <div class="product_cnt_box">
-                                <button class="minus"></button>
-                                <div class="cnt">1</div>
-                                <button class="plus"></button>
+                                <button type="button" class="minus"></button>
+                                <div class="cnt" id="cartCount">1</div>
+                                <button type="button" class="plus"></button>
                             </div>
                         </div>
                         <div class="totalPriceBox">
@@ -98,7 +95,7 @@
                                         합계
                                     </p>
                                     <div>
-                                        <span class="changePrice">17,590</span>
+                                        <span class="changePrice"></span>
                                         <span class="totalWon">원</span>
                                     </div>
                                 </div>
@@ -106,7 +103,7 @@
                             <div class="pointBox">
                                 <span class="pointText">적립</span>
                                 <span class="pointCalText">구매 시
-                                  <span class="realPoint">0원 적립
+                                  <span class="realPoint">5% 적립
                                   </span>
                               </span>
                             </div>
@@ -115,7 +112,7 @@
                             <button class="modalCancelButton" type="button">
                                 <span class="modalButtonText">취소</span>
                             </button>
-                            <button type="button" class="modalOkButton">
+                            <button type="button" class="modalOkButton addCart_btn">
                                 <span class="modalButtonText">장바구니 담기</span>
                             </button>
                         </div>
@@ -134,8 +131,11 @@
 <script src="/main/js/index.js"></script>
 <script src="/main/js/banner.js"></script>
 <script src="/main/js/header.js"></script>
-<script src="/main/js/category.js"></script>
+<!--<script src="/main/js/category.js"></script>-->
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script th:src="@{/product/js/search.js}"></script>
+<script th:src="@{/product/js/categoryModal.js}"></script>
+<script th:src="@{/cart/js/cart.js}"></script>
 <script>
     const mySwiper = new Swiper('.swiper-container-mySwiper', {
         spaceBetween: 0,

@@ -16,28 +16,38 @@
     <div class="today-product-image-link">
         <div class="swiper-container-todayProduct" style="overflow: hidden;">
             <div class="swiper-wrapper">
-                <a href="#;" class="swiper-slide" style="display: flex;">
+
                     <!--게시물1번-->
                     <tr:block th:each="mainProduct:${mainProduct}">
                         <tr th:object="${mainProduct}">
                     <div style="width: 249px; margin-right: 18px;">
                         <div class="today-product">
                             <div class="today-product-image product-hidden">
+                                <a th:href="@{/product/todayCategoryDetail(productNumber=${mainProduct.productNumber})}">
                                 <img th:text="*{productThumbnailName}" src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1594181922977l0.jpg" alt="상품 이미지" loading="lazy">
+                                </a>
                                 <div>
-                                    <button type="button" class="mainCart button-absolute">
+                                    <button type="button" class="mainCart button-absolute inputCart">
+                                        <input type="hidden" class="productNumber" th:value="${mainProduct.productNumber}">
+                                        <input type="hidden" id="productSalePrice" th:value="${mainProduct.productSalePrice}">
+                                        <input type="hidden" id="productName" th:value="${mainProduct.productName}">
+                                        <input type="hidden" id="productPrice" th:value="${mainProduct.productPrice}">
                                         <img src="/main/images/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
                                     </button>
                                 </div>
                             </div>
                             <div class="product-info product-info-header">
-                                <h3 th:text="*{productName}" textclass="product-name">[브로드카세] 부드러운 비엔나 쿠키 4종</h3>
-                                <div class="content-row">
+
+                                <h3 th:text="*{productName}" class="product-name">[델리치오] 호주산 목초육 안심 스테이크 250g
+                                    (냉장)</h3>
+
+                                <div class="content-row now-price">
                                     <div class="product-price">
-                                        <span th:text="*{productPrice}+원"class="sales-price css-18tpqqq">5,500
-                                            <span class="won"> 원</span>
-                                        </span>
+                                        <span class="discount-rate discount-orange" th:text="*{productSalePercent} + '%' ">25%</span>
+                                        <span th:text="*{productSalePrice}+원" class="sales-price css-18tpqqq">13,900</span>
                                     </div>
+                                    <span class="dimmed-price css-18tpqqq ei5rudb1" th:text="*{productPrice}">22,900
+                                                <span class="won"> 원</span></span>
                                 </div>
                             </div>
                         </div>
@@ -202,7 +212,7 @@
 <!--                            </div>-->
 <!--                        </div>-->
 <!--                    </div>-->
-                </a>
+
             </div>
             <!-- Add Arrows -->
             <button type="button" class="swiper-button-next today-product-button"></button>
