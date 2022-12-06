@@ -253,7 +253,7 @@ $('button.pickup').on('click', function(event){
 
     // 장바구니 버튼이 포함된 li에서 정보 가져오기
     // 상품 번호, 상품 가격, 상품 이름, 상품 세일가
-    let productNumber = $(this).find("input#productNumber").val();
+    let productNumber = $(this).find("input.productNumber").val();
     let productPrice = $(this).find("input#productPrice").val();
     let productName = $(this).find("input#productName").val();
     let productSalePrice = $(this).find("input#productSalePrice").val();
@@ -350,7 +350,7 @@ function priceChange(){
 }
 
 function addCart(){
-    var productNumber = $("input#productNumber").val();
+    var productNumber = $("input[name='productNumber']").val();
     var cartCount = $("#cartCount").text();
 
     var data = {
