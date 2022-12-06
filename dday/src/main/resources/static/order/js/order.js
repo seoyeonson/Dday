@@ -17,6 +17,7 @@ function checkRadio() {
     $.each($input_radio, function () {
         if ($(this).is(":checked")) {
             $(this).next().addClass("input_choice");
+            $("input[name='orderShippingPlace']").val($(this).val());
         } else {
             $(this).next().removeClass("input_choice");
         }

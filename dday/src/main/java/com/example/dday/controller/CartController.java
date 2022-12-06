@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/cart/*")
@@ -24,7 +25,7 @@ public class CartController {
     @GetMapping("/list")
     public void list(HttpSession session, Model model){
         Long memberNumber = ((MemberVO)session.getAttribute("member")).getMemberNumber();
-        model.addAttribute("address", addressService.findByMemberNumber(memberNumber));
+        model.addAttribute("address", Optional.ofNullable(addressService.findByMemberNumber(memberNumber)).orElse(new AddressVO()));
     }
 
     @GetMapping("/all")

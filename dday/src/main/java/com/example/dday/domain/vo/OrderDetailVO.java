@@ -10,10 +10,9 @@ import org.springframework.stereotype.Component;
 public class OrderDetailVO {
     private Long orderDetailNumber;
     private Integer orderDetailCount;
-    private Integer orderDetailPrice;
+    private Long orderDetailPrice;
     private String orderDetailDeliveryState;
-    private String orderDetailReview;
-    private String orderDetailReviewImage;
+    private Long orderDetailTotalAmount;
     private Long orderNumber;
     private Long productNumber;
 }

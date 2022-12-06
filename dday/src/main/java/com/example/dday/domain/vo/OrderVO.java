@@ -13,6 +13,7 @@ public class OrderVO {
     private Integer orderTotalAmount;
     private String orderDeliveryDate;
     private String orderDeliveryAddress;
+    private String orderDeliveryAddressDetail;
     private String orderShippingPlace;
     private Long memberNumber;
 }

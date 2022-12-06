@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="/member/css/myPageDelivery.css">
     <link rel="stylesheet" href="/main/css/header.css">
     <link rel="stylesheet" href="/main/css/footer.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        if([[${session.member.memberNumber}]] == 0){
+            alert('로그인 후 이용가능합니다.');
+            location.href='/member/login';
+        }
+    </script>
 </head>
 <body>
 <!-- 헤더시작 -->

@@ -49,9 +49,12 @@
                     </div>
                     <div class="input_section">
                         <input class="input_box" th:field="*{memberId}" type="text" placeholder="아이디를 입력해주세요">
+                        <div class="msg">
+                            <p id="checkId_msg"></p>
+                        </div>
                     </div>
                     <div class="button_section">
-                        <button>중복확인</button>
+                        <button type="button" id="idCheck">중복확인</button>
                     </div>
                 </div>
                 <div class="main_section">
@@ -98,7 +101,7 @@
                         </div>
                     </div>
                     <div class="button_section">
-                        <button>중복확인</button>
+                        <button type="button" id="emailCheck">중복확인</button>
                     </div>
                 </div>
                 <div class="main_section">
