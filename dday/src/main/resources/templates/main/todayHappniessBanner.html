@@ -1,200 +1,220 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:tr="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-    <div class="today-happniess banner-title" th:fragment="thb">
+<div class="today-happniess banner-title" th:fragment="thb">
     <div class="today-product-title">
         <div class="today-product-big-title">
-            <span class="today-product-span">💸만원의 행복</span>
+            <span class="today-product-span">만원의 행복</span>
         </div>
     </div>
     <!--                  -->
     <div class="today-product-image-link">
         <div class="swiper-container-todayProduct" style="overflow: hidden;">
             <div class="swiper-wrapper">
-                <a href="#;" class="swiper-slide" style="display: flex;">
-                    <div style="width: 249px; margin-right: 18px;">
-                        <div class="today-product">
-                            <div class="today-product-image product-hidden">
-                                <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1653037997440l0.jpeg" alt="상품 이미지" loading="lazy">
-                                <div>
-                                    <button type="button" class="mainCart button-absolute">
-                                        <img src="/main/images/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="product-info product-info-header">
-                                <h3 class="product-name">[델리치오] 호주산 목초육 안심 스테이크 250g (냉장)</h3>
-                                <div class="content-row now-price">
-                                    <div class="product-price">
-                                        <span class="discount-rate discount-orange">25%</span>
-                                        <span class="sales-price css-18tpqqq">13,900
+<!--                    <a href="#;" class="swiper-slide" style="display: flex;">-->
+
+                        <th:block th:each="mainProduct4:${mainProduct4}">
+                            <div th:object="${mainProduct4}">
+
+                            <div style="width: 249px; margin-right: 18px;">
+                                <div class="today-product">
+                                    <div class="today-product-image product-hidden">
+                                        <a th:href="@{/product/categoryDetail(productNumber=${mainProduct4.productNumber})}">
+                                           <img th:text="*{productThumbnailName}"
+                                             src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1653037997440l0.jpeg"
+                                             alt="상품 이미지" loading="lazy">
+                                        </a>
+                                        <div>
+                                            <button type="button" class="mainCart button-absolute inputCart">
+                                                <input type="hidden" class="productNumber" th:value="${mainProduct4.productNumber}">
+                                                <input type="hidden" id="productSalePrice" th:value="${mainProduct4.productSalePrice}">
+                                                <input type="hidden" id="productName" th:value="${mainProduct4.productName}">
+                                                <input type="hidden" id="productPrice" th:value="${mainProduct4.productPrice}">
+                                                <img src="/main/images/main/cart.png" width="45px" height="45px"
+                                                     alt="장바구니 아이콘">
+                                            </button>
+                                        </div>
                                     </div>
-                                    <span class="dimmed-price css-18tpqqq ei5rudb1">22,900<span class="won"> 원</span></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="width: 249px; margin-right: 18px;">
-                        <div class="today-product">
-                            <div class="today-product-image product-hidden">
-                                <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1637924123548l0.jpeg" alt="상품 이미지" loading="lazy">
-                                <div>
-                                    <button type="button" class="mainCart button-absolute">
-                                        <img src="/main/images/main/cart.png" width="45px" height="45px" alt="장바구니 아이콘">
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="product-info product-info-header">
-                                <h3 class="product-name">미국산 애플청포도 500g (오톰크리스피)</h3>
-                                <div class="content-row now-price">
-                                    <div class="product-price">
-                                        <span class="discount-rate discount-orange">30%</span>
-                                        <span class="sales-price css-18tpqqq">6,930
+                                    <div class="product-info product-info-header">
+
+                                        <h3 th:text="*{productName}" class="product-name">[델리치오] 호주산 목초육 안심 스테이크 250g
+                                            (냉장)</h3>
+
+                                        <div class="content-row now-price">
+                                            <div class="product-price">
+                                                <span class="discount-rate discount-orange" th:text="*{productSalePercent} + '%' ">25%</span>
+                                                <span th:text="*{productSalePrice}+원" class="sales-price css-18tpqqq">13,900</span>
+                                            </div>
+                                            <span class="dimmed-price css-18tpqqq ei5rudb1" th:text="*{productPrice}">22,900
+                                                <span class="won"> 원</span></span>
+                                        </div>
                                     </div>
-                                    <span class="dimmed-price css-18tpqqq ei5rudb1">9,900<span class="won"> 원</span></span>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div style="width: 249px; margin-right: 18px;">
-                        <div class="today-product">
-                            <div class="today-product-image product-hidden">
-                                <img src="https://product-image.kurly.com/cdn-cgi/image/width=400,format=auto/product/image/42e6bccc-59d0-4218-ba06-278aa629589a.jpg" alt="상품 이미지" loading="lazy">
-                                <div>
-                                    <button type="button" class="mainCart button-absolute">
-                                        <img src="/main/images/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
-                                    </button>
-                                </div>
+
                             </div>
-                            <div class="product-info product-info-header">
-                                <h3 class="product-name">[종로 평원숯불갈비] 돼지 물갈비 515g]</h3>
-                                <div class="content-row now-price">
-                                    <div class="product-price">
-                                        <span class="discount-rate discount-orange">15%</span>
-                                        <span class="sales-price css-18tpqqq">10,370
-                                    </div>
-                                    <span class="dimmed-price css-18tpqqq ei5rudb1">12,000<span class="won"> 원</span></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="width: 249px; margin-right: 18px;">
-                        <div class="today-product">
-                            <div class="today-product-image product-hidden">
-                                <img src="https://product-image.kurly.com/cdn-cgi/image/width=400,format=auto/product/image/fe2e03b7-0b38-4e91-b1e4-b7829d218a84.jpg" alt="상품 이미지" loading="lazy">
-                                <div>
-                                    <button type="button" class="mainCart button-absolute">
-                                        <img src="/main/images/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="product-info product-info-header">
-                                <h3 class="product-name">제주담은 청귤에이드 20개입</h3>
-                                <div class="content-row now-price">
-                                    <div class="product-price">
-                                        <span class="discount-rate discount-orange">27%</span>
-                                        <span class="sales-price css-18tpqqq">15,900
-                                    </div>
-                                    <span class="dimmed-price css-18tpqqq ei5rudb1">22,000<span class="won"> 원</span></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="#;" class="swiper-slide" style="display: flex;">
-                    <div style="width: 249px; margin-right: 18px;">
-                        <div class="today-product">
-                            <div class="today-product-image product-hidden">
-                                <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1653037997440l0.jpeg" alt="상품 이미지" loading="lazy">
-                                <div>
-                                    <button type="button" class="mainCart button-absolute">
-                                        <img src="/main/images/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="product-info product-info-header">
-                                <h3 class="product-name">[델리치오] 호주산 목초육 안심 스테이크 250g (냉장)</h3>
-                                <div class="content-row now-price">
-                                    <div class="product-price">
-                                        <span class="discount-rate discount-orange">25%</span>
-                                        <span class="sales-price css-18tpqqq">13,900
-                                    </div>
-                                    <span class="dimmed-price css-18tpqqq ei5rudb1">22,900<span class="won"> 원</span></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="width: 249px; margin-right: 18px;">
-                        <div class="today-product">
-                            <div class="today-product-image product-hidden">
-                                <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1651455844958l0.jpg" alt="상품 이미지" loading="lazy">
-                                <div>
-                                    <button type="button" class="mainCart button-absolute">
-                                        <img src="/main/images/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="product-info product-info-header">
-                                <h3 class="product-name">[델리치오] 호주산 목초육 안심 스테이크 250g (냉장)</h3>
-                                <div class="content-row now-price">
-                                    <div class="product-price">
-                                        <span class="discount-rate discount-orange">25%</span>
-                                        <span class="sales-price css-18tpqqq">13,900
-                                    </div>
-                                    <span class="dimmed-price css-18tpqqq ei5rudb1">22,900<span class="won"> 원</span></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="width: 249px; margin-right: 18px;">
-                        <div class="today-product">
-                            <div class="today-product-image product-hidden">
-                                <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1651455844958l0.jpg" alt="상품 이미지" loading="lazy">
-                                <div>
-                                    <button type="button" class="mainCart button-absolute">
-                                        <img src="/main/images/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="product-info product-info-header">
-                                <h3 class="product-name">[델리치오] 호주산 목초육 안심 스테이크 250g (냉장)</h3>
-                                <div class="content-row now-price">
-                                    <div class="product-price">
-                                        <span class="discount-rate discount-orange">25%</span>
-                                        <span class="sales-price css-18tpqqq">13,900
-                                    </div>
-                                    <span class="dimmed-price css-18tpqqq ei5rudb1">22,900<span class="won"> 원</span></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="width: 249px; margin-right: 18px;">
-                        <div class="today-product">
-                            <div class="today-product-image product-hidden">
-                                <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1651455844958l0.jpg" alt="상품 이미지" loading="lazy">
-                                <div>
-                                    <button type="button" class="mainCart button-absolute">
-                                        <img src="/main/images/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="product-info product-info-header">
-                                <h3 class="product-name">[델리치오] 호주산 목초육 안심 스테이크 250g (냉장)</h3>
-                                <div class="content-row now-price">
-                                    <div class="product-price">
-                                        <span class="discount-rate discount-orange">25%</span>
-                                        <span class="sales-price css-18tpqqq">13,900
-                                    </div>
-                                    <span class="dimmed-price css-18tpqqq ei5rudb1">22,900<span class="won"> 원</span></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
+                    </th:block>
+                    <!--                            <div style="width: 249px; margin-right: 18px;">-->
+                    <!--                        <div class="today-product">-->
+                    <!--                            <div class="today-product-image product-hidden">-->
+                    <!--                                <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1637924123548l0.jpeg" alt="상품 이미지" loading="lazy">-->
+                    <!--                                <div>-->
+                    <!--                                    <button type="button" class="mainCart button-absolute">-->
+                    <!--                                        <img src="/main/images/main/cart.png" width="45px" height="45px" alt="장바구니 아이콘">-->
+                    <!--                                    </button>-->
+                    <!--                                </div>-->
+                    <!--                            </div>-->
+                    <!--                            <div class="product-info product-info-header">-->
+                    <!--                                <h3 class="product-name">미국산 애플청포도 500g (오톰크리스피)</h3>-->
+                    <!--                                <div class="content-row now-price">-->
+                    <!--                                    <div class="product-price">-->
+                    <!--                                        <span class="discount-rate discount-orange">30%</span>-->
+                    <!--                                        <span class="sales-price css-18tpqqq">6,930-->
+                    <!--                                    </div>-->
+                    <!--                                    <span class="dimmed-price css-18tpqqq ei5rudb1">9,900<span class="won"> 원</span></span>-->
+                    <!--                                </div>-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                    <!--                    <div style="width: 249px; margin-right: 18px;">-->
+                    <!--                        <div class="today-product">-->
+                    <!--                            <div class="today-product-image product-hidden">-->
+                    <!--                                <img src="https://product-image.kurly.com/cdn-cgi/image/width=400,format=auto/product/image/42e6bccc-59d0-4218-ba06-278aa629589a.jpg" alt="상품 이미지" loading="lazy">-->
+                    <!--                                <div>-->
+                    <!--                                    <button type="button" class="mainCart button-absolute">-->
+                    <!--                                        <img src="/main/images/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">-->
+                    <!--                                    </button>-->
+                    <!--                                </div>-->
+                    <!--                            </div>-->
+                    <!--                            <div class="product-info product-info-header">-->
+                    <!--                                <h3 class="product-name">[종로 평원숯불갈비] 돼지 물갈비 515g]</h3>-->
+                    <!--                                <div class="content-row now-price">-->
+                    <!--                                    <div class="product-price">-->
+                    <!--                                        <span class="discount-rate discount-orange">15%</span>-->
+                    <!--                                        <span class="sales-price css-18tpqqq">10,370-->
+                    <!--                                    </div>-->
+                    <!--                                    <span class="dimmed-price css-18tpqqq ei5rudb1">12,000<span class="won"> 원</span></span>-->
+                    <!--                                </div>-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                    <!--                    <div style="width: 249px; margin-right: 18px;">-->
+                    <!--                        <div class="today-product">-->
+                    <!--                            <div class="today-product-image product-hidden">-->
+                    <!--                                <img src="https://product-image.kurly.com/cdn-cgi/image/width=400,format=auto/product/image/fe2e03b7-0b38-4e91-b1e4-b7829d218a84.jpg" alt="상품 이미지" loading="lazy">-->
+                    <!--                                <div>-->
+                    <!--                                    <button type="button" class="mainCart button-absolute">-->
+                    <!--                                        <img src="/main/images/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">-->
+                    <!--                                    </button>-->
+                    <!--                                </div>-->
+                    <!--                            </div>-->
+                    <!--                            <div class="product-info product-info-header">-->
+                    <!--                                <h3 class="product-name">제주담은 청귤에이드 20개입</h3>-->
+                    <!--                                <div class="content-row now-price">-->
+                    <!--                                    <div class="product-price">-->
+                    <!--                                        <span class="discount-rate discount-orange">27%</span>-->
+                    <!--                                        <span class="sales-price css-18tpqqq">15,900-->
+                    <!--                                    </div>-->
+                    <!--                                    <span class="dimmed-price css-18tpqqq ei5rudb1">22,000<span class="won"> 원</span></span>-->
+                    <!--                                </div>-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                    <!--                </a>-->
+                    <!--                <a href="#;" class="swiper-slide" style="display: flex;">-->
+                    <!--                    <div style="width: 249px; margin-right: 18px;">-->
+                    <!--                        <div class="today-product">-->
+                    <!--                            <div class="today-product-image product-hidden">-->
+                    <!--                                <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1653037997440l0.jpeg" alt="상품 이미지" loading="lazy">-->
+                    <!--                                <div>-->
+                    <!--                                    <button type="button" class="mainCart button-absolute">-->
+                    <!--                                        <img src="/main/images/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">-->
+                    <!--                                    </button>-->
+                    <!--                                </div>-->
+                    <!--                            </div>-->
+                    <!--                            <div class="product-info product-info-header">-->
+                    <!--                                <h3 class="product-name">[델리치오] 호주산 목초육 안심 스테이크 250g (냉장)</h3>-->
+                    <!--                                <div class="content-row now-price">-->
+                    <!--                                    <div class="product-price">-->
+                    <!--                                        <span class="discount-rate discount-orange">25%</span>-->
+                    <!--                                        <span class="sales-price css-18tpqqq">13,900-->
+                    <!--                                    </div>-->
+                    <!--                                    <span class="dimmed-price css-18tpqqq ei5rudb1">22,900<span class="won"> 원</span></span>-->
+                    <!--                                </div>-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                    <!--                    <div style="width: 249px; margin-right: 18px;">-->
+                    <!--                        <div class="today-product">-->
+                    <!--                            <div class="today-product-image product-hidden">-->
+                    <!--                                <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1651455844958l0.jpg" alt="상품 이미지" loading="lazy">-->
+                    <!--                                <div>-->
+                    <!--                                    <button type="button" class="mainCart button-absolute">-->
+                    <!--                                        <img src="/main/images/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">-->
+                    <!--                                    </button>-->
+                    <!--                                </div>-->
+                    <!--                            </div>-->
+                    <!--                            <div class="product-info product-info-header">-->
+                    <!--                                <h3 class="product-name">[델리치오] 호주산 목초육 안심 스테이크 250g (냉장)</h3>-->
+                    <!--                                <div class="content-row now-price">-->
+                    <!--                                    <div class="product-price">-->
+                    <!--                                        <span class="discount-rate discount-orange">25%</span>-->
+                    <!--                                        <span class="sales-price css-18tpqqq">13,900-->
+                    <!--                                    </div>-->
+                    <!--                                    <span class="dimmed-price css-18tpqqq ei5rudb1">22,900<span class="won"> 원</span></span>-->
+                    <!--                                </div>-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                    <!--                    <div style="width: 249px; margin-right: 18px;">-->
+                    <!--                        <div class="today-product">-->
+                    <!--                            <div class="today-product-image product-hidden">-->
+                    <!--                                <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1651455844958l0.jpg" alt="상품 이미지" loading="lazy">-->
+                    <!--                                <div>-->
+                    <!--                                    <button type="button" class="mainCart button-absolute">-->
+                    <!--                                        <img src="/main/images/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">-->
+                    <!--                                    </button>-->
+                    <!--                                </div>-->
+                    <!--                            </div>-->
+                    <!--                            <div class="product-info product-info-header">-->
+                    <!--                                <h3 class="product-name">[델리치오] 호주산 목초육 안심 스테이크 250g (냉장)</h3>-->
+                    <!--                                <div class="content-row now-price">-->
+                    <!--                                    <div class="product-price">-->
+                    <!--                                        <span class="discount-rate discount-orange">25%</span>-->
+                    <!--                                        <span class="sales-price css-18tpqqq">13,900-->
+                    <!--                                    </div>-->
+                    <!--                                    <span class="dimmed-price css-18tpqqq ei5rudb1">22,900<span class="won"> 원</span></span>-->
+                    <!--                                </div>-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                    <!--                    <div style="width: 249px; margin-right: 18px;">-->
+                    <!--                        <div class="today-product">-->
+                    <!--                            <div class="today-product-image product-hidden">-->
+                    <!--                                <img src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1651455844958l0.jpg" alt="상품 이미지" loading="lazy">-->
+                    <!--                                <div>-->
+                    <!--                                    <button type="button" class="mainCart button-absolute">-->
+                    <!--                                        <img src="/main/images/main/cart.png" width="45px" height="45px"  alt="장바구니 아이콘">-->
+                    <!--                                    </button>-->
+                    <!--                                </div>-->
+                    <!--                            </div>-->
+                    <!--                            <div class="product-info product-info-header">-->
+                    <!--                                <h3 class="product-name">[델리치오] 호주산 목초육 안심 스테이크 250g (냉장)</h3>-->
+                    <!--                                <div class="content-row now-price">-->
+                    <!--                                    <div class="product-price">-->
+                    <!--                                        <span class="discount-rate discount-orange">25%</span>-->
+                    <!--                                        <span class="sales-price css-18tpqqq">13,900-->
+                    <!--                                    </div>-->
+                    <!--                                    <span class="dimmed-price css-18tpqqq ei5rudb1">22,900<span class="won"> 원</span></span>-->
+                    <!--                                </div>-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+<!--                </a>-->
             </div>
             <!-- Add Pagination -->
             <!-- Add Arrows -->

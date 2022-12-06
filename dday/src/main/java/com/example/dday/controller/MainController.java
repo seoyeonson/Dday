@@ -32,6 +32,12 @@ public class MainController {
         memberVO.setMemberNumber(0L);
         session.setAttribute("member", Optional.ofNullable((MemberVO)session.getAttribute("member")).orElse(memberVO));
         model.addAttribute("mainProduct", mainService.showMainProduct());
+        model.addAttribute("mainProduct2", mainService.showMainProduct2());
+        model.addAttribute("mainProduct3", mainService.showMainProduct3());
+        model.addAttribute("mainProduct4", mainService.showMainProduct4());
+        model.addAttribute("mainProduct5", mainService.showMainProduct5());
+        model.addAttribute("mainProduct5", mainService.showMainProduct6());
+
         return "index";
    }
 

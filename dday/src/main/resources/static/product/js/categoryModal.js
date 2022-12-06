@@ -12,9 +12,11 @@ $('button.inputCart').on('click', function(event){
     // 장바구니 버튼이 포함된 li에서 정보 가져오기
     // 상품 번호, 상품 가격, 상품 이름, 상품 세일가
     let productNumber = $(this).find("input.productNumber").val();
+    console.log(productNumber);
     let productPrice = $(this).find("input#productPrice").val();
     let productName = $(this).find("input#productName").val();
     let productSalePrice = $(this).find("input#productSalePrice").val();
+    console.log(productSalePrice);
 
     // 상품 추가, 삭제 시 변경되는 상품 전체 가격을 위해 계산할 상품 가격을 수정
     calcproductPrice = productSalePrice.replace(",", "").replace("원", "");

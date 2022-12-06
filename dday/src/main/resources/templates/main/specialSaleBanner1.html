@@ -8,7 +8,7 @@
 
 
     <div class="special-sale" th:fragment="ss1">
-        <th:block th:each="mainProduct:${mainProduct}">
+        <th:block th:each="mainProduct2:${mainProduct2}">
     <div class="special-product">
         <div class="product-title">
             <h2 class="product-title-main">시간 한정</h2>
@@ -25,20 +25,28 @@
         <div class="product-image">
             <div class="product-imagee">
                 <div class="product-image-header">
+                    <a th:href="@{/product/todayCategoryDetail(productNumber=${mainProduct2.productNumber})}">
                     <img src="https://product-image.kurly.com/product/image/61d82fce-a8e3-4937-af8c-3bc8badc6915.jpg" alt="상품 이미지" loading="lazy">
+                    </a>
                     <div>
-                        <button type="button" class="product-function product-absolute">
+                        <button type="button" class="product-function product-absolute inputCart">
+                            <input type="hidden" class="productNumber" th:value="${mainProduct2.productNumber}">
+                            <input type="hidden" id="productSalePrice" th:value="${mainProduct2.productSalePrice}">
+                            <input type="hidden" id="productName" th:value="${mainProduct2.productName}">
+                            <input type="hidden" id="productPrice" th:value="${mainProduct2.productPrice}">
                             <img src="/main/images/main/run.png" width="45px" height="45px" alt="바로가기 아이콘">
                         </button>
                     </div>
                 </div>
 
                 <div class="product-image-footer product-info">
-                    <div class="product-description">부담 없이 즐기는 바삭 촉촉 옛날 통닭</div>
-                    <h3 th:text="${mainProduct.productName}" class="product-name">두 마리 99치킨 (에어프라이어용)</h3>
+                    <div class="product-description" th:text="${mainProduct2.productOnelineInformation}">부담 없이 즐기는 바삭 촉촉 옛날 통닭</div>
+                    <h3 th:text="${mainProduct2.productName}" class="product-name">두 마리 99치킨 (에어프라이어용)</h3>
                     <div class="content-row now-price">
                         <div class="product-price">
-                            <span th:text="${mainProduct.productPrice}+원" class="sales-price css-18tpqqq">9,900
+                            <span class="discount-rate discount-orange" th:text="${mainProduct2.productSalePercent} + '%' ">25%</span>
+                            <span th:text="${mainProduct2.productSalePrice}+원" class="sales-price css-18tpqqq">9,900</span>
+                               <span class="dimmed-price css-18tpqqq ei5rudb1" th:text="${mainProduct2.productPrice}">22,900
                                 <span class="won">원</span>
                             </span>
                         </div>

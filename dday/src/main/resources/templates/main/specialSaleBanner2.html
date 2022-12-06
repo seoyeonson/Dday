@@ -7,6 +7,7 @@
 <body>
 <!-- 할인 하는 제품일 경우 해당 배너 사용 -->
     <div class="special-sale" th:fragment="ss2">
+        <th:block th:each="mainProduct3:${mainProduct3}">
     <div class="special-product">
         <div class="product-title">
             <h2 class="product-title-main">시간 한정</h2>
@@ -23,24 +24,31 @@
         <div class="product-image">
             <div class="product-imagee">
                 <div class="product-image-header">
-                    <img src="https://img-cf.kurly.com/shop/data/goods/1636017928381z0.jpg" alt="상품 이미지" loading="lazy">
+                    <a th:href="@{/product/todayCategoryDetail(productNumber=${mainProduct3.productNumber})}">
+                        <img src="https://product-image.kurly.com/product/image/61d82fce-a8e3-4937-af8c-3bc8badc6915.jpg" alt="상품 이미지" loading="lazy">
+                    </a>
                     <div>
-                        <button type="button" class="product-function product-absolute">
+                        <button type="button" class="product-function product-absolute inputCart">
+                            <input type="hidden" class="productNumber" th:value="${mainProduct3.productNumber}">
+                            <input type="hidden" id="productSalePrice" th:value="${mainProduct3.productSalePrice}">
+                            <input type="hidden" id="productName" th:value="${mainProduct3.productName}">
+                            <input type="hidden" id="productPrice" th:value="${mainProduct3.productPrice}">
                             <img src="/main/images/main/run.png" width="45px" height="45px" alt="바로가기 아이콘">
                         </button>
                     </div>
                 </div>
                 <div class="product-image-footer product-info">
-                    <div class="product-description">두루 사용하기 좋은 간편 새우</div>
-                    <h3 class="product-name">우주 프리미엄 손질 생새우살 200g (냉동)(26/30사이즈)</h3>
+                    <div class="product-description"  th:text="${mainProduct3.productOnelineInformation}">두루 사용하기 좋은 간편 새우</div>
+                    <h3  th:text="${mainProduct3.productName}" class="product-name">우주 프리미엄 손질 생새우살 200g (냉동)(26/30사이즈)</h3>
                     <div class="content-row now-price">
                         <div class="product-price css-product-discount">
                             <span class="discount-rate discount-orange">32%</span>
-                            <span class="sales-price">9,900
+                            <span  th:text="${mainProduct3.productSalePrice}+원" class="sales-price">9,900
                                 <span class="won">원</span>
                             </span>
                         </div>
-                        <span class="dimmed-price">8,400<span class="won"> 원</span></span>
+                        <span class="dimmed-price css-18tpqqq ei5rudb1" th:text="${mainProduct3.productPrice}">
+                            <span class="won"> 원</span></span>
                     </div>
                 </div>
             </div>
