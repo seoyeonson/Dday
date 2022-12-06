@@ -19,9 +19,18 @@ public class PartnerProductService {
         partnerProductDAO.save(partnerProductDTO);
     }
 
+    public void registerToday(PartnerProductDTO partnerProductDTO) {
+        partnerProductDAO.saveToday(partnerProductDTO);
+    }
+
     //    제품 정보 수정
     public void modify(PartnerProductDTO partnerProductDTO) {
         partnerProductDAO.setProductVO(partnerProductDTO);
+    }
+
+    //    삭제
+    public void remove(Long productNumber) {
+        partnerProductDAO.remove(productNumber);
     }
 
     //    제품 정보 조회

@@ -11,6 +11,9 @@ import java.util.List;
 public interface PartnerProductMapper {
     //    제품 등록
     public void insert(PartnerProductDTO partnerProductDTO);
+    //    제품 등록
+
+    public void insertToday(PartnerProductDTO partnerProductDTO);
 
     //    제품 정보 수정
     public void update(PartnerProductDTO partnerProductDTO);
@@ -23,4 +26,7 @@ public interface PartnerProductMapper {
 
     //     제품 전체 개수
     public int getTotal();
+
+    //    삭제
+    public void delete(Long productNumber);
 }

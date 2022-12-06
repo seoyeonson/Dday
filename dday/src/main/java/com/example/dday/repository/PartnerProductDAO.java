@@ -19,6 +19,10 @@ public class PartnerProductDAO {
         partnerProductMapper.insert(partnerProductDTO);
     }
 
+    public void saveToday(PartnerProductDTO partnerProductDTO) {
+        partnerProductMapper.insertToday(partnerProductDTO);
+    }
+
     //    제품 정보 수정
     public void setProductVO(PartnerProductDTO partnerProductDTO) {
         partnerProductMapper.update(partnerProductDTO);
@@ -37,5 +41,10 @@ public class PartnerProductDAO {
     //    제품 전체 개수
     public int findCountAll() {
         return partnerProductMapper.getTotal();
+    }
+
+    //    삭제
+    public void remove(Long productNumber) {
+        partnerProductMapper.delete(productNumber);
     }
 }

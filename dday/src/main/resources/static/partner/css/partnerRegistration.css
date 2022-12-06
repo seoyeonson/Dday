@@ -260,5 +260,40 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .uploadResult {
     position: absolute;
+    display: flex;
     top: 190%;
+    left: 24%;
+}
+
+.thumbnailResult {
+    display: flex;
+    flex-direction: column;
+}
+
+.col08 {
+    position: absolute;
+    top: 190%;
+}
+.col09 {
+    position: absolute;
+    top: 260%;
+}
+
+img {
+    width: 200px;
+}
+
+.imgspan{
+    display: flex;
+    flex-direction: column;
+    left: 24%;
+}
+
+.mainImgResult {
+    display: flex;
+    flex-direction: column;
+}
+
+.todayUpload {
+    top: 260%;
 }
