@@ -43,12 +43,12 @@
                             <span class="orderList3"></span>
                         </a>
                     </li>
-                    <li class="orderList">
-                        <a href="/member/mypageReview" class="orderList4">
-                            상품후기
-                            <span class="orderList4"></span>
-                        </a>
-                    </li>
+<!--                    <li class="orderList">-->
+<!--                        <a href="/member/mypageReview" class="orderList4">-->
+<!--                            상품후기-->
+<!--                            <span class="orderList4"></span>-->
+<!--                        </a>-->
+<!--                    </li>-->
                     <li class="orderList">
                         <a href="/member/mypageSaving" class="orderList6">
                             적립금
@@ -238,7 +238,9 @@
         productDTO.products.forEach(product => {
             text += '<div class="likeGoodsList">';
             text += '<a href="" class="likeGoods">';
-            text += '<span class="likeGoodsImg"></span>';
+            text += '<span class="likeGoodsImg">';
+            // text += '<img src="/partner/display?fileName=' + product.productThumbnailName + '">';
+            text += '</span>';
             text += '</a>';
             text += '<div class="likeGoodsInfo">';
             text += '<div class="infoLeft">';

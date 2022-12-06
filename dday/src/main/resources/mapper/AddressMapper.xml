@@ -2,15 +2,21 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.dday.mapper.AddressMapper">
     <insert id="insertFirst">
+        <selectKey keyProperty="addressNumber" order="BEFORE" resultType="long">
+            SELECT SEQ_MEMBER.NEXTVAL FROM DUAL
+        </selectKey>
         INSERT INTO TBL_ADDRESS
         (ADDRESS_NUMBER, ADDRESS_MAIN, ADDRESS_DETAIL, ADDRESS_STATUS, ADDRESS_RECEIVE_PERSON, ADDRESS_RECEIVE_PHONE_NUMBER, MEMBER_NUMBER)
-        VALUES(SEQ_ADDRESS.NEXTVAL, #{addressMain}, #{addressDetail}, '기본배송지', #{addressReceivePerson}, #{addressReceivePhoneNumber}, #{memberNumber})
+        VALUES(#{addressNumber}, #{addressMain}, #{addressDetail}, '기본배송지', #{addressReceivePerson}, #{addressReceivePhoneNumber}, #{memberNumber})
     </insert>
 
     <insert id="insert">
+        <selectKey keyProperty="addressNumber" order="BEFORE" resultType="long">
+            SELECT SEQ_MEMBER.NEXTVAL FROM DUAL
+        </selectKey>
         INSERT INTO TBL_ADDRESS
         (ADDRESS_NUMBER, ADDRESS_MAIN, ADDRESS_DETAIL, ADDRESS_RECEIVE_PERSON, ADDRESS_RECEIVE_PHONE_NUMBER, MEMBER_NUMBER)
-        VALUES(SEQ_ADDRESS.NEXTVAL, #{addressMain}, #{addressDetail}, #{addressReceivePerson}, #{addressReceivePhoneNumber}, #{memberNumber})
+        VALUES(#{addressNumber}, #{addressMain}, #{addressDetail}, #{addressReceivePerson}, #{addressReceivePhoneNumber}, #{memberNumber})
     </insert>
 
     <select id="selectAll" resultType="addressVO">

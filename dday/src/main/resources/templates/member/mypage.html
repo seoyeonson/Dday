@@ -39,12 +39,12 @@
                             <span class="orderList3"></span>
                         </a>
                     </li>
-                    <li class="orderList">
-                        <a href="/member/mypageReview" class="orderList4">
-                            상품후기
-                            <span class="orderList4"></span>
-                        </a>
-                    </li>
+<!--                    <li class="orderList">-->
+<!--                        <a href="/member/mypageReview" class="orderList4">-->
+<!--                            상품후기-->
+<!--                            <span class="orderList4"></span>-->
+<!--                        </a>-->
+<!--                    </li>-->
                     <li class="orderList">
                         <a href="/member/mypageSaving" class="orderList6">
                             적립금
@@ -73,13 +73,7 @@
                     </div>
                 </div>
                 <div class="brhLine"></div>
-                <div class="orderHistory"> <!-- 주문 내역 리스트 시작-->
-<!--                    <div class="orderList">-->
-<!--                        <div class="orderListHeader">-->
-<!--                            <span class="orderTime">2022.11.15 (20시 28분)</span>-->
-<!--                            <a href="" class="orderDetail">주문내역상세보기</a>-->
-<!--                        </div>-->
-<!--                    </div>-->
+                <div class="orderHistory">
                     <th:block th:each="order:${orders}">
                         <div class="goodsDetail" th:object="${order}">
                             <div class="goodsLeft">
