@@ -21,7 +21,7 @@
 <div id="detail">
     <main>
         <div class="detail_img">
-<!--            <img th:src="@{${item.getImgPath()}}">-->
+            <img th:src="@{/partner/display(fileName=${product.productThumbnailName})}">
         </div>
         <section>
             <div class="title_top">당일 판매 상품</div>
@@ -99,7 +99,7 @@
                 <div class="product_wrap" id="product_wrap">
                     <div class="product_intro">
                         <div>
-                            <img src="https://img-cf.kurly.com/shop/data/goodsview/20200420/gv10000091198_1.jpg">
+                            <img th:src="@{/partner/display(fileName=${product.productMainImageName})}">
                         </div>
                         <div class="product_context">
                             <h3>

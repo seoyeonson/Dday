@@ -36,7 +36,7 @@
                     <input type="hidden" th:value="*{productNumber}" id="productNumber" name="productNumber">
                     <input type="hidden" th:value="*{cartCount}" id="orderDetailCount" name="orderDetailCount">
                     <input type="hidden" th:value="*{productSalePrice}" id="orderDetailPrice" name="orderDetailPrice">
-                    <span class="product_img1"></span>
+                    <span class="product_img1"><img th:src="@{/partner/display(fileName=${product.productThumbnailName})}"></span>
                     <span class="product_name_section">
                             <span class="product_name" th:text="*{productName}"></span>
                         </span>

@@ -24,7 +24,7 @@
                         <div class="today-product">
                             <div class="today-product-image product-hidden">
                                 <a th:href="@{/product/todayCategoryDetail(productNumber=${mainProduct.productNumber})}">
-                                <img th:text="*{productThumbnailName}" src="https://img-cf.kurly.com/cdn-cgi/image/width=400,format=auto/shop/data/goods/1594181922977l0.jpg" alt="상품 이미지" loading="lazy">
+                                <img th:text="*{productThumbnailName}" th:src="@{/partner/display(fileName=${mainProduct.productThumbnailName})}">
                                 </a>
                                 <div>
                                     <button type="button" class="mainCart button-absolute inputCart">

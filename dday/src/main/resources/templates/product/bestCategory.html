@@ -139,7 +139,7 @@
                             <div>
                                 <div class="product_img_section">
 <!--                                    <img th:src="@{${item.getImgPath()}}">-->
-                                    <img src="https://img-cf.kurly.com/cdn-cgi/image/width=676,format=auto/shop/data/goods/1628558475434l0.jpg" alt="상품 이미지">
+                                    <img th:src="@{/partner/display(fileName=${product.productThumbnailName})}">
                                     <div><button type="button" class="pickup inputCart">
                                         <input type="hidden" class="productNumber" th:value="${product.productNumber}">
                                         <input type="hidden" id="productSalePrice" th:value="${product.productSalePrice}">

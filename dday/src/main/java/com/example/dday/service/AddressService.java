@@ -4,6 +4,7 @@ import com.example.dday.domain.vo.AddressVO;
 import com.example.dday.repository.AddressDAO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -13,7 +14,10 @@ public class AddressService {
     private final AddressDAO addressDAO;
 
     //    추가
-    public void save(AddressVO addressVO){ addressDAO.save(addressVO); };
+    @Transactional(rollbackFor = Exception.class)
+    public void save(AddressVO addressVO){
+        addressDAO.save(addressVO);
+    };
     //    전체 조회
     public List<AddressVO> findAll(Long memberNumber){ return addressDAO.findAll(memberNumber); };
     //    삭제
