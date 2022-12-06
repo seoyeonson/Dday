@@ -81,7 +81,7 @@
                             <th>판매가</th>
                             <th>재고</th>
                             <th>등록일/수정일</th>
-                            <th>수정</th>
+                            <th>삭제</th>
                         </tr>
                         </thead>
 
@@ -99,9 +99,13 @@
                                     <p class="productModifyDate" th:text="*{productModifyDate}"></p>
                                 </td>
                                 <td>
-                                    <a type="button" class="change" value="수정" th:href="*{productNumber}">
+                                    <form th:action="@{/partner/delete}">
+                                        <input type="submit" class="button" value="삭제"/>
+                                        <input type="hidden" id="productNumber" name="productNumber" th:value="${product.productNumber}"/>
+                                    </form>
+                                    <!--<a type="button" class="change" value="수정" th:href="*{productNumber}">
                                         <input type="button" class="productChangeButton" value="수정">
-                                    </a>
+                                    </a>-->
                                     <!--<a type="button" class="change" value="수정"
                                        th:href="@{/partner/partnerProductChange(productNumber=${product.productNumber})}">
                                         <input type="button" class="productChangeButton" value="수정">

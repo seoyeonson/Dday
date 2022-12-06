@@ -75,8 +75,8 @@
                             <span class="colName col01">상품명</span>
                             <input type="text" class="registName" placeholder="제품명을 입력해주세요" th:field="*{productName}">
                             <input type="checkbox" name="당일판매제품" id="checkToday1" value="">
-                            <input type="hidden" th:field="*{productTodaySale}" th:value="2022-12-05">
                             <label for="checkToday1">당일 판매 여부</label>
+                            <input type="hidden" class="todaySaleDate1" th:field="*{productTodaySale}">
                         </li>
                         <li class="registFormLi">
                             <span class="colName col02">카테고리</span>
@@ -140,6 +140,7 @@
                             <input type="file" id="inputFileContent" style="display:none;">
                         </li>
                         <li class="registFormLi">
+                            <span class="colName col08">미리보기</span>
                             <div class="uploadResult">
                                 <ul class="thumbnailResult"></ul>
                                 <ul class="mainImgResult"></ul>
@@ -149,7 +150,7 @@
                     <input type="submit" class="submitButton" value="등록" onclick="alert('제품이 등록되었습니다.')">
                 </form>
                 <form class="registrationForm todayRegistForm" method="post"
-                      th:action="@{/partner/partner_registration}" th:object="${product}" enctype="multipart/form-data">
+                      th:action="@{/partner/partner_registration/today_sale}" th:object="${product}" enctype="multipart/form-data">
                     <div class="registTitle">
                         <h3>제품 등록</h3>
                     </div>
@@ -159,6 +160,7 @@
                             <input type="text" class="registName" placeholder="제품명을 입력해주세요" th:field="*{productName}">
                             <input type="checkbox" name="당일판매제품" id="checkToday2" checked="on">
                             <label for="checkToday2">당일 판매 여부</label>
+                            <input type="hidden" class="todaySaleDate2" th:field="*{productTodaySale}">
                         </li>
                         <li class="registFormLi">
                             <span class="colName col02">카테고리</span>
@@ -189,7 +191,8 @@
                         </li>
                         <li class="registFormLi">
                             <span class="colName closingTime">영업시간</span>
-                            <input type="time" class="registClosingTime" max="24:00:00" th:field="*{productOpenHours}">
+                            <input type="time" class="registClosingTime" max="24:00:00">
+                            <input type="hidden" class="openHours" th:field="*{productOpenHours}">
                         </li>
                         <!--<li class="registFormLi addressList">
                             <span class="colName address">가게주소</span>
@@ -229,7 +232,8 @@
                             <input type="file" id="inputFileContent" style="display:none;">
                         </li>
                         <li class="registFormLi">
-                            <div class="uploadResult">
+                            <span class="colName col09">미리보기</span>
+                            <div class="uploadResult todayUpload">
                                 <ul class="thumbnailResult"></ul>
                                 <ul class="mainImgResult"></ul>
                             </div>
@@ -245,37 +249,42 @@
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="/partner/js/partner.js"></script>
 <script th:inline="javascript">
-    let todaySale = "";
+    let todaySale = 0;
     let today = new Date();
 
     let year = today.getFullYear();
     let month = ('0' + (today.getMonth() + 1)).slice(-2);
     let day = ('0' + today.getDate()).slice(-2);
+    let yesterday = day -1 ;
 
-    let dateString = year + '-' + month + '-' + day;
-    $('input[type=checkbox][id=checkToday1]').change(function () {
-        if ($(this).is(':checked')) {
-            todaySale = dateString;
-            console.log("dateString: " + dateString);
-            console.log("todaySale: " + todaySale);
-        } else {
-            todaySale = "";
-            console.log("todaySale: " + todaySale);
-            console.log("dateString: " + dateString);
-        }
-    })
 
-    $('input[type=checkbox][id=checkToday2]').change(function () {
-        if ($(this).is(':checked')) {
-            todaySale = "";
-            console.log("todaySale: " + todaySale);
-            console.log("dateString: " + dateString);
-        } else {
-            todaySale = dateString;
-            console.log("todaySale: " + todaySale);
-            console.log("dateString: " + dateString);
-        }
-    })
+
+
+    function getToday(){
+        const date = new Date();
+        const year = date.getFullYear();
+        const month = ("0" + (1 + date.getMonth())).slice(-2);
+        const day = ("0" + date.getDate()).slice(-2);
+
+        return year + "-" + month + "-" + day;
+    }
+    function getYesterday(){
+        const date = new Date();
+        const year = date.getFullYear();
+        const month = ("0" + (1 + date.getMonth())).slice(-2);
+        const day = ("0" + (date.getDate() - 1)).slice(-2);
+
+        return year + "-" + month + "-" + day;
+    }
+
+    $('.todaySaleDate2').val(getToday());
+    $('.todaySaleDate1').val(getYesterday());
+
+
+
+
+
+
 
     //첨부파일
     let arrayFile = [];
@@ -303,6 +312,11 @@
             processData: false,
             success: showThumbnailResult
         })
+        let timeString = $(".registClosingTime").val();
+        let fullString = "" + getToday() + " " + timeString + ":00";
+        console.log("timeString : " + timeString);
+        console.log("fullString : " + fullString);
+        $(".openHours").val(fullString);
     });
 
     $("input#inputFileContent").on('change', function () {
@@ -337,11 +351,16 @@
             processData: false,
             success: showMainImgResult
         })
+        let timeString = $(".registClosingTime").val();
+        let fullString = "" + getToday() + " " + timeString + ":00";
+        console.log("timeString : " + timeString);
+        console.log("fullString : " + fullString);
+        $(".openHours").val(fullString);
     });
     function showThumbnailResult(path) {
         let text = "";
         console.log(path);
-        text += "<span>";
+        text += "<span class='imgspan'>";
         text += "<img src='/partner/display?fileName=" + path + "'>";
         text += "<input name='productThumbnailName' id ='productThumbnailName' value='"+ path+ "'>";
         text += "</span>";
@@ -350,7 +369,7 @@
 
     function showMainImgResult(path) {
         let text = "";
-        text += "<li>";
+        text += "<li class='imgspan'>";
         text += "<img src='/partner/display?fileName=" + path + "'>";
         text += "<input name='productMainImageName' id ='productMainImageName' value='"+ path+ "'>";
         text += "</li>";
@@ -383,6 +402,11 @@
         //     text += `<input type="hidden" name="files[` + i + `].fileSize" value="` + fileSize + `">`;
         // });
         // $("form#writeForm").append(text).submit();
+        let timeString = $(".registClosingTime").val();
+        let fullString = "" + getToday() + " " + timeString;
+        console.log("timeString : " + timeString);
+        console.log("fullString : " + fullString);
+        $(".openHours").val(fullString);
         $("form#writeForm").submit();
     });
 

@@ -110,6 +110,13 @@ public class PartnerController {
         redirectAttributes.addFlashAttribute("productNumber", partnerProductDTO.getProductNumber());
         return new RedirectView("/partner/partner_management");
     }
+    @PostMapping("/partner_registration/today_sale")
+    public RedirectView productNewToday(PartnerProductDTO partnerProductDTO, RedirectAttributes redirectAttributes) {
+        log.info("partnerProductDTO: " + partnerProductDTO.getProductMainImageName());
+        partnerProductService.registerToday(partnerProductDTO);
+        redirectAttributes.addFlashAttribute("productNumber", partnerProductDTO.getProductNumber());
+        return new RedirectView("/partner/partner_management");
+    }
 
     @PostMapping("/upload")
     @ResponseBody
@@ -159,6 +166,11 @@ public class PartnerController {
     public void partner_shipping() {
     }
 
+    @GetMapping("/delete")
+    public RedirectView delete(Long productNumber){
+        partnerProductService.remove(productNumber);
+        return new RedirectView("/partner/partner_management");
+    }
 
 
     //    상품 정보 수정하기

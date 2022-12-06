@@ -13,6 +13,17 @@
         #{productInformation},#{productThumbnailName}, #{productMainImageName}, #{productSalePercent}, #{productTodaySale})
     </insert>
 
+    <insert id="insertToday">
+        <selectKey keyProperty="productNumber" order="BEFORE" resultType="long">
+            SELECT SEQ_PRODUCT.NEXTVAL FROM DUAL
+        </selectKey>
+        INSERT INTO TBL_PRODUCT(PRODUCT_NUMBER, PRODUCT_NAME, PRODUCT_CATEGORY, PRODUCT_PRICE,
+        PRODUCT_ONELINE_INFORMATION, PRODUCT_INFORMATION,
+        PRODUCT_THUMBNAIL_NAME, PRODUCT_MAIN_IMAGE_NAME,PRODUCT_SALE_PERCENT, PRODUCT_OPEN_HOURS, PRODUCT_TODAY_SALE)
+        VALUES(#{productNumber}, #{productName}, #{productCategory}, #{productPrice},
+        #{productOnelineInformation}, #{productInformation},#{productThumbnailName}, #{productMainImageName}, #{productSalePercent}, (to_DATE(#{productOpenHours},'yyyy-mm-dd hh24:mi')), #{productTodaySale})
+    </insert>
+
     <update id="update">
         UPDATE TBL_PRODUCT
         SET PRODUCT_NAME=#{productName},
@@ -90,4 +101,9 @@
         SELECT COUNT(PRODUCT_NUMBER)
         FROM TBL_PRODUCT
     </select>
+
+    <delete id="delete">
+        DELETE FROM TBL_PRODUCT
+        WHERE PRODUCT_NUMBER = #{productNumber}
+    </delete>
 </mapper>
