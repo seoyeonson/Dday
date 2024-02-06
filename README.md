@@ -96,6 +96,11 @@
     </tr>
 </table>
 <br>
+
+### 협업 문서
+📝 [기획 notion](https://wobbly-chip-64e.notion.site/Wanted-JSP-Spring-Web-Project-e44c5186bb1c4c4cb0d62cd5b48f2cdc?pvs=4)
+
+<br>
 <br>
 
 [사용 이미지 출처]
