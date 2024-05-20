@@ -82,19 +82,6 @@
   </tr>
 </table>
 <br>
-
-<table>
-    <tr></tr>
-    <tr>
-        <td style="padding:15px;">
-            <p></p>
-            <div><b>💡 인사이트</b></div>
-            <div style="width:100%; background-color:grey;">
-                <p></p>
-            </div>
-        </td>
-    </tr>
-</table>
 <br>
 
 ### 협업 문서
